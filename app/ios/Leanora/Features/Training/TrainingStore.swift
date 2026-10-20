@@ -16,6 +16,9 @@ extension TemplateItem: Identifiable {}
     private(set) var busy = false
     var error: String?
     private var refreshGeneration = 0
+    private(set) var dataVersion = 0
+    private let workoutNotifications = WorkoutNotificationService()
+    private(set) var notificationError: String?
 
     init(repository: AppModelActor, catalog: [Exercise]) { self.repository = repository; self.catalog = catalog }
     var active: WorkoutSession? { sessions.first { [.active, .paused].contains($0.status) } }
@@ -35,6 +38,9 @@ extension TemplateItem: Identifiable {}
             templates = records.compactMap { if case .template(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }.sorted { $0.name < $1.name }
             sessions = records.compactMap { if case .session(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }
             changes = records.compactMap { if case .schedule(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }
+            dataVersion += 1
+            do { try await workoutNotifications.replace(WorkoutNotificationService.reminders(for: active, at: Date())); notificationError = nil }
+            catch { notificationError = "系统提醒暂未安排，前台计时仍可使用。" }
         } catch { self.error = error.localizedDescription }
     }
     func run<T: Sendable>(_ operation: @Sendable () async throws -> T) async -> T? {

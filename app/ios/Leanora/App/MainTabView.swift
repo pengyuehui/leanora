@@ -15,10 +15,10 @@ struct MainTabView: View {
                 NavigationStack { TrainingHomeView() }
             }
             Tab("饮食", systemImage: "fork.knife", value: .nutrition) {
-                NavigationStack { JournalLandingView(kind: .nutrition) }
+                NavigationStack { DietDiaryView() }
             }
             Tab("趋势", systemImage: "chart.xyaxis.line", value: .trends) {
-                NavigationStack { JournalLandingView(kind: .trends) }
+                NavigationStack { TrendsView() }
             }
             Tab("我的", systemImage: "person.crop.circle", value: .settings) {
                 NavigationStack { SettingsView() }

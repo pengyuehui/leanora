@@ -11,10 +11,14 @@ let package = Package(
         .target(name: "Leanora", path: "ios/Leanora", exclude: ["App", "Design", "Features", "Resources/Assets.xcassets", "Resources/Info.plist", "Resources/Localizable.xcstrings", "Resources/PrivacyInfo.xcprivacy", "Leanora.entitlements"], sources: [
             "Core/Preferences/AppPreferences.swift",
             "Core/Notifications/NotificationPermissionService.swift",
+            "Core/Notifications/WorkoutNotificationService.swift",
+            "Core/Notifications/TrainingReminderService.swift",
             "Core/Domain",
             "Core/Persistence",
             "Core/Backup",
             "Core/Training",
+            "Core/Analytics",
+            "Core/Nutrition",
             "Integrations/HealthKit/HealthAuthorizationService.swift"
         ], resources: [.copy("Resources/Catalog")]),
         .testTarget(name: "LeanoraFoundationTests", dependencies: ["Leanora"], path: "ios/LeanoraTests")

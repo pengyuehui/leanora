@@ -1,0 +1,22 @@
+{
+  "releaseBuilt": true,
+  "configuration": "Release-iphoneos, CODE_SIGNING_ALLOWED=NO",
+  "bundleID": "app.leanora.dev",
+  "minimumIOS": "18.0",
+  "bundledFoods": 300,
+  "bundledExercises": 22,
+  "foodsSHA256": "5f9f0d869f6a746d0a79f68b7442a696f9880be94afb61e098ed38a0958af3bb",
+  "debugMarkersPresent": {
+    "--uitesting": false,
+    "--backup-fixtures": false,
+    "--store-open-failed": false,
+    "UITestBackupFixtures": false,
+    "Leanora-valid.json": false,
+    "UITestHealthAuthorizer": false,
+    "injectCommitFailure": false
+  },
+  "hasThirdPartyRuntimeDependencies": false,
+  "productionCoreNetworkCalls": false,
+  "healthSampleSynchronizationImplemented": false,
+  "notificationBannerDeviceVerification": "pending"
+}

@@ -3,6 +3,7 @@ import SwiftUI
 struct TodayView: View {
     @Environment(AppPreferences.self) private var preferences
     @Environment(TrainingStore.self) private var training
+    @Environment(JournalStore.self) private var journal
     @State private var opened: WorkoutSession?
     @Binding var selected: AppTab
 
@@ -52,6 +53,16 @@ struct TodayView: View {
                     portal(title: "身体与趋势", detail: "给变化一点时间。", symbol: "chart.xyaxis.line", tab: .trends)
                 }
                 VStack(alignment: .leading, spacing: 12) {
+                    SectionEyebrow(text: "今天的饮食")
+                    NutritionSummaryView(summary: NutritionSummary(entries: journal.entries, on: RecordMoment().localDate), goal: NutritionCalculator.goal(on: RecordMoment().localDate, goals: journal.goals))
+                    if let latest = journal.measurements.filter({ $0.metric == .weightKg }).max(by: { $0.occurred.instant < $1.occurred.instant }) {
+                        LabeledContent("最近体重", value: bodyValue(latest, pounds: preferences.values.weightUnit == .pounds))
+                        Text(latest.occurred.instant, format: .dateTime.month().day().hour().minute()).font(.caption).foregroundStyle(.secondary)
+                    }
+                    let summary = TrainingSummary(sessions: training.sessions, from: RecordMoment().localDate, through: RecordMoment().localDate)
+                    LabeledContent("今天完成训练", value: "\(summary.workouts) 次")
+                }.padding(20).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 20))
+                VStack(alignment: .leading, spacing: 12) {
                     SectionEyebrow(text: "按照你的节奏")
                     HStack {
                         Text("每周训练").foregroundStyle(.secondary)
@@ -70,7 +81,7 @@ struct TodayView: View {
         }
         .background(LeanoraTheme.canvas)
         .toolbar(.hidden, for: .navigationBar)
-        .task { await training.refresh() }
+        .task { await training.refresh(); await journal.refresh() }
         .sheet(item: $opened) { session in NavigationStack { WorkoutReadyView(sessionID: session.id) } }
     }
 

@@ -92,6 +92,19 @@ import XCTest
         capture(app, "u3-empty-template")
     }
 
+    func testSupersetPairingPersistsIntoWorkoutSnapshot() {
+        let app = launch(); createTemplate("超级组模板", exercises: ["俯卧撑", "自重深蹲"], app: app)
+        tap(app.buttons["template.edit"], app); tap(app.buttons["template.itemMenu.0"], app)
+        app.buttons["与下一动作组成超级组"].tap(); tap(app.buttons["template.save"], app)
+        tap(app.buttons["template.start"], app)
+        let label = app.staticTexts["超级组 · 同轮两个动作完成后休息"].firstMatch
+        for _ in 0..<10 {
+            if label.exists && label.isHittable { break }
+            app.collectionViews.allElementsBoundByIndex.last?.swipeUp()
+        }
+        XCTAssertTrue(label.exists); capture(app, "u4-superset-snapshot")
+    }
+
     func testCustomExerciseCanBeArchivedWithoutDeletion() {
         let app = launch(); tap(app.buttons["training.library"], app); tap(app.buttons["exercise.new"], app)
         let name = app.textFields["exercise.name"]; name.tap(); name.typeText("我的推举")

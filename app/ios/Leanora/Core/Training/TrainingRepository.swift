@@ -92,7 +92,7 @@ extension AppModelActor {
         }
         let required = try TrainingPlan.requiredSessionRecords(template)
         guard records.reduce(0, { $0 + 1 + $1.nestedIDs.count }) + required <= DomainValidation.maximumRecords else { throw DataProblem.tooManyRecords }
-        let session = try TrainingPlan.session(from: template, exercises: trainingExercises(catalog: catalog), now: now, timeZoneID: timeZoneID, originDate: originDate)
+        let session = WorkoutEngine.prefilled(try TrainingPlan.session(from: template, exercises: trainingExercises(catalog: catalog), now: now, timeZoneID: timeZoneID, originDate: originDate), history: sessions)
         try save([.session(session)])
         return session
     }
@@ -100,6 +100,8 @@ extension AppModelActor {
     func abandonTraining(_ id: UUID) throws {
         guard case .session(var value) = try snapshot().first(where: { $0.id == id }), [.active, .paused].contains(value.status) else { throw TrainingProblem.missingRecord }
         let now = max(Date(), max(value.started.instant, value.stamp.updatedAt))
+        WorkoutEngine.stopTimers(&value, at: now); value.restDeadline = nil
+        value.pausedTimerSetIDs = nil
         if value.pauses.last?.endedAt == nil && !value.pauses.isEmpty { value.pauses[value.pauses.count - 1].endedAt = now }
         value.status = .abandoned; value.endedAt = now; value.stamp.revision += 1; value.stamp.updatedAt = now
         try save([.session(value)])

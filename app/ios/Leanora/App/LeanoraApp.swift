@@ -2,10 +2,12 @@ import SwiftUI
 
 @main
 struct LeanoraApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var preferences: AppPreferences
     @State private var health: HealthAuthorizationService
     @State private var notifications: NotificationPermissionService
     @State private var store: DataStoreController
+    @State private var trainingReminderService = TrainingReminderService()
 
     init() {
         #if DEBUG
@@ -37,7 +39,7 @@ struct LeanoraApp: App {
                 if let error = store.startupError {
                     StoreUnavailableView(message: error)
                 } else if store.repository == nil { ProgressView("正在打开本机资料库…") }
-                else if preferences.hasCompletedOnboarding, let training = store.training { MainTabView().environment(training) }
+                else if preferences.hasCompletedOnboarding, let training = store.training, let journal = store.journal { MainTabView().environment(training).environment(journal) }
                 else { OnboardingView() }
             }
             .environment(preferences)
@@ -46,12 +48,22 @@ struct LeanoraApp: App {
             .environment(store)
             .task { await store.start(preferences: preferences) }
             .onChange(of: preferences.values) { _, values in Task { await store.synchronize(values) } }
+            .task(id: "\(preferences.trainingRemindersEnabled)-\(preferences.trainingReminderHour)-\(preferences.trainingReminderMinute)-\(store.training?.dataVersion ?? 0)") { await updateTrainingReminders() }
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active { Task { await store.training?.refresh(); await store.journal?.refresh(); await updateTrainingReminders() } }
+            }
             .tint(LeanoraTheme.accent)
             #if DEBUG
             .preferredColorScheme(ProcessInfo.processInfo.arguments.contains("--uitesting")
                                   && ProcessInfo.processInfo.arguments.contains("--dark-mode") ? .dark : nil)
             #endif
         }
+    }
+    private func updateTrainingReminders() async {
+        guard let training = store.training else { return }
+        let reminders = preferences.trainingRemindersEnabled ? TrainingReminderService.upcoming(templates: training.templates, changes: training.changes, sessions: training.sessions, hour: preferences.trainingReminderHour, minute: preferences.trainingReminderMinute) : []
+        do { try await trainingReminderService.schedule(reminders) }
+        catch { training.error = "训练提醒暂未安排，请在通知设置中重试。" }
     }
 }
 

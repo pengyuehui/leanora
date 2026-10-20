@@ -142,6 +142,7 @@ struct WorkoutSession: Codable, Equatable, Sendable {
     var restDeadline: Date?
     var notes = ""
     var scheduleOriginDate: String?
+    var pausedTimerSetIDs: [UUID]?
 }
 
 // Optional additive fields retain compatibility with U2 JSON payloads.

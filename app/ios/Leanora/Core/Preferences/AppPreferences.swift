@@ -39,9 +39,21 @@ final class AppPreferences {
     private(set) var hasCompletedOnboarding: Bool
     private(set) var lastHealthRequest: Date?
     private(set) var storageNotice: String?
+    var trainingRemindersEnabled: Bool {
+        didSet { defaults.set(trainingRemindersEnabled, forKey: "reminders.training.enabled") }
+    }
+    var trainingReminderHour: Int {
+        didSet { defaults.set(trainingReminderHour, forKey: "reminders.training.hour") }
+    }
+    var trainingReminderMinute: Int {
+        didSet { defaults.set(trainingReminderMinute, forKey: "reminders.training.minute") }
+    }
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
+        trainingRemindersEnabled = defaults.bool(forKey: "reminders.training.enabled")
+        trainingReminderHour = defaults.object(forKey: "reminders.training.hour") as? Int ?? 18
+        trainingReminderMinute = defaults.object(forKey: "reminders.training.minute") as? Int ?? 0
         hasCompletedOnboarding = defaults.bool(forKey: "onboarding.completed")
         lastHealthRequest = defaults.object(forKey: "health.lastRequest") as? Date
         if let data = defaults.data(forKey: "preferences.v1") {

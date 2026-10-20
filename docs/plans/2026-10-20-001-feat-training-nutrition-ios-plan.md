@@ -4,7 +4,7 @@ type: feat
 status: active
 date: 2026-10-20
 deepened: 2026-10-20
-execution_status: phase_3_complete_phase_1_device_acceptance_pending
+execution_status: phase_5_complete_device_and_release_acceptance_pending
 product_route: independent_closed_source
 ---
 
@@ -18,7 +18,7 @@ product_route: independent_closed_source
 
 **建议技术路线：SwiftUI + SwiftData + HealthKit + Swift Charts + UserNotifications。** 第一版完成本机记录与健康同步，先通过 TestFlight 验证；账号云同步、付费订阅和 Apple Watch 独立训练另列后续交付。
 
-这份文件是持续更新的实施计划。U1–U3 已独立实现，包含本地数据/备份与动作库/模板/周安排/当天开始训练；最终 69 项原生测试全部通过，Release 构建成功。U1 真机、最低系统和 VoiceOver 仍待设备条件具备；U4–U8 尚未实施。详见 [阶段 3 验证记录](/Users/pengyuehui/Downloads/leanora/app/docs/qa/phase-three-verification.md) 与 [阶段 1 设备门槛](/Users/pengyuehui/Downloads/leanora/app/docs/qa/phase-one-verification.md)。
+这份文件是持续更新的实施计划。U1–U5 的本机功能已独立实现：备份/计划基础、逐组训练与计时恢复、历史统计、离线饮食、身体测量与首页趋势。76 项单元、29 项 UI 经全量及修复后定向复测覆盖通过，正式 iPhone Release 构建成功。U1 的真机、最低系统和 VoiceOver，以及通知横幅/锁屏送达与内容专业复核仍待对应验收；U6–U8 尚未实施。完整原始失败、复测结果及限制见 [阶段 4、5 验证记录](/Users/pengyuehui/Downloads/leanora/app/docs/qa/phase-four-five-verification.md)。
 
 ### 本次默认假设
 
@@ -288,7 +288,7 @@ HealthKit 授权请求成功只说明请求流程成功，不等于所有类型�
 
 ## 9. 实施单元、文件与测试
 
-以下为分阶段交付文件。代码根目录为 `/Users/pengyuehui/Downloads/leanora/app`。U1–U3 文件已创建并运行测试；U4–U8 的文件与测试仍是后续计划。
+以下为分阶段交付文件。代码根目录为 `/Users/pengyuehui/Downloads/leanora/app`。U1–U5 文件已创建并运行测试；U6–U8 的文件与测试仍是后续计划。
 
 ### U1：范围、原创交互与 iOS 工程基础
 
@@ -328,7 +328,9 @@ HealthKit 授权请求成功只说明请求流程成功，不等于所有类型�
 
 ### U4：训练执行、计时、历史与训练统计
 
-- [ ] **目标与依赖：** 对应 R2、R5、R7；依赖 U3。
+**实施进度（2026-10-20）：本地功能及模拟器可验证范围已完成。逐组编辑/完成、超级组、独立计时/休息、暂停/强退恢复、历史与口径统计、系统排程已实现。真实横幅与锁屏送达仍保留真机门槛；U7 意图不等于已写入 Health。**
+
+- [x] **目标与依赖：** 对应 R2、R5、R7；依赖 U3。
 - **文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Workout/ActiveWorkoutView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Workout/WorkoutSessionController.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Core/Notifications/WorkoutNotificationService.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/History/WorkoutHistoryView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Core/Analytics/TrainingSummary.swift`。
 - **方式与依据：** 保存每一组；计划值与实际值分开；超级组与组类型分开；用实际时刻恢复计时，系统通知负责后台提醒；完成后产生可供 U7 处理的写入任务。
 - **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/WorkoutSessionTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/TrainingSummaryTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/WorkoutRecoveryTests.swift`。
@@ -338,7 +340,9 @@ HealthKit 授权请求成功只说明请求流程成功，不等于所有类型�
 
 ### U5：饮食、内容目录、身体数据与首页趋势
 
-- [ ] **目标与依赖：** 对应 R2、R6、R7；依赖 U2，内容来源审核是食物检索的发布依赖。
+**实施进度（2026-10-20）：本地功能已完成。300 条 CC0 官方来源食品、份量/快记/复制、自定义/归档/历史快照、身体多次测量及首页/7、30 天趋势已实现并验证。29 条独立中文名，其余保留可搜索英文；营养与中文名称专业复核、中国品牌覆盖仍为发布内容依赖。**
+
+- [x] **目标与依赖：** 对应 R2、R6、R7；依赖 U2，内容来源审核是食物检索的发布依赖。
 - **文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Nutrition/DietDiaryView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Nutrition/FoodSearchView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Nutrition/FoodPortionView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Core/Nutrition/NutritionCalculator.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Body/BodyMeasurementView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Today/TodayView.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/Catalog/foods.json`。
 - **方式与依据：** 搜索本地目录，支持自定义与快速记录；营养快照独立保存；先实现按日可解释汇总。自定义资料可修订，但不能静默覆盖旧记录。
 - **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/NutritionCalculationTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/BodyMeasurementTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/DietDiaryTests.swift`。

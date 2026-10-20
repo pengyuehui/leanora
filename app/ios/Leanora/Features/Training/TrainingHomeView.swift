@@ -27,6 +27,7 @@ struct TrainingHomeView: View {
                     .accessibilityIdentifier("training.library")
                 NavigationLink { WeeklyPlanView() } label: { Label("周计划与单次安排", systemImage: "calendar") }
                     .accessibilityIdentifier("training.weekly")
+                NavigationLink { WorkoutHistoryView() } label: { Label("训练历史", systemImage: "clock.arrow.circlepath") }.accessibilityIdentifier("training.history")
             }
             TrainingErrorNotice()
             Section("我的模板") {
@@ -109,44 +110,5 @@ struct TemplateDetailView: View {
 
 struct WorkoutReadyView: View {
     let sessionID: UUID
-    @Environment(TrainingStore.self) private var training
-    @Environment(AppPreferences.self) private var preferences
-    @Environment(\.dismiss) private var dismiss
-    @State private var abandoning = false
-    var body: some View {
-        List {
-            TrainingErrorNotice()
-            if let session = training.sessions.first(where: { $0.id == sessionID }) {
-                Section {
-                    Label("训练已开始", systemImage: "play.circle.fill").font(.title2).accessibilityIdentifier("workout.started")
-                    Text(session.name).font(.headline)
-                    Text(session.started.instant, format: .dateTime.month().day().hour().minute())
-                    Text("计划已独立保存。模板之后的修改不会改变这次训练。逐组记录将在下一阶段提供。")
-                        .foregroundStyle(.secondary)
-                }
-                ForEach(session.exercises.sorted { $0.order < $1.order }, id: \.id) { exercise in
-                    Section(exercise.snapshot.name) {
-                        Text("\(exercise.plannedTargets?.sets ?? exercise.sets.count) 个计划组 · 尚未完成")
-                        if let plan = exercise.plannedTargets {
-                            if let minimum = plan.minimumReps { Text("目标次数：\(minimum)–\(plan.maximumReps ?? minimum)") }
-                            if let duration = plan.durationSeconds { Text("目标时长：\(duration.formatted()) 秒") }
-                            if let load = plan.loadKg {
-                                Text("目标负重：\((load / (preferences.values.weightUnit == .pounds ? 0.45359237 : 1)).formatted()) \(preferences.values.weightUnit.rawValue)")
-                            }
-                            if let distance = plan.distanceMeters { Text("目标距离：\(distance.formatted()) m") }
-                            Text("组间休息：\(plan.restSeconds.formatted()) 秒")
-                        }
-                    }
-                }
-                Section { Button("放弃本次训练", role: .destructive) { abandoning = true }.accessibilityIdentifier("workout.abandon") }
-            }
-        }
-        .navigationTitle("本次训练").navigationBarTitleDisplayMode(.inline)
-        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() }.accessibilityIdentifier("workout.close") } }
-        .confirmationDialog("放弃本次训练？", isPresented: $abandoning, titleVisibility: .visible) {
-            Button("确认放弃", role: .destructive) {
-                Task { if await training.run({ [repository = training.repository] in try await repository.abandonTraining(sessionID) }) != nil { dismiss() } }
-            }
-        } message: { Text("保留这次放弃记录，之后可以重新开始训练。") }
-    }
+    var body: some View { ActiveWorkoutView(sessionID: sessionID) }
 }

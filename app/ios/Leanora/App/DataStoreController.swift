@@ -4,6 +4,7 @@ import Observation
 @MainActor @Observable final class DataStoreController {
     private(set) var repository: AppModelActor?
     private(set) var training: TrainingStore?
+    private(set) var journal: JournalStore?
     private(set) var startupError: String?
     private(set) var preferenceError: String?
     private(set) var recoveries: [URL] = []
@@ -51,6 +52,8 @@ import Observation
             let training = TrainingStore(repository: opened, catalog: try ExerciseCatalog.load())
             await training.refresh()
             self.training = training
+            let journal = JournalStore(repository: opened, catalog: try FoodCatalog.load())
+            await journal.refresh(); self.journal = journal
             repository = opened
         } catch {
             startupError = "本机数据库暂时无法打开。请解锁设备后重试。升级前恢复副本与原库会保留，不会自动清空记录。"
@@ -94,6 +97,7 @@ import Observation
         do {
             try await repository.updatePreferences(weight: values.weightUnit.rawValue, distance: values.distanceUnit.rawValue,
                                                    days: values.weeklyTrainingDays, energy: values.dailyEnergyGoal)
+            await journal?.refresh()
             preferenceError = nil
         } catch { preferenceError = "单位与目标尚未写入业务数据库，请重试后再导出备份。" }
     }

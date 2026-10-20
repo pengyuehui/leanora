@@ -111,6 +111,7 @@ enum DomainValidation {
                 if let end = v.endedAt, end < v.started.instant { throw DataProblem.invalid("训练结束时间") }
                 if [.completed, .abandoned].contains(v.status), v.endedAt == nil { throw DataProblem.invalid("训练终态") }
                 try orders(v.exercises.map(\.order))
+                if v.status == .paused, v.pauses.last?.endedAt != nil || v.pauses.isEmpty { throw DataProblem.invalid("暂停状态缺少区间") }
                 var previousEnd = v.started.instant
                 for (index, pause) in v.pauses.enumerated() {
                     guard pause.startedAt >= previousEnd, pause.endedAt == nil || pause.endedAt! >= pause.startedAt,
@@ -136,6 +137,16 @@ enum DomainValidation {
                         try number(set.loadKg, max: 5000); try integer(set.repetitions)
                         try number(set.durationSeconds, max: 604800); try number(set.distanceMeters, max: 10_000_000)
                         try number(set.accumulatedSeconds, max: 604800)
+                        if let started = set.timerStartedAt {
+                            guard started.timeIntervalSince1970.isFinite, started >= v.started.instant,
+                                  v.status == .active, set.completedAt == nil,
+                                  [.duration, .cardio].contains(exercise.snapshot.measurement) else { throw DataProblem.invalid("动作计时状态") }
+                        }
+                        if let completed = set.completedAt {
+                            guard completed.timeIntervalSince1970.isFinite, completed >= v.started.instant,
+                                  v.endedAt == nil || completed <= v.endedAt! else { throw DataProblem.invalid("组完成时间") }
+                            try WorkoutEngine.validateActual(set, measurement: exercise.snapshot.measurement)
+                        }
                         if let effort = set.effort { try number(effort.value, max: 10) }
                     }
                 }

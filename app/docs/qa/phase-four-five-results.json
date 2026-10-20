@@ -1,0 +1,26 @@
+{
+  "method": "Latest outcome per test method across full regression and targeted reruns; this is not one all-green run",
+  "unitTestsPassed": 76,
+  "functionalUITestsPassed": 29,
+  "separateSystemNotificationTestsPassed": 1,
+  "totalUniqueCoveredTests": 106,
+  "unresolvedFunctionalFailures": 0,
+  "singleRunFailuresRetained": true,
+  "sourceResults": [
+    "phase-four-five-full-run.json",
+    "phase-four-five-regression-run.json",
+    "phase-four-five-diary-results.json",
+    "phase-four-five-notification-results.json"
+  ],
+  "pendingDeviceChecks": [
+    "notification background/lock-screen delivery and Focus modes",
+    "iOS 18 hardware",
+    "VoiceOver",
+    "physical file protection"
+  ],
+  "pendingProductPhases": [
+    "U6 HealthKit imports",
+    "U7 HealthKit export/reconciliation",
+    "U8 release acceptance"
+  ]
+}

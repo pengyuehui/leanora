@@ -29,13 +29,21 @@ struct TemplateEditorView: View {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text("\(index + 1). \(training.exercise(item.exerciseID)?.name ?? "动作不可用")")
                                 Text("\(item.plannedSets) 组 · 休息 \(item.restSeconds.formatted()) 秒").font(.caption).foregroundStyle(.secondary)
+                                if item.supersetID != nil { Text("超级组").font(.caption).foregroundStyle(LeanoraTheme.accent) }
                             }.frame(maxWidth: .infinity, alignment: .leading)
                         }.buttonStyle(.plain).accessibilityIdentifier("template.item.\(index)")
                         Menu {
                             Button("复制此动作") { var copy = item; copy.id = UUID(); copy.supersetID = nil; draft.items.insert(copy, at: index + 1) }
                             Button("上移") { draft.items.swapAt(index, index - 1) }.disabled(index == 0)
                             Button("下移") { draft.items.swapAt(index, index + 1) }.disabled(index == draft.items.count - 1)
-                            Button("移除此动作", role: .destructive) { draft.items.remove(at: index) }
+                            if item.supersetID != nil {
+                                Button("解除超级组") { unpair(item.supersetID) }
+                            } else if canPair(index) {
+                                Button("与下一动作组成超级组") {
+                                    let id = UUID(); draft.items[index].supersetID = id; draft.items[index + 1].supersetID = id
+                                }
+                            }
+                            Button("移除此动作", role: .destructive) { unpair(item.supersetID); draft.items.remove(at: index) }
                         } label: { Image(systemName: "ellipsis.circle").frame(width: 44, height: 44) }
                         .accessibilityLabel("动作 \(index + 1) 的操作").accessibilityIdentifier("template.itemMenu.\(index)")
                     }
@@ -86,6 +94,17 @@ struct TemplateEditorView: View {
         }
         .confirmationDialog("放弃尚未保存的修改？", isPresented: $discarding, titleVisibility: .visible) {
             Button("放弃修改", role: .destructive) { dismiss() }
+        }
+    }
+    private func unpair(_ id: UUID?) {
+        guard let id else { return }
+        for i in draft.items.indices where draft.items[i].supersetID == id { draft.items[i].supersetID = nil }
+    }
+    private func canPair(_ index: Int) -> Bool {
+        guard index + 1 < draft.items.count, draft.items[index + 1].supersetID == nil else { return false }
+        return [draft.items[index], draft.items[index + 1]].allSatisfy { item in
+            guard let exercise = training.exercise(item.exerciseID) else { return false }
+            return [.externalLoad, .bodyweight, .assistedLoad].contains(exercise.measurement)
         }
     }
 }

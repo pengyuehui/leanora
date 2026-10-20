@@ -1,0 +1,10 @@
+{
+  "source": "leanora-sr-legacy.zip",
+  "sha256": "0fe8ae486a2c8eb42cb96413f058deb51863a46c8fb8eeb4b1fb45006dd338ef",
+  "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_json_2018-04.zip",
+  "license": "CC0-1.0",
+  "records": 300,
+  "translatedNames": 29,
+  "retrievedOn": "2026-10-20",
+  "method": "Common foods plus 20 alphabetic entries per category, fill by FDC ID to 300. No nutrient imputation. USDA portions retain their original amount and gram weight. English names remain searchable."
+}

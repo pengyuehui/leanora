@@ -157,6 +157,7 @@ struct DataManagementView: View {
             notice = "导入完成：新增 \(result.inserted)，更新 \(result.updated)，跳过 \(result.skipped)。健康写入保持暂停，待重新连接并核对。"
             await refresh()
             await store.training?.refresh()
+            await store.journal?.refresh()
         } catch { self.error = error.localizedDescription }
     }
 }
