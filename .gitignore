@@ -8,7 +8,9 @@ sources/
 analysis/inputs/
 analysis/evidence/
 tools/android/
-tools/rea/
+tools/rea/*
+!tools/rea/package.json
+!tools/rea/package-lock.json
 *.apk
 *.ipa
 *.xcresult/
