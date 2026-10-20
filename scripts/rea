@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+rea_task_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+export REA_JADX_MCP_JAR="$rea_task_root/tools/android/jadx-headless-mcp-0.7.1-all.jar"
+exec /Users/pengyuehui/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node "$rea_task_root/tools/rea/node_modules/rea-agents/scripts/rea.mjs" "$@"

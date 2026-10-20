@@ -1,0 +1,1197 @@
+{
+  "sourceLanguage": "zh-Hans",
+  "strings": {
+    "动作、训练模板、周安排、已开始训练和目标保存在本机，无需账号。数据库和升级恢复副本采用设备数据保护，并排除系统自动云备份。逐组执行与饮食录入将在后续阶段提供。": {
+      "extractionState": "manual"
+    },
+    "完成": {
+      "comment": "收起数字键盘。",
+      "extractionState": "manual"
+    },
+    "清除热量目标": {
+      "comment": "清除可选目标的无障碍标签。",
+      "extractionState": "manual"
+    },
+    "上次请求范围内可写：%lld / %lld 种数据类型": {
+      "comment": "仅报告写入授权；不代表读取权限或已同步。",
+      "extractionState": "manual"
+    },
+    "今天": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "训练": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "饮食": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "趋势": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "我的": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "身体数据": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "饮食营养": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "日常活动": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "体重、体脂率": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "训练摘要与运动时长": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "热量、蛋白质、脂肪、碳水": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "步数、活动能量 · 只读": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每一组，\n都值得记住。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "一日三餐，\n照顾好自己。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "变化很慢，\n记录看得见。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "还没有训练记录": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "还没有饮食记录": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "还没有可展示的趋势": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "训练日记会留住动作、重量与次数。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "饮食日记会整理餐别、份量与营养。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "有了真实的记录，才能看见自己的节奏。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "设置单位与目标": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "先了解，\n再按自己的节奏来。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "计划与实际分开": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "模板描述打算怎么练，训练日记留下实际完成的内容。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "重量、次数与时间": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "力量与计时动作各有适合的记录方式，不必都换算成同一种数字。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "份量先说清楚": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "克、份或杯需要明确换算，营养数据才有可比性。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "未知就是未知": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "只知道热量时，蛋白质、脂肪和碳水可以留空。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "看长期，也看来源": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "单次变化不代表长期趋势；不同来源的数据需要清楚标记。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "健康访问可选": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "可以先在「我的」中设置 Apple Health 访问范围。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "你的节奏，你的记录。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "按照你的习惯": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "单位与目标": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "通知访问": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "数据由你掌握": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "隐私与数据": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "一步一步，留下属于自己的进步。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "隐私与数据说明 · 2026.10.20": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "你的数据，\n始终属于你。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "本机保存": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "当前版本在设备中保存单位、手动目标和首次使用状态，无需创建账号。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "健康访问按需开启": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "仅在你点击后向系统请求选定类型的访问。当前版本不读取、不写入健康记录。系统不会向 App 明确透露读取权限是否被拒绝。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "没有广告或追踪": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "不上传健康资料，不接入广告、第三方分析或 AI 服务，也不使用 CloudKit 同步。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "随时调整": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "单位和目标可在「我的」修改。健康与通知权限可在系统中撤回。卸载 App 会移除本机保存的偏好；设备备份行为由系统设置管理。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "此说明对应 Leanora 0.1 的实际功能。新增记录或同步功能时，会更新数据用途与隐私说明。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "在需要时，轻轻提醒。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "通知用于训练与休息提醒。即使不允许通知，也能继续使用 App。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "系统通知权限": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "正在检查…": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "尚未设置": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "已允许通知": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "通知未开启": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "你仍可继续使用全部页面。需要提醒时，可在系统设置中允许通知。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "未能完成通知请求，请稍后重试。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "打开系统设置": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "允许通知": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "你的健康数据，由你决定。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "选择访问范围后，再在系统页面确认。你可以随时在「健康」App 中调整权限。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "此处设置访问权限，不会读取或写入健康记录。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "读取": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "写入": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "正在等待系统回应…": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "在系统中设置访问": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "请先选择至少一种访问范围。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "此设备无法使用 Apple Health": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "你仍可使用 App，也可以稍后在支持的 iPhone 上设置健康访问。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "关于读取权限": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "系统不会告知 App 是否获得了某项读取权限。没有读到数据，也可能是暂时没有可访问的记录。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "曾完成系统访问设置。你可以重新检查访问范围。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "已完成系统访问设置": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "读取范围以系统允许为准。这不表示所有数据类型都已授权，也不表示记录已同步。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "未能完成系统请求。你可以重试，或稍后在健康访问中设置。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "今天，也为自己。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "让好习惯，\n慢慢发生。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "记录不必完美，真实就很好。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "今天还没有记录": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "训练日记": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每一组，都有它的意义。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "饮食日记": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "从一日三餐，看见日常。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "身体与趋势": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "给变化一点时间。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "按照你的节奏": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每周训练": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "未设置": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每日热量目标": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "调整单位与目标": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "上一步": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "属于你的训练与饮食日记": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每一次，\n都算数。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "把训练、饮食和身体的变化，\n留在一份从容的记录里。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "专注每一组": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "让每次训练都有迹可循。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "看见日常饮食": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "用自己的节奏，慢慢建立习惯。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "由你掌握数据": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "无需注册，健康访问按需开启。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "开始设置": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "不必一次准备好所有事情。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "先从你的习惯开始": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "用你熟悉的方式。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "选择单位；目标可以先留空。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "下一步": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "按需开启 · 随时调整": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "连接健康，\n也可以稍后再说。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "由你选择可以读取和写入的数据类型。跳过不会影响进入 App。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "设置 Apple Health 访问": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "进入 Leanora": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "隐私与数据说明": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "重量单位": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "距离单位": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "常用单位": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "暂不设置": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "选填": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "你的目标 · 可选": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "按自己的计划填写，也可以稍后在「我的」中修改。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "保存": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "公斤 · kg": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "磅 · lb": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "公里 · km": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "英里 · mi": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "热量目标请填写 1 至 20000 之间的整数，或留空。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每周训练天数请选择 1 至 7 天，或暂不设置。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "偏好设置无法读取，请重新确认单位与目标。": {
+      "comment": "Leanora 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "数据管理": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "业务记录": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "本机资料库": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "条数包含身份、模板、目标、自定义资料与删除标记；不包含 Apple Health 缓存。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "导出 JSON 备份": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "选择 JSON 备份": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "备份含敏感的训练、饮食和身体资料。导出为未加密 JSON，请选择可信的位置。备份保留业务 ID，不包含健康样本、游标或同步任务。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "导入预览": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "新增": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "较新版本": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "较旧版本 · 跳过": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "相同内容 · 跳过": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "同版本冲突 · 保留本机": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "此备份属于另一身份。替换会移除当前业务记录与设备健康缓存，Apple Health 中的样本会保留。请先导出当前数据。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "确认整库替换": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "采用备份中较新的版本": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "确认导入": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "取消预览": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "正在处理…": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "替换当前资料库？": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "已导出，整库替换": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "当前资料会被备份内容替换。不会删除 Apple Health 中的样本。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "资料曾从备份恢复。健康写入仍暂停，后续需重新连接并核对已有样本。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "导入限制：50MB、10 万条业务记录。预检失败不会修改本机资料。导入后暂不生成健康写入任务，后续需重新连接健康并核对样本。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "备份已导出，请妥善保管。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "资料库暂不可用": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "查看升级恢复副本": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "升级恢复副本": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "恢复此时间点的资料？": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "恢复所选副本": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "关闭": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "当前文件会另存保留。所选副本之后的记录可能需要从 JSON 备份重新导入。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "恢复到所选时间点。当前文件会另外保留，不删除 Apple Health 中的样本。请优先重试打开；只有升级无法继续时才使用旧副本。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "正在打开本机资料库…": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "本机数据库暂时无法打开。请解锁设备后重试。升级前恢复副本与原库会保留，不会自动清空记录。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "%lld 条": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "身份：%@": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "手动备份": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "备份未能导出，请重试。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "备份文件未能打开，请重试。": {
+      "comment": "Leanora U2 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "上移": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "下移": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "仅改这一次日期": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "保存改期": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "保存目标": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "保留这次放弃记录，之后可以重新开始训练。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "先添加动作和计划目标，再安排每周训练。模板可随时调整。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "全部器械": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "全部肌群": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "内容来源": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "删除模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "删除此模板？": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "别名，以顿号分隔": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "前一天": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "副本使用新的项目 ID，不复制每周安排。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "动作不可用": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "动作名称": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "动作库": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "动作详情": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "动作资料": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "单次改期": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "取消": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "只更改这一次安排；模板的每周日期保持不变。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "同一动作可多次添加；每个项目独立保存。点击项目配置目标，或使用右侧菜单调整顺序。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "后一天": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周一": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周三": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周二": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周五": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周六": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周四": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周日": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周计划": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "周计划与单次安排": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "器械": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "基础目录由 Leanora 独立整理。未提供动作教学或第三方图片；每个条目可查看来源。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "备注": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "备注（可选）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "复制模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "复制此动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "开始当天训练": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "开始训练": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "归档动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "归档后不出现在默认动作库；已有模板与训练历史会保留。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "当天安排": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "当天没有安排。可在下面编辑模板的每周安排。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "恢复动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "我的模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "把每次训练，安排成自己的节奏。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "搜索名称或别名": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "放弃修改": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "放弃尚未保存的修改？": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "放弃本次训练": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "放弃本次训练？": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "新建自定义动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "新建训练模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "更改动作归档状态？": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "最低次数": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "最高次数": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "未设置周安排": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "本次训练": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "查看已归档动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "查看日期": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "模板与未来每周安排将移除，已开始的训练快照会保留。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "模板名称": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "模板已移除": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "模板资料": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "此动作已归档，开始前需替换或恢复": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每周安排": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每周安排 · 编辑模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每周安排跟随模板；单次改期单独保存，不改变下周。只能开始今天的安排。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "每组目标（可选）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "没有匹配动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "添加动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标时长（秒）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标负重（kg）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标负重（lb）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标距离（km）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标距离（mi）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "确认放弃": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "移到明天": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "移至日期": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "移除此动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "空模板还不能开始，请先添加动作。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "筛选": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "组间休息（秒）": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "编辑模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "编辑自定义动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "编辑训练模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "肌群": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "肌群，以顿号分隔": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "自定义内容由你创建；修改资料不会改写已保存的训练快照。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "自定义动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "计划动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "计划已独立保存。模板之后的修改不会改变这次训练。逐组记录将在下一阶段提供。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "计划目标": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "训练已开始": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "训练模板": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "记录类型": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "调整筛选条件，或创建自己的动作。": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "这次安排已开始": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "选择动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "%lld 个动作 · %@": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "%lld 组 · 休息 %@ 秒": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "%lld 个动作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "%lld. %@": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "计划组数：%lld": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标次数：%lld–%lld": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标时长：%@ 秒": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标负重：%@ %@": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "目标距离：%@ m": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "组间休息：%@ 秒": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "返回进行中的训练：%@": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "从 %@ 移至当天": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "原安排：%@": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "别名：%@": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "动作 %lld 的操作": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "%lld 个计划组 · 尚未完成": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "按自己的节奏安排今天": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "有一场训练正在进行": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "返回进行中的训练": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    },
+    "今天的训练安排": {
+      "comment": "Leanora U3 原创界面文案；简体中文为源语言。",
+      "extractionState": "manual"
+    }
+  },
+  "version": "1.0"
+}

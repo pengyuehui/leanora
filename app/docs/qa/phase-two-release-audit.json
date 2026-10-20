@@ -1,0 +1,13 @@
+{
+  "release_built": true,
+  "debug_markers_present": {
+    "--uitesting": false,
+    "--backup-fixtures": false,
+    "--store-open-failed": false,
+    "UITestBackupFixtures": false,
+    "Leanora-valid.json": false,
+    "UITestHealthAuthorizer": false,
+    "injectCommitFailure": false
+  },
+  "privacy_manifest_valid": true
+}

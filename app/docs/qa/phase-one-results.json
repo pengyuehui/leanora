@@ -1,0 +1,32 @@
+{
+  "result": "Passed",
+  "totalTestCount": 19,
+  "passedTests": 19,
+  "failedTests": 0,
+  "skippedTests": 0,
+  "runtimeWarnings": [],
+  "startTime": 1792483275.763,
+  "finishTime": 1792483450.707,
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "66B1A0D1-66CE-485A-8025-68159A88EEB9",
+        "deviceName": "Leanora U1 Verified",
+        "modelName": "iPhone",
+        "osBuildNumber": "24A94425",
+        "osVersion": "27.1",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 0,
+      "passedTests": 19,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "runtimeWarningCount": 0
+}

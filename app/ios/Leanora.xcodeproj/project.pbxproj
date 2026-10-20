@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CCCF71A19EFC495C126EB3C /* NutritionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4BD5D5033EBDB2BDDE26E /* NutritionModels.swift */; };
+		125E08F0FE0F4B973824B692 /* NotificationPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA524E35AD5F8264B8AC3479 /* NotificationPermissionService.swift */; };
+		1334BC4C07705793E372D796 /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E603F954BAAF1E3E270CB4 /* WorkoutModels.swift */; };
+		13AE6480DFBD3D5069825824 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C7A4B58BDD9F3E1342DF70 /* exercises.json */; };
+		1C6A9C8E44E67CA22265DFF5 /* DataManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37503645E6E8A3DA7A47217C /* DataManagementTests.swift */; };
+		1DA06D6DED6481D7DFF161B0 /* AppModelActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B4655E06A428FAFD7F2AC /* AppModelActor.swift */; };
+		1E5E731EFA78055C385F464B /* BusinessRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E743AAAA5FE7B622C6E94B0 /* BusinessRecord.swift */; };
+		1EDACE17966584DCDD1D524F /* TrainingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF04EEB660A0012E957EC66 /* TrainingRepository.swift */; };
+		26A8E871E6D656EA10714C9E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A65F21860EFDAED66A936 /* OnboardingView.swift */; };
+		26DE33B9085AA36FAF3FA030 /* TrainingTargetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392A93388960A8E1C9058DD /* TrainingTargetInput.swift */; };
+		2816EC55F8532AA22B9F420F /* BackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4EA786AA4BDE1BFD8E769 /* BackupTests.swift */; };
+		3719FD150524DA20486D9A6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358D1BE1853DBA4F32F6B345 /* Foundation.framework */; };
+		40BF8A8972DFE7DE98EBAC31 /* DataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F331355978A760A23BFF16 /* DataStoreController.swift */; };
+		456F17C75B1FCAACF184E30B /* ExerciseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D826432357CF1687E6328 /* ExerciseCatalog.swift */; };
+		472208DD8408168439770F9B /* AppSchemaMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3129936833F38F8C3CF063 /* AppSchemaMigrationPlan.swift */; };
+		4D2B0B00D2B09DA72E3DCC34 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FFD175A6ABD4CF232C3389 /* PersistenceTests.swift */; };
+		503413AC8B4C31D81B384DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62402A122B26128A860F610F /* Assets.xcassets */; };
+		507121029E3A6A9A7689D465 /* TrainingPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C50E4FC35726FCD6B0B608 /* TrainingPlanTests.swift */; };
+		5143A4AB4EA8B86BBC76FD03 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97872D4C332ACDCD871909D3 /* OnboardingTests.swift */; };
+		559AB266A9693D070B3F4587 /* DataFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BBD289C65CA0A1C0CE015 /* DataFixtures.swift */; };
+		58E27B7FF52C4C86B3FFD564 /* UITestBackupFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABEAA633EE374BE9113168 /* UITestBackupFixtures.swift */; };
+		5D5B9158462E8048A8C695A8 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AE812DDAB104A3A57C7C1 /* PrivacyView.swift */; };
+		641EC7F77E32F87B37CA9BAF /* HealthSyncModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB044A526940C676B75F967 /* HealthSyncModels.swift */; };
+		701A639A53BE50B8A5E9D702 /* StoreUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D093DE0F6FE10F5454194 /* StoreUnavailableView.swift */; };
+		713AE5B85704FBBCAC5F97DE /* MigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3D02CB1B4EC119BACE2A5 /* MigrationTests.swift */; };
+		72168454B570D1E593F073AB /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D7EAE92FA94A7E5ADC226 /* AppPreferences.swift */; };
+		7D067BF2833B42D1AAE224C8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AD33FF92A54A75852875153F /* PrivacyInfo.xcprivacy */; };
+		8788D84D28934E49A2FBC88F /* JournalLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E805B7DE8E675A12D2D8F8 /* JournalLandingView.swift */; };
+		8BF5A6237B446702BC67964F /* LeanoraTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4FC218045BE6DE53F9D7A6 /* LeanoraTheme.swift */; };
+		8D3F92D09BE0F6DE7A85F467 /* HealthConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AD704552F8A214D04DAD /* HealthConnectionView.swift */; };
+		8D8E67FF31DE03D9A97A592C /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F9AB1596291A4ED4BAA8A1 /* DataManagementView.swift */; };
+		9DAFB63CE77F1CC79FACF050 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358D1BE1853DBA4F32F6B345 /* Foundation.framework */; };
+		9F1BFB008FCB69D5699C6826 /* ExerciseLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F65704B7C31CC15F1172A /* ExerciseLibraryView.swift */; };
+		9F90F0BC4BE6531A878792C3 /* LeanoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EC6E74A38BCEF0281133C /* LeanoraApp.swift */; };
+		A0089BD14C7365CD1BB150D2 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3B3C853E132AC2F52DB76 /* NotificationSettingsView.swift */; };
+		A38454E32557FA1BE9A3299C /* StoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62A0A32A4913279F91F1A2 /* StoreFactory.swift */; };
+		A8B55D13CFC9B06CAD178617 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358D1BE1853DBA4F32F6B345 /* Foundation.framework */; };
+		AC54019905F2509D69B77854 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9815740C3BB911ACEC3FEE7E /* Localizable.xcstrings */; };
+		ACB572DB5222F51D96F7FC60 /* TrainingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD12B75C96F56D1C9260A9D /* TrainingHomeView.swift */; };
+		B1EEE3EE749E492647C4D42E /* TrainingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1344557FBA86921C8C31D0 /* TrainingPlan.swift */; };
+		B802D070868C2DBFCEEE27DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3788E594B055FB83FEB2A65 /* SettingsView.swift */; };
+		BCCAC7CFFF99619CD38F63A4 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A6AC769491B37EDB3672A /* TodayView.swift */; };
+		BE8B280B4FA087CDE30DB4D3 /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE55113C979BCA88834BF0 /* BackupService.swift */; };
+		C539AC0F0B27934012CC5FAF /* HealthAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98465EF98EC74148FAFAE85F /* HealthAuthorizationService.swift */; };
+		D46EC4673209F28D998D82F9 /* TemplateEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EAC4673F172538A6B60DE2 /* TemplateEditorView.swift */; };
+		E3355FA6B38FAE461083DECD /* PreferencesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF714C4A76101EBDD7479F /* PreferencesForm.swift */; };
+		E3F05128014BF13E8091D3B0 /* TemplateEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6A5677CD906856355CA5B /* TemplateEditorTests.swift */; };
+		E4903C24C18A9CED8D703E39 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E58C0117A88AFD416CBED0 /* MainTabView.swift */; };
+		E8E86BF54B3D1438462109A1 /* FoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD469C170FFB3234A7C9EFC /* FoundationTests.swift */; };
+		ECEBC2CDA0FB1034E89F7B6F /* WeeklyPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F33F03AED756345E819269 /* WeeklyPlanView.swift */; };
+		EEE6D9E4FBD4B97165586159 /* TrainingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF68C02E1990E7C06E623F0 /* TrainingStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6163344723EE68F1B4985F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83FC74F42B87E544C2D2F36C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDECE30F53EA00CEEF726191;
+			remoteInfo = Leanora;
+		};
+		B58A7ADDFD0DDC603FEE57EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83FC74F42B87E544C2D2F36C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDECE30F53EA00CEEF726191;
+			remoteInfo = Leanora;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03E805B7DE8E675A12D2D8F8 /* JournalLandingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JournalLandingView.swift; path = Features/Journal/JournalLandingView.swift; sourceTree = "<group>"; };
+		0AD469C170FFB3234A7C9EFC /* FoundationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FoundationTests.swift; sourceTree = "<group>"; };
+		0BF04EEB660A0012E957EC66 /* TrainingRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingRepository.swift; path = Core/Training/TrainingRepository.swift; sourceTree = "<group>"; };
+		0E1344557FBA86921C8C31D0 /* TrainingPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingPlan.swift; path = Core/Training/TrainingPlan.swift; sourceTree = "<group>"; };
+		0FB044A526940C676B75F967 /* HealthSyncModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncModels.swift; path = Core/Domain/HealthSyncModels.swift; sourceTree = "<group>"; };
+		182F65704B7C31CC15F1172A /* ExerciseLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExerciseLibraryView.swift; path = Features/Training/ExerciseLibraryView.swift; sourceTree = "<group>"; };
+		1B2A65F21860EFDAED66A936 /* OnboardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = Features/Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
+		20F4BD5D5033EBDB2BDDE26E /* NutritionModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionModels.swift; path = Core/Domain/NutritionModels.swift; sourceTree = "<group>"; };
+		21BE55113C979BCA88834BF0 /* BackupService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackupService.swift; path = Core/Backup/BackupService.swift; sourceTree = "<group>"; };
+		236D7EAE92FA94A7E5ADC226 /* AppPreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppPreferences.swift; path = Core/Preferences/AppPreferences.swift; sourceTree = "<group>"; };
+		2A8D093DE0F6FE10F5454194 /* StoreUnavailableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreUnavailableView.swift; path = App/StoreUnavailableView.swift; sourceTree = "<group>"; };
+		2DD12B75C96F56D1C9260A9D /* TrainingHomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingHomeView.swift; path = Features/Training/TrainingHomeView.swift; sourceTree = "<group>"; };
+		2FF34F4B1AE78C9F5FE22204 /* Leanora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leanora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		358D1BE1853DBA4F32F6B345 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		35E58C0117A88AFD416CBED0 /* MainTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = App/MainTabView.swift; sourceTree = "<group>"; };
+		37503645E6E8A3DA7A47217C /* DataManagementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataManagementTests.swift; sourceTree = "<group>"; };
+		45F33F03AED756345E819269 /* WeeklyPlanView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeeklyPlanView.swift; path = Features/Training/WeeklyPlanView.swift; sourceTree = "<group>"; };
+		48C7A4B58BDD9F3E1342DF70 /* exercises.json */ = {isa = PBXFileReference; includeInIndex = 1; name = exercises.json; path = Resources/Catalog/exercises.json; sourceTree = "<group>"; };
+		4FA6A5677CD906856355CA5B /* TemplateEditorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateEditorTests.swift; sourceTree = "<group>"; };
+		5392A93388960A8E1C9058DD /* TrainingTargetInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingTargetInput.swift; path = Core/Training/TrainingTargetInput.swift; sourceTree = "<group>"; };
+		55FFD175A6ABD4CF232C3389 /* PersistenceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
+		5AF68C02E1990E7C06E623F0 /* TrainingStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingStore.swift; path = Features/Training/TrainingStore.swift; sourceTree = "<group>"; };
+		62402A122B26128A860F610F /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		631EC6E74A38BCEF0281133C /* LeanoraApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanoraApp.swift; path = App/LeanoraApp.swift; sourceTree = "<group>"; };
+		6B076FAF8E0D71D2605C0862 /* Leanora.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Leanora.entitlements; sourceTree = "<group>"; };
+		6E743AAAA5FE7B622C6E94B0 /* BusinessRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BusinessRecord.swift; path = Core/Domain/BusinessRecord.swift; sourceTree = "<group>"; };
+		6F4FC218045BE6DE53F9D7A6 /* LeanoraTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanoraTheme.swift; path = Design/LeanoraTheme.swift; sourceTree = "<group>"; };
+		76E603F954BAAF1E3E270CB4 /* WorkoutModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutModels.swift; path = Core/Domain/WorkoutModels.swift; sourceTree = "<group>"; };
+		772259AFB71552FD85029BDD /* LeanoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF3D02CB1B4EC119BACE2A5 /* MigrationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MigrationTests.swift; sourceTree = "<group>"; };
+		7E3129936833F38F8C3CF063 /* AppSchemaMigrationPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppSchemaMigrationPlan.swift; path = Core/Persistence/AppSchemaMigrationPlan.swift; sourceTree = "<group>"; };
+		80ABEAA633EE374BE9113168 /* UITestBackupFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITestBackupFixtures.swift; path = App/UITestBackupFixtures.swift; sourceTree = "<group>"; };
+		8D62A0A32A4913279F91F1A2 /* StoreFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreFactory.swift; path = Core/Persistence/StoreFactory.swift; sourceTree = "<group>"; };
+		90EAC4673F172538A6B60DE2 /* TemplateEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateEditorView.swift; path = Features/Training/TemplateEditorView.swift; sourceTree = "<group>"; };
+		96F331355978A760A23BFF16 /* DataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataStoreController.swift; path = App/DataStoreController.swift; sourceTree = "<group>"; };
+		97872D4C332ACDCD871909D3 /* OnboardingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
+		9815740C3BB911ACEC3FEE7E /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = "<group>"; };
+		98465EF98EC74148FAFAE85F /* HealthAuthorizationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthAuthorizationService.swift; path = Integrations/HealthKit/HealthAuthorizationService.swift; sourceTree = "<group>"; };
+		9914AD704552F8A214D04DAD /* HealthConnectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthConnectionView.swift; path = Features/Settings/HealthConnectionView.swift; sourceTree = "<group>"; };
+		A8C3B3C853E132AC2F52DB76 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationSettingsView.swift; path = Features/Settings/NotificationSettingsView.swift; sourceTree = "<group>"; };
+		AD33FF92A54A75852875153F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		AEC74AB0E5D196E7F45DE658 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		B09D826432357CF1687E6328 /* ExerciseCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExerciseCatalog.swift; path = Core/Training/ExerciseCatalog.swift; sourceTree = "<group>"; };
+		BA524E35AD5F8264B8AC3479 /* NotificationPermissionService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationPermissionService.swift; path = Core/Notifications/NotificationPermissionService.swift; sourceTree = "<group>"; };
+		BD6BBD289C65CA0A1C0CE015 /* DataFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataFixtures.swift; sourceTree = "<group>"; };
+		BD8A6AC769491B37EDB3672A /* TodayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TodayView.swift; path = Features/Today/TodayView.swift; sourceTree = "<group>"; };
+		C3788E594B055FB83FEB2A65 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Features/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		C4F9AB1596291A4ED4BAA8A1 /* DataManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataManagementView.swift; path = Features/Settings/DataManagementView.swift; sourceTree = "<group>"; };
+		C651648492135F975332C98C /* LeanoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C50E4FC35726FCD6B0B608 /* TrainingPlanTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainingPlanTests.swift; sourceTree = "<group>"; };
+		D8C4EA786AA4BDE1BFD8E769 /* BackupTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackupTests.swift; sourceTree = "<group>"; };
+		DD5B4655E06A428FAFD7F2AC /* AppModelActor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppModelActor.swift; path = Core/Persistence/AppModelActor.swift; sourceTree = "<group>"; };
+		E17AE812DDAB104A3A57C7C1 /* PrivacyView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrivacyView.swift; path = Features/Settings/PrivacyView.swift; sourceTree = "<group>"; };
+		F2FF714C4A76101EBDD7479F /* PreferencesForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencesForm.swift; path = Features/Onboarding/PreferencesForm.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		876847CB5D497DA65DB8DF6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3719FD150524DA20486D9A6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F48377D08A303B29B55F4ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DAFB63CE77F1CC79FACF050 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C16191C6D4BCD3A5DA14065B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8B55D13CFC9B06CAD178617 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00444F2D0DF78AF4EEC0B55F /* LeanoraTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8C4EA786AA4BDE1BFD8E769 /* BackupTests.swift */,
+				BD6BBD289C65CA0A1C0CE015 /* DataFixtures.swift */,
+				0AD469C170FFB3234A7C9EFC /* FoundationTests.swift */,
+				7BF3D02CB1B4EC119BACE2A5 /* MigrationTests.swift */,
+				55FFD175A6ABD4CF232C3389 /* PersistenceTests.swift */,
+				C9C50E4FC35726FCD6B0B608 /* TrainingPlanTests.swift */,
+			);
+			name = LeanoraTests;
+			path = LeanoraTests;
+			sourceTree = "<group>";
+		};
+		241B1324C17893638D3F1B98 = {
+			isa = PBXGroup;
+			children = (
+				A18A2A8051FF66E9985A53C0 /* Products */,
+				39DCA6C6D819F1DE3461C3DB /* Frameworks */,
+				2D240697D19060AFC6B6EBDE /* Leanora */,
+				00444F2D0DF78AF4EEC0B55F /* LeanoraTests */,
+				BBCC26841435DB7C4F223CF3 /* LeanoraUITests */,
+			);
+			sourceTree = "<group>";
+		};
+		2D240697D19060AFC6B6EBDE /* Leanora */ = {
+			isa = PBXGroup;
+			children = (
+				96F331355978A760A23BFF16 /* DataStoreController.swift */,
+				631EC6E74A38BCEF0281133C /* LeanoraApp.swift */,
+				35E58C0117A88AFD416CBED0 /* MainTabView.swift */,
+				2A8D093DE0F6FE10F5454194 /* StoreUnavailableView.swift */,
+				80ABEAA633EE374BE9113168 /* UITestBackupFixtures.swift */,
+				21BE55113C979BCA88834BF0 /* BackupService.swift */,
+				6E743AAAA5FE7B622C6E94B0 /* BusinessRecord.swift */,
+				0FB044A526940C676B75F967 /* HealthSyncModels.swift */,
+				20F4BD5D5033EBDB2BDDE26E /* NutritionModels.swift */,
+				76E603F954BAAF1E3E270CB4 /* WorkoutModels.swift */,
+				BA524E35AD5F8264B8AC3479 /* NotificationPermissionService.swift */,
+				DD5B4655E06A428FAFD7F2AC /* AppModelActor.swift */,
+				7E3129936833F38F8C3CF063 /* AppSchemaMigrationPlan.swift */,
+				8D62A0A32A4913279F91F1A2 /* StoreFactory.swift */,
+				236D7EAE92FA94A7E5ADC226 /* AppPreferences.swift */,
+				B09D826432357CF1687E6328 /* ExerciseCatalog.swift */,
+				0E1344557FBA86921C8C31D0 /* TrainingPlan.swift */,
+				0BF04EEB660A0012E957EC66 /* TrainingRepository.swift */,
+				5392A93388960A8E1C9058DD /* TrainingTargetInput.swift */,
+				6F4FC218045BE6DE53F9D7A6 /* LeanoraTheme.swift */,
+				03E805B7DE8E675A12D2D8F8 /* JournalLandingView.swift */,
+				1B2A65F21860EFDAED66A936 /* OnboardingView.swift */,
+				F2FF714C4A76101EBDD7479F /* PreferencesForm.swift */,
+				C4F9AB1596291A4ED4BAA8A1 /* DataManagementView.swift */,
+				9914AD704552F8A214D04DAD /* HealthConnectionView.swift */,
+				A8C3B3C853E132AC2F52DB76 /* NotificationSettingsView.swift */,
+				E17AE812DDAB104A3A57C7C1 /* PrivacyView.swift */,
+				C3788E594B055FB83FEB2A65 /* SettingsView.swift */,
+				BD8A6AC769491B37EDB3672A /* TodayView.swift */,
+				182F65704B7C31CC15F1172A /* ExerciseLibraryView.swift */,
+				90EAC4673F172538A6B60DE2 /* TemplateEditorView.swift */,
+				2DD12B75C96F56D1C9260A9D /* TrainingHomeView.swift */,
+				5AF68C02E1990E7C06E623F0 /* TrainingStore.swift */,
+				45F33F03AED756345E819269 /* WeeklyPlanView.swift */,
+				98465EF98EC74148FAFAE85F /* HealthAuthorizationService.swift */,
+				6B076FAF8E0D71D2605C0862 /* Leanora.entitlements */,
+				48C7A4B58BDD9F3E1342DF70 /* exercises.json */,
+				AEC74AB0E5D196E7F45DE658 /* Info.plist */,
+				9815740C3BB911ACEC3FEE7E /* Localizable.xcstrings */,
+				AD33FF92A54A75852875153F /* PrivacyInfo.xcprivacy */,
+				62402A122B26128A860F610F /* Assets.xcassets */,
+			);
+			name = Leanora;
+			path = Leanora;
+			sourceTree = "<group>";
+		};
+		2FFB2CAE4F01FE53432EC27E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				358D1BE1853DBA4F32F6B345 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		39DCA6C6D819F1DE3461C3DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FFB2CAE4F01FE53432EC27E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A18A2A8051FF66E9985A53C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FF34F4B1AE78C9F5FE22204 /* Leanora.app */,
+				C651648492135F975332C98C /* LeanoraTests.xctest */,
+				772259AFB71552FD85029BDD /* LeanoraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBCC26841435DB7C4F223CF3 /* LeanoraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				37503645E6E8A3DA7A47217C /* DataManagementTests.swift */,
+				97872D4C332ACDCD871909D3 /* OnboardingTests.swift */,
+				4FA6A5677CD906856355CA5B /* TemplateEditorTests.swift */,
+			);
+			name = LeanoraUITests;
+			path = LeanoraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		813E4CB3E5A5CE0A53DC93EE /* LeanoraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CF7C21131F9AE5C5F29C20A /* Build configuration list for PBXNativeTarget "LeanoraUITests" */;
+			buildPhases = (
+				EECC8D35955BEA18B4037561 /* Sources */,
+				876847CB5D497DA65DB8DF6C /* Frameworks */,
+				DCD9678D6D173456E3B3301F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A95B345D82341D362029AEF /* PBXTargetDependency */,
+			);
+			name = LeanoraUITests;
+			productName = LeanoraUITests;
+			productReference = 772259AFB71552FD85029BDD /* LeanoraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B4ADBD2D1B791F0256BFFCFC /* LeanoraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E67C85D57172204066811107 /* Build configuration list for PBXNativeTarget "LeanoraTests" */;
+			buildPhases = (
+				418010AD5B14666667B5319C /* Sources */,
+				C16191C6D4BCD3A5DA14065B /* Frameworks */,
+				853FA53DF905DFA13CE98A5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E41DD8F342B04BF48A9E8499 /* PBXTargetDependency */,
+			);
+			name = LeanoraTests;
+			productName = LeanoraTests;
+			productReference = C651648492135F975332C98C /* LeanoraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BDECE30F53EA00CEEF726191 /* Leanora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0CB7272BC91E7AF1E6482B1 /* Build configuration list for PBXNativeTarget "Leanora" */;
+			buildPhases = (
+				49AF377C977D87264C1621A8 /* Sources */,
+				9F48377D08A303B29B55F4ED /* Frameworks */,
+				FBD3E2919AFF6070D8043E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Leanora;
+			productName = Leanora;
+			productReference = 2FF34F4B1AE78C9F5FE22204 /* Leanora.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83FC74F42B87E544C2D2F36C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					BDECE30F53EA00CEEF726191 = {
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 16CBA7A82F13BB86F3E087B9 /* Build configuration list for PBXProject "Leanora" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				"zh-Hans",
+				en,
+				Base,
+			);
+			mainGroup = 241B1324C17893638D3F1B98;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A18A2A8051FF66E9985A53C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDECE30F53EA00CEEF726191 /* Leanora */,
+				B4ADBD2D1B791F0256BFFCFC /* LeanoraTests */,
+				813E4CB3E5A5CE0A53DC93EE /* LeanoraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		853FA53DF905DFA13CE98A5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD9678D6D173456E3B3301F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD3E2919AFF6070D8043E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13AE6480DFBD3D5069825824 /* exercises.json in Resources */,
+				AC54019905F2509D69B77854 /* Localizable.xcstrings in Resources */,
+				7D067BF2833B42D1AAE224C8 /* PrivacyInfo.xcprivacy in Resources */,
+				503413AC8B4C31D81B384DC1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		418010AD5B14666667B5319C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2816EC55F8532AA22B9F420F /* BackupTests.swift in Sources */,
+				559AB266A9693D070B3F4587 /* DataFixtures.swift in Sources */,
+				E8E86BF54B3D1438462109A1 /* FoundationTests.swift in Sources */,
+				713AE5B85704FBBCAC5F97DE /* MigrationTests.swift in Sources */,
+				4D2B0B00D2B09DA72E3DCC34 /* PersistenceTests.swift in Sources */,
+				507121029E3A6A9A7689D465 /* TrainingPlanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49AF377C977D87264C1621A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40BF8A8972DFE7DE98EBAC31 /* DataStoreController.swift in Sources */,
+				9F90F0BC4BE6531A878792C3 /* LeanoraApp.swift in Sources */,
+				E4903C24C18A9CED8D703E39 /* MainTabView.swift in Sources */,
+				701A639A53BE50B8A5E9D702 /* StoreUnavailableView.swift in Sources */,
+				58E27B7FF52C4C86B3FFD564 /* UITestBackupFixtures.swift in Sources */,
+				BE8B280B4FA087CDE30DB4D3 /* BackupService.swift in Sources */,
+				1E5E731EFA78055C385F464B /* BusinessRecord.swift in Sources */,
+				641EC7F77E32F87B37CA9BAF /* HealthSyncModels.swift in Sources */,
+				0CCCF71A19EFC495C126EB3C /* NutritionModels.swift in Sources */,
+				1334BC4C07705793E372D796 /* WorkoutModels.swift in Sources */,
+				125E08F0FE0F4B973824B692 /* NotificationPermissionService.swift in Sources */,
+				1DA06D6DED6481D7DFF161B0 /* AppModelActor.swift in Sources */,
+				472208DD8408168439770F9B /* AppSchemaMigrationPlan.swift in Sources */,
+				A38454E32557FA1BE9A3299C /* StoreFactory.swift in Sources */,
+				72168454B570D1E593F073AB /* AppPreferences.swift in Sources */,
+				456F17C75B1FCAACF184E30B /* ExerciseCatalog.swift in Sources */,
+				B1EEE3EE749E492647C4D42E /* TrainingPlan.swift in Sources */,
+				1EDACE17966584DCDD1D524F /* TrainingRepository.swift in Sources */,
+				26DE33B9085AA36FAF3FA030 /* TrainingTargetInput.swift in Sources */,
+				8BF5A6237B446702BC67964F /* LeanoraTheme.swift in Sources */,
+				8788D84D28934E49A2FBC88F /* JournalLandingView.swift in Sources */,
+				26A8E871E6D656EA10714C9E /* OnboardingView.swift in Sources */,
+				E3355FA6B38FAE461083DECD /* PreferencesForm.swift in Sources */,
+				8D8E67FF31DE03D9A97A592C /* DataManagementView.swift in Sources */,
+				8D3F92D09BE0F6DE7A85F467 /* HealthConnectionView.swift in Sources */,
+				A0089BD14C7365CD1BB150D2 /* NotificationSettingsView.swift in Sources */,
+				5D5B9158462E8048A8C695A8 /* PrivacyView.swift in Sources */,
+				B802D070868C2DBFCEEE27DD /* SettingsView.swift in Sources */,
+				BCCAC7CFFF99619CD38F63A4 /* TodayView.swift in Sources */,
+				9F1BFB008FCB69D5699C6826 /* ExerciseLibraryView.swift in Sources */,
+				D46EC4673209F28D998D82F9 /* TemplateEditorView.swift in Sources */,
+				ACB572DB5222F51D96F7FC60 /* TrainingHomeView.swift in Sources */,
+				EEE6D9E4FBD4B97165586159 /* TrainingStore.swift in Sources */,
+				ECEBC2CDA0FB1034E89F7B6F /* WeeklyPlanView.swift in Sources */,
+				C539AC0F0B27934012CC5FAF /* HealthAuthorizationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EECC8D35955BEA18B4037561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6A9C8E44E67CA22265DFF5 /* DataManagementTests.swift in Sources */,
+				5143A4AB4EA8B86BBC76FD03 /* OnboardingTests.swift in Sources */,
+				E3F05128014BF13E8091D3B0 /* TemplateEditorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A95B345D82341D362029AEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Leanora;
+			target = BDECE30F53EA00CEEF726191 /* Leanora */;
+			targetProxy = B58A7ADDFD0DDC603FEE57EC /* PBXContainerItemProxy */;
+		};
+		E41DD8F342B04BF48A9E8499 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Leanora;
+			target = BDECE30F53EA00CEEF726191 /* Leanora */;
+			targetProxy = 6163344723EE68F1B4985F27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		000E238223EEC8478D5EFAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		18ACBD128608F8E26FA5064B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Leanora/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25FA4953A5EB0B9B496EDE13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraTests;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leanora";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D8CD02FF75B06094EE05F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraUITests;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Leanora;
+			};
+			name = Debug;
+		};
+		83A873894B80075CC385EAB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C0ABA1E6E88DDC0235BD2200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Leanora/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C7A4D22315B0A3E9F0847C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraTests;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leanora";
+			};
+			name = Debug;
+		};
+		FDA0D7EF01BB074E7E78A981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraUITests;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Leanora;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0CF7C21131F9AE5C5F29C20A /* Build configuration list for PBXNativeTarget "LeanoraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDA0D7EF01BB074E7E78A981 /* Release */,
+				2D8CD02FF75B06094EE05F6D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16CBA7A82F13BB86F3E087B9 /* Build configuration list for PBXProject "Leanora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83A873894B80075CC385EAB4 /* Debug */,
+				000E238223EEC8478D5EFAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0CB7272BC91E7AF1E6482B1 /* Build configuration list for PBXNativeTarget "Leanora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18ACBD128608F8E26FA5064B /* Release */,
+				C0ABA1E6E88DDC0235BD2200 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E67C85D57172204066811107 /* Build configuration list for PBXNativeTarget "LeanoraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25FA4953A5EB0B9B496EDE13 /* Release */,
+				C7A4D22315B0A3E9F0847C51 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83FC74F42B87E544C2D2F36C /* Project object */;
+}

@@ -1,0 +1,17 @@
+.DS_Store
+**/.DS_Store
+app/build/
+**/xcuserdata/
+**/.build/
+**/node_modules/
+sources/
+analysis/inputs/
+analysis/evidence/
+tools/android/
+tools/rea/
+*.apk
+*.ipa
+*.xcresult/
+.env
+.env.*
+!.env.example

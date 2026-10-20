@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "source": {"name": "Leanora 原创基础动作目录 · 2026-10", "license": "项目自有内容", "reference": "leanora:catalog/exercises/v1"},
+  "entries": [
+    {"id":"10000000-0000-4000-8000-000000000001","name":"杠铃深蹲","aliases":["深蹲","barbell squat"],"measurement":"externalLoad","equipment":"杠铃","muscles":["下肢"]},
+    {"id":"10000000-0000-4000-8000-000000000002","name":"哑铃深蹲","aliases":["高脚杯深蹲","goblet squat"],"measurement":"externalLoad","equipment":"哑铃","muscles":["下肢"]},
+    {"id":"10000000-0000-4000-8000-000000000003","name":"杠铃卧推","aliases":["卧推","bench press"],"measurement":"externalLoad","equipment":"杠铃","muscles":["胸部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000004","name":"哑铃卧推","aliases":["dumbbell bench press"],"measurement":"externalLoad","equipment":"哑铃","muscles":["胸部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000005","name":"俯卧撑","aliases":["push up","pushup"],"measurement":"bodyweight","equipment":"自重","muscles":["胸部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000006","name":"引体向上","aliases":["pull up","pullup"],"measurement":"bodyweight","equipment":"单杠","muscles":["背部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000007","name":"辅助引体向上","aliases":["assisted pull up"],"measurement":"assistedLoad","equipment":"辅助器械","muscles":["背部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000008","name":"高位下拉","aliases":["lat pulldown"],"measurement":"externalLoad","equipment":"绳索器械","muscles":["背部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000009","name":"坐姿划船","aliases":["seated row"],"measurement":"externalLoad","equipment":"绳索器械","muscles":["背部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000010","name":"哑铃划船","aliases":["dumbbell row"],"measurement":"externalLoad","equipment":"哑铃","muscles":["背部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000011","name":"哑铃肩推","aliases":["推举","shoulder press"],"measurement":"externalLoad","equipment":"哑铃","muscles":["肩部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000012","name":"哑铃侧平举","aliases":["lateral raise"],"measurement":"externalLoad","equipment":"哑铃","muscles":["肩部","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000013","name":"哑铃弯举","aliases":["curl"],"measurement":"externalLoad","equipment":"哑铃","muscles":["手臂","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000014","name":"绳索下压","aliases":["triceps pushdown"],"measurement":"externalLoad","equipment":"绳索器械","muscles":["手臂","上肢"]},
+    {"id":"10000000-0000-4000-8000-000000000015","name":"腿举","aliases":["leg press"],"measurement":"externalLoad","equipment":"固定器械","muscles":["下肢"]},
+    {"id":"10000000-0000-4000-8000-000000000016","name":"腿弯举","aliases":["leg curl"],"measurement":"externalLoad","equipment":"固定器械","muscles":["下肢"]},
+    {"id":"10000000-0000-4000-8000-000000000017","name":"杠铃硬拉","aliases":["deadlift"],"measurement":"externalLoad","equipment":"杠铃","muscles":["下肢","背部"]},
+    {"id":"10000000-0000-4000-8000-000000000018","name":"平板支撑","aliases":["plank"],"measurement":"duration","equipment":"自重","muscles":["核心"]},
+    {"id":"10000000-0000-4000-8000-000000000019","name":"自重深蹲","aliases":["bodyweight squat"],"measurement":"bodyweight","equipment":"自重","muscles":["下肢"]},
+    {"id":"10000000-0000-4000-8000-000000000020","name":"跑步","aliases":["running","run"],"measurement":"cardio","equipment":"户外或跑步机","muscles":["心肺"]},
+    {"id":"10000000-0000-4000-8000-000000000021","name":"步行","aliases":["walking","walk"],"measurement":"cardio","equipment":"户外或跑步机","muscles":["心肺"]},
+    {"id":"10000000-0000-4000-8000-000000000022","name":"室内骑行","aliases":["cycling","bike"],"measurement":"cardio","equipment":"固定单车","muscles":["心肺","下肢"]}
+  ]
+}

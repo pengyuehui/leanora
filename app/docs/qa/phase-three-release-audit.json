@@ -1,0 +1,15 @@
+{
+  "release_built": true,
+  "catalog_version": 1,
+  "bundled_exercises": 22,
+  "catalog_sha256": "6bb04e0c26b2da8a723465164f00d2cd682f83871d45e3040d82dc5b0b6279eb",
+  "debug_markers_present": {
+    "--uitesting": false,
+    "--backup-fixtures": false,
+    "--store-open-failed": false,
+    "UITestBackupFixtures": false,
+    "Leanora-valid.json": false,
+    "UITestHealthAuthorizer": false,
+    "injectCommitFailure": false
+  }
+}
