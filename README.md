@@ -18,3 +18,5 @@ swift test --package-path app --scratch-path app/build/SwiftPM --disable-swift-t
 运行、架构和构建步骤见 [应用 README](app/README.md)。功能覆盖、原始失败与修复后复测口径见 [验收报告](app/docs/qa/release-acceptance.md)，签名及 TestFlight 状态见 [发行候选记录](app/docs/qa/release-submission.md)。模拟器结果不替代物理设备验收。
 
 `docs/plans/` 为开发计划，`analysis/` 为功能研究，`tools/rea/` 仅保留开发工具依赖清单。第三方研究源码、安装包、本机数据库、签名私钥、IPA 与构建缓存不提交到仓库。应用与内容来源见 [来源清单](app/docs/content-provenance.md)。
+
+项目源码按 [MIT 许可证](LICENSE) 开源。第三方开发工具和食品数据遵循各自的许可证，具体来源与使用范围见上述清单。

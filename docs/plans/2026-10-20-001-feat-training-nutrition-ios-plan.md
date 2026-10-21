@@ -5,7 +5,7 @@ status: active
 date: 2026-10-20
 deepened: 2026-10-20
 execution_status: local_implementation_complete_physical_and_testflight_acceptance_pending
-product_route: independent_closed_source
+product_route: independent_mit_open_source
 ---
 
 # Leanora 训练、饮食与 Apple Health App 开发计划
@@ -14,7 +14,7 @@ product_route: independent_closed_source
 
 开发一个 **iPhone 优先、离线可用、训练与饮食记录一体化、支持 Apple Health 同步的独立原生 App**。内部项目名暂用 Leanora，正式名称与 Bundle ID 在项目初始化时确定。
 
-已确认的产品决定：用户希望闭源商业化，因此 OpenGym 用于功能研究；不从该仓库移植代码、测试、图标、界面资源或动作数据库。训记、薄荷的分析用于理解流程与对象关系，不使用其私有接口、素材或食物库。
+已确认的产品决定：最初按闭源商业路线独立实现；用户于 2026-10-21 明确确认改为 MIT 开源，并推送到公开仓库 `pengyuehui/leanora`。当前源码许可见 [LICENSE](../../LICENSE)。OpenGym 继续仅用于功能研究，不从该仓库移植代码、测试、图标、界面资源或动作数据库。训记、薄荷的分析用于理解流程与对象关系，不使用其私有接口、素材或食物库。
 
 **建议技术路线：SwiftUI + SwiftData + HealthKit + Swift Charts + UserNotifications。** 第一版完成本机记录与健康同步，先通过 TestFlight 验证；账号云同步、付费订阅和 Apple Watch 独立训练另列后续交付。
 
@@ -55,7 +55,7 @@ product_route: independent_closed_source
 4. 来源、版本、归日时区和删除标记从第一版进入模型。
 5. AI 拍照不能阻塞手工录入；但 AI 不进入首版关键路径。
 
-工作区没有现成 App，也没有可继承的 `docs/solutions/` 或匹配的 requirements 文档。本计划以用户需求、已确认的闭源路线和上述报告为输入。
+规划开始时，工作区没有现成 App，也没有可继承的 `docs/solutions/` 或匹配的 requirements 文档。本计划最初以用户需求、闭源路线和上述报告为输入，现按用户最新确认更新为 MIT 开源的独立实现。
 
 ## 3. 需求与验收目标
 
@@ -63,7 +63,7 @@ product_route: independent_closed_source
 
 | 编号 | 需求 | 验收方式 | 实施单元 |
 |---|---|---|---|
-| R1 | 独立闭源实现，记录每个第三方库及内容来源 | App 交付目录不含 OpenGym/训记/薄荷代码和素材；依赖与内容许可清单可核查 | U1、U8 |
+| R1 | 独立实现并按 MIT 开源，记录每个第三方库及内容来源 | App 交付目录不含 OpenGym/训记/薄荷代码和素材；依赖与内容许可清单可核查 | U1、U8 |
 | R2 | iPhone 原生、离线、免登录 | 飞行模式完成训练、饮食、体重记录；强退后可恢复 | U2–U5 |
 | R3 | 稳定持久化、历史快照和版本化迁移 | 更新模板/食物后旧记录不变；升级失败不清空数据 | U2、U8 |
 
@@ -98,7 +98,7 @@ product_route: independent_closed_source
 | Apple Health 的约定类型和同步规则 | 更长历史回填、更多外部运动类型 | 账号、多设备同步、Web 管理端 |
 | 手动导出导入、隐私与无障碍 | 导入其他训练 App 的公开文件格式 | 订阅购买、权益与恢复购买 |
 
-“闭源商业化”已经确定，但售价、免费额度和订阅权益尚未确定。第一版先做可独立使用的产品；付费机制不提前侵入训练和健康模块。
+项目已确认按 MIT 开源，但售价、免费额度和订阅权益尚未确定。第一版先做可独立使用的产品；付费机制不提前侵入训练和健康模块。
 
 ## 5. 页面与主要流程
 
@@ -141,7 +141,7 @@ SwiftData 明确关闭自动 CloudKit 同步；使用显式迁移计划。这里
 备选方案已考虑：
 
 - **React Native**：适合 Android 同期首发；本次仍需独立实现 JS 业务和健康桥接，当前 iPhone/HealthKit 优先时增加跨层调试，暂不采用。
-- **Capacitor**：可独立实现，但闭源路线已失去直接移植 OpenGym 的主要收益，原生健康与生命周期需求更适合 SwiftUI。
+- **Capacitor**：可独立实现；本项目的原生健康与生命周期需求更适合 SwiftUI，现有实现已完成本机验证，首版继续原生路线。
 - **SQLite/GRDB**：更直接控制 SQL 与事务；本次模型规模可先采用 SwiftData。若 U2 的批量同步事务、迁移或性能验证不满足门槛，在形成首个用户数据版本前切换；一旦发布数据版本，不随意更换存储。
 - **CloudKit**：不作为健康记录备份方案。Apple 对个人健康信息存入 iCloud 有明确限制，不能因 SwiftData 能自动同步就默认开启。[App Review 5.1.3](https://developer.apple.com/app-store/review/guidelines/#health-and-health-research)
 
@@ -452,7 +452,7 @@ Watch 独立训练、实时心率/运动能量、手机与手表的训练会话�
 
 ## 13. 待确定事项与执行入口
 
-已确定：闭源独立实现、需要训练与饮食记录、需要 Apple Health。建议并据此排期：iPhone 优先、iOS 18+、中文、免登录离线首版。
+已确定：独立实现并按 MIT 开源、需要训练与饮食记录、需要 Apple Health。建议并据此排期：iPhone 优先、iOS 18+、中文、免登录离线首版。
 
 不阻碍计划完成、但在对应交付前需确定：
 

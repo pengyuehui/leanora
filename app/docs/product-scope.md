@@ -4,6 +4,8 @@
 
 2026-10-21 发布身份更新：工程现使用 `ai.leanora.fitness`，团队 Manyao Li（`8ZP3NMT2A8`）；上文保留阶段 1–5 的历史标识。签名协议门槛及数据迁移边界见 [发布身份记录](qa/release-identity.md)。
 
+2026-10-21 发布许可更新：用户已明确确认改为 MIT 开源，公开仓库为 `pengyuehui/leanora`；当前许可见 [LICENSE](../../LICENSE)。独立实现与第三方内容隔离要求保持有效。
+
 ## 本阶段交付
 
 | 能力 | 当前行为 |
