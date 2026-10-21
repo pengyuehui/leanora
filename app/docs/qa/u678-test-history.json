@@ -2888,5 +2888,15 @@
         "status": "passed"
       }
     ]
+  },
+  {
+    "run": "fitness-bundle-health",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "passed"
+      }
+    ]
   }
 ]

@@ -260,7 +260,7 @@
       "suite": "LeanoraUITests.HealthReleaseExperienceTests",
       "test": "testSystemHealthAllowedWriteAndEcho",
       "status": "passed",
-      "run": "u678-confirmed-health-write"
+      "run": "fitness-bundle-health"
     },
     "HealthReleaseExperienceTests/testTodayAndHealthLargeTypeDarkLayout": {
       "suite": "LeanoraUITests.HealthReleaseExperienceTests",

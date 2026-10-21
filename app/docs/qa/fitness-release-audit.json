@@ -1,0 +1,44 @@
+{
+  "releaseBuilt": true,
+  "configuration": "Release iPhone archive, CODE_SIGNING_ALLOWED=NO",
+  "bundleID": "ai.leanora.fitness",
+  "version": "0.2.0",
+  "build": "2",
+  "minimumIOS": "18.0",
+  "bundledExercises": 100,
+  "bundledFoods": 300,
+  "privacyManifest": {
+    "NSPrivacyTracking": false,
+    "NSPrivacyCollectedDataTypes": [],
+    "NSPrivacyAccessedAPITypes": [
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "CA92.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "C617.1"
+        ]
+      }
+    ]
+  },
+  "debugMarkers": {
+    "--uitesting": false,
+    "--reset-state": false,
+    "UITestHealthAuthorizer": false,
+    "UITestBackupFixtures": false,
+    "injectCommitFailure": false
+  },
+  "healthSynchronizationImplemented": true,
+  "physicalDeviceGate": "pending",
+  "testFlight": "blocked_by_apple_program_license_agreement_and_remaining_release_gates",
+  "binarySHA256": "5f21b61087fe1c6e7ffb3f2f581536a43c6e9ebf1e62ea7a822097e937a65ad3",
+  "archive": "app/build/ReleaseCandidate/Leanora-0.2-Fitness-Unsigned.xcarchive",
+  "healthSDKSimulatorLoop": "passed under ai.leanora.fitness: actual permission, limited history, weight write, echo",
+  "configuredTeamID": "8ZP3NMT2A8",
+  "configuredTeamName": "Manyao Li",
+  "signingError": "PLA Update available; no provisioning profile for ai.leanora.fitness"
+}

@@ -5,7 +5,7 @@ import Foundation
 // HKHealthStore queries are thread-safe; no SwiftData objects cross callbacks.
 final class SystemHealthTransport: HealthTransport, @unchecked Sendable {
     let store = HKHealthStore()
-    let sourceBundleID = Bundle.main.bundleIdentifier ?? "app.leanora.dev"
+    let sourceBundleID = Bundle.main.bundleIdentifier ?? "ai.leanora.fitness"
 
     static func type(_ component: HealthComponent) -> HKSampleType {
         switch component {

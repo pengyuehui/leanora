@@ -4,7 +4,7 @@
 
 ## 构建与来源
 
-- [x] Swift 6，最低 iOS18，原生 HealthKit/SwiftData，开发 Bundle ID `app.leanora.dev`。
+- [x] Swift 6，最低 iOS18，原生 HealthKit/SwiftData，正式 Bundle ID 配置为 `ai.leanora.fitness`。
 - [x] Apple 系统 SDK 以外无运行时依赖，独立实现，未复制 OpenGym/训记/薄荷代码、媒体或目录。
 - [x] 100 动作、300 食品，固定 ID、来源、单位与快照。
 - [x] 健康用途说明、隐私清单、App 内隐私入口与政策源文件同步更新。
@@ -21,7 +21,9 @@
 
 ## App Store Connect / TestFlight
 
-- [ ] 发布者提供 Team ID 与已注册正式 Bundle ID，核实 HealthKit 和 background-delivery provisioning。
+- [x] 发布者指定正式 Bundle ID `ai.leanora.fitness` 及 Manyao Li 团队；本机 Xcode 与证书 OU 核实 Team ID `8ZP3NMT2A8`，工程及生成脚本已配置。
+- [ ] 账号持有人处理 Apple 最新 Program License Agreement；当前 Xcode 返回 `PLA Update available`。
+- [ ] 协议门槛解除后核实 App ID 注册及 HealthKit/background-delivery provisioning，获取正式 Bundle ID 的描述文件。
 - [ ] 发布者提供运营主体、支持联系方式、隐私政策公开 URL，并部署政策。
 - [ ] Xcode Archive 使用该 Team/Bundle ID 签名，Validate App，导出审核隐私报告。
 - [ ] App Store Connect 创建应用与测试组，填写中文描述、支持 URL、年龄分级、出口合规与隐私标签。

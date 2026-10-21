@@ -7,8 +7,8 @@
 打开 `ios/Leanora.xcodeproj`，选择共享 Scheme **Leanora**。最低 iOS 18，Swift 6；本次构建工具为 Xcode 27.1。没有第三方运行时依赖。
 
 - 模拟器：先在 Xcode Settings → Components 安装 iOS Runtime，然后选择可用 iPhone 模拟器运行。
-- 真机：在 Signing & Capabilities 选择自己的 Developer Team，确认 HealthKit 能力及开发 Bundle ID；连接已开启开发者模式的 iPhone。
-- `app.leanora.dev` 为开发标识，不是已注册的商业 App 标识。代码没有签名密钥或团队账号。
+- 真机：工程已配置 Manyao Li（Team ID `8ZP3NMT2A8`）及正式 Bundle ID `ai.leanora.fitness`，需匹配的 HealthKit 描述文件与已开启开发者模式的 iPhone。
+- 2026-10-21：Xcode 获取描述文件被 Apple 的 `PLA Update available` 阻止，需账号持有人接受最新协议。代码不包含签名私钥或账号凭据。配置与验证见 [发布身份记录](docs/qa/release-identity.md)。
 
 ## 验证
 

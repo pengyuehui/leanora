@@ -22,9 +22,9 @@ ui.add_dependency(app)
       'IPHONEOS_DEPLOYMENT_TARGET' => '18.0',
       'TARGETED_DEVICE_FAMILY' => '1',
       'CODE_SIGN_STYLE' => 'Automatic',
-      'DEVELOPMENT_TEAM' => '',
+      'DEVELOPMENT_TEAM' => '8ZP3NMT2A8', # Manyao Li; verified in local Xcode and public certificate OU.
       'GENERATE_INFOPLIST_FILE' => 'YES',
-      'PRODUCT_BUNDLE_IDENTIFIER' => "app.leanora.dev#{target == app ? '' : '.' + target.name}",
+      'PRODUCT_BUNDLE_IDENTIFIER' => "ai.leanora.fitness#{target == app ? '' : '.' + target.name}",
       'MARKETING_VERSION' => '0.2.0',
       'CURRENT_PROJECT_VERSION' => '2',
       'SWIFT_EMIT_LOC_STRINGS' => 'YES',

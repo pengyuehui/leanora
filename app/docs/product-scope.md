@@ -2,6 +2,8 @@
 
 日期：2026-10-20。对应主开发计划 U1–U5。本目录是独立实现的原生 iPhone 工程，内部品牌 Leanora，开发 Bundle ID 为 `app.leanora.dev`。默认最低 iOS 18，简体中文优先，无账号和网络服务。
 
+2026-10-21 发布身份更新：工程现使用 `ai.leanora.fitness`，团队 Manyao Li（`8ZP3NMT2A8`）；上文保留阶段 1–5 的历史标识。签名协议门槛及数据迁移边界见 [发布身份记录](qa/release-identity.md)。
+
 ## 本阶段交付
 
 | 能力 | 当前行为 |
