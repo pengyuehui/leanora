@@ -1,0 +1,812 @@
+{
+  "aggregation": "latest non-skipped result per method; capacity executed separately; not one all-green suite",
+  "uniqueMethods": 134,
+  "passed": 134,
+  "failed": 0,
+  "tests": {
+    "BackupTests/testDifferentIdentityRequiresCurrentExportAndExplicitReplacement": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testDifferentIdentityRequiresCurrentExportAndExplicitReplacement",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testExportExcludesHealthCachesJobsMappingsAndCursors": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testExportExcludesHealthCachesJobsMappingsAndCursors",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testFailedImportLeavesEntireBusinessAndRuntimeUnchanged": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testFailedImportLeavesEntireBusinessAndRuntimeUnchanged",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testInvalidPreflightCannotChangeDatabase": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testInvalidPreflightCannotChangeDatabase",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BackupTests/testStalePreviewIsRejectedAfterLocalSave": {
+      "suite": "LeanoraFoundationTests.BackupTests",
+      "test": "testStalePreviewIsRejectedAfterLocalSave",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BodyMeasurementTests/testEditDeleteAndBackupRoundTrip": {
+      "suite": "LeanoraFoundationTests.BodyMeasurementTests",
+      "test": "testEditDeleteAndBackupRoundTrip",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BodyMeasurementTests/testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage": {
+      "suite": "LeanoraFoundationTests.BodyMeasurementTests",
+      "test": "testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "BodyMeasurementTests/testPercentBoundaryWeightUnitConversionAndInvalidInput": {
+      "suite": "LeanoraFoundationTests.BodyMeasurementTests",
+      "test": "testPercentBoundaryWeightUnitConversionAndInvalidInput",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "CapacityTests/testHundredThousandHealthSamplesPagedOffMainThread": {
+      "suite": "LeanoraFoundationTests.CapacityTests",
+      "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+      "status": "passed",
+      "run": "u678-capacity-main-probes"
+    },
+    "CapacityTests/testTenThousandSetsAndDietRecordsQueryAndCSV": {
+      "suite": "LeanoraFoundationTests.CapacityTests",
+      "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+      "status": "passed",
+      "run": "u678-capacity-final"
+    },
+    "DataManagementTests/testDataManagementLargeTypeAndDarkAppearance": {
+      "suite": "LeanoraUITests.DataManagementTests",
+      "test": "testDataManagementLargeTypeAndDarkAppearance",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "DataManagementTests/testExportOpensNativeSavePanelAndCanCancel": {
+      "suite": "LeanoraUITests.DataManagementTests",
+      "test": "testExportOpensNativeSavePanelAndCanCancel",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "DataManagementTests/testExportSavesRealJSONAndCanImportItAgain": {
+      "suite": "LeanoraUITests.DataManagementTests",
+      "test": "testExportSavesRealJSONAndCanImportItAgain",
+      "status": "passed",
+      "run": "u678-three-retests"
+    },
+    "DataManagementTests/testInvalidFileShowsErrorAndDoesNotChangeRecordCount": {
+      "suite": "LeanoraUITests.DataManagementTests",
+      "test": "testInvalidFileShowsErrorAndDoesNotChangeRecordCount",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "DataManagementTests/testRealFileImportPreviewsCommitsAndSurvivesRelaunch": {
+      "suite": "LeanoraUITests.DataManagementTests",
+      "test": "testRealFileImportPreviewsCommitsAndSurvivesRelaunch",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "DataManagementTests/testStartupFailureOffersRetryWithoutResettingBusinessStore": {
+      "suite": "LeanoraUITests.DataManagementTests",
+      "test": "testStartupFailureOffersRetryWithoutResettingBusinessStore",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "DietDiaryTests/testDeleteTombstoneAndJobsUseLatestRevision": {
+      "suite": "LeanoraFoundationTests.DietDiaryTests",
+      "test": "testDeleteTombstoneAndJobsUseLatestRevision",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "DietDiaryTests/testDietAndHealthIntentsRollbackTogether": {
+      "suite": "LeanoraFoundationTests.DietDiaryTests",
+      "test": "testDietAndHealthIntentsRollbackTogether",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "DietDiaryTests/testFoodRevisionDoesNotRewriteHistoricalDietSnapshot": {
+      "suite": "LeanoraFoundationTests.DietDiaryTests",
+      "test": "testFoodRevisionDoesNotRewriteHistoricalDietSnapshot",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "DietDiaryTests/testKnownNutrientRemovedQueuesDeletionOfExistingComponent": {
+      "suite": "LeanoraFoundationTests.DietDiaryTests",
+      "test": "testKnownNutrientRemovedQueuesDeletionOfExistingComponent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "DietDiaryTests/testMealCopiesHaveNewIDsAndIndependentSnapshots": {
+      "suite": "LeanoraFoundationTests.DietDiaryTests",
+      "test": "testMealCopiesHaveNewIDsAndIndependentSnapshots",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthCoordinatorTests/testCleanupStopsIfSyncSettingCannotCommit": {
+      "suite": "LeanoraTests.HealthCoordinatorTests",
+      "test": "testCleanupStopsIfSyncSettingCannotCommit",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "HealthCoordinatorTests/testCleanupSuppressesMappedComponentsBeforeHealthAndRetainsOtherSources": {
+      "suite": "LeanoraTests.HealthCoordinatorTests",
+      "test": "testCleanupSuppressesMappedComponentsBeforeHealthAndRetainsOtherSources",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "HealthExportTests/testBodyFatAndPausedWorkoutNeverInventCalories": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testBodyFatAndPausedWorkoutNeverInventCalories",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testHealthSuccessBeforeLocalConfirmationRetriesIdempotently": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testHealthSuccessBeforeLocalConfirmationRetriesIdempotently",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testLocalDeleteRequiresSeparateHealthCopyChoice": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testLocalDeleteRequiresSeparateHealthCopyChoice",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthExportTests/testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue": {
+      "suite": "LeanoraFoundationTests.HealthExportTests",
+      "test": "testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthImportTests/testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics": {
+      "suite": "LeanoraFoundationTests.HealthImportTests",
+      "test": "testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthImportTests/testLockedOrDeniedReadPreservesCacheAndFixedRange": {
+      "suite": "LeanoraFoundationTests.HealthImportTests",
+      "test": "testLockedOrDeniedReadPreservesCacheAndFixedRange",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthImportTests/testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible": {
+      "suite": "LeanoraFoundationTests.HealthImportTests",
+      "test": "testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthImportTests/testReauthorizationRescansAndHiddenSampleStaysHidden": {
+      "suite": "LeanoraFoundationTests.HealthImportTests",
+      "test": "testReauthorizationRescansAndHiddenSampleStaysHidden",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthImportTests/testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes": {
+      "suite": "LeanoraFoundationTests.HealthImportTests",
+      "test": "testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthReleaseExperienceTests/testCSVSavePanelAndTypedLocalReset": {
+      "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+      "test": "testCSVSavePanelAndTypedLocalReset",
+      "status": "passed",
+      "run": "u678-three-retests"
+    },
+    "HealthReleaseExperienceTests/testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable": {
+      "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+      "test": "testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho": {
+      "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+      "test": "testSystemHealthAllowedWriteAndEcho",
+      "status": "passed",
+      "run": "u678-confirmed-health-write"
+    },
+    "HealthReleaseExperienceTests/testTodayAndHealthLargeTypeDarkLayout": {
+      "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+      "test": "testTodayAndHealthLargeTypeDarkLayout",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "HealthSyncRecoveryTests/testEditAndObserverSignalDuringWriteConvergeToLatestVersion": {
+      "suite": "LeanoraFoundationTests.HealthSyncRecoveryTests",
+      "test": "testEditAndObserverSignalDuringWriteConvergeToLatestVersion",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthSyncRecoveryTests/testOverlapAssociationChoosesOneDurationWithoutSummingCalories": {
+      "suite": "LeanoraFoundationTests.HealthSyncRecoveryTests",
+      "test": "testOverlapAssociationChoosesOneDurationWithoutSummingCalories",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "HealthSyncRecoveryTests/testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection": {
+      "suite": "LeanoraFoundationTests.HealthSyncRecoveryTests",
+      "test": "testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "MigrationTests/testCorruptStoreIsNotDeletedOrSilentlyReplaced": {
+      "suite": "LeanoraFoundationTests.MigrationTests",
+      "test": "testCorruptStoreIsNotDeletedOrSilentlyReplaced",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "MigrationTests/testInterruptedRestoreCannotBeOpenedAsEmptyLibrary": {
+      "suite": "LeanoraFoundationTests.MigrationTests",
+      "test": "testInterruptedRestoreCannotBeOpenedAsEmptyLibrary",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "MigrationTests/testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy": {
+      "suite": "LeanoraFoundationTests.MigrationTests",
+      "test": "testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "MigrationTests/testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots": {
+      "suite": "LeanoraFoundationTests.MigrationTests",
+      "test": "testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "NutritionBodyTests/testCustomFoodAndTwoBodyMeasurements": {
+      "suite": "LeanoraUITests.NutritionBodyTests",
+      "test": "testCustomFoodAndTwoBodyMeasurements",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "NutritionBodyTests/testFoodPortionQuickCaloriesCopyAndPersistence": {
+      "suite": "LeanoraUITests.NutritionBodyTests",
+      "test": "testFoodPortionQuickCaloriesCopyAndPersistence",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "NutritionBodyTests/testInvalidQuickAndZeroPortionCannotSaveInDarkLargeText": {
+      "suite": "LeanoraUITests.NutritionBodyTests",
+      "test": "testInvalidQuickAndZeroPortionCannotSaveInDarkLargeText",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "NutritionCalculationTests/testBundledCatalogIsValidSearchableAndSourced": {
+      "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+      "test": "testBundledCatalogIsValidSearchableAndSourced",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "NutritionCalculationTests/testHundredToHundredFiftyGramsScalesAllKnownValues": {
+      "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+      "test": "testHundredToHundredFiftyGramsScalesAllKnownValues",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "NutritionCalculationTests/testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate": {
+      "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+      "test": "testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "NutritionCalculationTests/testServingConversionAndKilojoules": {
+      "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+      "test": "testServingConversionAndKilojoules",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "NutritionCalculationTests/testZeroNegativeInfiniteAndUnownedPortionsAreRejected": {
+      "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+      "test": "testZeroNegativeInfiniteAndUnownedPortionsAreRejected",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "OnboardingTests/testHealthFailureHasRetryAndBackNavigation": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testHealthFailureHasRetryAndBackNavigation",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testHealthUnavailableDoesNotBlockOnboarding": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testHealthUnavailableDoesNotBlockOnboarding",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testLargeTypeAndDarkAppearance": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testLargeTypeAndDarkAppearance",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testNotificationDenialDoesNotBlockNavigation": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testNotificationDenialDoesNotBlockNavigation",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testPreferenceValidationAndPersistenceAcrossRelaunch": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testPreferenceValidationAndPersistenceAcrossRelaunch",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "OnboardingTests/testPrivacyCanReturnToOnboarding": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testPrivacyCanReturnToOnboarding",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testProcessedHealthRequestDoesNotClaimSynchronization": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testProcessedHealthRequestDoesNotClaimSynchronization",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testSkipHealthAndVisitAllTabs": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testSkipHealthAndVisitAllTabs",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "OnboardingTests/testSystemHealthSheetCanBeDismissedAndAppRemainsUsable": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testSystemHealthSheetCanBeDismissedAndAppRemainsUsable",
+      "status": "passed",
+      "run": "u678-health-denial-retest"
+    },
+    "OnboardingTests/testSystemNotificationDenialKeepsAppUsable": {
+      "suite": "LeanoraUITests.OnboardingTests",
+      "test": "testSystemNotificationDenialKeepsAppUsable",
+      "status": "passed",
+      "run": "u678-system-denials"
+    },
+    "PermissionTests/testActivityTypesCannotBeRequestedForWriting": {
+      "suite": "LeanoraFoundationTests.PermissionTests",
+      "test": "testActivityTypesCannotBeRequestedForWriting",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PermissionTests/testHealthRequestFailureCanRetry": {
+      "suite": "LeanoraFoundationTests.PermissionTests",
+      "test": "testHealthRequestFailureCanRetry",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PermissionTests/testNotificationDenialAndFailureRemainRecoverable": {
+      "suite": "LeanoraFoundationTests.PermissionTests",
+      "test": "testNotificationDenialAndFailureRemainRecoverable",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PermissionTests/testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest": {
+      "suite": "LeanoraFoundationTests.PermissionTests",
+      "test": "testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PermissionTests/testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted": {
+      "suite": "LeanoraFoundationTests.PermissionTests",
+      "test": "testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PermissionTests/testUnavailableAndEmptySelectionNeverRequestSystemAccess": {
+      "suite": "LeanoraFoundationTests.PermissionTests",
+      "test": "testUnavailableAndEmptySelectionNeverRequestSystemAccess",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testCatalogEditsDoNotMutateHistoricalSnapshots": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testCatalogEditsDoNotMutateHistoricalSnapshots",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testDatabaseAndRecoveryAreExcludedFromBackupAndProtected": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testDatabaseAndRecoveryAreExcludedFromBackupAndProtected",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testDiskReopenRetainsEveryIDAndSnapshots": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testDiskReopenRetainsEveryIDAndSnapshots",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testGoalUpdatesKeepPastGoalsAndMultipleMeasurements": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testGoalUpdatesKeepPastGoalsAndMultipleMeasurements",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testHealthBatchAndCursorRollbackAndRetryAreAtomic": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testHealthBatchAndCursorRollbackAndRetryAreAtomic",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testRevisionAndSingleActiveWorkoutConstraints": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testRevisionAndSingleActiveWorkoutConstraints",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testTombstoneCancelsStaleWritesAndKeepsStableID": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testTombstoneCancelsStaleWritesAndKeepsStableID",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PersistenceTests/testUnknownNutrientDeletesOldComponentInsteadOfWritingZero": {
+      "suite": "LeanoraFoundationTests.PersistenceTests",
+      "test": "testUnknownNutrientDeletesOldComponentInsteadOfWritingZero",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PreferenceTests/testCorruptPreferencesHaveVisibleRecoveryNotice": {
+      "suite": "LeanoraFoundationTests.PreferenceTests",
+      "test": "testCorruptPreferencesHaveVisibleRecoveryNotice",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PreferenceTests/testInvalidInputDoesNotOverwriteSavedPreferences": {
+      "suite": "LeanoraFoundationTests.PreferenceTests",
+      "test": "testInvalidInputDoesNotOverwriteSavedPreferences",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "PreferenceTests/testOptionalGoalsAndUnitsSurviveRelaunch": {
+      "suite": "LeanoraFoundationTests.PreferenceTests",
+      "test": "testOptionalGoalsAndUnitsSurviveRelaunch",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "ReleaseDataTests/testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas": {
+      "suite": "LeanoraFoundationTests.ReleaseDataTests",
+      "test": "testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "ReleaseDataTests/testCacheClearLocalResetAndHealthDeleteAreIndependent": {
+      "suite": "LeanoraFoundationTests.ReleaseDataTests",
+      "test": "testCacheClearLocalResetAndHealthDeleteAreIndependent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "ReleaseDataTests/testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata": {
+      "suite": "LeanoraFoundationTests.ReleaseDataTests",
+      "test": "testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "ReleaseDataTests/testResetRollbackDoesNotLoseBusinessOrChangeConfiguration": {
+      "suite": "LeanoraFoundationTests.ReleaseDataTests",
+      "test": "testResetRollbackDoesNotLoseBusinessOrChangeConfiguration",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TemplateEditorTests/testCatalogSearchEquipmentFilterAndSource": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testCatalogSearchEquipmentFilterAndSource",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testCustomExerciseCanBeArchivedWithoutDeletion": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testCustomExerciseCanBeArchivedWithoutDeletion",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testDuplicateItemsTargetsReorderCopyAndRelaunch": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testDuplicateItemsTargetsReorderCopyAndRelaunch",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testEmptyTemplateCannotStart": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testEmptyTemplateCannotStart",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testLargeDarkTrainingAndExerciseLibrary": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testLargeDarkTrainingAndExerciseLibrary",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testOneOffMovePersistsAndLeavesTodayEmpty": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testOneOffMovePersistsAndLeavesTodayEmpty",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testStartsTodayAndReturnsToSameWorkoutAfterRelaunch": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testStartsTodayAndReturnsToSameWorkoutAfterRelaunch",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TemplateEditorTests/testSupersetPairingPersistsIntoWorkoutSnapshot": {
+      "suite": "LeanoraUITests.TemplateEditorTests",
+      "test": "testSupersetPairingPersistsIntoWorkoutSnapshot",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "TrainingPlanTests/testBundledCatalogHasStableSourcesAndCombinedSearchFilters": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testBundledCatalogHasStableSourcesAndCombinedSearchFilters",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testConcurrentStartReturnsSameActiveSession": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testConcurrentStartReturnsSameActiveSession",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testCopyHasNewParentAndItemIDsAndNoWeeklySchedule": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testCopyHasNewParentAndItemIDsAndNoWeeklySchedule",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testDuplicateExerciseItemsReorderAndKeepIndependentTargets": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testDuplicateExerciseItemsReorderAndKeepIndependentTargets",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testEmptyTemplateCannotStart": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testEmptyTemplateCannotStart",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testOversizedExpandedPlanIsRejectedBeforeAllocatingSets": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testOversizedExpandedPlanIsRejectedBeforeAllocatingSets",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testPlanAndSessionRoundTripDiskAndBackup": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testPlanAndSessionRoundTripDiskAndBackup",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testStaleTemplateEditDoesNotOverwriteNewerRevision": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testStaleTemplateEditDoesNotOverwriteNewerRevision",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingPlanTests/testTemplatePersistsOnlyUsedCatalogDependenciesAtomically": {
+      "suite": "LeanoraFoundationTests.TrainingPlanTests",
+      "test": "testTemplatePersistsOnlyUsedCatalogDependenciesAtomically",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingSummaryTests/testPRRecalculatesAfterSourceSetEditedOrRemoved": {
+      "suite": "LeanoraFoundationTests.TrainingSummaryTests",
+      "test": "testPRRecalculatesAfterSourceSetEditedOrRemoved",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "TrainingSummaryTests/testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements": {
+      "suite": "LeanoraFoundationTests.TrainingSummaryTests",
+      "test": "testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutRecoveryTests/testDurationTimerSurvivesPauseAndRelaunch": {
+      "suite": "LeanoraUITests.WorkoutRecoveryTests",
+      "test": "testDurationTimerSurvivesPauseAndRelaunch",
+      "status": "passed",
+      "run": "u678-full-regression"
+    },
+    "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory": {
+      "suite": "LeanoraUITests.WorkoutRecoveryTests",
+      "test": "testRecordPauseKillRecoverFinishAndEditHistory",
+      "status": "passed",
+      "run": "u678-acceptance-final"
+    },
+    "WorkoutRecoveryTests/testSystemRestReminderAuthorizationAndScheduling": {
+      "suite": "LeanoraUITests.WorkoutRecoveryTests",
+      "test": "testSystemRestReminderAuthorizationAndScheduling",
+      "status": "passed",
+      "run": "u678-notification-allowed"
+    },
+    "WorkoutSessionTests/testCrossMidnightAssignedToStartDate": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testCrossMidnightAssignedToStartDate",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testEmptyFinishAndMissingActualValuesAreRejected": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testEmptyFinishAndMissingActualValuesAreRejected",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testFailedFinishRollsBackBothSessionAndJob": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testFailedFinishRollsBackBothSessionAndJob",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testMalformedPausedSessionRejectedBeforeItCanReachFinish": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testMalformedPausedSessionRejectedBeforeItCanReachFinish",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testPauseResumeTimerAndRestAreIndependent": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testPauseResumeTimerAndRestAreIndependent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testPrefillKeepsRepeatedTemplateItemsIndependent": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testPrefillKeepsRepeatedTemplateItemsIndependent",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testScheduledReminderHonorsMovedAndStartedOccurrences": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testScheduledReminderHonorsMovedAndStartedOccurrences",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testStaleSetEditDoesNotOverwriteNewValues": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testStaleSetEditDoesNotOverwriteNewValues",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    },
+    "WorkoutSessionTests/testSupersetStartsRestOnlyAfterBothExercisesInRound": {
+      "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+      "test": "testSupersetStartsRestOnlyAfterBothExercisesInRound",
+      "status": "passed",
+      "run": "u678-swiftpm-complete"
+    }
+  }
+}

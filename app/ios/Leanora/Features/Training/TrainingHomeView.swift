@@ -16,12 +16,10 @@ struct TrainingHomeView: View {
     var body: some View {
         List {
             Section {
-                Text("把每次训练，安排成自己的节奏。")
-                    .font(.title2.weight(.medium)).accessibilityIdentifier("screen.training")
-                    .padding(.vertical, 12)
+                Text("训练计划").font(.title2.bold()).accessibilityIdentifier("screen.training")
                 if let active = training.active {
                     Button { opened = active } label: { Label("返回进行中的训练：\(active.name)", systemImage: "play.circle.fill") }
-                        .accessibilityIdentifier("training.active")
+                        .buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("training.active")
                 }
                 NavigationLink { ExerciseLibraryView() } label: { Label("动作库", systemImage: "figure.strengthtraining.traditional") }
                     .accessibilityIdentifier("training.library")
@@ -30,6 +28,16 @@ struct TrainingHomeView: View {
                 NavigationLink { WorkoutHistoryView() } label: { Label("训练历史", systemImage: "clock.arrow.circlepath") }.accessibilityIdentifier("training.history")
             }
             TrainingErrorNotice()
+            let today = training.occurrences(on: RecordMoment().localDate)
+            if training.active == nil, !today.isEmpty {
+                Section("今天的安排") {
+                    ForEach(today) { occurrence in
+                        Button { Task { opened = await training.start(occurrence.template) } } label: {
+                            HStack { VStack(alignment: .leading, spacing: 4) { Text(occurrence.template.name).font(.headline); Text("\(occurrence.template.items.count) 个动作").font(.caption).foregroundStyle(.secondary) }; Spacer(); Image(systemName: "play.circle.fill").font(.title) }.frame(minHeight: 52)
+                        }.buttonStyle(.borderless).accessibilityIdentifier("training.today.\(occurrence.template.name)")
+                    }
+                }
+            }
             Section("我的模板") {
                 Button { creating = true } label: { Label("新建训练模板", systemImage: "plus") }.accessibilityIdentifier("training.newTemplate")
                 if training.templates.isEmpty { Text("先添加动作和计划目标，再安排每周训练。模板可随时调整。").foregroundStyle(.secondary) }
@@ -45,6 +53,7 @@ struct TrainingHomeView: View {
         }
         .navigationTitle("训练").toolbar(.visible, for: .navigationBar)
         .scrollContentBackground(.hidden).background(LeanoraTheme.canvas)
+        .refreshable { await training.refresh() }
         .task { await training.refresh() }
         .sheet(isPresented: $creating) { NavigationStack { TemplateEditorView(template: WorkoutTemplate(name: "")) } }
         .sheet(item: $opened) { session in NavigationStack { WorkoutReadyView(sessionID: session.id) } }

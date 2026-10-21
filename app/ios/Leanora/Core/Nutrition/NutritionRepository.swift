@@ -25,10 +25,10 @@ extension AppModelActor {
         changes.append(.diet(value)); try saveWithHealthIntent(changes)
     }
 
-    func deleteDiet(_ id: UUID, revision: Int) throws {
+    func deleteDiet(_ id: UUID, revision: Int, deleteHealthCopies: Bool = false) throws {
         guard case .diet(var value) = try snapshot().first(where: { $0.id == id }), value.stamp.revision == revision, value.stamp.deletedAt == nil else { throw DataProblem.revisionConflict }
         value.stamp.revision += 1; value.stamp.updatedAt = max(Date(), value.stamp.updatedAt); value.stamp.deletedAt = value.stamp.updatedAt
-        try saveWithHealthIntent([.diet(value)])
+        try saveWithHealthIntent([.diet(value)], deleteHealthCopies: deleteHealthCopies)
     }
 
     func copyMeal(from day: String, meal: Meal, to date: Date, destinationMeal: Meal, timeZoneID: String = TimeZone.current.identifier) throws -> Int {
@@ -50,9 +50,9 @@ extension AppModelActor {
         }
         try saveWithHealthIntent([.measurement(value)])
     }
-    func deleteMeasurement(_ id: UUID, revision: Int) throws {
+    func deleteMeasurement(_ id: UUID, revision: Int, deleteHealthCopies: Bool = false) throws {
         guard case .measurement(var value) = try snapshot().first(where: { $0.id == id }), value.stamp.revision == revision, value.stamp.deletedAt == nil else { throw DataProblem.revisionConflict }
         value.stamp.revision += 1; value.stamp.updatedAt = max(Date(), value.stamp.updatedAt); value.stamp.deletedAt = value.stamp.updatedAt
-        try saveWithHealthIntent([.measurement(value)])
+        try saveWithHealthIntent([.measurement(value)], deleteHealthCopies: deleteHealthCopies)
     }
 }

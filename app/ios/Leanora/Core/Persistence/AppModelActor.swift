@@ -2,6 +2,10 @@ import Foundation
 import SwiftData
 
 @ModelActor actor AppModelActor {
+    // This actor is the sole writer. Cache decoded immutable business values so
+    // day/summary screens do not repeatedly decode the whole history. Every
+    // staged business mutation invalidates it, including a rolled-back save.
+    private var businessCache: [BusinessRecord]?
     #if DEBUG
     private var failNextCommit = false
     func injectCommitFailure() { failNextCommit = true }
@@ -36,14 +40,17 @@ import SwiftData
     }
 
     func snapshot() throws -> [BusinessRecord] {
+        if let businessCache { return businessCache }
         let kind = "business"
-        return try modelContext.fetch(FetchDescriptor<StoredRecord>(predicate: #Predicate { $0.kind == kind }))
+        let records = try modelContext.fetch(FetchDescriptor<StoredRecord>(predicate: #Predicate { $0.kind == kind }))
             .map { row in
                 try verify(row)
                 let record = try RecordCoding.decode(BusinessRecord.self, from: row.payload)
                 guard row.key == "business:\(record.id)" else { throw DataProblem.invalid("存储标识") }
                 return record
             }.sorted { $0.id.uuidString < $1.id.uuidString }
+        businessCache = records
+        return records
     }
 
     func runtimeSnapshot() throws -> [HealthRuntimeRecord] {
@@ -70,8 +77,8 @@ import SwiftData
             if let id = suppression.businessID, records[id] == nil { throw DataProblem.invalid("健康抑制引用") }
         }
         try transaction {
-            for link in links { try putRuntime(.link(link)) }
-            for suppression in suppressions { try putRuntime(.suppression(suppression)) }
+            for link in links { try storeHealthLink(link) }
+            for suppression in suppressions { try storeHealthSuppression(suppression) }
         }
     }
 
@@ -93,8 +100,8 @@ import SwiftData
             merged[record.id] = record
         }
         try DomainValidation.validate(Array(merged.values))
-        let runtime = try runtimeSnapshot()
-        if !jobs.isEmpty, runtime.contains(.reconciliationRequired(true)) { throw DataProblem.healthReconciliationRequired }
+        let existingJobs = try healthJobs()
+        if jobs.contains(where: { $0.action != .delete || $0.userInitiated != true }), try healthRuntimeValue("health:reconciliation") == .reconciliationRequired(true) { throw DataProblem.healthReconciliationRequired }
         for job in jobs {
             guard changedIDs.contains(job.businessID), let record = merged[job.businessID],
                   job.desiredRevision == record.stamp.revision, job.attempts == 0 else {
@@ -106,8 +113,8 @@ import SwiftData
         try transaction {
             for record in changes { try put(key: "business:\(record.id)", kind: "business", value: record) }
             let desiredKeys = Set(jobs.map(\.key))
-            for item in runtime {
-                if case .job(let old) = item, changedIDs.contains(old.businessID), !desiredKeys.contains(old.key),
+            for old in existingJobs {
+                if changedIDs.contains(old.businessID), !desiredKeys.contains(old.key),
                    let row = try row(old.key) { modelContext.delete(row) }
             }
             for job in jobs { try putRuntime(.job(job)) }
@@ -117,7 +124,7 @@ import SwiftData
     // A complete anchored-query page and its next cursor share this commit. A
     // failed batch cannot advance its cursor or leave partial external records.
     func commitHealthImport(_ imported: [HealthRuntimeRecord], deletedSampleIDs: [UUID] = [],
-                            cursor: HealthImportCursor) throws {
+                            cursor: HealthImportCursor, links: [HealthSampleLink] = []) throws {
         guard !cursor.sampleType.isEmpty, cursor.queryEnd == nil || cursor.queryEnd! >= cursor.queryStart,
               cursor.anchor?.count ?? 0 <= 4 * 1024 * 1024 else { throw DataProblem.invalid("健康游标") }
         var keys = Set<String>()
@@ -129,6 +136,7 @@ import SwiftData
                 guard v.endedAt >= v.started.instant, !v.sourceBundleID.isEmpty else { throw DataProblem.invalid("外部训练") }
                 try DomainValidation.number(v.energyKcal, max: 100_000)
                 try DomainValidation.number(v.distanceMeters, max: 10_000_000)
+                try DomainValidation.number(v.durationSeconds, max: 604800)
             case .nutrition(let v):
                 try DomainValidation.moment(v.occurred)
                 guard [.energy, .protein, .carbohydrate, .fat].contains(v.component), !v.sourceBundleID.isEmpty else { throw DataProblem.invalid("外部营养") }
@@ -140,15 +148,28 @@ import SwiftData
             default: throw DataProblem.invalid("健康导入类型")
             }
         }
-        let existingCursor = try runtimeSnapshot().compactMap { item -> HealthImportCursor? in
-            if case .cursor(let v) = item, v.key == cursor.key { return v }; return nil
-        }.first
+        let existingCursor: HealthImportCursor? = if case .cursor(let v) = try healthRuntimeValue(cursor.key) { v } else { nil }
         if let existingCursor, existingCursor.queryStart != cursor.queryStart || existingCursor.queryEnd != cursor.queryEnd {
             throw DataProblem.invalid("健康查询边界变化")
         }
         try transaction {
-            for id in deletedSampleIDs { if let row = try row("external:\(id)") { modelContext.delete(row) } }
-            for item in imported { try putRuntime(item) }
+            for link in links { try storeHealthLink(link) }
+            for id in deletedSampleIDs {
+                if let row = try row("external:\(id)") { modelContext.delete(row) }
+                if case .link(var link) = try healthRuntimeValue("link:\(id)"), link.state == .written {
+                    let newer: Bool = if case .currentLink(let v) = try healthRuntimeValue("current:\(link.businessID):\(link.component.rawValue)") { v.version > link.version && v.state == .written } else { false }
+                    link.state = .deleted; try putRuntime(.link(link))
+                    if !newer {
+                        try storeHealthLink(link)
+                        try storeHealthSuppression(HealthSuppression(sampleUUID: id, businessID: link.businessID, component: link.component, reason: "在健康中移除"))
+                        if let jobRow = try row("job:\(link.businessID):\(link.component.rawValue)") { modelContext.delete(jobRow) }
+                    }
+                }
+            }
+            for item in imported {
+                let id = String(item.key.dropFirst("external:".count))
+                if try row("suppression:\(id)") == nil { try putRuntime(item) }
+            }
             try putRuntime(.cursor(cursor))
         }
     }
@@ -177,12 +198,13 @@ import SwiftData
             for row in all where row.kind == "business" && !keys.contains(row.key) { modelContext.delete(row) }
             for row in all where row.kind == "runtime" && (replace || row.key.hasPrefix("job:")) { modelContext.delete(row) }
             for record in records { try put(key: "business:\(record.id)", kind: "business", value: record) }
+            for record in records where ["session", "diet", "measurement"].contains(record.kind) { try putRuntime(.hold(record.id)) }
             try putRuntime(.reconciliationRequired(true))
         }
         return result
     }
 
-    private func validateComponent(_ component: HealthComponent, record: BusinessRecord) throws -> Bool {
+    func validateComponent(_ component: HealthComponent, record: BusinessRecord) throws -> Bool {
         let allowed: [HealthComponent]
         var known = true
         switch record {
@@ -202,22 +224,23 @@ import SwiftData
         guard allowed.contains(component) else { throw DataProblem.invalid("健康任务组件") }
         return known
     }
-    private func row(_ key: String) throws -> StoredRecord? {
+    func row(_ key: String) throws -> StoredRecord? {
         var fetch = FetchDescriptor<StoredRecord>(predicate: #Predicate { $0.key == key })
         fetch.fetchLimit = 1
         return try modelContext.fetch(fetch).first
     }
-    private func put<T: Encodable>(key: String, kind: String, value: T) throws {
+    func put<T: Encodable>(key: String, kind: String, value: T) throws {
+        if kind == "business" { businessCache = nil }
         let data = try RecordCoding.encode(value)
         if let existing = try row(key) {
             existing.payload = data; existing.contentDigest = RecordCoding.digest(data)
         } else { modelContext.insert(StoredRecord(key: key, kind: kind, payload: data, contentDigest: RecordCoding.digest(data))) }
     }
-    private func putRuntime(_ value: HealthRuntimeRecord) throws { try put(key: value.key, kind: "runtime", value: value) }
-    private func verify(_ row: StoredRecord) throws {
+    func putRuntime(_ value: HealthRuntimeRecord) throws { try put(key: value.key, kind: "runtime", value: value) }
+    func verify(_ row: StoredRecord) throws {
         if let digest = row.contentDigest, digest != RecordCoding.digest(row.payload) { throw DataProblem.invalid("存储校验") }
     }
-    private func transaction(_ changes: () throws -> Void) throws {
+    func transaction(_ changes: () throws -> Void) throws {
         modelContext.autosaveEnabled = false
         do {
             try changes()

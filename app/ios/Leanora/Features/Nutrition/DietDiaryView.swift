@@ -10,8 +10,15 @@ struct DietDiaryView: View {
     var body: some View {
         List {
             Section {
-                Text("把一日三餐，记在这里。").font(.headline).accessibilityIdentifier("screen.nutrition")
+                Text("饮食记录").font(.headline).accessibilityIdentifier("screen.nutrition")
                 RecordDatePicker(title: "日记日期", selection: $date, components: .date).accessibilityIdentifier("diet.date")
+                HStack {
+                    Button { shiftDay(-1) } label: { Label("前一天", systemImage: "chevron.left") }.frame(minHeight: 44).accessibilityIdentifier("diet.previousDay")
+                    Spacer()
+                    Button("回到今天") { date = Date() }.frame(minHeight: 44).accessibilityIdentifier("diet.today")
+                    Spacer()
+                    Button { shiftDay(1) } label: { Label("后一天", systemImage: "chevron.right") }.frame(minHeight: 44).accessibilityIdentifier("diet.nextDay")
+                }.buttonStyle(.borderless)
             }
             Section("本日营养") { NutritionSummaryView(summary: NutritionSummary(entries: journal.entries, on: day), goal: NutritionCalculator.goal(on: day, goals: journal.goals)) }
             JournalErrorNotice()
@@ -39,7 +46,17 @@ struct DietDiaryView: View {
         }
         .navigationTitle("饮食日记")
         .toolbar(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Menu {
+                    ForEach(Meal.allCases) { meal in Button("添加\(meal.title)") { present(.food(meal)) } }
+                    Button("快速记热量") { present(.quick) }.accessibilityIdentifier("diet.menuQuick")
+                    Button("复制历史餐次") { present(.copy) }
+                } label: { Label("记录", systemImage: "plus") }.accessibilityIdentifier("diet.addMenu").disabled(!presentationReady)
+            }
+        }
         .scrollContentBackground(.hidden).background(LeanoraTheme.canvas)
+        .refreshable { await journal.refresh() }
         .task { await journal.refresh() }
         .sheet(item: $presented, onDismiss: { presentationReady = true }) { destination in NavigationStack {
             switch destination {
@@ -57,12 +74,16 @@ struct DietDiaryView: View {
             Button("确认删除", role: .destructive) { if let removing { Task {
                 _ = await journal.run { [repository = journal.repository] in try await repository.deleteDiet(removing.id, revision: removing.stamp.revision) }; self.removing = nil
             } } }
-        }
+            Button("同时删除健康副本", role: .destructive) { if let removing { Task {
+                _ = await journal.run { [repository = journal.repository] in try await repository.deleteDiet(removing.id, revision: removing.stamp.revision, deleteHealthCopies: true) }; self.removing = nil
+            } } }
+        } message: { Text("「确认删除」保留健康中的副本。其他来源的健康数据不受影响。") }
     }
     private func present(_ destination: DietPresentation) {
         guard presentationReady else { return }
         presentationReady = false; presented = destination
     }
+    private func shiftDay(_ offset: Int) { date = Calendar.current.date(byAdding: .day, value: offset, to: date) ?? date }
 }
 
 private enum DietPresentation: Identifiable {
@@ -88,10 +109,14 @@ struct NutritionSummaryView: View {
     let summary: NutritionSummary
     var goal: NutritionGoal?
     var body: some View {
-        LabeledContent("已知热量", value: "\(summary.energy.text) kcal").accessibilityIdentifier("nutrition.energy")
-        LabeledContent("蛋白质", value: "\(summary.protein.text) g")
-        LabeledContent("碳水化合物", value: "\(summary.carbohydrate.text) g")
-        LabeledContent("脂肪", value: "\(summary.fat.text) g")
+        HStack(alignment: .firstTextBaseline) {
+            Text(summary.energy.text).font(.largeTitle.bold().monospacedDigit())
+            Text("kcal 已知热量").font(.caption).foregroundStyle(.secondary)
+        }.accessibilityElement(children: .combine).accessibilityIdentifier("nutrition.energy")
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 24) { nutrient("蛋白质", summary.protein); nutrient("碳水化合物", summary.carbohydrate); nutrient("脂肪", summary.fat) }
+            VStack(alignment: .leading, spacing: 10) { nutrient("蛋白质", summary.protein); nutrient("碳水化合物", summary.carbohydrate); nutrient("脂肪", summary.fat) }
+        }
         if let target = goal?.nutrients.energyKcal {
             LabeledContent("当日热量目标", value: "\(target.formatted()) kcal").accessibilityIdentifier("nutrition.goal")
             if let energy = summary.energy.known {
@@ -103,6 +128,11 @@ struct NutritionSummaryView: View {
         else if [summary.energy, summary.protein, summary.carbohydrate, summary.fat].contains(where: { $0.missing > 0 }) {
             Text("部分营养素未知，合计只包含已知值；快速热量不推算宏量营养素。").font(.caption).foregroundStyle(.secondary)
         }
+    }
+    private func nutrient(_ name: String, _ value: NutrientTotal) -> some View {
+        let amount = value.known?.formatted(.number.precision(.fractionLength(0...1)))
+        return VStack(alignment: .leading, spacing: 4) { Text(name).font(.caption).foregroundStyle(.secondary); Text(amount.map { "\($0) g" } ?? "未知").font(.subheadline.weight(.semibold)).monospacedDigit() }
+            .accessibilityElement(children: .ignore).accessibilityLabel("\(name)，\(value.text) g")
     }
 }
 

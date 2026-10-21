@@ -12,27 +12,38 @@ struct FoodSearchView: View {
         List {
             Section {
                 Button("自定义食物") { custom = true }.accessibilityIdentifier("food.custom")
-                Toggle("查看已归档食物", isOn: $archived)
-                Text("离线基础目录 \(journal.catalog.count) 条 · USDA SR Legacy。烹调方式影响营养，请核对条目；未收录的食物可自行输入。").font(.caption).foregroundStyle(.secondary)
+                DisclosureGroup("目录与筛选") {
+                    Toggle("查看已归档食物", isOn: $archived)
+                    Text("离线基础目录 \(journal.catalog.count) 条 · USDA SR Legacy。烹调方式影响营养，请核对条目；未收录的食物可自行输入。").font(.caption).foregroundStyle(.secondary)
+                }
+            }
+            if query.isEmpty && !archived {
+                let recent = recentFoods
+                if !recent.isEmpty {
+                    Section("最近记录") {
+                        ForEach(recent) { food in foodLink(food) }
+                    }
+                }
             }
             let foods = FoodCatalog.search(journal.foods, query: query, archived: archived)
             if foods.isEmpty { ContentUnavailableView.search(text: query) }
-            ForEach(foods) { food in
-                NavigationLink {
-                    FoodPortionView(food: food, meal: meal, date: date, onSaved: onAdded)
-                } label: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(food.name)
-                        Text("\(food.nutrientsPer100Grams.energyKcal.map { $0.formatted() } ?? "未知") kcal / 100 g").font(.caption).foregroundStyle(.secondary)
-                    }.padding(.vertical, 4)
-                }.accessibilityIdentifier("food.select.\(food.name)")
-            }
+            Section(query.isEmpty ? "全部食物" : "搜索结果") { ForEach(foods) { food in foodLink(food) } }
         }
         .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索名称、中文或英文别名")
         .navigationTitle("添加\(meal.title)")
         .toolbar(.visible, for: .navigationBar)
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { onAdded() } } }
         .sheet(isPresented: $custom) { NavigationStack { CustomFoodView() } }
+    }
+    private var recentFoods: [Food] {
+        var seen = Set<UUID>()
+        let ids = journal.entries.sorted { $0.occurred.instant > $1.occurred.instant }.compactMap(\.food?.foodID).filter { seen.insert($0).inserted }.prefix(6)
+        return ids.compactMap { id in journal.foods.first { $0.id == id && !$0.isArchived } }
+    }
+    private func foodLink(_ food: Food) -> some View {
+        NavigationLink { FoodPortionView(food: food, meal: meal, date: date, onSaved: onAdded) } label: {
+            VStack(alignment: .leading, spacing: 6) { Text(food.name); Text("\(food.nutrientsPer100Grams.energyKcal.map { $0.formatted() } ?? "未知") kcal / 100 g").font(.caption).foregroundStyle(.secondary) }.padding(.vertical, 4)
+        }.accessibilityIdentifier("food.select.\(food.name)")
     }
 }
 

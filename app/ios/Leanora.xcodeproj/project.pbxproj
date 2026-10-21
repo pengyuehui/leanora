@@ -7,360 +7,459 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000FCC4EDECAAED21EC746EC /* HealthSyncModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328614F8D2FC294A61EB652B /* HealthSyncModels.swift */; };
-		0118B3B811358009129902AD /* NotificationPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761A0929E16565FEA463D4D8 /* NotificationPermissionService.swift */; };
-		018908B3A84CB6DD3F48A771 /* TrainingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F28A1BAEE60600B7F45A42 /* TrainingHomeView.swift */; };
-		057EDC8FC1548C13D11D5B95 /* NutritionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B91E80BCF665D085255F977 /* NutritionRepository.swift */; };
-		0B9429CE31763D5083D6AAA3 /* ExerciseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6F4D960CE5EC06B199FE7 /* ExerciseCatalog.swift */; };
-		0E7A5F496D4C9F41CC19BA56 /* DataManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277269816044E67513E405EE /* DataManagementTests.swift */; };
-		110B7953B02A764851E53DF1 /* WorkoutSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DD4BF7B209DBB2046F547 /* WorkoutSessionTests.swift */; };
-		176A0C1E03A1E3148F1D5CD3 /* WorkoutSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2AC770104B3125EAC8FA1 /* WorkoutSessionController.swift */; };
-		1ABA64C00A86EB99D2F7B9A4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B244DD8D23407D4C1D519FD3 /* OnboardingView.swift */; };
-		1D1E37BA268AA46050CA2174 /* TemplateEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE2847FF27458C356895D0 /* TemplateEditorView.swift */; };
-		201B396B749AEE7433B5BE64 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABC61F05F065F9223C0153 /* TrendsView.swift */; };
-		215B65FB6AFCFBDA9C2886E5 /* JournalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2DF0C9A3F43C1C4286B84 /* JournalStore.swift */; };
-		25BB80DE1016EB0F453FF588 /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B452E2881272FB7BBFDA10 /* WorkoutModels.swift */; };
-		2B0DF313963C7E2B7048C7CD /* BusinessRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DA09542C55DC0BC82F8A /* BusinessRecord.swift */; };
-		2CDD59AE1A86B8C310EC34B4 /* TrainingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716FF4241EAB033A3D4D4A92 /* TrainingRepository.swift */; };
-		2D24A90526405FEB123F9168 /* FoodCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57D842F4EC52BE55AE1A9F7 /* FoodCatalog.swift */; };
-		2F6C349BEDF4669138739EAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D9B9F03608C656FCE42CA /* Foundation.framework */; };
-		397B4605E54A0539E6BFCCE4 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB0851E42B26F2D80A8A291 /* exercises.json */; };
-		3B9071D036498F49DB1DEAFD /* WorkoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FABD93F7D429F3EC87534D /* WorkoutEngine.swift */; };
-		3BF4E295B9EE3BB99676A974 /* FoodPortionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE42FACF26DCDA3C79583F1 /* FoodPortionView.swift */; };
-		3CC6E469E788C8DD7D8F8A02 /* TemplateEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC567536D8771435544E0E /* TemplateEditorTests.swift */; };
-		3E7AB991EB628B370DC850CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D9B9F03608C656FCE42CA /* Foundation.framework */; };
-		49002E13354E35A2879780B1 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3000370B8B4805E0AD4A3C /* NotificationSettingsView.swift */; };
-		4DFAF5AEB10EB4100E7F7D7C /* ExerciseLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D403CB6288432F01CD483AD3 /* ExerciseLibraryView.swift */; };
-		4FB9557D0FD154241446CF55 /* DataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC622B62BA0C391591E595 /* DataStoreController.swift */; };
-		5396042A95E7DB79A5C9B002 /* WeeklyPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96FF45AE5CFD0B7C4481E2C /* WeeklyPlanView.swift */; };
-		5F1412E52FA2C5B557A0EBD7 /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F18744A3FCCAF09D0A809 /* WorkoutHistoryView.swift */; };
-		6410E1F89EF7BE4BD070D7CE /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C9DEA780BB278A1EB71A1 /* WorkoutRepository.swift */; };
-		64D5C09437CC8A17EB34C6A5 /* HealthAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF8846A8212E2DA79D9F86 /* HealthAuthorizationService.swift */; };
-		66B035C58BF0B9A981738F04 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = D0B1A012626DB6EA8E28249D /* foods.json */; };
-		68D864766173F99BD3E16CAF /* TrainingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887804F07C20F542F1FC20EC /* TrainingPlan.swift */; };
-		714135AD081ABECE54439DF0 /* HealthIntentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF5A1A46255523B832E689 /* HealthIntentRepository.swift */; };
-		719EBF84890E9DC5C86162BE /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988430A8F6E0553DD81EDDAB /* FoodSearchView.swift */; };
-		71DCA60809F9F20354A89C0F /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCE819EEA6B4A0E48926DA /* AppPreferences.swift */; };
-		7B5A7D4E104F2CD5C2092C3D /* TrainingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB36815C606ED31C620664 /* TrainingStore.swift */; };
-		7BB3F6B2B6102BE4FCB2FB13 /* BackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD920AC04BE1466773E853 /* BackupTests.swift */; };
-		7D65FCAD957EB2C212329B63 /* ActiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB825DF13A4C5646CA8E4E /* ActiveWorkoutView.swift */; };
-		800D811BB06565A9ADCCE90C /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548078E6FA401843F33618 /* PrivacyView.swift */; };
-		842A9B1B854C7AB87555CAE4 /* DietDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD526C6F2B16DB6FFC360A /* DietDiaryTests.swift */; };
-		8B2C8B64F4CC2320B2AEA149 /* MigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC354153189488515839F3F /* MigrationTests.swift */; };
-		8C3D6D654172E08248078981 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1C2F73D95F94C3F7E71F7518 /* Localizable.xcstrings */; };
-		93D2CF59A3EC05F62F8A08D8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0BEECBCB7F72F2E6C5706034 /* PrivacyInfo.xcprivacy */; };
-		95E4DC703B1E929F88FB0358 /* DataFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EABED1674D3FD878B1BDD7 /* DataFixtures.swift */; };
-		982B87C87ACC0B777792A6D3 /* AppModelActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BB9A2C9687D42D8C0DDE9 /* AppModelActor.swift */; };
-		999282513E0F768F27457539 /* TrainingSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8803166BDB1450D3E162F /* TrainingSummaryTests.swift */; };
-		9A5AB7EC3B95FC0D8361574B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A2258C8558CB977B8DE53 /* Assets.xcassets */; };
-		9C3CA4C4607DD4EA4E51CA61 /* NutritionBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF274DD5B6C6E98F8196227 /* NutritionBodyTests.swift */; };
-		9D28818857ADEBD07F865E9A /* HealthConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EF3729EEBDFB3905C86F8 /* HealthConnectionView.swift */; };
-		9DE5008325501205B0D2C1B1 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCD3701889BB3B89B706B1 /* TodayView.swift */; };
-		9FD364A9CAA5390A589DE359 /* PreferencesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AF55B4B7DF9DFCF5A170E /* PreferencesForm.swift */; };
-		A8FC3CF3BEA0A93786FEC0C0 /* LeanoraTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D23910D0B3299CF68E76B44 /* LeanoraTheme.swift */; };
-		AB2E0BD3D7EA3B87CF0D1145 /* BodyMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649AF4E7CE300A805A11FA /* BodyMeasurementView.swift */; };
-		B2AC63F809A0BA61FB3CC703 /* NutritionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC301B408FDF7959C9C073 /* NutritionModels.swift */; };
-		B2DD8D68CE8E50D92D9D8526 /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1714109BAFE75F1E45A01F /* DataManagementView.swift */; };
-		B303A9465FA57B3E0985289B /* TrainingReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95097D883F7EA22EC40A36 /* TrainingReminderService.swift */; };
-		B697B16E54DACBAF2E8C7FB9 /* WorkoutNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E940AED9E4F45DD59772BC5 /* WorkoutNotificationService.swift */; };
-		BCE16A0D4B50013998583F39 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C13D35245C273CC7B10C2 /* MainTabView.swift */; };
-		C27B5794020440B8B94611B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28F1F1ED35A741FF3BB35D /* SettingsView.swift */; };
-		C401657826C0791C5B761E52 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAAF90B1045A9387A638E2 /* OnboardingTests.swift */; };
-		C4BB14D82C980D3A03F407E4 /* NutritionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99514A81D369C8F9628DF48C /* NutritionCalculator.swift */; };
-		C64EAF4B8A2D41844D1DB743 /* FoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DE9C87425D9E13D06C512 /* FoundationTests.swift */; };
-		C68E98F7A01FFDA77BCECD2A /* RecordDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4D833A0D6CA6B55FF1664 /* RecordDatePicker.swift */; };
-		C8A100A11D51F9354FC21CA5 /* BodyMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2938126C5647F39DE4F4E /* BodyMeasurementTests.swift */; };
-		C8E9BD39F05352F671520EF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D9B9F03608C656FCE42CA /* Foundation.framework */; };
-		C92D7DB13B5F7703F9BF3A04 /* LeanoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF15FC5701B233A8CB56C5C /* LeanoraApp.swift */; };
-		C9AF1DE18E769C9D89CA85FB /* TrainingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F9288B9D61508EA76148A /* TrainingSummary.swift */; };
-		D193D922CBA167171F59931B /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E05E48B301984B86A65146 /* PersistenceTests.swift */; };
-		D579A6E84AE51871057BDDC8 /* StoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541AF144846F4D6BEE089FC /* StoreFactory.swift */; };
-		D6B498107D875E2F83D24F94 /* StoreUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62A4F533B02D76149842E7 /* StoreUnavailableView.swift */; };
-		DA35BB00F569D28A36740C55 /* UITestBackupFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64383A572CE2CDB9E1DE0B3D /* UITestBackupFixtures.swift */; };
-		E0B6C3C457928103E4D410EF /* NutritionCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BFA40A6ED5C7AD6178949 /* NutritionCalculationTests.swift */; };
-		E1CFA142357EE32F82588099 /* WorkoutRecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E01E556337E18F9FA65BC9 /* WorkoutRecoveryTests.swift */; };
-		E2EF90D3D5EB84A9663D78CE /* TrainingTargetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97DF4AC514FFF045F5C486 /* TrainingTargetInput.swift */; };
-		F1581E8CB4B72D949E1BEFA1 /* TrainingPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712B98E4AADB804BC014353 /* TrainingPlanTests.swift */; };
-		F41837CF9E0276B3740B27B1 /* AppSchemaMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55D19BA89D64D8D59431F79 /* AppSchemaMigrationPlan.swift */; };
-		F5773602A59AF18BFF12D1F4 /* DietDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA81EAECDB08EE5EECF0E24 /* DietDiaryView.swift */; };
-		FD0437F7B5482D484315CB75 /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49BF168D42D621BC94F10D /* BackupService.swift */; };
+		01CA710D3F97B27E3992E1A3 /* LeanoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF271C7D5818A5B7A611629F /* LeanoraApp.swift */; };
+		0502306134A270B5C6B2E767 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F691965C04FF58837BCC920 /* TrendsView.swift */; };
+		05A6C9E0B531BC41F5743B74 /* AppSchemaMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4FDBDF6C200E61873E659 /* AppSchemaMigrationPlan.swift */; };
+		097233A1CA591C10F250E337 /* HealthSyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1CEB2710385F0836646AAC /* HealthSyncEngine.swift */; };
+		0AE9687AC3E4A01BF855E918 /* ExerciseLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1809A6E78497B39168D0C32 /* ExerciseLibraryView.swift */; };
+		10DA2F3E5C0563C65E82D570 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AE13CC0104D99B45F5F3C0 /* Foundation.framework */; };
+		13C0114B27CBBCA77319EC4E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC6642C421D49F34A3B9BB /* TodayView.swift */; };
+		14A78E4396C5616A81EE5C68 /* HealthConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFF6AB982E98B99F8D199 /* HealthConnectionView.swift */; };
+		14DCCD19724C6DFEF56C07AF /* BackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA59E819BC2AFDE26D62DF1 /* BackupTests.swift */; };
+		17C707E81DF5CC3E53520677 /* WeeklyPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83DE8C5597346AA077D7A95 /* WeeklyPlanView.swift */; };
+		1AA4589B61CC5D70B3D81572 /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8317CE4F2603698C4CCE85 /* DataManagementView.swift */; };
+		1B3532E6F163FBD96D428EA1 /* HealthImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B487527979F98B44A17E6ACB /* HealthImportTests.swift */; };
+		1C6E0E87C40B73761A93CD69 /* HealthImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A5E2267845ED5A94E131E /* HealthImportService.swift */; };
+		1D66A52EC96D710E9A46DB0A /* TrainingSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E379140F53B1529EA9324 /* TrainingSummaryTests.swift */; };
+		1F2E50201379528C129B8CE0 /* HealthAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AC406E91E697ED90197A6 /* HealthAuthorizationService.swift */; };
+		1FA55E4589CA3E762B70EF52 /* MigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E549CE1C773FFC5105687D /* MigrationTests.swift */; };
+		21E748130A882D1457364804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B835F2035C2362C849F24416 /* Assets.xcassets */; };
+		23F6BF3E79492C59AD9C51D7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF715C6524E6CE2D7960CD3 /* Localizable.xcstrings */; };
+		279EF5FBC0B0A5B72C9AB8F8 /* DietDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1676CA5916C8D02A0B62AAB /* DietDiaryView.swift */; };
+		3A2ED0744FA277309CD0E632 /* WorkoutSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A580543531CADD0D4A16E7A /* WorkoutSessionTests.swift */; };
+		3F0F1D48F8419B7F4B1618DD /* TemplateEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCEF0354DE000781965B48D /* TemplateEditorTests.swift */; };
+		446B62BBF95586A4766B3D64 /* NutritionCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D530A261117F95A1702A5E48 /* NutritionCalculationTests.swift */; };
+		483334A76CEFE3FBEACBC094 /* HealthSyncRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B50BB3212B17E372618AA7 /* HealthSyncRepository.swift */; };
+		489EA493DD235AFFBBA66D50 /* HealthSyncModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31EE774D915CAF2886519F /* HealthSyncModels.swift */; };
+		49BC34947460853923EE987B /* StoreUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCCF4C437F136EDE04FDB7A /* StoreUnavailableView.swift */; };
+		4C8C46810B6B548D2732F3F4 /* BodyMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6DECAF2A752FE5BC5B2D10 /* BodyMeasurementTests.swift */; };
+		4C9CADCCBB37C8783B960E9F /* WorkoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91471D0F73156D550A971BCD /* WorkoutEngine.swift */; };
+		53A74440830323952FE8CF32 /* AppModelActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039F53FBEDD531C0CFE74F6 /* AppModelActor.swift */; };
+		53B877789623A5BB275C4F23 /* TemplateEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618044E7C02ABC8706A3097 /* TemplateEditorView.swift */; };
+		57172F1B9880DA430FCDBEFA /* NutritionBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403ED3AEAFC60C0B6CE9B10 /* NutritionBodyTests.swift */; };
+		5A075A4760BE41DD686D640D /* UITestBackupFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4485191E420A7A55B7BEF677 /* UITestBackupFixtures.swift */; };
+		5A6A02803F48AE69ED10F838 /* LocalResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B58833EF5710D675F5F1 /* LocalResetView.swift */; };
+		5B51DFAA96507FF9D7725C02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AE13CC0104D99B45F5F3C0 /* Foundation.framework */; };
+		5CA6F3CC5FAC2936A513096B /* TrainingReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEF70D7805F2DDBC7276 /* TrainingReminderService.swift */; };
+		5D49D1E27A41AF9B05B0E9F6 /* HealthWorkoutAssociationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8683AA9E5C1A25E68E690 /* HealthWorkoutAssociationView.swift */; };
+		5DCFA9168A0F748642230F05 /* JournalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC9B47DD77E7BDE3786F705 /* JournalStore.swift */; };
+		5EDBD39240C81098572BAC0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AE13CC0104D99B45F5F3C0 /* Foundation.framework */; };
+		5F14C8DE0C114D5207010EF7 /* DietDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296C56E02460BFF805CFDF7A /* DietDiaryTests.swift */; };
+		612169DC15268EAD2DD42B9E /* RecordDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD383CCB1B43670D55FD7C /* RecordDatePicker.swift */; };
+		61DDFE3157E4B28447D15CCE /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = 35EE1432EC015EEE27C4315C /* foods.json */; };
+		6325EE5837F438CDA5E78750 /* NutritionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EDE41A2D6AA4FB2D724C1 /* NutritionCalculator.swift */; };
+		64CCBE0C0CADB2B473EBE751 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5E9BABC03B43D227FD975 /* NotificationSettingsView.swift */; };
+		653214B5DD014C2CE55A0B15 /* TrainingPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884973E2EB0829D846EC424 /* TrainingPlanTests.swift */; };
+		696D493C61D3B1DC87E2AAAC /* HealthAggregation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842945B27D5219201EE68C3 /* HealthAggregation.swift */; };
+		6A9E1AD7753835FD3225634B /* BusinessRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22BDA575033F50A18696B33 /* BusinessRecord.swift */; };
+		70075D1C27C731B6F8D50ED8 /* NutritionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243BC711AA8C608D6F71DD61 /* NutritionModels.swift */; };
+		75CA2F6C69EAB45021287816 /* TrainingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E254848CD5F72E6F517B504 /* TrainingStore.swift */; };
+		7B6F0BC5F62620F6E1B33FB5 /* FoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576F17127C5D12833560E6C2 /* FoundationTests.swift */; };
+		7D81AC5704A6F6AC5A94451B /* TrainingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021E0C8E1FC870A1FF70D33 /* TrainingHomeView.swift */; };
+		875782B87D0E058FD0F44529 /* HealthSampleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B409DDB589D77705FBF384 /* HealthSampleMapper.swift */; };
+		8ADFC4D1112949036B94FC7C /* TrainingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3330EB93AE499BCBAB34D3 /* TrainingSummary.swift */; };
+		8D0AB4EDBB23154455D62941 /* NutritionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767DA4F3D69F249CF0C71015 /* NutritionRepository.swift */; };
+		97208C425BDEF6CBE96734E7 /* FoodPortionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D030D4ED648A81D5CB32419 /* FoodPortionView.swift */; };
+		99559590A4FE2995E73EA8FA /* HealthExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0203812AB46BD0ECACCAA3 /* HealthExportService.swift */; };
+		998EDA629A09B8B27B532293 /* HealthObserverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB04E5CE0197DE4264CCC6 /* HealthObserverCoordinator.swift */; };
+		9B099668724EFEE9A8F5A069 /* DataFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E0B989A52EDA084CCD363 /* DataFixtures.swift */; };
+		9ECF28D1CA5EFA4B519A33BE /* HealthExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115471EDE0C0959929081109 /* HealthExportTests.swift */; };
+		9F9035F40AAE844AD8822C36 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639CF6F666DB0891F93DB67 /* PersistenceTests.swift */; };
+		A021A29E66D943F2E74650AB /* ActiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DF8668E76CEAF2B82024FE /* ActiveWorkoutView.swift */; };
+		A12DC7053309BAE96B997590 /* SystemHealthTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06B8F06047D6C12EC75F8 /* SystemHealthTransport.swift */; };
+		A34737B1A92161C84864F386 /* HealthSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61BB2FEA58CA51FBCB3C8C /* HealthSyncCoordinator.swift */; };
+		A567523666D1A2CF3809FC85 /* CapacityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F074EB38DBCBC07E262AEA /* CapacityTests.swift */; };
+		A590A5FCA47CF9F3E796B9CF /* DataManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FF10FA946B13DB526067B /* DataManagementTests.swift */; };
+		A82F0716049DB39B4DAE34F2 /* DataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7603A002058723B7269E11 /* DataStoreController.swift */; };
+		A8F44CD2B2385B12A03B17CE /* HealthTestTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299A63B20648D72FC642C67 /* HealthTestTransport.swift */; };
+		AF083C2396CA98BBB974B3F1 /* BodyMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DECB514B94E29DF40F086E /* BodyMeasurementView.swift */; };
+		AFBC7F41A5B1D16DE481A41E /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EF516A44F060AD7AC4111 /* WorkoutRepository.swift */; };
+		B2D7F4175BA8FD55DD2F5A94 /* PreferencesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80809A1D9929A01FFF7FB987 /* PreferencesForm.swift */; };
+		B563152FBDF04BAADD08C284 /* CSVExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC99013D275DF5956424E5F9 /* CSVExportService.swift */; };
+		B8852CB1030DBFD9599FA7F2 /* HealthSyncRecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3BFB66845F3403C8D2D6E /* HealthSyncRecoveryTests.swift */; };
+		BB92152DA18F7F792367B35B /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB267627BDA0D687633BA62B /* BackupService.swift */; };
+		BBB52F377A5C5F0FD5BB422A /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB333CD09F16BF5FD06EA00E /* FoodSearchView.swift */; };
+		BBBF329E60C037C0E5B5D94A /* WorkoutSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D9972C27FD767C51DC3F02 /* WorkoutSessionController.swift */; };
+		BC2E19E1CCCA0F5F6F0A1C25 /* WorkoutRecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66DB4A376A338C0864179A /* WorkoutRecoveryTests.swift */; };
+		C559A6E219EA55159815B3E3 /* ReleaseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E293D4158492FD3BE41299 /* ReleaseDataTests.swift */; };
+		CC5432C545F52096C5C8DEC8 /* ExerciseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F2D3C37D71966B1CFFB77 /* ExerciseCatalog.swift */; };
+		CCF9BF605944A189D7E95F32 /* NotificationPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32828E73FCADC74040F1B4C /* NotificationPermissionService.swift */; };
+		CE9D394F738DA90051873643 /* TrainingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DD0B0553554C101048EFD /* TrainingPlan.swift */; };
+		CF217CFF6FB330E7CC70D35E /* StoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C699B5728398ECEA2597E14 /* StoreFactory.swift */; };
+		CF92222BBDDCE97779C83A78 /* LeanoraTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5DC56324F74C3CA93E494 /* LeanoraTheme.swift */; };
+		D70B3EAA10FD747763CBB1E6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867841F01148A7D9C4DFAA5D /* OnboardingView.swift */; };
+		D842905D81B5584B7889FC24 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32EA11D36946FA11CCAE97C /* PrivacyView.swift */; };
+		D8CBD533044B7AFE6935BC8B /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0CD7BBE65874E91833B7E /* WorkoutModels.swift */; };
+		E04C2C708CB044FED88AF11E /* HealthReleaseExperienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB0E19303340BFD55B1DF3 /* HealthReleaseExperienceTests.swift */; };
+		E12663A6B0CB53E9723DF60E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF634D5931D5F85CA98B25 /* MainTabView.swift */; };
+		E1E27F8DA3B7B1E2B7A0F2BF /* HealthIntentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D2177ADA2543B2EBD8717 /* HealthIntentRepository.swift */; };
+		E4590059B4D06853699EA858 /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D672F51C2F47F64ECE0D155 /* WorkoutHistoryView.swift */; };
+		E8765F6016097398D3714E94 /* TrainingTargetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8CA485CBCCDC89F4368DB /* TrainingTargetInput.swift */; };
+		E878ADA9DF2486C16309ABB5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 44B9DFCD5CC87B0263D796B8 /* PrivacyInfo.xcprivacy */; };
+		E906952CCE1F34F9E820A2EB /* HealthSyncStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557B4CBB5C7207A5FA757FC /* HealthSyncStatusView.swift */; };
+		EECC472B721C75A0B5E3F659 /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35531414D17A355F26077A41 /* AppPreferences.swift */; };
+		EF5EE3F739A2611B4FCA7D24 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DE352BC57B64194A3603F /* SettingsView.swift */; };
+		F364D2415B823E6486BC21F1 /* WorkoutNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7811EF4CB93398A998CC03 /* WorkoutNotificationService.swift */; };
+		F4E3E35B81A88F1CFB11D430 /* HealthCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B509623CE76E93974E18F19 /* HealthCoordinatorTests.swift */; };
+		F5870B74E6CB80A55C65EAF4 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C49BA73A16DE81C233685B /* exercises.json */; };
+		F5ECB2CD50A94041ECCF264A /* TrainingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69591055A8E883CF777DA7CE /* TrainingRepository.swift */; };
+		F6F6C828A043D66CBF88F4D3 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8283702625BA8B846496F6E /* OnboardingTests.swift */; };
+		FC874C3DDA715F92F32F3816 /* FoodCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B62C3C11C9A17BED2C0778D /* FoodCatalog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3101C5F89C7B018983CE5ED6 /* PBXContainerItemProxy */ = {
+		9FC8D5508563995A19F5DDEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46CDD70E3A094EF7B6F7747F /* Project object */;
+			containerPortal = 400A42F09F7B1ACFBDCE2529 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AAAC31E0A473F2A44284B52D;
+			remoteGlobalIDString = C219E938D66967516DD5C137;
 			remoteInfo = Leanora;
 		};
-		997996F14EF81703F21BC71E /* PBXContainerItemProxy */ = {
+		B26377EDB7FDFF7983C742B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46CDD70E3A094EF7B6F7747F /* Project object */;
+			containerPortal = 400A42F09F7B1ACFBDCE2529 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AAAC31E0A473F2A44284B52D;
+			remoteGlobalIDString = C219E938D66967516DD5C137;
 			remoteInfo = Leanora;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0541AF144846F4D6BEE089FC /* StoreFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreFactory.swift; path = Core/Persistence/StoreFactory.swift; sourceTree = "<group>"; };
-		05AE2847FF27458C356895D0 /* TemplateEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateEditorView.swift; path = Features/Training/TemplateEditorView.swift; sourceTree = "<group>"; };
-		09CC301B408FDF7959C9C073 /* NutritionModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionModels.swift; path = Core/Domain/NutritionModels.swift; sourceTree = "<group>"; };
-		0BEECBCB7F72F2E6C5706034 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		0E5A2258C8558CB977B8DE53 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
-		0E97DF4AC514FFF045F5C486 /* TrainingTargetInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingTargetInput.swift; path = Core/Training/TrainingTargetInput.swift; sourceTree = "<group>"; };
-		143DE9C87425D9E13D06C512 /* FoundationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FoundationTests.swift; sourceTree = "<group>"; };
-		1B62A4F533B02D76149842E7 /* StoreUnavailableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreUnavailableView.swift; path = App/StoreUnavailableView.swift; sourceTree = "<group>"; };
-		1C2F73D95F94C3F7E71F7518 /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = "<group>"; };
-		1E940AED9E4F45DD59772BC5 /* WorkoutNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutNotificationService.swift; path = Core/Notifications/WorkoutNotificationService.swift; sourceTree = "<group>"; };
-		1F4C9DEA780BB278A1EB71A1 /* WorkoutRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutRepository.swift; path = Core/Training/WorkoutRepository.swift; sourceTree = "<group>"; };
-		277269816044E67513E405EE /* DataManagementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataManagementTests.swift; sourceTree = "<group>"; };
-		2BF6F4D960CE5EC06B199FE7 /* ExerciseCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExerciseCatalog.swift; path = Core/Training/ExerciseCatalog.swift; sourceTree = "<group>"; };
-		2CF15FC5701B233A8CB56C5C /* LeanoraApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanoraApp.swift; path = App/LeanoraApp.swift; sourceTree = "<group>"; };
-		2EF2938126C5647F39DE4F4E /* BodyMeasurementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BodyMeasurementTests.swift; sourceTree = "<group>"; };
-		328614F8D2FC294A61EB652B /* HealthSyncModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncModels.swift; path = Core/Domain/HealthSyncModels.swift; sourceTree = "<group>"; };
-		33CB36815C606ED31C620664 /* TrainingStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingStore.swift; path = Features/Training/TrainingStore.swift; sourceTree = "<group>"; };
-		361EF3729EEBDFB3905C86F8 /* HealthConnectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthConnectionView.swift; path = Features/Settings/HealthConnectionView.swift; sourceTree = "<group>"; };
-		383DD4BF7B209DBB2046F547 /* WorkoutSessionTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutSessionTests.swift; sourceTree = "<group>"; };
-		3B91E80BCF665D085255F977 /* NutritionRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionRepository.swift; path = Core/Nutrition/NutritionRepository.swift; sourceTree = "<group>"; };
-		3D5F9288B9D61508EA76148A /* TrainingSummary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingSummary.swift; path = Core/Analytics/TrainingSummary.swift; sourceTree = "<group>"; };
-		3DA81EAECDB08EE5EECF0E24 /* DietDiaryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DietDiaryView.swift; path = Features/Nutrition/DietDiaryView.swift; sourceTree = "<group>"; };
-		40A8803166BDB1450D3E162F /* TrainingSummaryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainingSummaryTests.swift; sourceTree = "<group>"; };
-		40B452E2881272FB7BBFDA10 /* WorkoutModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutModels.swift; path = Core/Domain/WorkoutModels.swift; sourceTree = "<group>"; };
-		49FABD93F7D429F3EC87534D /* WorkoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutEngine.swift; path = Core/Training/WorkoutEngine.swift; sourceTree = "<group>"; };
-		4A2BFA40A6ED5C7AD6178949 /* NutritionCalculationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NutritionCalculationTests.swift; sourceTree = "<group>"; };
-		4D23910D0B3299CF68E76B44 /* LeanoraTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanoraTheme.swift; path = Design/LeanoraTheme.swift; sourceTree = "<group>"; };
-		591D9B9F03608C656FCE42CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5A28F1F1ED35A741FF3BB35D /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Features/Settings/SettingsView.swift; sourceTree = "<group>"; };
-		5D95097D883F7EA22EC40A36 /* TrainingReminderService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingReminderService.swift; path = Core/Notifications/TrainingReminderService.swift; sourceTree = "<group>"; };
-		61FF8846A8212E2DA79D9F86 /* HealthAuthorizationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthAuthorizationService.swift; path = Integrations/HealthKit/HealthAuthorizationService.swift; sourceTree = "<group>"; };
-		62FE680960D571680B7044AA /* Leanora.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Leanora.entitlements; sourceTree = "<group>"; };
-		64383A572CE2CDB9E1DE0B3D /* UITestBackupFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITestBackupFixtures.swift; path = App/UITestBackupFixtures.swift; sourceTree = "<group>"; };
-		66AAAF90B1045A9387A638E2 /* OnboardingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
-		6ACF5A1A46255523B832E689 /* HealthIntentRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthIntentRepository.swift; path = Core/Persistence/HealthIntentRepository.swift; sourceTree = "<group>"; };
-		6F6FED5F82070E2B44A29CC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
-		716FF4241EAB033A3D4D4A92 /* TrainingRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingRepository.swift; path = Core/Training/TrainingRepository.swift; sourceTree = "<group>"; };
-		761A0929E16565FEA463D4D8 /* NotificationPermissionService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationPermissionService.swift; path = Core/Notifications/NotificationPermissionService.swift; sourceTree = "<group>"; };
-		787F18744A3FCCAF09D0A809 /* WorkoutHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutHistoryView.swift; path = Features/History/WorkoutHistoryView.swift; sourceTree = "<group>"; };
-		7AC354153189488515839F3F /* MigrationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MigrationTests.swift; sourceTree = "<group>"; };
-		887804F07C20F542F1FC20EC /* TrainingPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingPlan.swift; path = Core/Training/TrainingPlan.swift; sourceTree = "<group>"; };
-		8A6AF55B4B7DF9DFCF5A170E /* PreferencesForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencesForm.swift; path = Features/Onboarding/PreferencesForm.swift; sourceTree = "<group>"; };
-		8CA7FF1569EA48AA856BB6A1 /* LeanoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9556DA09542C55DC0BC82F8A /* BusinessRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BusinessRecord.swift; path = Core/Domain/BusinessRecord.swift; sourceTree = "<group>"; };
-		988430A8F6E0553DD81EDDAB /* FoodSearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoodSearchView.swift; path = Features/Nutrition/FoodSearchView.swift; sourceTree = "<group>"; };
-		98BCE819EEA6B4A0E48926DA /* AppPreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppPreferences.swift; path = Core/Preferences/AppPreferences.swift; sourceTree = "<group>"; };
-		99514A81D369C8F9628DF48C /* NutritionCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionCalculator.swift; path = Core/Nutrition/NutritionCalculator.swift; sourceTree = "<group>"; };
-		9D548078E6FA401843F33618 /* PrivacyView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrivacyView.swift; path = Features/Settings/PrivacyView.swift; sourceTree = "<group>"; };
-		9FE42FACF26DCDA3C79583F1 /* FoodPortionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoodPortionView.swift; path = Features/Nutrition/FoodPortionView.swift; sourceTree = "<group>"; };
-		A0FC567536D8771435544E0E /* TemplateEditorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateEditorTests.swift; sourceTree = "<group>"; };
-		A3F28A1BAEE60600B7F45A42 /* TrainingHomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingHomeView.swift; path = Features/Training/TrainingHomeView.swift; sourceTree = "<group>"; };
-		A4EABED1674D3FD878B1BDD7 /* DataFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataFixtures.swift; sourceTree = "<group>"; };
-		A8AD526C6F2B16DB6FFC360A /* DietDiaryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DietDiaryTests.swift; sourceTree = "<group>"; };
-		A9DCD3701889BB3B89B706B1 /* TodayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TodayView.swift; path = Features/Today/TodayView.swift; sourceTree = "<group>"; };
-		AE3000370B8B4805E0AD4A3C /* NotificationSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationSettingsView.swift; path = Features/Settings/NotificationSettingsView.swift; sourceTree = "<group>"; };
-		B1FC622B62BA0C391591E595 /* DataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataStoreController.swift; path = App/DataStoreController.swift; sourceTree = "<group>"; };
-		B244DD8D23407D4C1D519FD3 /* OnboardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = Features/Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
-		B8C34531019F2521702A11F2 /* Leanora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leanora.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC7BB9A2C9687D42D8C0DDE9 /* AppModelActor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppModelActor.swift; path = Core/Persistence/AppModelActor.swift; sourceTree = "<group>"; };
-		C1B4D833A0D6CA6B55FF1664 /* RecordDatePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordDatePicker.swift; path = Design/RecordDatePicker.swift; sourceTree = "<group>"; };
-		C55D19BA89D64D8D59431F79 /* AppSchemaMigrationPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppSchemaMigrationPlan.swift; path = Core/Persistence/AppSchemaMigrationPlan.swift; sourceTree = "<group>"; };
-		C6FB825DF13A4C5646CA8E4E /* ActiveWorkoutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveWorkoutView.swift; path = Features/Workout/ActiveWorkoutView.swift; sourceTree = "<group>"; };
-		C832D9BD68AEB2492A24138C /* LeanoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE649AF4E7CE300A805A11FA /* BodyMeasurementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyMeasurementView.swift; path = Features/Body/BodyMeasurementView.swift; sourceTree = "<group>"; };
-		CEB0851E42B26F2D80A8A291 /* exercises.json */ = {isa = PBXFileReference; includeInIndex = 1; name = exercises.json; path = Resources/Catalog/exercises.json; sourceTree = "<group>"; };
-		CEE2AC770104B3125EAC8FA1 /* WorkoutSessionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutSessionController.swift; path = Features/Workout/WorkoutSessionController.swift; sourceTree = "<group>"; };
-		D0B1A012626DB6EA8E28249D /* foods.json */ = {isa = PBXFileReference; includeInIndex = 1; name = foods.json; path = Resources/Catalog/foods.json; sourceTree = "<group>"; };
-		D1E05E48B301984B86A65146 /* PersistenceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
-		D403CB6288432F01CD483AD3 /* ExerciseLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExerciseLibraryView.swift; path = Features/Training/ExerciseLibraryView.swift; sourceTree = "<group>"; };
-		DB1714109BAFE75F1E45A01F /* DataManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataManagementView.swift; path = Features/Settings/DataManagementView.swift; sourceTree = "<group>"; };
-		E2E01E556337E18F9FA65BC9 /* WorkoutRecoveryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutRecoveryTests.swift; sourceTree = "<group>"; };
-		E45C13D35245C273CC7B10C2 /* MainTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = App/MainTabView.swift; sourceTree = "<group>"; };
-		E57D842F4EC52BE55AE1A9F7 /* FoodCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoodCatalog.swift; path = Core/Nutrition/FoodCatalog.swift; sourceTree = "<group>"; };
-		E712B98E4AADB804BC014353 /* TrainingPlanTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainingPlanTests.swift; sourceTree = "<group>"; };
-		E96FF45AE5CFD0B7C4481E2C /* WeeklyPlanView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeeklyPlanView.swift; path = Features/Training/WeeklyPlanView.swift; sourceTree = "<group>"; };
-		E9ABC61F05F065F9223C0153 /* TrendsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsView.swift; path = Features/Body/TrendsView.swift; sourceTree = "<group>"; };
-		EBF274DD5B6C6E98F8196227 /* NutritionBodyTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NutritionBodyTests.swift; sourceTree = "<group>"; };
-		EEDD920AC04BE1466773E853 /* BackupTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackupTests.swift; sourceTree = "<group>"; };
-		EEE2DF0C9A3F43C1C4286B84 /* JournalStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JournalStore.swift; path = Features/Nutrition/JournalStore.swift; sourceTree = "<group>"; };
-		FC49BF168D42D621BC94F10D /* BackupService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackupService.swift; path = Core/Backup/BackupService.swift; sourceTree = "<group>"; };
+		0A31EE774D915CAF2886519F /* HealthSyncModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncModels.swift; path = Core/Domain/HealthSyncModels.swift; sourceTree = "<group>"; };
+		0B4DE352BC57B64194A3603F /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Features/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		0D672F51C2F47F64ECE0D155 /* WorkoutHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutHistoryView.swift; path = Features/History/WorkoutHistoryView.swift; sourceTree = "<group>"; };
+		0E254848CD5F72E6F517B504 /* TrainingStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingStore.swift; path = Features/Training/TrainingStore.swift; sourceTree = "<group>"; };
+		1039F53FBEDD531C0CFE74F6 /* AppModelActor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppModelActor.swift; path = Core/Persistence/AppModelActor.swift; sourceTree = "<group>"; };
+		115471EDE0C0959929081109 /* HealthExportTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthExportTests.swift; sourceTree = "<group>"; };
+		117FF10FA946B13DB526067B /* DataManagementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataManagementTests.swift; sourceTree = "<group>"; };
+		181F2D3C37D71966B1CFFB77 /* ExerciseCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExerciseCatalog.swift; path = Core/Training/ExerciseCatalog.swift; sourceTree = "<group>"; };
+		1CA59E819BC2AFDE26D62DF1 /* BackupTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackupTests.swift; sourceTree = "<group>"; };
+		1E8317CE4F2603698C4CCE85 /* DataManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataManagementView.swift; path = Features/Settings/DataManagementView.swift; sourceTree = "<group>"; };
+		243BC711AA8C608D6F71DD61 /* NutritionModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionModels.swift; path = Core/Domain/NutritionModels.swift; sourceTree = "<group>"; };
+		296C56E02460BFF805CFDF7A /* DietDiaryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DietDiaryTests.swift; sourceTree = "<group>"; };
+		2AF715C6524E6CE2D7960CD3 /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = "<group>"; };
+		2B61BB2FEA58CA51FBCB3C8C /* HealthSyncCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncCoordinator.swift; path = Integrations/HealthKit/HealthSyncCoordinator.swift; sourceTree = "<group>"; };
+		2CB0CD7BBE65874E91833B7E /* WorkoutModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutModels.swift; path = Core/Domain/WorkoutModels.swift; sourceTree = "<group>"; };
+		2F0203812AB46BD0ECACCAA3 /* HealthExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthExportService.swift; path = Integrations/HealthKit/HealthExportService.swift; sourceTree = "<group>"; };
+		3299A63B20648D72FC642C67 /* HealthTestTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthTestTransport.swift; sourceTree = "<group>"; };
+		35531414D17A355F26077A41 /* AppPreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppPreferences.swift; path = Core/Preferences/AppPreferences.swift; sourceTree = "<group>"; };
+		35EE1432EC015EEE27C4315C /* foods.json */ = {isa = PBXFileReference; includeInIndex = 1; name = foods.json; path = Resources/Catalog/foods.json; sourceTree = "<group>"; };
+		37DF8668E76CEAF2B82024FE /* ActiveWorkoutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveWorkoutView.swift; path = Features/Workout/ActiveWorkoutView.swift; sourceTree = "<group>"; };
+		3B509623CE76E93974E18F19 /* HealthCoordinatorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthCoordinatorTests.swift; sourceTree = "<group>"; };
+		3E9A5E2267845ED5A94E131E /* HealthImportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthImportService.swift; path = Integrations/HealthKit/HealthImportService.swift; sourceTree = "<group>"; };
+		3FD8CA485CBCCDC89F4368DB /* TrainingTargetInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingTargetInput.swift; path = Core/Training/TrainingTargetInput.swift; sourceTree = "<group>"; };
+		4485191E420A7A55B7BEF677 /* UITestBackupFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITestBackupFixtures.swift; path = App/UITestBackupFixtures.swift; sourceTree = "<group>"; };
+		44B9DFCD5CC87B0263D796B8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		45FD383CCB1B43670D55FD7C /* RecordDatePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordDatePicker.swift; path = Design/RecordDatePicker.swift; sourceTree = "<group>"; };
+		4639CF6F666DB0891F93DB67 /* PersistenceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
+		46E293D4158492FD3BE41299 /* ReleaseDataTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReleaseDataTests.swift; sourceTree = "<group>"; };
+		477EF516A44F060AD7AC4111 /* WorkoutRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutRepository.swift; path = Core/Training/WorkoutRepository.swift; sourceTree = "<group>"; };
+		4842945B27D5219201EE68C3 /* HealthAggregation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthAggregation.swift; path = Core/Analytics/HealthAggregation.swift; sourceTree = "<group>"; };
+		4BB7D90931ADE9B60169E229 /* Leanora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leanora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BBC6642C421D49F34A3B9BB /* TodayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TodayView.swift; path = Features/Today/TodayView.swift; sourceTree = "<group>"; };
+		4BCF634D5931D5F85CA98B25 /* MainTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = App/MainTabView.swift; sourceTree = "<group>"; };
+		4E3330EB93AE499BCBAB34D3 /* TrainingSummary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingSummary.swift; path = Core/Analytics/TrainingSummary.swift; sourceTree = "<group>"; };
+		576F17127C5D12833560E6C2 /* FoundationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FoundationTests.swift; sourceTree = "<group>"; };
+		5A580543531CADD0D4A16E7A /* WorkoutSessionTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutSessionTests.swift; sourceTree = "<group>"; };
+		5F1CEB2710385F0836646AAC /* HealthSyncEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncEngine.swift; path = Integrations/HealthKit/HealthSyncEngine.swift; sourceTree = "<group>"; };
+		60486C8ADCBFFA1E4EEE1F80 /* Leanora.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Leanora.entitlements; sourceTree = "<group>"; };
+		6618044E7C02ABC8706A3097 /* TemplateEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateEditorView.swift; path = Features/Training/TemplateEditorView.swift; sourceTree = "<group>"; };
+		66B06B8F06047D6C12EC75F8 /* SystemHealthTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SystemHealthTransport.swift; path = Integrations/HealthKit/SystemHealthTransport.swift; sourceTree = "<group>"; };
+		69591055A8E883CF777DA7CE /* TrainingRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingRepository.swift; path = Core/Training/TrainingRepository.swift; sourceTree = "<group>"; };
+		6DBEFF6AB982E98B99F8D199 /* HealthConnectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthConnectionView.swift; path = Features/Settings/HealthConnectionView.swift; sourceTree = "<group>"; };
+		6DCCF4C437F136EDE04FDB7A /* StoreUnavailableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreUnavailableView.swift; path = App/StoreUnavailableView.swift; sourceTree = "<group>"; };
+		6E7603A002058723B7269E11 /* DataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataStoreController.swift; path = App/DataStoreController.swift; sourceTree = "<group>"; };
+		75E3BFB66845F3403C8D2D6E /* HealthSyncRecoveryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthSyncRecoveryTests.swift; sourceTree = "<group>"; };
+		762DA61DE8E71ECBC84144E2 /* LeanoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		767DA4F3D69F249CF0C71015 /* NutritionRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionRepository.swift; path = Core/Nutrition/NutritionRepository.swift; sourceTree = "<group>"; };
+		7C699B5728398ECEA2597E14 /* StoreFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreFactory.swift; path = Core/Persistence/StoreFactory.swift; sourceTree = "<group>"; };
+		7FCB0E19303340BFD55B1DF3 /* HealthReleaseExperienceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthReleaseExperienceTests.swift; sourceTree = "<group>"; };
+		80809A1D9929A01FFF7FB987 /* PreferencesForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencesForm.swift; path = Features/Onboarding/PreferencesForm.swift; sourceTree = "<group>"; };
+		816DD0B0553554C101048EFD /* TrainingPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingPlan.swift; path = Core/Training/TrainingPlan.swift; sourceTree = "<group>"; };
+		867841F01148A7D9C4DFAA5D /* OnboardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = Features/Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
+		87D9972C27FD767C51DC3F02 /* WorkoutSessionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutSessionController.swift; path = Features/Workout/WorkoutSessionController.swift; sourceTree = "<group>"; };
+		87F074EB38DBCBC07E262AEA /* CapacityTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CapacityTests.swift; sourceTree = "<group>"; };
+		8884973E2EB0829D846EC424 /* TrainingPlanTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainingPlanTests.swift; sourceTree = "<group>"; };
+		8D030D4ED648A81D5CB32419 /* FoodPortionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoodPortionView.swift; path = Features/Nutrition/FoodPortionView.swift; sourceTree = "<group>"; };
+		8F691965C04FF58837BCC920 /* TrendsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsView.swift; path = Features/Body/TrendsView.swift; sourceTree = "<group>"; };
+		91471D0F73156D550A971BCD /* WorkoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutEngine.swift; path = Core/Training/WorkoutEngine.swift; sourceTree = "<group>"; };
+		9403ED3AEAFC60C0B6CE9B10 /* NutritionBodyTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NutritionBodyTests.swift; sourceTree = "<group>"; };
+		94B409DDB589D77705FBF384 /* HealthSampleMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSampleMapper.swift; path = Integrations/HealthKit/HealthSampleMapper.swift; sourceTree = "<group>"; };
+		97DECB514B94E29DF40F086E /* BodyMeasurementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyMeasurementView.swift; path = Features/Body/BodyMeasurementView.swift; sourceTree = "<group>"; };
+		99FB04E5CE0197DE4264CCC6 /* HealthObserverCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthObserverCoordinator.swift; path = Integrations/HealthKit/HealthObserverCoordinator.swift; sourceTree = "<group>"; };
+		9B62C3C11C9A17BED2C0778D /* FoodCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoodCatalog.swift; path = Core/Nutrition/FoodCatalog.swift; sourceTree = "<group>"; };
+		9F8A2579D05B7CA80CDD0CCA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		A6A5DC56324F74C3CA93E494 /* LeanoraTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanoraTheme.swift; path = Design/LeanoraTheme.swift; sourceTree = "<group>"; };
+		A8C49BA73A16DE81C233685B /* exercises.json */ = {isa = PBXFileReference; includeInIndex = 1; name = exercises.json; path = Resources/Catalog/exercises.json; sourceTree = "<group>"; };
+		B021E0C8E1FC870A1FF70D33 /* TrainingHomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingHomeView.swift; path = Features/Training/TrainingHomeView.swift; sourceTree = "<group>"; };
+		B487527979F98B44A17E6ACB /* HealthImportTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthImportTests.swift; sourceTree = "<group>"; };
+		B692BEF70D7805F2DDBC7276 /* TrainingReminderService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingReminderService.swift; path = Core/Notifications/TrainingReminderService.swift; sourceTree = "<group>"; };
+		B835F2035C2362C849F24416 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		B83DE8C5597346AA077D7A95 /* WeeklyPlanView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeeklyPlanView.swift; path = Features/Training/WeeklyPlanView.swift; sourceTree = "<group>"; };
+		C07AC406E91E697ED90197A6 /* HealthAuthorizationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthAuthorizationService.swift; path = Integrations/HealthKit/HealthAuthorizationService.swift; sourceTree = "<group>"; };
+		C1676CA5916C8D02A0B62AAB /* DietDiaryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DietDiaryView.swift; path = Features/Nutrition/DietDiaryView.swift; sourceTree = "<group>"; };
+		C22BDA575033F50A18696B33 /* BusinessRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BusinessRecord.swift; path = Core/Domain/BusinessRecord.swift; sourceTree = "<group>"; };
+		C32828E73FCADC74040F1B4C /* NotificationPermissionService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationPermissionService.swift; path = Core/Notifications/NotificationPermissionService.swift; sourceTree = "<group>"; };
+		CBC9B47DD77E7BDE3786F705 /* JournalStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JournalStore.swift; path = Features/Nutrition/JournalStore.swift; sourceTree = "<group>"; };
+		D35EDE41A2D6AA4FB2D724C1 /* NutritionCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NutritionCalculator.swift; path = Core/Nutrition/NutritionCalculator.swift; sourceTree = "<group>"; };
+		D519B58833EF5710D675F5F1 /* LocalResetView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalResetView.swift; path = Features/Settings/LocalResetView.swift; sourceTree = "<group>"; };
+		D530A261117F95A1702A5E48 /* NutritionCalculationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NutritionCalculationTests.swift; sourceTree = "<group>"; };
+		D7B50BB3212B17E372618AA7 /* HealthSyncRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncRepository.swift; path = Core/Persistence/HealthSyncRepository.swift; sourceTree = "<group>"; };
+		D9F8683AA9E5C1A25E68E690 /* HealthWorkoutAssociationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthWorkoutAssociationView.swift; path = Features/Settings/HealthWorkoutAssociationView.swift; sourceTree = "<group>"; };
+		DA7811EF4CB93398A998CC03 /* WorkoutNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutNotificationService.swift; path = Core/Notifications/WorkoutNotificationService.swift; sourceTree = "<group>"; };
+		DB333CD09F16BF5FD06EA00E /* FoodSearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoodSearchView.swift; path = Features/Nutrition/FoodSearchView.swift; sourceTree = "<group>"; };
+		DB66DB4A376A338C0864179A /* WorkoutRecoveryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutRecoveryTests.swift; sourceTree = "<group>"; };
+		E1809A6E78497B39168D0C32 /* ExerciseLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExerciseLibraryView.swift; path = Features/Training/ExerciseLibraryView.swift; sourceTree = "<group>"; };
+		E27D2177ADA2543B2EBD8717 /* HealthIntentRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthIntentRepository.swift; path = Core/Persistence/HealthIntentRepository.swift; sourceTree = "<group>"; };
+		E32EA11D36946FA11CCAE97C /* PrivacyView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrivacyView.swift; path = Features/Settings/PrivacyView.swift; sourceTree = "<group>"; };
+		E3E549CE1C773FFC5105687D /* MigrationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MigrationTests.swift; sourceTree = "<group>"; };
+		E557B4CBB5C7207A5FA757FC /* HealthSyncStatusView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncStatusView.swift; path = Features/Settings/HealthSyncStatusView.swift; sourceTree = "<group>"; };
+		EC99013D275DF5956424E5F9 /* CSVExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSVExportService.swift; path = Core/Backup/CSVExportService.swift; sourceTree = "<group>"; };
+		EF271C7D5818A5B7A611629F /* LeanoraApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanoraApp.swift; path = App/LeanoraApp.swift; sourceTree = "<group>"; };
+		EFCEF0354DE000781965B48D /* TemplateEditorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateEditorTests.swift; sourceTree = "<group>"; };
+		F0A5E9BABC03B43D227FD975 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationSettingsView.swift; path = Features/Settings/NotificationSettingsView.swift; sourceTree = "<group>"; };
+		F1B4FDBDF6C200E61873E659 /* AppSchemaMigrationPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppSchemaMigrationPlan.swift; path = Core/Persistence/AppSchemaMigrationPlan.swift; sourceTree = "<group>"; };
+		F6AE13CC0104D99B45F5F3C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F8283702625BA8B846496F6E /* OnboardingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
+		FB267627BDA0D687633BA62B /* BackupService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackupService.swift; path = Core/Backup/BackupService.swift; sourceTree = "<group>"; };
+		FB6DECAF2A752FE5BC5B2D10 /* BodyMeasurementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BodyMeasurementTests.swift; sourceTree = "<group>"; };
+		FC2E379140F53B1529EA9324 /* TrainingSummaryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainingSummaryTests.swift; sourceTree = "<group>"; };
+		FC6E0B989A52EDA084CCD363 /* DataFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataFixtures.swift; sourceTree = "<group>"; };
+		FEB49581A8AD05B5983FBF26 /* LeanoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3F0344E6C5BAA43C3BCFADAE /* Frameworks */ = {
+		641D23DEE1EF1525E5385A2B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8E9BD39F05352F671520EF0 /* Foundation.framework in Frameworks */,
+				10DA2F3E5C0563C65E82D570 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A9C73D16F26ACABDE7D848B /* Frameworks */ = {
+		C5F89C8AA99B041C119F677C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F6C349BEDF4669138739EAD /* Foundation.framework in Frameworks */,
+				5EDBD39240C81098572BAC0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F17A27BC56D0152482C853AF /* Frameworks */ = {
+		EBD03ECBE2FD5B18148304F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E7AB991EB628B370DC850CC /* Foundation.framework in Frameworks */,
+				5B51DFAA96507FF9D7725C02 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5DEA2DCD083C8D1AA50A465B /* LeanoraUITests */ = {
+		0016831E3A1AE598D3B8CA61 /* Leanora */ = {
 			isa = PBXGroup;
 			children = (
-				277269816044E67513E405EE /* DataManagementTests.swift */,
-				EBF274DD5B6C6E98F8196227 /* NutritionBodyTests.swift */,
-				66AAAF90B1045A9387A638E2 /* OnboardingTests.swift */,
-				A0FC567536D8771435544E0E /* TemplateEditorTests.swift */,
-				E2E01E556337E18F9FA65BC9 /* WorkoutRecoveryTests.swift */,
-			);
-			name = LeanoraUITests;
-			path = LeanoraUITests;
-			sourceTree = "<group>";
-		};
-		859E04F7180B00DA7FD5A294 /* LeanoraTests */ = {
-			isa = PBXGroup;
-			children = (
-				EEDD920AC04BE1466773E853 /* BackupTests.swift */,
-				2EF2938126C5647F39DE4F4E /* BodyMeasurementTests.swift */,
-				A4EABED1674D3FD878B1BDD7 /* DataFixtures.swift */,
-				A8AD526C6F2B16DB6FFC360A /* DietDiaryTests.swift */,
-				143DE9C87425D9E13D06C512 /* FoundationTests.swift */,
-				7AC354153189488515839F3F /* MigrationTests.swift */,
-				4A2BFA40A6ED5C7AD6178949 /* NutritionCalculationTests.swift */,
-				D1E05E48B301984B86A65146 /* PersistenceTests.swift */,
-				E712B98E4AADB804BC014353 /* TrainingPlanTests.swift */,
-				40A8803166BDB1450D3E162F /* TrainingSummaryTests.swift */,
-				383DD4BF7B209DBB2046F547 /* WorkoutSessionTests.swift */,
-			);
-			name = LeanoraTests;
-			path = LeanoraTests;
-			sourceTree = "<group>";
-		};
-		90F6A3DDE6113FAA746437ED /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B8C34531019F2521702A11F2 /* Leanora.app */,
-				C832D9BD68AEB2492A24138C /* LeanoraTests.xctest */,
-				8CA7FF1569EA48AA856BB6A1 /* LeanoraUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C39124D9AC263CA3584B3373 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D3559A5E04A09FAC82D79697 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D3559A5E04A09FAC82D79697 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				591D9B9F03608C656FCE42CA /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		EF561F82B67C1248A3E6B7C7 /* Leanora */ = {
-			isa = PBXGroup;
-			children = (
-				B1FC622B62BA0C391591E595 /* DataStoreController.swift */,
-				2CF15FC5701B233A8CB56C5C /* LeanoraApp.swift */,
-				E45C13D35245C273CC7B10C2 /* MainTabView.swift */,
-				1B62A4F533B02D76149842E7 /* StoreUnavailableView.swift */,
-				64383A572CE2CDB9E1DE0B3D /* UITestBackupFixtures.swift */,
-				3D5F9288B9D61508EA76148A /* TrainingSummary.swift */,
-				FC49BF168D42D621BC94F10D /* BackupService.swift */,
-				9556DA09542C55DC0BC82F8A /* BusinessRecord.swift */,
-				328614F8D2FC294A61EB652B /* HealthSyncModels.swift */,
-				09CC301B408FDF7959C9C073 /* NutritionModels.swift */,
-				40B452E2881272FB7BBFDA10 /* WorkoutModels.swift */,
-				761A0929E16565FEA463D4D8 /* NotificationPermissionService.swift */,
-				5D95097D883F7EA22EC40A36 /* TrainingReminderService.swift */,
-				1E940AED9E4F45DD59772BC5 /* WorkoutNotificationService.swift */,
-				E57D842F4EC52BE55AE1A9F7 /* FoodCatalog.swift */,
-				99514A81D369C8F9628DF48C /* NutritionCalculator.swift */,
-				3B91E80BCF665D085255F977 /* NutritionRepository.swift */,
-				BC7BB9A2C9687D42D8C0DDE9 /* AppModelActor.swift */,
-				C55D19BA89D64D8D59431F79 /* AppSchemaMigrationPlan.swift */,
-				6ACF5A1A46255523B832E689 /* HealthIntentRepository.swift */,
-				0541AF144846F4D6BEE089FC /* StoreFactory.swift */,
-				98BCE819EEA6B4A0E48926DA /* AppPreferences.swift */,
-				2BF6F4D960CE5EC06B199FE7 /* ExerciseCatalog.swift */,
-				887804F07C20F542F1FC20EC /* TrainingPlan.swift */,
-				716FF4241EAB033A3D4D4A92 /* TrainingRepository.swift */,
-				0E97DF4AC514FFF045F5C486 /* TrainingTargetInput.swift */,
-				49FABD93F7D429F3EC87534D /* WorkoutEngine.swift */,
-				1F4C9DEA780BB278A1EB71A1 /* WorkoutRepository.swift */,
-				4D23910D0B3299CF68E76B44 /* LeanoraTheme.swift */,
-				C1B4D833A0D6CA6B55FF1664 /* RecordDatePicker.swift */,
-				CE649AF4E7CE300A805A11FA /* BodyMeasurementView.swift */,
-				E9ABC61F05F065F9223C0153 /* TrendsView.swift */,
-				787F18744A3FCCAF09D0A809 /* WorkoutHistoryView.swift */,
-				3DA81EAECDB08EE5EECF0E24 /* DietDiaryView.swift */,
-				9FE42FACF26DCDA3C79583F1 /* FoodPortionView.swift */,
-				988430A8F6E0553DD81EDDAB /* FoodSearchView.swift */,
-				EEE2DF0C9A3F43C1C4286B84 /* JournalStore.swift */,
-				B244DD8D23407D4C1D519FD3 /* OnboardingView.swift */,
-				8A6AF55B4B7DF9DFCF5A170E /* PreferencesForm.swift */,
-				DB1714109BAFE75F1E45A01F /* DataManagementView.swift */,
-				361EF3729EEBDFB3905C86F8 /* HealthConnectionView.swift */,
-				AE3000370B8B4805E0AD4A3C /* NotificationSettingsView.swift */,
-				9D548078E6FA401843F33618 /* PrivacyView.swift */,
-				5A28F1F1ED35A741FF3BB35D /* SettingsView.swift */,
-				A9DCD3701889BB3B89B706B1 /* TodayView.swift */,
-				D403CB6288432F01CD483AD3 /* ExerciseLibraryView.swift */,
-				05AE2847FF27458C356895D0 /* TemplateEditorView.swift */,
-				A3F28A1BAEE60600B7F45A42 /* TrainingHomeView.swift */,
-				33CB36815C606ED31C620664 /* TrainingStore.swift */,
-				E96FF45AE5CFD0B7C4481E2C /* WeeklyPlanView.swift */,
-				C6FB825DF13A4C5646CA8E4E /* ActiveWorkoutView.swift */,
-				CEE2AC770104B3125EAC8FA1 /* WorkoutSessionController.swift */,
-				61FF8846A8212E2DA79D9F86 /* HealthAuthorizationService.swift */,
-				62FE680960D571680B7044AA /* Leanora.entitlements */,
-				CEB0851E42B26F2D80A8A291 /* exercises.json */,
-				D0B1A012626DB6EA8E28249D /* foods.json */,
-				6F6FED5F82070E2B44A29CC9 /* Info.plist */,
-				1C2F73D95F94C3F7E71F7518 /* Localizable.xcstrings */,
-				0BEECBCB7F72F2E6C5706034 /* PrivacyInfo.xcprivacy */,
-				0E5A2258C8558CB977B8DE53 /* Assets.xcassets */,
+				6E7603A002058723B7269E11 /* DataStoreController.swift */,
+				EF271C7D5818A5B7A611629F /* LeanoraApp.swift */,
+				4BCF634D5931D5F85CA98B25 /* MainTabView.swift */,
+				6DCCF4C437F136EDE04FDB7A /* StoreUnavailableView.swift */,
+				4485191E420A7A55B7BEF677 /* UITestBackupFixtures.swift */,
+				4842945B27D5219201EE68C3 /* HealthAggregation.swift */,
+				4E3330EB93AE499BCBAB34D3 /* TrainingSummary.swift */,
+				FB267627BDA0D687633BA62B /* BackupService.swift */,
+				EC99013D275DF5956424E5F9 /* CSVExportService.swift */,
+				C22BDA575033F50A18696B33 /* BusinessRecord.swift */,
+				0A31EE774D915CAF2886519F /* HealthSyncModels.swift */,
+				243BC711AA8C608D6F71DD61 /* NutritionModels.swift */,
+				2CB0CD7BBE65874E91833B7E /* WorkoutModels.swift */,
+				C32828E73FCADC74040F1B4C /* NotificationPermissionService.swift */,
+				B692BEF70D7805F2DDBC7276 /* TrainingReminderService.swift */,
+				DA7811EF4CB93398A998CC03 /* WorkoutNotificationService.swift */,
+				9B62C3C11C9A17BED2C0778D /* FoodCatalog.swift */,
+				D35EDE41A2D6AA4FB2D724C1 /* NutritionCalculator.swift */,
+				767DA4F3D69F249CF0C71015 /* NutritionRepository.swift */,
+				1039F53FBEDD531C0CFE74F6 /* AppModelActor.swift */,
+				F1B4FDBDF6C200E61873E659 /* AppSchemaMigrationPlan.swift */,
+				E27D2177ADA2543B2EBD8717 /* HealthIntentRepository.swift */,
+				D7B50BB3212B17E372618AA7 /* HealthSyncRepository.swift */,
+				7C699B5728398ECEA2597E14 /* StoreFactory.swift */,
+				35531414D17A355F26077A41 /* AppPreferences.swift */,
+				181F2D3C37D71966B1CFFB77 /* ExerciseCatalog.swift */,
+				816DD0B0553554C101048EFD /* TrainingPlan.swift */,
+				69591055A8E883CF777DA7CE /* TrainingRepository.swift */,
+				3FD8CA485CBCCDC89F4368DB /* TrainingTargetInput.swift */,
+				91471D0F73156D550A971BCD /* WorkoutEngine.swift */,
+				477EF516A44F060AD7AC4111 /* WorkoutRepository.swift */,
+				A6A5DC56324F74C3CA93E494 /* LeanoraTheme.swift */,
+				45FD383CCB1B43670D55FD7C /* RecordDatePicker.swift */,
+				97DECB514B94E29DF40F086E /* BodyMeasurementView.swift */,
+				8F691965C04FF58837BCC920 /* TrendsView.swift */,
+				0D672F51C2F47F64ECE0D155 /* WorkoutHistoryView.swift */,
+				C1676CA5916C8D02A0B62AAB /* DietDiaryView.swift */,
+				8D030D4ED648A81D5CB32419 /* FoodPortionView.swift */,
+				DB333CD09F16BF5FD06EA00E /* FoodSearchView.swift */,
+				CBC9B47DD77E7BDE3786F705 /* JournalStore.swift */,
+				867841F01148A7D9C4DFAA5D /* OnboardingView.swift */,
+				80809A1D9929A01FFF7FB987 /* PreferencesForm.swift */,
+				1E8317CE4F2603698C4CCE85 /* DataManagementView.swift */,
+				6DBEFF6AB982E98B99F8D199 /* HealthConnectionView.swift */,
+				E557B4CBB5C7207A5FA757FC /* HealthSyncStatusView.swift */,
+				D9F8683AA9E5C1A25E68E690 /* HealthWorkoutAssociationView.swift */,
+				D519B58833EF5710D675F5F1 /* LocalResetView.swift */,
+				F0A5E9BABC03B43D227FD975 /* NotificationSettingsView.swift */,
+				E32EA11D36946FA11CCAE97C /* PrivacyView.swift */,
+				0B4DE352BC57B64194A3603F /* SettingsView.swift */,
+				4BBC6642C421D49F34A3B9BB /* TodayView.swift */,
+				E1809A6E78497B39168D0C32 /* ExerciseLibraryView.swift */,
+				6618044E7C02ABC8706A3097 /* TemplateEditorView.swift */,
+				B021E0C8E1FC870A1FF70D33 /* TrainingHomeView.swift */,
+				0E254848CD5F72E6F517B504 /* TrainingStore.swift */,
+				B83DE8C5597346AA077D7A95 /* WeeklyPlanView.swift */,
+				37DF8668E76CEAF2B82024FE /* ActiveWorkoutView.swift */,
+				87D9972C27FD767C51DC3F02 /* WorkoutSessionController.swift */,
+				C07AC406E91E697ED90197A6 /* HealthAuthorizationService.swift */,
+				2F0203812AB46BD0ECACCAA3 /* HealthExportService.swift */,
+				3E9A5E2267845ED5A94E131E /* HealthImportService.swift */,
+				99FB04E5CE0197DE4264CCC6 /* HealthObserverCoordinator.swift */,
+				94B409DDB589D77705FBF384 /* HealthSampleMapper.swift */,
+				2B61BB2FEA58CA51FBCB3C8C /* HealthSyncCoordinator.swift */,
+				5F1CEB2710385F0836646AAC /* HealthSyncEngine.swift */,
+				66B06B8F06047D6C12EC75F8 /* SystemHealthTransport.swift */,
+				60486C8ADCBFFA1E4EEE1F80 /* Leanora.entitlements */,
+				A8C49BA73A16DE81C233685B /* exercises.json */,
+				35EE1432EC015EEE27C4315C /* foods.json */,
+				9F8A2579D05B7CA80CDD0CCA /* Info.plist */,
+				2AF715C6524E6CE2D7960CD3 /* Localizable.xcstrings */,
+				44B9DFCD5CC87B0263D796B8 /* PrivacyInfo.xcprivacy */,
+				B835F2035C2362C849F24416 /* Assets.xcassets */,
 			);
 			name = Leanora;
 			path = Leanora;
 			sourceTree = "<group>";
 		};
-		EFF4E20DF3755BF32BF41487 = {
+		1E953410ABB0E88C4A5A6C5B = {
 			isa = PBXGroup;
 			children = (
-				90F6A3DDE6113FAA746437ED /* Products */,
-				C39124D9AC263CA3584B3373 /* Frameworks */,
-				EF561F82B67C1248A3E6B7C7 /* Leanora */,
-				859E04F7180B00DA7FD5A294 /* LeanoraTests */,
-				5DEA2DCD083C8D1AA50A465B /* LeanoraUITests */,
+				6E8C37B68CC1357501096DBD /* Products */,
+				9DA7000FD0C02E10B91232B8 /* Frameworks */,
+				0016831E3A1AE598D3B8CA61 /* Leanora */,
+				6F97D022C8234DD88F881C4B /* LeanoraTests */,
+				BA1D1449C735174DE9EF226B /* LeanoraUITests */,
 			);
+			sourceTree = "<group>";
+		};
+		6E8C37B68CC1357501096DBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BB7D90931ADE9B60169E229 /* Leanora.app */,
+				762DA61DE8E71ECBC84144E2 /* LeanoraTests.xctest */,
+				FEB49581A8AD05B5983FBF26 /* LeanoraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F97D022C8234DD88F881C4B /* LeanoraTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CA59E819BC2AFDE26D62DF1 /* BackupTests.swift */,
+				FB6DECAF2A752FE5BC5B2D10 /* BodyMeasurementTests.swift */,
+				87F074EB38DBCBC07E262AEA /* CapacityTests.swift */,
+				FC6E0B989A52EDA084CCD363 /* DataFixtures.swift */,
+				296C56E02460BFF805CFDF7A /* DietDiaryTests.swift */,
+				576F17127C5D12833560E6C2 /* FoundationTests.swift */,
+				3B509623CE76E93974E18F19 /* HealthCoordinatorTests.swift */,
+				115471EDE0C0959929081109 /* HealthExportTests.swift */,
+				B487527979F98B44A17E6ACB /* HealthImportTests.swift */,
+				75E3BFB66845F3403C8D2D6E /* HealthSyncRecoveryTests.swift */,
+				3299A63B20648D72FC642C67 /* HealthTestTransport.swift */,
+				E3E549CE1C773FFC5105687D /* MigrationTests.swift */,
+				D530A261117F95A1702A5E48 /* NutritionCalculationTests.swift */,
+				4639CF6F666DB0891F93DB67 /* PersistenceTests.swift */,
+				46E293D4158492FD3BE41299 /* ReleaseDataTests.swift */,
+				8884973E2EB0829D846EC424 /* TrainingPlanTests.swift */,
+				FC2E379140F53B1529EA9324 /* TrainingSummaryTests.swift */,
+				5A580543531CADD0D4A16E7A /* WorkoutSessionTests.swift */,
+			);
+			name = LeanoraTests;
+			path = LeanoraTests;
+			sourceTree = "<group>";
+		};
+		9DA7000FD0C02E10B91232B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A565DB6D4FE2081CC1E0D184 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A565DB6D4FE2081CC1E0D184 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F6AE13CC0104D99B45F5F3C0 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BA1D1449C735174DE9EF226B /* LeanoraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				117FF10FA946B13DB526067B /* DataManagementTests.swift */,
+				7FCB0E19303340BFD55B1DF3 /* HealthReleaseExperienceTests.swift */,
+				9403ED3AEAFC60C0B6CE9B10 /* NutritionBodyTests.swift */,
+				F8283702625BA8B846496F6E /* OnboardingTests.swift */,
+				EFCEF0354DE000781965B48D /* TemplateEditorTests.swift */,
+				DB66DB4A376A338C0864179A /* WorkoutRecoveryTests.swift */,
+			);
+			name = LeanoraUITests;
+			path = LeanoraUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AAAC31E0A473F2A44284B52D /* Leanora */ = {
+		198BF678EAA093CA739C976F /* LeanoraTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50F1EB4F80F5BBEFCB4B334C /* Build configuration list for PBXNativeTarget "Leanora" */;
+			buildConfigurationList = 632C2A1998CDBD29BD4A0672 /* Build configuration list for PBXNativeTarget "LeanoraTests" */;
 			buildPhases = (
-				756B7E1AB0EE0EE766B12D03 /* Sources */,
-				3F0344E6C5BAA43C3BCFADAE /* Frameworks */,
-				2130DA0294DE047DBC4D344E /* Resources */,
+				941BB3ED5752E43BA31576D7 /* Sources */,
+				C5F89C8AA99B041C119F677C /* Frameworks */,
+				B4BE974901202DEC302611B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC0A0627ECAD70E5D50C7CBD /* PBXTargetDependency */,
+			);
+			name = LeanoraTests;
+			productName = LeanoraTests;
+			productReference = 762DA61DE8E71ECBC84144E2 /* LeanoraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53419B8EB4ADCE1AE1036B92 /* LeanoraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1785789CF7231BAD937D4E81 /* Build configuration list for PBXNativeTarget "LeanoraUITests" */;
+			buildPhases = (
+				C155FF9D69062FA79CE15250 /* Sources */,
+				641D23DEE1EF1525E5385A2B /* Frameworks */,
+				5CD0FD2053BD47AF815F713C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C2954964440A85F87394126 /* PBXTargetDependency */,
+			);
+			name = LeanoraUITests;
+			productName = LeanoraUITests;
+			productReference = FEB49581A8AD05B5983FBF26 /* LeanoraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C219E938D66967516DD5C137 /* Leanora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C7A4348F3C79CFC53770C1 /* Build configuration list for PBXNativeTarget "Leanora" */;
+			buildPhases = (
+				49A3788BF5F95A1634DA51EB /* Sources */,
+				EBD03ECBE2FD5B18148304F6 /* Frameworks */,
+				AA4799662F37F30BACC45946 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -368,55 +467,19 @@
 			);
 			name = Leanora;
 			productName = Leanora;
-			productReference = B8C34531019F2521702A11F2 /* Leanora.app */;
+			productReference = 4BB7D90931ADE9B60169E229 /* Leanora.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B4658CA80C26B825F1331C55 /* LeanoraTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F19374155F7F2676A4A1A56E /* Build configuration list for PBXNativeTarget "LeanoraTests" */;
-			buildPhases = (
-				BBAE2041AF058E406364A3BE /* Sources */,
-				F17A27BC56D0152482C853AF /* Frameworks */,
-				7D60A8EA8D199E577AD28B2B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C6C2FD4B0CA9E2A79F6E16AA /* PBXTargetDependency */,
-			);
-			name = LeanoraTests;
-			productName = LeanoraTests;
-			productReference = C832D9BD68AEB2492A24138C /* LeanoraTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FA58AE12FDBB656E12F95D98 /* LeanoraUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19DE4B1B0B9979952FC2A242 /* Build configuration list for PBXNativeTarget "LeanoraUITests" */;
-			buildPhases = (
-				0C8DCC5A138E1D51AF87B106 /* Sources */,
-				6A9C73D16F26ACABDE7D848B /* Frameworks */,
-				EF0AFAF4CF8DC62AC7D0200A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C39F7CD18FE104556A337387 /* PBXTargetDependency */,
-			);
-			name = LeanoraUITests;
-			productName = LeanoraUITests;
-			productReference = 8CA7FF1569EA48AA856BB6A1 /* LeanoraUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		46CDD70E3A094EF7B6F7747F /* Project object */ = {
+		400A42F09F7B1ACFBDCE2529 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
-					AAAC31E0A473F2A44284B52D = {
+					C219E938D66967516DD5C137 = {
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -425,7 +488,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E18EEC5BBC8542C52E8E3255 /* Build configuration list for PBXProject "Leanora" */;
+			buildConfigurationList = 2C5B0BD8DD24E5012EE07D14 /* Build configuration list for PBXProject "Leanora" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
@@ -434,41 +497,41 @@
 				en,
 				Base,
 			);
-			mainGroup = EFF4E20DF3755BF32BF41487;
+			mainGroup = 1E953410ABB0E88C4A5A6C5B;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 90F6A3DDE6113FAA746437ED /* Products */;
+			productRefGroup = 6E8C37B68CC1357501096DBD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AAAC31E0A473F2A44284B52D /* Leanora */,
-				B4658CA80C26B825F1331C55 /* LeanoraTests */,
-				FA58AE12FDBB656E12F95D98 /* LeanoraUITests */,
+				C219E938D66967516DD5C137 /* Leanora */,
+				198BF678EAA093CA739C976F /* LeanoraTests */,
+				53419B8EB4ADCE1AE1036B92 /* LeanoraUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2130DA0294DE047DBC4D344E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				397B4605E54A0539E6BFCCE4 /* exercises.json in Resources */,
-				66B035C58BF0B9A981738F04 /* foods.json in Resources */,
-				8C3D6D654172E08248078981 /* Localizable.xcstrings in Resources */,
-				93D2CF59A3EC05F62F8A08D8 /* PrivacyInfo.xcprivacy in Resources */,
-				9A5AB7EC3B95FC0D8361574B /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D60A8EA8D199E577AD28B2B /* Resources */ = {
+		5CD0FD2053BD47AF815F713C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF0AFAF4CF8DC62AC7D0200A /* Resources */ = {
+		AA4799662F37F30BACC45946 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5870B74E6CB80A55C65EAF4 /* exercises.json in Resources */,
+				61DDFE3157E4B28447D15CCE /* foods.json in Resources */,
+				23F6BF3E79492C59AD9C51D7 /* Localizable.xcstrings in Resources */,
+				E878ADA9DF2486C16309ABB5 /* PrivacyInfo.xcprivacy in Resources */,
+				21E748130A882D1457364804 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BE974901202DEC302611B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,158 +541,190 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0C8DCC5A138E1D51AF87B106 /* Sources */ = {
+		49A3788BF5F95A1634DA51EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E7A5F496D4C9F41CC19BA56 /* DataManagementTests.swift in Sources */,
-				9C3CA4C4607DD4EA4E51CA61 /* NutritionBodyTests.swift in Sources */,
-				C401657826C0791C5B761E52 /* OnboardingTests.swift in Sources */,
-				3CC6E469E788C8DD7D8F8A02 /* TemplateEditorTests.swift in Sources */,
-				E1CFA142357EE32F82588099 /* WorkoutRecoveryTests.swift in Sources */,
+				A82F0716049DB39B4DAE34F2 /* DataStoreController.swift in Sources */,
+				01CA710D3F97B27E3992E1A3 /* LeanoraApp.swift in Sources */,
+				E12663A6B0CB53E9723DF60E /* MainTabView.swift in Sources */,
+				49BC34947460853923EE987B /* StoreUnavailableView.swift in Sources */,
+				5A075A4760BE41DD686D640D /* UITestBackupFixtures.swift in Sources */,
+				696D493C61D3B1DC87E2AAAC /* HealthAggregation.swift in Sources */,
+				8ADFC4D1112949036B94FC7C /* TrainingSummary.swift in Sources */,
+				BB92152DA18F7F792367B35B /* BackupService.swift in Sources */,
+				B563152FBDF04BAADD08C284 /* CSVExportService.swift in Sources */,
+				6A9E1AD7753835FD3225634B /* BusinessRecord.swift in Sources */,
+				489EA493DD235AFFBBA66D50 /* HealthSyncModels.swift in Sources */,
+				70075D1C27C731B6F8D50ED8 /* NutritionModels.swift in Sources */,
+				D8CBD533044B7AFE6935BC8B /* WorkoutModels.swift in Sources */,
+				CCF9BF605944A189D7E95F32 /* NotificationPermissionService.swift in Sources */,
+				5CA6F3CC5FAC2936A513096B /* TrainingReminderService.swift in Sources */,
+				F364D2415B823E6486BC21F1 /* WorkoutNotificationService.swift in Sources */,
+				FC874C3DDA715F92F32F3816 /* FoodCatalog.swift in Sources */,
+				6325EE5837F438CDA5E78750 /* NutritionCalculator.swift in Sources */,
+				8D0AB4EDBB23154455D62941 /* NutritionRepository.swift in Sources */,
+				53A74440830323952FE8CF32 /* AppModelActor.swift in Sources */,
+				05A6C9E0B531BC41F5743B74 /* AppSchemaMigrationPlan.swift in Sources */,
+				E1E27F8DA3B7B1E2B7A0F2BF /* HealthIntentRepository.swift in Sources */,
+				483334A76CEFE3FBEACBC094 /* HealthSyncRepository.swift in Sources */,
+				CF217CFF6FB330E7CC70D35E /* StoreFactory.swift in Sources */,
+				EECC472B721C75A0B5E3F659 /* AppPreferences.swift in Sources */,
+				CC5432C545F52096C5C8DEC8 /* ExerciseCatalog.swift in Sources */,
+				CE9D394F738DA90051873643 /* TrainingPlan.swift in Sources */,
+				F5ECB2CD50A94041ECCF264A /* TrainingRepository.swift in Sources */,
+				E8765F6016097398D3714E94 /* TrainingTargetInput.swift in Sources */,
+				4C9CADCCBB37C8783B960E9F /* WorkoutEngine.swift in Sources */,
+				AFBC7F41A5B1D16DE481A41E /* WorkoutRepository.swift in Sources */,
+				CF92222BBDDCE97779C83A78 /* LeanoraTheme.swift in Sources */,
+				612169DC15268EAD2DD42B9E /* RecordDatePicker.swift in Sources */,
+				AF083C2396CA98BBB974B3F1 /* BodyMeasurementView.swift in Sources */,
+				0502306134A270B5C6B2E767 /* TrendsView.swift in Sources */,
+				E4590059B4D06853699EA858 /* WorkoutHistoryView.swift in Sources */,
+				279EF5FBC0B0A5B72C9AB8F8 /* DietDiaryView.swift in Sources */,
+				97208C425BDEF6CBE96734E7 /* FoodPortionView.swift in Sources */,
+				BBB52F377A5C5F0FD5BB422A /* FoodSearchView.swift in Sources */,
+				5DCFA9168A0F748642230F05 /* JournalStore.swift in Sources */,
+				D70B3EAA10FD747763CBB1E6 /* OnboardingView.swift in Sources */,
+				B2D7F4175BA8FD55DD2F5A94 /* PreferencesForm.swift in Sources */,
+				1AA4589B61CC5D70B3D81572 /* DataManagementView.swift in Sources */,
+				14A78E4396C5616A81EE5C68 /* HealthConnectionView.swift in Sources */,
+				E906952CCE1F34F9E820A2EB /* HealthSyncStatusView.swift in Sources */,
+				5D49D1E27A41AF9B05B0E9F6 /* HealthWorkoutAssociationView.swift in Sources */,
+				5A6A02803F48AE69ED10F838 /* LocalResetView.swift in Sources */,
+				64CCBE0C0CADB2B473EBE751 /* NotificationSettingsView.swift in Sources */,
+				D842905D81B5584B7889FC24 /* PrivacyView.swift in Sources */,
+				EF5EE3F739A2611B4FCA7D24 /* SettingsView.swift in Sources */,
+				13C0114B27CBBCA77319EC4E /* TodayView.swift in Sources */,
+				0AE9687AC3E4A01BF855E918 /* ExerciseLibraryView.swift in Sources */,
+				53B877789623A5BB275C4F23 /* TemplateEditorView.swift in Sources */,
+				7D81AC5704A6F6AC5A94451B /* TrainingHomeView.swift in Sources */,
+				75CA2F6C69EAB45021287816 /* TrainingStore.swift in Sources */,
+				17C707E81DF5CC3E53520677 /* WeeklyPlanView.swift in Sources */,
+				A021A29E66D943F2E74650AB /* ActiveWorkoutView.swift in Sources */,
+				BBBF329E60C037C0E5B5D94A /* WorkoutSessionController.swift in Sources */,
+				1F2E50201379528C129B8CE0 /* HealthAuthorizationService.swift in Sources */,
+				99559590A4FE2995E73EA8FA /* HealthExportService.swift in Sources */,
+				1C6E0E87C40B73761A93CD69 /* HealthImportService.swift in Sources */,
+				998EDA629A09B8B27B532293 /* HealthObserverCoordinator.swift in Sources */,
+				875782B87D0E058FD0F44529 /* HealthSampleMapper.swift in Sources */,
+				A34737B1A92161C84864F386 /* HealthSyncCoordinator.swift in Sources */,
+				097233A1CA591C10F250E337 /* HealthSyncEngine.swift in Sources */,
+				A12DC7053309BAE96B997590 /* SystemHealthTransport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		756B7E1AB0EE0EE766B12D03 /* Sources */ = {
+		941BB3ED5752E43BA31576D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FB9557D0FD154241446CF55 /* DataStoreController.swift in Sources */,
-				C92D7DB13B5F7703F9BF3A04 /* LeanoraApp.swift in Sources */,
-				BCE16A0D4B50013998583F39 /* MainTabView.swift in Sources */,
-				D6B498107D875E2F83D24F94 /* StoreUnavailableView.swift in Sources */,
-				DA35BB00F569D28A36740C55 /* UITestBackupFixtures.swift in Sources */,
-				C9AF1DE18E769C9D89CA85FB /* TrainingSummary.swift in Sources */,
-				FD0437F7B5482D484315CB75 /* BackupService.swift in Sources */,
-				2B0DF313963C7E2B7048C7CD /* BusinessRecord.swift in Sources */,
-				000FCC4EDECAAED21EC746EC /* HealthSyncModels.swift in Sources */,
-				B2AC63F809A0BA61FB3CC703 /* NutritionModels.swift in Sources */,
-				25BB80DE1016EB0F453FF588 /* WorkoutModels.swift in Sources */,
-				0118B3B811358009129902AD /* NotificationPermissionService.swift in Sources */,
-				B303A9465FA57B3E0985289B /* TrainingReminderService.swift in Sources */,
-				B697B16E54DACBAF2E8C7FB9 /* WorkoutNotificationService.swift in Sources */,
-				2D24A90526405FEB123F9168 /* FoodCatalog.swift in Sources */,
-				C4BB14D82C980D3A03F407E4 /* NutritionCalculator.swift in Sources */,
-				057EDC8FC1548C13D11D5B95 /* NutritionRepository.swift in Sources */,
-				982B87C87ACC0B777792A6D3 /* AppModelActor.swift in Sources */,
-				F41837CF9E0276B3740B27B1 /* AppSchemaMigrationPlan.swift in Sources */,
-				714135AD081ABECE54439DF0 /* HealthIntentRepository.swift in Sources */,
-				D579A6E84AE51871057BDDC8 /* StoreFactory.swift in Sources */,
-				71DCA60809F9F20354A89C0F /* AppPreferences.swift in Sources */,
-				0B9429CE31763D5083D6AAA3 /* ExerciseCatalog.swift in Sources */,
-				68D864766173F99BD3E16CAF /* TrainingPlan.swift in Sources */,
-				2CDD59AE1A86B8C310EC34B4 /* TrainingRepository.swift in Sources */,
-				E2EF90D3D5EB84A9663D78CE /* TrainingTargetInput.swift in Sources */,
-				3B9071D036498F49DB1DEAFD /* WorkoutEngine.swift in Sources */,
-				6410E1F89EF7BE4BD070D7CE /* WorkoutRepository.swift in Sources */,
-				A8FC3CF3BEA0A93786FEC0C0 /* LeanoraTheme.swift in Sources */,
-				C68E98F7A01FFDA77BCECD2A /* RecordDatePicker.swift in Sources */,
-				AB2E0BD3D7EA3B87CF0D1145 /* BodyMeasurementView.swift in Sources */,
-				201B396B749AEE7433B5BE64 /* TrendsView.swift in Sources */,
-				5F1412E52FA2C5B557A0EBD7 /* WorkoutHistoryView.swift in Sources */,
-				F5773602A59AF18BFF12D1F4 /* DietDiaryView.swift in Sources */,
-				3BF4E295B9EE3BB99676A974 /* FoodPortionView.swift in Sources */,
-				719EBF84890E9DC5C86162BE /* FoodSearchView.swift in Sources */,
-				215B65FB6AFCFBDA9C2886E5 /* JournalStore.swift in Sources */,
-				1ABA64C00A86EB99D2F7B9A4 /* OnboardingView.swift in Sources */,
-				9FD364A9CAA5390A589DE359 /* PreferencesForm.swift in Sources */,
-				B2DD8D68CE8E50D92D9D8526 /* DataManagementView.swift in Sources */,
-				9D28818857ADEBD07F865E9A /* HealthConnectionView.swift in Sources */,
-				49002E13354E35A2879780B1 /* NotificationSettingsView.swift in Sources */,
-				800D811BB06565A9ADCCE90C /* PrivacyView.swift in Sources */,
-				C27B5794020440B8B94611B9 /* SettingsView.swift in Sources */,
-				9DE5008325501205B0D2C1B1 /* TodayView.swift in Sources */,
-				4DFAF5AEB10EB4100E7F7D7C /* ExerciseLibraryView.swift in Sources */,
-				1D1E37BA268AA46050CA2174 /* TemplateEditorView.swift in Sources */,
-				018908B3A84CB6DD3F48A771 /* TrainingHomeView.swift in Sources */,
-				7B5A7D4E104F2CD5C2092C3D /* TrainingStore.swift in Sources */,
-				5396042A95E7DB79A5C9B002 /* WeeklyPlanView.swift in Sources */,
-				7D65FCAD957EB2C212329B63 /* ActiveWorkoutView.swift in Sources */,
-				176A0C1E03A1E3148F1D5CD3 /* WorkoutSessionController.swift in Sources */,
-				64D5C09437CC8A17EB34C6A5 /* HealthAuthorizationService.swift in Sources */,
+				14DCCD19724C6DFEF56C07AF /* BackupTests.swift in Sources */,
+				4C8C46810B6B548D2732F3F4 /* BodyMeasurementTests.swift in Sources */,
+				A567523666D1A2CF3809FC85 /* CapacityTests.swift in Sources */,
+				9B099668724EFEE9A8F5A069 /* DataFixtures.swift in Sources */,
+				5F14C8DE0C114D5207010EF7 /* DietDiaryTests.swift in Sources */,
+				7B6F0BC5F62620F6E1B33FB5 /* FoundationTests.swift in Sources */,
+				F4E3E35B81A88F1CFB11D430 /* HealthCoordinatorTests.swift in Sources */,
+				9ECF28D1CA5EFA4B519A33BE /* HealthExportTests.swift in Sources */,
+				1B3532E6F163FBD96D428EA1 /* HealthImportTests.swift in Sources */,
+				B8852CB1030DBFD9599FA7F2 /* HealthSyncRecoveryTests.swift in Sources */,
+				A8F44CD2B2385B12A03B17CE /* HealthTestTransport.swift in Sources */,
+				1FA55E4589CA3E762B70EF52 /* MigrationTests.swift in Sources */,
+				446B62BBF95586A4766B3D64 /* NutritionCalculationTests.swift in Sources */,
+				9F9035F40AAE844AD8822C36 /* PersistenceTests.swift in Sources */,
+				C559A6E219EA55159815B3E3 /* ReleaseDataTests.swift in Sources */,
+				653214B5DD014C2CE55A0B15 /* TrainingPlanTests.swift in Sources */,
+				1D66A52EC96D710E9A46DB0A /* TrainingSummaryTests.swift in Sources */,
+				3A2ED0744FA277309CD0E632 /* WorkoutSessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BBAE2041AF058E406364A3BE /* Sources */ = {
+		C155FF9D69062FA79CE15250 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BB3F6B2B6102BE4FCB2FB13 /* BackupTests.swift in Sources */,
-				C8A100A11D51F9354FC21CA5 /* BodyMeasurementTests.swift in Sources */,
-				95E4DC703B1E929F88FB0358 /* DataFixtures.swift in Sources */,
-				842A9B1B854C7AB87555CAE4 /* DietDiaryTests.swift in Sources */,
-				C64EAF4B8A2D41844D1DB743 /* FoundationTests.swift in Sources */,
-				8B2C8B64F4CC2320B2AEA149 /* MigrationTests.swift in Sources */,
-				E0B6C3C457928103E4D410EF /* NutritionCalculationTests.swift in Sources */,
-				D193D922CBA167171F59931B /* PersistenceTests.swift in Sources */,
-				F1581E8CB4B72D949E1BEFA1 /* TrainingPlanTests.swift in Sources */,
-				999282513E0F768F27457539 /* TrainingSummaryTests.swift in Sources */,
-				110B7953B02A764851E53DF1 /* WorkoutSessionTests.swift in Sources */,
+				A590A5FCA47CF9F3E796B9CF /* DataManagementTests.swift in Sources */,
+				E04C2C708CB044FED88AF11E /* HealthReleaseExperienceTests.swift in Sources */,
+				57172F1B9880DA430FCDBEFA /* NutritionBodyTests.swift in Sources */,
+				F6F6C828A043D66CBF88F4D3 /* OnboardingTests.swift in Sources */,
+				3F0F1D48F8419B7F4B1618DD /* TemplateEditorTests.swift in Sources */,
+				BC2E19E1CCCA0F5F6F0A1C25 /* WorkoutRecoveryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C39F7CD18FE104556A337387 /* PBXTargetDependency */ = {
+		0C2954964440A85F87394126 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Leanora;
-			target = AAAC31E0A473F2A44284B52D /* Leanora */;
-			targetProxy = 3101C5F89C7B018983CE5ED6 /* PBXContainerItemProxy */;
+			target = C219E938D66967516DD5C137 /* Leanora */;
+			targetProxy = B26377EDB7FDFF7983C742B4 /* PBXContainerItemProxy */;
 		};
-		C6C2FD4B0CA9E2A79F6E16AA /* PBXTargetDependency */ = {
+		BC0A0627ECAD70E5D50C7CBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Leanora;
-			target = AAAC31E0A473F2A44284B52D /* Leanora */;
-			targetProxy = 997996F14EF81703F21BC71E /* PBXContainerItemProxy */;
+			target = C219E938D66967516DD5C137 /* Leanora */;
+			targetProxy = 9FC8D5508563995A19F5DDEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0AFA0B996A30D611136EC2BE /* Debug */ = {
+		27DA2636F6783EC9C728AFD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraTests;
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leanora";
-			};
-			name = Debug;
-		};
-		3CE6445BD707AB1EF1FBEDB3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraTests;
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leanora";
-				VALIDATE_PRODUCT = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		57ED88BB45E1FBB8E2E3B333 /* Debug */ = {
+		37D8ED944835DCEE25B8049E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -690,17 +785,17 @@
 			};
 			name = Debug;
 		};
-		5A2D7C8A85C46DE7CEB60040 /* Debug */ = {
+		383468E4C47E5B78A46A16BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraUITests;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -710,42 +805,60 @@
 			};
 			name = Debug;
 		};
-		804EF5B82144A081C68EDAD3 /* Release */ = {
+		444128974F2EAC2ABF5C1F14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Leanora/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev;
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9A48B418E9F95F71DDDFF00A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraTests;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leanora";
+			};
+			name = Debug;
+		};
+		67553EAA7C83461A93F0C3D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraTests;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leanora";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70848EAC08AE7F1D29771527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev.LeanoraUITests;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -756,61 +869,7 @@
 			};
 			name = Release;
 		};
-		B714442C2C238E61FC8D7313 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		E3C52D2D3D0701F32F5E1C11 /* Debug */ = {
+		769A167B1D7299FDDA0F0752 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -818,14 +877,39 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Leanora/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB6FE669129561828E0D54AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Leanora/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.leanora.dev;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -837,43 +921,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19DE4B1B0B9979952FC2A242 /* Build configuration list for PBXNativeTarget "LeanoraUITests" */ = {
+		1785789CF7231BAD937D4E81 /* Build configuration list for PBXNativeTarget "LeanoraUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A48B418E9F95F71DDDFF00A /* Release */,
-				5A2D7C8A85C46DE7CEB60040 /* Debug */,
+				70848EAC08AE7F1D29771527 /* Release */,
+				383468E4C47E5B78A46A16BA /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50F1EB4F80F5BBEFCB4B334C /* Build configuration list for PBXNativeTarget "Leanora" */ = {
+		2C5B0BD8DD24E5012EE07D14 /* Build configuration list for PBXProject "Leanora" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				804EF5B82144A081C68EDAD3 /* Release */,
-				E3C52D2D3D0701F32F5E1C11 /* Debug */,
+				37D8ED944835DCEE25B8049E /* Debug */,
+				27DA2636F6783EC9C728AFD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E18EEC5BBC8542C52E8E3255 /* Build configuration list for PBXProject "Leanora" */ = {
+		30C7A4348F3C79CFC53770C1 /* Build configuration list for PBXNativeTarget "Leanora" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57ED88BB45E1FBB8E2E3B333 /* Debug */,
-				B714442C2C238E61FC8D7313 /* Release */,
+				769A167B1D7299FDDA0F0752 /* Release */,
+				FB6FE669129561828E0D54AD /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F19374155F7F2676A4A1A56E /* Build configuration list for PBXNativeTarget "LeanoraTests" */ = {
+		632C2A1998CDBD29BD4A0672 /* Build configuration list for PBXNativeTarget "LeanoraTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3CE6445BD707AB1EF1FBEDB3 /* Release */,
-				0AFA0B996A30D611136EC2BE /* Debug */,
+				67553EAA7C83461A93F0C3D3 /* Release */,
+				444128974F2EAC2ABF5C1F14 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 46CDD70E3A094EF7B6F7747F /* Project object */;
+	rootObject = 400A42F09F7B1ACFBDCE2529 /* Project object */;
 }

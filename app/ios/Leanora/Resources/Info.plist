@@ -13,8 +13,8 @@
   <key>LSRequiresIPhoneOS</key><true/>
   <key>UIFileSharingEnabled</key><true/>
   <key>LSSupportsOpeningDocumentsInPlace</key><true/>
-  <key>NSHealthShareUsageDescription</key><string>由你选择允许 Leanora 访问的体重、训练、营养和活动数据，用于你的个人记录。此版本仅设置访问权限，不读取健康记录。</string>
-  <key>NSHealthUpdateUsageDescription</key><string>由你选择允许 Leanora 写入的体重、训练和营养数据类型。此版本仅设置访问权限，不写入健康记录。</string>
+  <key>NSHealthShareUsageDescription</key><string>按你选择的范围读取体重、体脂率、训练、饮食营养，以及每日步数和活动能量，展示来源摘要与个人活动记录。没有健康访问也能使用记录功能。</string>
+  <key>NSHealthUpdateUsageDescription</key><string>按你选择的范围，将本 App 记录的体重、体脂率、已完成训练和已知饮食营养写入 Apple Health；支持编辑和单独删除本 App 的副本。</string>
   <key>UIApplicationSceneManifest</key><dict><key>UIApplicationSupportsMultipleScenes</key><false/></dict>
   <key>UILaunchScreen</key><dict/>
   <key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>

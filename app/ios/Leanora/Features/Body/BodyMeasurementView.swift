@@ -33,7 +33,10 @@ struct BodyMeasurementView: View {
                 Button("确认删除", role: .destructive) { if let removing { Task {
                     _ = await journal.run { [repository = journal.repository] in try await repository.deleteMeasurement(removing.id, revision: removing.stamp.revision) }; self.removing = nil
                 } } }
-            }
+                Button("同时删除健康副本", role: .destructive) { if let removing { Task {
+                    _ = await journal.run { [repository = journal.repository] in try await repository.deleteMeasurement(removing.id, revision: removing.stamp.revision, deleteHealthCopies: true) }; self.removing = nil
+                } } }
+            } message: { Text("「确认删除」保留健康中的副本。其他来源的健康数据不受影响。") }
     }
 }
 

@@ -35,11 +35,11 @@ extension AppModelActor {
         return try workout(id)
     }
 
-    func deleteWorkout(_ id: UUID, revision: Int) throws {
+    func deleteWorkout(_ id: UUID, revision: Int, deleteHealthCopies: Bool = false) throws {
         var value = try workout(id)
         guard value.status == .completed, value.stamp.revision == revision else { throw DataProblem.revisionConflict }
         value.stamp.revision += 1; value.stamp.updatedAt = max(Date(), value.stamp.updatedAt); value.stamp.deletedAt = value.stamp.updatedAt
-        try saveWithHealthIntent([.session(value)])
+        try saveWithHealthIntent([.session(value)], deleteHealthCopies: deleteHealthCopies)
     }
 
     func retimeWorkout(_ id: UUID, revision: Int, started: Date, timeZoneID: String) throws {

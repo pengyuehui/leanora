@@ -1,0 +1,2892 @@
+[
+  {
+    "run": "u678-native-flows",
+    "tests": [
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testDifferentIdentityRequiresCurrentExportAndExplicitReplacement",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testExportExcludesHealthCachesJobsMappingsAndCursors",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testFailedImportLeavesEntireBusinessAndRuntimeUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testInvalidPreflightCannotChangeDatabase",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testStalePreviewIsRejectedAfterLocalSave",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testEditDeleteAndBackupRoundTrip",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testPercentBoundaryWeightUnitConversionAndInvalidInput",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDeleteTombstoneAndJobsUseLatestRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDietAndHealthIntentsRollbackTogether",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testFoodRevisionDoesNotRewriteHistoricalDietSnapshot",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testKnownNutrientRemovedQueuesDeletionOfExistingComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testMealCopiesHaveNewIDsAndIndependentSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testBodyFatAndPausedWorkoutNeverInventCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testHealthSuccessBeforeLocalConfirmationRetriesIdempotently",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testLocalDeleteRequiresSeparateHealthCopyChoice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testLockedOrDeniedReadPreservesCacheAndFixedRange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testReauthorizationRescansAndHiddenSampleStaysHidden",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testCorruptStoreIsNotDeletedOrSilentlyReplaced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testInterruptedRestoreCannotBeOpenedAsEmptyLibrary",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testBundledCatalogIsValidSearchableAndSourced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testHundredToHundredFiftyGramsScalesAllKnownValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testServingConversionAndKilojoules",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testZeroNegativeInfiniteAndUnownedPortionsAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testActivityTypesCannotBeRequestedForWriting",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testHealthRequestFailureCanRetry",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testNotificationDenialAndFailureRemainRecoverable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testUnavailableAndEmptySelectionNeverRequestSystemAccess",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testCatalogEditsDoNotMutateHistoricalSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDatabaseAndRecoveryAreExcludedFromBackupAndProtected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDiskReopenRetainsEveryIDAndSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testGoalUpdatesKeepPastGoalsAndMultipleMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testHealthBatchAndCursorRollbackAndRetryAreAtomic",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testRevisionAndSingleActiveWorkoutConstraints",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testTombstoneCancelsStaleWritesAndKeepsStableID",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testUnknownNutrientDeletesOldComponentInsteadOfWritingZero",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testCorruptPreferencesHaveVisibleRecoveryNotice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testInvalidInputDoesNotOverwriteSavedPreferences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testOptionalGoalsAndUnitsSurviveRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCacheClearLocalResetAndHealthDeleteAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testResetRollbackDoesNotLoseBusinessOrChangeConfiguration",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testBundledCatalogHasStableSourcesAndCombinedSearchFilters",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testConcurrentStartReturnsSameActiveSession",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testCopyHasNewParentAndItemIDsAndNoWeeklySchedule",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDuplicateExerciseItemsReorderAndKeepIndependentTargets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testEmptyTemplateCannotStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOversizedExpandedPlanIsRejectedBeforeAllocatingSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testPlanAndSessionRoundTripDiskAndBackup",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testStaleTemplateEditDoesNotOverwriteNewerRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplatePersistsOnlyUsedCatalogDependenciesAtomically",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testPRRecalculatesAfterSourceSetEditedOrRemoved",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testCrossMidnightAssignedToStartDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEmptyFinishAndMissingActualValuesAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testFailedFinishRollsBackBothSessionAndJob",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testMalformedPausedSessionRejectedBeforeItCanReachFinish",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPauseResumeTimerAndRestAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillKeepsRepeatedTemplateItemsIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testScheduledReminderHonorsMovedAndStartedOccurrences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testStaleSetEditDoesNotOverwriteNewValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testSupersetStartsRestOnlyAfterBothExercisesInRound",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testCustomFoodAndTwoBodyMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testFoodPortionQuickCaloriesCopyAndPersistence",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testInvalidQuickAndZeroPortionCannotSaveInDarkLargeText",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testSkipHealthAndVisitAllTabs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.WorkoutRecoveryTests",
+        "test": "testRecordPauseKillRecoverFinishAndEditHistory",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 96,
+      "failed": 1,
+      "skipped": 2
+    }
+  },
+  {
+    "run": "u678-full-regression",
+    "tests": [
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testDifferentIdentityRequiresCurrentExportAndExplicitReplacement",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testExportExcludesHealthCachesJobsMappingsAndCursors",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testFailedImportLeavesEntireBusinessAndRuntimeUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testInvalidPreflightCannotChangeDatabase",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testStalePreviewIsRejectedAfterLocalSave",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testEditDeleteAndBackupRoundTrip",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testPercentBoundaryWeightUnitConversionAndInvalidInput",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDeleteTombstoneAndJobsUseLatestRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDietAndHealthIntentsRollbackTogether",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testFoodRevisionDoesNotRewriteHistoricalDietSnapshot",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testKnownNutrientRemovedQueuesDeletionOfExistingComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testMealCopiesHaveNewIDsAndIndependentSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testBodyFatAndPausedWorkoutNeverInventCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testHealthSuccessBeforeLocalConfirmationRetriesIdempotently",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testLocalDeleteRequiresSeparateHealthCopyChoice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testLockedOrDeniedReadPreservesCacheAndFixedRange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testReauthorizationRescansAndHiddenSampleStaysHidden",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testCorruptStoreIsNotDeletedOrSilentlyReplaced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testInterruptedRestoreCannotBeOpenedAsEmptyLibrary",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testBundledCatalogIsValidSearchableAndSourced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testHundredToHundredFiftyGramsScalesAllKnownValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testServingConversionAndKilojoules",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testZeroNegativeInfiniteAndUnownedPortionsAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testActivityTypesCannotBeRequestedForWriting",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testHealthRequestFailureCanRetry",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testNotificationDenialAndFailureRemainRecoverable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testUnavailableAndEmptySelectionNeverRequestSystemAccess",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testCatalogEditsDoNotMutateHistoricalSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDatabaseAndRecoveryAreExcludedFromBackupAndProtected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDiskReopenRetainsEveryIDAndSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testGoalUpdatesKeepPastGoalsAndMultipleMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testHealthBatchAndCursorRollbackAndRetryAreAtomic",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testRevisionAndSingleActiveWorkoutConstraints",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testTombstoneCancelsStaleWritesAndKeepsStableID",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testUnknownNutrientDeletesOldComponentInsteadOfWritingZero",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testCorruptPreferencesHaveVisibleRecoveryNotice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testInvalidInputDoesNotOverwriteSavedPreferences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testOptionalGoalsAndUnitsSurviveRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCacheClearLocalResetAndHealthDeleteAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testResetRollbackDoesNotLoseBusinessOrChangeConfiguration",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testBundledCatalogHasStableSourcesAndCombinedSearchFilters",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testConcurrentStartReturnsSameActiveSession",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testCopyHasNewParentAndItemIDsAndNoWeeklySchedule",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDuplicateExerciseItemsReorderAndKeepIndependentTargets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testEmptyTemplateCannotStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOversizedExpandedPlanIsRejectedBeforeAllocatingSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testPlanAndSessionRoundTripDiskAndBackup",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testStaleTemplateEditDoesNotOverwriteNewerRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplatePersistsOnlyUsedCatalogDependenciesAtomically",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testPRRecalculatesAfterSourceSetEditedOrRemoved",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testCrossMidnightAssignedToStartDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEmptyFinishAndMissingActualValuesAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testFailedFinishRollsBackBothSessionAndJob",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testMalformedPausedSessionRejectedBeforeItCanReachFinish",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPauseResumeTimerAndRestAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillKeepsRepeatedTemplateItemsIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testScheduledReminderHonorsMovedAndStartedOccurrences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testStaleSetEditDoesNotOverwriteNewValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testSupersetStartsRestOnlyAfterBothExercisesInRound",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testDataManagementLargeTypeAndDarkAppearance",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testExportOpensNativeSavePanelAndCanCancel",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testExportSavesRealJSONAndCanImportItAgain",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testInvalidFileShowsErrorAndDoesNotChangeRecordCount",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testRealFileImportPreviewsCommitsAndSurvivesRelaunch",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testStartupFailureOffersRetryWithoutResettingBusinessStore",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testCSVSavePanelAndTypedLocalReset",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testTodayAndHealthLargeTypeDarkLayout",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testCustomFoodAndTwoBodyMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testFoodPortionQuickCaloriesCopyAndPersistence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testInvalidQuickAndZeroPortionCannotSaveInDarkLargeText",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testHealthFailureHasRetryAndBackNavigation",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testHealthUnavailableDoesNotBlockOnboarding",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testLargeTypeAndDarkAppearance",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testNotificationDenialDoesNotBlockNavigation",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testPreferenceValidationAndPersistenceAcrossRelaunch",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testPrivacyCanReturnToOnboarding",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testProcessedHealthRequestDoesNotClaimSynchronization",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testSkipHealthAndVisitAllTabs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testCatalogSearchEquipmentFilterAndSource",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testCustomExerciseCanBeArchivedWithoutDeletion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testDuplicateItemsTargetsReorderCopyAndRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testEmptyTemplateCannotStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testLargeDarkTrainingAndExerciseLibrary",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testOneOffMovePersistsAndLeavesTodayEmpty",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testStartsTodayAndReturnsToSameWorkoutAfterRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.TemplateEditorTests",
+        "test": "testSupersetPairingPersistsIntoWorkoutSnapshot",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.WorkoutRecoveryTests",
+        "test": "testDurationTimerSurvivesPauseAndRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.WorkoutRecoveryTests",
+        "test": "testRecordPauseKillRecoverFinishAndEditHistory",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 118,
+      "failed": 5,
+      "skipped": 2
+    }
+  },
+  {
+    "run": "u678-native-acceptance",
+    "tests": [
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testDifferentIdentityRequiresCurrentExportAndExplicitReplacement",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testExportExcludesHealthCachesJobsMappingsAndCursors",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testFailedImportLeavesEntireBusinessAndRuntimeUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testInvalidPreflightCannotChangeDatabase",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testStalePreviewIsRejectedAfterLocalSave",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testEditDeleteAndBackupRoundTrip",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testPercentBoundaryWeightUnitConversionAndInvalidInput",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDeleteTombstoneAndJobsUseLatestRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDietAndHealthIntentsRollbackTogether",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testFoodRevisionDoesNotRewriteHistoricalDietSnapshot",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testKnownNutrientRemovedQueuesDeletionOfExistingComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testMealCopiesHaveNewIDsAndIndependentSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthCoordinatorTests",
+        "test": "testCleanupStopsIfSyncSettingCannotCommit",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthCoordinatorTests",
+        "test": "testCleanupSuppressesMappedComponentsBeforeHealthAndRetainsOtherSources",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testBodyFatAndPausedWorkoutNeverInventCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testHealthSuccessBeforeLocalConfirmationRetriesIdempotently",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testLocalDeleteRequiresSeparateHealthCopyChoice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testLockedOrDeniedReadPreservesCacheAndFixedRange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testReauthorizationRescansAndHiddenSampleStaysHidden",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthSyncRecoveryTests",
+        "test": "testEditAndObserverSignalDuringWriteConvergeToLatestVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthSyncRecoveryTests",
+        "test": "testOverlapAssociationChoosesOneDurationWithoutSummingCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthSyncRecoveryTests",
+        "test": "testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testCorruptStoreIsNotDeletedOrSilentlyReplaced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testInterruptedRestoreCannotBeOpenedAsEmptyLibrary",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testBundledCatalogIsValidSearchableAndSourced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testHundredToHundredFiftyGramsScalesAllKnownValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testServingConversionAndKilojoules",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testZeroNegativeInfiniteAndUnownedPortionsAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testActivityTypesCannotBeRequestedForWriting",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testHealthRequestFailureCanRetry",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testNotificationDenialAndFailureRemainRecoverable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testUnavailableAndEmptySelectionNeverRequestSystemAccess",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testCatalogEditsDoNotMutateHistoricalSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDatabaseAndRecoveryAreExcludedFromBackupAndProtected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDiskReopenRetainsEveryIDAndSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testGoalUpdatesKeepPastGoalsAndMultipleMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testHealthBatchAndCursorRollbackAndRetryAreAtomic",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testRevisionAndSingleActiveWorkoutConstraints",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testTombstoneCancelsStaleWritesAndKeepsStableID",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testUnknownNutrientDeletesOldComponentInsteadOfWritingZero",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testCorruptPreferencesHaveVisibleRecoveryNotice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testInvalidInputDoesNotOverwriteSavedPreferences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testOptionalGoalsAndUnitsSurviveRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCacheClearLocalResetAndHealthDeleteAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testResetRollbackDoesNotLoseBusinessOrChangeConfiguration",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testBundledCatalogHasStableSourcesAndCombinedSearchFilters",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testConcurrentStartReturnsSameActiveSession",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testCopyHasNewParentAndItemIDsAndNoWeeklySchedule",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDuplicateExerciseItemsReorderAndKeepIndependentTargets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testEmptyTemplateCannotStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOversizedExpandedPlanIsRejectedBeforeAllocatingSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testPlanAndSessionRoundTripDiskAndBackup",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testStaleTemplateEditDoesNotOverwriteNewerRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplatePersistsOnlyUsedCatalogDependenciesAtomically",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testPRRecalculatesAfterSourceSetEditedOrRemoved",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testCrossMidnightAssignedToStartDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEmptyFinishAndMissingActualValuesAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testFailedFinishRollsBackBothSessionAndJob",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testMalformedPausedSessionRejectedBeforeItCanReachFinish",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPauseResumeTimerAndRestAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillKeepsRepeatedTemplateItemsIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testScheduledReminderHonorsMovedAndStartedOccurrences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testStaleSetEditDoesNotOverwriteNewValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testSupersetStartsRestOnlyAfterBothExercisesInRound",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testExportSavesRealJSONAndCanImportItAgain",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testRealFileImportPreviewsCommitsAndSurvivesRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testCSVSavePanelAndTypedLocalReset",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testTodayAndHealthLargeTypeDarkLayout",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testFoodPortionQuickCaloriesCopyAndPersistence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testPreferenceValidationAndPersistenceAcrossRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.WorkoutRecoveryTests",
+        "test": "testRecordPauseKillRecoverFinishAndEditHistory",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 104,
+      "failed": 3,
+      "skipped": 2
+    }
+  },
+  {
+    "run": "u678-acceptance-final",
+    "tests": [
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testDifferentIdentityRequiresCurrentExportAndExplicitReplacement",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testExportExcludesHealthCachesJobsMappingsAndCursors",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testFailedImportLeavesEntireBusinessAndRuntimeUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testInvalidPreflightCannotChangeDatabase",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BackupTests",
+        "test": "testStalePreviewIsRejectedAfterLocalSave",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testEditDeleteAndBackupRoundTrip",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.BodyMeasurementTests",
+        "test": "testPercentBoundaryWeightUnitConversionAndInvalidInput",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.CapacityTests",
+        "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDeleteTombstoneAndJobsUseLatestRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testDietAndHealthIntentsRollbackTogether",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testFoodRevisionDoesNotRewriteHistoricalDietSnapshot",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testKnownNutrientRemovedQueuesDeletionOfExistingComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.DietDiaryTests",
+        "test": "testMealCopiesHaveNewIDsAndIndependentSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthCoordinatorTests",
+        "test": "testCleanupStopsIfSyncSettingCannotCommit",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthCoordinatorTests",
+        "test": "testCleanupSuppressesMappedComponentsBeforeHealthAndRetainsOtherSources",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testBodyFatAndPausedWorkoutNeverInventCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testHealthSuccessBeforeLocalConfirmationRetriesIdempotently",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testLocalDeleteRequiresSeparateHealthCopyChoice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthExportTests",
+        "test": "testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testLockedOrDeniedReadPreservesCacheAndFixedRange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testReauthorizationRescansAndHiddenSampleStaysHidden",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthImportTests",
+        "test": "testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthSyncRecoveryTests",
+        "test": "testEditAndObserverSignalDuringWriteConvergeToLatestVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthSyncRecoveryTests",
+        "test": "testOverlapAssociationChoosesOneDurationWithoutSummingCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.HealthSyncRecoveryTests",
+        "test": "testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testCorruptStoreIsNotDeletedOrSilentlyReplaced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testInterruptedRestoreCannotBeOpenedAsEmptyLibrary",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.MigrationTests",
+        "test": "testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testBundledCatalogIsValidSearchableAndSourced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testHundredToHundredFiftyGramsScalesAllKnownValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testServingConversionAndKilojoules",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.NutritionCalculationTests",
+        "test": "testZeroNegativeInfiniteAndUnownedPortionsAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testActivityTypesCannotBeRequestedForWriting",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testHealthRequestFailureCanRetry",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testNotificationDenialAndFailureRemainRecoverable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PermissionTests",
+        "test": "testUnavailableAndEmptySelectionNeverRequestSystemAccess",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testCatalogEditsDoNotMutateHistoricalSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDatabaseAndRecoveryAreExcludedFromBackupAndProtected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testDiskReopenRetainsEveryIDAndSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testGoalUpdatesKeepPastGoalsAndMultipleMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testHealthBatchAndCursorRollbackAndRetryAreAtomic",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testRevisionAndSingleActiveWorkoutConstraints",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testTombstoneCancelsStaleWritesAndKeepsStableID",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PersistenceTests",
+        "test": "testUnknownNutrientDeletesOldComponentInsteadOfWritingZero",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testCorruptPreferencesHaveVisibleRecoveryNotice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testInvalidInputDoesNotOverwriteSavedPreferences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.PreferenceTests",
+        "test": "testOptionalGoalsAndUnitsSurviveRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCacheClearLocalResetAndHealthDeleteAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.ReleaseDataTests",
+        "test": "testResetRollbackDoesNotLoseBusinessOrChangeConfiguration",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testBundledCatalogHasStableSourcesAndCombinedSearchFilters",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testConcurrentStartReturnsSameActiveSession",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testCopyHasNewParentAndItemIDsAndNoWeeklySchedule",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testDuplicateExerciseItemsReorderAndKeepIndependentTargets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testEmptyTemplateCannotStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testOversizedExpandedPlanIsRejectedBeforeAllocatingSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testPlanAndSessionRoundTripDiskAndBackup",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testStaleTemplateEditDoesNotOverwriteNewerRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingPlanTests",
+        "test": "testTemplatePersistsOnlyUsedCatalogDependenciesAtomically",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testPRRecalculatesAfterSourceSetEditedOrRemoved",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.TrainingSummaryTests",
+        "test": "testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testCrossMidnightAssignedToStartDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testEmptyFinishAndMissingActualValuesAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testFailedFinishRollsBackBothSessionAndJob",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testMalformedPausedSessionRejectedBeforeItCanReachFinish",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPauseResumeTimerAndRestAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillKeepsRepeatedTemplateItemsIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testScheduledReminderHonorsMovedAndStartedOccurrences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testStaleSetEditDoesNotOverwriteNewValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraTests.WorkoutSessionTests",
+        "test": "testSupersetStartsRestOnlyAfterBothExercisesInRound",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testExportSavesRealJSONAndCanImportItAgain",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testRealFileImportPreviewsCommitsAndSurvivesRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testCSVSavePanelAndTypedLocalReset",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testTodayAndHealthLargeTypeDarkLayout",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.NutritionBodyTests",
+        "test": "testFoodPortionQuickCaloriesCopyAndPersistence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testPreferenceValidationAndPersistenceAcrossRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.WorkoutRecoveryTests",
+        "test": "testRecordPauseKillRecoverFinishAndEditHistory",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 104,
+      "failed": 3,
+      "skipped": 2
+    }
+  },
+  {
+    "run": "u678-three-retests",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.DataManagementTests",
+        "test": "testExportSavesRealJSONAndCanImportItAgain",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testCSVSavePanelAndTypedLocalReset",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "failed"
+      }
+    ],
+    "counts": {
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-real-health-loop",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "failed"
+      }
+    ],
+    "counts": {
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-health-limited-history",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-system-denials",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testSystemHealthSheetCanBeDismissedAndAppRemainsUsable",
+        "status": "failed"
+      },
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testSystemNotificationDenialKeepsAppUsable",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-health-denial-retest",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testSystemHealthSheetCanBeDismissedAndAppRemainsUsable",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-notification-allowed",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.WorkoutRecoveryTests",
+        "test": "testSystemRestReminderAuthorizationAndScheduling",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-capacity-final",
+    "tests": [
+      {
+        "suite": "LeanoraFoundationTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.CapacityTests",
+        "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  {
+    "run": "u678-confirmed-health-write",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.HealthReleaseExperienceTests",
+        "test": "testSystemHealthAllowedWriteAndEcho",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "run": "u678-capacity-main-probes",
+    "tests": [
+      {
+        "suite": "LeanoraFoundationTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "run": "u678-swiftpm-complete",
+    "tests": [
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testDifferentIdentityRequiresCurrentExportAndExplicitReplacement",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testExportExcludesHealthCachesJobsMappingsAndCursors",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testFailedImportLeavesEntireBusinessAndRuntimeUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testInvalidPreflightCannotChangeDatabase",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BackupTests",
+        "test": "testStalePreviewIsRejectedAfterLocalSave",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BodyMeasurementTests",
+        "test": "testEditDeleteAndBackupRoundTrip",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BodyMeasurementTests",
+        "test": "testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.BodyMeasurementTests",
+        "test": "testPercentBoundaryWeightUnitConversionAndInvalidInput",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.CapacityTests",
+        "test": "testHundredThousandHealthSamplesPagedOffMainThread",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraFoundationTests.CapacityTests",
+        "test": "testTenThousandSetsAndDietRecordsQueryAndCSV",
+        "status": "skipped"
+      },
+      {
+        "suite": "LeanoraFoundationTests.DietDiaryTests",
+        "test": "testDeleteTombstoneAndJobsUseLatestRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.DietDiaryTests",
+        "test": "testDietAndHealthIntentsRollbackTogether",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.DietDiaryTests",
+        "test": "testFoodRevisionDoesNotRewriteHistoricalDietSnapshot",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.DietDiaryTests",
+        "test": "testKnownNutrientRemovedQueuesDeletionOfExistingComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.DietDiaryTests",
+        "test": "testMealCopiesHaveNewIDsAndIndependentSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testBodyFatAndPausedWorkoutNeverInventCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testHealthSuccessBeforeLocalConfirmationRetriesIdempotently",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testLocalDeleteRequiresSeparateHealthCopyChoice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthExportTests",
+        "test": "testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthImportTests",
+        "test": "testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthImportTests",
+        "test": "testLockedOrDeniedReadPreservesCacheAndFixedRange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthImportTests",
+        "test": "testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthImportTests",
+        "test": "testReauthorizationRescansAndHiddenSampleStaysHidden",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthImportTests",
+        "test": "testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthSyncRecoveryTests",
+        "test": "testEditAndObserverSignalDuringWriteConvergeToLatestVersion",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthSyncRecoveryTests",
+        "test": "testOverlapAssociationChoosesOneDurationWithoutSummingCalories",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.HealthSyncRecoveryTests",
+        "test": "testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.MigrationTests",
+        "test": "testCorruptStoreIsNotDeletedOrSilentlyReplaced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.MigrationTests",
+        "test": "testInterruptedRestoreCannotBeOpenedAsEmptyLibrary",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.MigrationTests",
+        "test": "testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.MigrationTests",
+        "test": "testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+        "test": "testBundledCatalogIsValidSearchableAndSourced",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+        "test": "testHundredToHundredFiftyGramsScalesAllKnownValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+        "test": "testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+        "test": "testServingConversionAndKilojoules",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.NutritionCalculationTests",
+        "test": "testZeroNegativeInfiniteAndUnownedPortionsAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PermissionTests",
+        "test": "testActivityTypesCannotBeRequestedForWriting",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PermissionTests",
+        "test": "testHealthRequestFailureCanRetry",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PermissionTests",
+        "test": "testNotificationDenialAndFailureRemainRecoverable",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PermissionTests",
+        "test": "testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PermissionTests",
+        "test": "testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PermissionTests",
+        "test": "testUnavailableAndEmptySelectionNeverRequestSystemAccess",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testCatalogEditsDoNotMutateHistoricalSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testDatabaseAndRecoveryAreExcludedFromBackupAndProtected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testDiskReopenRetainsEveryIDAndSnapshots",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testGoalUpdatesKeepPastGoalsAndMultipleMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testHealthBatchAndCursorRollbackAndRetryAreAtomic",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testRevisionAndSingleActiveWorkoutConstraints",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testTombstoneCancelsStaleWritesAndKeepsStableID",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PersistenceTests",
+        "test": "testUnknownNutrientDeletesOldComponentInsteadOfWritingZero",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PreferenceTests",
+        "test": "testCorruptPreferencesHaveVisibleRecoveryNotice",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PreferenceTests",
+        "test": "testInvalidInputDoesNotOverwriteSavedPreferences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.PreferenceTests",
+        "test": "testOptionalGoalsAndUnitsSurviveRelaunch",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.ReleaseDataTests",
+        "test": "testCacheClearLocalResetAndHealthDeleteAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.ReleaseDataTests",
+        "test": "testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.ReleaseDataTests",
+        "test": "testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.ReleaseDataTests",
+        "test": "testResetRollbackDoesNotLoseBusinessOrChangeConfiguration",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testBundledCatalogHasStableSourcesAndCombinedSearchFilters",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testConcurrentStartReturnsSameActiveSession",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testCopyHasNewParentAndItemIDsAndNoWeeklySchedule",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testDuplicateExerciseItemsReorderAndKeepIndependentTargets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testEmptyTemplateCannotStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testOversizedExpandedPlanIsRejectedBeforeAllocatingSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testPlanAndSessionRoundTripDiskAndBackup",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testStaleTemplateEditDoesNotOverwriteNewerRevision",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingPlanTests",
+        "test": "testTemplatePersistsOnlyUsedCatalogDependenciesAtomically",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingSummaryTests",
+        "test": "testPRRecalculatesAfterSourceSetEditedOrRemoved",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.TrainingSummaryTests",
+        "test": "testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testCrossMidnightAssignedToStartDate",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testEmptyFinishAndMissingActualValuesAreRejected",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testFailedFinishRollsBackBothSessionAndJob",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testMalformedPausedSessionRejectedBeforeItCanReachFinish",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testPauseResumeTimerAndRestAreIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testPrefillKeepsRepeatedTemplateItemsIndependent",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testScheduledReminderHonorsMovedAndStartedOccurrences",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testStaleSetEditDoesNotOverwriteNewValues",
+        "status": "passed"
+      },
+      {
+        "suite": "LeanoraFoundationTests.WorkoutSessionTests",
+        "test": "testSupersetStartsRestOnlyAfterBothExercisesInRound",
+        "status": "passed"
+      }
+    ]
+  }
+]

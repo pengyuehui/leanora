@@ -19,7 +19,7 @@ let package = Package(
             "Core/Training",
             "Core/Analytics",
             "Core/Nutrition",
-            "Integrations/HealthKit/HealthAuthorizationService.swift"
+            "Integrations/HealthKit"
         ], resources: [.copy("Resources/Catalog")]),
         .testTarget(name: "LeanoraFoundationTests", dependencies: ["Leanora"], path: "ios/LeanoraTests")
     ]

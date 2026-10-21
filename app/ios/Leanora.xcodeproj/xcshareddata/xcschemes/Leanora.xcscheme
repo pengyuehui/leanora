@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAAC31E0A473F2A44284B52D"
+               BlueprintIdentifier = "C219E938D66967516DD5C137"
                BuildableName = "Leanora.app"
                BlueprintName = "Leanora"
                ReferencedContainer = "container:Leanora.xcodeproj">
@@ -31,7 +31,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAAC31E0A473F2A44284B52D"
+            BlueprintIdentifier = "C219E938D66967516DD5C137"
             BuildableName = "Leanora.app"
             BlueprintName = "Leanora"
             ReferencedContainer = "container:Leanora.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B4658CA80C26B825F1331C55"
+               BlueprintIdentifier = "198BF678EAA093CA739C976F"
                BuildableName = "LeanoraTests.xctest"
                BlueprintName = "LeanoraTests"
                ReferencedContainer = "container:Leanora.xcodeproj">
@@ -52,7 +52,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA58AE12FDBB656E12F95D98"
+               BlueprintIdentifier = "53419B8EB4ADCE1AE1036B92"
                BuildableName = "LeanoraUITests.xctest"
                BlueprintName = "LeanoraUITests"
                ReferencedContainer = "container:Leanora.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAAC31E0A473F2A44284B52D"
+            BlueprintIdentifier = "C219E938D66967516DD5C137"
             BuildableName = "Leanora.app"
             BlueprintName = "Leanora"
             ReferencedContainer = "container:Leanora.xcodeproj">
@@ -91,7 +91,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAAC31E0A473F2A44284B52D"
+            BlueprintIdentifier = "C219E938D66967516DD5C137"
             BuildableName = "Leanora.app"
             BlueprintName = "Leanora"
             ReferencedContainer = "container:Leanora.xcodeproj">

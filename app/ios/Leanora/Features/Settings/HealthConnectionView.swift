@@ -3,6 +3,7 @@ import SwiftUI
 struct HealthConnectionView: View {
     @Environment(HealthAuthorizationService.self) private var health
     @Environment(AppPreferences.self) private var preferences
+    @Environment(DataStoreController.self) private var store
     @Environment(\.openURL) private var openURL
     @Environment(\.scenePhase) private var scenePhase
     @State private var selection = HealthAccessSelection()
@@ -14,8 +15,16 @@ struct HealthConnectionView: View {
                     .font(.headline).padding(.vertical, 6)
                 Text("选择访问范围后，再在系统页面确认。你可以随时在「健康」App 中调整权限。")
                     .foregroundStyle(.secondary)
-                Text("此处设置访问权限，不会读取或写入健康记录。")
+                Text("首次读取最近 90 天。新记录按你选择的方向同步；历史记录需单独确认导出。")
                     .font(.footnote).foregroundStyle(.secondary)
+            }
+            if let sync = store.healthSync {
+                Section {
+                    Toggle("自动同步", isOn: Binding(get: { sync.configuration.enabled }, set: { enabled in
+                        Task { var config = sync.configuration; config.enabled = enabled; await sync.configure(config); if enabled { await sync.sync() } }
+                    })).accessibilityIdentifier("health.auto")
+                    NavigationLink("同步状态与健康摘要") { HealthSyncStatusView() }.accessibilityIdentifier("health.status")
+                } footer: { Text("停止自动同步会取消尚未开始的自动任务，保留历史副本。单独请求的副本删除仍可执行；已开始的写入可能完成。") }
             }
             if health.isAvailable {
                 ForEach(HealthCategory.allCases) { category in
@@ -34,7 +43,16 @@ struct HealthConnectionView: View {
                 Section {
                     Button {
                         Task {
-                            if await health.request(selection) { preferences.markHealthRequestProcessed() }
+                            if await health.request(selection) {
+                                preferences.markHealthRequestProcessed()
+                                if let sync = store.healthSync {
+                                    var config = sync.configuration
+                                    config.enabled = true; config.generation = UUID(); config.queryStart = Date().addingTimeInterval(-90 * 86_400)
+                                    config.reading = Set(selection.reading.flatMap(\.components)); config.writing = Set(selection.writing.flatMap(\.components))
+                                    config.readActivity = selection.reading.contains(.activity)
+                                    await sync.configure(config); await sync.sync()
+                                }
+                            }
                         }
                     } label: {
                         HStack {
@@ -68,6 +86,15 @@ struct HealthConnectionView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.visible, for: .navigationBar)
         .onAppear { health.refreshWriteAccess() }
+        .task {
+            if let sync = store.healthSync {
+                await sync.refresh()
+                if sync.configuration.enabled {
+                    selection.reading = Set(HealthCategory.allCases.filter { !$0.components.isDisjoint(with: sync.configuration.reading) || ($0 == .activity && sync.configuration.readActivity) })
+                    selection.writing = Set(HealthCategory.allCases.filter { !$0.components.isDisjoint(with: sync.configuration.writing) })
+                }
+            }
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { health.refreshWriteAccess() }
         }

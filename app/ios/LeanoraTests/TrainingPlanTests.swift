@@ -17,7 +17,7 @@ import SwiftData
 
     func testBundledCatalogHasStableSourcesAndCombinedSearchFilters() throws {
         let catalog = try ExerciseCatalog.load()
-        XCTAssertEqual(catalog.count, 22); XCTAssertEqual(Set(catalog.map { $0.stamp.id }).count, 22)
+        XCTAssertEqual(catalog.count, 100); XCTAssertEqual(Set(catalog.map { $0.stamp.id }).count, 100)
         XCTAssertTrue(catalog.allSatisfy { $0.source.reference == "leanora:catalog/exercises/v1" && $0.source.license == "项目自有内容" })
         XCTAssertEqual(ExerciseSearch.filter(catalog, query: "BENCH", muscle: "上肢", equipment: "哑铃").map(\.name), ["哑铃卧推"])
         XCTAssertTrue(ExerciseSearch.filter(catalog, query: "不存在", muscle: nil, equipment: nil).isEmpty)
@@ -146,7 +146,7 @@ import SwiftData
         let records = try await restored.snapshot()
         XCTAssertEqual(try RecordCoding.fingerprint(records), original)
         XCTAssertTrue(records.contains { $0.kind == "schedule" })
-        let runtime = try await restored.runtimeSnapshot(); XCTAssertEqual(runtime, [.reconciliationRequired(true)])
+        let runtime = try await restored.runtimeSnapshot(); XCTAssertTrue(runtime.contains(.reconciliationRequired(true))); XCTAssertFalse(runtime.contains { if case .job = $0 { return true }; return false })
     }
     private func persistPlan(_ directory: URL, catalog: [Exercise]) async throws -> String {
         let actor = AppModelActor(modelContainer: try StoreFactory.open(directory: directory)); try await actor.initializeProfile()

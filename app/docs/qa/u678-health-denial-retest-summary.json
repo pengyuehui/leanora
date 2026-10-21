@@ -1,0 +1,45 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "03CDEE91-6443-47F6-9E38-E8DB98651990",
+        "deviceName" : "Leanora U678 Denials",
+        "modelName" : "iPhone",
+        "osBuildNumber" : "24A94425",
+        "osVersion" : "27.1",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 0,
+      "passedTests" : 1,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "Leanora · Built with macOS 27.0.1",
+  "expectedFailures" : 0,
+  "failedTests" : 0,
+  "finishTime" : 1792549504.445,
+  "passedTests" : 1,
+  "result" : "Passed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792549475.182,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+
+  ],
+  "title" : "Test - Leanora",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

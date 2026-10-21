@@ -2,7 +2,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct LeanoraBackupFile: FileDocument {
-    static var readableContentTypes: [UTType] { [.json] }
+    static var readableContentTypes: [UTType] { [.json, .commaSeparatedText] }
     var data: Data
     init(data: Data = Data()) { self.data = data }
     init(configuration: ReadConfiguration) throws {
@@ -29,6 +29,10 @@ struct DataManagementView: View {
     @State private var acceptNewer = false
     @State private var confirmingReplacement = false
     @State private var reconciliationRequired = false
+    @State private var exportingCSV = false
+    @State private var resetPresented = false
+    @State private var cleaning: String?
+    @State private var exportFilename = "Leanora"
 
     var body: some View {
         ScrollViewReader { proxy in
@@ -38,10 +42,10 @@ struct DataManagementView: View {
                 Text("身份：\(profileID)").font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
             } header: { Text("本机资料库") } footer: { Text("条数包含身份、模板、目标、自定义资料与删除标记；不包含 Apple Health 缓存。") }
             if let message = error ?? store.preferenceError {
-                Section { Label(message, systemImage: "exclamationmark.triangle").accessibilityIdentifier("backup.error") }
+                Section { Label(message, systemImage: "exclamationmark.triangle").accessibilityIdentifier("backup.error") }.id("data-result")
             }
             if let notice {
-                Section { Text(notice).accessibilityIdentifier("backup.notice") }
+                Section { Text(notice).accessibilityIdentifier("backup.notice") }.id("data-result")
             }
             if reconciliationRequired {
                 Section { Label("资料曾从备份恢复。健康写入仍暂停，后续需重新连接并核对已有样本。", systemImage: "heart.slash") }
@@ -53,6 +57,11 @@ struct DataManagementView: View {
                 Button { importing = true } label: {
                     Label("选择 JSON 备份", systemImage: "square.and.arrow.down")
                 }.accessibilityIdentifier("backup.import")
+                Button { Task {
+                    busy = true; defer { busy = false }
+                    do { if let data = try await store.repository?.exportCSV() { exportFile = LeanoraBackupFile(data: data); exportFilename = filename(csv: true); exportingCSV = true; exporting = true } }
+                    catch { self.error = "CSV 导出未完成，请重试。" }
+                } } label: { Label("导出 CSV 记录表", systemImage: "tablecells") }.accessibilityIdentifier("backup.csv")
             } footer: {
                 Text("备份含敏感的训练、饮食和身体资料。导出为未加密 JSON，请选择可信的位置。备份保留业务 ID，不包含健康样本、游标或同步任务。")
             }.disabled(busy || store.repository == nil)
@@ -80,21 +89,28 @@ struct DataManagementView: View {
                 Text("导入限制：50MB、10 万条业务记录。预检失败不会修改本机资料。导入后暂不生成健康写入任务，后续需重新连接健康并核对样本。")
                     .font(.footnote).foregroundStyle(.secondary)
             }
+            Section("清理与重置") {
+                Button("清除健康导入缓存", role: .destructive) { cleaning = "cache" }.accessibilityIdentifier("data.clearCache")
+                Button("删除本 App 的健康副本", role: .destructive) { cleaning = "health" }.accessibilityIdentifier("data.deleteHealth")
+                Button("清除本机全部资料", role: .destructive) { resetPresented = true }.accessibilityIdentifier("data.reset")
+            }.disabled(busy || store.healthSync?.busy == true)
             if busy { ProgressView("正在处理…").accessibilityIdentifier("backup.busy") }
         }
         .onChange(of: preview != nil) { _, hasPreview in
             if hasPreview { proxy.scrollTo("import-preview", anchor: .top) }
         }
+        .onChange(of: notice) { _, value in if value != nil { proxy.scrollTo("data-result", anchor: .top) } }
+        .onChange(of: error) { _, value in if value != nil { proxy.scrollTo("data-result", anchor: .top) } }
         .navigationTitle("数据管理").navigationBarTitleDisplayMode(.inline)
         .toolbar(.visible, for: .navigationBar)
         .scrollContentBackground(.hidden).background(LeanoraTheme.canvas)
         .task { await refresh() }
-        .fileExporter(isPresented: $exporting, document: exportFile, contentType: .json,
-                      defaultFilename: "Leanora-\(RecordMoment().localDate)") { result in
+        .fileExporter(isPresented: $exporting, document: exportFile, contentType: exportingCSV ? .commaSeparatedText : .json,
+                      defaultFilename: exportFilename) { result in
             switch result {
             case .success:
-                successfulExportFingerprint = exportFingerprint
-                notice = "备份已导出，请妥善保管。"
+                if !exportingCSV { successfulExportFingerprint = exportFingerprint }
+                notice = exportingCSV ? "CSV 记录表已导出，请妥善保管。" : "备份已导出，请妥善保管。"
             case .failure: error = "备份未能导出，请重试。"
             }
         }
@@ -104,6 +120,17 @@ struct DataManagementView: View {
             case .failure: error = "备份文件未能打开，请重试。"
             }
         }
+        .sheet(isPresented: $resetPresented, onDismiss: { Task { await refresh() } }) { NavigationStack { LocalResetView() } }
+        .confirmationDialog(cleaning == "health" ? "删除 Apple Health 中的本 App 副本？" : "清除导入缓存？", isPresented: Binding(get: { cleaning != nil }, set: { if !$0 { cleaning = nil } }), titleVisibility: .visible) {
+            Button("确认清理", role: .destructive) {
+                let action = cleaning; cleaning = nil
+                Task {
+                    if action == "health" { await store.healthSync?.deleteHealthCopies() }
+                    else { await store.healthSync?.clearCache() }
+                    notice = store.healthSync?.error ?? "清理完成，自动同步已停止。"; await refresh()
+                }
+            }
+        } message: { Text(cleaning == "health" ? "只删除 Leanora 写入的样本，保留本机业务记录及其他 App 的数据。将先停止同步；删除失败可重试。" : "保留本机训练、饮食与身体记录，也保留 Health 原始数据。自动同步将停止，下次连接可重新读取。") }
         .confirmationDialog("替换当前资料库？", isPresented: $confirmingReplacement, titleVisibility: .visible) {
             Button("已导出，整库替换", role: .destructive) {
                 if let preview { Task { await commit(preview, replace: true) } }
@@ -118,7 +145,7 @@ struct DataManagementView: View {
             let records = try await repository.snapshot()
             count = records.reduce(0) { $0 + 1 + $1.nestedIDs.count }
             profileID = records.first(where: { $0.kind == "profile" })?.id.uuidString ?? ""
-            reconciliationRequired = try await repository.runtimeSnapshot().contains(.reconciliationRequired(true))
+            reconciliationRequired = try await repository.healthMetadata().contains(.reconciliationRequired(true))
         } catch { self.error = error.localizedDescription }
     }
     private func prepareExport() async {
@@ -128,9 +155,14 @@ struct DataManagementView: View {
         guard store.preferenceError == nil else { return }
         do {
             let backup = try await repository.exportBackup()
-            exportFile = LeanoraBackupFile(data: backup.data); exportFingerprint = backup.fingerprint
+            exportFile = LeanoraBackupFile(data: backup.data); exportFingerprint = backup.fingerprint; exportingCSV = false
+            exportFilename = filename(csv: false)
             exporting = true
         } catch { self.error = error.localizedDescription }
+    }
+    private func filename(csv: Bool) -> String {
+        let formatter = DateFormatter(); formatter.locale = Locale(identifier: "en_US_POSIX"); formatter.dateFormat = "yyyy-MM-dd-HHmmss"
+        return "Leanora-\(csv ? "records-" : "")\(formatter.string(from: Date()))"
     }
     private func load(_ url: URL) async {
         guard let repository = store.repository else { return }
@@ -148,6 +180,7 @@ struct DataManagementView: View {
         guard let repository = store.repository else { return }
         busy = true; error = nil; defer { busy = false }
         do {
+            if let sync = store.healthSync, !(await sync.stop()) { throw DataProblem.invalid("健康同步未停止，请重试") }
             let result = try await repository.importBackup(preview, acceptNewer: acceptNewer, replace: replace,
                                                             exportedFingerprint: successfulExportFingerprint)
             // Preferences are small UI caches. Restore them from the authoritative
@@ -158,6 +191,7 @@ struct DataManagementView: View {
             await refresh()
             await store.training?.refresh()
             await store.journal?.refresh()
+            await store.healthSync?.refresh()
         } catch { self.error = error.localizedDescription }
     }
 }

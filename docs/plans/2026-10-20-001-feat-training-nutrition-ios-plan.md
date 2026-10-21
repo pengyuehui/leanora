@@ -4,7 +4,7 @@ type: feat
 status: active
 date: 2026-10-20
 deepened: 2026-10-20
-execution_status: phase_5_complete_device_and_release_acceptance_pending
+execution_status: local_implementation_complete_physical_and_testflight_acceptance_pending
 product_route: independent_closed_source
 ---
 
@@ -18,7 +18,7 @@ product_route: independent_closed_source
 
 **建议技术路线：SwiftUI + SwiftData + HealthKit + Swift Charts + UserNotifications。** 第一版完成本机记录与健康同步，先通过 TestFlight 验证；账号云同步、付费订阅和 Apple Watch 独立训练另列后续交付。
 
-这份文件是持续更新的实施计划。U1–U5 的本机功能已独立实现：备份/计划基础、逐组训练与计时恢复、历史统计、离线饮食、身体测量与首页趋势。76 项单元、29 项 UI 经全量及修复后定向复测覆盖通过，正式 iPhone Release 构建成功。U1 的真机、最低系统和 VoiceOver，以及通知横幅/锁屏送达与内容专业复核仍待对应验收；U6–U8 尚未实施。完整原始失败、复测结果及限制见 [阶段 4、5 验证记录](/Users/pengyuehui/Downloads/leanora/app/docs/qa/phase-four-five-verification.md)。
+这份文件是持续更新的实施计划。2026-10-21：U1–U8 的首版本机实现已完成，包含真实 HealthKit 读写适配、分页/观察器/幂等队列/删除抑制/恢复核对、CSV 与分离清理、100 动作/300 食物，以及参考训记记录流程的原创布局。单元、容量、原生页面及 SDK 真实授权/体重写入回声均有验证。物理 iPhone（最低/当前系统）、后台/锁屏、多来源统计、VoiceOver 听读、内容专业审核，以及签名 TestFlight 仍为外部验收门槛，不能算作已发布。详见 [最终验收记录](/Users/pengyuehui/Downloads/leanora/app/docs/qa/release-acceptance.md)。
 
 ### 本次默认假设
 
@@ -288,7 +288,7 @@ HealthKit 授权请求成功只说明请求流程成功，不等于所有类型�
 
 ## 9. 实施单元、文件与测试
 
-以下为分阶段交付文件。代码根目录为 `/Users/pengyuehui/Downloads/leanora/app`。U1–U5 文件已创建并运行测试；U6–U8 的文件与测试仍是后续计划。
+以下为分阶段交付文件。代码根目录为 `/Users/pengyuehui/Downloads/leanora/app`。U1–U8 的源码与测试均已建立。U6–U8 的本机交付及外部验收分开记录，下面保留原定完成标准。
 
 ### U1：范围、原创交互与 iOS 工程基础
 
@@ -352,29 +352,35 @@ HealthKit 授权请求成功只说明请求流程成功，不等于所有类型�
 
 ### U6：HealthKit 授权、读取、增量与活动摘要
 
+**实施进度（2026-10-21）：本机实现及自动化验证完成。按类型 500 条分页、原子游标/删除、重授权代次、后台观察与重试、日活动统计和来源摘要已接入。真实 SDK 模拟器已通过受限历史授权与本机体重写入回声；物理外部运动、多来源活动与锁屏仍待矩阵验收。**
+
 - [ ] **目标与依赖：** 对应 R8、R9、R10；依赖 U2，页面接入依赖 U4/U5。先建立原生能力的真机验证，再扩大功能。
 - **文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Integrations/HealthKit/HealthAuthorizationService.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Integrations/HealthKit/HealthImportService.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Integrations/HealthKit/HealthObserverCoordinator.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Settings/HealthConnectionView.swift`。
 - **方式与依据：** 按第 8 节实施类型和权限；observer 仅提示变化，anchor 导入与本地事务绑定；活动摘要与原始训练明细分离。
-- **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthImportTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthAuthorizationTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthAggregationTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/docs/qa/healthkit-device-matrix.md`。
+- **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthImportTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/FoundationTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthSyncRecoveryTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/docs/qa/healthkit-device-matrix.md`。
 - **场景：** 全拒绝、只允许体重、空数据、只可见本 App 数据；1000 样本分批中途失败后重跑不重复；删除回调移除外部投影；锁屏错误不清空统计；重授权有界重扫；跨时区日汇总；多来源步数/活动能量与真机检查结果可解释。
 - **完成标准：** 真机读入体重和外部运动；读取范围、来源及同步状态可见；无法由 mock 证明的后台投递行为有设备验收记录。
 - **估算：** 5–7 人日。
 
 ### U7：HealthKit 写入、更新、删除与同步闭环
 
+**实施进度（2026-10-21）：本机实现及自动化验证完成。逐组件写入/删除、稳定版本与实际 UUID、局部失败、停止、手动移除抑制、恢复核对和明确重导出，以及训练主来源关联已实现。SDK 模拟器闭环通过，完整类型组合与跨安装的物理验收仍保留。**
+
 - [ ] **目标与依赖：** 对应 R9、R10、R11；依赖 U4、U5、U6。
 - **文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Integrations/HealthKit/HealthExportService.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Integrations/HealthKit/HealthSyncCoordinator.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Integrations/HealthKit/HealthSampleMapper.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Settings/HealthSyncStatusView.swift`。
 - **方式与依据：** 业务先提交，队列后写健康；稳定标识与版本、每组件状态、删除抑制和写入回声识别按第 8 节执行。
-- **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthExportTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthSyncRecoveryTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/HealthSyncStatusTests.swift`。
+- **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthExportTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthSyncRecoveryTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/HealthCoordinatorTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/HealthReleaseExperienceTests.swift`。
 - **场景：** 同一餐重复写入 3 次样本数不增加；编辑只保留最新版本；已知蛋白质改为未知后删除旧组件；热量允许但蛋白质拒绝显示部分成功；20% 体脂写为比例 0.2；健康写入成功但本地确认前崩溃后重试不重复；替换产生的旧 UUID 删除不抑制新版本；在 Health 手工删除后不自动复活；恢复旧备份后先重建映射、不得覆盖更新版本；外部记录绝不回写；本 App 与手表同期训练不重复相加消耗。
 - **完成标准：** 真机从 App→Health→App 闭环无重复、无虚构值；编辑删除与部分授权行为符合合同；停止同步不会继续排出新任务。
 - **估算：** 7–10 人日。
 
 ### U8：发布前整体验证、隐私、导入恢复与 TestFlight
 
+**实施进度（2026-10-21）：源码、CSV、三个独立清理入口、隐私/审核材料、容量与恢复验证及未签名 iPhone Archive 已完成。开发 Team、正式 Bundle ID、公开隐私 URL/运营主体联系方式尚待发布者提供；没有物理设备，也未上传 TestFlight。该发布门槛保持未完成。**
+
 - [ ] **目标与依赖：** 对应 R1、R3、R11、R12；依赖 U1–U7。
 - **文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/PrivacyInfo.xcprivacy`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Settings/DataManagementView.swift`、`/Users/pengyuehui/Downloads/leanora/app/docs/privacy-policy.md`、`/Users/pengyuehui/Downloads/leanora/app/docs/release-checklist.md`、`/Users/pengyuehui/Downloads/leanora/app/docs/qa/release-acceptance.md`。
-- **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/EndToEndTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/AccessibilityTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/ImportSecurityTests.swift`。
+- **测试文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/HealthReleaseExperienceTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraUITests/DataManagementTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/ReleaseDataTests.swift`、`/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/CapacityTests.swift`。
 - **场景：** 完整离线记录→重启→同步→导出；1 万训练组、1 万饮食记录的本地查询；10 万健康样本分批导入不阻塞主线程；升级迁移中断；导入恶意/错误文件不覆盖原库；导入备份后不批量重复写 Health；深浅色/大字体/VoiceOver；权限撤回、清除本地及单独删除健康副本的路径。
 - **完成标准：** 最低支持系统与当前稳定系统真机通过；无数据丢失或重复同步的阻断问题；隐私、内容来源和审核资料齐全；产生可安装的 TestFlight 构建。
 - **估算：** 5–7 人日，外部审核等待另计。
@@ -456,7 +462,7 @@ Watch 独立训练、实时心率/运动能量、手机与手表的训练会话�
 
 实施中才验证：最低机型性能、各系统版本后台投递、具体数据迁移行为、Health 中训练呈现和多来源统计。不能仅凭文档或模拟器断言通过。
 
-**后续顺序：推进 U4 训练执行、计时、历史与统计，以及 U5 饮食/身体/趋势；条件具备时补齐 U1 真机验收，并尽早进行 U6 真机健康能力验证；最后完成 U7/U8。** U1–U3 已实现，无需再次研究或安装 REA。
+**后续顺序：按发布清单完成物理设备、专业内容与签名验收；发布者提供 Team/正式 Bundle ID/隐私公开资料后生成签名 Archive、Validate 与 TestFlight 安装记录。** 首版本机开发无需重复实施；V1.1/V1.2/V2 保持后续版本范围。
 
 ## 14. 官方资料索引
 

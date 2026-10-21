@@ -1,0 +1,41 @@
+{
+  "releaseBuilt": true,
+  "configuration": "Release iPhone archive, CODE_SIGNING_ALLOWED=NO",
+  "bundleID": "app.leanora.dev",
+  "version": "0.2.0",
+  "build": "2",
+  "minimumIOS": "18.0",
+  "bundledExercises": 100,
+  "bundledFoods": 300,
+  "privacyManifest": {
+    "NSPrivacyTracking": false,
+    "NSPrivacyCollectedDataTypes": [],
+    "NSPrivacyAccessedAPITypes": [
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "CA92.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "C617.1"
+        ]
+      }
+    ]
+  },
+  "debugMarkers": {
+    "--uitesting": false,
+    "--reset-state": false,
+    "UITestHealthAuthorizer": false,
+    "UITestBackupFixtures": false,
+    "injectCommitFailure": false
+  },
+  "healthSynchronizationImplemented": true,
+  "physicalDeviceGate": "pending",
+  "testFlight": "blocked_by_missing_developer_team_and_release_identity",
+  "binarySHA256": "d76df92783887ff42e781affda47fd734a9f9e3839be64995781b06b74beb2a2",
+  "archive": "app/build/ReleaseCandidate/Leanora-0.2-Release.xcarchive",
+  "healthSDKSimulatorLoop": "passed: actual permission, limited history, weight write, echo"
+}

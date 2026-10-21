@@ -1,14 +1,14 @@
 import Foundation
 
 extension AppModelActor {
-    // U4/U5 persist desired components only. U7 will apply explicit user export
-    // settings and authorization before executing these inert jobs. Restores never
-    // enqueue a write; ordinary local editing remains available behind that gate.
-    func saveWithHealthIntent(_ records: [BusinessRecord]) throws {
-        let runtime = try runtimeSnapshot()
-        guard !runtime.contains(.reconciliationRequired(true)) else { try save(records); return }
+    func saveWithHealthIntent(_ records: [BusinessRecord], deleteHealthCopies: Bool = false) throws {
+        let configuration = try healthConfiguration()
+        let reconciliationRequired = try healthRuntimeValue("health:reconciliation") == .reconciliationRequired(true)
+        guard (configuration.enabled && !reconciliationRequired) || deleteHealthCopies else { try save(records); return }
         var jobs: [HealthWriteJob] = []
+        let oldRecords = Dictionary(uniqueKeysWithValues: try snapshot().map { ($0.id, $0) })
         for record in records {
+            if record.stamp.deletedAt != nil && !deleteHealthCopies { continue }
             let components: [(HealthComponent, Bool)]
             switch record {
             case .session(let v): components = v.status == .completed ? [(.workout, true)] : []
@@ -17,11 +17,15 @@ extension AppModelActor {
             default: components = []
             }
             for (component, known) in components {
-                let suppressed = runtime.contains { if case .suppression(let s) = $0 { return s.businessID == record.id && s.component == component }; return false }
-                let previouslyWritten = runtime.contains { if case .link(let l) = $0 { return l.businessID == record.id && l.component == component && l.state != .deleted }; return false }
-                if !suppressed && (known || previouslyWritten) {
+                let held = try healthRuntimeValue("hold:\(record.id)") != nil
+                guard deleteHealthCopies || (configuration.writing.contains(component) && !held) else { continue }
+                let suppressed = try healthRuntimeValue("blocked:\(record.id):\(component.rawValue)") != nil
+                let linked: Bool = if case .currentLink(let l) = try healthRuntimeValue("current:\(record.id):\(component.rawValue)") { l.state != .deleted } else { false }
+                let uncertain: Bool = if case .job(let j) = try healthRuntimeValue("job:\(record.id):\(component.rawValue)") { j.syncVersion != nil } else { false }
+                let previouslyWritten = linked || uncertain || oldRecords[record.id].map { (try? validateComponent(component, record: $0)) == true } == true
+                if (deleteHealthCopies || !suppressed) && (known || previouslyWritten) {
                     jobs.append(HealthWriteJob(businessID: record.id, desiredRevision: record.stamp.revision, component: component,
-                                               action: known && record.stamp.deletedAt == nil ? .write : .delete))
+                                               action: known && record.stamp.deletedAt == nil ? .write : .delete, userInitiated: deleteHealthCopies ? true : nil))
                 }
             }
         }

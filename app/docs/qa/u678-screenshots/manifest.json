@@ -1,0 +1,110 @@
+[
+  {
+    "file": "u678-separated-data-controls.png",
+    "run": "U678AcceptanceScreens",
+    "test": "HealthReleaseExperienceTests/testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-health-status-empty.png",
+    "run": "U678AcceptanceScreens",
+    "test": "HealthReleaseExperienceTests/testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-health-large-dark.png",
+    "run": "U678AcceptanceScreens",
+    "test": "HealthReleaseExperienceTests/testTodayAndHealthLargeTypeDarkLayout()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-today-large-dark.png",
+    "run": "U678AcceptanceScreens",
+    "test": "HealthReleaseExperienceTests/testTodayAndHealthLargeTypeDarkLayout()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u5-today-summary.png",
+    "run": "U678AcceptanceScreens",
+    "test": "NutritionBodyTests/testFoodPortionQuickCaloriesCopyAndPersistence()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u5-diary-recovered.png",
+    "run": "U678AcceptanceScreens",
+    "test": "NutritionBodyTests/testFoodPortionQuickCaloriesCopyAndPersistence()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u5-food-source-portion.png",
+    "run": "U678AcceptanceScreens",
+    "test": "NutritionBodyTests/testFoodPortionQuickCaloriesCopyAndPersistence()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u4-history-edited-volume.png",
+    "run": "U678AcceptanceScreens",
+    "test": "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u4-paused-set-rest.png",
+    "run": "U678AcceptanceScreens",
+    "test": "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-system-health-write-echo.png",
+    "run": "U678ConfirmedScreens",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-system-health-limited-history.png",
+    "run": "U678HealthScreens",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-json-before-native-save.png",
+    "run": "U678ThreeScreens",
+    "test": "DataManagementTests/testExportSavesRealJSONAndCanImportItAgain()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-after-local-reset.png",
+    "run": "U678ThreeScreens",
+    "test": "HealthReleaseExperienceTests/testCSVSavePanelAndTypedLocalReset()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-reset-explicit-confirmation.png",
+    "run": "U678ThreeScreens",
+    "test": "HealthReleaseExperienceTests/testCSVSavePanelAndTypedLocalReset()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-csv-native-export.png",
+    "run": "U678ThreeScreens",
+    "test": "HealthReleaseExperienceTests/testCSVSavePanelAndTypedLocalReset()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-system-health-before-allow.png",
+    "run": "U678ThreeScreens",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "failureAssociated": false
+  },
+  {
+    "file": "u678-system-health-selection.png",
+    "run": "U678ThreeScreens",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "failureAssociated": false
+  },
+  {
+    "file": "system-health-sheet.png",
+    "run": "U678DenialScreens",
+    "test": "OnboardingTests/testSystemHealthSheetCanBeDismissedAndAppRemainsUsable()",
+    "failureAssociated": false
+  }
+]

@@ -71,11 +71,13 @@ import XCTest
         app.buttons["preferences.keyboardDone"].tap()
         tap(app.buttons["onboarding.next"], in: app)
         tap(app.buttons["onboarding.finish"], in: app)
-        reveal(app.staticTexts["2,200 kcal"], in: app)
+        let goal = app.descendants(matching: .any).matching(identifier: "nutrition.goal").firstMatch
+        reveal(goal, in: app); XCTAssertTrue(goal.label.contains("2,200"))
         app.terminate()
         let relaunched = launch(reset: false)
         XCTAssertTrue(relaunched.staticTexts["screen.today"].exists)
-        reveal(relaunched.staticTexts["2,200 kcal"], in: relaunched)
+        let restoredGoal = relaunched.descendants(matching: .any).matching(identifier: "nutrition.goal").firstMatch
+        reveal(restoredGoal, in: relaunched); XCTAssertTrue(restoredGoal.label.contains("2,200"))
     }
 
     func testHealthUnavailableDoesNotBlockOnboarding() {
@@ -165,7 +167,10 @@ import XCTest
             return
         }
         capture(app, name: "system-health-sheet")
-        tap(deny, in: app)
+        for _ in 0..<4 { app.tables.firstMatch.swipeUp() }
+        let systemDeny = app.buttons["UIA.Health.DoNotAllow.Button"]
+        if systemDeny.exists { systemDeny.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap() }
+        else { deny.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap() }
         let acknowledgement = app.alerts.buttons.matching(NSPredicate(format: "label IN %@", ["OK", "好", "确定"])).firstMatch
         if acknowledgement.waitForExistence(timeout: 3) { acknowledgement.tap() }
         XCTAssertTrue(app.staticTexts["已完成系统访问设置"].waitForExistence(timeout: 5))

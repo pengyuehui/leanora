@@ -4,6 +4,14 @@ import Observation
 enum HealthCategory: String, CaseIterable, Identifiable {
     case body, workouts, nutrition, activity
     var id: Self { self }
+    var components: Set<HealthComponent> {
+        switch self {
+        case .body: [.weight, .bodyFat]
+        case .workouts: [.workout]
+        case .nutrition: [.energy, .protein, .carbohydrate, .fat]
+        case .activity: []
+        }
+    }
     var title: String {
         switch self {
         case .body: "身体数据"

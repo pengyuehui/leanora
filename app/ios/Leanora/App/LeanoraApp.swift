@@ -47,10 +47,13 @@ struct LeanoraApp: App {
             .environment(notifications)
             .environment(store)
             .task { await store.start(preferences: preferences) }
+            .task(id: "\(store.training?.dataVersion ?? 0)-\(store.journal?.dataVersion ?? 0)") {
+                await store.healthSync?.sync()
+            }
             .onChange(of: preferences.values) { _, values in Task { await store.synchronize(values) } }
             .task(id: "\(preferences.trainingRemindersEnabled)-\(preferences.trainingReminderHour)-\(preferences.trainingReminderMinute)-\(store.training?.dataVersion ?? 0)") { await updateTrainingReminders() }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { Task { await store.training?.refresh(); await store.journal?.refresh(); await updateTrainingReminders() } }
+                if phase == .active { Task { await store.training?.refresh(); await store.journal?.refresh(); await store.healthSync?.sync(); await updateTrainingReminders() } }
             }
             .tint(LeanoraTheme.accent)
             #if DEBUG

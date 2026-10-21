@@ -1,0 +1,45 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "BA74FB40-F89C-4CAE-905C-FAF27CAC014C",
+        "deviceName" : "Leanora U678 Health",
+        "modelName" : "iPhone",
+        "osBuildNumber" : "24A94425",
+        "osVersion" : "27.1",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 0,
+      "passedTests" : 1,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "Leanora · Built with macOS 27.0.1",
+  "expectedFailures" : 0,
+  "failedTests" : 0,
+  "finishTime" : 1792550788.88,
+  "passedTests" : 1,
+  "result" : "Passed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792550741.7,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+
+  ],
+  "title" : "Test - Leanora",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

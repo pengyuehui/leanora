@@ -1,0 +1,18 @@
+Building for debugging...
+[1 / 1]
+[2 / 7] LeanoraFoundationTests-product
+[4 / 9] LeanoraFoundationTests-product
+[9 / 13] LeanoraFoundationTests-product
+Build complete! (1.47 sec)
+Test Suite 'Selected tests' started at 2026-10-21 10:41:38.345.
+Test Suite 'LeanoraFoundationTests.xctest' started at 2026-10-21 10:41:38.347.
+Test Suite 'CapacityTests' started at 2026-10-21 10:41:38.347.
+Test Case '-[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread]' started.
+Test Case '-[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread]' passed (100.285 seconds).
+Test Suite 'CapacityTests' passed at 2026-10-21 10:43:18.632.
+	 Executed 1 test, with 0 failures (0 unexpected) in 100.285 (100.286) seconds
+Test Suite 'LeanoraFoundationTests.xctest' passed at 2026-10-21 10:43:18.632.
+	 Executed 1 test, with 0 failures (0 unexpected) in 100.285 (100.286) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 10:43:18.632.
+	 Executed 1 test, with 0 failures (0 unexpected) in 100.285 (100.288) seconds
+CAPACITY health=100000 page_size=500 elapsed_seconds=99.96746504306793 main_actor_probes=4112 p95_seconds=5.900859832763672e-05 max_seconds=0.013311982154846191

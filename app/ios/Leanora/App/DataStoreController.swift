@@ -5,6 +5,7 @@ import Observation
     private(set) var repository: AppModelActor?
     private(set) var training: TrainingStore?
     private(set) var journal: JournalStore?
+    private(set) var healthSync: HealthSyncCoordinator?
     private(set) var startupError: String?
     private(set) var preferenceError: String?
     private(set) var recoveries: [URL] = []
@@ -55,6 +56,11 @@ import Observation
             let journal = JournalStore(repository: opened, catalog: try FoodCatalog.load())
             await journal.refresh(); self.journal = journal
             repository = opened
+            let sync = HealthSyncCoordinator(repository: opened)
+            await sync.refresh(); self.healthSync = sync
+            // Discard legacy inert intentions when automatic sync is off.
+            await sync.configure(sync.configuration)
+            await sync.sync()
         } catch {
             startupError = "本机数据库暂时无法打开。请解锁设备后重试。升级前恢复副本与原库会保留，不会自动清空记录。"
             recoveries = (try? await Task.detached {
@@ -100,5 +106,16 @@ import Observation
             await journal?.refresh()
             preferenceError = nil
         } catch { preferenceError = "单位与目标尚未写入业务数据库，请重试后再导出备份。" }
+    }
+    func removeLocalRecoveries() async throws {
+        let testing = testing
+        try await Task.detached {
+            let directory = try StoreFactory.applicationDirectory(testing: testing)
+            let files = try FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)
+            for file in files where file.lastPathComponent == "Recovery" || file.lastPathComponent.hasPrefix("BeforeRestore-") || file.lastPathComponent.hasPrefix("Restore-") {
+                try FileManager.default.removeItem(at: file)
+            }
+        }.value
+        recoveries = []
     }
 }

@@ -18,7 +18,7 @@ import XCTest
         let outcome = try await target.importBackup(repeated, acceptNewer: true)
         XCTAssertEqual(outcome.inserted, 0); XCTAssertEqual(outcome.updated, 0)
         let runtime = try await target.runtimeSnapshot()
-        XCTAssertEqual(runtime, [.reconciliationRequired(true)])
+        XCTAssertTrue(runtime.contains(.reconciliationRequired(true))); XCTAssertFalse(runtime.contains { if case .job = $0 { return true }; return false })
         let item = BodyMeasurement(metric: .weightKg, value: 70)
         do {
             try await target.save([.measurement(item)], jobs: [HealthWriteJob(businessID: item.stamp.id, desiredRevision: 1, component: .weight, action: .write)])

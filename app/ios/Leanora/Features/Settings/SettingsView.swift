@@ -8,9 +8,9 @@ struct SettingsView: View {
                 HStack(spacing: 16) {
                     LeanoraMark(size: 52)
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("你的节奏，你的记录。")
+                        Text("Leanora")
                             .font(.headline).accessibilityIdentifier("screen.settings")
-                        Text("leanora · 0.1").font(.footnote).foregroundStyle(.secondary)
+                        Text("训练与饮食记录 · 0.2").font(.footnote).foregroundStyle(.secondary)
                     }
                 }.padding(.vertical, 10)
             }.listRowBackground(LeanoraTheme.surface)
@@ -37,7 +37,7 @@ struct SettingsView: View {
                 }.accessibilityIdentifier("settings.privacy")
             }
             Section {
-                Text("一步一步，留下属于自己的进步。")
+                Text("本机保存 · 可导出 · Apple Health 按需同步")
                     .font(.footnote).foregroundStyle(.secondary)
             }.listRowBackground(Color.clear)
         }

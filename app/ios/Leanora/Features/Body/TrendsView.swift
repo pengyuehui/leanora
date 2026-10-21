@@ -13,9 +13,11 @@ struct TrendsView: View {
     var body: some View {
         List {
             Section {
-                Text("给变化一点时间。").font(.title2).accessibilityIdentifier("screen.trends")
+                Text("记录与趋势").font(.title2.bold()).accessibilityIdentifier("screen.trends")
                 NavigationLink("身体记录与测量") { BodyMeasurementView() }.accessibilityIdentifier("trends.body")
                 NavigationLink("训练历史") { WorkoutHistoryView() }
+                NavigationLink("健康来源与关联记录") { HealthSyncStatusView() }
+                Text("本页统计本机记录。健康来源、重叠训练的主记录与活动统计在来源页查看，运动消耗不重复相加。").font(.caption).foregroundStyle(.secondary)
                 RecordDatePicker(title: "截至日期", selection: $end, components: .date)
                 Picker("统计范围", selection: $days) { Text("最近 7 天").tag(7); Text("最近 30 天").tag(30) }.pickerStyle(.segmented)
             }

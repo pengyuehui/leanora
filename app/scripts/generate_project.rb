@@ -25,8 +25,8 @@ ui.add_dependency(app)
       'DEVELOPMENT_TEAM' => '',
       'GENERATE_INFOPLIST_FILE' => 'YES',
       'PRODUCT_BUNDLE_IDENTIFIER' => "app.leanora.dev#{target == app ? '' : '.' + target.name}",
-      'MARKETING_VERSION' => '0.1.0',
-      'CURRENT_PROJECT_VERSION' => '1',
+      'MARKETING_VERSION' => '0.2.0',
+      'CURRENT_PROJECT_VERSION' => '2',
       'SWIFT_EMIT_LOC_STRINGS' => 'YES',
       'ENABLE_USER_SCRIPT_SANDBOXING' => 'YES'
     })

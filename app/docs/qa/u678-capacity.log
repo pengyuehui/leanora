@@ -1,0 +1,27 @@
+Building for debugging...
+[4 / 14] LeanoraFoundation_Leanora
+[4 / 14] Leanora
+[11 / 21] Leanora
+[15 / 25] Leanora
+[20 / 30] Leanora
+[22 / 30] Leanora
+[26 / 37] LeanoraFoundationTests-product
+[36 / 47] LeanoraFoundationTests-product
+[39 / 45] LeanoraFoundationTests-product
+[41 / 45] LeanoraFoundationTests-product
+Build complete! (2.44 sec)
+Test Suite 'Selected tests' started at 2026-10-21 09:27:14.372.
+Test Suite 'LeanoraFoundationTests.xctest' started at 2026-10-21 09:27:14.373.
+Test Suite 'CapacityTests' started at 2026-10-21 09:27:14.373.
+Test Case '-[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread]' started.
+Test Case '-[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread]' passed (100.406 seconds).
+Test Case '-[LeanoraFoundationTests.CapacityTests testTenThousandSetsAndDietRecordsQueryAndCSV]' started.
+Test Case '-[LeanoraFoundationTests.CapacityTests testTenThousandSetsAndDietRecordsQueryAndCSV]' passed (87.640 seconds).
+Test Suite 'CapacityTests' passed at 2026-10-21 09:30:22.419.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 188.046 (188.046) seconds
+Test Suite 'LeanoraFoundationTests.xctest' passed at 2026-10-21 09:30:22.419.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 188.046 (188.046) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 09:30:22.419.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 188.046 (188.047) seconds
+CAPACITY health=100000 page_size=500 elapsed_seconds=100.09142696857452 main_actor_ping_seconds=4.9114227294921875e-05
+CAPACITY business records=10102 sets=10000 diets=10000 query_seconds=[0.5929100513458252, 2.7060508728027344e-05, 2.5033950805664062e-05, 2.396106719970703e-05, 2.09808349609375e-05] csv_bytes=3816214

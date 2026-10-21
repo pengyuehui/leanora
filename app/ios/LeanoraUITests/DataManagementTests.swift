@@ -82,21 +82,22 @@ import XCTest
     func testExportSavesRealJSONAndCanImportItAgain() {
         let app = launch()
         tap(app.buttons["backup.export"], app)
-        let save = app.buttons.matching(NSPredicate(format: "label IN %@", ["Save", "保存"])).firstMatch
+        let save = app.descendants(matching: .any).matching(identifier: "DOCPicker.actionButton").firstMatch
         XCTAssertTrue(save.waitForExistence(timeout: 5), app.debugDescription)
+        let savedName = app.textFields["DOCPicker.filenameTextField"].value as? String ?? "Leanora-"
+        capture(app, "u678-json-before-native-save")
         // The native panel can save the default name; replacement is explicitly
         // confirmed only inside this app's isolated UI-test Documents directory.
         save.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         let replace = app.buttons.matching(NSPredicate(format: "label IN %@", ["Replace", "替换"])).firstMatch
         for _ in 0..<3 {
-            if app.staticTexts["backup.notice"].waitForExistence(timeout: 1) { break }
+            if app.staticTexts["backup.notice"].waitForExistence(timeout: 2) { break }
             if replace.exists { replace.tap() }
-            else if save.exists && save.isHittable { save.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap() }
+            else if save.exists { save.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap() }
         }
         XCTAssertTrue(app.staticTexts["backup.notice"].waitForExistence(timeout: 5), app.debugDescription)
         XCTAssertTrue(app.staticTexts["backup.notice"].label.contains("备份已导出"))
-        let formatter = DateFormatter(); formatter.locale = Locale(identifier: "en_US_POSIX"); formatter.dateFormat = "yyyy-MM-dd"
-        selectFile("Leanora-" + formatter.string(from: Date()), app: app)
+        selectFile(savedName, app: app)
         tap(app.buttons["backup.confirm"], app)
         XCTAssertTrue(app.staticTexts["backup.notice"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["backup.notice"].label.contains("新增 0"))

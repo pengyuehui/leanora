@@ -1,0 +1,370 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project app/ios/Leanora.xcodeproj -scheme Leanora -configuration Debug -destination "platform=iOS Simulator,id=C1FB3E64-E850-4CBF-A7CD-E2B697274A20" -derivedDataPath app/build/FinalDerivedData -resultBundlePath app/build/U678NotificationAllowed.xcresult -parallel-testing-enabled NO CODE_SIGN_IDENTITY=- "-only-testing:LeanoraUITests/WorkoutRecoveryTests/testSystemRestReminderAuthorizationAndScheduling" test
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = -
+
+Writing result bundle at path:
+	/Users/pengyuehui/Downloads/leanora/app/build/U678NotificationAllowed.xcresult
+
+note: Using codesigning identity override: -
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'LeanoraUITests' in project 'Leanora'
+        ➜ Explicit dependency on target 'Leanora' in project 'Leanora'
+    Target 'LeanoraTests' in project 'Leanora'
+        ➜ Explicit dependency on target 'Leanora' in project 'Leanora'
+    Target 'Leanora' in project 'Leanora' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/xcstringstool compile --dry-run --output-directory /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/Leanora.build /Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/Localizable.xcstrings
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 6303be8ce565dfce5c7dcb26049eb665
+Build description path: /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/XCBuildData/6303be8ce565dfce5c7dcb26049eb665.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/pengyuehui/Downloads/leanora/app/ios/Leanora.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+
+ProcessInfoPlistFile /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/Info.plist /Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/Info.plist (in target 'Leanora' from project 'Leanora')
+    cd /Users/pengyuehui/Downloads/leanora/app/ios
+    builtin-infoPlistUtility /Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/Leanora.build/assetcatalog_generated_info.plist -o /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/Info.plist
+
+ProcessInfoPlistFile /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/Info.plist /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraTests.build/empty-LeanoraTests.plist (in target 'LeanoraTests' from project 'Leanora')
+    cd /Users/pengyuehui/Downloads/leanora/app/ios
+    builtin-infoPlistUtility /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraTests.build/empty-LeanoraTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/Info.plist
+
+CopySwiftLibs /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest (in target 'LeanoraTests' from project 'Leanora')
+    cd /Users/pengyuehui/Downloads/leanora/app/ios
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/LeanoraTests --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/Frameworks --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/PlugIns --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/SystemExtensions --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/Leanora.app/PlugIns/LeanoraTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ProcessInfoPlistFile /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/Info.plist /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraUITests.build/empty-LeanoraUITests.plist (in target 'LeanoraUITests' from project 'Leanora')
+    cd /Users/pengyuehui/Downloads/leanora/app/ios
+    builtin-infoPlistUtility /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraUITests.build/empty-LeanoraUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/Info.plist
+
+CopySwiftLibs /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest (in target 'LeanoraUITests' from project 'Leanora')
+    cd /Users/pengyuehui/Downloads/leanora/app/ios
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/LeanoraUITests --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/Frameworks --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/PlugIns --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/SystemExtensions --scan-folder /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Products/Debug-iphonesimulator/LeanoraUITests-Runner.app/PlugIns/LeanoraUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/Leanora.build/Debug-iphonesimulator/LeanoraUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+PruneExplicitPrecompiledModules /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/pengyuehui/Downloads/leanora/app/build/FinalDerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+2026-10-21 10:30:38.078 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:30:38.078 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:30:38.958892+0800 LeanoraUITests-Runner[11243:4062891] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 10:30:40.823.
+Test Suite 'LeanoraUITests.xctest' started at 2026-10-21 10:30:40.824.
+Test Suite 'WorkoutRecoveryTests' started at 2026-10-21 10:30:40.824.
+Test Case '-[LeanoraUITests.WorkoutRecoveryTests testSystemRestReminderAuthorizationAndScheduling]' started.
+    t =     0.00s Start Test at 2026-10-21 10:30:40.826
+    t =     0.02s Set Up
+    t =     0.03s Open app.leanora.dev
+    t =     0.03s     Launch app.leanora.dev
+2026-10-21 10:30:40.906 xcodebuild[11214:4062459] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-21 10:30:40.906 xcodebuild[11214:4062459] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-21 10:30:40.913 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:30:40.914 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+    t =     0.49s         Setting up automation session
+objc[11243]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.BRzmbt/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x106470310) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.BRzmbt/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x106680398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     2.44s         Wait for app.leanora.dev to idle
+    t =     4.84s Checking `Expect predicate `BLOCKPREDICATE(0x105f9ebb0)` for object Target Application 'app.leanora.dev'`
+    t =     4.84s     Checking existence of `"onboarding.start" Button`
+    t =     4.91s Checking existence of `"onboarding.start" Button`
+    t =     4.92s Checking existence of `"onboarding.start" Button`
+    t =     4.93s Find the "onboarding.start" Button
+    t =     4.95s Tap "onboarding.start" Button
+    t =     4.96s     Wait for app.leanora.dev to idle
+    t =     4.96s     Find the "onboarding.start" Button
+    t =     4.97s     Check for interrupting elements affecting "onboarding.start" Button
+    t =     4.99s         Wait for com.apple.springboard to idle
+    t =     5.02s     Synthesize event
+    t =     5.31s     Wait for app.leanora.dev to idle
+    t =     5.31s Checking existence of `"onboarding.next" Button`
+    t =     5.35s Find the "onboarding.next" Button
+    t =     5.39s Tap "onboarding.next" Button
+    t =     5.39s     Wait for app.leanora.dev to idle
+    t =     5.39s     Find the "onboarding.next" Button
+    t =     5.41s     Check for interrupting elements affecting "onboarding.next" Button
+    t =     5.43s         Wait for com.apple.springboard to idle
+    t =     5.46s     Synthesize event
+    t =     5.76s     Wait for app.leanora.dev to idle
+    t =     5.76s Checking existence of `"onboarding.finish" Button`
+    t =     5.77s Find the "onboarding.finish" Button
+    t =     5.80s Tap "onboarding.finish" Button
+    t =     5.80s     Wait for app.leanora.dev to idle
+    t =     5.80s     Find the "onboarding.finish" Button
+    t =     5.81s     Check for interrupting elements affecting "onboarding.finish" Button
+    t =     5.83s         Wait for com.apple.springboard to idle
+    t =     5.85s     Synthesize event
+    t =     6.14s     Wait for app.leanora.dev to idle
+    t =     6.17s Waiting 8.0s for "screen.today" StaticText to exist
+    t =     7.22s     Checking `Expect predicate `existsNoRetry == 1` for object "screen.today" StaticText`
+    t =     7.22s         Checking existence of `"screen.today" StaticText`
+    t =     7.29s Tap "训练" Button
+    t =     7.29s     Wait for app.leanora.dev to idle
+    t =     7.29s     Find the "训练" Button
+    t =     7.32s     Check for interrupting elements affecting "dumbbell" Button
+    t =     7.34s         Wait for com.apple.springboard to idle
+    t =     7.37s     Synthesize event
+    t =     7.66s     Wait for app.leanora.dev to idle
+    t =     8.91s Checking existence of `"training.newTemplate" Button`
+    t =     8.96s Find the "training.newTemplate" Button
+    t =     9.00s Tap "training.newTemplate" Button
+    t =     9.00s     Wait for app.leanora.dev to idle
+    t =     9.00s     Find the "training.newTemplate" Button
+    t =     9.03s     Check for interrupting elements affecting "training.newTemplate" Button
+    t =     9.05s         Wait for com.apple.springboard to idle
+    t =     9.08s     Synthesize event
+    t =     9.37s     Wait for app.leanora.dev to idle
+    t =     9.37s Waiting 5.0s for "template.name" TextField to exist
+    t =    10.44s     Checking `Expect predicate `existsNoRetry == 1` for object "template.name" TextField`
+    t =    10.44s         Checking existence of `"template.name" TextField`
+    t =    10.50s Tap "template.name" TextField
+    t =    10.50s     Wait for app.leanora.dev to idle
+    t =    10.50s     Find the "template.name" TextField
+    t =    10.55s     Check for interrupting elements affecting "template.name" TextField
+    t =    10.60s         Wait for com.apple.springboard to idle
+    t =    10.63s     Synthesize event
+    t =    10.92s     Wait for app.leanora.dev to idle
+    t =    11.13s Type '系统休息提醒' into "template.name" TextField
+    t =    11.13s     Wait for app.leanora.dev to idle
+    t =    11.51s     Find the "template.name" TextField
+    t =    11.63s     Check for interrupting elements affecting "template.name" TextField
+    t =    11.68s         Wait for com.apple.springboard to idle
+    t =    11.72s     Synthesize event
+    t =    12.03s     Wait for app.leanora.dev to idle
+    t =    12.03s Tap "template.keyboardDone" Button
+    t =    12.03s     Wait for app.leanora.dev to idle
+    t =    12.03s     Find the "template.keyboardDone" Button
+    t =    12.11s     Check for interrupting elements affecting "template.keyboardDone" Button
+    t =    12.16s         Wait for com.apple.springboard to idle
+    t =    12.20s     Synthesize event
+    t =    12.49s     Wait for app.leanora.dev to idle
+    t =    12.74s Checking existence of `"template.addExercise" Button`
+    t =    12.80s Find the "template.addExercise" Button
+    t =    12.86s Tap "template.addExercise" Button
+    t =    12.86s     Wait for app.leanora.dev to idle
+    t =    12.86s     Find the "template.addExercise" Button
+    t =    12.91s     Check for interrupting elements affecting "template.addExercise" Button
+    t =    12.95s         Wait for com.apple.springboard to idle
+    t =    12.98s     Synthesize event
+    t =    13.27s     Wait for app.leanora.dev to idle
+    t =    13.75s Waiting 2.0s for SearchField (First Match) to exist
+    t =    14.80s     Checking `Expect predicate `existsNoRetry == 1` for object SearchField (First Match)`
+    t =    14.80s         Checking existence of `SearchField (First Match)`
+    t =    14.84s Tap SearchField (First Match)
+    t =    14.84s     Wait for app.leanora.dev to idle
+    t =    14.85s     Find the SearchField (First Match)
+    t =    14.88s     Check for interrupting elements affecting "搜索名称或别名" SearchField
+    t =    14.95s         Wait for com.apple.springboard to idle
+    t =    14.97s     Synthesize event
+    t =    15.27s     Wait for app.leanora.dev to idle
+    t =    16.18s Type '杠铃卧推' into "搜索名称或别名" SearchField
+    t =    16.18s     Wait for app.leanora.dev to idle
+    t =    16.19s     Find the "搜索名称或别名" SearchField
+    t =    16.23s     Check for interrupting elements affecting "搜索名称或别名" SearchField
+    t =    16.30s         Wait for com.apple.springboard to idle
+    t =    16.33s     Synthesize event
+    t =    16.61s     Wait for app.leanora.dev to idle
+    t =    16.61s Checking existence of `Button (First Match)`
+    t =    16.64s Tap Button (First Match)
+    t =    16.64s     Wait for app.leanora.dev to idle
+    t =    16.64s     Find the Button (First Match)
+    t =    16.67s     Check for interrupting elements affecting "Search" Button
+    t =    16.74s         Wait for com.apple.springboard to idle
+    t =    16.77s     Synthesize event
+    t =    17.06s     Wait for app.leanora.dev to idle
+    t =    17.33s Checking existence of `"exercise.select.杠铃卧推" Button`
+    t =    17.40s Find the "exercise.select.杠铃卧推" Button
+    t =    17.47s Tap "exercise.select.杠铃卧推" Button
+    t =    17.47s     Wait for app.leanora.dev to idle
+    t =    17.48s     Find the "exercise.select.杠铃卧推" Button
+    t =    17.54s     Check for interrupting elements affecting "exercise.select.杠铃卧推" Button
+    t =    17.60s         Wait for com.apple.springboard to idle
+    t =    17.63s     Synthesize event
+    t =    17.92s     Wait for app.leanora.dev to idle
+    t =    18.32s Checking existence of `"template.save" Button`
+    t =    18.38s Find the "template.save" Button
+    t =    18.44s Tap "template.save" Button
+    t =    18.44s     Wait for app.leanora.dev to idle
+    t =    18.44s     Find the "template.save" Button
+    t =    18.50s     Check for interrupting elements affecting "template.save" Button
+    t =    18.54s         Wait for com.apple.springboard to idle
+    t =    18.57s     Synthesize event
+    t =    18.87s     Wait for app.leanora.dev to idle
+    t =    19.34s Checking existence of `"training.template.系统休息提醒" Button`
+    t =    19.37s Find the "training.template.系统休息提醒" Button
+    t =    19.41s Tap "training.template.系统休息提醒" Button
+    t =    19.41s     Wait for app.leanora.dev to idle
+    t =    19.41s     Find the "training.template.系统休息提醒" Button
+    t =    19.44s     Check for interrupting elements affecting "training.template.系统休息提醒" Button
+    t =    19.47s         Wait for com.apple.springboard to idle
+    t =    19.49s     Synthesize event
+    t =    19.79s     Wait for app.leanora.dev to idle
+    t =    20.16s Checking existence of `"template.start" Button`
+    t =    20.21s Find the "template.start" Button
+    t =    20.25s Tap "template.start" Button
+    t =    20.25s     Wait for app.leanora.dev to idle
+    t =    20.25s     Find the "template.start" Button
+    t =    20.28s     Check for interrupting elements affecting "template.start" Button
+    t =    20.31s         Wait for com.apple.springboard to idle
+    t =    20.34s     Synthesize event
+    t =    20.63s     Wait for app.leanora.dev to idle
+    t =    21.12s Waiting 5.0s for "workout.started" StaticText to exist
+    t =    22.19s     Checking `Expect predicate `existsNoRetry == 1` for object "workout.started" StaticText`
+    t =    22.19s         Checking existence of `"workout.started" StaticText`
+    t =    22.28s Checking existence of `"workout.notifications" Button`
+    t =    22.32s Checking existence of `"workout.set.0.0" Button`
+    t =    22.37s Find the "workout.set.0.0" Button
+    t =    22.43s Tap "workout.set.0.0" Button
+    t =    22.43s     Wait for app.leanora.dev to idle
+    t =    22.43s     Find the "workout.set.0.0" Button
+    t =    22.48s     Check for interrupting elements affecting "workout.set.0.0" Button
+    t =    22.52s         Wait for com.apple.springboard to idle
+    t =    22.55s     Synthesize event
+    t =    22.84s     Wait for app.leanora.dev to idle
+    t =    23.30s Tap "set.load" TextField
+    t =    23.30s     Wait for app.leanora.dev to idle
+    t =    23.30s     Find the "set.load" TextField
+    t =    23.39s     Check for interrupting elements affecting "set.load" TextField
+    t =    23.45s         Wait for com.apple.springboard to idle
+    t =    23.47s     Synthesize event
+    t =    23.76s     Wait for app.leanora.dev to idle
+    t =    24.10s Type '20' into "set.load" TextField
+    t =    24.10s     Wait for app.leanora.dev to idle
+    t =    24.10s     Find the "set.load" TextField
+    t =    24.18s     Check for interrupting elements affecting "set.load" TextField
+    t =    24.25s         Wait for com.apple.springboard to idle
+    t =    24.28s     Synthesize event
+    t =    24.52s     Wait for app.leanora.dev to idle
+    t =    24.52s Tap "set.reps" TextField
+    t =    24.52s     Wait for app.leanora.dev to idle
+    t =    24.53s     Find the "set.reps" TextField
+    t =    24.60s     Check for interrupting elements affecting "set.reps" TextField
+    t =    24.67s         Wait for com.apple.springboard to idle
+    t =    24.70s     Synthesize event
+    t =    24.98s     Wait for app.leanora.dev to idle
+    t =    25.42s Type '8' into "set.reps" TextField
+    t =    25.42s     Wait for app.leanora.dev to idle
+    t =    25.42s     Find the "set.reps" TextField
+    t =    25.50s     Check for interrupting elements affecting "set.reps" TextField
+    t =    25.57s         Wait for com.apple.springboard to idle
+    t =    25.60s     Synthesize event
+    t =    25.82s     Wait for app.leanora.dev to idle
+    t =    25.82s Tap "set.keyboardDone" Button
+    t =    25.82s     Wait for app.leanora.dev to idle
+    t =    25.83s     Find the "set.keyboardDone" Button
+    t =    25.91s     Check for interrupting elements affecting "set.keyboardDone" Button
+    t =    25.97s         Wait for com.apple.springboard to idle
+    t =    26.00s     Synthesize event
+    t =    26.29s     Wait for app.leanora.dev to idle
+    t =    26.57s Tap "set.save" Button
+    t =    26.57s     Wait for app.leanora.dev to idle
+    t =    26.58s     Find the "set.save" Button
+    t =    26.65s     Check for interrupting elements affecting "set.save" Button
+    t =    26.71s         Wait for com.apple.springboard to idle
+    t =    26.74s     Synthesize event
+    t =    27.04s     Wait for app.leanora.dev to idle
+    t =    27.48s Checking existence of `"workout.complete.0.0" Button`
+    t =    27.53s Find the "workout.complete.0.0" Button
+    t =    27.58s Tap "workout.complete.0.0" Button
+    t =    27.58s     Wait for app.leanora.dev to idle
+    t =    27.59s     Find the "workout.complete.0.0" Button
+    t =    27.64s     Check for interrupting elements affecting "workout.complete.0.0" Button
+    t =    27.68s         Wait for com.apple.springboard to idle
+    t =    27.71s     Synthesize event
+    t =    28.00s     Wait for app.leanora.dev to idle
+    t =    28.00s Waiting 5.0s for "workout.rest" StaticText to exist
+    t =    29.07s     Checking `Expect predicate `existsNoRetry == 1` for object "workout.rest" StaticText`
+    t =    29.07s         Checking existence of `"workout.rest" StaticText`
+    t =    29.14s Tap "workout.close" Button[0.50, 0.50]
+    t =    29.14s     Wait for app.leanora.dev to idle
+    t =    29.14s     Find the "workout.close" Button
+    t =    29.19s     Check for interrupting elements affecting "workout.close" Button
+    t =    29.24s         Wait for com.apple.springboard to idle
+    t =    29.27s     Synthesize event
+    t =    29.27s         Find the "workout.close" Button
+    t =    29.32s         Find the "workout.close" Button
+    t =    29.38s         Find the "workout.close" Button
+    t =    29.71s     Wait for app.leanora.dev to idle
+    t =    30.10s Checking existence of `"workout.close" Button`
+    t =    30.13s Tap "我的" Button
+    t =    30.13s     Wait for app.leanora.dev to idle
+    t =    30.14s     Find the "我的" Button
+    t =    30.17s     Check for interrupting elements affecting "person.crop.circle" Button
+    t =    30.20s         Wait for com.apple.springboard to idle
+    t =    30.23s     Synthesize event
+    t =    30.51s     Wait for app.leanora.dev to idle
+    t =    31.79s Checking existence of `"settings.notifications" Button`
+    t =    31.84s Find the "settings.notifications" Button
+    t =    31.88s Tap "settings.notifications" Button
+    t =    31.88s     Wait for app.leanora.dev to idle
+    t =    31.88s     Find the "settings.notifications" Button
+    t =    31.91s     Check for interrupting elements affecting "settings.notifications" Button
+    t =    31.94s         Wait for com.apple.springboard to idle
+    t =    31.97s     Synthesize event
+    t =    32.26s     Wait for app.leanora.dev to idle
+    t =    32.60s Waiting 5.0s for "已允许通知" StaticText to exist
+    t =    33.65s     Checking `Expect predicate `existsNoRetry == 1` for object "已允许通知" StaticText`
+    t =    33.65s         Checking existence of `"已允许通知" StaticText`
+    t =    33.71s Checking existence of `"notifications.pending" StaticText`
+    t =    33.74s Find the "notifications.pending" StaticText
+    t =    33.77s Find the Target Application 'app.leanora.dev'
+    t =    33.86s Added attachment named 'u4-system-authorized-pending-reminder'
+    t =    33.86s Tear Down
+Test Case '-[LeanoraUITests.WorkoutRecoveryTests testSystemRestReminderAuthorizationAndScheduling]' passed (34.132 seconds).
+Test Suite 'WorkoutRecoveryTests' passed at 2026-10-21 10:31:14.959.
+	 Executed 1 test, with 0 failures (0 unexpected) in 34.132 (34.135) seconds
+Test Suite 'LeanoraUITests.xctest' passed at 2026-10-21 10:31:14.960.
+	 Executed 1 test, with 0 failures (0 unexpected) in 34.132 (34.136) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 10:31:14.960.
+	 Executed 1 test, with 0 failures (0 unexpected) in 34.132 (34.137) seconds
+2026-10-21 10:31:14.993 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:31:14.993 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:31:14.993 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:31:14.993 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:31:14.994 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:31:14.994 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:31:15.004 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:31:15.004 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:31:15.005 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:31:15.005 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:31:15.005 xcodebuild[11214:4062459] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-21 10:31:15.005 xcodebuild[11214:4062459] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-21 10:31:15.261 xcodebuild[11214:4062459] [MT] IDETestOperationsObserverDebug: 37.210 elapsed -- Testing started completed.
+2026-10-21 10:31:15.261 xcodebuild[11214:4062459] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 10:31:15.261 xcodebuild[11214:4062459] [MT] IDETestOperationsObserverDebug: 37.210 sec, +37.210 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/pengyuehui/Downloads/leanora/app/build/U678NotificationAllowed.xcresult
+
+** TEST SUCCEEDED ** [38.375 sec]
+
+Testing started

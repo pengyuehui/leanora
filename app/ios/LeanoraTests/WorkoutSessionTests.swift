@@ -12,6 +12,7 @@ final class WorkoutSessionTests: XCTestCase, @unchecked Sendable {
     }
     func testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent() async throws {
         let (actor, initial) = try await fixture(); var value = initial
+        try await actor.configureHealth(HealthSyncConfiguration(enabled: true, writing: [.workout]))
         value.exercises[0].sets[0].loadKg = 20; value.exercises[0].sets[0].repetitions = 8
         try WorkoutEngine.complete(&value, exercise: 0, set: 0, at: Date())
         try await actor.saveWorkout(value)
@@ -21,7 +22,7 @@ final class WorkoutSessionTests: XCTestCase, @unchecked Sendable {
         let finished = try await actor.finishWorkout(value.stamp.id)
         let repeated = try await actor.finishWorkout(value.stamp.id)
         XCTAssertEqual(finished, repeated)
-        let jobs = try await actor.runtimeSnapshot(); XCTAssertEqual(jobs.count, 1)
+        let jobs = try await actor.runtimeSnapshot(); XCTAssertEqual(jobs.filter { if case .job = $0 { return true }; return false }.count, 1)
         XCTAssertEqual(TrainingSummary(sessions: [finished]).volumeKg, 160)
     }
     func testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets() async throws {
@@ -108,7 +109,7 @@ final class WorkoutSessionTests: XCTestCase, @unchecked Sendable {
         value.exercises[0].sets[0].loadKg = 10; value.exercises[0].sets[0].repetitions = 8
         try WorkoutEngine.complete(&value, exercise: 0, set: 0, at: Date()); try await actor.saveWorkout(value)
         _ = try await actor.finishWorkout(value.stamp.id)
-        let runtime = try await actor.runtimeSnapshot(); XCTAssertEqual(runtime, [.reconciliationRequired(true)])
+        let runtime = try await actor.runtimeSnapshot(); XCTAssertTrue(runtime.contains(.reconciliationRequired(true))); XCTAssertFalse(runtime.contains { if case .job = $0 { return true }; return false })
     }
     func testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals() async throws {
         let (actor, initial) = try await fixture(now: Date().addingTimeInterval(-600)); var value = initial

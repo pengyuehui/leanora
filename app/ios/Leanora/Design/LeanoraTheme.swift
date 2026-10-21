@@ -1,9 +1,10 @@
 import SwiftUI
 
 enum LeanoraTheme {
-    static let canvas = Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.07, green: 0.10, blue: 0.08, alpha: 1) : UIColor(red: 0.965, green: 0.957, blue: 0.93, alpha: 1) })
-    static let surface = Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.12, green: 0.16, blue: 0.13, alpha: 1) : .white })
-    static let accent = Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.62, green: 0.82, blue: 0.68, alpha: 1) : UIColor(red: 0.17, green: 0.34, blue: 0.25, alpha: 1) })
+    static let canvas = Color(uiColor: .systemGroupedBackground)
+    static let surface = Color(uiColor: .secondarySystemGroupedBackground)
+    static let accent = Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.48, green: 0.67, blue: 1, alpha: 1) : UIColor(red: 0.12, green: 0.34, blue: 0.77, alpha: 1) })
+    static let actionInk = Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? .black : .white })
     static let ink = Color.primary
 }
 
@@ -28,8 +29,8 @@ struct PrimaryButtonStyle: ButtonStyle {
         configuration.label
             .font(.headline)
             .frame(maxWidth: .infinity, minHeight: 52)
-            .foregroundStyle(LeanoraTheme.canvas)
-            .background(LeanoraTheme.accent, in: RoundedRectangle(cornerRadius: 16))
+            .foregroundStyle(LeanoraTheme.actionInk)
+            .background(LeanoraTheme.accent, in: RoundedRectangle(cornerRadius: 12))
             .opacity(configuration.isPressed ? 0.78 : 1)
     }
 }

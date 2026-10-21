@@ -1,0 +1,276 @@
+Building for debugging...
+[2 / 10] Leanora
+[6 / 14] Leanora
+[14 / 19] LeanoraFoundationTests-product
+[17 / 20] LeanoraFoundationTests-product
+Build complete! (1.62 sec)
+Test Suite 'All tests' started at 2026-10-21 10:51:59.651.
+Test Suite 'LeanoraFoundationTests.xctest' started at 2026-10-21 10:51:59.652.
+Test Suite 'BackupTests' started at 2026-10-21 10:51:59.652.
+Test Case '-[LeanoraFoundationTests.BackupTests testDifferentIdentityRequiresCurrentExportAndExplicitReplacement]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testDifferentIdentityRequiresCurrentExportAndExplicitReplacement]' passed (0.018 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testExportExcludesHealthCachesJobsMappingsAndCursors]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testExportExcludesHealthCachesJobsMappingsAndCursors]' passed (0.006 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testFailedImportLeavesEntireBusinessAndRuntimeUnchanged]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testFailedImportLeavesEntireBusinessAndRuntimeUnchanged]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testInvalidPreflightCannotChangeDatabase]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testInvalidPreflightCannotChangeDatabase]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testPreflightCountsNestedRecordsAndRejectsOversizedFileBeforeDecode]' passed (0.065 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testPreflightRejectsInvalidJSONUUIDReferencesRangesAndUnknownVersion]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testPreviewNewerOlderAndEqualRevisionConflictsPreservesCurrentByDefault]' passed (0.009 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testRoundTripAdoptsIdentityPreservesSnapshotsAndIsIdempotent]' passed (0.024 seconds).
+Test Case '-[LeanoraFoundationTests.BackupTests testStalePreviewIsRejectedAfterLocalSave]' started.
+Test Case '-[LeanoraFoundationTests.BackupTests testStalePreviewIsRejectedAfterLocalSave]' passed (0.010 seconds).
+Test Suite 'BackupTests' passed at 2026-10-21 10:51:59.808.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.155 (0.156) seconds
+Test Suite 'BodyMeasurementTests' started at 2026-10-21 10:51:59.808.
+Test Case '-[LeanoraFoundationTests.BodyMeasurementTests testEditDeleteAndBackupRoundTrip]' started.
+Test Case '-[LeanoraFoundationTests.BodyMeasurementTests testEditDeleteAndBackupRoundTrip]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.BodyMeasurementTests testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage]' started.
+Test Case '-[LeanoraFoundationTests.BodyMeasurementTests testMultipleSameDayMeasurementsRetainedAndDailyLatestUsedForAverage]' passed (0.003 seconds).
+Test Case '-[LeanoraFoundationTests.BodyMeasurementTests testPercentBoundaryWeightUnitConversionAndInvalidInput]' started.
+Test Case '-[LeanoraFoundationTests.BodyMeasurementTests testPercentBoundaryWeightUnitConversionAndInvalidInput]' passed (0.006 seconds).
+Test Suite 'BodyMeasurementTests' passed at 2026-10-21 10:51:59.825.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.017 (0.017) seconds
+Test Suite 'CapacityTests' started at 2026-10-21 10:51:59.825.
+Test Case '-[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread]' started.
+/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/CapacityTests.swift:27: -[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread] : Test skipped - Run with LEANORA_SCALE_TESTS=1 for capacity evidence
+Test Case '-[LeanoraFoundationTests.CapacityTests testHundredThousandHealthSamplesPagedOffMainThread]' skipped (0.001 seconds).
+Test Case '-[LeanoraFoundationTests.CapacityTests testTenThousandSetsAndDietRecordsQueryAndCSV]' started.
+/Users/pengyuehui/Downloads/leanora/app/ios/LeanoraTests/CapacityTests.swift:6: -[LeanoraFoundationTests.CapacityTests testTenThousandSetsAndDietRecordsQueryAndCSV] : Test skipped - Run with LEANORA_SCALE_TESTS=1 for capacity evidence
+Test Case '-[LeanoraFoundationTests.CapacityTests testTenThousandSetsAndDietRecordsQueryAndCSV]' skipped (0.000 seconds).
+Test Suite 'CapacityTests' passed at 2026-10-21 10:51:59.826.
+	 Executed 2 tests, with 2 tests skipped and 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'DietDiaryTests' started at 2026-10-21 10:51:59.826.
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testDeleteTombstoneAndJobsUseLatestRevision]' started.
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testDeleteTombstoneAndJobsUseLatestRevision]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testDietAndHealthIntentsRollbackTogether]' started.
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testDietAndHealthIntentsRollbackTogether]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testFoodRevisionDoesNotRewriteHistoricalDietSnapshot]' started.
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testFoodRevisionDoesNotRewriteHistoricalDietSnapshot]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testKnownNutrientRemovedQueuesDeletionOfExistingComponent]' started.
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testKnownNutrientRemovedQueuesDeletionOfExistingComponent]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testMealCopiesHaveNewIDsAndIndependentSnapshots]' started.
+Test Case '-[LeanoraFoundationTests.DietDiaryTests testMealCopiesHaveNewIDsAndIndependentSnapshots]' passed (0.007 seconds).
+Test Suite 'DietDiaryTests' passed at 2026-10-21 10:51:59.858.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.031 (0.032) seconds
+Test Suite 'HealthExportTests' started at 2026-10-21 10:51:59.858.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testBodyFatAndPausedWorkoutNeverInventCalories]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testBodyFatAndPausedWorkoutNeverInventCalories]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testHealthSuccessBeforeLocalConfirmationRetriesIdempotently]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testHealthSuccessBeforeLocalConfirmationRetriesIdempotently]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testLocalDeleteRequiresSeparateHealthCopyChoice]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testLocalDeleteRequiresSeparateHealthCopyChoice]' passed (0.013 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testMealRepeatedThreeTimesThenEditedHasOneSamplePerKnownComponent]' passed (0.013 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testPartialAuthorizationLeavesOnlyFailedComponentAndStopCancelsNewJobs]' passed (0.009 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testReplacementDeletionDoesNotSuppressNewVersionButManualRemovalDoes]' passed (0.021 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testRestoreHoldsHistoryAndReconciliationCannotOverwriteNewerHealthVersion]' passed (0.009 seconds).
+Test Case '-[LeanoraFoundationTests.HealthExportTests testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue]' started.
+Test Case '-[LeanoraFoundationTests.HealthExportTests testUnknownComponentAfterUnconfirmedWriteStillDeletesHealthValue]' passed (0.008 seconds).
+Test Suite 'HealthExportTests' passed at 2026-10-21 10:51:59.939.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.081 (0.081) seconds
+Test Suite 'HealthImportTests' started at 2026-10-21 10:51:59.939.
+Test Case '-[LeanoraFoundationTests.HealthImportTests testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics]' started.
+Test Case '-[LeanoraFoundationTests.HealthImportTests testEmptyReadDoesNotInferPermissionAndActivityUsesStatistics]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.HealthImportTests testLockedOrDeniedReadPreservesCacheAndFixedRange]' started.
+Test Case '-[LeanoraFoundationTests.HealthImportTests testLockedOrDeniedReadPreservesCacheAndFixedRange]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.HealthImportTests testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible]' started.
+Test Case '-[LeanoraFoundationTests.HealthImportTests testOwnEchoMatchesBusinessButOrphanedOwnSampleIsVisible]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.HealthImportTests testReauthorizationRescansAndHiddenSampleStaysHidden]' started.
+Test Case '-[LeanoraFoundationTests.HealthImportTests testReauthorizationRescansAndHiddenSampleStaysHidden]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.HealthImportTests testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes]' started.
+Test Case '-[LeanoraFoundationTests.HealthImportTests testThousandSamplesRetryPagesWithoutDuplicatesAndDeletes]' passed (0.912 seconds).
+Test Suite 'HealthImportTests' passed at 2026-10-21 10:52:00.873.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.933 (0.933) seconds
+Test Suite 'HealthSyncRecoveryTests' started at 2026-10-21 10:52:00.873.
+Test Case '-[LeanoraFoundationTests.HealthSyncRecoveryTests testEditAndObserverSignalDuringWriteConvergeToLatestVersion]' started.
+Test Case '-[LeanoraFoundationTests.HealthSyncRecoveryTests testEditAndObserverSignalDuringWriteConvergeToLatestVersion]' passed (0.011 seconds).
+Test Case '-[LeanoraFoundationTests.HealthSyncRecoveryTests testOverlapAssociationChoosesOneDurationWithoutSummingCalories]' started.
+Test Case '-[LeanoraFoundationTests.HealthSyncRecoveryTests testOverlapAssociationChoosesOneDurationWithoutSummingCalories]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.HealthSyncRecoveryTests testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection]' started.
+Test Case '-[LeanoraFoundationTests.HealthSyncRecoveryTests testWaitForBackgroundWriterBeforeHealthCleanupPreventsResurrection]' passed (0.007 seconds).
+Test Suite 'HealthSyncRecoveryTests' passed at 2026-10-21 10:52:00.899.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.026 (0.027) seconds
+Test Suite 'MigrationTests' started at 2026-10-21 10:52:00.899.
+Test Case '-[LeanoraFoundationTests.MigrationTests testCorruptStoreIsNotDeletedOrSilentlyReplaced]' started.
+CoreData: error: addPersistentStoreWithType:configuration:URL:options:error: returned error NSCocoaErrorDomain (259)
+CoreData: error: userInfo:
+CoreData: error: 	NSFilePath : /var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/LeanoraTests-E7FDE43B-0744-4254-9FDA-ECA60C5865D6/Leanora.store
+CoreData: error: 	NSSQLiteErrorDomain : 26
+CoreData: error: storeType: SQLite
+CoreData: error: configuration: default
+CoreData: error: URL: file:///var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/LeanoraTests-E7FDE43B-0744-4254-9FDA-ECA60C5865D6/Leanora.store
+CoreData: annotation: options:
+CoreData: annotation: 	NSMigratePersistentStoresAutomaticallyOption : 1
+CoreData: annotation: 	NSPersistentStoreStagedMigrationManagerOptionKey : <SwiftData.DefaultMigrationManager: 0x74c970b480>
+CoreData: annotation: 	NSInferMappingModelAutomaticallyOption : 1
+CoreData: annotation: 	NSPersistentStoreRemoteChangeNotificationOptionKey : 1
+CoreData: annotation: 	NSPersistentHistoryTrackingKey : 1
+CoreData: error: <NSPersistentStoreCoordinator: 0x74c8d54be0>: Attempting recovery from error encountered during addPersistentStore: 0x74c8d3ab20 Error Domain=NSCocoaErrorDomain Code=259 "The file “Leanora.store” couldn’t be opened because it isn’t in the correct format." UserInfo={NSFilePath=/var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/LeanoraTests-E7FDE43B-0744-4254-9FDA-ECA60C5865D6/Leanora.store, NSSQLiteErrorDomain=26}
+CoreData: error: Store failed to load.  <NSPersistentStoreDescription: 0x74c8d3abe0> (type: SQLite, url: file:///var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/LeanoraTests-E7FDE43B-0744-4254-9FDA-ECA60C5865D6/Leanora.store) with error = Error Domain=NSCocoaErrorDomain Code=259 "The file “Leanora.store” couldn’t be opened because it isn’t in the correct format." UserInfo={NSFilePath=/var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/LeanoraTests-E7FDE43B-0744-4254-9FDA-ECA60C5865D6/Leanora.store, NSSQLiteErrorDomain=26} with userInfo {
+    NSFilePath = "/var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/LeanoraTests-E7FDE43B-0744-4254-9FDA-ECA60C5865D6/Leanora.store";
+    NSSQLiteErrorDomain = 26;
+}
+Test Case '-[LeanoraFoundationTests.MigrationTests testCorruptStoreIsNotDeletedOrSilentlyReplaced]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.MigrationTests testInterruptedRestoreCannotBeOpenedAsEmptyLibrary]' started.
+Test Case '-[LeanoraFoundationTests.MigrationTests testInterruptedRestoreCannotBeOpenedAsEmptyLibrary]' passed (0.161 seconds).
+Test Case '-[LeanoraFoundationTests.MigrationTests testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy]' started.
+Test Case '-[LeanoraFoundationTests.MigrationTests testOpenFailureKeepsOriginalBytesAndRecoverableV1Copy]' passed (0.028 seconds).
+Test Case '-[LeanoraFoundationTests.MigrationTests testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots]' started.
+Test Case '-[LeanoraFoundationTests.MigrationTests testV1DiskFixtureMigratesToV2WithoutChangingIDsOrSnapshots]' passed (0.021 seconds).
+Test Suite 'MigrationTests' passed at 2026-10-21 10:52:01.115.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.215 (0.216) seconds
+Test Suite 'NutritionCalculationTests' started at 2026-10-21 10:52:01.115.
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testBundledCatalogIsValidSearchableAndSourced]' started.
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testBundledCatalogIsValidSearchableAndSourced]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testHundredToHundredFiftyGramsScalesAllKnownValues]' started.
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testHundredToHundredFiftyGramsScalesAllKnownValues]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate]' started.
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testPartialUnknownTotalsAreNotZeroAndGoalsUseEffectiveDate]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testServingConversionAndKilojoules]' started.
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testServingConversionAndKilojoules]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testZeroNegativeInfiniteAndUnownedPortionsAreRejected]' started.
+Test Case '-[LeanoraFoundationTests.NutritionCalculationTests testZeroNegativeInfiniteAndUnownedPortionsAreRejected]' passed (0.000 seconds).
+Test Suite 'NutritionCalculationTests' passed at 2026-10-21 10:52:01.124.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'PermissionTests' started at 2026-10-21 10:52:01.124.
+Test Case '-[LeanoraFoundationTests.PermissionTests testActivityTypesCannotBeRequestedForWriting]' started.
+Test Case '-[LeanoraFoundationTests.PermissionTests testActivityTypesCannotBeRequestedForWriting]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.PermissionTests testHealthRequestFailureCanRetry]' started.
+Test Case '-[LeanoraFoundationTests.PermissionTests testHealthRequestFailureCanRetry]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.PermissionTests testNotificationDenialAndFailureRemainRecoverable]' started.
+Test Case '-[LeanoraFoundationTests.PermissionTests testNotificationDenialAndFailureRemainRecoverable]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.PermissionTests testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest]' started.
+Test Case '-[LeanoraFoundationTests.PermissionTests testOlderStatusRefreshCannotOverwriteCompletedNotificationRequest]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.PermissionTests testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted]' started.
+Test Case '-[LeanoraFoundationTests.PermissionTests testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.PermissionTests testUnavailableAndEmptySelectionNeverRequestSystemAccess]' started.
+Test Case '-[LeanoraFoundationTests.PermissionTests testUnavailableAndEmptySelectionNeverRequestSystemAccess]' passed (0.000 seconds).
+Test Suite 'PermissionTests' passed at 2026-10-21 10:52:01.125.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'PersistenceTests' started at 2026-10-21 10:52:01.125.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testCatalogEditsDoNotMutateHistoricalSnapshots]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testCatalogEditsDoNotMutateHistoricalSnapshots]' passed (0.009 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testDatabaseAndRecoveryAreExcludedFromBackupAndProtected]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testDatabaseAndRecoveryAreExcludedFromBackupAndProtected]' passed (0.013 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testDiskReopenRetainsEveryIDAndSnapshots]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testDiskReopenRetainsEveryIDAndSnapshots]' passed (0.014 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testFailedSaveRollsBackBusinessAndJobThenRetryCoalesces]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testGoalUpdatesKeepPastGoalsAndMultipleMeasurements]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testGoalUpdatesKeepPastGoalsAndMultipleMeasurements]' passed (0.009 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testHealthBatchAndCursorRollbackAndRetryAreAtomic]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testHealthBatchAndCursorRollbackAndRetryAreAtomic]' passed (0.006 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testRevisionAndSingleActiveWorkoutConstraints]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testRevisionAndSingleActiveWorkoutConstraints]' passed (0.004 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testTombstoneCancelsStaleWritesAndKeepsStableID]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testTombstoneCancelsStaleWritesAndKeepsStableID]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.PersistenceTests testUnknownNutrientDeletesOldComponentInsteadOfWritingZero]' started.
+Test Case '-[LeanoraFoundationTests.PersistenceTests testUnknownNutrientDeletesOldComponentInsteadOfWritingZero]' passed (0.004 seconds).
+Test Suite 'PersistenceTests' passed at 2026-10-21 10:52:01.196.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.070 (0.071) seconds
+Test Suite 'PreferenceTests' started at 2026-10-21 10:52:01.196.
+Test Case '-[LeanoraFoundationTests.PreferenceTests testCorruptPreferencesHaveVisibleRecoveryNotice]' started.
+Test Case '-[LeanoraFoundationTests.PreferenceTests testCorruptPreferencesHaveVisibleRecoveryNotice]' passed (0.002 seconds).
+Test Case '-[LeanoraFoundationTests.PreferenceTests testInvalidInputDoesNotOverwriteSavedPreferences]' started.
+Test Case '-[LeanoraFoundationTests.PreferenceTests testInvalidInputDoesNotOverwriteSavedPreferences]' passed (0.001 seconds).
+Test Case '-[LeanoraFoundationTests.PreferenceTests testOptionalGoalsAndUnitsSurviveRelaunch]' started.
+Test Case '-[LeanoraFoundationTests.PreferenceTests testOptionalGoalsAndUnitsSurviveRelaunch]' passed (0.001 seconds).
+Test Suite 'PreferenceTests' passed at 2026-10-21 10:52:01.201.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'ReleaseDataTests' started at 2026-10-21 10:52:01.201.
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testCacheClearLocalResetAndHealthDeleteAreIndependent]' started.
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testCacheClearLocalResetAndHealthDeleteAreIndependent]' passed (0.014 seconds).
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas]' started.
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testCSVPreservesCanonicalUnitsUnknownAndQuotesAndNeutralizesFormulas]' passed (0.002 seconds).
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata]' started.
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testMalformedAndOversizedImportNeverTouchesBusinessOrSyncMetadata]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testResetRollbackDoesNotLoseBusinessOrChangeConfiguration]' started.
+Test Case '-[LeanoraFoundationTests.ReleaseDataTests testResetRollbackDoesNotLoseBusinessOrChangeConfiguration]' passed (0.006 seconds).
+Test Suite 'ReleaseDataTests' passed at 2026-10-21 10:52:01.231.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.029 (0.030) seconds
+Test Suite 'TrainingPlanTests' started at 2026-10-21 10:52:01.231.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testBundledCatalogHasStableSourcesAndCombinedSearchFilters]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testBundledCatalogHasStableSourcesAndCombinedSearchFilters]' passed (0.002 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testConcurrentStartReturnsSameActiveSession]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testConcurrentStartReturnsSameActiveSession]' passed (0.006 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testCopyHasNewParentAndItemIDsAndNoWeeklySchedule]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testCopyHasNewParentAndItemIDsAndNoWeeklySchedule]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testDeletingUsedTemplateKeepsStartedSnapshotAndRemovesRecurrence]' passed (0.006 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testDuplicateExerciseItemsReorderAndKeepIndependentTargets]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testDuplicateExerciseItemsReorderAndKeepIndependentTargets]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testEmptyTemplateCannotStart]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testEmptyTemplateCannotStart]' passed (0.003 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testImportedFutureActiveWorkoutCanBeAbandonedAfterClockChange]' passed (0.004 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testMovedOccurrenceStartsOnDestinationAndCannotMoveAfterStart]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testOneOffMoveLeavesWeeklyTemplateAndFollowingWeekUnchanged]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testOversizedExpandedPlanIsRejectedBeforeAllocatingSets]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testOversizedExpandedPlanIsRejectedBeforeAllocatingSets]' passed (0.004 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testPlanAndSessionRoundTripDiskAndBackup]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testPlanAndSessionRoundTripDiskAndBackup]' passed (0.026 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testStaleTemplateEditDoesNotOverwriteNewerRevision]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testStaleTemplateEditDoesNotOverwriteNewerRevision]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testTargetInputUsesCanonicalUnitsAndRejectsInvalidValues]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testTemplateAndCustomExerciseChangesLeaveStartedSnapshotUntouched]' passed (0.012 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testTemplatePersistsOnlyUsedCatalogDependenciesAtomically]' started.
+Test Case '-[LeanoraFoundationTests.TrainingPlanTests testTemplatePersistsOnlyUsedCatalogDependenciesAtomically]' passed (0.004 seconds).
+Test Suite 'TrainingPlanTests' passed at 2026-10-21 10:52:01.329.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.097 (0.098) seconds
+Test Suite 'TrainingSummaryTests' started at 2026-10-21 10:52:01.329.
+Test Case '-[LeanoraFoundationTests.TrainingSummaryTests testPRRecalculatesAfterSourceSetEditedOrRemoved]' started.
+Test Case '-[LeanoraFoundationTests.TrainingSummaryTests testPRRecalculatesAfterSourceSetEditedOrRemoved]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.TrainingSummaryTests testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements]' started.
+Test Case '-[LeanoraFoundationTests.TrainingSummaryTests testVolumeExcludesWarmupIncompleteOtherKindsAndOtherMeasurements]' passed (0.000 seconds).
+Test Suite 'TrainingSummaryTests' passed at 2026-10-21 10:52:01.329.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'WorkoutSessionTests' started at 2026-10-21 10:52:01.329.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testCrossMidnightAssignedToStartDate]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testCrossMidnightAssignedToStartDate]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testDiskReopenKeepsSamePausedWorkoutAndRunningTimerState]' passed (0.016 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testEachSetSavesWithoutChangingPlanAndFinishIsIdempotent]' passed (0.008 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testEmptyFinishAndMissingActualValuesAreRejected]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testEmptyFinishAndMissingActualValuesAreRejected]' passed (0.004 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testFailedFinishRollsBackBothSessionAndJob]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testFailedFinishRollsBackBothSessionAndJob]' passed (0.006 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testMalformedPausedSessionRejectedBeforeItCanReachFinish]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testMalformedPausedSessionRejectedBeforeItCanReachFinish]' passed (0.002 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testNotificationDeadlineRecoversFromSavedTimestampsAndExpiredRestIsNotRescheduled]' passed (0.003 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testPauseResumeTimerAndRestAreIndependent]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testPauseResumeTimerAndRestAreIndependent]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testPrefillKeepsRepeatedTemplateItemsIndependent]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testPrefillKeepsRepeatedTemplateItemsIndependent]' passed (0.000 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testPrefillUsesCompletedHistoryButDoesNotCompleteNewSets]' passed (0.007 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testRestoreGateAllowsLocalWorkoutCompletionWithoutHealthJobs]' passed (0.013 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testRetimeCompletedWorkoutMovesDayAndPreservesElapsedAndPauseIntervals]' passed (0.009 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testScheduledReminderHonorsMovedAndStartedOccurrences]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testScheduledReminderHonorsMovedAndStartedOccurrences]' passed (0.006 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testStaleSetEditDoesNotOverwriteNewValues]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testStaleSetEditDoesNotOverwriteNewValues]' passed (0.005 seconds).
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testSupersetStartsRestOnlyAfterBothExercisesInRound]' started.
+Test Case '-[LeanoraFoundationTests.WorkoutSessionTests testSupersetStartsRestOnlyAfterBothExercisesInRound]' passed (0.004 seconds).
+Test Suite 'WorkoutSessionTests' passed at 2026-10-21 10:52:01.425.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.095 (0.096) seconds
+Test Suite 'LeanoraFoundationTests.xctest' passed at 2026-10-21 10:52:01.425.
+	 Executed 98 tests, with 2 tests skipped and 0 failures (0 unexpected) in 1.764 (1.773) seconds
+Test Suite 'All tests' passed at 2026-10-21 10:52:01.425.
+	 Executed 98 tests, with 2 tests skipped and 0 failures (0 unexpected) in 1.764 (1.774) seconds
