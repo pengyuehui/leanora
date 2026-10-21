@@ -1,5 +1,7 @@
 # Leanora 0.2.0（2）发行候选
 
+后续正式 App Store 版本已开始准备为 1.0（3），见 [最新提交准备](appstore-submission-1.0.md)。本页保留此前内部 TestFlight 上传的原始记录。
+
 2026-10-21；基线 `df48c65` 后补齐运营资料并完成发行签名。Bundle ID `ai.leanora.fitness`，团队/运营者 Manyao Li，Team ID `8ZP3NMT2A8`，支持邮箱 `pengyuehui@gmail.com`。
 
 ## 可审查的交付物

@@ -1,0 +1,90 @@
+{
+  "checked_date": "2026-10-21",
+  "version": "1.0",
+  "build": "3",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "archive": "app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Privacy-Signed.xcarchive",
+  "archive_build": "succeeded",
+  "codesign_deep_strict": "passed with system trust access",
+  "sandbox_trust_check": "initial restricted check returned CSSMERR_TP_NOT_TRUSTED; system-trust-enabled repeat passed",
+  "signing_authorities": [
+    "Apple Development: Manyao Li (S7QNX28N36)",
+    "Apple Worldwide Developer Relations Certification Authority",
+    "Apple Root CA"
+  ],
+  "profile": {
+    "name": "iOS Team Provisioning Profile: ai.leanora.fitness",
+    "uuid": "6ef403f0-b248-4dda-8a08-8f5471302a42",
+    "expiration": "2027-10-21T03:48:11Z",
+    "team": [
+      "8ZP3NMT2A8"
+    ],
+    "application_identifier": "8ZP3NMT2A8.ai.leanora.fitness",
+    "get_task_allow": true,
+    "provisioned_devices_present": true
+  },
+  "healthkit": true,
+  "background_delivery": true,
+  "minimum_os": "18.0",
+  "device_family": [
+    1
+  ],
+  "executable_sha256": "d04559a100371fc8470f2cde2a6002b01702a38419a4a2d7ef975a4d989b5462",
+  "asset_catalog_sha256": "f9cd10f73b606c0f60a8c634abcd6d3ef350910c27f7a5ca1e65707186cbf339",
+  "source_icon_sha256": "01002bc1635406c636473548ebfcf37aff70e61fd1b48327be9b57a1c1903f59",
+  "debug_markers_absent": [
+    "--uitesting",
+    "--store-screenshots",
+    "Store capture:",
+    "createStoreSamples",
+    "上肢力量 A"
+  ],
+  "original_function_tests_rerun": false,
+  "reason": "Version/build identity and privacy footer text only; previous function evidence retained. No full function regression rerun.",
+  "distribution_ipa_export": "failed",
+  "export_errors": [
+    "No Accounts",
+    "No signing certificate iOS Distribution found"
+  ],
+  "distribution_ready": false,
+  "uploaded": false,
+  "submitted_for_app_review": false,
+  "external_state": {
+    "mac_ui": "locked; automatic unlock failed",
+    "app_store_connect_browser": "redirected to login with authResult=FAILED",
+    "paid_agreement_notice": "shown on Apps page; not accepted by agent",
+    "privacy_url": "https://leanora.ai/",
+    "privacy_url_https_check": "curl exit 35; HTTP 000"
+  },
+  "evidence_sha256": {
+    "appstore-1.0-3-archive.log": "aaa1dcdef4ecd9cce6488a1d5838864fa227aabd8730adc6bdcb1a7adb206fe2",
+    "appstore-1.0-3-export.log": "fea2b57b02d036eefaa0cdd1504aa2595c7feb645ea7940f01ca904da85ec074",
+    "appstore-1.0-3-privacy-archive.log": "6dd9f818d00c9d978550a2ec286a3076ad9019d65d634270de060e4c76b4b154",
+    "appstore-1.0-3-privacy-export.log": "b511cb79d70bb4a43eb80816964ce16848863c6f28c1f0dcd7803289a2b7113d"
+  },
+  "previous_archive": {
+    "path": "app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Signed.xcarchive",
+    "executable_sha256": "dc8949247ec7767a78563de25af7bd6d101e30c213abf4baa39a465de0a0a266",
+    "reason_replaced": "Remove stale version-specific 0.2 privacy footer before App Store 1.0."
+  },
+  "stale_0_2_privacy_footer_absent": true,
+  "export_attempts": [
+    {
+      "archive": "initial",
+      "log": "appstore-1.0-3-export.log",
+      "exit_code": 70,
+      "result": "No Accounts / no distribution certificate"
+    },
+    {
+      "archive": "privacy footer corrected",
+      "log": "appstore-1.0-3-privacy-export.log",
+      "exit_code": 70,
+      "result": "No Accounts / no distribution certificate"
+    }
+  ],
+  "auth_handoff_proof": {
+    "path": "appstore-auth-handoff.png",
+    "sha256": "db5182d0497633d1f5f784db63305f07cf5ccbe4911d892389fae77bd0e812d6"
+  }
+}

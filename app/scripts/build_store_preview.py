@@ -35,5 +35,6 @@ page = """<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="vi
 page = page.replace("padding:90px 0 80px", "padding:56px 0")
 page = page.replace(".hero-art{min-width:0;", ".hero-art{height:540px;overflow:hidden;min-width:0;")
 page = page.replace("font:15px/1.9 inherit;font-family:inherit", "font-size:15px;line-height:1.9;font-family:inherit")
+page = page.replace("新版图标已接入源码，随下一次构建生效。", "新版图标已接入源码，等待正式发行构建上传。")
 (ROOT / "index.html").write_text(page.replace("__GALLERY__", gallery).replace("__FIELDS__", fields))
 print("Built metadata.json and index.html; all locale fields within Apple limits.")

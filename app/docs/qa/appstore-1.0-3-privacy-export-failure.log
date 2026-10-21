@@ -1,0 +1,9 @@
+2026-10-21 21:02:44.112 xcodebuild[57429:5523972] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path "/var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/Leanora_2026-10-21_21-02-44.111.xcdistributionlogs".
+error: exportArchive No Accounts
+  Add a new account in Accounts settings.
+
+error: exportArchive No signing certificate "iOS Distribution" found
+  No "iOS Distribution" signing certificate matching team ID "8ZP3NMT2A8" with a private key was found.
+
+** EXPORT FAILED **
+

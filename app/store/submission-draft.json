@@ -1,0 +1,52 @@
+{
+  "status": "preparing_not_submitted",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "version": "1.0",
+  "build": "3",
+  "submission_target": "App Store Review",
+  "release_method_proposed": "manual_after_approval",
+  "primary_locale": "zh-Hans",
+  "metadata_source": "metadata.json",
+  "screenshots": {
+    "iphone_medium": "zh-Hans/iphone-medium",
+    "iphone_large": "zh-Hans/iphone-large",
+    "count_per_size": 7,
+    "source_device": "iPhone Duo outer display",
+    "source_type": "real app with isolated synthetic business records"
+  },
+  "review_contact": {
+    "first_name_proposed": "Manyao",
+    "last_name_proposed": "Li",
+    "email": "pengyuehui@gmail.com",
+    "phone": null,
+    "phone_handling": "Enter the actual review phone only in App Store Connect; never commit it to the public repository or public screenshots.",
+    "sign_in_required": false,
+    "notes_source": "review-notes.txt"
+  },
+  "privacy_draft": {
+    "app_data_collection": "No developer data collection; to be confirmed against Apple questionnaire",
+    "tracking": false,
+    "current_policy_url": "https://leanora.ai/",
+    "public_policy_url_verified": false,
+    "support_url": null,
+    "fallback_policy_pending_user_choice": "https://github.com/pengyuehui/leanora/blob/main/app/docs/privacy-policy.md",
+    "fallback_support_pending_user_choice": "https://github.com/pengyuehui/leanora/blob/main/app/store/product-introduction.md"
+  },
+  "commercial_settings": {
+    "price": null,
+    "availability_regions": null,
+    "note": "Inspect current App Store Connect settings before final submission; do not invent selections."
+  },
+  "open_items": [
+    "Unlock Mac and restore Apple authentication / distribution signing",
+    "Resolve any agreement requirement shown by Apple",
+    "Confirm reachable privacy and support URLs",
+    "Inspect and complete App Store metadata, age rating, privacy and review contact fields",
+    "Export and validate App Store distribution IPA, then upload and wait for processing",
+    "Select build 1.0 (3), add version for review and submit; verify actual review status",
+    "Physical-device and professional content acceptance remain unverified"
+  ]
+}

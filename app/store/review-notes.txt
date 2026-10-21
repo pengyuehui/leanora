@@ -1,0 +1,17 @@
+Leanora Fitness is a native iPhone workout, food and body-measurement journal. No account or sign-in is required. Core manual recording works offline. There are no ads, third-party analytics, subscriptions or in-app purchases in this build.
+
+Start with a clean local journal. The app does not ship with the example records used in the App Store screenshots.
+
+Suggested review flow:
+1. Complete onboarding. Unit and target settings can be changed later. Health access is optional and may be skipped.
+2. Open Training, create a template, add exercises from the exercise library, and save the plan. Start a session, edit a set's actual load and repetitions, mark the set complete, pause/resume, and finish the workout. Completed sessions can be reviewed in history.
+3. Open the food diary, choose a meal and add a food. Check its source and portion, then save. Custom foods and quick calorie entries are also supported. Quick calories do not infer protein, carbohydrate or fat values.
+4. Add body measurements and view 7-day or 30-day trends.
+5. To review Apple Health, open My > Apple Health, choose read/write categories, and confirm access in the system sheet. New eligible records sync in the selected directions. Historical export requires separate confirmation. Sync status and sources can be inspected without claiming that an empty result means access was denied.
+6. Under data management, export JSON/CSV or preview a JSON backup import. Clearing imported Health caches, clearing local records and deleting copies written by this app are separate actions.
+
+Apple Health data is not sent to the developer. No heart rate or exercise-energy estimate is fabricated. Health access can be declined without preventing manual logging.
+
+The bundled food catalog focuses on basic foods with USDA FoodData Central source attribution. Some food names remain in English; users may search those names or add their own foods. The app does not provide diagnosis, treatment or personalized nutrition prescriptions.
+
+Support and review correspondence: pengyuehui@gmail.com

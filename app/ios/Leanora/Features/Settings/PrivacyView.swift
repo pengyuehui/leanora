@@ -24,7 +24,7 @@ struct PrivacyView: View {
                     }
                 }
                 Divider()
-                Text("此说明对应 Leanora 0.2，由 Manyao Li 运营。App 不提供医疗诊断或个体化治疗建议。")
+                Text("Leanora 由 Manyao Li 运营。App 不提供医疗诊断或个体化治疗建议。")
                     .font(.footnote).foregroundStyle(.secondary)
             }.padding(26)
         }.background(LeanoraTheme.canvas)

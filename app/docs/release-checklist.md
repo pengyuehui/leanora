@@ -30,7 +30,8 @@
 - [x] App Store Connect 应用记录 `Leanora Fitness` 创建成功，App ID `6825234654`，主语言简体中文；安装显示名保留 `Leanora`。
 - [x] 0.2.0（2）以 TestFlight Internal Only 上传成功；Apple 接收时状态为 `PROCESSING`，回执与截图已保存。
 - [x] 新版 1024 px 图标、7 张真实页面的两套展示尺寸、中英文商店介绍及元数据校验；见 [素材包](../store/README.md)。
-- [ ] 品牌素材确认，并在下一次递增 build 的签名构建中上传新版图标；现有 0.2.0（2）仍为原图标。
+- [x] 用户要求采用现有素材构建并提交 App Store；新版图标已进入 1.0（3）本机归档。
+- [ ] 1.0（3）Apple Distribution 发行导出及正式上传；当前因 No Accounts / 缺少发行签名而失败，见 [提交准备](qa/appstore-submission-1.0.md)。现有内部 0.2.0（2）仍为原图标。
 - [ ] App Store Connect 服务端 Validate App 及审核隐私报告确认。
 - [ ] App Store Connect 配置内部测试组，填写中文描述、支持 URL、年龄分级、出口合规与隐私标签。
 - [ ] 根据实际构建确认无服务器收集，声明 Health 数据用途；不把本机访问误填成向开发者收集。
@@ -38,6 +39,8 @@
 - [ ] TestFlight 端到端走查通过并记录构建号、验收人及日期。
 
 当前候选为 0.2.0（2）；缺少应用记录和名称占用问题已解决，用户指定的 `Leanora Fitness` 创建成功，内部上传已获得 Apple 成功回执。尚未确认 Apple 后续处理完成或真机可安装。详见 [候选记录](qa/release-submission.md)。
+
+正式 App Store 新候选为 1.0（3）：开发签名 Archive 已完成，发行 IPA 导出、正式上传与审核提交尚未完成。Mac 解锁、Apple 认证和公开政策入口等实际状态见 [1.0 提交准备](qa/appstore-submission-1.0.md)。
 
 ## 审核演示路径
 
