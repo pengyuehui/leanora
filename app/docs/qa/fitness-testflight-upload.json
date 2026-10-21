@@ -1,0 +1,69 @@
+{
+  "recorded_date": "2026-10-21",
+  "scope": "TestFlight Internal Only",
+  "app_store_record": {
+    "id": "6825234654",
+    "name": "Leanora Fitness",
+    "bundle_id": "ai.leanora.fitness",
+    "sku": "ai.leanora.fitness",
+    "primary_locale": "zh-Hans",
+    "creation": "succeeded"
+  },
+  "team": {
+    "name": "Manyao Li",
+    "id": "8ZP3NMT2A8"
+  },
+  "archive": "app/build/ReleaseCandidate/Leanora-0.2-Fitness-Privacy-Signed.xcarchive",
+  "installed_display_name": "Leanora",
+  "version": "0.2.0",
+  "build": "2",
+  "upload": {
+    "result": "succeeded",
+    "completion_utc": "2026-10-21T07:55:42Z",
+    "server_state_at_receipt": "PROCESSING",
+    "processing_completion": "not_verified",
+    "testflight_install_availability": "not_verified",
+    "physical_installation": "not_verified",
+    "delivery_uuid": "d3dff41b-1063-4506-b4c7-e3f628996ae8",
+    "export_options": {
+      "thinning": "<none>",
+      "uploadSymbols": true,
+      "raiseProfileSupportOptionalToRequired": false,
+      "stripSwiftSymbols": true,
+      "method": "app-store-connect",
+      "destination": "upload",
+      "manageAppVersionAndBuildNumber": true,
+      "signingStyle": "automatic",
+      "testFlightInternalTestingOnly": true,
+      "generateAppStoreInformation": false,
+      "embedOnDemandResourcesAssetPacksInBundle": false
+    },
+    "ui_confirmation": "Leanora 0.2.0 (2) uploaded"
+  },
+  "verification": {
+    "business_source_changed": false,
+    "original_archive_rebuilt": false,
+    "functional_tests_rerun": false,
+    "independent_validate_app": "not_run",
+    "critical_log_empty": true,
+    "functional_test_evidence": "u678-latest-method-results.json"
+  },
+  "history": [
+    "Initial CLI upload failed because App Store Connect record did not exist; fitness-internal-upload.log retained.",
+    "Apple rejected the initial Leanora record name as already in use.",
+    "User explicitly chose Leanora Fitness; Bundle ID and installed display name unchanged."
+  ],
+  "evidence": {
+    "screenshot": "fitness-testflight-upload-success.png",
+    "screenshot_sha256": "e97b3f77543a979044c94770def617fb18e91bb438dcbece45c81c3415110022",
+    "status_excerpt": "fitness-testflight-upload-status.log",
+    "source_log_directory": "Leanora_2026-10-21_15-49-59.299.xcdistributionlogs",
+    "source_logs_sha256": {
+      "IDEDistribution.standard.log": "dd8abe56e6209bd3c53dc5f579c5494d1adad96d81e85c01430e10bcea5e7aa9",
+      "IDEDistributionAppStoreConnect.log": "94a8bc5c7a702895de13621586c95e463ecd682f3cf4b204def423955b0ac98d",
+      "IDEDistribution.critical.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ContentDelivery.log": "734ab9bac1e751e17b22a2663f845660298f8a702db418e692fc13a358e214bd"
+    },
+    "publication_note": "Only allowlisted metadata/status excerpts and screenshot are published. Complete logs remain local because they can include account/session information."
+  }
+}

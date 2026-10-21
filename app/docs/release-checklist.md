@@ -27,13 +27,15 @@
 - [x] 发布者确认运营主体 Manyao Li、支持邮箱 `pengyuehui@gmail.com`、政策网址 `https://leanora.ai/`；App 与政策源文件已更新。
 - [ ] 公开政策的 HTTPS 可访问性及实际内容核验；本机浏览器返回 `ERR_CONNECTION_CLOSED`，政策 HTML 已准备。
 - [x] Xcode 签名 Archive、App Store Connect 发行 IPA 导出、签名与权限检查通过。
+- [x] App Store Connect 应用记录 `Leanora Fitness` 创建成功，App ID `6825234654`，主语言简体中文；安装显示名保留 `Leanora`。
+- [x] 0.2.0（2）以 TestFlight Internal Only 上传成功；Apple 接收时状态为 `PROCESSING`，回执与截图已保存。
 - [ ] App Store Connect 服务端 Validate App 及审核隐私报告确认。
-- [ ] App Store Connect 创建应用与测试组，填写中文描述、支持 URL、年龄分级、出口合规与隐私标签。
+- [ ] App Store Connect 配置内部测试组，填写中文描述、支持 URL、年龄分级、出口合规与隐私标签。
 - [ ] 根据实际构建确认无服务器收集，声明 Health 数据用途；不把本机访问误填成向开发者收集。
-- [ ] 上传正式签名构建，等待处理/可能的 Beta Review，安装到上述物理设备。
+- [ ] 确认 Apple 处理完成、构建对内部测试组可用，安装到上述物理设备；若后续扩大测试范围，另行处理可能的 Beta Review。
 - [ ] TestFlight 端到端走查通过并记录构建号、验收人及日期。
 
-当前候选为 0.2.0（2）；用户已批准内部上传，实际执行后 Apple 返回缺少 `ai.leanora.fitness` 的应用记录。Xcode 已打开创建表单，尚无创建或上传成功证据。详见 [候选记录](qa/release-submission.md)。
+当前候选为 0.2.0（2）；缺少应用记录和名称占用问题已解决，用户指定的 `Leanora Fitness` 创建成功，内部上传已获得 Apple 成功回执。尚未确认 Apple 后续处理完成或真机可安装。详见 [候选记录](qa/release-submission.md)。
 
 ## 审核演示路径
 

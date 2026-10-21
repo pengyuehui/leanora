@@ -1,0 +1,9 @@
+# Allowlisted status excerpts from local Xcode distribution logs; complete logs are not published.
+# IDEDistribution.standard.log
+2026-10-21 07:50:22 +0000  Starting export with options: {"thinning":"<none>","uploadSymbols":true,"raiseProfileSupportOptionalToRequired":false,"stripSwiftSymbols":true,"method":"app-store-connect","destination":"upload","manageAppVersionAndBuildNumber":true,"signingStyle":"automatic","testFlightInternalTestingOnly":true,"generateAppStoreInformation":false,"embedOnDemandResourcesAssetPacksInBundle":false}
+2026-10-21 07:55:42 +0000 [MT] Upload succeeded for archive Leanora
+# ContentDelivery.log
+Upload State: PROCESSING
+UPLOAD SUCCEEDED with no errors
+Delivery UUID: d3dff41b-1063-4506-b4c7-e3f628996ae8
+Transferred 2614488 bytes in 1.39 minutes (31.42KB/s, 0.251Mbps)

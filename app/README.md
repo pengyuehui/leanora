@@ -8,7 +8,7 @@
 
 - 模拟器：先在 Xcode Settings → Components 安装 iOS Runtime，然后选择可用 iPhone 模拟器运行。
 - 真机：工程已配置 Manyao Li（Team ID `8ZP3NMT2A8`）及正式 Bundle ID `ai.leanora.fitness`，需匹配的 HealthKit 描述文件与已开启开发者模式的 iPhone。
-- 2026-10-21：协议门槛已解除，正式签名 Archive 与 App Store Connect 发行 IPA 导出通过。运营主体及支持方式已补齐。用户已批准内部 TestFlight 上传，Apple 返回缺少对应应用记录，正在补齐；公开政策网址仍待可访问性核验。代码不包含签名私钥或账号凭据，见 [发布候选记录](docs/qa/release-submission.md)。
+- 2026-10-21：正式签名 Archive 与发行 IPA 导出通过，运营主体及支持方式已补齐。商店记录 `Leanora Fitness`（`6825234654`）创建成功，0.2.0（2）内部 TestFlight 上传成功；接收时 Apple 状态为 `PROCESSING`，可安装状态和真机验收仍待确认。公开政策网址仍待可访问性核验。代码不包含签名私钥或账号凭据，见 [发布候选记录](docs/qa/release-submission.md)。
 
 ## 验证
 

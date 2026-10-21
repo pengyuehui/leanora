@@ -8,7 +8,8 @@
 | Team ID | `8ZP3NMT2A8`；本机 Xcode 的 `IDEProvisioningTeamByIdentifier` 与同名 Apple Development 公钥证书的 OU 一致 |
 | 正式 Bundle ID | 用户指定 `ai.leanora.fitness`；App、单元及 UI 测试的 Debug/Release 配置和工程生成脚本同步更新 |
 | 应用版本 | 0.2.0（2） |
-| 当前结果 | 新标识的真实 HealthKit 模拟器闭环、正式签名 Archive 与 App Store Connect 发行 IPA 导出通过；内部上传已获批准，但 Apple 返回缺少应用记录 |
+| 商店记录 | 用户选择 `Leanora Fitness`；Apple App ID `6825234654`；主语言简体中文；安装显示名仍为 `Leanora` |
+| 当前结果 | 新标识的真实 HealthKit 模拟器闭环、正式签名 Archive 与发行 IPA 导出通过；内部 TestFlight 上传成功，接收时 Apple 状态 `PROCESSING` |
 
 团队显示名称与 Team ID 是不同字段；Apple 将 Team ID 定义为 10 字符成员标识，见 [官方说明](https://developer.apple.com/help/glossary/team-id/)。没有读取/导出私钥，没有把其他团队或其他应用的描述文件用于此 App。
 
@@ -22,7 +23,7 @@
 
 ## 继续发布所需操作
 
-运营主体已由用户明确确认为 Manyao Li，邮箱 `pengyuehui@gmail.com`，政策网址 `https://leanora.ai/`。App、Markdown 与可部署 HTML 已同步。公开网址在本机浏览器/HTTPS 请求中连接失败，尚未确认线上内容。用户已明确批准内部上传，实际执行后确认缺少 App Store Connect 应用记录；正在通过 Xcode 表单补齐。服务端验证、物理设备与专业内容门槛继续保留。
+运营主体已由用户明确确认为 Manyao Li，邮箱 `pengyuehui@gmail.com`，政策网址 `https://leanora.ai/`。App、Markdown 与可部署 HTML 已同步。公开网址在本机浏览器/HTTPS 请求中连接失败，尚未确认线上内容。用户已明确批准内部上传；补齐应用记录并解决名称占用后，0.2.0（2）内部上传成功，详见 [上传凭据](fitness-testflight-upload.json)。后续处理、安装、独立服务端验证、物理设备与专业内容门槛继续保留。
 
 ## 已有数据边界
 

@@ -1,6 +1,6 @@
 # Leanora 0.2 首版实现与发布验收
 
-更新：2026-10-21。源码完成 U6–U8 的本机部分及记录体验调整；**没有签名发布 TestFlight，也没有把模拟器结果计作物理验收**。工作分支 `feat/offline-workout-nutrition`，此前基线 `eeb41ff`。
+更新：2026-10-21。源码完成 U6–U8 的本机部分及记录体验调整；**0.2.0（2）已签名并上传内部 TestFlight，接收时 Apple 状态为 PROCESSING，尚未确认可安装，也没有把模拟器结果计作物理验收**。工作分支 `feat/offline-workout-nutrition`，此前基线 `eeb41ff`。
 
 ## 本次交付
 
@@ -32,7 +32,7 @@
 
 `devicectl` 只列出模拟设备，无物理 iPhone。最低 iOS18 与当前稳定系统真机的外部训练/全营养组合、多来源统计、时区/夏令时、锁屏/后台、真实通知横幅与文件保护、VoiceOver 听读仍待 [设备矩阵](healthkit-device-matrix.md)。内容目录尚需教练/营养审核人落实并签名。
 
-发布者已确认 `ai.leanora.fitness`、Manyao Li（团队及运营主体）、Team ID `8ZP3NMT2A8`、支持邮箱及政策网址。最新协议已处理，签名和发行 IPA 导出成功。用户已明确批准内部上传，实际执行后 Apple 返回缺少对应应用记录；Xcode 创建记录表单已打开，尚无成功上传证据。政策公网可访问性也未核验通过：浏览器返回连接关闭、curl TLS 失败；完整 HTML 已在本机预览并准备部署。隐私页定向复测通过，原 134 个独立方法总数不变。后续见 [发布候选记录](release-submission.md) 与 [发布清单](../release-checklist.md)。
+发布者已确认 `ai.leanora.fitness`、Manyao Li（团队及运营主体）、Team ID `8ZP3NMT2A8`、支持邮箱及政策网址。最新协议已处理，签名和发行 IPA 导出成功。补齐缺失记录并按用户选择解决名称占用后，商店记录 `Leanora Fitness`（App ID `6825234654`）创建成功，已批准的 0.2.0（2）内部 TestFlight 上传获得 Apple 成功回执；接收时状态 `PROCESSING`，处理完成及可安装仍未确认。政策公网可访问性也未核验通过：浏览器返回连接关闭、curl TLS 失败；完整 HTML 已在本机预览并准备部署。此次只调整外部商店记录和发布文档，未重跑功能测试；原 134 个独立方法口径不变。后续见 [发布候选记录](release-submission.md) 与 [发布清单](../release-checklist.md)。
 
 ## 重现
 
