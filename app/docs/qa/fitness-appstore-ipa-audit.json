@@ -1,0 +1,62 @@
+{
+  "ipa": "app/build/Exports/Leanora-0.2-Fitness-AppStore/Leanora.ipa",
+  "ipaSHA256": "e07b35a789ed3f0220ad435f341b789ede0c2584b1cfa45aa8cb6181f1aba430",
+  "archive": "app/build/ReleaseCandidate/Leanora-0.2-Fitness-Privacy-Signed.xcarchive",
+  "bundleID": "ai.leanora.fitness",
+  "teamID": "8ZP3NMT2A8",
+  "version": "0.2.0",
+  "build": "2",
+  "minimumIOS": "18.0",
+  "signatureValid": true,
+  "authorities": [
+    "Apple Distribution: Manyao Li (8ZP3NMT2A8)",
+    "Apple Worldwide Developer Relations Certification Authority",
+    "Apple Root CA"
+  ],
+  "profileName": "iOS Team Store Provisioning Profile: ai.leanora.fitness",
+  "profileExpiration": "2027-05-12 14:12:09",
+  "profileEntitlements": {
+    "beta-reports-active": true,
+    "com.apple.developer.healthkit.background-delivery": true,
+    "application-identifier": "8ZP3NMT2A8.ai.leanora.fitness",
+    "com.apple.developer.healthkit": true,
+    "keychain-access-groups": [
+      "8ZP3NMT2A8.*",
+      "com.apple.token"
+    ],
+    "get-task-allow": false,
+    "com.apple.developer.healthkit.access": [
+      "health-records"
+    ],
+    "com.apple.developer.team-identifier": "8ZP3NMT2A8"
+  },
+  "distributionMethod": "app-store-connect",
+  "uploaded": false,
+  "releaseStrings": {
+    "Manyao Li": true,
+    "pengyuehui@gmail.com": true,
+    "https://leanora.ai/": true,
+    "--uitesting": false,
+    "--reset-state": false,
+    "UITestHealthAuthorizer": false,
+    "injectCommitFailure": false
+  },
+  "privacyManifest": {
+    "NSPrivacyTracking": false,
+    "NSPrivacyCollectedDataTypes": [],
+    "NSPrivacyAccessedAPITypes": [
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "CA92.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "C617.1"
+        ]
+      }
+    ]
+  }
+}

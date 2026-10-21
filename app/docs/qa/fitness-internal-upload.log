@@ -1,0 +1,6 @@
+2026-10-21 12:04:41.979 xcodebuild[34633:4327558] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path "/var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/Leanora_2026-10-21_12-04-41.978.xcdistributionlogs".
+error: exportArchive Error Downloading App Information
+  App record with bundle identifier "ai.leanora.fitness" not found on App Store Connect. Create an app record on App Store Connect, or distribute the app from Xcode, and then try again.
+
+** EXPORT FAILED **
+

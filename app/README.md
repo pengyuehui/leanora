@@ -8,7 +8,7 @@
 
 - 模拟器：先在 Xcode Settings → Components 安装 iOS Runtime，然后选择可用 iPhone 模拟器运行。
 - 真机：工程已配置 Manyao Li（Team ID `8ZP3NMT2A8`）及正式 Bundle ID `ai.leanora.fitness`，需匹配的 HealthKit 描述文件与已开启开发者模式的 iPhone。
-- 2026-10-21：Xcode 获取描述文件被 Apple 的 `PLA Update available` 阻止，需账号持有人接受最新协议。代码不包含签名私钥或账号凭据。配置与验证见 [发布身份记录](docs/qa/release-identity.md)。
+- 2026-10-21：协议门槛已解除，正式签名 Archive 与 App Store Connect 发行 IPA 导出通过。运营主体及支持方式已补齐。用户已批准内部 TestFlight 上传，Apple 返回缺少对应应用记录，正在补齐；公开政策网址仍待可访问性核验。代码不包含签名私钥或账号凭据，见 [发布候选记录](docs/qa/release-submission.md)。
 
 ## 验证
 
@@ -55,3 +55,5 @@ UI 测试使用独立偏好域与明确的 Debug 启动标记，不清理真实�
 常规功能回归排除四个系统权限方法，再分别使用独立安装运行 Health 允许、Health/通知拒绝、通知允许；具体方法与运行口径见 [最终验收记录](docs/qa/release-acceptance.md#重现)。通知横幅及锁屏送达仍需真机记录，系统允许或存在待送达请求不等于已送达。
 
 容量验证：`LEANORA_SCALE_TESTS=1 swift test --package-path app --scratch-path app/build/SwiftPM --disable-swift-testing --filter CapacityTests`。普通回归明确跳过两项大容量用例，单独执行保留实测数据。未签名 iPhone Archive：`bash app/scripts/archive_release.sh`；不会上传或操作开发者账号。
+
+签名 Archive 可用 Xcode Organizer 生成；导出本地发行候选：`bash app/scripts/export_testflight_candidate.sh <signed.xcarchive> <不存在的导出目录>`。脚本使用已配置团队获取发行签名资源，导出选项明确为 `destination=export`。政策网页从 Markdown 重建：`python3 app/scripts/render_privacy_policy.py`。

@@ -22,14 +22,18 @@
 ## App Store Connect / TestFlight
 
 - [x] 发布者指定正式 Bundle ID `ai.leanora.fitness` 及 Manyao Li 团队；本机 Xcode 与证书 OU 核实 Team ID `8ZP3NMT2A8`，工程及生成脚本已配置。
-- [ ] 账号持有人处理 Apple 最新 Program License Agreement；当前 Xcode 返回 `PLA Update available`。
-- [ ] 协议门槛解除后核实 App ID 注册及 HealthKit/background-delivery provisioning，获取正式 Bundle ID 的描述文件。
-- [ ] 发布者提供运营主体、支持联系方式、隐私政策公开 URL，并部署政策。
-- [ ] Xcode Archive 使用该 Team/Bundle ID 签名，Validate App，导出审核隐私报告。
+- [x] 账号持有人已处理 Apple 最新 Program License Agreement，Xcode 后续请求成功。
+- [x] 获得正式 Bundle ID 的开发/发行描述文件，发行包包含 HealthKit/background-delivery 权限。
+- [x] 发布者确认运营主体 Manyao Li、支持邮箱 `pengyuehui@gmail.com`、政策网址 `https://leanora.ai/`；App 与政策源文件已更新。
+- [ ] 公开政策的 HTTPS 可访问性及实际内容核验；本机浏览器返回 `ERR_CONNECTION_CLOSED`，政策 HTML 已准备。
+- [x] Xcode 签名 Archive、App Store Connect 发行 IPA 导出、签名与权限检查通过。
+- [ ] App Store Connect 服务端 Validate App 及审核隐私报告确认。
 - [ ] App Store Connect 创建应用与测试组，填写中文描述、支持 URL、年龄分级、出口合规与隐私标签。
 - [ ] 根据实际构建确认无服务器收集，声明 Health 数据用途；不把本机访问误填成向开发者收集。
 - [ ] 上传正式签名构建，等待处理/可能的 Beta Review，安装到上述物理设备。
 - [ ] TestFlight 端到端走查通过并记录构建号、验收人及日期。
+
+当前候选为 0.2.0（2）；用户已批准内部上传，实际执行后 Apple 返回缺少 `ai.leanora.fitness` 的应用记录。Xcode 已打开创建表单，尚无创建或上传成功证据。详见 [候选记录](qa/release-submission.md)。
 
 ## 审核演示路径
 

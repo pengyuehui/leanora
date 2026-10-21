@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Leanora 训练与饮食记录 App 隐私政策，运营主体 Manyao Li。">
+  <title>Leanora 隐私政策</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; background: light-dark(#f5f6f8, #121418); color: light-dark(#20242b, #eef0f3); font: 17px/1.8 system-ui, sans-serif; }
+    main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; overflow-wrap: anywhere; }
+    h1 { font-size: 2rem; line-height: 1.3; }
+    h2 { font-size: 1.25rem; line-height: 1.4; margin-top: 2rem; }
+    a { color: light-dark(#2259bf, #9dbdff); text-underline-offset: .15em; }
+    a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  </style>
+</head>
+<body><main>
+<h1>Leanora 隐私政策</h1>
+<p>版本：0.2；更新日期：2026-10-21。适用于本仓库构建的本机训练与饮食记录 App。</p>
+<h2>保存的数据和目的</h2>
+<p>Leanora 在设备上保存你输入的训练计划、逐组实际数据、训练时间与备注、饮食及营养快照、身体测量、目标和单位偏好，用于提供个人记录、历史查询与统计。无需注册账号；此版本无自建服务器、广告、追踪、第三方分析或 AI 数据传输。</p>
+<p>数据库、健康导入缓存及本机升级恢复副本使用设备文件保护，排除系统自动云备份。文件保护的物理锁屏效果仍需在发布设备上验收。App 不通过 CloudKit 同步，也不将健康数据出售、用于广告或发送给开发者。</p>
+<h2>Apple Health</h2>
+<p>仅在你选择并确认系统访问后，App 按允许的范围读取体重、体脂率、外部训练与独立饮食营养样本，可额外读取日步数及活动能量统计；初次读取最近 90 天。App 可按你的写入选择保存本 App 创建的体重、体脂、已完成训练和已知热量/营养素。组件权限独立；缺失值不推算为零，不生成虚构心率/消耗。</p>
+<p>Health 原始样本由 Apple Health 管理，其设备/云端处理受 Apple 的政策和你的系统设置约束。系统不会告知 App 某项读取是否遭拒绝；“暂未读到数据”也可能是空数据。你可以在健康 App 中撤回或调整访问，核心记录仍可使用。</p>
+<p>停止自动同步保留历史副本；本机删除记录时可以单独选择是否删除本 App 写入的健康副本。系统健康副本的删除不影响本机业务记录，自动重建会被抑制，除非你明确重新导出。</p>
+<h2>备份、导出与删除</h2>
+<p>你可以导出版本化 JSON 备份或 CSV 记录表。导出文件未加密且包含敏感资料，保存目的地由你选择；若保存到云盘，该服务会按其政策处理文件。业务备份不包含 Health 样本、读取游标、设备关联或同步任务，Health 同步也不是完整业务备份。</p>
+<p>「数据管理」分别提供清除健康缓存、清除本机业务数据及本机恢复副本、删除本 App 的 Health 副本。其他 App 写入的健康数据不会被删除。另行导出的文件与系统 Health 数据需你在各自应用中管理。卸载 App 会移除本机应用数据，请先备份需要的记录。</p>
+<h2>系统通知与必要 API</h2>
+<p>通知用于你开启的训练安排和休息提醒，不在通知中显示身体数值或饮食明细。你可以撤回通知权限。UserDefaults 只用于本 App 偏好；文件时间用于排序本机升级恢复副本，不用于设备指纹。</p>
+<h2>运营主体与联系我们</h2>
+<p>Leanora 的运营主体为 <strong>Manyao Li</strong>。如对本政策、资料处理或删除有疑问，可发送邮件至 <a href="mailto:pengyuehui@gmail.com">pengyuehui@gmail.com</a>。</p>
+<p>本政策的公开网址为 <a href="https://leanora.ai/">https://leanora.ai/</a>。</p>
+<p>App 用于个人健身记录，不提供医疗诊断、治疗或替代专业建议。</p>
+</main></body>
+</html>

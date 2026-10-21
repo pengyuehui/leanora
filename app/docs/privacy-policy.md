@@ -26,8 +26,10 @@ Health 原始样本由 Apple Health 管理，其设备/云端处理受 Apple 的
 
 通知用于你开启的训练安排和休息提醒，不在通知中显示身体数值或饮食明细。你可以撤回通知权限。UserDefaults 只用于本 App 偏好；文件时间用于排序本机升级恢复副本，不用于设备指纹。
 
-## 发布前必须落实的信息
+## 运营主体与联系我们
 
-正式运营主体、联系邮箱、政策公开 URL 由发布者提供并公示。当前仓库没有凭空指定法人或联系地址，未向 App Store Connect 发布。发布者完成这些字段及实际处理方式复核后，才能把本政策作为商业发布版本。
+Leanora 的运营主体为 **Manyao Li**。如对本政策、资料处理或删除有疑问，可发送邮件至 [pengyuehui@gmail.com](mailto:pengyuehui@gmail.com)。
+
+本政策的公开网址为 [https://leanora.ai/](https://leanora.ai/)。
 
 App 用于个人健身记录，不提供医疗诊断、治疗或替代专业建议。

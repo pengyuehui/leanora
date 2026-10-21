@@ -376,7 +376,7 @@ HealthKit 授权请求成功只说明请求流程成功，不等于所有类型�
 
 ### U8：发布前整体验证、隐私、导入恢复与 TestFlight
 
-**实施进度（2026-10-21）：源码、CSV、三个独立清理入口、隐私/审核材料、容量与恢复验证及未签名 iPhone Archive 已完成。已配置发布者指定的正式 Bundle ID `ai.leanora.fitness` 和 Manyao Li 团队（核实 Team ID `8ZP3NMT2A8`），新标识 SDK 写入闭环与未签名 Archive 通过。签名被 Apple 最新协议门槛 `PLA Update available` 阻止，公开隐私 URL/运营主体联系方式仍待提供；没有物理设备，也未上传 TestFlight。该发布门槛保持未完成。**
+**实施进度（2026-10-21）：源码、CSV、三个独立清理入口、隐私/审核材料、容量与恢复验证已完成。正式 Bundle ID 为 `ai.leanora.fitness`，Manyao Li 团队（`8ZP3NMT2A8`）及运营者联系方式已确认并配置。最新协议已处理，真实 SDK 闭环、最终签名 Archive 和 App Store Connect 发行 IPA 导出通过。隐私政策 HTML 已准备，但提供的网址在本机连接失败；内部上传已明确获准，Apple 返回缺少应用记录，正通过 Xcode 表单补齐。物理设备、专业内容及 TestFlight 安装验收仍未完成。**
 
 - [ ] **目标与依赖：** 对应 R1、R3、R11、R12；依赖 U1–U7。
 - **文件：** `/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Resources/PrivacyInfo.xcprivacy`、`/Users/pengyuehui/Downloads/leanora/app/ios/Leanora/Features/Settings/DataManagementView.swift`、`/Users/pengyuehui/Downloads/leanora/app/docs/privacy-policy.md`、`/Users/pengyuehui/Downloads/leanora/app/docs/release-checklist.md`、`/Users/pengyuehui/Downloads/leanora/app/docs/qa/release-acceptance.md`。

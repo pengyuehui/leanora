@@ -16,7 +16,7 @@
 - SwiftPM 常规运行 98 项：96 通过、2 项容量显式跳过；容量另行实际执行。iOS 宿主运行 100 项：98 通过、2 项容量显式跳过。故障测试使用真实 SwiftData actor/事务与可控传输适配边界，覆盖 1000 样本中断/重试、写入成功但确认失败、营养未知删除、局部权限、手动删除、版本替换、恢复版本下限、后台写入与清理竞态。
 - 真实 SDK 模拟器：系统选择 5 个读写项、Continue、过去 30 天及未来数据，再最终 Allow；新增 65.4 kg 本机测量，待处理 0、失败 0、实际关联 1，重新检查仍为 1。首次授权见 [原始结果](u678-health-limited-history-summary.json)，最终严格写入确认版本再次通过，见 [最终 SDK 结果](u678-confirmed-health-write-summary.json) 和 [来源状态截图](u678-screenshots/u678-system-health-write-echo.png)。SDK 系统拒绝与通知允许/拒绝在独立安装上运行，不能混用相反权限结果。
 - CSV 系统导出面板、输入确认重置、真实 JSON 保存→重新选择同一文件→新增 0、导入新增 1→重启保留，均取得通过结果。大字体深色健康页原生 contrast/textClipped audit 通过；VoiceOver 实际听读保留物理验收。
-- Release iPhone Archive 已构建，运行时没有第三方依赖。100 动作/300 食物和权限/隐私清单存在，调试启动标记及失败注入不在正式可执行文件中。原开发标识包保留 [历史审计](u678-release-audit.json)；正式标识的后续构建见 [新包审计](fitness-release-audit.json)。当前未签名 Archive 位于本工作区 `app/build/ReleaseCandidate/Leanora-0.2-Fitness-Unsigned.xcarchive`，不提交二进制与开发缓存。
+- Release iPhone Archive 已构建，运行时没有第三方依赖。100 动作/300 食物和权限/隐私清单存在，调试启动标记及失败注入不在正式可执行文件中。原开发标识及未签名包的 [历史审计](u678-release-audit.json)、[正式标识首次审计](fitness-release-audit.json) 均保留。协议门槛解除后，包含运营者资料的最终签名 Archive 与发行 IPA 导出成功，见 [发行审计](fitness-appstore-ipa-audit.json) 和 [候选记录](release-submission.md)。二进制与开发缓存不提交。
 
 ## 容量实测
 
@@ -32,7 +32,7 @@
 
 `devicectl` 只列出模拟设备，无物理 iPhone。最低 iOS18 与当前稳定系统真机的外部训练/全营养组合、多来源统计、时区/夏令时、锁屏/后台、真实通知横幅与文件保护、VoiceOver 听读仍待 [设备矩阵](healthkit-device-matrix.md)。内容目录尚需教练/营养审核人落实并签名。
 
-发布者已指定 `ai.leanora.fitness` 和 Manyao Li 团队，本机 Xcode/证书核实 Team ID 为 `8ZP3NMT2A8`。工程配置完成，正式标识下的真实 HealthKit 授权/写入/重复检查及未签名 Archive 通过。签名尝试被 Apple `PLA Update available` 拒绝，需账号持有人处理最新协议后重试获取描述文件。政策公开 URL、运营主体及联系邮箱仍待补充；未签名 Archive 不是 TestFlight 安装包。后续见 [发布身份记录](release-identity.md) 与 [发布清单](../release-checklist.md)。
+发布者已确认 `ai.leanora.fitness`、Manyao Li（团队及运营主体）、Team ID `8ZP3NMT2A8`、支持邮箱及政策网址。最新协议已处理，签名和发行 IPA 导出成功。用户已明确批准内部上传，实际执行后 Apple 返回缺少对应应用记录；Xcode 创建记录表单已打开，尚无成功上传证据。政策公网可访问性也未核验通过：浏览器返回连接关闭、curl TLS 失败；完整 HTML 已在本机预览并准备部署。隐私页定向复测通过，原 134 个独立方法总数不变。后续见 [发布候选记录](release-submission.md) 与 [发布清单](../release-checklist.md)。
 
 ## 重现
 

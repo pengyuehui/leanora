@@ -14,8 +14,17 @@ struct PrivacyView: View {
                 FeatureLine(symbol: "externaldrive", title: "手动备份与导出", detail: "「数据管理」提供 JSON 备份、预检导入和 CSV 记录表。文件含敏感资料且未加密，保存位置由你选择；不包含 Apple Health 缓存或设备同步任务。请在卸载前导出需要保留的资料。")
                 FeatureLine(symbol: "slider.horizontal.3", title: "随时调整", detail: "单位和目标可在「我的」修改。健康与通知权限可在系统中撤回。导入不会自动把记录重新写入 Apple Health。")
                 FeatureLine(symbol: "trash", title: "三种独立清理", detail: "可单独清除健康导入缓存、清除本机资料与恢复副本，或删除本 App 写入的健康副本。停止同步保留历史副本；其他来源的健康数据不会被删除。你另行导出的文件需在文件 App 中管理。")
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("运营主体：Manyao Li").font(.headline)
+                    if let policyURL = URL(string: "https://leanora.ai/") {
+                        Link("隐私政策网站", destination: policyURL).frame(minHeight: 44)
+                    }
+                    if let supportURL = URL(string: "mailto:pengyuehui@gmail.com") {
+                        Link("联系支持：pengyuehui@gmail.com", destination: supportURL).frame(minHeight: 44)
+                    }
+                }
                 Divider()
-                Text("此说明对应 Leanora 0.2。App 不提供医疗诊断或个体化治疗建议。完整政策与运营者联系方式须在正式发布前由发布者公开提供。")
+                Text("此说明对应 Leanora 0.2，由 Manyao Li 运营。App 不提供医疗诊断或个体化治疗建议。")
                     .font(.footnote).foregroundStyle(.secondary)
             }.padding(26)
         }.background(LeanoraTheme.canvas)

@@ -1,0 +1,5 @@
+2026-10-21 11:54:34.204 xcodebuild[32171:4302958] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path "/var/folders/8c/dskhfp8n12v45kkqkfmzbl6w0000gn/T/Leanora_2026-10-21_11-54-34.204.xcdistributionlogs".
+Exported Leanora to: /Users/pengyuehui/Downloads/leanora/app/build/Exports/Leanora-0.2-Fitness-AppStore
+** EXPORT SUCCEEDED **
+
+Local App Store Connect candidate: app/build/Exports/Leanora-0.2-Fitness-AppStore

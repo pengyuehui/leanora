@@ -2898,5 +2898,15 @@
         "status": "passed"
       }
     ]
+  },
+  {
+    "run": "fitness-privacy-ui",
+    "tests": [
+      {
+        "suite": "LeanoraUITests.OnboardingTests",
+        "test": "testPrivacyCanReturnToOnboarding",
+        "status": "passed"
+      }
+    ]
   }
 ]
