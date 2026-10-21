@@ -1,0 +1,1 @@
+Initial test release with workout templates, weekly plans, set logging, meal and body records, 7/30-day trends, authorized Apple Health sync, JSON backups and CSV export.

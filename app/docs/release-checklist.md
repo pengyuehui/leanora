@@ -29,6 +29,8 @@
 - [x] Xcode 签名 Archive、App Store Connect 发行 IPA 导出、签名与权限检查通过。
 - [x] App Store Connect 应用记录 `Leanora Fitness` 创建成功，App ID `6825234654`，主语言简体中文；安装显示名保留 `Leanora`。
 - [x] 0.2.0（2）以 TestFlight Internal Only 上传成功；Apple 接收时状态为 `PROCESSING`，回执与截图已保存。
+- [x] 新版 1024 px 图标、7 张真实页面的两套展示尺寸、中英文商店介绍及元数据校验；见 [素材包](../store/README.md)。
+- [ ] 品牌素材确认，并在下一次递增 build 的签名构建中上传新版图标；现有 0.2.0（2）仍为原图标。
 - [ ] App Store Connect 服务端 Validate App 及审核隐私报告确认。
 - [ ] App Store Connect 配置内部测试组，填写中文描述、支持 URL、年龄分级、出口合规与隐私标签。
 - [ ] 根据实际构建确认无服务器收集，声明 Health 数据用途；不把本机访问误填成向开发者收集。

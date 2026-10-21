@@ -1,0 +1,47 @@
+{
+  "asset_set_date": "2026-10-21",
+  "bundle": {
+    "path": "app/build/Leanora-AppStore-Kit-2026-10-21.zip",
+    "bytes": 9089461,
+    "sha256": "ef1adf6b3fa890c9d4efdce03ae2faede26efa0bde41e411bdfe6adca942dae8",
+    "entries": 45,
+    "zip_integrity": "passed"
+  },
+  "verification_report": "app/store/verification.json",
+  "evidence_sha256": {
+    "store-screenshots.log": "861804b456e5c54a8073c51501170d810bf01dbeb74cf28c8c589a7347d5fc83",
+    "store-screenshots-retry.log": "334a2728281fb2d07e62f8009213008c95169d5dba1afad33cd4c27680f483bc",
+    "store-screenshots-final.log": "6b63032cda28e0f62b8d0e681ca407936349441189dc93ebafbf00ae0b6c0408",
+    "store-assets-release.log": "ccf8d70f256fa0b98eb78cbe6740ede186da42e9a667e79725ead1ebdc6a76f9"
+  },
+  "attempts": [
+    {
+      "log": "store-screenshots.log",
+      "result": "failed",
+      "reason": "Timed out in data initialization."
+    },
+    {
+      "log": "store-screenshots-retry.log",
+      "result": "failed; diagnostic collection interrupted",
+      "reason": "NavigationBar button query unavailable on Duo."
+    },
+    {
+      "log": "store-screenshots-final.log",
+      "result": "passed",
+      "tests": 1,
+      "screenshots": 7
+    }
+  ],
+  "browser_review": {
+    "method": "CUA browser screenshot and actual copy button",
+    "desktop_viewport": [
+      1280,
+      720
+    ],
+    "subtitle_copy_feedback": "已复制副标题。",
+    "proof": "app/store/preview-desktop.png",
+    "mobile_device_browser_review": "not_performed"
+  },
+  "build_scope": "Local unsigned Release only; original uploaded build unchanged.",
+  "app_store_materials_uploaded": false
+}

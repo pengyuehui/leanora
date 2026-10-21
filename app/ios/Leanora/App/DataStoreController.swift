@@ -48,7 +48,11 @@ import Observation
             }.value
             try await restorePreferences(from: opened, into: preferences)
             #if DEBUG
+            if ProcessInfo.processInfo.arguments.contains("--store-screenshots") { print("Store capture: preparing sample records") }
             try await UITestBackupFixtures.create(for: opened)
+            if testing && ProcessInfo.processInfo.arguments.contains("--store-screenshots") {
+                try await restorePreferences(from: opened, into: preferences)
+            }
             #endif
             let training = TrainingStore(repository: opened, catalog: try ExerciseCatalog.load())
             await training.refresh()
@@ -61,6 +65,12 @@ import Observation
             // Discard legacy inert intentions when automatic sync is off.
             await sync.configure(sync.configuration)
             await sync.sync()
+            #if DEBUG
+            if testing && ProcessInfo.processInfo.arguments.contains("--store-screenshots") {
+                print("Store capture: sample records ready")
+                preferences.finishOnboarding()
+            }
+            #endif
         } catch {
             startupError = "本机数据库暂时无法打开。请解锁设备后重试。升级前恢复副本与原库会保留，不会自动清空记录。"
             recoveries = (try? await Task.detached {

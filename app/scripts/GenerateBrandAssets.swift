@@ -1,30 +1,22 @@
-import AppKit
+import Foundation
+import CoreGraphics
+import ImageIO
+import UniformTypeIdentifiers
 
+// Deterministic size/color export of the checked-in imagegen master.
+// Compile with swiftc, then run <binary> <appiconset-output> [master-png].
+let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
 let output = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
+let source = CommandLine.arguments.count > 2 ? URL(fileURLWithPath: CommandLine.arguments[2]) : root.appendingPathComponent("store/brand/icon-master.png")
+guard let reader = CGImageSourceCreateWithURL(source as CFURL, nil), let image = CGImageSourceCreateImageAtIndex(reader, 0, nil) else { fatalError("Missing icon master: \(source.path)") }
 try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
-let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 1024, pixelsHigh: 1024,
-                             bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true,
-                             isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
-NSGraphicsContext.saveGraphicsState()
-NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
-NSColor(red: 0.95, green: 0.96, blue: 0.98, alpha: 1).setFill()
-NSRect(x: 0, y: 0, width: 1024, height: 1024).fill()
-NSColor(red: 0.12, green: 0.34, blue: 0.77, alpha: 1).setFill()
-let mark = NSBezierPath(roundedRect: NSRect(x: 152, y: 152, width: 720, height: 720), xRadius: 172, yRadius: 172)
-mark.fill()
-NSColor(red: 0.95, green: 0.96, blue: 0.98, alpha: 1).setStroke()
-let path = NSBezierPath()
-path.lineWidth = 68
-path.lineCapStyle = .round
-path.lineJoinStyle = .round
-path.move(to: NSPoint(x: 375, y: 685))
-path.line(to: NSPoint(x: 375, y: 354))
-path.line(to: NSPoint(x: 656, y: 354))
-path.move(to: NSPoint(x: 498, y: 491))
-path.line(to: NSPoint(x: 649, y: 656))
-path.stroke()
-NSGraphicsContext.restoreGraphicsState()
-try bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("AppIcon.png"))
+let context = CGContext(data: nil, width: 1024, height: 1024, bitsPerComponent: 8, bytesPerRow: 0,
+                        space: CGColorSpace(name: CGColorSpace.sRGB)!, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
+context.interpolationQuality = .high
+context.draw(image, in: CGRect(x: 0, y: 0, width: 1024, height: 1024))
+let destination = CGImageDestinationCreateWithURL(output.appendingPathComponent("AppIcon.png") as CFURL, UTType.png.identifier as CFString, 1, nil)!
+CGImageDestinationAddImage(destination, context.makeImage()!, nil)
+guard CGImageDestinationFinalize(destination) else { fatalError("Cannot export AppIcon.png") }
 let contents = """
 {"images":[{"filename":"AppIcon.png","idiom":"universal","platform":"ios","size":"1024x1024"}],"info":{"author":"xcode","version":1}}
 """

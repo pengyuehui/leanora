@@ -1,0 +1,23 @@
+Every set. Every meal. A record that stays with you.
+
+Leanora Fitness brings training, nutrition and body measurements into one personal journal. Build your own routine, log what you actually lift, record meal portions and review your history. No account is required, and everyday logging works offline.
+
+TRAIN YOUR WAY
+Choose exercises, build templates, set target sets, repetitions, load and rest periods, then schedule your training week. Record each set as you go, pause when needed and continue later. History keeps a snapshot of the plan used for each session.
+
+KEEP A FOOD DIARY
+Log breakfast, lunch, dinner and snacks. Calculate calories, protein, carbohydrates and fat from your portions. Create custom foods, record calories quickly or copy a previous meal. Basic foods include source information, and missing nutrients remain unknown rather than being treated as zero.
+
+REVIEW YOUR RECORDS
+Explore 7-day or 30-day views of completed workouts, active time, working-set volume, food energy and body measurements. Log body weight and body fat manually. Exercise energy is not automatically added to your food target.
+
+CONNECT APPLE HEALTH ON YOUR TERMS
+Choose access in the system permission screen. Sync workouts, nutrition and body data in the directions you authorize, and read available activity summaries. Review sources, pending items and sync status, or stop automatic sync. Exporting historical records requires a separate confirmation. Manual logging remains available without Health access.
+
+KEEP CONTROL OF YOUR DATA
+Your journal is stored on your device. Export JSON backups and CSV files, restore a backup, and manage local records, imported Health caches and Health copies written by this app separately. Keep your exported backups in a safe place.
+
+The food catalog focuses on basic foods and is not a comprehensive restaurant or branded-food database. Leanora does not provide medical diagnosis, treatment or personalized nutrition prescriptions.
+
+Support: pengyuehui@gmail.com
+Privacy policy: https://leanora.ai/
