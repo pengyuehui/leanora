@@ -12,6 +12,7 @@ struct ExerciseCatalog: Codable, Sendable {
         var measurement: ExerciseMeasurement
         var equipment: String
         var muscles: [String]
+        var source: ContentSource?
     }
     static func load() throws -> [Exercise] {
         #if SWIFT_PACKAGE
@@ -25,9 +26,11 @@ struct ExerciseCatalog: Codable, Sendable {
         let exercises = catalog.entries.map { entry in
             Exercise(stamp: RecordStamp(id: entry.id, revision: 1, createdAt: Date(timeIntervalSince1970: 1_792_454_400), updatedAt: Date(timeIntervalSince1970: 1_792_454_400)),
                      name: entry.name, aliases: entry.aliases, measurement: entry.measurement,
-                     equipment: entry.equipment, muscles: entry.muscles, source: catalog.source)
+                     equipment: entry.equipment, muscles: entry.muscles, source: entry.source ?? catalog.source)
         }
         try DomainValidation.validate(exercises.map(BusinessRecord.exercise), requireProfile: false)
+        let guides = try ExerciseGuideCatalog.load()
+        guard Set(exercises.map { $0.stamp.id }) == Set(guides.keys) else { throw DataProblem.invalid("动作指导目录不完整") }
         return exercises
     }
 }
@@ -46,12 +49,22 @@ extension ExerciseMeasurement: CaseIterable {
 }
 
 enum ExerciseSearch {
-    static func filter(_ values: [Exercise], query: String, muscle: String?, equipment: String?, archived: Bool = false) -> [Exercise] {
+    static func filter(_ values: [Exercise], query: String, muscle: String?, equipment: String?, archived: Bool = false,
+                       level: String? = nil, category: String? = nil) -> [Exercise] {
         let words = query.split(whereSeparator: \.isWhitespace).map(String.init)
         return values.filter { value in
-            value.stamp.deletedAt == nil && value.isArchived == archived &&
-            (muscle == nil || value.muscles.contains(muscle!)) && (equipment == nil || value.equipment == equipment!) &&
-            words.allSatisfy { word in ([value.name] + value.aliases).contains { $0.localizedStandardContains(word) } }
-        }.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+            let guide = ExerciseGuideCatalog.guide(for: value.stamp.id)
+            let muscles = value.muscles + (guide.map { $0.primaryMuscles + $0.secondaryMuscles } ?? [])
+            let fields = [value.name, value.equipment] + value.aliases + muscles + (guide.map { [$0.level, $0.category] } ?? [])
+            return value.stamp.deletedAt == nil && value.isArchived == archived &&
+            (muscle == nil || muscles.contains(muscle!)) && (equipment == nil || value.equipment == equipment!) &&
+            (level == nil || guide?.level == level) && (category == nil || guide?.category == category) &&
+            words.allSatisfy { word in fields.contains { $0.localizedStandardContains(word) } }
+        }.sorted {
+            let leftChinese = $0.name.unicodeScalars.contains { (0x4E00...0x9FFF).contains($0.value) }
+            let rightChinese = $1.name.unicodeScalars.contains { (0x4E00...0x9FFF).contains($0.value) }
+            if leftChinese != rightChinese { return leftChinese }
+            return $0.name.localizedStandardCompare($1.name) == .orderedAscending
+        }
     }
 }

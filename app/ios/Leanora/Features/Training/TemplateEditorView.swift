@@ -126,6 +126,10 @@ struct TemplateItemEditor: View {
         Form {
             Section {
                 Text(exercise.name).font(.headline)
+                if ExerciseGuideCatalog.guide(for: exercise.id) != nil {
+                    NavigationLink("查看动作指导") { ExerciseGuidanceView(exerciseID: exercise.id, name: exercise.name) }
+                        .accessibilityIdentifier("targets.guide")
+                }
                 Stepper("计划组数：\(item.plannedSets)", value: $item.plannedSets, in: 1...1000).accessibilityIdentifier("targets.sets")
             }
             Section("每组目标（可选）") {

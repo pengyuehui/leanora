@@ -55,12 +55,16 @@ import XCTest
     func testCatalogSearchEquipmentFilterAndSource() {
         let app = launch(); tap(app.buttons["training.library"], app)
         search("BENCH", app: app)
-        XCTAssertTrue(app.buttons["exercise.row.杠铃卧推"].exists)
+        let total = Int(app.staticTexts["exercise.resultCount"].label.filter(\.isNumber)) ?? 0
+        XCTAssertGreaterThan(total, 0)
         tap(app.buttons["exercise.equipment"], app)
         let option = app.buttons["哑铃"]
         if option.exists { option.tap() } else { app.staticTexts["哑铃"].tap() }
+        let filtered = Int(app.staticTexts["exercise.resultCount"].label.filter(\.isNumber)) ?? 0
+        XCTAssertGreaterThan(filtered, 0); XCTAssertLessThan(filtered, total)
         XCTAssertFalse(app.buttons["exercise.row.杠铃卧推"].exists)
         tap(app.buttons["exercise.row.哑铃卧推"], app)
+        reveal(app.staticTexts["exercise.source"], app)
         XCTAssertTrue(app.staticTexts["exercise.source"].label.contains("Leanora 原创"))
         capture(app, "u3-exercise-source")
     }

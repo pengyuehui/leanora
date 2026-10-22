@@ -1,0 +1,13 @@
+{
+  "reviewer": "correctness",
+  "findings": [],
+  "residual_risks": [
+    "The imported exercise content has source and technical checks, not a full professional coaching review.",
+    "284 names are Chinese; other names and most new instructions retain upstream English.",
+    "The assisted-dip guide explicitly labels its photographs as the unassisted base movement trajectory."
+  ],
+  "testing_gaps": [
+    "Minimum-supported-iOS physical-device validation and live VoiceOver verification remain release checks.",
+    "This change was not uploaded to App Store Connect."
+  ]
+}

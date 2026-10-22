@@ -14,6 +14,7 @@ struct ActiveWorkoutView: View {
     @State private var editingNotes = false
     @State private var notes = ""
     @State private var retiming = false
+    @State private var guidance: GuideSelection?
     var session: WorkoutSession? { training.sessions.first { $0.id == sessionID } }
     var body: some View {
         List {
@@ -52,6 +53,11 @@ struct ActiveWorkoutView: View {
                 }
                 ForEach(Array(session.exercises.enumerated()), id: \.element.id) { i, exercise in
                     Section {
+                        if ExerciseGuideCatalog.guide(for: exercise.snapshot.exerciseID) != nil {
+                            Button { guidance = GuideSelection(id: exercise.snapshot.exerciseID, name: exercise.snapshot.name) } label: {
+                                Label("查看动作指导", systemImage: "photo.on.rectangle")
+                            }.accessibilityIdentifier("workout.guide.\(i)")
+                        }
                         if let plan = exercise.plannedTargets {
                             Text(planText(plan)).font(.caption).foregroundStyle(.secondary)
                         }
@@ -130,6 +136,12 @@ struct ActiveWorkoutView: View {
             if let session { NavigationStack { WorkoutSetEditor(session: session, selection: selection) } }
         }
         .sheet(isPresented: $retiming) { if let session { NavigationStack { WorkoutTimeEditor(session: session) } } }
+        .sheet(item: $guidance) { selected in
+            NavigationStack {
+                ExerciseGuidanceView(exerciseID: selected.id, name: selected.name)
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("关闭指导") { guidance = nil }.accessibilityIdentifier("workout.closeGuide") } }
+            }
+        }
         .sheet(isPresented: $editingNotes) {
             NavigationStack {
                 Form { TextField("训练备注", text: $notes, axis: .vertical).accessibilityIdentifier("workout.notesInput") }
@@ -162,6 +174,7 @@ struct ActiveWorkoutView: View {
         }
     }
     private var controller: WorkoutSessionController { WorkoutSessionController(training: training) }
+    private struct GuideSelection: Identifiable { let id: UUID; let name: String }
     private func removeWorkout(health: Bool) {
         guard let session else { return }
         Task { if await training.run({ [repository = training.repository] in try await repository.deleteWorkout(sessionID, revision: session.stamp.revision, deleteHealthCopies: health) }) != nil { dismiss() } }

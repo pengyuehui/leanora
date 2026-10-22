@@ -20,7 +20,7 @@ let package = Package(
             "Core/Analytics",
             "Core/Nutrition",
             "Integrations/HealthKit"
-        ], resources: [.copy("Resources/Catalog")]),
+        ], resources: [.copy("Resources/Catalog"), .copy("Resources/ExerciseMedia")]),
         .testTarget(name: "LeanoraFoundationTests", dependencies: ["Leanora"], path: "ios/LeanoraTests")
     ]
 )

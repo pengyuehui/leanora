@@ -5,10 +5,12 @@ struct ExerciseLibraryView: View {
     @State private var search = ""
     @State private var muscle = ""
     @State private var equipment = ""
+    @State private var level = ""
+    @State private var category = ""
     @State private var archived = false
     @State private var creating = false
     var onSelect: ((Exercise) -> Void)?
-    private var results: [Exercise] { ExerciseSearch.filter(training.exercises, query: search, muscle: muscle.isEmpty ? nil : muscle, equipment: equipment.isEmpty ? nil : equipment, archived: archived) }
+    private var results: [Exercise] { ExerciseSearch.filter(training.exercises, query: search, muscle: muscle.isEmpty ? nil : muscle, equipment: equipment.isEmpty ? nil : equipment, archived: archived, level: level.isEmpty ? nil : level, category: category.isEmpty ? nil : category) }
     var body: some View {
         List {
             TrainingErrorNotice()
@@ -21,6 +23,19 @@ struct ExerciseLibraryView: View {
                     Text("全部器械").tag("")
                     ForEach(Array(Set(training.exercises.map(\.equipment))).filter { !$0.isEmpty }.sorted(), id: \.self) { Text($0).tag($0) }
                 }.accessibilityIdentifier("exercise.equipment")
+                DisclosureGroup("更多筛选") {
+                    Picker("难度", selection: $level) {
+                        Text("全部难度").tag("")
+                        ForEach(["初级", "中级", "高级", "未分级"], id: \.self) { Text($0).tag($0) }
+                    }.accessibilityIdentifier("exercise.level")
+                    Picker("类型", selection: $category) {
+                        Text("全部类型").tag("")
+                        ForEach(["力量", "有氧", "拉伸", "爆发力", "力量举", "举重", "大力士"], id: \.self) { Text($0).tag($0) }
+                    }.accessibilityIdentifier("exercise.category")
+                }.accessibilityIdentifier("exercise.moreFilters")
+                if !muscle.isEmpty || !equipment.isEmpty || !level.isEmpty || !category.isEmpty {
+                    Button("清除筛选") { muscle = ""; equipment = ""; level = ""; category = "" }.accessibilityIdentifier("exercise.clearFilters")
+                }
                 if onSelect == nil { Toggle("查看已归档动作", isOn: $archived).accessibilityIdentifier("exercise.archived") }
             }
             Section {
@@ -28,12 +43,20 @@ struct ExerciseLibraryView: View {
                 if results.isEmpty { ContentUnavailableView("没有匹配动作", systemImage: "magnifyingglass", description: Text("调整筛选条件，或创建自己的动作。")) }
                 ForEach(results) { exercise in
                     if let onSelect {
-                        Button { onSelect(exercise) } label: { row(exercise) }.accessibilityIdentifier("exercise.select.\(exercise.name)")
+                        HStack(spacing: 12) {
+                            Button { onSelect(exercise) } label: { row(exercise) }.buttonStyle(.borderless)
+                                .accessibilityIdentifier("exercise.select.\(exercise.name)")
+                            if ExerciseGuideCatalog.guide(for: exercise.id) != nil {
+                                NavigationLink { ExerciseGuidanceView(exerciseID: exercise.id, name: exercise.name) } label: {
+                                    Image(systemName: "info.circle").frame(minWidth: 44, minHeight: 44)
+                                }.accessibilityLabel("\(exercise.name)，查看指导").accessibilityIdentifier("exercise.info.\(exercise.name)")
+                            }
+                        }
                     } else {
                         NavigationLink { ExerciseDetailView(exerciseID: exercise.id) } label: { row(exercise) }.accessibilityIdentifier("exercise.row.\(exercise.name)")
                     }
                 }
-            } header: { Text("\(results.count) 个动作") } footer: { Text("基础目录由 Leanora 独立整理。未提供动作教学或第三方图片；每个条目可查看来源。") }
+            } header: { Text("\(results.count) 个动作").accessibilityIdentifier("exercise.resultCount") } footer: { Text("内置指导图可离线查看。部分名称与步骤保留英文原文；来源与许可见详情。") }
         }
         .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索名称或别名")
         .navigationTitle(onSelect == nil ? "动作库" : "选择动作").navigationBarTitleDisplayMode(.inline)
@@ -42,9 +65,14 @@ struct ExerciseLibraryView: View {
         .sheet(isPresented: $creating) { NavigationStack { CustomExerciseEditor(exercise: Exercise(name: "")) } }
     }
     private func row(_ exercise: Exercise) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text(exercise.name).font(.headline)
-            Text("\(exercise.equipment) · \(exercise.measurement.title)").font(.subheadline).foregroundStyle(.secondary)
+        HStack(spacing: 12) {
+            if let guide = ExerciseGuideCatalog.guide(for: exercise.id), let first = guide.images.first {
+                ExerciseGuideImage(path: first).frame(width: 60, height: 64).clipShape(RoundedRectangle(cornerRadius: 8)).accessibilityHidden(true)
+            }
+            VStack(alignment: .leading, spacing: 5) {
+                Text(exercise.name).font(.headline).foregroundStyle(.primary)
+                Text("\(exercise.equipment) · \(exercise.measurement.title)").font(.subheadline).foregroundStyle(.secondary)
+            }.frame(maxWidth: .infinity, alignment: .leading)
         }.padding(.vertical, 4)
     }
 }
@@ -60,6 +88,11 @@ struct ExerciseDetailView: View {
             if let exercise = training.exercise(exerciseID) {
                 Section {
                     Text(exercise.name).font(.title2.weight(.semibold))
+                }
+                if let guide = ExerciseGuideCatalog.guide(for: exercise.id) {
+                    ExerciseGuideSections(guide: guide, name: exercise.name)
+                }
+                Section("记录资料") {
                     LabeledContent("记录类型", value: exercise.measurement.title)
                     LabeledContent("器械", value: exercise.equipment)
                     LabeledContent("肌群", value: exercise.muscles.joined(separator: "、"))

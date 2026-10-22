@@ -55,6 +55,7 @@ project.root_object.attributes['TargetAttributes'] = {
     next if File.directory?(file)
     relative = Pathname.new(file).relative_path_from(root.join(folder)).to_s
     next if relative.include?('.xcassets/')
+    next if relative.start_with?('Resources/ExerciseMedia/')
     reference = group.new_file(relative)
     if File.extname(file) == '.swift'
       target.source_build_phase.add_file_reference(reference)
@@ -64,6 +65,11 @@ project.root_object.attributes['TargetAttributes'] = {
   end
   Dir.glob(root.join(folder, '**', '*.xcassets').to_s).each do |asset|
     reference = group.new_file(Pathname.new(asset).relative_path_from(root.join(folder)).to_s)
+    target.resources_build_phase.add_file_reference(reference)
+  end
+  if folder == 'Leanora'
+    reference = group.new_file('Resources/ExerciseMedia')
+    reference.last_known_file_type = 'folder'
     target.resources_build_phase.add_file_reference(reference)
   end
 end

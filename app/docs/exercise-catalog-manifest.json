@@ -1,0 +1,65 @@
+{
+  "exercises": 882,
+  "legacyEntriesPreserved": 100,
+  "guides": 882,
+  "uniqueImages": 1765,
+  "imageBytes": 72036917,
+  "chineseNames": 284,
+  "chineseInstructions": 100,
+  "excluded": [
+    {
+      "id": "Kettlebell_Halo",
+      "reason": "上游没有指导图片"
+    },
+    {
+      "id": "Kettlebell_Halo_With_Overhead_Extension",
+      "reason": "上游没有指导图片"
+    },
+    {
+      "id": "Kettlebell_Overhead_Triceps_Extension",
+      "reason": "上游没有指导图片"
+    }
+  ],
+  "sources": {
+    "freeExerciseDB": {
+      "repository": "https://github.com/yuhonas/free-exercise-db",
+      "revision": "f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5",
+      "archiveSHA256": "ad2770ed89335c8b79da12854cc684d419e0f482de69b826c4a31bfac2405eab",
+      "dataSHA256": "5bb747e3fc658f095a60dcbf6d53c96627acdcc6ffb6fffde86f7e26995d40bf"
+    },
+    "workoutGuide": {
+      "repository": "https://github.com/bryllim/workout-guide",
+      "revision": "aac599224bb9780305239607ef98540b7e0ce389",
+      "dataSHA256": "b3d110d680a7d6cb94731b8b41ee3f82bfdbd2f9a358038f8c17d453b5fb632b",
+      "blobs": {
+        "ATTRIBUTION.md": "49887afc5aff40ae56e16a9d23822100f9b7fdf7",
+        "LICENSE-ASSETS": "d05f395955a75c0c0aece13b44f9fe030a3b6554",
+        "packages/workout-guide/assets/assisted-dip/frame-1.png": "6b40dcfa49b33936c80118e12729216e160f9326",
+        "packages/workout-guide/assets/assisted-dip/frame-2.png": "f804f78618dd9a63b24804c28606f2d955490053",
+        "packages/workout-guide/assets/assisted-dip/frame-3.png": "78daa88097224ebc404b2f7639949675f73baa95",
+        "packages/workout-guide/assets/assisted-pull-up/frame-1.png": "4474c16dbc5f22c9a893c0ac8e1b8f25d2bbb874",
+        "packages/workout-guide/assets/assisted-pull-up/frame-2.png": "e3994f7dddb5e6f7614c593116d19b36cffc6229",
+        "packages/workout-guide/assets/assisted-pull-up/frame-3.png": "f89c0a3a39ce0ccecd9d42f95433421bdda5b05e",
+        "packages/workout-guide/assets/bird-dog/frame-1.png": "169b3a9bf30594378d510fbc4eccb7ff4dd988c4",
+        "packages/workout-guide/assets/bird-dog/frame-2.png": "7621bf46e028a8e1a29d1f0d3af70b19e64e8962",
+        "packages/workout-guide/assets/bird-dog/frame-3.png": "89742625b0d7c638adde5c81665b0f4df675aa5b",
+        "packages/workout-guide/assets/dumbbell-romanian-deadlift/frame-1.png": "6f522242f8b79cfb189e6f149d5bcfa5999e8bd5",
+        "packages/workout-guide/assets/dumbbell-romanian-deadlift/frame-2.png": "a7acf0fa2296a37a3996b898b41ef71fbdc323a4",
+        "packages/workout-guide/assets/dumbbell-romanian-deadlift/frame-3.png": "356a350f838a53be6b582eb88acbfb4ff9fa318a",
+        "packages/workout-guide/assets/kettlebell-swing/frame-1.png": "32d28f8dc5f7ac957d0ab1bd394b483eebe33e89",
+        "packages/workout-guide/assets/kettlebell-swing/frame-2.png": "a3e7afa8e0cd1650273c4a5fbd74b3984afd71f2",
+        "packages/workout-guide/assets/kettlebell-swing/frame-3.png": "d5f01fb05d63bfef1073c19965caedf64d2ae647",
+        "packages/workout-guide/assets/knee-push-up/frame-1.png": "bd215bb3dd9baf58417be76a65b57ae686797e9f",
+        "packages/workout-guide/assets/knee-push-up/frame-2.png": "a299b10e310c26760e9427e3724f5c0127252118",
+        "packages/workout-guide/assets/knee-push-up/frame-3.png": "bfe0b979cf311e94cb16f8fc5cca2a3ecf4fb771",
+        "packages/workout-guide/assets/lying-leg-raise/frame-1.png": "1d84a46f177cf6db07fe08e4372c08cc5a93887c",
+        "packages/workout-guide/assets/lying-leg-raise/frame-2.png": "12b6364af28a532261a1387deefa36f66f08567b",
+        "packages/workout-guide/assets/lying-leg-raise/frame-3.png": "aea1d6b630a784afa8fe97864d2f13770e4e089d",
+        "packages/workout-guide/assets/wall-sit/frame-1.png": "7871cc894a5df99b3d087084e385e91610697c05",
+        "packages/workout-guide/assets/wall-sit/frame-2.png": "70ec1019a28282c3e633376e01aa222fa9a40efd",
+        "packages/workout-guide/assets/wall-sit/frame-3.png": "505c731451b4f664ce91f158c5959cf9084c273b"
+      }
+    }
+  },
+  "mediaProcessing": "Pillow 12.3.0; JPEG longest edge 640px, quality 82, EXIF stripped; Workout Guide PNG unchanged"
+}
