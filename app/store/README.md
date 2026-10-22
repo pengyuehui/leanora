@@ -1,6 +1,6 @@
 # Leanora App Store 素材包
 
-2026-10-21；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。本包是本地可审查交付物，尚未上传图片/文案或提交审核。
+更新：2026-10-22；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。两套各 7 张中文截图，以及中英文介绍、推广文本、关键词和副标题已保存到 App Store Connect，刷新后核验通过。新版图标等待 1.0（3）发行构建上传，尚未提交审核或公开发布。详见 [上传记录](app-store-connect-upload-20261022.json) 与 [实际页面凭据](../docs/qa/appstore-screenshots-uploaded-20261022.png)。
 
 ## 交付内容
 
@@ -18,7 +18,7 @@
 | 截图流程结果 / 资产与 Release 检查 | [screenshot-test-summary.json](screenshot-test-summary.json)、[verification.json](verification.json) |
 | 桌面浏览器实际预览截图 | [preview-desktop.png](preview-desktop.png) |
 
-英文文案已准备；当前截图仅本地化为简体中文，不把中文截图标作英文截图。
+英文文案已保存到英语（美国）本地化；当前截图仅上传到简体中文，不把中文截图另行标作英文截图。其他设备/语言采用 Apple 门户的默认素材回退。
 
 ## 截图顺序与真实性
 
@@ -40,7 +40,8 @@
 - 首轮在初始化画面超时；将截图模式完成引导的时机移到全部服务准备好之后，后续进入主页面。第二轮在 Duo 上按 NavigationBar 查找返回按钮失败；改为实际“开始训练”入口继续。最终完整流程通过，原始失败/重试日志保留在 `app/build/store-screenshots*.log`；被中断的系统诊断收集不算成功。
 - 原 AppKit 位图导出器在当前系统崩溃，已改为 CoreGraphics/ImageIO；导出及资产编译通过。排版器依据真实中文字体行高检查可见字符，发现并修复标题容器过短。
 - 桌面浏览器检查布局、图片与入口；实际点击复制副标题后显示“已复制副标题”。页面尊重减少动态效果，移动布局通过 CSS 断点回落；未把此项声明为真机浏览器全量验收。
-- 新图标接入源码后，本机未签名 Release Archive 成功，检查未发现截图启动参数、示例模板或夹具函数标记。该新 Archive 未上传；已经上传的 0.2.0（2）二进制仍使用旧图标。新版图标需要在下一次签名构建递增 build 后上传。
+- 新图标接入源码后，本机 Release Archive 成功，检查未发现截图启动参数、示例模板或夹具函数标记。1.0（3）开发签名归档尚未完成发行导出/上传；2026-10-22 重试仍报 No Accounts / 无发行证书，Xcode 设置中没有登录账号。已经上传的 0.2.0（2）二进制仍使用旧图标。
+- 2026-10-22 通过 Chrome 系统文件选择器上传两套截图，媒体管理页均显示 7/10，重新加载后数量、顺序保持。两种语言的介绍、推广文本和关键词回显均与本地源逐字一致，副标题与健康健美分类也在重新进入页面后确认。
 
 ## 复现
 

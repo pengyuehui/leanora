@@ -1,0 +1,120 @@
+{
+  "checked_date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "evidence_type": "visible App Store Connect UI, saved fields verified after reload/navigation; not a transport API receipt",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "version": "1.0",
+  "intended_build": "3",
+  "app_store_connect_url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/ios/version/inflight",
+  "app_store_status": "Prepare for Submission",
+  "submitted_for_app_review": false,
+  "publicly_released": false,
+  "screenshots": {
+    "locale": "zh-Hans",
+    "file_order": [
+      "01-today.png",
+      "02-plan.png",
+      "03-workout.png",
+      "04-nutrition.png",
+      "05-portion.png",
+      "06-trends.png",
+      "07-health.png"
+    ],
+    "medium": {
+      "dimensions": [
+        1206,
+        2622
+      ],
+      "server_count": 7,
+      "ui_count": "7/10",
+      "saved_after_reload": true
+    },
+    "large": {
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "server_count": 7,
+      "ui_count": "7/10",
+      "saved_after_reload": true
+    },
+    "upload_method": "Chrome native system file chooser",
+    "english_screenshot_uploads": 0,
+    "other_locales_and_sizes": "Apple default existing-asset fallback; no separate English screenshots uploaded"
+  },
+  "metadata": {
+    "locales": [
+      "zh-Hans",
+      "en-US"
+    ],
+    "description_promotional_text_keywords_exact_after_reload": true,
+    "subtitles_verified_after_navigation": true,
+    "app_name": "Leanora Fitness",
+    "category": "Health & Fitness",
+    "copyright": "2026 Manyao Li",
+    "support_url": null,
+    "whats_new": "Prepared locally; initial-version form does not expose this field"
+  },
+  "review": {
+    "notes_saved_after_reload": true,
+    "phone_supplied_by_user_and_saved_to_apple": true,
+    "phone_in_public_artifacts": false,
+    "sign_in_required": false,
+    "release_method_saved": "manual_after_approval"
+  },
+  "new_icon": {
+    "source": "brand/app-icon-1024.png",
+    "included_in_local_archive": true,
+    "uploaded_to_apple": false,
+    "note": "iOS App Store icon travels with the build. No new distribution IPA exists yet."
+  },
+  "distribution_export": {
+    "date": "2026-10-22",
+    "archive": "app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Privacy-Signed.xcarchive",
+    "output_attempt": "app/build/Exports/Leanora-1.0-3-AppStore-20261022",
+    "exit_code": 70,
+    "result": "No Accounts / no iOS Distribution signing certificate",
+    "log_sha256": "22d968bbd847aa576274c25381442eb125576e2b83cfd2c425df77116e17f516"
+  },
+  "authentication": {
+    "app_store_connect": "signed in and editing succeeded",
+    "xcode_apple_accounts": "Sign In button; no account present",
+    "mac_latest_native_ui_check": "locked; automatic unlock failed",
+    "agreements": "User reports handled; no new agreement accepted by agent"
+  },
+  "public_policy_check": {
+    "url": "https://leanora.ai/",
+    "date": "2026-10-22",
+    "result": "curl exit 35 SSL_ERROR_SYSCALL; public content unverified",
+    "url_changed": false
+  },
+  "proof": {
+    "path": "../docs/qa/appstore-screenshots-uploaded-20261022.png",
+    "sha256": "0b3339d0e82300067a52cf9a38ac5ef027715ffef4076e5a5c711cb0539a5c87"
+  },
+  "remaining": [
+    "Unlock Mac and sign in to Xcode Apple Accounts",
+    "Export/validate/upload distribution build 1.0 (3), then verify Apple processing and icon",
+    "Confirm reachable privacy and support URLs",
+    "Complete age rating, privacy, content rights and required regulatory declarations",
+    "Confirm pricing and distribution regions",
+    "Select processed build and submit for review; physical-device/content acceptance remains unverified"
+  ],
+  "copy_sha256": {
+    "zh-Hans": {
+      "subtitle.txt": "3fac9ce3a6496ad05b7cb63699f6d31688621a83a53808e224918352668f4c61",
+      "description.txt": "1d9bb64c2a78c0c778b676479e0d16a07ed4be9a973b7d6ede02c38cda087bc4",
+      "promotional-text.txt": "f123a599a9b49e3e99f68d5b6a7b274a7429d00d6592680ce21dd265ade1e82e",
+      "keywords.txt": "b518083d4ec6eace36b1004015cfd225a141496f527bff283b5c749d9f511eb9"
+    },
+    "en-US": {
+      "subtitle.txt": "3cefdd12bd19d85b39f39ce1bad4e903d8de724a892790c15349072c2ff2fd83",
+      "description.txt": "21dee25722f32136a9706c7689ae9b9838fdf51b1344ab76380c6c1663cb850b",
+      "promotional-text.txt": "bd381975056c70e0c8baeaef429b5309e90234e5dd25beb807e3201f4664f52c",
+      "keywords.txt": "9ca45f3b54c1a2f390b8ea553a11fc3dfc4bd9538d5898b9b484974718eeb198"
+    }
+  }
+}

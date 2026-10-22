@@ -1,5 +1,5 @@
 {
-  "status": "preparing_not_submitted",
+  "status": "store_materials_uploaded_build_pending",
   "app_name": "Leanora Fitness",
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
@@ -24,7 +24,9 @@
     "phone": null,
     "phone_handling": "Enter the actual review phone only in App Store Connect; never commit it to the public repository or public screenshots.",
     "sign_in_required": false,
-    "notes_source": "review-notes.txt"
+    "notes_source": "review-notes.txt",
+    "saved_to_apple": true,
+    "phone_supplied_directly_to_apple": true
   },
   "privacy_draft": {
     "app_data_collection": "No developer data collection; to be confirmed against Apple questionnaire",
@@ -41,12 +43,13 @@
     "note": "Inspect current App Store Connect settings before final submission; do not invent selections."
   },
   "open_items": [
-    "Unlock Mac and restore Apple authentication / distribution signing",
-    "Resolve any agreement requirement shown by Apple",
+    "Unlock Mac and sign in to Xcode Apple Accounts",
+    "Export/validate/upload distribution build 1.0 (3), then verify Apple processing and icon",
     "Confirm reachable privacy and support URLs",
-    "Inspect and complete App Store metadata, age rating, privacy and review contact fields",
-    "Export and validate App Store distribution IPA, then upload and wait for processing",
-    "Select build 1.0 (3), add version for review and submit; verify actual review status",
-    "Physical-device and professional content acceptance remain unverified"
-  ]
+    "Complete age rating, privacy, content rights and required regulatory declarations",
+    "Confirm pricing and distribution regions",
+    "Select processed build and submit for review; physical-device/content acceptance remains unverified"
+  ],
+  "upload_record": "app-store-connect-upload-20261022.json",
+  "release_method_saved": "manual_after_approval"
 }
