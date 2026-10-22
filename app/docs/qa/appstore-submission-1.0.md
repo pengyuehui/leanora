@@ -1,6 +1,6 @@
 # App Store 1.0（3）提交准备
 
-更新：2026-10-22。用户已明确要求“构建并提交 App Store”，并确认协议已处理、要求上传新图标和素材。**14 张中文截图、中英文商店文案与审核资料已保存到 Apple；新版图标所在的发行构建仍未上传，尚未提交 App Review。**
+更新：2026-10-22。**用户随后要求“先保存现有工作后停止”；当前已停止，只有用户明确要求后才恢复。** 用户已明确要求“构建并提交 App Store”，并确认协议已处理、要求上传新图标和素材。**14 张中文截图、中英文商店文案与审核资料已保存到 Apple；新版图标所在的发行构建仍未上传，尚未提交 App Review。**
 
 | 项目 | 已核验结果 |
 |---|---|
@@ -15,7 +15,7 @@
 | Archive | `app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Privacy-Signed.xcarchive`；修正旧版本隐私页文案后构建成功，当前为 Apple Development 签名 |
 | 签名检查 | 获得系统信任服务访问后 `codesign --verify --deep --strict` 通过；初始受限检查的信任错误另行保留说明 |
 | 权限 | HealthKit、background-delivery、Team 与应用标识匹配；最低 iOS18，iPhone |
-| 发行导出 | 2026-10-22 重试仍失败：`No Accounts` / `No signing certificate "iOS Distribution" found`；Xcode 的 Apple Accounts 设置为空，当前没有可提交的发行 IPA |
+| 发行导出 | 用户完成登录后识别到受邀 Admin，但个人开发者团队不提供其证书资源权限；新重试报 `No Account for Team 8ZP3NMT2A8` / 无发行证书，仍没有发行 IPA |
 | 构建上传 / 审核提交 | 未执行；不将 Archive 成功当作发行或提审成功 |
 
 结构化结果见 [build audit](appstore-1.0-3-build-audit.json)，原始导出失败日志分别见 [首次](appstore-1.0-3-export-failure.log)、[最终归档重试](appstore-1.0-3-privacy-export-failure.log)。归档/开发缓存不提交到仓库。此前已上传的 0.2.0（2）仍为内部 TestFlight 构建，不能替代此次正式 App Store 候选。
@@ -25,7 +25,7 @@
 ## 当前外部状态
 
 - Chrome 已登录 Manyao Li，正确 App 的 iOS 1.0 版本页、媒体管理和应用信息页均可编辑。截图上传使用系统文件选择器；未启用更广的扩展文件访问权限，未读取其他 App 的设置或提取认证令牌。
-- 本次打开 Xcode 后，Apple Accounts 设置只有“Sign In…”按钮，账号列表为空。已请求用户登录。后续原生 UI 检查又返回 Mac 已锁定、自动解锁失败；需要用户手动解锁并完成 Xcode 登录。浏览器登录不等于 Xcode 账号可用，不直接假定必须重建证书。
+- 账号登录已成功，Xcode 显示受邀 Admin；团队详情的 Certificates, Identifiers & Profiles 为红色不可用。官方账户页核实注册身份为个人，协议接受日期为 2026-10-21。依据 [Apple 角色说明](https://developer.apple.com/help/account/access/roles)，个人会员邀请的用户只能管理 App Store Connect，不具备该会员的开发者签名资源访问权。已打开新增账号窗口，请求添加 Manyao Li 的 Account Holder 账号；未改权限、创建/撤销证书或保存任何密码/验证码。
 - 用户确认已处理账号协议。素材编辑未遇到协议阻止；代理没有代为接受协议，也没有据此宣称所有商业/地区合规资料均已完成。
 - 用户指定的 `https://leanora.ai/` 在 2026-10-22 的 HTTPS 复查仍返回 `SSL_ERROR_SYSCALL`。只记录当前客户端无法核验公开政策，不断言全球不可用。修复该网址或采用公开 GitHub 政策/联系页面的选择仍待确认，未擅自替换入口。
 
@@ -37,11 +37,22 @@
 
 ## 恢复后执行
 
-1. 用户解锁 Mac，并在 Xcode 的 Apple Accounts 中登录 Manyao Li 所属 Apple 账号；Chrome 登录与素材上传已经恢复，无需重复上传现有 14 张截图。
+1. 等用户明确要求恢复后，核对 Xcode 中 Manyao Li 的 Account Holder 账号与证书访问权限；受邀 Admin 的登录不能替代。Chrome 与素材上传已恢复，无需重复上传现有 14 张截图。
 2. 确认可公开访问且内容匹配的隐私政策、支持入口。如果 App 内 URL 需要变更，更新源码并以新本地路径重新 Archive；build 3 尚未上传，可继续作为本次候选。
 3. 使用 `export_testflight_candidate.sh` 向一个尚不存在的目录重试发行导出；核验 Apple Distribution、Store 描述文件、`get-task-allow=false`、HealthKit 权限和图标。当前开发签名归档不能直接当作已分发 IPA。
 4. 使用 [正式上传选项](../../config/ExportOptions-AppStore-Upload.plist)：`destination=upload`、`testFlightInternalTestingOnly=false`、`manageAppVersionAndBuildNumber=false`、`uploadSymbols=true`。先验证最终包和资料，再实际上传。
-5. 已保存的截图、双语文案和审核联系方式保持；继续完成年龄分级/隐私/内容权利与必要地区声明，确认可用支持 URL、价格及地区。
+5. 已保存的截图、双语文案、审核联系和年龄分级保持；核验版权声明最后一次保存结果，解决政策/支持 URL 并发布经过核对的隐私答案，确认价格及地区。
 6. 等 Apple 处理完成，选择 1.0（3），添加审核并点击实际的 Submit for Review；以门户最终状态核验提交。计划采用审核后手动发布，不把加入草稿当作已送审。
 
 最低/当前系统物理 iPhone、锁屏/后台、多来源及时区、VoiceOver 与专业内容复核没有在本次构建中被补做，仍保留在 [发布清单](../release-checklist.md)，不能宣称已通过。
+
+## 用户要求停止时的保存点
+
+见 [结构化保存点](../../store/stop-point-20261022.json)。签名重试日志见 [Admin 导出失败](appstore-1.0-3-admin-export-20261022-failure.log)，权限界面见 [Xcode 实际状态](xcode-signing-access-unavailable-20261022.png)。
+
+- 年龄问卷已保存并重新进入页面核验：一般分级 13+，旧系统及部分地区为 12+；无覆盖分级。由于食品目录含啤酒/葡萄酒，如实申报偶尔提及酒精；健康主题为是，医疗治疗信息为无。
+- 已声明非受监管医疗设备，重新进入页面后显示该声明。
+- 内容版权选择了有必要权利的第三方内容（USDA CC0 数据）；点击全页保存后显示对应文案，最终重新加载后的核验尚未完成，用户此时要求停止。恢复时先检查，不直接宣称已经持久化。
+- 隐私问卷“不收集数据”已保存并刷新核验，尚未点击发布；门户政策 URL 仍为空，可访问的公开政策/支持入口仍待解决。见 [隐私草稿截图](appstore-privacy-draft-20261022.png)。
+- TestFlight 仅看到原 0.2.0（2）内部构建，状态已为“准备测试”。1.0（3）仍未上传、未提审，新图标仍未上传。
+- 停止后不再继续发行、上传或门户编辑。实际审核电话、账号持有人邮箱/电话/地址和认证信息不进入公开仓库。

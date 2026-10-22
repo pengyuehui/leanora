@@ -1,5 +1,5 @@
 {
-  "status": "store_materials_uploaded_build_pending",
+  "status": "stopped_at_user_request",
   "app_name": "Leanora Fitness",
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
@@ -43,13 +43,14 @@
     "note": "Inspect current App Store Connect settings before final submission; do not invent selections."
   },
   "open_items": [
-    "Unlock Mac and sign in to Xcode Apple Accounts",
-    "Export/validate/upload distribution build 1.0 (3), then verify Apple processing and icon",
-    "Confirm reachable privacy and support URLs",
-    "Complete age rating, privacy, content rights and required regulatory declarations",
-    "Confirm pricing and distribution regions",
-    "Select processed build and submit for review; physical-device/content acceptance remains unverified"
+    "Recheck Xcode Account Holder login and signing access before exporting; do not assume invited Admin can sign for an Individual membership",
+    "Recheck content-rights persistence after the pending reload",
+    "Export to a new directory, validate distribution signing and new icon, upload formal build, verify Apple processing",
+    "Resolve privacy/support URLs, publish verified privacy answers, confirm pricing/regions and required release gates",
+    "Choose processed build and submit only after remaining requirements are fulfilled"
   ],
   "upload_record": "app-store-connect-upload-20261022.json",
-  "release_method_saved": "manual_after_approval"
+  "release_method_saved": "manual_after_approval",
+  "latest_stop_point": "stop-point-20261022.json",
+  "resume_only_on_user_request": true
 }

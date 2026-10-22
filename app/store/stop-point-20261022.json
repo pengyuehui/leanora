@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-22",
+  "status": "stopped_at_user_request",
+  "resume_only_on_user_request": true,
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "version": "1.0",
+  "build": "3",
+  "signing": {
+    "xcode_login_succeeded": true,
+    "signed_in_role": "invited Admin",
+    "developer_enrollment": "Individual",
+    "certificates_identifiers_profiles_access": false,
+    "account_holder_login_needed": true,
+    "account_holder_login_sheet_opened": true,
+    "export_exit_code": 70,
+    "export_errors": [
+      "No Account for Team 8ZP3NMT2A8",
+      "No iOS Distribution signing certificate found"
+    ],
+    "distribution_ipa_created": false,
+    "uploaded": false
+  },
+  "portal_changes": {
+    "age_rating": {
+      "saved_and_verified_after_navigation": true,
+      "general_rating": "13+",
+      "legacy_os_below_26": "12+ with regional exceptions",
+      "health_wellness_topics": true,
+      "medical_treatment_information": "NONE",
+      "alcohol_references": "INFREQUENT",
+      "alcohol_reference_reason": "Bundled food catalog contains beer and wine entries; other adult themes absent.",
+      "override": "none"
+    },
+    "content_rights": {
+      "selected": "Third-party content with necessary rights",
+      "basis": "Original code/assets plus USDA FDC public-domain CC0 data",
+      "status": "Global Save requested; selected text shown before reload. Post-reload verification not completed because user requested stop."
+    },
+    "regulated_medical_device": {
+      "declared": false,
+      "verified_after_navigation": true
+    },
+    "app_privacy": {
+      "data_collection_draft": "No data collected",
+      "saved_and_verified_after_reload": true,
+      "published": false,
+      "policy_url_in_asc": null,
+      "public_policy_reachability": "Still unresolved from earlier check; not rechecked during this stop."
+    }
+  },
+  "testflight_observation": {
+    "previous_version": "0.2.0",
+    "previous_build": "2",
+    "internal_only": true,
+    "status_seen": "Ready to Test",
+    "new_1_0_build_seen": false
+  },
+  "already_saved_materials_record": "app-store-connect-upload-20261022.json",
+  "submitted_for_app_review": false,
+  "new_icon_uploaded": false,
+  "privacy_of_evidence": "No passwords, tokens, owner contact/address, actual review phone, or developer-account screenshot is saved in public artifacts.",
+  "references": {
+    "apple_account_roles": "https://developer.apple.com/help/account/access/roles",
+    "usda_data_license": "https://fdc.nal.usda.gov/api-guide/#licensing",
+    "apple_privacy_definition": "https://developer.apple.com/app-store/app-privacy-details/"
+  },
+  "resume_steps": [
+    "Recheck Xcode Account Holder login and signing access before exporting; do not assume invited Admin can sign for an Individual membership",
+    "Recheck content-rights persistence after the pending reload",
+    "Export to a new directory, validate distribution signing and new icon, upload formal build, verify Apple processing",
+    "Resolve privacy/support URLs, publish verified privacy answers, confirm pricing/regions and required release gates",
+    "Choose processed build and submit only after remaining requirements are fulfilled"
+  ],
+  "evidence": {
+    "xcode-signing-access-unavailable-20261022.png": {
+      "path": "../docs/qa/xcode-signing-access-unavailable-20261022.png",
+      "sha256": "8ec837172f31e2613c40cf64fdeac5af0a12df8d2bf745f58d83818e4bd9bc28"
+    },
+    "appstore-privacy-draft-20261022.png": {
+      "path": "../docs/qa/appstore-privacy-draft-20261022.png",
+      "sha256": "1a2525d56ab099716ac381d17cacf6e120bdaf454473ab9a91faea39a272b099"
+    },
+    "appstore-1.0-3-admin-export-20261022-failure.log": {
+      "path": "../docs/qa/appstore-1.0-3-admin-export-20261022-failure.log",
+      "sha256": "6de77a95bb2e2ce4418881bc329531314402e117f56cc147bdc8afd9fe16cf93"
+    }
+  }
+}
