@@ -1,58 +1,53 @@
-# App Store 1.0（3）提交准备
+# App Store 1.0（3）发行状态
 
-更新：2026-10-22。**用户随后要求“先保存现有工作后停止”；当前已停止，只有用户明确要求后才恢复。** 用户已明确要求“构建并提交 App Store”，并确认协议已处理、要求上传新图标和素材。**14 张中文截图、中英文商店文案与审核资料已保存到 Apple；新版图标所在的发行构建仍未上传，尚未提交 App Review。**
+更新：2026-10-22。用户切换 Manyao Li 账号后恢复工作。**含新版图标的 1.0（3）已正式上传，Apple 二进制状态为“已验证”，并已关联到 iOS 1.0 版本，重新加载后确认保存。尚未提交 App Review，也未公开发布。**
+
+最新机器记录见 [发行回执](../../store/app-store-release-20261022.json)，签名与上传证据见 [发行包核验](appstore-1.0-3-distribution-audit-20261022.json)。[此前停止保存点](../../store/stop-point-20261022.json) 保留历史状态；其中签名失败和未上传的描述不代表当前进展。
 
 | 项目 | 已核验结果 |
 |---|---|
 | 应用 | Leanora Fitness；Apple App ID `6825234654` |
 | Bundle / Team | `ai.leanora.fitness` / Manyao Li，`8ZP3NMT2A8` |
-| 商店版本 | 既有记录为 iOS 1.0，准备提交；工程及生成脚本更新为 `1.0`，build `3` |
-| 新版图标 | 已接入资源目录，本次资源编译成功，源文件摘要与素材包一致 |
-| 截图 | 简体中文中屏 1206×2622、大屏 1320×2868 各 7 张，媒体管理页重新加载后均显示 7/10，顺序正确 |
-| 商店文案 | 简体中文、英语（美国）的介绍/推广文本/关键词与本地源逐字一致；两种副标题、健康健美分类、版权已保存并重新进入页面核验 |
-| 审核资料 | 无需登录、审核说明和用户提供的联系电话已保存并刷新核验；实际号码只填写到 Apple，不存入公开仓库或截图 |
-| 发布方式 | Apple 门户已保存“手动发布此版本” |
-| Archive | `app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Privacy-Signed.xcarchive`；修正旧版本隐私页文案后构建成功，当前为 Apple Development 签名 |
-| 签名检查 | 获得系统信任服务访问后 `codesign --verify --deep --strict` 通过；初始受限检查的信任错误另行保留说明 |
-| 权限 | HealthKit、background-delivery、Team 与应用标识匹配；最低 iOS18，iPhone |
-| 发行导出 | 用户完成登录后识别到受邀 Admin，但个人开发者团队不提供其证书资源权限；新重试报 `No Account for Team 8ZP3NMT2A8` / 无发行证书，仍没有发行 IPA |
-| 构建上传 / 审核提交 | 未执行；不将 Archive 成功当作发行或提审成功 |
+| 版本 / 构建 | 1.0（3）；Apple 构建 ID `74e136c3-fa1c-4175-8d1d-ef47cd9e1f17` |
+| 发行签名 | Apple Distribution；深度严格签名验证通过；Store profile 无设备列表，`get-task-allow=false` |
+| 权限 | HealthKit、background-delivery、Team 与 Bundle 标识匹配；最低 iOS18，iPhone |
+| 图标 | 本地发行包 Assets.car 与最终 Archive 一致；新版源图 SHA256 核对通过，Apple 门户页头已显示新版蓝色图标 |
+| 正式上传 | 10:10:34 上传成功；`testFlightInternalTestingOnly=false`，请求上传 symbols，不自动改版本/构建号 |
+| Apple 处理 | 门户显示二进制“已验证”，上传时间 10:11，包含符号“是”，非豁免加密“否” |
+| 版本关联 | 已选择构建 3 / 1.0，保存后重新加载仍存在 |
+| 商店截图 | 简体中文 1206×2622、1320×2868 各 7 张；此前刷新验证数量、顺序 |
+| 文案 / 审核资料 | 中英文介绍、推广文本、关键词、副标题、分类、版权、无需登录、审核说明和联系资料已保存；实际审核电话只填写给 Apple |
+| 年龄 / 医疗 / 版权 | 一般 13+（旧系统及部分地区 12+）、非受监管医疗设备声明已核验；USDA 第三方内容必要权利本次重新保存并刷新核验 |
+| 首发价格 | 用户明确选择免费；重新进入“当前价格”表，175 个国家/地区全部 0.00 |
+| 发行范围 | 174 个国家/地区在 App 发布时供应；中国大陆未供应，尚缺备案资料；未来新增地区自动供应已启用，仍受 Apple 当地要求约束 |
+| 发布方式 | 审核后手动发布 |
+| 隐私 | “不收集数据”答案草稿已保存；政策 URL 未完成有效性核验，尚未发布隐私答案 |
 
-结构化结果见 [build audit](appstore-1.0-3-build-audit.json)，原始导出失败日志分别见 [首次](appstore-1.0-3-export-failure.log)、[最终归档重试](appstore-1.0-3-privacy-export-failure.log)。归档/开发缓存不提交到仓库。此前已上传的 0.2.0（2）仍为内部 TestFlight 构建，不能替代此次正式 App Store 候选。
+Apple “已验证”的 [页面凭据](appstore-1.0-3-validated-20261022.png)、[当前免费价格](appstore-free-prices-20261022.png)、[174 地区供应](appstore-availability-174-20261022.png) 均为实际门户页面；不包含审核电话、账号私密联系资料或认证信息。
 
-本次上传记录见 [2026-10-22 状态](../../store/app-store-connect-upload-20261022.json)，实际页面见 [两套截图凭据](appstore-screenshots-uploaded-20261022.png)，新的发行导出错误见 [2026-10-22 日志](appstore-1.0-3-export-20261022-failure.log)。图片/文案上传成功不代表二进制上传、审核提交或公开上架成功。
+实际点击“添加以供审核”后，Apple 拒绝加入审核，明确列出：隐私政策 URL、发布隐私处理信息，以及简体中文和英语（美国）的技术支持 URL。见 [Apple 必填项检查](appstore-review-blockers-20261022.png)。此次检查没有创建成功的审核提交；没有以占位 URL 绕过要求。
 
-## 当前外部状态
+## 发行包与上传的边界
 
-- Chrome 已登录 Manyao Li，正确 App 的 iOS 1.0 版本页、媒体管理和应用信息页均可编辑。截图上传使用系统文件选择器；未启用更广的扩展文件访问权限，未读取其他 App 的设置或提取认证令牌。
-- 账号登录已成功，Xcode 显示受邀 Admin；团队详情的 Certificates, Identifiers & Profiles 为红色不可用。官方账户页核实注册身份为个人，协议接受日期为 2026-10-21。依据 [Apple 角色说明](https://developer.apple.com/help/account/access/roles)，个人会员邀请的用户只能管理 App Store Connect，不具备该会员的开发者签名资源访问权。已打开新增账号窗口，请求添加 Manyao Li 的 Account Holder 账号；未改权限、创建/撤销证书或保存任何密码/验证码。
-- 用户确认已处理账号协议。素材编辑未遇到协议阻止；代理没有代为接受协议，也没有据此宣称所有商业/地区合规资料均已完成。
-- 用户指定的 `https://leanora.ai/` 在 2026-10-22 的 HTTPS 复查仍返回 `SSL_ERROR_SYSCALL`。只记录当前客户端无法核验公开政策，不断言全球不可用。修复该网址或采用公开 GitHub 政策/联系页面的选择仍待确认，未擅自替换入口。
+最终 Archive：`app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Privacy-Signed.xcarchive`。
 
-## 已准备的资料
+验证的本地发行 IPA：`app/build/Exports/Leanora-1.0-3-AppStore-Holder-20261022/Leanora.ipa`，2,204,721 字节，SHA256 `a3da1559dcf609d91bae87d3e23132cf2b10ff7dd112447919de438134196936`。正式上传由 Xcode 从同一 Archive 重新导出；此摘要仅对应本地验证包，不冒充上传传输包的摘要。
 
-中文/英文文案、两套各 7 张中文展示图、JSON 元数据和图标均通过本地检查，见 [素材包](../../store/README.md)。这两套截图和两种语言文案已经上传；截图只上传到简体中文，其他语言/设备使用 Apple 默认素材回退。版本说明已改为“首个版本”，首版表单未提供此字段，保留在本地。素材制作的真实页面及功能证据沿用此前报告；本次没有功能代码修改，未重跑全部 134 个功能方法。
+原始完整分发日志仅保存在忽略的 `app/build/`，公开回执只保留成功状态行与日志摘要。旧 0.2.0（2）仍是旧图标的内部 TestFlight 构建；它不是本次正式候选。
 
-[审核说明](../../store/review-notes.txt) 包含无需账号、可跳过健康权限、训练/饮食/身体/备份走查和真实数据边界，已保存并刷新核验。首次审核联系表单因缺电话被 Apple 拒绝，用户提供后补齐并成功保存。[提交草稿](../../store/submission-draft.json) 只记录电话已交给 Apple 的状态，号码字段在公开文件中仍为 null。价格、分发地区、支持 URL 未确认，不编造资料。
+## leanora.ai 仍需恢复
 
-## 恢复后执行
+用户选择“修复 leanora.ai 后使用原网址”。保留政策入口 `https://leanora.ai/`，拟使用支持入口 `https://leanora.ai/support/`，未切换到 GitHub 备用网址。
 
-1. 等用户明确要求恢复后，核对 Xcode 中 Manyao Li 的 Account Holder 账号与证书访问权限；受邀 Admin 的登录不能替代。Chrome 与素材上传已恢复，无需重复上传现有 14 张截图。
-2. 确认可公开访问且内容匹配的隐私政策、支持入口。如果 App 内 URL 需要变更，更新源码并以新本地路径重新 Archive；build 3 尚未上传，可继续作为本次候选。
-3. 使用 `export_testflight_candidate.sh` 向一个尚不存在的目录重试发行导出；核验 Apple Distribution、Store 描述文件、`get-task-allow=false`、HealthKit 权限和图标。当前开发签名归档不能直接当作已分发 IPA。
-4. 使用 [正式上传选项](../../config/ExportOptions-AppStore-Upload.plist)：`destination=upload`、`testFlightInternalTestingOnly=false`、`manageAppVersionAndBuildNumber=false`、`uploadSymbols=true`。先验证最终包和资料，再实际上传。
-5. 已保存的截图、双语文案、审核联系和年龄分级保持；核验版权声明最后一次保存结果，解决政策/支持 URL 并发布经过核对的隐私答案，确认价格及地区。
-6. 等 Apple 处理完成，选择 1.0（3），添加审核并点击实际的 Submit for Review；以门户最终状态核验提交。计划采用审核后手动发布，不把加入草稿当作已送审。
+本次检查旧公共解析地址的 HTTPS 握手失败，HTTP 跳转腾讯云备案拦截页。用户打开的 GoDaddy 页面已显示新 A 记录，但公共/权威查询仍返回旧地址；以域名 SNI 直连新地址时，证书验证通过，站点响应 500。需要主机后台检查网站服务，不能把 DNS 编辑或有效证书当作页面已经恢复。代理没有更改 DNS、网站服务或安全设置。
 
-最低/当前系统物理 iPhone、锁屏/后台、多来源及时区、VoiceOver 与专业内容复核没有在本次构建中被补做，仍保留在 [发布清单](../release-checklist.md)，不能宣称已通过。
+[待部署静态页面](../../website/README.md) 已从政策源文件和新增支持文档生成，本机浏览器核验了标题、正文、导航和邮箱入口；本机预览不代表公开部署。主机修复后须通过正常公共解析访问两个 HTTPS URL，核验有效证书、200 与正确正文，再保存商店 URL、发布隐私答案。
 
-## 用户要求停止时的保存点
+## 尚待完成
 
-见 [结构化保存点](../../store/stop-point-20261022.json)。签名重试日志见 [Admin 导出失败](appstore-1.0-3-admin-export-20261022-failure.log)，权限界面见 [Xcode 实际状态](xcode-signing-access-unavailable-20261022.png)。
+1. 取得已登录的主机后台并检查现有网站及错误日志；修复 500，确认 DNS 传播，发布并公开验证政策和支持页面。
+2. 保存政策/支持 URL，发布经核对的“不收集数据”隐私答案；不将本机 Health 访问误填为开发者服务器收集。
+3. 完成或明确解决 [发布清单](../release-checklist.md) 中尚未验收的真机、锁屏/后台、多来源/时区、VoiceOver 和专业内容复核。
+4. 最终提交 App Review，并以 Apple 实际“等待审核”等状态记录结果；当前“准备提交”不是送审成功。
 
-- 年龄问卷已保存并重新进入页面核验：一般分级 13+，旧系统及部分地区为 12+；无覆盖分级。由于食品目录含啤酒/葡萄酒，如实申报偶尔提及酒精；健康主题为是，医疗治疗信息为无。
-- 已声明非受监管医疗设备，重新进入页面后显示该声明。
-- 内容版权选择了有必要权利的第三方内容（USDA CC0 数据）；点击全页保存后显示对应文案，最终重新加载后的核验尚未完成，用户此时要求停止。恢复时先检查，不直接宣称已经持久化。
-- 隐私问卷“不收集数据”已保存并刷新核验，尚未点击发布；门户政策 URL 仍为空，可访问的公开政策/支持入口仍待解决。见 [隐私草稿截图](appstore-privacy-draft-20261022.png)。
-- TestFlight 仅看到原 0.2.0（2）内部构建，状态已为“准备测试”。1.0（3）仍未上传、未提审，新图标仍未上传。
-- 停止后不再继续发行、上传或门户编辑。实际审核电话、账号持有人邮箱/电话/地址和认证信息不进入公开仓库。
+本次无 App 功能源码改动，未重跑此前 134 个功能方法；原报告的真机及专业内容验收缺口仍保留，不能据 Apple 二进制验证宣称功能验收完成。未代为接受新的法律协议，未提取浏览器或 Xcode 认证信息。

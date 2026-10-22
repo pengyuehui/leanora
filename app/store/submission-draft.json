@@ -1,5 +1,5 @@
 {
-  "status": "stopped_at_user_request",
+  "status": "build_validated_and_selected_waiting_for_public_website",
   "app_name": "Leanora Fitness",
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
@@ -29,28 +29,53 @@
     "phone_supplied_directly_to_apple": true
   },
   "privacy_draft": {
-    "app_data_collection": "No developer data collection; to be confirmed against Apple questionnaire",
+    "app_data_collection": "No developer data collection; questionnaire draft saved and reloaded",
     "tracking": false,
     "current_policy_url": "https://leanora.ai/",
     "public_policy_url_verified": false,
     "support_url": null,
-    "fallback_policy_pending_user_choice": "https://github.com/pengyuehui/leanora/blob/main/app/docs/privacy-policy.md",
-    "fallback_support_pending_user_choice": "https://github.com/pengyuehui/leanora/blob/main/app/store/product-introduction.md"
+    "answers_published": false,
+    "user_choice": "Repair leanora.ai and retain original URL"
   },
   "commercial_settings": {
-    "price": null,
-    "availability_regions": null,
-    "note": "Inspect current App Store Connect settings before final submission; do not invent selections."
+    "user_choice": "Free; as many eligible countries or regions as possible",
+    "free": true,
+    "zero_price_territory_count": 175,
+    "availability_territory_count": 174,
+    "excluded_territories": [
+      "CHN"
+    ],
+    "excluded_reason": "Mainland China app filing information has not been supplied",
+    "future_territories_enabled": true,
+    "saved_and_reloaded": true,
+    "details": "app-store-pricing-20261022.json",
+    "release_method": "manual_after_approval"
   },
   "open_items": [
-    "Recheck Xcode Account Holder login and signing access before exporting; do not assume invited Admin can sign for an Individual membership",
-    "Recheck content-rights persistence after the pending reload",
-    "Export to a new directory, validate distribution signing and new icon, upload formal build, verify Apple processing",
-    "Resolve privacy/support URLs, publish verified privacy answers, confirm pricing/regions and required release gates",
-    "Choose processed build and submit only after remaining requirements are fulfilled"
+    "Access the website host, inspect its current service and fix the origin error; verify public DNS, TLS, policy and support contents",
+    "Save verified policy and support URLs in App Store Connect and publish the reviewed privacy answers",
+    "Complete or explicitly resolve the outstanding release-acceptance checks documented in the release checklist",
+    "Submit App Review and verify the final Apple review state"
   ],
   "upload_record": "app-store-connect-upload-20261022.json",
   "release_method_saved": "manual_after_approval",
   "latest_stop_point": "stop-point-20261022.json",
-  "resume_only_on_user_request": true
+  "resume_only_on_user_request": false,
+  "resumed_after_user_account_switch": true,
+  "latest_release_record": "app-store-release-20261022.json",
+  "binary": {
+    "uploaded": true,
+    "internal_testing_only": false,
+    "apple_binary_status": "VALIDATED",
+    "apple_status_display": "已验证",
+    "apple_upload_time_local": "2026-10-22 10:11",
+    "testflight_build_id": "74e136c3-fa1c-4175-8d1d-ef47cd9e1f17",
+    "symbols_confirmed_by_apple": true,
+    "new_icon_in_uploaded_archive": true,
+    "new_icon_visible_in_app_store_connect_header": true,
+    "selected_for_app_store_version": true,
+    "selection_verified_after_reload": true,
+    "distribution_audit": "../docs/qa/appstore-1.0-3-distribution-audit-20261022.json",
+    "proof": "../docs/qa/appstore-1.0-3-validated-20261022.png"
+  }
 }

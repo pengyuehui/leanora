@@ -1,0 +1,890 @@
+{
+  "date": "2026-10-22",
+  "source": "App Store Connect current prices modal after fresh navigation",
+  "free": true,
+  "price_rows": 175,
+  "prices": [
+    {
+      "territory": "美国 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "不丹 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "中国大陆 (CNY)",
+      "price": "¥0.00",
+      "proceeds": "¥0.00"
+    },
+    {
+      "territory": "丹麦 (DKK)",
+      "price": "kr 0.00",
+      "proceeds": "kr 0.00"
+    },
+    {
+      "territory": "乌克兰 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "乌兹别克斯坦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "乌干达 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "乌拉圭 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "乍得 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "也门 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "亚美尼亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "以色列 (ILS)",
+      "price": "₪0.00",
+      "proceeds": "₪0.00"
+    },
+    {
+      "territory": "伊拉克 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "伯利兹 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "佛得角 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "俄罗斯 (RUB)",
+      "price": "₽0.00",
+      "proceeds": "₽0.00"
+    },
+    {
+      "territory": "保加利亚 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "克罗地亚 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "冈比亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "冰岛 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "几内亚比绍 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "刚果共和国 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "刚果民主共和国 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "利比亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "利比里亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "加拿大 (CAD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "加纳 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "加蓬 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "匈牙利 (HUF)",
+      "price": "Ft 0.00",
+      "proceeds": "Ft 0.00"
+    },
+    {
+      "territory": "北马其顿 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "南非 (ZAR)",
+      "price": "R 0.00",
+      "proceeds": "R 0.00"
+    },
+    {
+      "territory": "博茨瓦纳 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "卡塔尔 (QAR)",
+      "price": "QAR 0.00",
+      "proceeds": "QAR 0.00"
+    },
+    {
+      "territory": "卢旺达 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "卢森堡 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "印度 (INR)",
+      "price": "₹0.00",
+      "proceeds": "₹0.00"
+    },
+    {
+      "territory": "印度尼西亚 (IDR)",
+      "price": "Rp 0.00",
+      "proceeds": "Rp 0.00"
+    },
+    {
+      "territory": "危地马拉 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "厄瓜多尔 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "台湾 (TWD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "吉尔吉斯斯坦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "哈萨克斯坦 (KZT)",
+      "price": "₸0.00",
+      "proceeds": "₸0.00"
+    },
+    {
+      "territory": "哥伦比亚 (COP)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "哥斯达黎加 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "喀麦隆 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "土库曼斯坦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "土耳其 (TRY)",
+      "price": "₺0.00",
+      "proceeds": "₺0.00"
+    },
+    {
+      "territory": "圣卢西亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "圣基茨和尼维斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "圣多美和普林西比 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "圣文森特和格林纳丁斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "圭亚那 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "坦桑尼亚 (TZS)",
+      "price": "TZS 0.00",
+      "proceeds": "TZS 0.00"
+    },
+    {
+      "territory": "埃及 (EGP)",
+      "price": "E£0.00",
+      "proceeds": "E£0.00"
+    },
+    {
+      "territory": "塔吉克斯坦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "塞内加尔 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "塞尔维亚 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "塞拉利昂 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "塞浦路斯 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "塞舌尔 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "墨西哥 (MXN)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "多米尼克 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "多米尼加共和国 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "奥地利 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "委内瑞拉 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "安哥拉 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "安圭拉 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "安提瓜和巴布达 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "密克罗尼西亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "尼加拉瓜 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "尼日利亚 (NGN)",
+      "price": "₦0.00",
+      "proceeds": "₦0.00"
+    },
+    {
+      "territory": "尼日尔 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "尼泊尔 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴哈马 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴基斯坦 (PKR)",
+      "price": "Rs 0.00",
+      "proceeds": "Rs 0.00"
+    },
+    {
+      "territory": "巴巴多斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴布亚新几内亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴拉圭 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴拿马 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴林 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "巴西 (BRL)",
+      "price": "R$0.00",
+      "proceeds": "R$0.00"
+    },
+    {
+      "territory": "布基纳法索 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "希腊 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "帕劳 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "开曼群岛 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "德国 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "意大利 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "所罗门群岛 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "拉脱维亚 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "挪威 (NOK)",
+      "price": "kr 0.00",
+      "proceeds": "kr 0.00"
+    },
+    {
+      "territory": "捷克共和国 (CZK)",
+      "price": "Kč 0.00",
+      "proceeds": "Kč 0.00"
+    },
+    {
+      "territory": "摩尔多瓦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "摩洛哥 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "文莱 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "斐济 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "斯威士兰 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "斯洛伐克 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "斯洛文尼亚 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "斯里兰卡 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "新加坡 (SGD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "新西兰 (NZD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "日本 (JPY)",
+      "price": "¥0.00",
+      "proceeds": "¥0.00"
+    },
+    {
+      "territory": "智利 (CLP)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "柬埔寨 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "格林纳达 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "格鲁吉亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "比利时 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "毛里塔尼亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "毛里求斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "汤加 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "沙特阿拉伯 (SAR)",
+      "price": "SAR 0.00",
+      "proceeds": "SAR 0.00"
+    },
+    {
+      "territory": "法国 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "波兰 (PLN)",
+      "price": "zł 0.00",
+      "proceeds": "zł 0.00"
+    },
+    {
+      "territory": "波斯尼亚和黑塞哥维那 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "泰国 (THB)",
+      "price": "฿0.00",
+      "proceeds": "฿0.00"
+    },
+    {
+      "territory": "津巴布韦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "洪都拉斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "澳大利亚 (AUD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "澳门 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "爱尔兰 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "爱沙尼亚 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "牙买加 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "特克斯和凯科斯群岛 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "特立尼达和多巴哥 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "玻利维亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "瑙鲁 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "瑞典 (SEK)",
+      "price": "kr 0.00",
+      "proceeds": "kr 0.00"
+    },
+    {
+      "territory": "瑞士 (CHF)",
+      "price": "CHF 0.00",
+      "proceeds": "CHF 0.00"
+    },
+    {
+      "territory": "瓦努阿图 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "白俄罗斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "百慕大 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "科威特 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "科特迪瓦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "科索沃 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "秘鲁 (PEN)",
+      "price": "PEN 0.00",
+      "proceeds": "PEN 0.00"
+    },
+    {
+      "territory": "突尼斯 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "立陶宛 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "约旦 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "纳米比亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "缅甸 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "罗马尼亚 (RON)",
+      "price": "lei 0.00",
+      "proceeds": "lei 0.00"
+    },
+    {
+      "territory": "老挝 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "肯尼亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "芬兰 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "苏里南 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "英国 (GBP)",
+      "price": "£0.00",
+      "proceeds": "£0.00"
+    },
+    {
+      "territory": "英属维尔京群岛 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "荷兰 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "莫桑比克 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "菲律宾 (PHP)",
+      "price": "₱0.00",
+      "proceeds": "₱0.00"
+    },
+    {
+      "territory": "萨尔瓦多 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "葡萄牙 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "蒙古 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "蒙特塞拉特 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "西班牙 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "贝宁 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "赞比亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "越南 (VND)",
+      "price": "₫0.00",
+      "proceeds": "₫0.00"
+    },
+    {
+      "territory": "阿塞拜疆 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "阿富汗 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "阿尔及利亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "阿尔巴尼亚 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "阿拉伯联合酋长国 (AED)",
+      "price": "AED 0.00",
+      "proceeds": "AED 0.00"
+    },
+    {
+      "territory": "阿曼 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "阿根廷 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "韩国 (KRW)",
+      "price": "₩0.00",
+      "proceeds": "₩0.00"
+    },
+    {
+      "territory": "香港 (HKD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "马尔代夫 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "马拉维 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "马来西亚 (MYR)",
+      "price": "RM 0.00",
+      "proceeds": "RM 0.00"
+    },
+    {
+      "territory": "马耳他 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    },
+    {
+      "territory": "马达加斯加 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "马里 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "黎巴嫩 (USD)",
+      "price": "$0.00",
+      "proceeds": "$0.00"
+    },
+    {
+      "territory": "黑山 (EUR)",
+      "price": "€0.00",
+      "proceeds": "€0.00"
+    }
+  ],
+  "availability_count": 174,
+  "excluded_territories": [
+    "CHN"
+  ],
+  "future_territories_enabled": true,
+  "availability_verified_after_reload": true,
+  "published_to_customers": false
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "status": "build_validated_and_selected_waiting_for_public_website",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "version": "1.0",
+  "build": "3",
+  "resumed_after_user_account_switch": true,
+  "previous_stop_point": "stop-point-20261022.json",
+  "binary": {
+    "uploaded": true,
+    "internal_testing_only": false,
+    "apple_binary_status": "VALIDATED",
+    "apple_status_display": "已验证",
+    "apple_upload_time_local": "2026-10-22 10:11",
+    "testflight_build_id": "74e136c3-fa1c-4175-8d1d-ef47cd9e1f17",
+    "symbols_confirmed_by_apple": true,
+    "new_icon_in_uploaded_archive": true,
+    "new_icon_visible_in_app_store_connect_header": true,
+    "selected_for_app_store_version": true,
+    "selection_verified_after_reload": true,
+    "distribution_audit": "../docs/qa/appstore-1.0-3-distribution-audit-20261022.json",
+    "proof": "../docs/qa/appstore-1.0-3-validated-20261022.png"
+  },
+  "commercial_settings": {
+    "user_choice": "Free; as many eligible countries or regions as possible",
+    "free": true,
+    "zero_price_territory_count": 175,
+    "availability_territory_count": 174,
+    "excluded_territories": [
+      "CHN"
+    ],
+    "excluded_reason": "Mainland China app filing information has not been supplied",
+    "future_territories_enabled": true,
+    "saved_and_reloaded": true,
+    "details": "app-store-pricing-20261022.json",
+    "release_method": "manual_after_approval"
+  },
+  "content_rights": {
+    "uses_third_party_content_with_necessary_rights": true,
+    "third_party_source": "USDA public-domain CC0 food data",
+    "saved_and_verified_after_reload": true
+  },
+  "materials": {
+    "chinese_screenshots_per_size": 7,
+    "size_count": 2,
+    "locales_saved": [
+      "zh-Hans",
+      "en-US"
+    ],
+    "previous_upload_record": "app-store-connect-upload-20261022.json"
+  },
+  "privacy": {
+    "no_data_collected_draft_saved": true,
+    "answers_published": false,
+    "user_choice": "Repair leanora.ai and keep the original URL",
+    "policy_url": "https://leanora.ai/",
+    "proposed_support_url": "https://leanora.ai/support/",
+    "public_urls_verified": false,
+    "hosting_access_pending": true,
+    "static_pages_prepared": "../website/README.md",
+    "diagnosis": "Old public DNS target fails HTTPS and redirects HTTP to Tencent filing interception; GoDaddy now displays a new target, whose valid-certificate HTTPS responds 500. DNS and origin recovery remain unverified. No DNS or server settings changed by the agent."
+  },
+  "app_review_submission_check": {
+    "attempted_add_for_review": true,
+    "apple_result": "Cannot Add for Review",
+    "required_items": [
+      "Privacy Policy URL in App Privacy",
+      "Published app privacy information",
+      "Support URL for zh-Hans",
+      "Support URL for en-US"
+    ],
+    "proof": "../docs/qa/appstore-review-blockers-20261022.png"
+  },
+  "app_review_submitted": false,
+  "publicly_released": false,
+  "remaining": [
+    "Access the website host, inspect its current service and fix the origin error; verify public DNS, TLS, policy and support contents",
+    "Save verified policy and support URLs in App Store Connect and publish the reviewed privacy answers",
+    "Complete or explicitly resolve the outstanding release-acceptance checks documented in the release checklist",
+    "Submit App Review and verify the final Apple review state"
+  ],
+  "privacy_handling": "Actual review phone, private account contacts, authentication data and full distribution logs are excluded from this public record."
+}

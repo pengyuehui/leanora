@@ -1,6 +1,7 @@
 {
   "status": "local_asset_source_not_live_submission_status",
   "upload_record": "app-store-connect-upload-20261022.json",
+  "release_record": "app-store-release-20261022.json",
   "app_name": "Leanora Fitness",
   "bundle_id": "ai.leanora.fitness",
   "apple_app_id": "6825234654",
