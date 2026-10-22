@@ -12,7 +12,13 @@ def inline(text: str) -> str:
     return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
 
 
-def render(markdown: str) -> str:
+def render(
+    markdown: str,
+    *,
+    title: str = "Leanora 隐私政策",
+    description: str = "Leanora 训练与饮食记录 App 隐私政策，运营主体 Manyao Li。",
+    navigation: bool = False,
+) -> str:
     sections = []
     for paragraph in markdown.strip().split("\n\n"):
         if paragraph.startswith("## "):
@@ -22,13 +28,14 @@ def render(markdown: str) -> str:
         else:
             sections.append(f"<p>{inline(paragraph)}</p>")
     body = "\n".join(sections)
+    header = '<header><a class="brand" href="/">Leanora Fitness</a><nav aria-label="网站导航"><a href="/">隐私政策</a><a href="/support/">支持</a></nav></header>' if navigation else ""
     return f"""<!doctype html>
 <html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Leanora 训练与饮食记录 App 隐私政策，运营主体 Manyao Li。">
-  <title>Leanora 隐私政策</title>
+  <meta name="description" content="{escape(description)}">
+  <title>{escape(title)}</title>
   <style>
     :root {{ color-scheme: light dark; }}
     body {{ margin: 0; background: light-dark(#f5f6f8, #121418); color: light-dark(#20242b, #eef0f3); font: 17px/1.8 system-ui, sans-serif; }}
@@ -37,9 +44,12 @@ def render(markdown: str) -> str:
     h2 {{ font-size: 1.25rem; line-height: 1.4; margin-top: 2rem; }}
     a {{ color: light-dark(#2259bf, #9dbdff); text-underline-offset: .15em; }}
     a:focus-visible {{ outline: 3px solid currentColor; outline-offset: 4px; }}
+    header {{ max-width: 46rem; margin: auto; padding: 1.5rem 1.25rem; border-bottom: 1px solid light-dark(#d3dceb, #394150); display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: center; }}
+    .brand {{ font-weight: 700; text-decoration: none; }}
+    nav {{ display: flex; gap: 1.5rem; }}
   </style>
 </head>
-<body><main>
+<body>{header}<main>
 {body}
 </main></body>
 </html>
