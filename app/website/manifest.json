@@ -1,0 +1,139 @@
+{
+  "domain": "https://leanora.ai",
+  "routes": [
+    {
+      "path": "/",
+      "file": "index.html"
+    },
+    {
+      "path": "/go/",
+      "file": "go/index.html"
+    },
+    {
+      "path": "/fitness/",
+      "file": "fitness/index.html"
+    },
+    {
+      "path": "/support/",
+      "file": "support/index.html"
+    },
+    {
+      "path": "/go/support/",
+      "file": "go/support/index.html"
+    },
+    {
+      "path": "/policies/",
+      "file": "policies/index.html"
+    },
+    {
+      "path": "/privacy/",
+      "file": "privacy/index.html"
+    },
+    {
+      "path": "/fitness/privacy/",
+      "file": "fitness/privacy/index.html"
+    },
+    {
+      "path": "/fitness/support/",
+      "file": "fitness/support/index.html"
+    }
+  ],
+  "tracking": false,
+  "files": [
+    {
+      "path": "fitness/index.html",
+      "bytes": 7641,
+      "sha256": "112072c025dac88652d72bce7f5ddfb8c91a2dfdbe2240f8e765c5a9880ac0fe"
+    },
+    {
+      "path": "fitness/privacy/index.html",
+      "bytes": 6289,
+      "sha256": "9e2286d0751361a30ab830a2ba6ce134f5a7e2f763df8af6956ab89b5b11ce1f"
+    },
+    {
+      "path": "fitness/support/index.html",
+      "bytes": 5604,
+      "sha256": "51b691b2fc5955c31fb4d318723d909cee6e2467a71f8c3f81df2f5370a994e1"
+    },
+    {
+      "path": "go/index.html",
+      "bytes": 5936,
+      "sha256": "b2d63b00783b4b629a4d4c4f712bc00af689654533bf3c9de32db955fa9f79d6"
+    },
+    {
+      "path": "go/support/index.html",
+      "bytes": 4993,
+      "sha256": "a03bb29e34889ce4ff053d22962231e2a0ae024c4721e0488157fc03cbbe3b17"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6143,
+      "sha256": "abf0b4f78e3cc4d3d1e40054ba35c0e12851d56cdaa57d1083150151cdb0acc4"
+    },
+    {
+      "path": "policies/index.html",
+      "bytes": 3922,
+      "sha256": "aca980ba01fd3ef8412846cdc0716ae54b12490dcf90f34fd7b542cd53e6df08"
+    },
+    {
+      "path": "privacy/index.html",
+      "bytes": 7922,
+      "sha256": "dc383cd50f19eddca329704e6e495765102c72e1caf4928541b206207bc2aa15"
+    },
+    {
+      "path": "site-assets/favicon.svg",
+      "bytes": 236,
+      "sha256": "01cd21eeb18a15c094ec5a53d3493ec4112036666fa35b10e0a5c2701768af60"
+    },
+    {
+      "path": "site-assets/fitness-food.png",
+      "bytes": 266958,
+      "sha256": "818c1afa1b19d2628144c7c22b56814c5e57c3afc5494f35e7417e91148c8abc"
+    },
+    {
+      "path": "site-assets/fitness-icon.png",
+      "bytes": 807809,
+      "sha256": "01002bc1635406c636473548ebfcf37aff70e61fd1b48327be9b57a1c1903f59"
+    },
+    {
+      "path": "site-assets/fitness-today.png",
+      "bytes": 277638,
+      "sha256": "6cf09f74bfe031e0539f0e44469cb18a8b5786ddc4a5a2fb1989fad86ab10f4c"
+    },
+    {
+      "path": "site-assets/fitness-trends.png",
+      "bytes": 285957,
+      "sha256": "2731230610724fb462fc8bec445417a7e5f77794aebda52b11b43f713299c182"
+    },
+    {
+      "path": "site-assets/fitness-workout.png",
+      "bytes": 389561,
+      "sha256": "100ac154aed0ce6b49ffd762daed2b8413e3545dd819cd53ed6e5be21d0879a7"
+    },
+    {
+      "path": "site-assets/go-board.png",
+      "bytes": 2087736,
+      "sha256": "6f6570d43790f547ec336f88b22e17bde669c39d3dbc6584999a23387384f2e5"
+    },
+    {
+      "path": "site-assets/go-review.png",
+      "bytes": 1065925,
+      "sha256": "5d1a1fe9b0ddfb11fcab524a9385d4915bd29bc48e6fb425c37f1cc4e875cbe7"
+    },
+    {
+      "path": "site-assets/site.css",
+      "bytes": 23052,
+      "sha256": "5d0014e8e8d1418bb715fc3b284cf928d48ff94d49581b0eee43a10cd0c671d9"
+    },
+    {
+      "path": "site-assets/site.js",
+      "bytes": 2128,
+      "sha256": "b8847d6a3f309b80741111a5861d8e8d3675df0b17cf498148b772059f2eab11"
+    },
+    {
+      "path": "support/index.html",
+      "bytes": 4602,
+      "sha256": "e94f06b831d52e6b366b29a1d2d678c4c32a33169a4c74c6ce1b6830f0fb77c5"
+    }
+  ]
+}

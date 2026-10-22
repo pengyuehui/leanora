@@ -1,0 +1,207 @@
+{
+  "checkedAt": "2026-10-22",
+  "environment": "Local IAB preview http://127.0.0.1:8797",
+  "liveDeployment": false,
+  "mobile": [
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/go/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/fitness/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/support/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/go/support/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/policies/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/privacy/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/fitness/privacy/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/fitness/support/",
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleBrokenImages": []
+    }
+  ],
+  "desktop": [
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/go/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/fitness/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/support/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/go/support/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/policies/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/privacy/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/fitness/privacy/",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "h1Count": 1,
+      "overflow": false,
+      "path": "/fitness/support/",
+      "viewport": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "legacyHomepageLinks": [
+    {
+      "hash": "#review",
+      "path": "/go/",
+      "targetExists": true
+    },
+    {
+      "hash": "#training",
+      "path": "/go/",
+      "targetExists": true
+    },
+    {
+      "hash": "#parents",
+      "path": "/go/",
+      "targetExists": true
+    }
+  ],
+  "interactions": {
+    "mobileMenuNavigation": true,
+    "mobileMenuEscapeAndFocusRestore": true,
+    "imageDialogOpen": true,
+    "imageDialogEscapeAndFocusRestore": true,
+    "imageDialogScrollRestore": true,
+    "goFaqExpansion": true,
+    "desktopProductSupportToFitnessPrivacy": true
+  },
+  "consoleErrorsAtFitnessPage": []
+}

@@ -12,13 +12,7 @@ def inline(text: str) -> str:
     return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
 
 
-def render(
-    markdown: str,
-    *,
-    title: str = "Leanora 隐私政策",
-    description: str = "Leanora 训练与饮食记录 App 隐私政策，运营主体 Manyao Li。",
-    navigation: bool = False,
-) -> str:
+def render_body(markdown: str) -> str:
     sections = []
     for paragraph in markdown.strip().split("\n\n"):
         if paragraph.startswith("## "):
@@ -27,7 +21,17 @@ def render(
             sections.append(f"<h1>{inline(paragraph[2:])}</h1>")
         else:
             sections.append(f"<p>{inline(paragraph)}</p>")
-    body = "\n".join(sections)
+    return "\n".join(sections)
+
+
+def render(
+    markdown: str,
+    *,
+    title: str = "Leanora 隐私政策",
+    description: str = "Leanora 训练与饮食记录 App 隐私政策，运营主体 Manyao Li。",
+    navigation: bool = False,
+) -> str:
+    body = render_body(markdown)
     header = '<header><a class="brand" href="/fitness/privacy/">Leanora Fitness</a><nav aria-label="网站导航"><a href="/fitness/privacy/">隐私政策</a><a href="/fitness/support/">支持</a></nav></header>' if navigation else ""
     return f"""<!doctype html>
 <html lang="zh-Hans">
