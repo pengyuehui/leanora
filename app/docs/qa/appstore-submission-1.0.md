@@ -1,53 +1,40 @@
-# App Store 1.0（3）发行状态
+# App Store 1.0（4）已提交审核
 
-更新：2026-10-22。用户切换 Manyao Li 账号后恢复工作。**含新版图标的 1.0（3）已正式上传，Apple 二进制状态为“已验证”，并已关联到 iOS 1.0 版本，重新加载后确认保存。尚未提交 App Review，也未公开发布。**
+更新：2026-10-22。**Leanora Fitness 1.0（4）已正式提交 App Review，Apple 状态为“等待审核”，重新加载后状态保持。尚未审核通过或公开上架。发布方式仍为审核通过后手动发布。**
 
-最新机器记录见 [发行回执](../../store/app-store-release-20261022.json)，签名与上传证据见 [发行包核验](appstore-1.0-3-distribution-audit-20261022.json)。[此前停止保存点](../../store/stop-point-20261022.json) 保留历史状态；其中签名失败和未上传的描述不代表当前进展。
-
-| 项目 | 已核验结果 |
+| 项目 | 最终核验结果 |
 |---|---|
-| 应用 | Leanora Fitness；Apple App ID `6825234654` |
-| Bundle / Team | `ai.leanora.fitness` / Manyao Li，`8ZP3NMT2A8` |
-| 版本 / 构建 | 1.0（3）；Apple 构建 ID `74e136c3-fa1c-4175-8d1d-ef47cd9e1f17` |
-| 发行签名 | Apple Distribution；深度严格签名验证通过；Store profile 无设备列表，`get-task-allow=false` |
-| 权限 | HealthKit、background-delivery、Team 与 Bundle 标识匹配；最低 iOS18，iPhone |
-| 图标 | 本地发行包 Assets.car 与最终 Archive 一致；新版源图 SHA256 核对通过，Apple 门户页头已显示新版蓝色图标 |
-| 正式上传 | 10:10:34 上传成功；`testFlightInternalTestingOnly=false`，请求上传 symbols，不自动改版本/构建号 |
-| Apple 处理 | 门户显示二进制“已验证”，上传时间 10:11，包含符号“是”，非豁免加密“否” |
-| 版本关联 | 已选择构建 3 / 1.0，保存后重新加载仍存在 |
-| 商店截图 | 简体中文 1206×2622、1320×2868 各 7 张；此前刷新验证数量、顺序 |
-| 文案 / 审核资料 | 中英文介绍、推广文本、关键词、副标题、分类、版权、无需登录、审核说明和联系资料已保存；实际审核电话只填写给 Apple |
-| 年龄 / 医疗 / 版权 | 一般 13+（旧系统及部分地区 12+）、非受监管医疗设备声明已核验；USDA 第三方内容必要权利本次重新保存并刷新核验 |
-| 首发价格 | 用户明确选择免费；重新进入“当前价格”表，175 个国家/地区全部 0.00 |
-| 发行范围 | 174 个国家/地区在 App 发布时供应；中国大陆未供应，尚缺备案资料；未来新增地区自动供应已启用，仍受 Apple 当地要求约束 |
-| 发布方式 | 审核后手动发布 |
-| 隐私 | “不收集数据”答案草稿已保存；政策 URL 未完成有效性核验，尚未发布隐私答案 |
+| 应用 | Leanora Fitness；App ID `6825234654`；Bundle `ai.leanora.fitness` |
+| 团队 | Manyao Li；`8ZP3NMT2A8` |
+| 版本 / 构建 | 1.0（4）；Apple 构建 ID `5e2b2cfb-34cc-4f04-affe-b6a8183524a6` |
+| 构建与签名 | Archive、发行导出及深度严格签名核验通过；Apple Distribution；Store profile 无设备列表，get-task-allow=false；HealthKit/background-delivery 正确 |
+| 图标与链接 | Assets.car 与最终 Archive 一致，新图标源摘要不变；Release 二进制包含 `https://leanora.ai/fitness/privacy/` |
+| Apple 二进制 | 正式上传 10:58:16 成功；服务端“已验证”、包含符号“是”；构建 4 版本关联刷新保持 |
+| 公开政策 / 支持 | 两条 Fitness URL 有效 HTTPS、200，线上 HTML 与交付文件逐字节一致，主体/邮箱/正文及页面导航通过 |
+| 商店资料 | 中英文政策网址、技术支持网址均已保存；两种介绍与本地来源逐字一致，重载/切换后保持；14 张中文截图沿用此前核验的上传 |
+| 隐私答案 | “不收集数据”已发布，重载后仍显示发布者和预览；Apple 发布准确性及及时更新声明经用户当次确认后提交 |
+| 价格与范围 | 免费；174 个国家/地区在发布时供应，中国大陆未供应；未来新增地区自动供应；审核后手动发布 |
+| 审核资料 | 无需登录、审核说明及联系资料已保存；实际电话只交给 Apple |
+| 正式送审 | 2026-10-22 11:16（Asia/Shanghai）；1 个项目，iOS App 1.0 / 1.0（4） |
+| 提交 ID / 状态 | `af96310a-9852-4253-b731-56a6a0440dda`；等待审核，重载核验通过 |
 
-Apple “已验证”的 [页面凭据](appstore-1.0-3-validated-20261022.png)、[当前免费价格](appstore-free-prices-20261022.png)、[174 地区供应](appstore-availability-174-20261022.png) 均为实际门户页面；不包含审核电话、账号私密联系资料或认证信息。
+[最新发行回执](../../store/app-store-release-1.0-4-20261022.json)、[签名与上传核验](appstore-1.0-4-distribution-audit-20261022.json)、[Apple 等待审核凭据](appstore-1.0-4-waiting-review-20261022.png)、[隐私发布凭据](appstore-privacy-published-20261022.png)。
 
-实际点击“添加以供审核”后，Apple 拒绝加入审核，明确列出：隐私政策 URL、发布隐私处理信息，以及简体中文和英语（美国）的技术支持 URL。见 [Apple 必填项检查](appstore-review-blockers-20261022.png)。此次检查没有创建成功的审核提交；没有以占位 URL 绕过要求。
+## 网站与构建 4 的原因
 
-## 发行包与上传的边界
+用户修复域名后，原首页及原政策属于少儿围棋 Leanora AI，旧 `/support/` 也回退到围棋首页。为保留既有网站，健身政策和支持采用独立路径；用户通过 SCP 上传两份静态 HTML，代理未改动服务器、DNS 或围棋站点。
 
-最终 Archive：`app/build/ReleaseCandidate/Leanora-1.0-3-AppStore-Privacy-Signed.xcarchive`。
+- 政策：[leanora.ai/fitness/privacy/](https://leanora.ai/fitness/privacy/)
+- 支持：[leanora.ai/fitness/support/](https://leanora.ai/fitness/support/)
 
-验证的本地发行 IPA：`app/build/Exports/Leanora-1.0-3-AppStore-Holder-20261022/Leanora.ipa`，2,204,721 字节，SHA256 `a3da1559dcf609d91bae87d3e23132cf2b10ff7dd112447919de438134196936`。正式上传由 Xcode 从同一 Archive 重新导出；此摘要仅对应本地验证包，不冒充上传传输包的摘要。
+本次公共核验两页分别为 4,641、3,954 字节，SHA256 与本地交付来源一致。政策 `3db12abcbae561b71e8f8ff45f6ab4ae5e59361a6b15fb1715a4f989515d52cc`；支持 `02adce4a8d38c66167dc95aadec0a276e673fea9c82a854144b51cf4d9ed76bd`。详见 [公开网站核验](fitness-website-check-20261022.json)、[政策实际页面](fitness-policy-live-20261022.png)、[支持实际页面](fitness-support-live-20261022.png)。
 
-原始完整分发日志仅保存在忽略的 `app/build/`，公开回执只保留成功状态行与日志摘要。旧 0.2.0（2）仍是旧图标的内部 TestFlight 构建；它不是本次正式候选。
+1.0（4）将 App 内政策链接、源文档和双语介绍切换到相同路径；新候选经签名、上传及 Apple 验证后替代构建 3。此前 [构建 3 回执](../../store/app-store-release-20261022.json)、[停止保存点](../../store/stop-point-20261022.json) 和 [原缺项提示](appstore-review-blockers-20261022.png) 保留历史，不代表当前仍被阻塞。
 
-## leanora.ai 仍需恢复
+## 验证边界与后续
 
-用户选择“修复 leanora.ai 后使用原网址”。保留政策入口 `https://leanora.ai/`，拟使用支持入口 `https://leanora.ai/support/`，未切换到 GitHub 备用网址。
+本次更改仅为政策网址和构建号，没有重新执行全部 134 个功能方法。既有真机、锁屏/后台、多来源/时区、VoiceOver 和专业内容复核仍见 [发布清单](../release-checklist.md)，不能把 Apple 接收或等待审核当作这些验收通过。
 
-本次检查旧公共解析地址的 HTTPS 握手失败，HTTP 跳转腾讯云备案拦截页。用户打开的 GoDaddy 页面已显示新 A 记录，但公共/权威查询仍返回旧地址；以域名 SNI 直连新地址时，证书验证通过，站点响应 500。需要主机后台检查网站服务，不能把 DNS 编辑或有效证书当作页面已经恢复。代理没有更改 DNS、网站服务或安全设置。
+本地验证 IPA 摘要只对应本地发行导出；上传从同一 Archive 重新导出，未采集传输包摘要。完整日志和二进制在忽略目录，公开回执仅含白名单状态行。实际审核电话、账号私人联系方式和认证信息均未公开。
 
-[待部署静态页面](../../website/README.md) 已从政策源文件和新增支持文档生成，本机浏览器核验了标题、正文、导航和邮箱入口；本机预览不代表公开部署。主机修复后须通过正常公共解析访问两个 HTTPS URL，核验有效证书、200 与正确正文，再保存商店 URL、发布隐私答案。
-
-## 尚待完成
-
-1. 取得已登录的主机后台并检查现有网站及错误日志；修复 500，确认 DNS 传播，发布并公开验证政策和支持页面。
-2. 保存政策/支持 URL，发布经核对的“不收集数据”隐私答案；不将本机 Health 访问误填为开发者服务器收集。
-3. 完成或明确解决 [发布清单](../release-checklist.md) 中尚未验收的真机、锁屏/后台、多来源/时区、VoiceOver 和专业内容复核。
-4. 最终提交 App Review，并以 Apple 实际“等待审核”等状态记录结果；当前“准备提交”不是送审成功。
-
-本次无 App 功能源码改动，未重跑此前 134 个功能方法；原报告的真机及专业内容验收缺口仍保留，不能据 Apple 二进制验证宣称功能验收完成。未代为接受新的法律协议，未提取浏览器或 Xcode 认证信息。
+接下来等待 Apple 审核结果。通过后按用户已选的手动发布方式处理；当前没有自动上架，也没有创建额外监控或定时任务。

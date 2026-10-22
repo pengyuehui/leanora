@@ -1,6 +1,6 @@
 # Leanora App Store 素材包
 
-更新：2026-10-22；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。两套各 7 张中文截图和中英文商店文案已保存；含新版图标的 1.0（3）已正式上传、Apple 验证并关联正式版本。免费价格与 174 个地区发行范围已保存，尚未提交审核或公开发布。详见 [最新发行回执](app-store-release-20261022.json)、[素材上传记录](app-store-connect-upload-20261022.json) 与 [Apple 验证凭据](../docs/qa/appstore-1.0-3-validated-20261022.png)。
+更新：2026-10-22；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。**1.0（4）已正式提交，Apple 当前“等待审核”，重载核验通过**。新版图标、14 张中文截图、双语文案、政策/支持网址及“不收集数据”隐私信息均已保存；免费、174 个地区范围保持，审核后手动发布。尚未审核通过或公开上架。最新 [构建 4 回执](app-store-release-1.0-4-20261022.json) 和 [等待审核凭据](../docs/qa/appstore-1.0-4-waiting-review-20261022.png)；[构建 3 历史回执](app-store-release-20261022.json) 保留。
 
 ## 交付内容
 
@@ -63,6 +63,6 @@ python3 -m http.server 8794 --bind 127.0.0.1 --directory app
 
 ## 提交到商店前
 
-需确认品牌、公开隐私政策的可访问性及实际内容、支持页面正式 URL、真机验收及 Apple 所需审核信息。`metadata.json` 将未部署的支持 URL 保持为空，并单独列出建议地址，不把占位地址当作已上线页面。导出尺寸与字段长度通过不代表 Apple 审核通过。
+政策和支持页面现已公开验收，中英文 URL 与描述均已保存到 Apple；`metadata.json` 的支持 URL 已改为核验后的正式地址。导出尺寸、字段长度与 Apple 二进制验证不等于审核通过，既有真机/专业内容验收仍按发布清单记录。
 
-用户切换 Manyao Li 账号后已恢复；[停止保存点](stop-point-20261022.json) 保留历史。用户选择修复 leanora.ai 并保留原政策网址，[待部署的政策/支持页面](../website/README.md) 已准备，本次尚未部署。最新状态见 [发行回执](app-store-release-20261022.json)。
+原域名恢复后属于围棋产品，健身 App 因此使用独立 `/fitness/privacy/` 和 `/fitness/support/`。用户 SCP 部署后，两页 HTTPS 200 且与交付 HTML 完全一致；App、源政策、双语介绍和 Apple 表单网址已同步。见 [网站部署说明](../website/README.md)、[公开网站核验](../docs/qa/fitness-website-check-20261022.json) 和 [构建 4 回执](app-store-release-1.0-4-20261022.json)。

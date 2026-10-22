@@ -20,4 +20,4 @@ Leanora Fitness 是一本训练与饮食日记。制定自己的训练计划，�
 当前食品目录以基础食品为主，部分名称保留英文；可以搜索英文原名或创建自己的食物。Leanora 不提供医疗诊断、治疗或个性化营养处方。
 
 支持与反馈：pengyuehui@gmail.com
-隐私政策：https://leanora.ai/
+隐私政策：https://leanora.ai/fitness/privacy/

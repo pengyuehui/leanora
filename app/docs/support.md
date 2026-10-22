@@ -32,4 +32,4 @@
 
 ## 隐私与健康说明
 
-请阅读 [Leanora 隐私政策](https://leanora.ai/)，了解本机记录、Apple Health、备份及删除方式。App 不提供医疗诊断、治疗或个性化营养处方；涉及疾病或特殊饮食需求时请咨询专业人员。
+请阅读 [Leanora 隐私政策](https://leanora.ai/fitness/privacy/)，了解本机记录、Apple Health、备份及删除方式。App 不提供医疗诊断、治疗或个性化营养处方；涉及疾病或特殊饮食需求时请咨询专业人员。

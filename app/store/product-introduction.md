@@ -32,4 +32,4 @@ Leanora 是一本原生 iPhone 训练与饮食日记：制定自己的训练计�
 
 ## 对外信息
 
-名称：Leanora Fitness；手机显示名：Leanora。运营者：Manyao Li；联系：pengyuehui@gmail.com。隐私政策指定网址：https://leanora.ai/。截图和双语介绍已保存至 App Store Connect，含新版图标的 1.0（3）已上传、验证并关联正式版本；尚未提交审核或公开发布。用户选择修复原域名，公开政策与支持入口仍需恢复。最新状态见 [发行回执](app-store-release-20261022.json)。
+名称：Leanora Fitness；手机显示名：Leanora。运营者：Manyao Li；联系：pengyuehui@gmail.com。健身政策：https://leanora.ai/fitness/privacy/；支持页面：https://leanora.ai/fitness/support/。两页已公开核验，与 App 内链接和双语商店资料一致。1.0（4）已于 2026-10-22 正式提交 App Review，当前等待审核；尚未批准或公开上架，审核通过后手动发布。详见 [送审记录](../docs/qa/appstore-submission-1.0.md)。

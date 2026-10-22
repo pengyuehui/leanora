@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "status": "waiting_for_app_review",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "version": "1.0",
+  "build": "4",
+  "resumed_after_user_account_switch": true,
+  "binary": {
+    "uploaded": true,
+    "internal_testing_only": false,
+    "apple_binary_status": "VALIDATED",
+    "symbols_upload_requested": true,
+    "selected_for_app_store_version": true,
+    "previous_selected_build": "3",
+    "privacy_policy_url": "https://leanora.ai/fitness/privacy/",
+    "new_policy_url_verified_in_release_binary": true,
+    "distribution_audit": "../docs/qa/appstore-1.0-4-distribution-audit-20261022.json",
+    "apple_status_display": "已验证",
+    "apple_upload_time_local": "2026-10-22 10:58",
+    "testflight_build_id": "5e2b2cfb-34cc-4f04-affe-b6a8183524a6",
+    "symbols_confirmed_by_apple": true,
+    "selection_verified_after_reload": true,
+    "proof": "../docs/qa/appstore-1.0-4-validated-20261022.png"
+  },
+  "commercial_settings": {
+    "user_choice": "Free; as many eligible countries or regions as possible",
+    "free": true,
+    "zero_price_territory_count": 175,
+    "availability_territory_count": 174,
+    "excluded_territories": [
+      "CHN"
+    ],
+    "excluded_reason": "Mainland China app filing information has not been supplied",
+    "future_territories_enabled": true,
+    "saved_and_reloaded": true,
+    "details": "app-store-pricing-20261022.json",
+    "release_method": "manual_after_approval"
+  },
+  "content_rights": {
+    "uses_third_party_content_with_necessary_rights": true,
+    "third_party_source": "USDA public-domain CC0 food data",
+    "saved_and_verified_after_reload": true
+  },
+  "materials": {
+    "chinese_screenshots_per_size": 7,
+    "size_count": 2,
+    "locales_saved": [
+      "zh-Hans",
+      "en-US"
+    ],
+    "previous_upload_record": "app-store-connect-upload-20261022.json",
+    "local_description_policy_url_changed": true,
+    "changed_descriptions_saved_to_apple": true,
+    "descriptions_match_local_sources_after_reload": true
+  },
+  "privacy": {
+    "no_data_collected_draft_saved": true,
+    "answers_published": true,
+    "user_choice": "Repair leanora.ai and keep the original URL",
+    "policy_url": "https://leanora.ai/fitness/privacy/",
+    "public_urls_verified": true,
+    "hosting_access_pending": false,
+    "static_pages_prepared": "../website/README.md",
+    "diagnosis": "Fitness policy and support pages are now publicly reachable over verified HTTPS, return 200 and match the delivered HTML byte-for-byte; live browser navigation and contact contents verified.",
+    "user_handles_scp_deployment": true,
+    "website_check": "../docs/qa/fitness-website-check-20261022.json",
+    "support_url": "https://leanora.ai/fitness/support/",
+    "policy_urls_saved_locales": [
+      "zh-Hans",
+      "en-US"
+    ],
+    "support_urls_saved_locales": [
+      "zh-Hans",
+      "en-US"
+    ],
+    "published_state_verified_after_reload": true,
+    "privacy_accuracy_declaration_confirmed_by_user_at_publication": true
+  },
+  "app_review_submission_check": {
+    "attempted_add_for_review": true,
+    "apple_result": "Submitted successfully; Waiting for Review",
+    "submitted_items": 1,
+    "version": "1.0",
+    "build": "4",
+    "submission_id": "af96310a-9852-4253-b731-56a6a0440dda",
+    "submitted_at_local": "2026-10-22 11:16",
+    "timezone": "Asia/Shanghai",
+    "status_verified_after_reload": true,
+    "proof": "../docs/qa/appstore-1.0-4-waiting-review-20261022.png",
+    "app_store_connect_url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/reviewsubmissions/details/af96310a-9852-4253-b731-56a6a0440dda"
+  },
+  "app_review_submitted": true,
+  "publicly_released": false,
+  "remaining": [
+    "Apple App Review outcome; application has not been approved or publicly released",
+    "Keep the existing physical-device, background/lock-screen, VoiceOver and professional-content checks documented for release acceptance; no new all-functional-tests pass claimed",
+    "User-selected manual release after approval"
+  ],
+  "privacy_handling": "Actual review phone, private account contacts, authentication data and full distribution logs remain excluded from this public record.",
+  "previous_release_record": "app-store-release-20261022.json"
+}

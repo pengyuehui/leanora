@@ -9,8 +9,8 @@ from render_privacy_policy import render
 if __name__ == "__main__":
     app = Path(__file__).resolve().parent.parent
     pages = (
-        ("privacy-policy.md", "index.html", "Leanora 隐私政策", "Leanora Fitness 隐私政策：本机记录、Apple Health、备份及删除。"),
-        ("support.md", "support/index.html", "Leanora 支持", "Leanora Fitness 使用帮助、Apple Health 同步、备份与支持联系方式。"),
+        ("privacy-policy.md", "fitness/privacy/index.html", "Leanora 隐私政策", "Leanora Fitness 隐私政策：本机记录、Apple Health、备份及删除。"),
+        ("support.md", "fitness/support/index.html", "Leanora 支持", "Leanora Fitness 使用帮助、Apple Health 同步、备份与支持联系方式。"),
     )
     for source, destination, title, description in pages:
         target = app / "website" / destination

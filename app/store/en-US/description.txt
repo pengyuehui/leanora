@@ -20,4 +20,4 @@ Your journal is stored on your device. Export JSON backups and CSV files, restor
 The food catalog focuses on basic foods and is not a comprehensive restaurant or branded-food database. Leanora does not provide medical diagnosis, treatment or personalized nutrition prescriptions.
 
 Support: pengyuehui@gmail.com
-Privacy policy: https://leanora.ai/
+Privacy policy: https://leanora.ai/fitness/privacy/

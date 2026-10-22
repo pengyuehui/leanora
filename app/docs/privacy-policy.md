@@ -30,6 +30,6 @@ Health 原始样本由 Apple Health 管理，其设备/云端处理受 Apple 的
 
 Leanora 的运营主体为 **Manyao Li**。如对本政策、资料处理或删除有疑问，可发送邮件至 [pengyuehui@gmail.com](mailto:pengyuehui@gmail.com)。
 
-本政策的公开网址为 [https://leanora.ai/](https://leanora.ai/)。
+本政策的公开网址为 [https://leanora.ai/fitness/privacy/](https://leanora.ai/fitness/privacy/)。
 
 App 用于个人健身记录，不提供医疗诊断、治疗或替代专业建议。

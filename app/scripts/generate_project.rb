@@ -26,7 +26,7 @@ ui.add_dependency(app)
       'GENERATE_INFOPLIST_FILE' => 'YES',
       'PRODUCT_BUNDLE_IDENTIFIER' => "ai.leanora.fitness#{target == app ? '' : '.' + target.name}",
       'MARKETING_VERSION' => '1.0',
-      'CURRENT_PROJECT_VERSION' => '3',
+      'CURRENT_PROJECT_VERSION' => '4',
       'SWIFT_EMIT_LOC_STRINGS' => 'YES',
       'ENABLE_USER_SCRIPT_SANDBOXING' => 'YES'
     })

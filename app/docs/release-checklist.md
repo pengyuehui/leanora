@@ -24,8 +24,8 @@
 - [x] 发布者指定正式 Bundle ID `ai.leanora.fitness` 及 Manyao Li 团队；本机 Xcode 与证书 OU 核实 Team ID `8ZP3NMT2A8`，工程及生成脚本已配置。
 - [x] 账号持有人已处理 Apple 最新 Program License Agreement，Xcode 后续请求成功。
 - [x] 获得正式 Bundle ID 的开发/发行描述文件，发行包包含 HealthKit/background-delivery 权限。
-- [x] 发布者确认运营主体 Manyao Li、支持邮箱 `pengyuehui@gmail.com`、政策网址 `https://leanora.ai/`；App 与政策源文件已更新。
-- [ ] 公开政策的 HTTPS 可访问性及实际内容核验；本机浏览器返回 `ERR_CONNECTION_CLOSED`，政策 HTML 已准备。
+- [x] 发布者确认运营主体 Manyao Li、支持邮箱 `pengyuehui@gmail.com`；原域名同时用于围棋网站，健身 App 与政策改为 `https://leanora.ai/fitness/privacy/`，支持为 `/fitness/support/`。
+- [x] 两条公开 Fitness URL 有效 HTTPS、200，HTML 与交付文件逐字节一致，主体、邮箱、正文及导航核验通过。
 - [x] Xcode 签名 Archive、App Store Connect 发行 IPA 导出、签名与权限检查通过。
 - [x] App Store Connect 应用记录 `Leanora Fitness` 创建成功，App ID `6825234654`，主语言简体中文；安装显示名保留 `Leanora`。
 - [x] 0.2.0（2）以 TestFlight Internal Only 上传成功；Apple 接收时状态为 `PROCESSING`，回执与截图已保存。
@@ -37,14 +37,16 @@
 - [x] Apple 处理完成，二进制“已验证”、包含符号“是”、非豁免加密“否”；构建 3 已关联到正式 1.0 并刷新核验。
 - [x] 年龄分级、非受监管医疗设备和第三方内容必要权利已保存并刷新核验。
 - [x] 用户确认免费；当前 175 个国家/地区价格为零，174 个地区发布时供应，未来新增地区自动供应；中国大陆缺少备案资料未供应。
-- [ ] 配置内部测试组；公开验证政策与支持 URL，发布已保存的“不收集数据”隐私草稿。
-- [ ] 根据实际构建确认无服务器收集，声明 Health 数据用途；不把本机访问误填成向开发者收集。
+- [ ] 配置内部测试组并进行实际物理设备验收。
+- [x] 中英文政策/支持 URL 及更新介绍已保存并核验；“不收集数据”隐私答案经用户确认发布声明后已发布，重载保持。
+- [x] 根据当前原生构建确认无开发者服务器收集，政策说明 Health 用途；本机 Health 访问未误填为向开发者收集。
+- [x] 1.0（4）正式提交 App Review，Apple 显示等待审核，提交 ID `af96310a-9852-4253-b731-56a6a0440dda`，重载核验通过。
 - [ ] 确认 Apple 处理完成、构建对内部测试组可用，安装到上述物理设备；若后续扩大测试范围，另行处理可能的 Beta Review。
 - [ ] TestFlight 端到端走查通过并记录构建号、验收人及日期。
 
 历史内部候选 0.2.0（2）已上传，门户已显示“准备测试”，仍未记录物理设备安装和端到端验收。详见 [历史候选记录](qa/release-submission.md)。
 
-正式 App Store 候选 1.0（3）已发行导出、正式上传、Apple 验证及版本关联。截图/双语文案/审核资料、免费定价和 174 地区范围已保存。尚未提交 App Review：leanora.ai 的公开政策/支持页面仍需恢复，隐私草稿待发布，真机和专业内容验收缺口保留。实际状态见 [1.0 发行记录](qa/appstore-submission-1.0.md)。
+正式版本 1.0（4）已签名、上传、Apple 验证及关联；用户 SCP 部署的两条独立健身网页已公开验收，双语网址与介绍已保存，隐私答案已发布。2026-10-22 11:16 正式提交 App Review，当前等待审核；尚未批准或公开上架，发布方式为审核通过后手动发布。真机和专业内容验收缺口保留。详见 [1.0 送审记录](qa/appstore-submission-1.0.md)。
 
 ## 审核演示路径
 
@@ -56,4 +58,4 @@
 
 回退使用上一个通过的应用构建，保留数据库与备份，不执行破坏性降级迁移。当前 schema 没有新增数据库实体，健康设备状态为可选 enum case；旧构建可能无法读取新运行时状态，不支持直接用 0.1 打开 0.2 的健康状态库，必要时由 0.2 导出业务 JSON 后在隔离库恢复。
 
-2026-10-22 用户切换 Manyao Li 账号后已恢复工作；此前 [停止保存点](../store/stop-point-20261022.json) 保留历史，不再作为当前状态。最新 [发行回执](../store/app-store-release-20261022.json) 记录构建上传、验证、关联和定价范围；App Review 尚未提交。
+此前 [停止保存点](../store/stop-point-20261022.json) 保留历史，不再作为当前状态。最新 [构建 4 回执](../store/app-store-release-1.0-4-20261022.json) 记录网站核验、隐私发布及 App Review 提交；免费和 174 地区范围沿用此前已核验设置，审核后仍需手动发布。

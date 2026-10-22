@@ -1,11 +1,11 @@
 {
-  "status": "build_validated_and_selected_waiting_for_public_website",
+  "status": "waiting_for_app_review",
   "app_name": "Leanora Fitness",
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
   "team_id": "8ZP3NMT2A8",
   "version": "1.0",
-  "build": "3",
+  "build": "4",
   "submission_target": "App Store Review",
   "release_method_proposed": "manual_after_approval",
   "primary_locale": "zh-Hans",
@@ -31,11 +31,13 @@
   "privacy_draft": {
     "app_data_collection": "No developer data collection; questionnaire draft saved and reloaded",
     "tracking": false,
-    "current_policy_url": "https://leanora.ai/",
-    "public_policy_url_verified": false,
-    "support_url": null,
-    "answers_published": false,
-    "user_choice": "Repair leanora.ai and retain original URL"
+    "current_policy_url": "https://leanora.ai/fitness/privacy/",
+    "public_policy_url_verified": true,
+    "support_url": "https://leanora.ai/fitness/support/",
+    "answers_published": true,
+    "user_choice": "Keep leanora.ai; use separate Fitness paths to preserve the Go website",
+    "user_handles_scp_deployment": true,
+    "accuracy_declaration_confirmed_by_user_at_publication": true
   },
   "commercial_settings": {
     "user_choice": "Free; as many eligible countries or regions as possible",
@@ -52,30 +54,46 @@
     "release_method": "manual_after_approval"
   },
   "open_items": [
-    "Access the website host, inspect its current service and fix the origin error; verify public DNS, TLS, policy and support contents",
-    "Save verified policy and support URLs in App Store Connect and publish the reviewed privacy answers",
-    "Complete or explicitly resolve the outstanding release-acceptance checks documented in the release checklist",
-    "Submit App Review and verify the final Apple review state"
+    "Apple App Review outcome; application has not been approved or publicly released",
+    "Keep the existing physical-device, background/lock-screen, VoiceOver and professional-content checks documented for release acceptance; no new all-functional-tests pass claimed",
+    "User-selected manual release after approval"
   ],
   "upload_record": "app-store-connect-upload-20261022.json",
   "release_method_saved": "manual_after_approval",
   "latest_stop_point": "stop-point-20261022.json",
   "resume_only_on_user_request": false,
   "resumed_after_user_account_switch": true,
-  "latest_release_record": "app-store-release-20261022.json",
+  "latest_release_record": "app-store-release-1.0-4-20261022.json",
   "binary": {
     "uploaded": true,
     "internal_testing_only": false,
     "apple_binary_status": "VALIDATED",
-    "apple_status_display": "已验证",
-    "apple_upload_time_local": "2026-10-22 10:11",
-    "testflight_build_id": "74e136c3-fa1c-4175-8d1d-ef47cd9e1f17",
-    "symbols_confirmed_by_apple": true,
-    "new_icon_in_uploaded_archive": true,
-    "new_icon_visible_in_app_store_connect_header": true,
+    "symbols_upload_requested": true,
     "selected_for_app_store_version": true,
+    "previous_selected_build": "3",
+    "privacy_policy_url": "https://leanora.ai/fitness/privacy/",
+    "new_policy_url_verified_in_release_binary": true,
+    "distribution_audit": "../docs/qa/appstore-1.0-4-distribution-audit-20261022.json",
+    "apple_status_display": "已验证",
+    "apple_upload_time_local": "2026-10-22 10:58",
+    "testflight_build_id": "5e2b2cfb-34cc-4f04-affe-b6a8183524a6",
+    "symbols_confirmed_by_apple": true,
     "selection_verified_after_reload": true,
-    "distribution_audit": "../docs/qa/appstore-1.0-3-distribution-audit-20261022.json",
-    "proof": "../docs/qa/appstore-1.0-3-validated-20261022.png"
+    "proof": "../docs/qa/appstore-1.0-4-validated-20261022.png"
+  },
+  "previous_validated_and_selected_build": "3",
+  "app_review_submitted": true,
+  "review_submission": {
+    "attempted_add_for_review": true,
+    "apple_result": "Submitted successfully; Waiting for Review",
+    "submitted_items": 1,
+    "version": "1.0",
+    "build": "4",
+    "submission_id": "af96310a-9852-4253-b731-56a6a0440dda",
+    "submitted_at_local": "2026-10-22 11:16",
+    "timezone": "Asia/Shanghai",
+    "status_verified_after_reload": true,
+    "proof": "../docs/qa/appstore-1.0-4-waiting-review-20261022.png",
+    "app_store_connect_url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/reviewsubmissions/details/af96310a-9852-4253-b731-56a6a0440dda"
   }
 }

@@ -7,9 +7,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "store"
 FIELDS = {"subtitle": "subtitle.txt", "promotional_text": "promotional-text.txt", "description": "description.txt", "keywords": "keywords.txt", "whats_new": "whats-new.txt"}
 metadata = {
-    "status": "local_asset_source_not_live_submission_status", "upload_record": "app-store-connect-upload-20261022.json", "release_record": "app-store-release-20261022.json", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
-    "copyright": "2026 Manyao Li", "support_email": "pengyuehui@gmail.com", "privacy_policy_url": "https://leanora.ai/",
-    "support_url": None, "proposed_support_url_pending_deployment": "https://leanora.ai/support/", "locales": {},
+    "status": "local_asset_source_not_live_submission_status", "upload_record": "app-store-connect-upload-20261022.json", "release_record": "app-store-release-1.0-4-20261022.json", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
+    "copyright": "2026 Manyao Li", "support_email": "pengyuehui@gmail.com", "privacy_policy_url": "https://leanora.ai/fitness/privacy/",
+    "support_url": "https://leanora.ai/fitness/support/", "locales": {},
 }
 for locale in ["zh-Hans", "en-US"]:
     values = {key: (ROOT / locale / filename).read_text().strip() for key, filename in FIELDS.items()}
@@ -35,7 +35,7 @@ page = """<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="vi
 page = page.replace("padding:90px 0 80px", "padding:56px 0")
 page = page.replace(".hero-art{min-width:0;", ".hero-art{height:540px;overflow:hidden;min-width:0;")
 page = page.replace("font:15px/1.9 inherit;font-family:inherit", "font-size:15px;line-height:1.9;font-family:inherit")
-page = page.replace("新版图标已接入源码，随下一次构建生效。", "新版图标已随 1.0（3）正式上传，Apple 二进制已验证。")
-page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "两套中文截图及中英文文案已保存到 App Store Connect，含新图标的 1.0（3）已上传、验证并关联正式版本。免费定价和 174 个地区发行范围已保存；尚未提交审核或公开发布。leanora.ai 的公开政策/支持页面恢复与真机验收仍待完成。<a href=\"app-store-release-20261022.json\">查看最新发行回执</a>。")
+page = page.replace("新版图标已接入源码，随下一次构建生效。", "新版图标已随 1.0（4）正式送审，Apple 二进制已验证。")
+page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "1.0（4）已于 2026.10.22 正式提交 App Review，当前等待审核。新版图标、两套中文截图、双语文案、政策与支持网址及隐私信息均已保存并核验；公开健身页面已上线。免费和 174 地区范围保持，审核通过后手动发布，尚未公开上架。<a href=\"app-store-release-1.0-4-20261022.json\">查看发行回执</a>。")
 (ROOT / "index.html").write_text(page.replace("__GALLERY__", gallery).replace("__FIELDS__", fields))
 print("Built metadata.json and index.html; all locale fields within Apple limits.")

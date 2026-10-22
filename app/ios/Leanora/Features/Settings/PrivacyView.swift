@@ -16,7 +16,7 @@ struct PrivacyView: View {
                 FeatureLine(symbol: "trash", title: "三种独立清理", detail: "可单独清除健康导入缓存、清除本机资料与恢复副本，或删除本 App 写入的健康副本。停止同步保留历史副本；其他来源的健康数据不会被删除。你另行导出的文件需在文件 App 中管理。")
                 VStack(alignment: .leading, spacing: 12) {
                     Text("运营主体：Manyao Li").font(.headline)
-                    if let policyURL = URL(string: "https://leanora.ai/") {
+                    if let policyURL = URL(string: "https://leanora.ai/fitness/privacy/") {
                         Link("隐私政策网站", destination: policyURL).frame(minHeight: 44)
                     }
                     if let supportURL = URL(string: "mailto:pengyuehui@gmail.com") {

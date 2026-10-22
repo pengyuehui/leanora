@@ -28,7 +28,7 @@ def render(
         else:
             sections.append(f"<p>{inline(paragraph)}</p>")
     body = "\n".join(sections)
-    header = '<header><a class="brand" href="/">Leanora Fitness</a><nav aria-label="网站导航"><a href="/">隐私政策</a><a href="/support/">支持</a></nav></header>' if navigation else ""
+    header = '<header><a class="brand" href="/fitness/privacy/">Leanora Fitness</a><nav aria-label="网站导航"><a href="/fitness/privacy/">隐私政策</a><a href="/fitness/support/">支持</a></nav></header>' if navigation else ""
     return f"""<!doctype html>
 <html lang="zh-Hans">
 <head>

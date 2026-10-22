@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "public_dns_recovered": true,
+  "https_certificate_verification": "passed",
+  "previous_mismatch": {
+    "root_product": "Children's Go app",
+    "previous_support_path_returned_go_homepage": true,
+    "previous_privacy_path_covered_go_app": true
+  },
+  "deployment": "User confirmed SCP upload; publicly verified Fitness files match delivered HTML byte-for-byte",
+  "fitness_pages_publicly_verified": true,
+  "pages": [
+    {
+      "url": "https://leanora.ai/fitness/privacy/",
+      "status": 200,
+      "final_url": "https://leanora.ai/fitness/privacy/",
+      "content_type": "text/html",
+      "bytes": 4641,
+      "sha256": "3db12abcbae561b71e8f8ff45f6ab4ae5e59361a6b15fb1715a4f989515d52cc",
+      "matches_delivered_html": true,
+      "fitness_content": true,
+      "links": [
+        "/fitness/privacy/",
+        "/fitness/privacy/",
+        "/fitness/support/",
+        "mailto:pengyuehui@gmail.com",
+        "https://leanora.ai/fitness/privacy/"
+      ]
+    },
+    {
+      "url": "https://leanora.ai/fitness/support/",
+      "status": 200,
+      "final_url": "https://leanora.ai/fitness/support/",
+      "content_type": "text/html",
+      "bytes": 3954,
+      "sha256": "02adce4a8d38c66167dc95aadec0a276e673fea9c82a854144b51cf4d9ed76bd",
+      "matches_delivered_html": true,
+      "fitness_content": true,
+      "links": [
+        "/fitness/privacy/",
+        "/fitness/privacy/",
+        "/fitness/support/",
+        "mailto:pengyuehui@gmail.com",
+        "https://leanora.ai/fitness/privacy/"
+      ]
+    }
+  ],
+  "local_preview_navigation_verified": true,
+  "live_browser_navigation_verified": true,
+  "policy_proof": "fitness-policy-live-20261022.png",
+  "support_proof": "fitness-support-live-20261022.png",
+  "existing_go_site_modified_by_agent": false
+}
