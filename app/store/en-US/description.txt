@@ -19,5 +19,8 @@ Your journal is stored on your device. Export JSON backups and CSV files, restor
 
 The food catalog focuses on basic foods and is not a comprehensive restaurant or branded-food database. Leanora does not provide medical diagnosis, treatment or personalized nutrition prescriptions.
 
+OFFLINE EXERCISE GUIDANCE
+Explore 882 exercises with 1,765 bundled guidance images. Browse images full screen while choosing exercises or during a workout. Search and filter by equipment, muscle, difficulty or exercise type. Guidance uses static photos or illustrations; some names and instructions remain in English.
+
 Support: pengyuehui@gmail.com
 Privacy policy: https://leanora.ai/fitness/privacy/

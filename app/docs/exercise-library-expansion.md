@@ -58,3 +58,5 @@ App 与 Xcode 构建不需要第三方运行时依赖，所有生成结果已提
 首次下载后的缓存可复用；不传 `--download` 时仅使用本地输入。图片由 ImageIO 缩略解码，内存缓存限制为 24 MiB，不会把整套图片同时载入内存。素材与 App 内截图的署名、使用范围见[第三方清单](../THIRD_PARTY_NOTICES.md)。
 
 本次仅更新源码及本地构建，没有替换已送审的 App Store 1.0（4）。实际验证记录见 [QA 报告](qa/exercise-library/README.md)。
+
+2026-10-26 发行补记：上述动作库已包含在 App Store 1.1（5）中，签名、正式发行包逐图哈希及 Apple 二进制验证通过，已正式提交并等待审核。详见 [1.1 送审记录](qa/appstore-submission-1.1.md)。

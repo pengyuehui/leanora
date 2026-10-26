@@ -1,1 +1,4 @@
-Initial release with workout templates, weekly plans, set logging, meal and body records, 7/30-day trends, authorized Apple Health sync, JSON backups and CSV export.
+The exercise library now includes 882 exercises, each with offline guidance images.
+Browse image pages and view them full screen while choosing exercises or during a workout.
+Find exercises with improved search and filters for difficulty, exercise type and specific muscles.
+Existing templates and workout history are preserved. Guidance uses static photos or illustrations; some exercise names and instructions remain in English.

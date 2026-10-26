@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "store"
 FIELDS = {"subtitle": "subtitle.txt", "promotional_text": "promotional-text.txt", "description": "description.txt", "keywords": "keywords.txt", "whats_new": "whats-new.txt"}
 metadata = {
-    "status": "local_asset_source_not_live_submission_status", "upload_record": "app-store-connect-upload-20261022.json", "release_record": "app-store-release-1.0-4-20261022.json", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
+    "status": "local_asset_source_not_live_submission_status", "upload_record": "app-store-connect-upload-20261022.json", "release_record": "app-store-release-1.1-5-20261026.json", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
     "copyright": "2026 Manyao Li", "support_email": "pengyuehui@gmail.com", "privacy_policy_url": "https://leanora.ai/fitness/privacy/",
     "support_url": "https://leanora.ai/fitness/support/", "locales": {},
 }

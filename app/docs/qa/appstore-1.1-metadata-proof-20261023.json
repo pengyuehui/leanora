@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-23",
+  "zh-Hans": {
+    "description": true,
+    "whatsNew": true,
+    "reviewNotes": true,
+    "manualRelease": true
+  },
+  "en-US": {
+    "description": true,
+    "whatsNew": true
+  }
+}

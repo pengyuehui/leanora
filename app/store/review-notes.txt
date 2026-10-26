@@ -14,4 +14,8 @@ Apple Health data is not sent to the developer. No heart rate or exercise-energy
 
 The bundled food catalog focuses on basic foods with USDA FoodData Central source attribution. Some food names remain in English; users may search those names or add their own foods. The app does not provide diagnosis, treatment or personalized nutrition prescriptions.
 
+Version 1.1 expands the bundled exercise library from 100 to 882 entries, with 1,765 static guidance images. To review, open Training > Exercise Library, open an exercise and browse its images or view them full screen. Guidance is also available while choosing an exercise and during an active workout, without changing recorded sets. Difficulty, exercise-type and muscle filters are available. Some names and instructions remain in English. All exercise content is bundled; there are no video downloads, new data collection or new permission requests.
+
+Exercise photographs and source data are from Free Exercise DB under The Unlicense. Selected illustrations are from Workout Guide / Everkinetic under CC BY-SA 4.0. Per-exercise credits, source links and full licenses are included in the app and at https://github.com/pengyuehui/leanora/blob/main/app/THIRD_PARTY_NOTICES.md. No Gym visual media or openGym code is included.
+
 Support and review correspondence: pengyuehui@gmail.com

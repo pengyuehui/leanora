@@ -1,6 +1,6 @@
 # Leanora App Store 素材包
 
-更新：2026-10-22；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。**1.0（4）已正式提交，Apple 当前“等待审核”，重载核验通过**。新版图标、14 张中文截图、双语文案、政策/支持网址及“不收集数据”隐私信息均已保存；免费、174 个地区范围保持，审核后手动发布。尚未审核通过或公开上架。最新 [构建 4 回执](app-store-release-1.0-4-20261022.json) 和 [等待审核凭据](../docs/qa/appstore-1.0-4-waiting-review-20261022.png)；[构建 3 历史回执](app-store-release-20261022.json) 保留。
+更新：2026-10-26；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。**1.1（5）已于今天 11:15 正式提交，Apple 显示“等待审核”**。更新包含 882 个动作和 1765 张离线图片；双语介绍、更新说明及审核指引已保存，沿用既有图标、截图、隐私答案和免费销售设置。审核后手动发布，1.1 尚未批准或上架。最新 [构建 5 回执](app-store-release-1.1-5-20261026.json)、[等待审核凭据](../docs/qa/appstore-1.1-5-waiting-review-20261026.png)及[送审记录](../docs/qa/appstore-submission-1.1.md)；[构建 4 历史回执](app-store-release-1.0-4-20261022.json) 保留。
 
 ## 交付内容
 

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-26",
+  "verified_https": true,
+  "pages": {
+    "privacy": {
+      "url": "https://leanora.ai/fitness/privacy/",
+      "http_status": 200,
+      "bytes": 6289,
+      "sha256": "9e2286d0751361a30ab830a2ba6ce134f5a7e2f763df8af6956ab89b5b11ce1f",
+      "fitness_content": true,
+      "operator_and_support_contact_present": true
+    },
+    "support": {
+      "url": "https://leanora.ai/fitness/support/",
+      "http_status": 200,
+      "bytes": 5604,
+      "sha256": "51b691b2fc5955c31fb4d318723d909cee6e2467a71f8c3f81df2f5370a994e1",
+      "fitness_content": true,
+      "operator_and_support_contact_present": true
+    }
+  }
+}
