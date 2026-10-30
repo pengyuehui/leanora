@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-30",
+  "scope": "Public fitness privacy and support pages immediately before App Review submission",
+  "checks": [
+    {
+      "url": "https://leanora.ai/fitness/privacy/",
+      "https_status": 200,
+      "app_identity_present": true,
+      "support_email_present": true,
+      "html_sha256": "9e2286d0751361a30ab830a2ba6ce134f5a7e2f763df8af6956ab89b5b11ce1f"
+    },
+    {
+      "url": "https://leanora.ai/fitness/support/",
+      "https_status": 200,
+      "app_identity_present": true,
+      "support_email_present": true,
+      "html_sha256": "51b691b2fc5955c31fb4d318723d909cee6e2467a71f8c3f81df2f5370a994e1"
+    }
+  ]
+}

@@ -111,7 +111,12 @@
     "all_four_catalogs_match_source": true,
     "all_image_hashes_verified": 1765,
     "debug_fixtures_absent": true,
-    "source_commit_linkage": "Verified separately against committed release inputs after code commit"
+    "source_commit_linkage": "verified",
+    "source_commit": "11105de7dd66e2e3caae6e5b2b2f3cfd6bba88e7",
+    "committed_release_inputs_verified": 1853,
+    "apple_binary_status": "VALIDATED",
+    "app_review_status": "WAITING_FOR_REVIEW",
+    "submission_id": "63aaee6f-f1a5-4820-953b-a872d2c2c9d7"
   },
   "existing_localizable_preserved": true,
   "known_limits": [

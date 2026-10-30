@@ -1,10 +1,11 @@
 {
-  "status": "local_release_candidate_in_verification",
+  "status": "historical_local_candidate_superseded",
   "version": "1.2",
   "build": "6",
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
   "team_id": "8ZP3NMT2A8",
   "release_mode": "manual_after_approval",
-  "note": "Not yet uploaded or submitted. Final Apple status will replace this candidate record after verification."
+  "note": "Historical candidate record. Final upload and formal App Review submission are recorded in app-store-release-1.2-6-20261030.json.",
+  "final_release_record": "app-store-release-1.2-6-20261030.json"
 }

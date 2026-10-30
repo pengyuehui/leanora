@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-30",
+  "version": "1.2",
+  "status": "saved_to_apple_draft",
+  "source_commit": "11105de7dd66e2e3caae6e5b2b2f3cfd6bba88e7",
+  "locales": {
+    "zh-Hans": {
+      "promotional-text.txt": "matches_saved_apple_text_after_reload_and_locale_switch",
+      "description.txt": "matches_saved_apple_text_after_reload_and_locale_switch",
+      "whats-new.txt": "matches_saved_apple_text_after_reload_and_locale_switch"
+    },
+    "en-US": {
+      "promotional-text.txt": "matches_saved_apple_text_after_reload_and_locale_switch",
+      "description.txt": "matches_saved_apple_text_after_reload_and_locale_switch",
+      "whats-new.txt": "matches_saved_apple_text_after_reload_and_locale_switch"
+    }
+  },
+  "review_notes_match": true,
+  "screenshots": {
+    "locale": "zh-Hans",
+    "sets": [
+      {
+        "dimensions": "1206x2622",
+        "saved_images": 7
+      },
+      {
+        "dimensions": "1320x2868",
+        "saved_images": 7
+      }
+    ],
+    "order": [
+      "01-today.png",
+      "02-plan.png",
+      "03-workout.png",
+      "04-nutrition.png",
+      "05-portion.png",
+      "06-trends.png",
+      "07-health.png"
+    ],
+    "persisted_after_reload": true,
+    "english_uses_primary_locale_fallback": true,
+    "proof": "appstore-1.2-assets-20261030.png"
+  },
+  "private_review_contact_excluded": true
+}
