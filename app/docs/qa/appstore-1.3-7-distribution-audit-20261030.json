@@ -31,7 +31,7 @@
   "image_bytes": 72036917,
   "network_required_for_guidance": false,
   "uploaded": true,
-  "app_review_submitted": false,
+  "app_review_submitted": true,
   "original_programs": 4,
   "original_templates": 9,
   "original_guides": 8,
@@ -42,5 +42,6 @@
   "original_nutrition_guides": 8,
   "functional_validation": "See nutrition-workflow-1.3/verification.json for exact current test results.",
   "committed_application_inputs_verified": 1859,
-  "source_linkage_scope": "Application sources, resources and Xcode project exactly match immutable archive inputs. Final UI test helpers were refined after archive and validated separately."
+  "source_linkage_scope": "Application sources, resources and Xcode project exactly match immutable archive inputs. Final UI test helpers were refined after archive and validated separately.",
+  "app_review_submission_id": "c02154af-921a-48b9-9191-015652322ea2"
 }

@@ -38,7 +38,7 @@ page = page.replace(".hero-art{min-width:0;", ".hero-art{height:540px;overflow:h
 page = page.replace("font:15px/1.9 inherit;font-family:inherit", "font-size:15px;line-height:1.9;font-family:inherit")
 page = page.replace("2026.10.29", "2026.10.30")
 page = page.replace("1.2 版中文素材", "1.3 版中文素材")
-page = page.replace("新版图标已接入源码，随下一次构建生效。<br>已经上传的 0.2.0（2）仍包含原图标。", "当前图标已接入 1.3（7）发行候选，签名与本地发行导出验证通过。")
+page = page.replace("新版图标已接入源码，随下一次构建生效。<br>已经上传的 0.2.0（2）仍包含原图标。", "1.3（7）已通过 Apple 二进制验证，并于 2026-10-30 15:52 正式提交 App 审核。")
 page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "这是 1.3（7）的本地素材源，不代表 Apple 实时审核状态。公开健身政策和支持页面已上线；免费、销售范围及审核通过后手动发布沿用现有设置。真机健康及锁屏通知仍需另行验收。<a href=\"app-store-release-1.3-7-20261030.json\">查看发行记录</a>。")
 (ROOT / "index.html").write_text(page.replace("__GALLERY__", gallery).replace("__FIELDS__", fields))
 print("Built metadata.json and index.html; all locale fields within Apple limits.")

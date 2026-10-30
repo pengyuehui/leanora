@@ -1,7 +1,7 @@
 {
   "date": "2026-10-30",
   "timezone": "Asia/Shanghai",
-  "status": "waiting_for_app_review",
+  "status": "withdrawn_and_superseded_by_1_3",
   "app_name": "Leanora Fitness",
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
@@ -97,5 +97,15 @@
   ],
   "privacy_handling": "Review telephone, private account contacts, authentication data and full distribution logs are excluded from public records.",
   "candidate_record": "app-store-release-1.2-6-20261029.json",
-  "previous_release_record": "app-store-release-1.1-5-20261026.json"
+  "previous_release_record": "app-store-release-1.1-5-20261026.json",
+  "app_review_submission_snapshot_scope": "Historical snapshot at the original 2026-10-30 09:08 submission; later withdrawal is recorded in superseded_by.",
+  "superseded_by": {
+    "version": "1.3",
+    "build": "7",
+    "user_approved_withdrawal": true,
+    "withdrawal_confirmed": true,
+    "new_submission_id": "c02154af-921a-48b9-9191-015652322ea2",
+    "new_status_observed": "WAITING_FOR_REVIEW",
+    "release_record": "app-store-release-1.3-7-20261030.json"
+  }
 }

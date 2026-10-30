@@ -127,6 +127,8 @@
     "distribution_export": "passed",
     "application_inputs_matching_commit": 1859,
     "apple_status": "VALIDATED",
-    "app_review_submitted": false
+    "app_review_submitted": true,
+    "app_review_submission_id": "c02154af-921a-48b9-9191-015652322ea2",
+    "status": "WAITING_FOR_REVIEW"
   }
 }

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-30",
+  "version": "1.3",
+  "build": "7",
+  "source_commit": "2a1e4a3f460e1b575e130f6fb731b16b46f4a269",
+  "locales": {
+    "zh-Hans": {
+      "promotional_text": {
+        "matches_source": true,
+        "characters": 89
+      },
+      "description": {
+        "matches_source": true,
+        "characters": 1287
+      },
+      "whats_new": {
+        "matches_source": true,
+        "characters": 273
+      },
+      "keywords": {
+        "matches_source": true,
+        "characters": 34
+      }
+    },
+    "en-US": {
+      "promotional_text": {
+        "matches_source": true,
+        "characters": 156
+      },
+      "description": {
+        "matches_source": true,
+        "characters": 3686
+      },
+      "whats_new": {
+        "matches_source": true,
+        "characters": 802
+      },
+      "keywords": {
+        "matches_source": true,
+        "characters": 90
+      }
+    }
+  },
+  "build_7_selected_after_reload": true,
+  "manual_release": true,
+  "review_notes_match_source": true,
+  "support_url": "https://leanora.ai/fitness/support/"
+}

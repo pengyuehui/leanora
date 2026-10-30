@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-30",
+  "version": "1.3",
+  "build": "7",
+  "locale": "zh-Hans",
+  "counts_after_reload": [
+    "7/10 张 App 截屏",
+    "7/10 张 App 截屏"
+  ],
+  "ordered_filenames": [
+    "01-today.png",
+    "02-plan.png",
+    "03-workout.png",
+    "04-nutrition.png",
+    "05-portion.png",
+    "06-trends.png",
+    "07-health.png",
+    "01-today.png",
+    "02-plan.png",
+    "03-workout.png",
+    "04-nutrition.png",
+    "05-portion.png",
+    "06-trends.png",
+    "07-health.png"
+  ],
+  "dimensions": [
+    "1206x2622",
+    "1320x2868"
+  ],
+  "local_upload_inputs": {
+    "zh-Hans/iphone-medium/01-today.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "1d41b6e805917a86d6d41a474519c4abb4aa4122c26f65e95a9c858077a3d7ce"
+    },
+    "zh-Hans/iphone-medium/02-plan.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "cefefbc92559c53d360593142cd5ebf73325e0661f52e643e8ec85902de4e17f"
+    },
+    "zh-Hans/iphone-medium/03-workout.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "cb8eaa630d0dcd6d120dd752c3e70bb388d8a334ee0978528154644914322382"
+    },
+    "zh-Hans/iphone-medium/04-nutrition.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "87590353a6f50809d3164c54a76c34173a8e6b3c1324984ad351038077de15c9"
+    },
+    "zh-Hans/iphone-medium/05-portion.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "b023d778801ede7c3fbb95111c1be0eb8cfe76afc28cbf9c76fcc97adc9d1d88"
+    },
+    "zh-Hans/iphone-medium/06-trends.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "d0dedb3c883b42737f7850f322dbaafc058dcae50f264fac278a7130b81c08be"
+    },
+    "zh-Hans/iphone-medium/07-health.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "1b3f1d4a252ebb2ba903cb155db5964dca092cf78f039a3dca434c47c8029210"
+    },
+    "zh-Hans/iphone-large/01-today.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "167f886c7197c0307dada9b12d5cde77f21dfadc42696bc9f58cea9c0d8817a9"
+    },
+    "zh-Hans/iphone-large/02-plan.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "429367c329d405fc75e088260d2ce56c833a5e1f0d49accbc7a0e7570c51a595"
+    },
+    "zh-Hans/iphone-large/03-workout.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "249c4b3645c1b5e0cb22fe4afc3e26d02d346d48612ade97835fbdf9664f163a"
+    },
+    "zh-Hans/iphone-large/04-nutrition.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "d01c8cb091a66a752b9795a0865870c2e4d59637ef322fce5a47d8d2e42f07cd"
+    },
+    "zh-Hans/iphone-large/05-portion.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "1f37df33e3a44bc78819f3e18025c513ccd392d1f6605e2478ae9e576e6d91ab"
+    },
+    "zh-Hans/iphone-large/06-trends.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "ef7be67ff390ec69d0d307df5ffc56c49755fdefddc040457c2db40a50a76fa7"
+    },
+    "zh-Hans/iphone-large/07-health.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "f2cae5901fd1ef91b952134f89a206e519fbba9976a1b31c10ecb1abe8abb116"
+    }
+  },
+  "local_hash_scope": "Local files selected in the native chooser; not a server checksum comparison",
+  "new_combination_second_screenshot_visually_confirmed": true,
+  "english_screenshots": "primary locale fallback",
+  "all_14_previews_loaded_after_reload": true,
+  "incomplete_items_reuploaded": [
+    "iphone-medium/02-plan.png",
+    "iphone-large/04-nutrition.png",
+    "iphone-large/07-health.png"
+  ],
+  "order_restored_with_accessible_keyboard_sorting": true
+}
