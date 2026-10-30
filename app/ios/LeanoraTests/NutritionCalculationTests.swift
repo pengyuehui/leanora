@@ -31,8 +31,8 @@ final class NutritionCalculationTests: XCTestCase {
         XCTAssertNil(NutritionCalculator.goal(on: "2026-09-30", goals: goals))
     }
     func testBundledCatalogIsValidSearchableAndSourced() throws {
-        let foods = try FoodCatalog.load(); XCTAssertEqual(foods.count, 300)
-        let rice = FoodCatalog.search(foods, query: "米饭").first
+        let foods = try FoodCatalog.load(); XCTAssertEqual(foods.count, 500)
+        let rice = FoodCatalog.search(foods, query: "米饭").first { $0.source.reference?.contains("168878") == true }
         XCTAssertNotNil(rice); XCTAssertEqual(rice?.source.license, "CC0-1.0")
         XCTAssertTrue(rice?.source.reference?.contains("168878") ?? false)
         XCTAssertEqual(rice?.nutrientsPer100Grams.energyKcal, 130)

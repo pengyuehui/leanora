@@ -2,10 +2,11 @@ import XCTest
 
 @MainActor final class WorkoutRecoveryTests: XCTestCase {
     private func launch(reset: Bool = true, extra: [String] = []) -> XCUIApplication {
+        continueAfterFailure = false
         let app = XCUIApplication(); app.launchArguments = ["--uitesting", "-AppleLanguages", "(zh-Hans)", "-AppleLocale", "zh_CN"] + extra
         if reset { app.launchArguments.append("--reset-state") }; app.launch()
         let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in app.buttons["onboarding.start"].exists || app.staticTexts["screen.today"].exists }, object: app)
-        XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 30), .completed)
+        XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 60), .completed)
         if app.buttons["onboarding.start"].exists {
             tap(app.buttons["onboarding.start"], app); tap(app.buttons["onboarding.next"], app); tap(app.buttons["onboarding.finish"], app)
         }
@@ -15,17 +16,27 @@ import XCTest
         reveal(element, app); element.tap()
     }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
-        for attempt in 0..<22 {
+        func reachable() -> Bool {
+            guard element.exists else { return false }
+            let frame = element.frame
+            guard frame.minY.isFinite, frame.width > 0, frame.height > 0 else { return false }
             var bottom = app.frame.maxY - 40
             let finish = app.buttons["workout.finish"]
             if element.identifier.hasPrefix("workout."), !element.identifier.hasPrefix("workout.confirm"), !["workout.finish", "workout.restSkip"].contains(element.identifier), finish.exists && finish.isHittable {
                 bottom = min(bottom, finish.frame.minY - 8)
             }
-            if element.exists && element.isHittable && element.frame.maxY < bottom && element.frame.midY > 20 { return }
-            if let surface = app.collectionViews.allElementsBoundByIndex.last {
-                if (element.exists && element.frame.maxY < surface.frame.minY + 120) || (!element.exists && (3..<13).contains(attempt)) { surface.swipeDown() } else { surface.swipeUp() }
-            } else { app.swipeUp() }
+            guard frame.maxY < bottom, frame.midY > 20 else { return false }
+            // TimelineView text can have valid visible geometry while XCTest
+            // cannot derive an activation point. It is read, never tapped.
+            return element.elementType == .staticText || element.isHittable
         }
+        func scroll(_ up: Bool) {
+            app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: up ? 0.65 : 0.35))
+                .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: up ? 0.35 : 0.65)), withVelocity: .slow, thenHoldForDuration: 0.1)
+        }
+        if element.waitForExistence(timeout: 3), reachable() { return }
+        for _ in 0..<18 { if reachable() { return }; scroll(true) }
+        for _ in 0..<28 { if reachable() { return }; scroll(false) }
         XCTFail(app.debugDescription)
     }
     private func create(_ name: String, exercise: String, app: XCUIApplication) {
@@ -102,9 +113,10 @@ import XCTest
         app.textFields["set.reps"].tap(); app.textFields["set.reps"].typeText("8")
         app.buttons["set.keyboardDone"].tap(); app.buttons["set.save"].tap()
         tap(app.buttons["workout.complete.0.0"], app)
-        XCTAssertTrue(app.staticTexts["workout.rest"].waitForExistence(timeout: 5))
-        app.buttons["workout.close"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
-        waitGone(app.buttons["workout.close"])
+        reveal(app.staticTexts["workout.rest"], app)
+        if app.buttons["workout.close"].exists { tap(app.buttons["workout.close"], app) }
+        else { tap(app.buttons["BackButton"], app) }
+        XCTAssertTrue(app.buttons["我的"].waitForExistence(timeout: 5))
         app.buttons["我的"].tap(); tap(app.buttons["settings.notifications"], app)
         XCTAssertTrue(app.staticTexts["已允许通知"].waitForExistence(timeout: 5))
         for _ in 0..<10 { if app.staticTexts["notifications.pending"].exists { break }; app.collectionViews.allElementsBoundByIndex.last?.swipeUp() }

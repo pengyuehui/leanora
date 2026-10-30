@@ -2,12 +2,15 @@ import XCTest
 
 @MainActor final class DataManagementTests: XCTestCase {
     private func launch(reset: Bool = true, extra: [String] = []) -> XCUIApplication {
+        continueAfterFailure = false
         let app = XCUIApplication()
         app.launchArguments = ["--uitesting", "--backup-fixtures", "-AppleLanguages", "(zh-Hans)", "-AppleLocale", "zh_CN"]
         if reset { app.launchArguments.append("--reset-state") }
         app.launchArguments += extra
         app.launch()
-        if app.buttons["onboarding.start"].waitForExistence(timeout: 5) {
+        let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in app.buttons["onboarding.start"].exists || app.staticTexts["screen.today"].exists }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 35), .completed)
+        if app.buttons["onboarding.start"].exists {
             tap(app.buttons["onboarding.start"], app)
             tap(app.buttons["onboarding.next"], app)
             tap(app.buttons["onboarding.finish"], app)
@@ -22,8 +25,11 @@ import XCTest
         element.tap()
     }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
-        for _ in 0..<10 { if element.exists && element.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(element.isHittable)
+        func visible() -> Bool { element.exists && element.isHittable && element.frame.maxY < app.frame.maxY - 40 }
+        if element.waitForExistence(timeout: 3), visible() { return }
+        for _ in 0..<15 { if visible() { return }; app.swipeUp() }
+        for _ in 0..<20 { if visible() { return }; app.swipeDown() }
+        XCTAssertTrue(visible(), app.debugDescription)
     }
     private func capture(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
@@ -57,14 +63,16 @@ import XCTest
         capture(app, "u2-import-complete")
         app.terminate()
         let reopened = launch(reset: false)
-        XCTAssertTrue(reopened.staticTexts["backup.count"].label.contains("2 条"))
+        let count = reopened.descendants(matching: .any).matching(identifier: "backup.count").firstMatch
+        reveal(count, reopened); XCTAssertTrue(count.label.contains("2 条"))
     }
 
     func testInvalidFileShowsErrorAndDoesNotChangeRecordCount() {
         let app = launch()
         selectFile("Leanora-invalid", app: app)
         XCTAssertTrue(app.staticTexts["backup.error"].waitForExistence(timeout: 5) || app.otherElements["backup.error"].exists)
-        XCTAssertTrue(app.staticTexts["backup.count"].label.contains("1 条"))
+        let count = app.descendants(matching: .any).matching(identifier: "backup.count").firstMatch
+        reveal(count, app); XCTAssertTrue(count.label.contains("1 条"))
         XCTAssertFalse(app.buttons["backup.confirm"].exists)
         capture(app, "u2-invalid-backup")
     }

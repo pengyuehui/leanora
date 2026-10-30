@@ -34,6 +34,7 @@ struct NutritionSummary: Equatable, Sendable {
     var protein: NutrientTotal
     var carbohydrate: NutrientTotal
     var fat: NutrientTotal
+    var missingFields: Int { energy.missing + protein.missing + carbohydrate.missing + fat.missing }
     init(entries: [DietEntry], on day: String? = nil, meal: Meal? = nil) {
         let values = entries.filter { $0.stamp.deletedAt == nil && (day == nil || $0.occurred.localDate == day) && (meal == nil || $0.meal == meal) }
         count = values.count

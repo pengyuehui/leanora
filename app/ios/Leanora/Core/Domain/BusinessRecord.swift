@@ -4,6 +4,7 @@ enum BusinessRecord: Codable, Equatable, Sendable {
     case profile(LocalProfile), exercise(Exercise), template(WorkoutTemplate), session(WorkoutSession)
     case food(Food), diet(DietEntry), goal(NutritionGoal), measurement(BodyMeasurement)
     case schedule(WorkoutDayChange)
+    case mealTemplate(MealTemplate)
 
     var stamp: RecordStamp {
         switch self {
@@ -16,6 +17,7 @@ enum BusinessRecord: Codable, Equatable, Sendable {
         case .goal(let v): v.stamp
         case .measurement(let v): v.stamp
         case .schedule(let v): v.stamp
+        case .mealTemplate(let v): v.stamp
         }
     }
     var kind: String {
@@ -29,6 +31,7 @@ enum BusinessRecord: Codable, Equatable, Sendable {
         case .goal: "goal"
         case .measurement: "measurement"
         case .schedule: "schedule"
+        case .mealTemplate: "mealTemplate"
         }
     }
     var id: UUID { stamp.id }
@@ -37,6 +40,7 @@ enum BusinessRecord: Codable, Equatable, Sendable {
         case .template(let v): v.items.map(\.id)
         case .session(let v): v.exercises.flatMap { [$0.id] + $0.sets.map(\.id) }
         case .food(let v): v.units.map(\.id)
+        case .mealTemplate(let v): v.items.map(\.id)
         default: []
         }
     }
@@ -156,6 +160,7 @@ enum DomainValidation {
             case .food(let v):
                 try text(v.name, required: true); try strings(v.aliases); try nutrients(v.nutrientsPer100Grams)
                 try source(v.source)
+                if let category = v.category { try text(category, required: true) }
                 for unit in v.units {
                     try text(unit.name, required: true); try number(unit.grams, min: 0.000001, max: 100_000)
                     if let volume = unit.milliliters {
@@ -186,6 +191,9 @@ enum DomainValidation {
                 try reference(v.templateID, "template")
                 try day(v.originDate); try day(v.destinationDate)
                 guard TimeZone(identifier: v.timeZoneID) != nil else { throw DataProblem.invalid("改期时区") }
+            case .mealTemplate(let v):
+                try v.validate()
+                for item in v.items { try reference(item.food?.foodID, "food") }
             }
         }
         let active = records.filter {

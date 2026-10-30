@@ -44,20 +44,28 @@ def main():
     source = Path(sys.argv[1])
     with zipfile.ZipFile(source) as archive:
         foods = json.loads(archive.read(archive.namelist()[0]))["SRLegacyFoods"]
+    root = Path(__file__).resolve().parents[1]
+    localization = json.loads((root / "content/food-localization.json").read_text())
+    legacy = json.loads((root / "content/food-legacy-manifest.json").read_text())["records"]
+    old_names = {f["fdcId"]: f["name"] for f in legacy if any("\u4e00" <= c <= "\u9fff" for c in f["name"])}
     translations = dict(TRANSLATIONS)
     for food in foods:
         if food["description"] in COMMON:
             translations[food["fdcId"]] = COMMON[food["description"]]
-    selected = {food["fdcId"]: food for food in foods if food["fdcId"] in translations}
+    translations.update({int(k): v for k, v in localization["names"].items()})
+    translations.update(old_names)
+    required = {f["fdcId"] for f in legacy} | set(translations)
+    selected = {food["fdcId"]: food for food in foods if food["fdcId"] in required}
+    assert set(selected) == required, "Unknown curated FDC IDs"
     for category in CATEGORIES:
         candidates = sorted([food for food in foods if food.get("foodCategory", {}).get("description") == category], key=lambda f: f["description"])
         for food in candidates[:20]:
             selected[food["fdcId"]] = food
     for food in sorted(foods, key=lambda f: f["fdcId"]):
-        if len(selected) >= 300:
+        if len(selected) >= 500:
             break
         selected[food["fdcId"]] = food
-    selected = dict(sorted(selected.items(), key=lambda item: (item[0] not in translations, item[0]))[:300])
+    assert len(selected) == 500, "Curated and legacy union must fit 500 foods"
     entries = []
     for fdc_id, food in sorted(selected.items()):
         description = food["description"]
@@ -75,15 +83,26 @@ def main():
             units.append({"id": str(uuid.uuid5(uuid.NAMESPACE_URL, f"{reference}/portion/{portion['id']}")),
                           "name": f"{amount:g} {label}（USDA 份量）", "grams": grams,
                           "conversionSource": reference})
+        category = food.get("foodCategory", {}).get("description", "")
+        group = {
+            "Cereal Grains and Pasta": "谷物与主食", "Baked Products": "谷物与主食",
+            "Breakfast Cereals": "谷物与主食", "Dairy and Egg Products": "奶与蛋",
+            "Fruits and Fruit Juices": "水果", "Vegetables and Vegetable Products": "蔬菜",
+            "Legumes and Legume Products": "豆类与豆制品", "Nut and Seed Products": "坚果与种子",
+            "Poultry Products": "肉与水产", "Finfish and Shellfish Products": "肉与水产",
+            "Pork Products": "肉与水产", "Beef Products": "肉与水产", "Lamb, Veal, and Game Products": "肉与水产",
+            "Fats and Oils": "油脂与调味", "Spices and Herbs": "油脂与调味", "Beverages": "饮品"
+        }.get(category, "其他")
         entries.append({"id": str(uuid.uuid5(uuid.NAMESPACE_URL, reference)), "name": translations.get(fdc_id, description),
-                        "aliases": [description], "nutrients": value, "units": units, "reference": reference})
-    root = Path(__file__).resolve().parents[1]
+                        "aliases": [description] + localization["aliases"].get(str(fdc_id), []),
+                        "category": group, "nutrients": value, "units": units, "reference": reference})
     output = root / "ios/Leanora/Resources/Catalog/foods.json"
     output.write_text(json.dumps({"version": 1, "entries": entries}, ensure_ascii=False, indent=2) + "\n")
     manifest = {"source": str(source.name), "sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
                 "url": __doc__.split("Source: ")[1].splitlines()[0], "license": "CC0-1.0",
-                "records": len(entries), "translatedNames": len(translations), "retrievedOn": "2026-10-20",
-                "method": "Common foods plus 20 alphabetic entries per category, fill by FDC ID to 300. No nutrient imputation. USDA portions retain their original amount and gram weight. English names remain searchable."}
+                "records": len(entries), "translatedNames": sum(any("\u4e00" <= c <= "\u9fff" for c in e["name"]) for e in entries), "retrievedOn": "2026-10-30",
+                "legacyRecordsPreserved": len(legacy), "localization": "content/food-localization.json",
+                "method": "Keep all 300 legacy IDs and original nutrients/portions; add independently localized records, then category selections and fill by FDC ID to 500. No nutrient imputation. Original portion labels and grams retained. Chinese categories are navigation groups, not dietary advice."}
     (root / "docs/food-catalog-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     print(f"Built {len(entries)} foods; {len(translations)} translated names")
 

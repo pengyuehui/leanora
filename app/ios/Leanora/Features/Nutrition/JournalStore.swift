@@ -12,6 +12,7 @@ extension BodyMeasurement: Identifiable { var id: UUID { stamp.id } }
     private(set) var entries: [DietEntry] = []
     private(set) var measurements: [BodyMeasurement] = []
     private(set) var goals: [NutritionGoal] = []
+    private(set) var mealTemplates: [MealTemplate] = []
     private(set) var busy = false
     private(set) var dataVersion = 0
     var error: String?
@@ -22,14 +23,15 @@ extension BodyMeasurement: Identifiable { var id: UUID { stamp.id } }
         do {
             let records = try await repository.snapshot()
             guard current == generation else { return }
-            var available = Dictionary(uniqueKeysWithValues: catalog.map { ($0.id, $0) })
-            for record in records { if case .food(let food) = record { available[food.stamp.id] = food } }
-            let newFoods = available.values.filter { $0.stamp.deletedAt == nil }.sorted { $0.name < $1.name }
+            let storedFoods = records.compactMap { if case .food(let v) = $0 { return v }; return nil }
+            let newFoods = NutritionWorkflow.foods(catalog: catalog, records: storedFoods)
             let newEntries = records.compactMap { if case .diet(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }
             let newMeasurements = records.compactMap { if case .measurement(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }
             let newGoals = records.compactMap { if case .goal(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }
-            if foods != newFoods || entries != newEntries || measurements != newMeasurements || goals != newGoals { dataVersion += 1 }
+            let newMeals = records.compactMap { if case .mealTemplate(let v) = $0, v.stamp.deletedAt == nil { return v }; return nil }.sorted { $0.name < $1.name }
+            if foods != newFoods || entries != newEntries || measurements != newMeasurements || goals != newGoals || mealTemplates != newMeals { dataVersion += 1 }
             foods = newFoods; entries = newEntries; measurements = newMeasurements; goals = newGoals
+            mealTemplates = newMeals
         } catch { self.error = error.localizedDescription }
     }
     func run<T: Sendable>(_ operation: @Sendable () async throws -> T) async -> T? {

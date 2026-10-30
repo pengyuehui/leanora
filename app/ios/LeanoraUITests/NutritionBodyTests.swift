@@ -12,14 +12,15 @@ import XCTest
         XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 8)); return app
     }
     private func tap(_ element: XCUIElement, _ app: XCUIApplication) {
-        for attempt in 0..<22 {
-            if element.exists && element.isHittable && element.isEnabled && element.frame.maxY <= app.frame.maxY - 35 {
-                element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap(); return
-            }
-            if let surface = app.collectionViews.allElementsBoundByIndex.last {
-                if (element.exists && element.frame.maxY < surface.frame.minY + 120) || (!element.exists && (3..<13).contains(attempt)) { surface.swipeDown() } else { surface.swipeUp() }
-            } else { app.swipeUp() }
-        }; XCTFail(app.debugDescription)
+        func visible() -> Bool { element.exists && element.isHittable && element.isEnabled && element.frame.maxY < app.frame.maxY - 40 && element.frame.midY > 30 }
+        func scroll(_ up: Bool) {
+            app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: up ? 0.65 : 0.35))
+                .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: up ? 0.35 : 0.65)), withVelocity: .slow, thenHoldForDuration: 0.1)
+        }
+        if element.waitForExistence(timeout: 4), visible() { element.tap(); return }
+        for _ in 0..<18 { if visible() { element.tap(); return }; scroll(true) }
+        for _ in 0..<25 { if visible() { element.tap(); return }; scroll(false) }
+        XCTFail(app.debugDescription)
     }
     private func capture(_ app: XCUIApplication, _ name: String) { let a = XCTAttachment(screenshot: app.screenshot()); a.name = name; a.lifetime = .keepAlways; add(a) }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
@@ -32,7 +33,7 @@ import XCTest
     }
     private func search(_ term: String, _ app: XCUIApplication) {
         let field = app.searchFields.firstMatch
-        if !field.waitForExistence(timeout: 2) { app.buttons.matching(NSPredicate(format: "label CONTAINS %@ OR label CONTAINS %@", "搜索", "Search")).firstMatch.tap() }
+        XCTAssertTrue(field.waitForExistence(timeout: 8), app.debugDescription)
         field.tap(); field.typeText(term)
         let submit = app.keyboards.buttons.matching(NSPredicate(format: "label IN %@", ["Search", "搜索"])).firstMatch; if submit.exists { submit.tap() }
     }

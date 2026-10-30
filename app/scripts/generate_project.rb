@@ -25,8 +25,8 @@ ui.add_dependency(app)
       'DEVELOPMENT_TEAM' => '8ZP3NMT2A8', # Manyao Li; verified in local Xcode and public certificate OU.
       'GENERATE_INFOPLIST_FILE' => 'YES',
       'PRODUCT_BUNDLE_IDENTIFIER' => "ai.leanora.fitness#{target == app ? '' : '.' + target.name}",
-      'MARKETING_VERSION' => '1.2',
-      'CURRENT_PROJECT_VERSION' => '6',
+      'MARKETING_VERSION' => '1.3',
+      'CURRENT_PROJECT_VERSION' => '7',
       'SWIFT_EMIT_LOC_STRINGS' => 'YES',
       'ENABLE_USER_SCRIPT_SANDBOXING' => 'YES'
     })

@@ -1,0 +1,2105 @@
+{
+  "source_commit": "2969d60",
+  "records": [
+    {
+      "fdcId": 167590,
+      "id": "f0242563-94ca-538a-b476-b0710e439163",
+      "name": "Andrea's, Gluten Free Soft Dinner Roll",
+      "nutrients_sha256": "93235778fef6795d28b5d290feb9a1657e4903293af71a0f81773804bcf7d7ad",
+      "units_sha256": "adabb0fd2507327f126781a44ef52ab53c7bec34332781690cf0450d417f6482"
+    },
+    {
+      "fdcId": 167684,
+      "id": "fe84b3db-4b7d-5a53-8aa8-4f5ccec283c9",
+      "name": "Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie",
+      "nutrients_sha256": "6ebfe9ed47db492f3a55c8d9fee76e0d30fc7c3538a8e4fe211cb0038ffecf58",
+      "units_sha256": "1c2c05b9454a292c1b77da11a104c7d852f7a551e4367dc632144aed125d8c9d"
+    },
+    {
+      "fdcId": 167762,
+      "id": "8d540295-efaa-54aa-9d9d-70dbf74f4a30",
+      "name": "草莓（生）",
+      "nutrients_sha256": "43deae8e9a7986fc7b0450025d1714bdb50c5a702f5fe44f11d6078f0b6eead5",
+      "units_sha256": "6ea1a2f1cb5522a54dfe2a396c9c1cadb2a186f83b00c6fb5e74c03ab82bf78b"
+    },
+    {
+      "fdcId": 167771,
+      "id": "6e619016-0208-539d-81bb-6b65daad29c3",
+      "name": "Apple juice, canned or bottled, unsweetened, with added ascorbic acid",
+      "nutrients_sha256": "404b216235846bccc72645c94a12fe266147a84fe6cd6371a4f9cad5b4a083de",
+      "units_sha256": "b5a7b3e519fdc7a691fa9932e9acb5a171e4889321eca5445394f041754e956c"
+    },
+    {
+      "fdcId": 167775,
+      "id": "9fbd73e9-eedf-5908-96c2-a8067f2ddd7d",
+      "name": "Apple juice, frozen concentrate, unsweetened, diluted with 3 volume water, with added ascorbic acid",
+      "nutrients_sha256": "36ab2325146b6b5bda5c9a7276dc479bf70e35a66f4bc782502fd89a13ec4c7e",
+      "units_sha256": "1cc1d2ff4ed6a70a0fee05f69d88a3f6665dcd82c17a4dc7fcfad6a69ac10ad1"
+    },
+    {
+      "fdcId": 167782,
+      "id": "864e9319-ea84-53d1-be8f-a3e762687122",
+      "name": "Abiyuch, raw",
+      "nutrients_sha256": "0ea40f80eaf438af77b8dd56059bfd80ff351dcac5ce3af995c2d1fbbc512510",
+      "units_sha256": "01c9fbc1b5c6c675ff4f7b9041dbfddbfc58104bcf693c59e57db52b13e6068f"
+    },
+    {
+      "fdcId": 167793,
+      "id": "2bbaa3c5-1c0e-5abc-b2b1-48ad50c91bec",
+      "name": "Apples, raw, fuji, with skin (Includes foods for USDA's Food Distribution Program)",
+      "nutrients_sha256": "1ea0747224cdbb31c452f6f66fe77e8b3c51733eda5022333576872ea5dfb487",
+      "units_sha256": "8b88152abbae21316558a2e5863cdc65ab6273c6f5eafbd33523a4d8d469fa1f"
+    },
+    {
+      "fdcId": 167800,
+      "id": "ac1dfb4e-5dfb-5e3f-a35e-1a0949ac977b",
+      "name": "Apple juice, canned or bottled, unsweetened, with added ascorbic acid, calcium, and potassium",
+      "nutrients_sha256": "a7afce61d6aa00813ff53afe9b38ba3ca4f57578acd6d3e7589960535870c9a5",
+      "units_sha256": "4882cbe0e99891e537d262fd535aee39a5b1ba99f57c2ec1c5f46f0c1e8f8771"
+    },
+    {
+      "fdcId": 167869,
+      "id": "11c33407-1388-5abd-b042-1a2db09fadb0",
+      "name": "Canadian bacon, unprepared",
+      "nutrients_sha256": "cc9d999e86df9fb35da23fc066f6f221c27848cceecb386f73a67623d1d27a5a",
+      "units_sha256": "48febe4dfd02f7f4ffb00c58394fa2146ba588f237ce168d22bc8406283de5b1"
+    },
+    {
+      "fdcId": 167909,
+      "id": "0c8af545-74fb-5d3b-9aa5-c012367c743f",
+      "name": "HORMEL, Cure 81 Ham",
+      "nutrients_sha256": "623edd66c93cc8d2432988445cef407e8fa08208d967c84dce46e19559c60852",
+      "units_sha256": "741dbfa391016b60e939e39f4bacfd3ce9523fc9605420b01dbed48712506cb7"
+    },
+    {
+      "fdcId": 167910,
+      "id": "9a33bc52-b5e2-5f55-aee2-90b44623478a",
+      "name": "HORMEL ALWAYS TENDER, Pork Tenderloin, Teriyaki-Flavored",
+      "nutrients_sha256": "874e7cf2e986fa1b79328e27b1f41fa2d90b3e54b950e5026a60dffdec79d0dc",
+      "units_sha256": "53fdf9ad2055741354d0c5ae9b585c791fd038f7fa3e62189a6bfd4ba27f3786"
+    },
+    {
+      "fdcId": 167911,
+      "id": "31b77f78-467e-5520-ac9a-c20367f97fca",
+      "name": "HORMEL Canadian Style Bacon",
+      "nutrients_sha256": "282d88cfa3bb248975fd6ce30158e785eb508d7fc51e6ada73f9c32d5a373595",
+      "units_sha256": "e239b1a5f91e214f2efd83e5a3802d98637f34797ae4abad2348f9ce55ad2a8a"
+    },
+    {
+      "fdcId": 167914,
+      "id": "f01d2aa6-08b4-5544-869f-88dd9ed41a61",
+      "name": "Pork, cured, bacon, cooked, baked",
+      "nutrients_sha256": "8fe68a10de8f4eb44fb64ac5ed5b99ccebb5b6e6819022d5fe9315816c86fdfd",
+      "units_sha256": "b9f2926b78b8c1e2757853a9f26e68f3c4be2a60abb0d76284d1c4ad01086b17"
+    },
+    {
+      "fdcId": 168099,
+      "id": "e8db542d-fb00-53af-9b75-7e4fb133b305",
+      "name": "Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie, fat-free",
+      "nutrients_sha256": "961ad2ccab3ac1316ec45e3f0150921ae234c372254f3e89d1742663695acf93",
+      "units_sha256": "70d484d1e97ff8a4739c44bbf64f61d02849c212dac682be48e1b7ca0c9beecc"
+    },
+    {
+      "fdcId": 168100,
+      "id": "bd5f8e0d-0a9d-545a-acfb-bc3019918de8",
+      "name": "Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie, cholesterol-free",
+      "nutrients_sha256": "f18c3cf181038a91884a6e244265080e43d2d1763bc654b6885c322d58fe8356",
+      "units_sha256": "7104245897ef813921aa4a601359fc7ca6331d028dc713f7777856a443bbaad0"
+    },
+    {
+      "fdcId": 168128,
+      "id": "0ac4cd7b-4bfc-5409-8509-58e0a636f5e8",
+      "name": "Beans, baked, canned, no salt added",
+      "nutrients_sha256": "669068bd8964a4adb9d484c870cac6c8822255ba8d187013914a70c7126060a1",
+      "units_sha256": "7d4ec9f7eb55e5cb1658d1653d681cc77d4dfed64465971ac34efe429c12b9bb"
+    },
+    {
+      "fdcId": 168188,
+      "id": "35cbf6c5-de8f-5665-a410-0356995a7da9",
+      "name": "Apple juice, frozen concentrate, unsweetened, undiluted, with added ascorbic acid",
+      "nutrients_sha256": "cfbe36781bd627b1cf56a151c7ea5cd927b271d47816e0d878b20dac4a58a063",
+      "units_sha256": "4892a10fd7dd6a10e493242cfecb95b8776fbf746ffada42514f8b4de0b1e157"
+    },
+    {
+      "fdcId": 168204,
+      "id": "7b31c74b-f2a0-5016-811e-901a0b430422",
+      "name": "Apples, raw, gala, with skin (Includes foods for USDA's Food Distribution Program)",
+      "nutrients_sha256": "091cfd8ea23d01eee01d610607422fbe97b82e960cdc486e4216234824cd0930",
+      "units_sha256": "1613dbdc249a0d8cf73c5454fc13364020b08f399cafa0652e9c3fcc51457907"
+    },
+    {
+      "fdcId": 168317,
+      "id": "36e7da49-73fc-58d3-8790-bc6b41ba7816",
+      "name": "HORMEL ALWAYS TENDER, Pork Tenderloin, Peppercorn-Flavored",
+      "nutrients_sha256": "fd97795f988cfa31cc4c196abf2c63e2f01ec1e4010f702a18d1d72aca15a6b1",
+      "units_sha256": "89b27858e2cd1bf852fadb17e0d53a6b336664906b7ece0e7642b980f6deb9ca"
+    },
+    {
+      "fdcId": 168318,
+      "id": "2f1c43dc-0ec6-577e-8887-5728e454a5a7",
+      "name": "HORMEL ALWAYS TENDER, Pork Loin Filets, Lemon Garlic-Flavored",
+      "nutrients_sha256": "58ecc62f62f412b33aea7b6a6eb414aff678ebfe4a224af23caf95c09b61d212",
+      "units_sha256": "69c9467354b70812c2a9b5a3fa8836743e8990de56e0e3f188957fedba9e3231"
+    },
+    {
+      "fdcId": 168319,
+      "id": "9080d66d-89d2-5f67-81d0-573c3ab4a8c2",
+      "name": "HORMEL ALWAYS TENDER, Center Cut Chops, Fresh Pork",
+      "nutrients_sha256": "07a3d220e4ecca12fb3d2e93e82fbeddd501bb68fdaaee7d2e38df82604d5c30",
+      "units_sha256": "1f827cf871cb41a4593bc9793ded5e7876afa0a5203a31974a90a237b6032009"
+    },
+    {
+      "fdcId": 168320,
+      "id": "c37bbaae-bc70-5d3e-97ca-434a9aa5471e",
+      "name": "HORMEL ALWAYS TENDER, Boneless Pork Loin, Fresh Pork",
+      "nutrients_sha256": "cd3d5910ec6ea01e2dba7a3f9acb842f28c9eaa57060beb3a52c48d9e774b073",
+      "units_sha256": "a2194ab724c4e4b4c588e679990d0b2b98c6bbe134d23665c1cc7301dbb16045"
+    },
+    {
+      "fdcId": 168324,
+      "id": "8845e685-451b-5081-b6f3-3bb9c4df5a1e",
+      "name": "Pork, bacon, rendered fat, cooked",
+      "nutrients_sha256": "04a850da0f9320715531d624afd3fd78c6f78fb4c617916c4c23ccde401ecfec",
+      "units_sha256": "20d7d6bc07f6565dea086fe5a3c34ea83beb5e41cc604a0b3205b9448bc63354"
+    },
+    {
+      "fdcId": 168369,
+      "id": "78b33106-883e-55ea-99af-a72f090defef",
+      "name": "Pork, Shoulder petite tender, boneless, separable lean and fat, raw",
+      "nutrients_sha256": "fc2383264ad1dcf5f6bba5df9add8184a71f6cc3050ff917c8e7fa6f03297a3d",
+      "units_sha256": "ca0efef3617f615fe1d970165f76f4d6edb0f05ed9e66b383afc8093915fa22e"
+    },
+    {
+      "fdcId": 168370,
+      "id": "cd2c8e43-93c1-5d2f-96a5-761a6024607e",
+      "name": "Pork, Leg sirloin tip roast, boneless, separable lean and fat, cooked, braised",
+      "nutrients_sha256": "2a9fa553fbea4ae006ba153c23482ebf70215adfee73d46174993f7b39508cfb",
+      "units_sha256": "c17066ebd1cf1abf3d267fb6da1f263714905e897aa6136d2f7dc83b51f65d94"
+    },
+    {
+      "fdcId": 168371,
+      "id": "88d90a25-4e40-5b67-8df7-52049b981fff",
+      "name": "Pork, Leg sirloin tip roast, boneless, separable lean and fat, raw",
+      "nutrients_sha256": "50c3519ffdc45856b557636af2e30a993a96e5fb6c66a9de5ed6a69e143bcb82",
+      "units_sha256": "65bd33b95ef858a40bbc7a38aad83b25e5ab4e8217d62804af3ccc12c1b0ea51"
+    },
+    {
+      "fdcId": 168376,
+      "id": "1c5c5de0-5f85-5b11-8017-932dcc5000d2",
+      "name": "Pork loin, fresh, backribs, bone-in, raw, lean only",
+      "nutrients_sha256": "39be3e915a902e83e8bfd3c9f60c4572290db63d9cde3065b26eecdffc001538",
+      "units_sha256": "65f143621d30a150f79af41dc6d18b0002d072cfb9feccbff7a02e9b6184fdc0"
+    },
+    {
+      "fdcId": 168377,
+      "id": "ca7a6e37-9cd1-5dc8-b151-dbe1c978c2c8",
+      "name": "Pork loin, fresh, backribs, bone-in, cooked-roasted, lean only",
+      "nutrients_sha256": "fd306e5dcf626156a39d18db75ccf2371e16e75e4c08b1b97d5b8bc56b4080f2",
+      "units_sha256": "faf85fd3dd5e8865f1552e0fd39a8fc7aedc6532471533640ee18fcd67b86258"
+    },
+    {
+      "fdcId": 168382,
+      "id": "e26fbe66-10d1-51ba-9334-5d48838aebf4",
+      "name": "Bacon, pre-sliced, reduced/low sodium, unprepared",
+      "nutrients_sha256": "e48c9bf4ec29a00a17ebba6fb33a25c5bb4e9610494b0b9c7039be6cef1de4aa",
+      "units_sha256": "8858138f15c48395c42bc6b3bdf500269cc6e13130a912aa479e84e20d5739c3"
+    },
+    {
+      "fdcId": 168383,
+      "id": "5e2c019d-93fa-5d04-bc13-aae8486e3f96",
+      "name": "Canadian bacon, cooked, pan-fried",
+      "nutrients_sha256": "8cb533a87f311e622eb8969e9da9c541e11481dd047c75591f60a010298a2d2d",
+      "units_sha256": "4a35dd3bca8fc758527b76cd2ad988adbbd95ce328dcb66938d5dc4ff1241f8c"
+    },
+    {
+      "fdcId": 168384,
+      "id": "4a45f4ca-4af9-5d7c-bdb3-062d5444a560",
+      "name": "Alfalfa seeds, sprouted, raw",
+      "nutrients_sha256": "4e76859acf79ca61d5d4e00ada1af7330d64ce12acb450dea5941221584c1b9e",
+      "units_sha256": "359c4d1811a76b703e808282d8a34dae9b5b40a0516852225d8b0c0702017111"
+    },
+    {
+      "fdcId": 168385,
+      "id": "0f6cc877-92c2-5470-96f9-4698b1f6f80d",
+      "name": "Amaranth leaves, raw",
+      "nutrients_sha256": "7c0c55fe0974a9df690aeb339924c94a0725028b9af33c203d7f84d9280f92be",
+      "units_sha256": "5355630c1f8aa219ef991488e3951f4ecf0b3a218df0c00ffa8ba14d42ed4434"
+    },
+    {
+      "fdcId": 168386,
+      "id": "dd6451f4-b5f0-583f-8cfc-eca2f0c77f8d",
+      "name": "Artichokes, (globe or french), cooked, boiled, drained, without salt",
+      "nutrients_sha256": "f73540f9628da80e11083f47a69c7cadf682bc6e81752e64f0242322963f2150",
+      "units_sha256": "3c5d6b57dcf9b2e458d3bfdc44af7212e7628d8614d4693c1d2ade3dd3c735cb"
+    },
+    {
+      "fdcId": 168387,
+      "id": "5ae976eb-61df-5197-8a24-4f7a24a82a7a",
+      "name": "Artichokes, (globe or french), frozen, unprepared",
+      "nutrients_sha256": "50fb5d4a245e790755a3a4d439456b54591b6d451ab283e1e9bdc442258668e1",
+      "units_sha256": "94c9d450399fd2e396f406e19b7f28117aabc629f6ce8a860adefcf719257008"
+    },
+    {
+      "fdcId": 168388,
+      "id": "579d4596-2763-5d0a-8b8f-afbe458949ae",
+      "name": "Artichokes, (globe or french), frozen, cooked, boiled, drained, without salt",
+      "nutrients_sha256": "24d47af8332da63bb049b99395a22f1d02bd032c2ae675c157327feb08df7192",
+      "units_sha256": "ea0328e0828198b9bf89d52377a87e9d0669ffddeae324a0a25a9703691a83c5"
+    },
+    {
+      "fdcId": 168390,
+      "id": "6383d977-4bfb-5307-ac2a-044f5f991a81",
+      "name": "Asparagus, cooked, boiled, drained",
+      "nutrients_sha256": "a46b48ead0925eff716fe11f482864a38e242511186225a4f6f15fe4764eef72",
+      "units_sha256": "ac82234b3dd3e0ad92efa373220315537f10bf8de7f77f29780c20fbd917b3d9"
+    },
+    {
+      "fdcId": 168409,
+      "id": "a2076a24-b803-5596-9777-0d9b240e0b18",
+      "name": "黄瓜（带皮，生）",
+      "nutrients_sha256": "3eb4a79bfe2506d1e0058225396b25154ce29a49ddb7845e5d710dd4dae83a2a",
+      "units_sha256": "f2fd9a9ae25d290e3e4dce4db8adf66414458bde1d2dfeebfc9dd49a033f6744"
+    },
+    {
+      "fdcId": 168462,
+      "id": "24d28009-b040-5664-bc6f-9f89bf4de4b3",
+      "name": "菠菜（生）",
+      "nutrients_sha256": "5aeb6bb363454298bf1eac67c7ddff489300d603123f2638f9293d95db97d068",
+      "units_sha256": "e86453fc87a27843595e05fb85bbdbdbe048b8e272695c6ddd5ff0038933970c"
+    },
+    {
+      "fdcId": 168490,
+      "id": "7f6bb5c5-b6f1-5c8c-9d8a-aed32bb12dc2",
+      "name": "Arrowroot, raw",
+      "nutrients_sha256": "663c1328c81a6e3d365253dbe5a61f6394051d001638444e17095379e69ae978",
+      "units_sha256": "6e8a8bd760c5ca39460819cd0950f0597f8a7730f82560fdb18164e89cb78cd4"
+    },
+    {
+      "fdcId": 168492,
+      "id": "340542e4-311c-5a66-8bd4-3628aeec66ce",
+      "name": "Amaranth leaves, cooked, boiled, drained, with salt",
+      "nutrients_sha256": "461a2fdb6435b574d6ae730cbc2fd549442b900087ccf78246264b5a8a6efe79",
+      "units_sha256": "5266c3fe13f06caf72966d2debd8056b348efb22bc352dce077fe14c29570e6e"
+    },
+    {
+      "fdcId": 168493,
+      "id": "f179b402-2c45-5cef-b1a3-8b3df6d46027",
+      "name": "Arrowhead, cooked, boiled, drained, with salt",
+      "nutrients_sha256": "31f717f39867c76e7bebb5fc337cea52fa573f59e8a01419b02e7ea6115e1e3f",
+      "units_sha256": "087a7b7f9891e08c9bc9eb240747a52b2fe860cfaa190653ab1cab1d8d4d9de0"
+    },
+    {
+      "fdcId": 168588,
+      "id": "0fb8572c-ff0f-5552-ab51-d27328a9c884",
+      "name": "Nuts, almond butter, plain, without salt added",
+      "nutrients_sha256": "f05d30a1132a3c98c67b17c014f080531d18ad9c59b0339aaa2a73ca743fb5fe",
+      "units_sha256": "f3824dae87b4b5b2af06eba437328c183a6f7f3b216d43a0e8a4f865e9b2f7fe"
+    },
+    {
+      "fdcId": 168592,
+      "id": "20517405-3a30-59d4-8dc2-b81af25fa8c7",
+      "name": "Nuts, almonds, honey roasted, unblanched",
+      "nutrients_sha256": "53145a5d5c38a6ee4bc192ea7f14bb7be3273473219b7e9eb77a3d3a5a372bb1",
+      "units_sha256": "ef8b22837c95deb8a2c6db4e73bccaf53401a97d30ce8d66bf2d6a0d78a40f6f"
+    },
+    {
+      "fdcId": 168596,
+      "id": "f9d9dff2-3421-558f-85cd-473ce3fd783b",
+      "name": "Nuts, almonds, dry roasted, with salt added",
+      "nutrients_sha256": "221601832c66c892bd050623ea7299ff6ce165ff5ef856325fbbc880ab27a8a6",
+      "units_sha256": "e64145002acce56ea7789d5138f6387f16d8dd30e06b90de597e997e7d777116"
+    },
+    {
+      "fdcId": 168597,
+      "id": "d5e42c60-253e-5e63-bca7-2a0981c3e219",
+      "name": "Nuts, cashew butter, plain, with salt added",
+      "nutrients_sha256": "c44add3632cde67b268d7ba112d3c10cd72b9b1870f60d027074ba88e0a253c7",
+      "units_sha256": "7647193bafd93c9456680e5a16354b1ab4e01dfbeed2bdf8fb22f57d196d39a4"
+    },
+    {
+      "fdcId": 168602,
+      "id": "5d2f3cd5-bf95-5ea2-af30-2a416a97e00e",
+      "name": "Nuts, almonds, oil roasted, lightly salted",
+      "nutrients_sha256": "007055d9b706eaf784480d58e4934f51972a3ce8d2274c54ed7ed865f40b577f",
+      "units_sha256": "c049f720138eef20cbc08cce25e5468248325c845cec1c7f477c45924e176e51"
+    },
+    {
+      "fdcId": 168603,
+      "id": "1c2b295e-f101-54a8-92f4-9a19d86be6a1",
+      "name": "Nuts, almond butter, plain, with salt added",
+      "nutrients_sha256": "f05d30a1132a3c98c67b17c014f080531d18ad9c59b0339aaa2a73ca743fb5fe",
+      "units_sha256": "31e1964a55c6b30f736a6066f3d0af10eefd2bdc6f7c5be2fc972c9bde8b4ea1"
+    },
+    {
+      "fdcId": 168748,
+      "id": "50d2824d-c637-50cc-b47d-64b5685f65df",
+      "name": "Alcoholic beverage, beer, light, BUDWEISER SELECT",
+      "nutrients_sha256": "4f28038def44b284679f01fbea24a90ee2b82db2d06e7693e09a4eb7ad3af28e",
+      "units_sha256": "d6b71d982d35b7b06c74365a17c90538023f977a5877b470c2fb7c791ea7c6fc"
+    },
+    {
+      "fdcId": 168749,
+      "id": "c82cc4cb-e382-5cb9-a094-ee1dcdad9262",
+      "name": "Alcoholic beverage, beer, light",
+      "nutrients_sha256": "f92c7c2d15b3bfe6bbea925dbcbcc50f8321d1d0d2803638c25b419977482116",
+      "units_sha256": "c7515367d32684bfcc9100724d062688e811cbb8624bf55ca62fe512a3a32cd7"
+    },
+    {
+      "fdcId": 168878,
+      "id": "6fe5d49d-ca9d-5b27-bc65-7f0b6ab98c13",
+      "name": "米饭（熟，长粒白米）",
+      "nutrients_sha256": "be44d9d85e6b684d900739354e65a6c193d6011c9b62ce30c39af40d94607048",
+      "units_sha256": "0ab401591a279b01768993d9694fba908d17579e5c1366bc51c433a7aef78f89"
+    },
+    {
+      "fdcId": 168917,
+      "id": "5cf846ab-b1db-558e-9f06-1c2975a8b9a0",
+      "name": "藜麦（熟）",
+      "nutrients_sha256": "2d69205d0e7e625f6c996dc8cbb393e48605f543437fbdb9f44373574a1acaeb",
+      "units_sha256": "423f0a71b0ff7698face827ef1bb7747b5e03223a88a5cc2b7a2298bb70bd271"
+    },
+    {
+      "fdcId": 168921,
+      "id": "b1656be1-f093-589b-af84-f8e8299ef731",
+      "name": "Corn flour, whole-grain, blue (harina de maiz morado)",
+      "nutrients_sha256": "293e16188bd008687b01ccb94f8763530edbb78a54b217de625d9cbd1292169a",
+      "units_sha256": "35a45fdd55585ba0704b3774b01b8349c5cb48c1f072462f24e7ffa434f0aeab"
+    },
+    {
+      "fdcId": 169073,
+      "id": "aabae0db-368b-5dd0-a010-b3f6f5b3b6e5",
+      "name": "Beverage, instant breakfast powder, chocolate, not reconstituted",
+      "nutrients_sha256": "5e046e78c962c617bb4a4bebb709584479213d94a7c87738652ed9753ef9760d",
+      "units_sha256": "ff819179a488adfc17fb6081ca2851b80fb474e898e343d38e48b9ee241eeb3f"
+    },
+    {
+      "fdcId": 169081,
+      "id": "c213f27e-def6-5a01-bc8c-f2191cad4852",
+      "name": "Cheese spread, cream cheese base",
+      "nutrients_sha256": "4f973e3e9074e684372a5448e21ad32f63d820f2146b57ec237d0bc01427924b",
+      "units_sha256": "bef39a5f8545c88677ba9738badc1ec5629eeded4fb6cdd23b26b7dda4579c36"
+    },
+    {
+      "fdcId": 169097,
+      "id": "7f9d0d09-bab0-5c91-aa4b-b3c5dc4b1d3f",
+      "name": "橙子（生）",
+      "nutrients_sha256": "13bcb8d30381badf073b5c79755c8f4256fcdd15adab9b0ebdc21983fc04ecce",
+      "units_sha256": "755029b6da997295a528272d498cb801d6590463871d2202fc5bbec5525ccc74"
+    },
+    {
+      "fdcId": 169186,
+      "id": "aad8487b-ffba-53ee-af38-648571523d68",
+      "name": "Pork, Leg Cap Steak, boneless, separable lean and fat, raw",
+      "nutrients_sha256": "e87ed0d9ab68cd6be9ac030da016e00cdbfb0250629e3861448a72bc9262c8e7",
+      "units_sha256": "1726bab639700a27a535776be01f171483b4f9e69e11c797098dc3f5ce9b7607"
+    },
+    {
+      "fdcId": 169187,
+      "id": "afeed68d-8f5e-5bb3-a337-cfe53b39054f",
+      "name": "Pork, Shoulder breast, boneless, separable lean and fat, raw",
+      "nutrients_sha256": "c96928fe870c79b35a99a1fe9af42c80a3f3b5bc582d95d8adbf16ac3e189665",
+      "units_sha256": "4d0a44077fe3871c597a468fb3dd94c91e412d2f6d15b69ceef413e017ccaebe"
+    },
+    {
+      "fdcId": 169188,
+      "id": "b3a8ea7b-9db0-5caa-9c3a-ce05b5df3780",
+      "name": "Pork, Shoulder breast, boneless, separable lean and fat, cooked, broiled",
+      "nutrients_sha256": "75175bc8692c44909cde74036dc8864d8821b26d82e3fc8c9c965b747fa170c1",
+      "units_sha256": "10ee6dd507d9f4088301bc8e19894c0c65fd7c00376c86a3e99837741171da5f"
+    },
+    {
+      "fdcId": 169202,
+      "id": "4fac252f-82ca-5afc-9059-b7993e6fb38f",
+      "name": "Amaranth leaves, cooked, boiled, drained, without salt",
+      "nutrients_sha256": "461a2fdb6435b574d6ae730cbc2fd549442b900087ccf78246264b5a8a6efe79",
+      "units_sha256": "583b333b2d8c42071661a36983fb5fa0ec2f694d10248ed578dfbd99320f8232"
+    },
+    {
+      "fdcId": 169203,
+      "id": "a2c32933-918b-5dce-957f-f68cf79edef7",
+      "name": "Arrowhead, raw",
+      "nutrients_sha256": "d40f90b296bd05f954e54baeb2569c6002ecf27ca4c8132fed9d3ebfe8732d4e",
+      "units_sha256": "4c5040f2c1c2a95cf239a4d768024d0cc649834d1fc4fdf375560d6826e3f43e"
+    },
+    {
+      "fdcId": 169204,
+      "id": "cbb8a358-6815-575e-a822-f98816679122",
+      "name": "Arrowhead, cooked, boiled, drained, without salt",
+      "nutrients_sha256": "31f717f39867c76e7bebb5fc337cea52fa573f59e8a01419b02e7ea6115e1e3f",
+      "units_sha256": "a270da3b81d374393761eea83510abfb74d4fe176f236ddb701c227b13a14e86"
+    },
+    {
+      "fdcId": 169205,
+      "id": "372f075e-1535-5507-859b-b8155be10781",
+      "name": "Artichokes, (globe or french), raw",
+      "nutrients_sha256": "1c638edef3312d0fe2549a8655b95ddb097a17f77e476ac28364005cc6ddba1f",
+      "units_sha256": "afe05a281fc633d8f710c51b262afd5633456ef810dd623b601b48cf40f6f111"
+    },
+    {
+      "fdcId": 169206,
+      "id": "32a083e2-9e89-57a6-9801-2521dc88adbc",
+      "name": "Asparagus, canned, regular pack, solids and liquids",
+      "nutrients_sha256": "d780d58aa89e1cee70061b32a8e9441b53f35118a91f24cbe3bb75745f712355",
+      "units_sha256": "3e9fc7bb94b9f941cbf2036bac128f60bd800e0654fff48f035cb480f2a2ca43"
+    },
+    {
+      "fdcId": 169207,
+      "id": "9f0e315c-640d-510e-8388-7297bb5356fd",
+      "name": "Asparagus, canned, drained solids",
+      "nutrients_sha256": "b6b16cac61f873b5e8bfeb71dfcfe5d7979aa0ae3182b72179ecdf510ebc4b82",
+      "units_sha256": "17fc1d822ef587491bc76b73d9c59ff5ed3fcc2215da34a7aa57ffeec4815146"
+    },
+    {
+      "fdcId": 169311,
+      "id": "22a59ad0-dbfe-54b3-8458-2c53ec5fce15",
+      "name": "Artichokes, (globe or french), cooked, boiled, drained, with salt",
+      "nutrients_sha256": "65eedb0902f0005da52e3d63da11a18f2da6759ce6716cf99c22464a936021f2",
+      "units_sha256": "ec4e856f136c82da948f66cc9461fd27ebeb25b5f82008b277e3ec877e7e711d"
+    },
+    {
+      "fdcId": 169312,
+      "id": "621d8974-96e1-579c-93f6-f3ee7674af67",
+      "name": "Artichokes, (globe or french), frozen, cooked, boiled, drained, with salt",
+      "nutrients_sha256": "24d47af8332da63bb049b99395a22f1d02bd032c2ae675c157327feb08df7192",
+      "units_sha256": "c5e0469ab46ed40a994e80ee84d9371b53caee22a734dc5ffbcb3680625a2c57"
+    },
+    {
+      "fdcId": 169313,
+      "id": "2958480a-8798-5287-b2fb-8d26e0aee8e3",
+      "name": "Asparagus, cooked, boiled, drained, with salt",
+      "nutrients_sha256": "a46b48ead0925eff716fe11f482864a38e242511186225a4f6f15fe4764eef72",
+      "units_sha256": "98e4f668872fb92117d5c6e62b71a379074645d802bf1204b0044b64d2177efa"
+    },
+    {
+      "fdcId": 169314,
+      "id": "2ca433b4-f1d2-561d-896e-e9764ae14289",
+      "name": "Asparagus, canned, no salt added, solids and liquids",
+      "nutrients_sha256": "d780d58aa89e1cee70061b32a8e9441b53f35118a91f24cbe3bb75745f712355",
+      "units_sha256": "7f63f27f27d3ac499f0687a49c4a43b91f8ad3fe45868dc56d9d93f6ff825a05"
+    },
+    {
+      "fdcId": 169387,
+      "id": "f9b147a9-1af9-5a47-a92d-37c2c1279acf",
+      "name": "Arugula, raw",
+      "nutrients_sha256": "b14b5a9560ec5cc7c1e21d4e157dc64fe508ae3e138b910a1b003f1442cb59c0",
+      "units_sha256": "90730e0986fb7c07de05bb868a8f0853b822887491a503907f0cbc57031c9994"
+    },
+    {
+      "fdcId": 169419,
+      "id": "5cbd1c03-2f92-5151-8572-e6de53fb44ce",
+      "name": "Nuts, almonds, oil roasted, with salt added",
+      "nutrients_sha256": "007055d9b706eaf784480d58e4934f51972a3ce8d2274c54ed7ed865f40b577f",
+      "units_sha256": "d743a247ffbbe3f20f9c520be6ee12517ba7ed68e95ab8629633ace589d91936"
+    },
+    {
+      "fdcId": 169420,
+      "id": "57eff3d0-10f9-5329-8181-23b77044335f",
+      "name": "Nuts, almonds, oil roasted, with salt added, smoke flavor",
+      "nutrients_sha256": "c6bcd36cfdb4a3bb80952c7eefde7a6460abe3fbba1b740a9bfde4cb39835bf6",
+      "units_sha256": "96b7e6c5bf5837d067e25f947b85b7f1fa59c2c23f0a8c3a6c8ef180e9d6ce64"
+    },
+    {
+      "fdcId": 169572,
+      "id": "71ac1b7e-c0eb-5665-9b81-fb7b87eeea3b",
+      "name": "Alcoholic beverage, beer, light, BUD LIGHT",
+      "nutrients_sha256": "a643b64c4c5764a7344b9cdd5917cca0559e8cdf805d44cea791c8dc8c75d621",
+      "units_sha256": "5a590fab9a35fbe30726fd2dad19d0fa28554f8d081cc955eb01de908d6c011c"
+    },
+    {
+      "fdcId": 169575,
+      "id": "282f5ee6-2b25-503b-859d-aa1b8e18ce0b",
+      "name": "Alcoholic beverage, beer, light, low carb",
+      "nutrients_sha256": "c170dd002f18ee3735f301c3b13b8f10e9e87d9dec99f02e94df3a24d5c5fc86",
+      "units_sha256": "fc7fb0c346190ea135ed309cff3dd8ab91a6eedf0b655e13273f8b417edbe200"
+    },
+    {
+      "fdcId": 169694,
+      "id": "66901341-ee00-5401-920f-0a2513450cb3",
+      "name": "Corn flour, masa, enriched, white",
+      "nutrients_sha256": "20f96a51c674af69d48849cbf67ab06ce945e00041706fb945f1e51b30fc62d2",
+      "units_sha256": "f29120ce75fbf799f1f142cb30a1a2a84108525ac309a555d26214e798e48964"
+    },
+    {
+      "fdcId": 169696,
+      "id": "70db5420-f8ed-52b5-9a85-b9ad7f326deb",
+      "name": "Corn flour, masa, unenriched, white",
+      "nutrients_sha256": "20f96a51c674af69d48849cbf67ab06ce945e00041706fb945f1e51b30fc62d2",
+      "units_sha256": "15088be99958148d3826c0b6600bb10d87a2b0d8ce5cb2451c4aaac9924289e7"
+    },
+    {
+      "fdcId": 169739,
+      "id": "6f716316-02aa-5de3-beac-2e32c3eacde0",
+      "name": "Barley flour or meal",
+      "nutrients_sha256": "d212f97d7dbbd689bbddf0717448daf65bc15fa7d2764c9d31e26ebdf6d72443",
+      "units_sha256": "64dd82645657c3f454732adee92576e3d065db4c1a244e1b148bfa3ea0fc72cc"
+    },
+    {
+      "fdcId": 169740,
+      "id": "86fa7efe-1457-5226-a35a-6bd8a1c2ebee",
+      "name": "Barley malt flour",
+      "nutrients_sha256": "c45ca0fa73fee1f1739cf4b47963767217667fab0be93ca6288d2c876c8082eb",
+      "units_sha256": "529cbb85c1d94c36dc31e56bf4d166f2ad1250b87e77906685b1acc67e91da60"
+    },
+    {
+      "fdcId": 169748,
+      "id": "e6c131f4-c123-542e-9a59-8f4fbeda245f",
+      "name": "Corn flour, whole-grain, white",
+      "nutrients_sha256": "49924225f0e5fb94871bbac1df84565d2d53cb59d4ff41496fcd9e44bb2442b4",
+      "units_sha256": "92280089776f6e1aca5e7c004821f9a5bfb9d4e7350ddf3917bd365e64eee9ba"
+    },
+    {
+      "fdcId": 169893,
+      "id": "e76f6c25-2820-502e-9b9d-0ae4bc5a9678",
+      "name": "Bacon bits, meatless",
+      "nutrients_sha256": "8c647da186e76ad45dc0534b6c18fc5d1024d3d2b6e55288639b0ab15085a01d",
+      "units_sha256": "7224c51dbfe0b8d3552424c7e95b2ac7ce4e429d87d20fd62f9637545240fe64"
+    },
+    {
+      "fdcId": 169894,
+      "id": "da4e873a-94a5-58cd-ba47-4ae857e88165",
+      "name": "Butter replacement, without fat, powder",
+      "nutrients_sha256": "bb50b5380eb042357262f40c9a037f37c367c820dbfadf14b2d8623bc10bb359",
+      "units_sha256": "c733dfe1a04522b5d34971e9ddb00bc10584c86838aaf3502e42e3bb3c84dd54"
+    },
+    {
+      "fdcId": 169897,
+      "id": "c6859898-2fcd-53ea-9b0a-dcd6ce8cb29d",
+      "name": "Beverage, instant breakfast powder, chocolate, sugar-free, not reconstituted",
+      "nutrients_sha256": "345f6f57d3f3a8d9fb9f9a6aa8d193c57e91df64197afa282aad40ccf580cf90",
+      "units_sha256": "7b8f032a704ae4dd7495f770866a9e864310a120460da52aa5fb7893940a5b5f"
+    },
+    {
+      "fdcId": 169975,
+      "id": "c466ca3e-be42-53d1-b0c4-695a8f2643f8",
+      "name": "卷心菜（生）",
+      "nutrients_sha256": "083f2f3a13bebf1dadf5d1058093103425e6033432ca4187e97d5b470819e976",
+      "units_sha256": "894a1d4acbf9ac387b6c7c3832ad410bbaca1358e878801dc3729a23728c468f"
+    },
+    {
+      "fdcId": 170000,
+      "id": "bf9c8f47-4ee2-5438-9a78-e16db04f6a20",
+      "name": "洋葱（生）",
+      "nutrients_sha256": "05e78368c78ccd465ff5f8f3520710443f3c15bdf5147300c9b11dad2aaa8dd1",
+      "units_sha256": "c27cf99d66d9ecd8e339db1148d4b4abbb8be9153a01b87a42a46c155ae3daca"
+    },
+    {
+      "fdcId": 170157,
+      "id": "61cbe6d8-4730-51eb-8dca-44cfb032a57e",
+      "name": "Nuts, acorns, raw",
+      "nutrients_sha256": "880c465caff4fdd812500f12c1bb370d5ce00c7a17cc60f427603972ae2b27f4",
+      "units_sha256": "6e26d837604f21ce3eee40531f1c042f41066c3b9259a1b365197ee7849ad290"
+    },
+    {
+      "fdcId": 170158,
+      "id": "8fa6a989-de6a-5ab2-bcc8-46b1c021ce5f",
+      "name": "Nuts, almonds, dry roasted, without salt added",
+      "nutrients_sha256": "221601832c66c892bd050623ea7299ff6ce165ff5ef856325fbbc880ab27a8a6",
+      "units_sha256": "42f0a5be74fd7d5f6876f413004cad0fd2aa4e9c123169d0894a1e77d8f687a1"
+    },
+    {
+      "fdcId": 170159,
+      "id": "57b132f8-10d5-5264-b3ba-cc25cf4171aa",
+      "name": "Nuts, almonds, oil roasted, without salt added",
+      "nutrients_sha256": "007055d9b706eaf784480d58e4934f51972a3ce8d2274c54ed7ed865f40b577f",
+      "units_sha256": "03fd6d8a50985db2775d60daed8d438121f93c2ab470de87efea7496c619953b"
+    },
+    {
+      "fdcId": 170160,
+      "id": "a6ae723a-e40d-5c1b-baae-66c81f5758d8",
+      "name": "Nuts, almond paste",
+      "nutrients_sha256": "91afc61f1e27d8335003de7e9ace8d3b5031fe324a95e6ec35b05c846e5042e9",
+      "units_sha256": "df45a19ee359fca51c7a10697da238117b281d2a925ff5ed85a145f7a6ca9be2"
+    },
+    {
+      "fdcId": 170161,
+      "id": "8c28fd8d-4a77-560e-b9ee-1bcccc1df859",
+      "name": "Nuts, beechnuts, dried",
+      "nutrients_sha256": "e6b1c3f7c75887947c249369c210fb094bc03e1378af7cf44ba835a237b294d7",
+      "units_sha256": "a43f5816355ca2d04aeac6d938ee39ad275869b8722d575c963769aa074ed594"
+    },
+    {
+      "fdcId": 170163,
+      "id": "2f84bded-6b06-5d16-850f-4a14f3c3a636",
+      "name": "Nuts, cashew butter, plain, without salt added",
+      "nutrients_sha256": "e45e3d03e6766c7b875e470c5dd966249800e423b881941054922697ab146295",
+      "units_sha256": "d90fb26543c542932e3088b23044980528a6d135509a3256321297e385255572"
+    },
+    {
+      "fdcId": 170187,
+      "id": "8281f0df-3dc5-59c4-b4e2-7e1f69a7d17f",
+      "name": "核桃",
+      "nutrients_sha256": "986ae4ef25ee284f1d76a6f88b833312ae2782b583fc23b8cb59a3709786835c",
+      "units_sha256": "ab1bfaaf07118e92ae70ed258ee509e173f92b07b228988459717db6b48dbbe8"
+    },
+    {
+      "fdcId": 170283,
+      "id": "f57b8302-031d-579e-bd37-fea1869e091e",
+      "name": "Barley, hulled",
+      "nutrients_sha256": "291006933fd2946ce455bc8f83a65cd77efda53d55acbd063150b8ef59175fdb",
+      "units_sha256": "6423aec0156cd3366153a0dae8950a5089ecb1e6bcfa7ad5119415864ba1d64a"
+    },
+    {
+      "fdcId": 170284,
+      "id": "3bd910f1-d189-5bc3-8475-cfeb95c1c7b0",
+      "name": "Barley, pearled, raw",
+      "nutrients_sha256": "527f4dcb02957cc6e50f261560a95eba57a0d50dbfcd41a03e86a40bbb35e0b4",
+      "units_sha256": "9e09f78010391bdda1a8f6c4d9503e098fb254ef76fea3a6f36005fb423fbddf"
+    },
+    {
+      "fdcId": 170285,
+      "id": "e6d30d7e-a8cf-5542-8c3f-fb68812ae971",
+      "name": "Barley, pearled, cooked",
+      "nutrients_sha256": "4f9fa8d3a243f8ba1e0b6e602bf5cecdb9c7d6f978ee8f1d8a1a6df5047ba84b",
+      "units_sha256": "ee66cbc9b1243db3b3bd3d56e619498e4da2a80236b0a4521670dabcd286de8a"
+    },
+    {
+      "fdcId": 170286,
+      "id": "e6d940a3-d890-5550-8ab2-d6ba8b0c27c0",
+      "name": "Buckwheat",
+      "nutrients_sha256": "5896d8a65c89d68087d236da05bdd521d93d45564528323c09d09a678bbd9f74",
+      "units_sha256": "ce135593527f4958c82d45c3a590a0a4614fa9dbb2eb27468b02e1a1ac06ca78"
+    },
+    {
+      "fdcId": 170287,
+      "id": "88ca2676-bf8f-5b88-a820-c9f3d8136431",
+      "name": "Bulgur, cooked",
+      "nutrients_sha256": "5f0eae8004725b1c5db4cc8b3132fb88b451387565577ddbcd8cd50b8e21c767",
+      "units_sha256": "794d2336fe2adfdce51454a7f7df36a945bafce7a32a5a5416be6389eb78cdcd"
+    },
+    {
+      "fdcId": 170289,
+      "id": "3d6d6361-f13a-5005-81fb-cb3eef0e8943",
+      "name": "Corn bran, crude",
+      "nutrients_sha256": "f3d6707103efc5fe2b3dd34751d9ac6379f42d67619535edfb97e000bab4d660",
+      "units_sha256": "5442ab323636a68df3b9a6ab587301187fb4ec579c66eecc999a6c459f522b71"
+    },
+    {
+      "fdcId": 170290,
+      "id": "4692d38c-4b4f-5da2-9588-15a035064242",
+      "name": "Corn flour, whole-grain, yellow",
+      "nutrients_sha256": "49924225f0e5fb94871bbac1df84565d2d53cb59d4ff41496fcd9e44bb2442b4",
+      "units_sha256": "d7089fc8eafda0599b1425a458a4f8b42ee2b3934a79f23d0c61162af1458f8d"
+    },
+    {
+      "fdcId": 170379,
+      "id": "edf664f9-c816-50ac-8015-89d89ee6b9ea",
+      "name": "西兰花（生）",
+      "nutrients_sha256": "bbf32aaadeb5bd1894f67a49c65ba6d8c4be8339eaef472f80263bd88f1a31df",
+      "units_sha256": "bc445abcdda3d11d8a81e3e5cb59903f4a162a940908a0e4fc66cf71370738fb"
+    },
+    {
+      "fdcId": 170393,
+      "id": "0633a804-252d-5115-b7da-89f73c4022c2",
+      "name": "胡萝卜（生）",
+      "nutrients_sha256": "61e32392b74d4188f85df794b02c9f0e6cfcfb180da02d05fc57055d1b98b01b",
+      "units_sha256": "864a11fbaa4249c79869e645e252a622442b195088dfc975d77bf73f36762a46"
+    },
+    {
+      "fdcId": 170457,
+      "id": "2875bf6a-e6b0-593a-8460-5ff7e4be8c3d",
+      "name": "番茄（生）",
+      "nutrients_sha256": "c394e8f3e1fe0781078daf07de1585cef4e57b677715fe549302e7c3a07183dd",
+      "units_sha256": "9b71f271d447c31cbd0c6aa8827e128e7e31e6121e40194ddf5f815f2d2d05c2"
+    },
+    {
+      "fdcId": 170565,
+      "id": "ac43d53b-5a2d-5906-bd42-68df8bd7e948",
+      "name": "Nuts, acorns, dried",
+      "nutrients_sha256": "f1591a06eacea42c17eaf6307c970b6ffcd56327d656a2be1875c3819e929ebf",
+      "units_sha256": "1f68708857ae353c18c91956da2390d3488830cfa1db92a30034ff3cc822a0ef"
+    },
+    {
+      "fdcId": 170566,
+      "id": "861e2197-f090-5e3b-ac22-b04ee0846b10",
+      "name": "Nuts, acorn flour, full fat",
+      "nutrients_sha256": "20dd3b7363ae1539a2fd57f08e0969276f185ab29d7be80debf9eebbca8ee656",
+      "units_sha256": "66362857e2340f6e5b7391f13a97173d1f1e53117d0b9f05a4e3b1389cd833f7"
+    },
+    {
+      "fdcId": 170567,
+      "id": "aa1d122f-0df9-5262-9460-bbdd9c37040e",
+      "name": "杏仁",
+      "nutrients_sha256": "27d1a150c517ed7d9cc658a7f0237754b38d57fa69d3b861a884644041e8b428",
+      "units_sha256": "86096362a947dfc9299917e4eef60daae4b168c201b88c79077ce4115a9050c3"
+    },
+    {
+      "fdcId": 170568,
+      "id": "3466af8d-887e-5555-a854-2c87882236c9",
+      "name": "Nuts, almonds, blanched",
+      "nutrients_sha256": "3779b6cd766c2849fa1a99a89db1265bad5f4d0f7ea0e9c24230883414ad8118",
+      "units_sha256": "e371682c97b6d5ebbe11c57596d71ffa7981dadfca6bfe3778cd015963039f93"
+    },
+    {
+      "fdcId": 170569,
+      "id": "c6af48ef-09d8-5fe5-8fee-f8ceb3b1220c",
+      "name": "Nuts, brazilnuts, dried, unblanched",
+      "nutrients_sha256": "dc96b753a70af86189b792cf1520f7d3bc5f83e3a527aa349de1431b6efc7cec",
+      "units_sha256": "b697034434b74fad1cff532d939dd9e15d2d30d44d73d38a57a5e93def48dff7"
+    },
+    {
+      "fdcId": 170570,
+      "id": "a5f8ec0b-01f9-56e2-a587-bd5305a119e5",
+      "name": "Nuts, butternuts, dried",
+      "nutrients_sha256": "9556707431a9f57847db5bdac35ca4b5d08aa6e66449b018831b30c795a4b32d",
+      "units_sha256": "1b827b3368de28587bcf439ccca4cc56aef58ac400c153541ee10e053075606f"
+    },
+    {
+      "fdcId": 170682,
+      "id": "f04979e7-eaa1-5f19-b211-d2f11b1dd60d",
+      "name": "Amaranth grain, uncooked",
+      "nutrients_sha256": "f232f02810da86cf40a313ba2d14a076e56099968ad4602598323a1f40c96377",
+      "units_sha256": "dc3f81d70dfadebce896e86e06d5e7d3bddd5b6fc442010a82601b6e28d2f2af"
+    },
+    {
+      "fdcId": 170683,
+      "id": "ea96bf7d-9f7d-5c9c-9ea4-4391887fe0d0",
+      "name": "Amaranth grain, cooked",
+      "nutrients_sha256": "ef226309d7b8e86bffd0ce47b4b3a930a479da4a522849fc036447ec471ba1ec",
+      "units_sha256": "e7060cbabc0cb7a9ca5d0295f6b2f32016f998e37006bc7d1fb562fb8ebe2be1"
+    },
+    {
+      "fdcId": 170684,
+      "id": "abdee206-e176-58e7-be1e-5a0c563b790d",
+      "name": "Arrowroot flour",
+      "nutrients_sha256": "fa89740795d30a177c5fb7597e91f8e5ae039817a71a3bcf6bded13f4e40d3e0",
+      "units_sha256": "725449f2d2d3fecd3f2c096c801f04c82f8d70589c519062e146b17a3c96ba19"
+    },
+    {
+      "fdcId": 170685,
+      "id": "1e332fa9-7b45-5236-9eef-3a31a45482c6",
+      "name": "Buckwheat groats, roasted, dry",
+      "nutrients_sha256": "d250ae6d1f0031dab3f14667f245a4137ed9b8f0a31e4a00e522d5c920888751",
+      "units_sha256": "68109eea1b3614ce503d31ce7bb77048f59112a32cca091aebaadf29862cb733"
+    },
+    {
+      "fdcId": 170686,
+      "id": "8ab3f4f9-162b-5d02-8061-4d4e797c928a",
+      "name": "Buckwheat groats, roasted, cooked",
+      "nutrients_sha256": "5e3f4275f3a113c52620d5b667a82d7c863bbd79b169561cb89ea555a18cd3b6",
+      "units_sha256": "eec05f0aad94e9e489e375497677af899a511da5d2b3a0ff0132f9b32d2d30d1"
+    },
+    {
+      "fdcId": 170687,
+      "id": "38c75bee-0ad1-5fb9-b9bd-4e6f6ccfd340",
+      "name": "Buckwheat flour, whole-groat",
+      "nutrients_sha256": "dd704a88f58e7cf453e801c23ef437f37f1b0f9ee13f3b424e9f3a83b2775d23",
+      "units_sha256": "45df804cee70769b522b199fab467979b28171e392673a41190e9eccf8c780c9"
+    },
+    {
+      "fdcId": 170688,
+      "id": "e49ed479-4ee9-5044-83ed-70779a4b7d20",
+      "name": "Bulgur, dry",
+      "nutrients_sha256": "5e6028250dc2f9ed74b932157c611a1581925317a43afa08ce40c9aa0d5a2c35",
+      "units_sha256": "f5d01f9ca82f1f9a1c223aa609491ab69db09476daa808aeac5bcf25e7fd92aa"
+    },
+    {
+      "fdcId": 170856,
+      "id": "ee29ea2a-8d96-5f1d-a71e-82ca65c47c90",
+      "name": "Cheese food, cold pack, American",
+      "nutrients_sha256": "de55821e98c356946865f575eb42d736f29a1892dd83c14c60f32f0c457c5e3b",
+      "units_sha256": "4ff0bddb4b864c17433d06b468efa1f77c4576483a26e9c0007fddbd8cceaa50"
+    },
+    {
+      "fdcId": 170863,
+      "id": "0b21560b-2539-572a-9bbf-85ae1ada13d0",
+      "name": "Cheese, American, nonfat or fat free",
+      "nutrients_sha256": "3076cdb1e89799771e5f2c1dbab8f9959f1ce2b4e8c5848f311092ba1d1d942f",
+      "units_sha256": "c652ea25b0463cf06f6994b0574e6f35ae8a4b5a4785ee6b70fc6358396ab9a3"
+    },
+    {
+      "fdcId": 170896,
+      "id": "3e0cb390-0a82-5c06-8834-9333ed9dbdac",
+      "name": "Cheese spread, American or Cheddar cheese base, reduced fat",
+      "nutrients_sha256": "e0ed0ac0666e055ea318280a0aac30c7ae98ddc0a70c42ee91a711b373c713b3",
+      "units_sha256": "2de8e092dac53c188cb2542c3d8d554cee1d4d2417c2d3551f9146fd91f6244b"
+    },
+    {
+      "fdcId": 170917,
+      "id": "77b07a8d-cb68-528e-a039-6eb5fb013341",
+      "name": "Spices, bay leaf",
+      "nutrients_sha256": "ef4bfb6db8f0a873fde2231223414694f517c27361d2c709f2e30c6d7edded29",
+      "units_sha256": "f34f1fc272384f11c6288a34882d7034bd406755cfa84f959aff5bc07b949223"
+    },
+    {
+      "fdcId": 170918,
+      "id": "85062631-e6d3-52c3-aa11-51f498ef8c8b",
+      "name": "Spices, caraway seed",
+      "nutrients_sha256": "129367aedb43f0af656749c7d7fd52b418e2ee4d4c573e601a58ae462cc9ee7a",
+      "units_sha256": "ff3b2c9c45ed94eeaf7c5b9bd91e28364be9c8b0fabbd94dcae78532e1655836"
+    },
+    {
+      "fdcId": 170919,
+      "id": "f4712c53-34ee-58c7-a744-d2359987ccb3",
+      "name": "Spices, cardamom",
+      "nutrients_sha256": "7e6cf7ae5f6683c581aef1a5b076c3e830b0a5d3160cbebe844e93b5d31d03e8",
+      "units_sha256": "3f17518ef45078a15979e9b54f74ff33d49c0dfeb46558a5ae6b63a254f3cf14"
+    },
+    {
+      "fdcId": 170920,
+      "id": "6940d9bf-e869-5cd7-94c7-1af4fa56a2eb",
+      "name": "Spices, celery seed",
+      "nutrients_sha256": "d3db81b930223047be5426ac468bb5437b89d9f97b36a5d59ff1a367cb6dd8e3",
+      "units_sha256": "55564fbc8cbb34e54f10f7b1383269ae0496e9b031b945b1d6175ae69a63db4c"
+    },
+    {
+      "fdcId": 171046,
+      "id": "50ddde35-c721-5a6c-a4c5-d1a7c5592c96",
+      "name": "Dressing, honey mustard, fat-free",
+      "nutrients_sha256": "aa7db81d0ba03a24e6b1aa041b5be5055a4a032302855dc2fc6fed98ab44862f",
+      "units_sha256": "48f0d8c8f0bfe5bb441289addc42fea03db183a3afbdcd0dcb1de8e05eb46dc5"
+    },
+    {
+      "fdcId": 171077,
+      "id": "8982b1bf-c905-5518-b917-2fc2f0472039",
+      "name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+      "nutrients_sha256": "7bae05c67bf8f95304b3c42391fb884db7293160206c50dc019d00ada6c2b0e8",
+      "units_sha256": "3fd0ab1c2d0c69c795dc87e7423f47ed66f76b81c866b484e2a2d4be381000d0"
+    },
+    {
+      "fdcId": 171114,
+      "id": "13c329e3-6685-5e17-80df-74b7fec16686",
+      "name": "Chicken, broiler, rotisserie, BBQ, drumstick, meat only",
+      "nutrients_sha256": "0b4a1beb60940f7f8076707fbbaf94f71aad372ec737678d012901bdcaccef4d",
+      "units_sha256": "f60a9f38f2a55ded8ad95cba0d696e2b52e88ab86870165c1488e81190c63cbd"
+    },
+    {
+      "fdcId": 171118,
+      "id": "47b6ba56-759c-59cf-b5ec-2afa3048c06c",
+      "name": "Chicken, broiler, rotisserie, BBQ, thigh, meat only",
+      "nutrients_sha256": "8738a470d8938a456894aa45f320105b675fc35517bda91de5ab71615dac32ad",
+      "units_sha256": "a4a80e2fba48fd412d136cb5b5fabc4e513e0faf3c9333abbdbf901ea10b091f"
+    },
+    {
+      "fdcId": 171124,
+      "id": "962d705a-76d7-557d-8ba4-f8c7020ac485",
+      "name": "Chicken, broiler, rotisserie, BBQ, back, meat and skin",
+      "nutrients_sha256": "430ea615d38ff2ec9babe59c7cf8f3efe86c4c99ed7a15e8c86531c54fa2be93",
+      "units_sha256": "d1fcbc54fce3ae77ff0c144a213f64414a655c6734d362982831322d1fd8a9ec"
+    },
+    {
+      "fdcId": 171125,
+      "id": "04818afb-db31-53db-9de9-3dd161fcd854",
+      "name": "Chicken, broiler, rotisserie, BBQ, breast, meat and skin",
+      "nutrients_sha256": "3e62257a210c92b0648c8f4e9fcfc488296fcd2df0f9ea381d7119757224a440",
+      "units_sha256": "1fe9ed0818318fd386c8bd2a8f9fa2a6ac799a13d546518f6f6d11f04c190a49"
+    },
+    {
+      "fdcId": 171126,
+      "id": "077609ed-981b-5b38-88b7-015e4e7c7fe6",
+      "name": "Chicken, broiler, rotisserie, BBQ, drumstick, meat and skin",
+      "nutrients_sha256": "5f346b7619b9780b404f8f4b8d2e125ba0ad4b01adb3f0fdee2c67478477c5d1",
+      "units_sha256": "2d817b4a4a750a9f33d8b7018176c27ba3a37e9ec1c9205591792a3d8a1bf95e"
+    },
+    {
+      "fdcId": 171127,
+      "id": "c12a3a87-3d45-5a4f-becf-0ef50d2242b3",
+      "name": "Chicken, broiler, rotisserie, BBQ, thigh, meat and skin",
+      "nutrients_sha256": "de076e3c6b14b7310e46fddfb95bbd431169ab2f3227d7469e507764573b352a",
+      "units_sha256": "fec77dd4ebff94a9f251c96faa9ee5debf349771080c29c537004e4d5cf6b825"
+    },
+    {
+      "fdcId": 171140,
+      "id": "c65a35e9-e708-51c4-8375-c903fb4abf68",
+      "name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, braised",
+      "nutrients_sha256": "eb788190d89ef76bed5075db9cd360fb02f2a0e1cf86737804d81b1949e6cfbb",
+      "units_sha256": "2ddb349d9b3dff428273e0760a07ee687b6957793c09e66de2e8169f9f846cad"
+    },
+    {
+      "fdcId": 171252,
+      "id": "38cdc5bb-65a4-5528-a092-04b825dc42aa",
+      "name": "Cheese food, pasteurized process, American, vitamin D fortified",
+      "nutrients_sha256": "27ebcb82a7b4e7efc3b2c62efb79e1c51991f760d51bf2876ab5e645fef432f6",
+      "units_sha256": "0cf84f9d23a2b4ae7ffedeab4b1b95b1e4c6b6699027d7584a26f3b2206e0119"
+    },
+    {
+      "fdcId": 171253,
+      "id": "7e510e54-4869-51fc-9810-c9e77c1ace53",
+      "name": "Cheese food, pasteurized process, swiss",
+      "nutrients_sha256": "393cec34e500c62a8fdb04d119fc3f137193448924aa2d657a35ef55d1b593c5",
+      "units_sha256": "383d58efc8e6e1cf0e9fbfd2fe0eb14eb08ab9ade02b44dacc28e84375baba87"
+    },
+    {
+      "fdcId": 171254,
+      "id": "6e49ea32-8c8f-53a4-99eb-c6abfe145fd0",
+      "name": "Cheese spread, pasteurized process, American",
+      "nutrients_sha256": "e110ec7191a8c10bc13452844c27dccc644b3dd74ee0ba0d6727b29a73a2a694",
+      "units_sha256": "75dd46ac5444a0693f4295611dbd7eb720b1456cb2287d69beceb3b2f3ca0217"
+    },
+    {
+      "fdcId": 171265,
+      "id": "586803e8-96a6-5292-9064-ee32a972fcb5",
+      "name": "全脂牛奶（添加维生素 D）",
+      "nutrients_sha256": "660b9a1a0abd7a6e1a690202aface44c85ca6a6113f52d0acbe8e73a1517f79b",
+      "units_sha256": "cee9e4af6dea8ef9f03fcb296e7744d56589ca11ce4557ed1da768701ae72be6"
+    },
+    {
+      "fdcId": 171284,
+      "id": "98bd37c6-ab5e-5892-a785-2faa85c60975",
+      "name": "原味全脂酸奶",
+      "nutrients_sha256": "11fc816e574edcd29efbfb0fa70cb8d8bf228165cc905d1bf8b87f09905c26ac",
+      "units_sha256": "11100eab998e146910ec473882cbe2a55b1b19d22e6f55c37390d07468122ae9"
+    },
+    {
+      "fdcId": 171288,
+      "id": "246a685a-2b58-5bbe-84bb-5bcbbc5e93b4",
+      "name": "Cheese, Mexican blend",
+      "nutrients_sha256": "0be6ff986d93e1e01b97922474ff74bd420bdd4a528464c11e72f69084a16cc4",
+      "units_sha256": "a07f34bdbd0e6c935a9620181459aba9b79d3d33aedcb2acc87f3e0f41467881"
+    },
+    {
+      "fdcId": 171289,
+      "id": "adeca7f6-c2f5-59dd-8836-505be08c96de",
+      "name": "Cheese product, pasteurized process, American, vitamin D fortified",
+      "nutrients_sha256": "962c6508a439c4cdb011839e460aa15a423fb650fc60fb92923e0e9c8f8b4f44",
+      "units_sha256": "176398d4899d818763fc7df1d2bf3d833262cba3f2745ac95b82347cbf989548"
+    },
+    {
+      "fdcId": 171291,
+      "id": "7357ea69-2900-5720-bfba-8da65e6f3582",
+      "name": "Cheese food, pasteurized process, American, without added vitamin D",
+      "nutrients_sha256": "27ebcb82a7b4e7efc3b2c62efb79e1c51991f760d51bf2876ab5e645fef432f6",
+      "units_sha256": "46b549c237de3b231b6eebec63cedcc779e1888ab6b988c472a8e0afc8a75f46"
+    },
+    {
+      "fdcId": 171314,
+      "id": "4cd0d5ae-2ce6-5c28-b7fd-79381a6c3e1b",
+      "name": "Butter, Clarified butter (ghee)",
+      "nutrients_sha256": "1a5d6308648711ff24b174b9cb55ecc3352018657cf02cf3c2105d9e710784fd",
+      "units_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "fdcId": 171315,
+      "id": "4b632fe0-dcab-5d48-b6ac-942080ef7c45",
+      "name": "Spices, allspice, ground",
+      "nutrients_sha256": "946dc024fae8b2186c0d7ef3b658efa2848bebd0cf1a8b32cfa8cd96d33888e6",
+      "units_sha256": "04bb0537516635c2c2eccf9565552e4253f448ee0362126c767b4ba902e6c910"
+    },
+    {
+      "fdcId": 171316,
+      "id": "5e28188d-14c8-5242-b6be-f1c899e5203a",
+      "name": "Spices, anise seed",
+      "nutrients_sha256": "d735c6a013bf6bbaaaa89f7ec2cee06a14bdd4d6b7b1164e0108f46afe39f584",
+      "units_sha256": "41f90a1b5d6f1d41dc20484d13abdb66e6abb902e3c5b729d1b38e136e4f2acc"
+    },
+    {
+      "fdcId": 171317,
+      "id": "e66a9956-7405-58a2-b9da-0f733c38cb72",
+      "name": "Spices, basil, dried",
+      "nutrients_sha256": "4fe0866f2b70e44e0f5c3142442d931a4f5bc2fadb8938174c30965c87b6edb1",
+      "units_sha256": "b9acaa8e83c21aa71101503bbd431595502871bdcbc98b924d730db7769e3c0b"
+    },
+    {
+      "fdcId": 171400,
+      "id": "935cf2e2-f02f-5b7a-8665-a8a3cc27cfc4",
+      "name": "Fat, beef tallow",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "8254f5d92d65c43d8710b2962cd2b806c3d9db0c647c48589daa2ccb6d3a908f"
+    },
+    {
+      "fdcId": 171401,
+      "id": "a353bbd6-9531-50ea-9c06-e68fbfb6c5e6",
+      "name": "Lard",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "b5f884728a3c9f48a3499ae62f5cb6088ddf464cc795de9982f01c0db548a56b"
+    },
+    {
+      "fdcId": 171413,
+      "id": "c370bd57-c6cc-5596-934a-35a6cb7c745d",
+      "name": "橄榄油",
+      "nutrients_sha256": "611e380f6e150a9f9c9208fcf513c9c810850db9b287e0390122aa7b9f8dd250",
+      "units_sha256": "f219c71ec2c7b24935a1f879cf2b201cf58f5858136f9efd3e478d5b0e515c5f"
+    },
+    {
+      "fdcId": 171445,
+      "id": "096fc0ff-2de7-5b72-b93c-6be67b1466cf",
+      "name": "Chicken, broiler, rotisserie, BBQ, breast, meat only",
+      "nutrients_sha256": "97386396cb9e150a0ca16f4a7606e6737b8129584d7bdf0c5ba09e87dd5174e6",
+      "units_sha256": "2751c3f1efbc13ed7381d88f1f4f5e72685ffaa9a182fe336f4990c36c88d861"
+    },
+    {
+      "fdcId": 171477,
+      "id": "ac5f0dd4-d156-5ec7-b9bf-715630ad7dc9",
+      "name": "鸡胸肉（去皮，烤熟）",
+      "nutrients_sha256": "e720ec17b612f26a8e40c60a09e2990f5f2b9d79653538eaba01849b1be86015",
+      "units_sha256": "d60a1e4963f71d3325dbde05ad38cc6af658b4c613fc0cd9ea6e3ad0924da158"
+    },
+    {
+      "fdcId": 171512,
+      "id": "11f675ad-b5a1-5333-b834-afd93172aedd",
+      "name": "Chicken patty, frozen, uncooked",
+      "nutrients_sha256": "cabd3388b6b24f585cd1cdc1135aaff3afe1bd3d3cf3122c66cbd310960e3358",
+      "units_sha256": "4d08b9b30ea4063852d53ac8bc53034e4efbf0b7942c0e31a6d36adf53a51250"
+    },
+    {
+      "fdcId": 171513,
+      "id": "6f508ae0-8100-5031-a294-f1e9a9ea9c33",
+      "name": "Chicken patty, frozen, cooked",
+      "nutrients_sha256": "b0807e68af86a4f88b26c44c030e70c1224b6aa0c1e0e44e785f007623ef5e3c",
+      "units_sha256": "5b41e9143e5f9b7c1bde468cacbadbe4a98d38eb2aa854d8fa2db2ac534408ac"
+    },
+    {
+      "fdcId": 171514,
+      "id": "a75d81df-191f-57cd-88d5-a98861ee32af",
+      "name": "Chicken breast tenders, breaded, cooked, microwaved",
+      "nutrients_sha256": "dcf6cf84e1bb21a5c824b00d003a80de97d445cec22c1c7214b48f4aa4305847",
+      "units_sha256": "8fe3b4520adae0e5ed40ada6731f446226a4a53e459ed1ad634ce445a6b8f592"
+    },
+    {
+      "fdcId": 171515,
+      "id": "bf7c7fdc-f8b9-560d-b4f2-a191525c0eff",
+      "name": "Chicken breast tenders, breaded, uncooked",
+      "nutrients_sha256": "9f4173ff185c2bdec54123dbdb143cf22fb7776e70ea2e95006e7ce15cf56e7b",
+      "units_sha256": "a7c245afd06928a4fa5a4d6be8a2074a5ce2499515b0dab065020dbae3d9edd8"
+    },
+    {
+      "fdcId": 171524,
+      "id": "08a81faf-7672-5a26-af24-63f6a1439297",
+      "name": "Chicken, broiler, rotisserie, BBQ, skin",
+      "nutrients_sha256": "fb183035b31f20b5f0bf7d2c1451ecff92b4377950fd4e7e07f46478e889456a",
+      "units_sha256": "d2e1b4d116f59123e8c5f77ef112c807b587dfdb02f20066a41965d787f7c6da"
+    },
+    {
+      "fdcId": 171534,
+      "id": "5d14539b-5770-5598-a78f-3de7b119b912",
+      "name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, grilled",
+      "nutrients_sha256": "44a11c9f620f202c8df14481115c7b757ab083995ee8544b3b956487d009801a",
+      "units_sha256": "4f6ef5d45cea8d63fd3d207b6986d296110d389da48f438a7887bd6b9f8117b5"
+    },
+    {
+      "fdcId": 171535,
+      "id": "7bc6ca60-4435-510e-85c2-dc08d5432d11",
+      "name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, with added solution, cooked, braised",
+      "nutrients_sha256": "fcdb465aed6be6afc8ba6132114057d1954236a2402c6c77afb05f59ef57fa6d",
+      "units_sha256": "346578ad5db797580528c01bbb275ce91a162e5c125865322e0b57c955e54f57"
+    },
+    {
+      "fdcId": 171536,
+      "id": "ce0f2322-97a2-5a6d-8de4-39d003a7d98e",
+      "name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, with added solution, cooked, grilled",
+      "nutrients_sha256": "927842a2bca9c4a7c568aa5c52e0682189e029b99debf8e5975aa61422dc2360",
+      "units_sha256": "87e2e144d97b654493624ca20c70ba707e89683d3ba179ebc88494ebb4d8c34d"
+    },
+    {
+      "fdcId": 171686,
+      "id": "d09487b1-5906-58db-bfcf-be16e2056db2",
+      "name": "Acerola, (west indian cherry), raw",
+      "nutrients_sha256": "ce39e7568dcb052027ba7752c98feeaad590b1d06bd1764e0d6a2f37b2e20a7b",
+      "units_sha256": "14cf409b72ba9f46ae565ee707486f8ec4e97228c6abb53e8bb1eda07c110825"
+    },
+    {
+      "fdcId": 171687,
+      "id": "435c9d6f-8ee7-56dd-b028-a313085e21f4",
+      "name": "Acerola juice, raw",
+      "nutrients_sha256": "6d2b5dff6c4875312f57f52819c9ad667b9756bf593809a00b461d244780c489",
+      "units_sha256": "7145bee588812187ca5de0f5bae1528a40737c9e55279c224a53c0920d076fe7"
+    },
+    {
+      "fdcId": 171688,
+      "id": "b8b7ce7e-856b-5957-a5a1-ee9a01f23919",
+      "name": "苹果（带皮，生）",
+      "nutrients_sha256": "58b6032adc080a225cabfbd43ae753479f5809a581e4d0015fb51d11e7d59c48",
+      "units_sha256": "e2343167e4a27a4d2cefd5d63bb0276e546e8f62233432078c107b82aba87470"
+    },
+    {
+      "fdcId": 171690,
+      "id": "d2020def-f5c7-5c64-b9bb-b72782a6d4c1",
+      "name": "Apples, dehydrated (low moisture), sulfured, stewed",
+      "nutrients_sha256": "48d6fa5dafd3c73ddc7b79e60376ec3d72b6b258e83c81b11b1e95775c78d8e9",
+      "units_sha256": "4d930dfd5ff3e6e04d76ca679147f0943d49a74d28a06079e23f50da3fa45743"
+    },
+    {
+      "fdcId": 171691,
+      "id": "e109b402-1820-546d-a315-bdb8b3db5bc2",
+      "name": "Apples, dried, sulfured, uncooked",
+      "nutrients_sha256": "e49ef6efe347629735b0aaee7a2b6dedb5ad74b47fa9b23fb56fdf397fd415d3",
+      "units_sha256": "c407519b52b37f6801ccb502baf3aab7c90576aa46d94ee0c9c93f7a5cf0f689"
+    },
+    {
+      "fdcId": 171692,
+      "id": "97ab665a-f3f3-57a7-8576-b2e8b23b9853",
+      "name": "Apples, dried, sulfured, stewed, without added sugar",
+      "nutrients_sha256": "35bf854af07139fbad1367f3cd5cfb6a692507e22733d0f4156a2edaacc58609",
+      "units_sha256": "f09609f51475dd6879af62a0eb2d97b23cd6066623f714eb6e2a46dd011ff8bd"
+    },
+    {
+      "fdcId": 171693,
+      "id": "f63024b4-4a8e-5736-a80c-8ccad0ec20bb",
+      "name": "Apples, dried, sulfured, stewed, with added sugar",
+      "nutrients_sha256": "ab161092c1ce5e7f3f5640ae7590afa4676aa257d40af8f9085768beaed5c2d5",
+      "units_sha256": "74443e0e7b0d09d2001af091f39d7da19fe8db3bbf4657c848e6d57f51ec74cb"
+    },
+    {
+      "fdcId": 171694,
+      "id": "0371369a-6bec-5cb3-8b86-1a7aebec555d",
+      "name": "Apples, frozen, unsweetened, unheated (Includes foods for USDA's Food Distribution Program)",
+      "nutrients_sha256": "8d8740d650171929d89c623a2c7a2bfd5ccf596ebdab1eade72836c7d918a330",
+      "units_sha256": "8c6d6d5379e606743493597aa806811fcf7c2236a837bf687977089b452eef89"
+    },
+    {
+      "fdcId": 171711,
+      "id": "ff390262-1541-5201-bb13-b54222e1fb80",
+      "name": "蓝莓（生）",
+      "nutrients_sha256": "63f705b3d2044641788f7c6992337203875f3ac3b520827f2c0116408159c1ae",
+      "units_sha256": "934e6ec76af4e824001e73c3973e05be2d9596714ee3c29a9cc9f9e765383a55"
+    },
+    {
+      "fdcId": 171728,
+      "id": "b24ac95f-7bae-57e4-904a-b510c448916a",
+      "name": "Beef, Australian, imported, grass-fed,  external fat, raw",
+      "nutrients_sha256": "f525b8f0261e05560af752e605bf6886988e12a7a0ba68191cd06621495bd456",
+      "units_sha256": "c36b59416b44f9637ecb6f99fdea4af85144e8858307eea5f4e1c5051af91d36"
+    },
+    {
+      "fdcId": 171730,
+      "id": "564857c6-421c-53a1-b7dd-551253b91cc2",
+      "name": "Beef, Australian, imported, Wagyu, external fat, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "a4d85bee0dfe92026c97db230416aeaedbddb7c502babdcb1a84dbfb6f97543c",
+      "units_sha256": "ace959269a9b47ccb855c7b2241e2a32c5ea72ae423cdd7bf510616a080340c5"
+    },
+    {
+      "fdcId": 171731,
+      "id": "6f99b546-4564-5121-8596-adc641241546",
+      "name": "Beef, Australian, imported, Wagyu, seam fat, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "2bcd7b1c1fc17c0c87cb82024631e9c714676f2c75c5b0537b9f9e1dec168b34",
+      "units_sha256": "bc1f1aeff6bdc8154edcfa690744b1de927173f633f13b97189c9398e59d3ba8"
+    },
+    {
+      "fdcId": 171732,
+      "id": "a9315256-165e-5a3f-aa24-acc945a7bc34",
+      "name": "Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean and fat, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "d8079a23a8589c61dff1e4a130fa905acae5e72f3ef783bd64c4493a3683d530",
+      "units_sha256": "920c6e195fa1cd0425f0befa7ebf1aaa914881f52ef7f214b6601f3f794f0e9b"
+    },
+    {
+      "fdcId": 171736,
+      "id": "effc1674-7ee2-5e71-94af-301c9e62dc68",
+      "name": "Beef, Australian, imported, Wagyu, loin, top loin steak/roast, boneless, separable lean only, Aust. marble score 9, raw",
+      "nutrients_sha256": "3d65448bf218e14fc873b4f52dddfd4b95154c02cc7089ad9a9ea5bbbe8274d5",
+      "units_sha256": "81609752baeb08a78e555905dd786c8be243db3988b42d3b1e3cc9f5bef29aa8"
+    },
+    {
+      "fdcId": 171737,
+      "id": "44fd603b-5ca1-59b3-b7c9-5c8ac85d2ea6",
+      "name": "Beef, Australian, imported, Wagyu, rib, small end rib steak/roast, boneless, separable lean only, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "8f8cad2ea640d3da8ea770da95365fad0f4239cd86f904c61398d46cec6b1c06",
+      "units_sha256": "f2ab1e28597b0160dc79ef48a8f5b5a70952c5981ae16ffc0078fd10c0816b41"
+    },
+    {
+      "fdcId": 171738,
+      "id": "780988f7-0d98-52e3-a701-431626eee947",
+      "name": "Beef, Australian, imported, Wagyu, rib, small end rib steak/roast, boneless, separable lean only, Aust. marble score 9, raw",
+      "nutrients_sha256": "7c02afccc3bbf7f7fd78fe4ff4d44f602d63ea389b732c3e58b3bb6b19ac5425",
+      "units_sha256": "80f320690ee42aab2eea04764f7019b2b434604ac0da9c52d9172ae2d58e8a04"
+    },
+    {
+      "fdcId": 171740,
+      "id": "54c05556-505f-5569-ad0e-abc7221ee9cd",
+      "name": "Beef, Australian, imported, Wagyu, rib, small end rib steak/roast, boneless, separable lean and fat, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "fd9e653bd9edf2a6e3fe8da7f3c48e3f9245e6e3534d714743dc05a3327d21c9",
+      "units_sha256": "4885cea7dca45cd66fc9309b1dbdd5731202d190a7c28d4d71e1c440cb6240c6"
+    },
+    {
+      "fdcId": 171741,
+      "id": "db99c0ad-8cdf-544c-b017-53ed0735fe2b",
+      "name": "Beef, Australian, imported, Wagyu, rib, small end rib steak/roast, boneless, separable lean and fat, Aust. marble score 9, raw",
+      "nutrients_sha256": "01b3ac56a65f20e9415627cf6bd9530a32e486692a36f423228f0f7285d609d8",
+      "units_sha256": "9026a870ec04ee03b57da2a11f00bd55931d2535c9448625bea3fcc22fde14bb"
+    },
+    {
+      "fdcId": 171742,
+      "id": "0b5e2896-0889-50a6-9852-465eed8a1f18",
+      "name": "Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean and fat, Aust. marble score 9, raw",
+      "nutrients_sha256": "f6bcd06b831eff50f85ebd4aa16c38f7304c18f6ccf784e85aa672b6e08c570d",
+      "units_sha256": "8d430db902f046e83205e84b60217dbed61d5a66787c534ba99a8ccebb7d5550"
+    },
+    {
+      "fdcId": 171872,
+      "id": "bdf0ef98-6a24-5bcd-844b-d1971620bcfd",
+      "name": "Alcoholic Beverage, wine, table, red, Gamay",
+      "nutrients_sha256": "bf8d7a84c75d53ef018e8adc6d6f26efe2488a2b1f43251a28ab1a56e83a9878",
+      "units_sha256": "7b0799ba0ba70f440172eb71e39a3ff80da375a8c3a20e07b7446c52387a7674"
+    },
+    {
+      "fdcId": 171890,
+      "id": "692aaf20-7180-58f0-827a-ab724445c838",
+      "name": "黑咖啡（冲煮）",
+      "nutrients_sha256": "a056077c5f8dae43d9984093b2126f351aa6a6b09bb683ea5f26e838b02b0cd2",
+      "units_sha256": "80dec8a4bca04e184915dffc51f189cf66565782bed71a865588cc589e295834"
+    },
+    {
+      "fdcId": 171917,
+      "id": "7c1b10e5-9e07-535d-bb57-42efb1b8d0b3",
+      "name": "绿茶（冲泡）",
+      "nutrients_sha256": "924fc23b15e20ea4b38743dde491b515e7d17e2c5f7e3c4aedbaa964307c53e4",
+      "units_sha256": "5c6389c3f810976803b4e110235fdc7a55d6a50e61b9a7c01d28040269b291c9"
+    },
+    {
+      "fdcId": 171925,
+      "id": "97c06a76-5b4e-5f04-b8c4-77536927a1d5",
+      "name": "Alcoholic Beverage, wine, table, red, Merlot",
+      "nutrients_sha256": "851ccbfd83aa120b49bdb72f4e800ef0117bb055ab9584e1d241375bde9b5b10",
+      "units_sha256": "5eae50aed64cb52109577fe73a5ed3f39fa61fdc95f4dced6efd6731117b115e"
+    },
+    {
+      "fdcId": 171966,
+      "id": "89412684-1ab2-57af-9203-05d774228e9a",
+      "name": "Crustaceans, crab, blue, canned",
+      "nutrients_sha256": "98f02133a5e84da66a9ee8002f663fae968f3143fbde89740fce34fbc91ede53",
+      "units_sha256": "c42cc0706a4b93a25925be3ff79560fb2e8dc3b20dd4fc439aff88aace073203"
+    },
+    {
+      "fdcId": 171967,
+      "id": "62a2d963-ee04-541c-a823-5930d7d2530e",
+      "name": "Crustaceans, crab, blue, crab cakes, home recipe",
+      "nutrients_sha256": "c27b2f03b1f8268197b75095f2b6dc95b28f75c11d6fdc8ea820d923f5f35f48",
+      "units_sha256": "7b6265de2d6877eeb9518190fe8df5ee4a8032662c54e73eed19217c046cd5f6"
+    },
+    {
+      "fdcId": 171968,
+      "id": "9b3f7384-1263-58f4-a47b-f7cce100687a",
+      "name": "Crustaceans, crab, dungeness, raw",
+      "nutrients_sha256": "17434e755d54b634f3fb317dfe175fed2466761833e81cfae786c1fb7aae9289",
+      "units_sha256": "39009b3573f7e08adb0cc3c60640f75cdb6a5cf2f129ab3c6d1617bc81da36ef"
+    },
+    {
+      "fdcId": 171969,
+      "id": "51e8e682-a4b9-5ad7-9978-43447b3d0531",
+      "name": "Crustaceans, crab, queen, raw",
+      "nutrients_sha256": "b9ead1227137c15a196fc4998831be2c89ddc01afd74f3fc1e0072fa7b42d8d8",
+      "units_sha256": "ca9b3bfdbb5f55bb5030f6c28eb8a8d8d0ef4897d27cc94b1110f4fd50981397"
+    },
+    {
+      "fdcId": 171970,
+      "id": "d75b65c6-4cfc-5680-b8da-bedf88652fd5",
+      "name": "Crustaceans, shrimp, mixed species, cooked, breaded and fried",
+      "nutrients_sha256": "2c3299962e89988e0e7b41f5bdf11fa352f5ef1c724efb045f1eb31b521b7f52",
+      "units_sha256": "4ae1264e64e73fd61c1db92b07f14f5e581e90f43fb2537313ad05a2ba322ea4"
+    },
+    {
+      "fdcId": 171972,
+      "id": "949066af-5dc8-501f-8b04-a5fdbb4c2d5b",
+      "name": "Crustaceans, shrimp, mixed species, canned",
+      "nutrients_sha256": "7e8c87f0ffecf7d32fec545241ff0152d162289c7c05e03ea998f79dce60bfdc",
+      "units_sha256": "ea4c852ce41145b7f00027f778e92a70f27f1a5e094aeddea30298083894ed92"
+    },
+    {
+      "fdcId": 172007,
+      "id": "7c57968e-2948-5c1c-9582-b6edb65558ca",
+      "name": "Crustaceans, crab, dungeness, cooked, moist heat",
+      "nutrients_sha256": "3e7e0c9a88d6b9ba98e909a3226b5aa57cc1e513ee13fb432ec2a95d5b547817",
+      "units_sha256": "0149297bb1e4f1e130738bcefc66e969c3234217451ed1fb1d6ec15969791ebf"
+    },
+    {
+      "fdcId": 172008,
+      "id": "63fa24b9-5838-5a94-893e-f052118c7874",
+      "name": "Crustaceans, crab, queen, cooked, moist heat",
+      "nutrients_sha256": "8424764e4d6c5d73382a9042f2e6316b7e7f2ca39c543a46b93f2dab583fc8b9",
+      "units_sha256": "8bda5e402a80527246fa07c447dd3ec8a5516a3cbc1d341c02f2e208577d45a7"
+    },
+    {
+      "fdcId": 172183,
+      "id": "065f9829-0d59-50ce-9c3a-ec8c033f4c48",
+      "name": "鸡蛋清（生）",
+      "nutrients_sha256": "cc05c06937249cd40f1f0bec0c3cceac580b918ad192ca44980d5a06e3e4e2e7",
+      "units_sha256": "7bf5280d3b5963f37f6f83f6424125233b11e084ce48450facc6dd875837cfc5"
+    },
+    {
+      "fdcId": 172198,
+      "id": "213bdcc6-4ee2-5ef0-9f1c-c3f782990fe8",
+      "name": "Cheese substitute, mozzarella",
+      "nutrients_sha256": "ff3cb20ebf2b8724559c3dcde5614bcaa703b0f8d40ac72574aefe1a1f6d2973",
+      "units_sha256": "408ebf371435b6f0aa49a28ee998ecb76cd997b786989dd64b9dd1ce5e7d8f6a"
+    },
+    {
+      "fdcId": 172200,
+      "id": "90eae057-839b-5fc4-977b-9a35d4f370ad",
+      "name": "Cheese sauce, prepared from recipe",
+      "nutrients_sha256": "a451f37cf4930cfbb4a775c6050929c06afdc99aecf119ff7501554fc444ac9e",
+      "units_sha256": "33dead11fac8c30c7d1ef7ec8a30604ea2901851a40302e2347b6bacc0a61124"
+    },
+    {
+      "fdcId": 172232,
+      "id": "7b07ccb1-72e6-5cfa-8bbf-f0d8b5d218d1",
+      "name": "Basil, fresh",
+      "nutrients_sha256": "ad6986a10fe10f54b68f6f0fd97361a3d2bd0b3a3a3ea516d9e25afdc10882c5",
+      "units_sha256": "8077f27a6899e12b9e409708e2c021bb6f4483d689b4270429814cbde6c4dbfa"
+    },
+    {
+      "fdcId": 172233,
+      "id": "24baaa33-4ba1-5dab-b407-bfab5b649e6f",
+      "name": "Dill weed, fresh",
+      "nutrients_sha256": "fdc5e2635f4f1859a21861460cd6dadecdaff4fe3a50fe49222b1ee75b32da60",
+      "units_sha256": "e29a9294703201dc97946f9cfa146a594a2d7d753b3b41cf8c9c910590edf259"
+    },
+    {
+      "fdcId": 172234,
+      "id": "98066e5c-4b5b-5dd4-ab5a-bd33c8daa0fd",
+      "name": "Mustard, prepared, yellow",
+      "nutrients_sha256": "a560db630c5d4c43038fb78d017315a6114a9f79397061a1c4370eec4742e50a",
+      "units_sha256": "674703b6585bf1a8389afe53a1b3d76ad95f947f94e4c5738517265393f35154"
+    },
+    {
+      "fdcId": 172238,
+      "id": "2a5852b4-4c47-566f-8a99-90db35251e78",
+      "name": "Capers, canned",
+      "nutrients_sha256": "26e460236dc19367e35b535cb393af0b3093644ea653db183803686727920234",
+      "units_sha256": "979e9b8f8997d43f903f0bac9d8581ef45d1fa27fd48b86f211d9484a4f8102f"
+    },
+    {
+      "fdcId": 172239,
+      "id": "a4da499c-b33c-5247-ba78-193124a974cb",
+      "name": "Spearmint, dried",
+      "nutrients_sha256": "9fbd0103a25b3fcf03bad25f30d0c45c9defc9e417334487f0288818dd1c0f3c",
+      "units_sha256": "42ea08cf7d3ff92c1b287163663f15d5657ac25133bb51d0a10a4af7f993e4a2"
+    },
+    {
+      "fdcId": 172242,
+      "id": "19a6a557-0326-5631-892c-07b9f5576b60",
+      "name": "Seasoning mix, dry, sazon, coriander & annatto",
+      "nutrients_sha256": "d1fbe401a0360a5610fa936065a87b2475ce9b3cc422eefa8d492db84c27775d",
+      "units_sha256": "35e122a6e27554fa3c39b41153ca583744b9f9c42ce94fa824e979ad371d3836"
+    },
+    {
+      "fdcId": 172243,
+      "id": "ce5d4519-fecc-554b-bc1d-2547296c71f1",
+      "name": "Seasoning mix, dry, taco, original",
+      "nutrients_sha256": "96708e1ef5e9276079aeb5f996d0aeee65ff3e51089eb2796bbcb4d85edc1dc8",
+      "units_sha256": "5d00bec56680ef83caefedc6a721112e5ca31e3ac977dd53e343f8e37df57ad3"
+    },
+    {
+      "fdcId": 172340,
+      "id": "7b7f38d1-9705-512c-80f8-631078f118b1",
+      "name": "Fish oil, herring",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "a19c497c52b037f0939d6620210b863dabaaf16f0779c036f712a7c221f70e3b"
+    },
+    {
+      "fdcId": 172341,
+      "id": "2e94c879-d5db-5d70-a088-219d634d8bc1",
+      "name": "Fish oil, menhaden",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "3871583921078a331dc1b0fc1c18f0ede5203a66e7a0b52a9c9312a276af60ad"
+    },
+    {
+      "fdcId": 172342,
+      "id": "f5630f27-02d1-5de1-b9b2-b9434864a8f9",
+      "name": "Fish oil, menhaden, fully hydrogenated",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "f86922c2ab899a19e978ce6de3b8405a33ba2883137f6766ef82e0ebcfa45999"
+    },
+    {
+      "fdcId": 172343,
+      "id": "28a6ce81-1583-5159-bfd3-b75fe1fea2df",
+      "name": "Fish oil, salmon",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "bbbc7f97f731c09b066b150cc9debc85a1fc7ea9f4b06050ea7d005374ec367a"
+    },
+    {
+      "fdcId": 172344,
+      "id": "e9b0b6aa-74d0-53bb-8aaa-c60e2294b099",
+      "name": "Butter, light, stick, without salt",
+      "nutrients_sha256": "981df980615af23c905dd625d4340feed8d4da044a72eb61fd16a81ee2d0ed5d",
+      "units_sha256": "1f05b3ec1f65a3b21f04283e9e9abd5ba267954e194a3b9217591b4b6c0de7fd"
+    },
+    {
+      "fdcId": 172345,
+      "id": "eca72685-6011-5e03-9aca-aab2ba9d3bf5",
+      "name": "Animal fat, bacon grease",
+      "nutrients_sha256": "7adc8dec90df38865cb3900490ee53286f9c2463094e21be12c84b0d067c0694",
+      "units_sha256": "b8da101d34d25d60200cf26fe62c4c919543b55d8e0d996adc64f5ba538a8448"
+    },
+    {
+      "fdcId": 172421,
+      "id": "59235ee9-25b6-5366-b523-cac102b4f8ba",
+      "name": "小扁豆（煮熟，无盐）",
+      "nutrients_sha256": "27c0b783335f2be8930cc54edbf8a4dd76a73a2c2cd31b0c3d150f5ac58ed3e5",
+      "units_sha256": "abcf9b79be47e38f12f2fa3e763cfe90b070d361ccf91db6d9387d2acf2ba0c3"
+    },
+    {
+      "fdcId": 172430,
+      "id": "30b04dcf-9f09-5aa4-8024-db67c8472d7c",
+      "name": "花生（生）",
+      "nutrients_sha256": "ca26c4da0b6e1a4f1c86fbcb92bb1c48bcf486d8d783351a9acef48602453426",
+      "units_sha256": "a4e1631ea1d59c52e0e8045bab0c2908a4bb6531f51dd714d490e35d065b2142"
+    },
+    {
+      "fdcId": 172439,
+      "id": "fe089684-8499-59fc-93e2-d2e14a4ef37e",
+      "name": "Bacon, meatless",
+      "nutrients_sha256": "6341475d99986239f06212cf00ca41f9c0928156c7b42438718a5cf0d9c26dac",
+      "units_sha256": "0d899e7770cebd588a91c2650985e5911eead75cf5c4863e5dc3a430784f8ca1"
+    },
+    {
+      "fdcId": 172475,
+      "id": "47acbd51-13cc-5c67-97b9-5bd22cdf9d53",
+      "name": "硬豆腐（硫酸钙凝固）",
+      "nutrients_sha256": "9e132a575268233a1fd0ea9f65d1e2ad133c6d602929cf63915a3ca7c934b2c2",
+      "units_sha256": "f9407b9d37183ce6d273b68c3f2be368150608285253b7c66adb7737d3ae52c5"
+    },
+    {
+      "fdcId": 172664,
+      "id": "88abca99-6447-5baf-85e9-8b1db7b78f00",
+      "name": "Bagels, cinnamon-raisin",
+      "nutrients_sha256": "b15227cb5a213a7d029cbeff9d15bf1578af633c1a0db6f205a477e6ad5af6ff",
+      "units_sha256": "c1912831edd847111131929e579f8859972ff7967c6b55f162440a08cce40f2d"
+    },
+    {
+      "fdcId": 172830,
+      "id": "d9143300-5733-5bd8-8bf5-7a85e16d3bdc",
+      "name": "Chicken, broiler, rotisserie, BBQ, wing, meat and skin",
+      "nutrients_sha256": "7d1c92843bd94a656adb4835c7c2d799f4432ebecbe7c8590b7a79eda389dece",
+      "units_sha256": "fece98a13502f19e25a43abb007aba791b98b29bb94d0546c0fb01155a136ddb"
+    },
+    {
+      "fdcId": 173068,
+      "id": "03765ea9-d5fc-562a-9104-9f4d023fe782",
+      "name": "Beef, Australian, imported, grass-fed, ground, 85% lean / 15% fat, raw",
+      "nutrients_sha256": "e7964df7c934eeb759d6d202df6f11846989e3ffa881dd7056d05b0ec6875ee8",
+      "units_sha256": "3b42db042e0af29bf6f4959b89922972ba6c1fdf7e2513b5f6d43a4c80e650cd"
+    },
+    {
+      "fdcId": 173191,
+      "id": "8519bec9-189d-5b18-b8a4-168295cf7d75",
+      "name": "Alcoholic Beverage, wine, table, red, Barbera",
+      "nutrients_sha256": "89f84fd5cca8b19f9b5b640d0c0bf908e9246fabb05fff395b4a734ba7c6bebc",
+      "units_sha256": "5a8a988690f58dcf09a2c72e852209b1472db0c4e071f21deb32e546e9f79550"
+    },
+    {
+      "fdcId": 173192,
+      "id": "d53d4ef3-5480-56e5-bcf9-716955bee36f",
+      "name": "Alcoholic Beverage, wine, table, red, Zinfandel",
+      "nutrients_sha256": "1fcdce8f2bd9446b732c235e486f4b9b4618fdec3d327931783d493c46f3ff3b",
+      "units_sha256": "530878667f74729551a18856ffb1b1d090f986ae04bb701fa440a6e86cebdd40"
+    },
+    {
+      "fdcId": 173193,
+      "id": "074a921f-62f0-591f-957e-c40812e8170c",
+      "name": "Alcoholic Beverage, wine, table, red, Petite Sirah",
+      "nutrients_sha256": "95b89fd59111336e9cb0dddf8549c18f7fd4d30666ac72e3e08795af41d79d3d",
+      "units_sha256": "7dc8cd9846ec18d1f4435143c4b8e857c62db3d424e47ee41d7ed29d4bb7ef82"
+    },
+    {
+      "fdcId": 173194,
+      "id": "dd9ad2f7-8dba-575d-a6a5-10572c08453b",
+      "name": "Alcoholic Beverage, wine, table, red, Claret",
+      "nutrients_sha256": "3d11293ff47ffeba49d39b4b615d39ba80efc89e5cc3f25613d4000b585a1d56",
+      "units_sha256": "7bfea581179d0ddc12cfd690046de16f334c6d2c9e612d1175d26200b55c8ff2"
+    },
+    {
+      "fdcId": 173208,
+      "id": "64aa9333-9068-5aaf-842a-72bfd2010021",
+      "name": "Alcoholic Beverage, wine, table, red, Burgundy",
+      "nutrients_sha256": "8da6da3db4520ae609798f9b66e0adecc8c561a53a56d7ecb14bf5d4dd6d84a0",
+      "units_sha256": "c91ecbb00aea6605a2c1d39522ac395190b683271f7d7bbf7dcc51185d94f558"
+    },
+    {
+      "fdcId": 173245,
+      "id": "7da1e3c2-b50b-5589-9b14-2a5cc62b605e",
+      "name": "Archway Home Style Cookies, Coconut Macaroon",
+      "nutrients_sha256": "7459040ed1208d3b149f6afab90f64ab04ac37a109f4f51935612ac8e1c48c8a",
+      "units_sha256": "fdcce81ad2b04524f7de544548198cc430fd05fe43ac817dc92996171d6b9519"
+    },
+    {
+      "fdcId": 173246,
+      "id": "51d41569-8e96-5976-ad7e-ca2d27458c78",
+      "name": "Archway Home Style Cookies, Date Filled Oatmeal",
+      "nutrients_sha256": "9b423ae2cf200be400ff9ce3c330a1d4ce425834f3bf1ac3e006618887125fab",
+      "units_sha256": "cb769d9af66c23644b384beb73ea3383980cce7b1e2f8aed9aaf4ea5a3a61d00"
+    },
+    {
+      "fdcId": 173247,
+      "id": "c570d84f-4f6c-589c-871d-a6655b16ceac",
+      "name": "Archway Home Style Cookies, Dutch Cocoa",
+      "nutrients_sha256": "fdc3b8fc06fee8c9a153dab9339a0df60c5b4c0dffdba76efc173ebce29ed59e",
+      "units_sha256": "aa2f1a2d4bc995e481cea17dee19c501316fddf0fc539d3ac9ba8bc7ed574134"
+    },
+    {
+      "fdcId": 173248,
+      "id": "009c862f-5c07-5f79-9c2c-93dc63736212",
+      "name": "Archway Home Style Cookies, Frosty Lemon",
+      "nutrients_sha256": "c4b154294edf927769637ac713796461e909201cac08109fbb924d51656989ae",
+      "units_sha256": "90936d86f92a19d369d6c926775709ac96f5476ad5655cd5abce195ed40454ec"
+    },
+    {
+      "fdcId": 173249,
+      "id": "24f9227c-fbde-566b-9c3e-fd39c1611a27",
+      "name": "Archway Home Style Cookies, Iced Molasses",
+      "nutrients_sha256": "6787af2b7c6a3f9b5dfcc3315605e8687bb251a108d7dcb003221feca5cf61ec",
+      "units_sha256": "3ef1c263d6e2838d892665b4be9aa5e5b38880f9a115cc1349339f27a8d059a8"
+    },
+    {
+      "fdcId": 173250,
+      "id": "faa00baf-5169-5101-ae0e-b5f2274da1be",
+      "name": "Archway Home Style Cookies, Old Fashioned Molasses",
+      "nutrients_sha256": "2ee60503a67ae026ce0835b7c002c1ca78db5fedd1ae0de212348aa5e550f9ec",
+      "units_sha256": "24a6d016a54f2c91875968236e553372af103191e313980298334b6e06cf4137"
+    },
+    {
+      "fdcId": 173251,
+      "id": "8204fa32-7e9b-5d1a-baf2-10389f472f28",
+      "name": "Archway Home Style Cookies, Old Fashioned Windmill Cookies",
+      "nutrients_sha256": "a0f192897428b88177a1fccb6ed93f8606f2a9fc2891f50242eea207d20a6045",
+      "units_sha256": "aa17134de9ebd24fe25046bf8bb23e91fc0f251b47806e132b80ead396764dd7"
+    },
+    {
+      "fdcId": 173252,
+      "id": "8d91fb0c-0b68-5d0d-a0d6-e1a9579f826c",
+      "name": "Archway Home Style Cookies, Peanut Butter",
+      "nutrients_sha256": "3c69f06a12db213275b276664459a7ca3b5aab6b32e573e15faf19b609804f57",
+      "units_sha256": "6677577a69938961127171ef600d11c4d862121a3a0f98c7a7cbfff3b215c5ed"
+    },
+    {
+      "fdcId": 173253,
+      "id": "1a0d3cd6-b4cd-5406-812a-24dea77ec81c",
+      "name": "Archway Home Style Cookies, Raspberry Filled",
+      "nutrients_sha256": "21bb62efd021f30b919221ec02c879e68a46a55731a966014fa9d50642ddacfc",
+      "units_sha256": "a9facd81458bdfe0990bf7bea8748aa01f53d6b6711b6d45ffe771c8753950de"
+    },
+    {
+      "fdcId": 173410,
+      "id": "f35f5b9c-ee2a-5355-b47a-d4ce083b12ea",
+      "name": "Butter, salted",
+      "nutrients_sha256": "eea54e1402a71932e9d8984aa1659b3307358d24c35e85a499d4a26690bf06c0",
+      "units_sha256": "9da8af4fcf56a99d5b8578cacc599cf17d60722305db02093d99b794f2cec58f"
+    },
+    {
+      "fdcId": 173411,
+      "id": "6804c7b3-3124-561a-9101-d19f376dd2ea",
+      "name": "Butter, whipped, with salt",
+      "nutrients_sha256": "63d254c42c2e3b6187364975917cca37e0187490d46e559da0cbf19afcfd5194",
+      "units_sha256": "6c893f1b90f90dc6a535c37bfa37e35a5011a5d37a5b75d630c7dd9fcc56c882"
+    },
+    {
+      "fdcId": 173412,
+      "id": "7f85162e-1075-593b-8f62-4777798cd021",
+      "name": "Butter oil, anhydrous",
+      "nutrients_sha256": "2cd4dcea8c08b37640aaaaf5f27b13cd3aabe3bd649749e1856daf404065c944",
+      "units_sha256": "f24f7ab110f76a8cf109e6e053317f487c26703b3ef4e502c97fc1f193831a53"
+    },
+    {
+      "fdcId": 173424,
+      "id": "f1a541ba-3a4c-5371-ba9b-f4d7af973e74",
+      "name": "水煮全蛋",
+      "nutrients_sha256": "59243c40ed10bb297b11d0bd218e0d23b9a00526b71464445bfe3e158636f8fa",
+      "units_sha256": "ecc60d38e1936a6091a4071247e247b6f9ca3b8f836ca552b2d479b4c5428eff"
+    },
+    {
+      "fdcId": 173430,
+      "id": "54f813fe-8f45-5df6-9407-f441c707d5b4",
+      "name": "Butter, without salt",
+      "nutrients_sha256": "eea54e1402a71932e9d8984aa1659b3307358d24c35e85a499d4a26690bf06c0",
+      "units_sha256": "b5e581e111629f0d7172748b23e06ed9a1bfef7fdd7d8a2fbb42c9282a4fcfb3"
+    },
+    {
+      "fdcId": 173455,
+      "id": "3700b4b3-c5c2-5abe-b02f-1aa74a3e9512",
+      "name": "Cheese product, pasteurized process, American, reduced fat, fortified with vitamin D",
+      "nutrients_sha256": "a514c73926ea69c6a5ff9aa226c757f2275d9951789019d55f6cf44c177dd2e1",
+      "units_sha256": "a2c03f6774095a614eca9bba75714c33c3f07cd9fc21914d596f8868abdc4619"
+    },
+    {
+      "fdcId": 173468,
+      "id": "1d9c6513-a473-5e29-94d8-3d0138e19d57",
+      "name": "Salt, table",
+      "nutrients_sha256": "d1fbe401a0360a5610fa936065a87b2475ce9b3cc422eefa8d492db84c27775d",
+      "units_sha256": "e351aeeb179fab07f98c4ade8de469c48eb039e858a9653b0710595c93279aad"
+    },
+    {
+      "fdcId": 173472,
+      "id": "912a7d7d-89c6-5047-adc7-f5e70979d307",
+      "name": "Horseradish, prepared",
+      "nutrients_sha256": "6df7b250a4075df402718eef84f8298a5270a2f056bb2c73e590736dc81b6336",
+      "units_sha256": "1a4b2fa01684fb85ce71231d8860ca7aef811c0dbf44c2ae9bd775c85a07099d"
+    },
+    {
+      "fdcId": 173473,
+      "id": "c500a50e-1b73-5a0f-b03b-4d144758c2eb",
+      "name": "Rosemary, fresh",
+      "nutrients_sha256": "b9c9ad55fd0822b0d547d0dfba7a8e0e776ac375a69f46ffd22a8954d6673ee1",
+      "units_sha256": "3b6752b48341dbc5f93d2d40dfe1f808a6c14433e39372be21eef8261f821c01"
+    },
+    {
+      "fdcId": 173474,
+      "id": "35ff8fa8-287d-5664-aa63-62dd5eb375e1",
+      "name": "Peppermint, fresh",
+      "nutrients_sha256": "eeeb04d5a43e1964de94d1762de6a5437a695914ea1179166747b2dc94c9b1d3",
+      "units_sha256": "bc06fbcc4be4fbae4308ddb36b6718587a008cd942460ed574acb9ea2d293f5b"
+    },
+    {
+      "fdcId": 173475,
+      "id": "0404502d-7c88-5021-9bf6-728075147d9e",
+      "name": "Spearmint, fresh",
+      "nutrients_sha256": "003c29966c816fc5a9d785cdf2059414ffa7a771dbba78900645f0eb6471db06",
+      "units_sha256": "8137de275b5be7e7b49bfcc0b3a16911b918c00df4baa4101bfee39be81b642d"
+    },
+    {
+      "fdcId": 173476,
+      "id": "020a2051-e566-507d-b6c8-51d5b783eecd",
+      "name": "Seasoning mix, dry, chili, original",
+      "nutrients_sha256": "21adfd8a87e3a76d8e1456e1df9d2fc249061f3f3bbc9febff810822f64ae214",
+      "units_sha256": "f0edd0fc84372833d9af5be5fb7d049566e1edecdee86d0d28a8a0dac471aa43"
+    },
+    {
+      "fdcId": 173564,
+      "id": "0b3e5242-a788-513d-80c8-873335e291df",
+      "name": "Fat, chicken",
+      "nutrients_sha256": "abbc325d53a7a5eba998c6f4764269cfc3853450f043594beb01bc66627e2cae",
+      "units_sha256": "c1ccc0c661b4d0ef0832da614c282c69cc80804af67420150dc9891dcaad4a4e"
+    },
+    {
+      "fdcId": 173571,
+      "id": "a87706ce-3603-5457-86b5-235ba6c4b5b5",
+      "name": "Fat, turkey",
+      "nutrients_sha256": "abbc325d53a7a5eba998c6f4764269cfc3853450f043594beb01bc66627e2cae",
+      "units_sha256": "02b45bcdcc21064714ea28c60405c8535ff0c3eb1e493f8728aa221e715a4212"
+    },
+    {
+      "fdcId": 173572,
+      "id": "5d5449df-e136-52e5-9e3a-42c95f6c8358",
+      "name": "Fat, goose",
+      "nutrients_sha256": "abbc325d53a7a5eba998c6f4764269cfc3853450f043594beb01bc66627e2cae",
+      "units_sha256": "db24d8a5e662e04b2669eff01e15e057c7e28fe38cc4d5ae815115363a030bc4"
+    },
+    {
+      "fdcId": 173577,
+      "id": "98d33905-b9b6-56a1-b6f7-64cf1db5375b",
+      "name": "Fish oil, cod liver",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "32690ebb3e9f0d5685e1af58f5042de5c2813e47f8b04d7cf3653876f945b3ae"
+    },
+    {
+      "fdcId": 173578,
+      "id": "e80a8342-2e92-5808-81c4-2be8ad2204cd",
+      "name": "Fish oil, sardine",
+      "nutrients_sha256": "5665a5244cb9216dccf20b1eec4e3d061eea1ba68e0acd8a431438770268cfc5",
+      "units_sha256": "37fd7d59337a49ac14ff5c892a7ab5db9be6a3f3bf47c55b41cd6a4069d28606"
+    },
+    {
+      "fdcId": 173581,
+      "id": "823a4abe-043d-53c4-b731-3a055417ee01",
+      "name": "Butter, light, stick, with salt",
+      "nutrients_sha256": "981df980615af23c905dd625d4340feed8d4da044a72eb61fd16a81ee2d0ed5d",
+      "units_sha256": "6bbb4c9a28d76b2aeff20c01b42fb370caa1703717dd334b9babf92cdb13e513"
+    },
+    {
+      "fdcId": 173589,
+      "id": "7df54ee6-895f-5370-8b8f-7694dce5d4dd",
+      "name": "Margarine Spread, 40-49% fat, tub",
+      "nutrients_sha256": "f229c2226564b5512aed583ff4184fd5a9019872b2cd31e4ced8f152888fa387",
+      "units_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "fdcId": 173634,
+      "id": "74823403-122a-5088-8b68-2ea2f3511dba",
+      "name": "Canada Goose, breast meat only, skinless, raw",
+      "nutrients_sha256": "ffb27c9317e1e21f39df85b2ecfef0cd71a8fde10d308d2733b06f84c34987ba",
+      "units_sha256": "85f7537c82f463461c8ccd27ec53c46e2b129d987b31aa724497e1cc765994c5"
+    },
+    {
+      "fdcId": 173727,
+      "id": "c244e115-d68b-539e-afac-39fc2e7646d7",
+      "name": "Beans, adzuki, mature seeds, raw",
+      "nutrients_sha256": "2eca518d1be884c4f5f45c754424c9cd62614ac305a5fe3a05e2c83ae3ce09ff",
+      "units_sha256": "74aead468736147ac32f7c6064031bb18c798633b03f5bf2e3b6232dad6651c2"
+    },
+    {
+      "fdcId": 173728,
+      "id": "ddbd10c5-a219-547f-ab97-2291ba70eb0c",
+      "name": "Beans, adzuki, mature seeds, cooked, boiled, without salt",
+      "nutrients_sha256": "6c8360670ee0688816364a7c79429eef09470b2084a9c6fb95bd93e412c8d088",
+      "units_sha256": "f08f641244b3e49fe863dd7b98feaf7fefb9781aecd12f76e4285dab6ddda2e2"
+    },
+    {
+      "fdcId": 173729,
+      "id": "b6c25c5b-32d5-582b-9eb1-3b9c1b8e7dfc",
+      "name": "Beans, adzuki, mature seeds, canned, sweetened",
+      "nutrients_sha256": "7128115ea97ebedb4bdebc7deb0c537c0b2158ec9b70c7ed69f4e742eef6cc97",
+      "units_sha256": "b9aa6ca3ba64b0814da92b32991f81d3ea3f3d5adff55b43dc6fcaeec66893a5"
+    },
+    {
+      "fdcId": 173731,
+      "id": "4e3114d3-df86-5995-896a-4e67dd537045",
+      "name": "Beans, baked, home prepared",
+      "nutrients_sha256": "3b7562876999158d8d5c71a11020feed5b02fc5f49953834fa489af7d9f19918",
+      "units_sha256": "e9d9808d81fb367d70f3121aca6479a515e8eba7bd41f9f081f3240e48df796d"
+    },
+    {
+      "fdcId": 173732,
+      "id": "c4faea70-64f5-5a34-a473-6cb4918c73e5",
+      "name": "Beans, baked, canned, with pork and sweet sauce",
+      "nutrients_sha256": "677a8b312707cba905c6e9b33175fd63c830bd1a52a5bdf7edcaf3e362c6d50a",
+      "units_sha256": "fb099624815e63537cbb845f9ce164ae7ef21f55732dbabd7999cd2641e86aee"
+    },
+    {
+      "fdcId": 173733,
+      "id": "b5e070e4-bcf2-565d-a0e1-c20353f6d5e3",
+      "name": "Beans, baked, canned, with pork and tomato sauce",
+      "nutrients_sha256": "7c3148f2a0a8fe3c1acd32ab95ec66305382fa3dca45a5f56ebf9b8de993ed44",
+      "units_sha256": "c4a02e61b1aa2e072dd2747be2fa7ee341c4ff5b4502e9afa458eda03c7e3114"
+    },
+    {
+      "fdcId": 173789,
+      "id": "61686ba2-b44c-56c3-be60-a92a6d92bfab",
+      "name": "Beans, adzuki, mature seed, cooked, boiled, with salt",
+      "nutrients_sha256": "6c8360670ee0688816364a7c79429eef09470b2084a9c6fb95bd93e412c8d088",
+      "units_sha256": "5540fe3b28357085e5e5a46782b7ed9d6459f4e9c77013470ffaa8fd00d2db8e"
+    },
+    {
+      "fdcId": 173930,
+      "id": "f25255e3-c4c7-5b0b-80d4-1803bbd6a00d",
+      "name": "Apples, canned, sweetened, sliced, drained, heated",
+      "nutrients_sha256": "a08127c279c1dae02f4a4d260ce4dbf862a579030410ff5ed94124121aa9cc10",
+      "units_sha256": "3c31b59060eda2644e9766ed03fff0b07d048a4af8b1a46523f0458ba3f51bd0"
+    },
+    {
+      "fdcId": 173931,
+      "id": "7a52a209-9d72-56d8-887c-ba0d1e46955d",
+      "name": "Apples, dehydrated (low moisture), sulfured, uncooked",
+      "nutrients_sha256": "f082c7c9a9fabe5a277ab2b1498ab1c0e1f2ca8158611cd298dde9a7e7539cd1",
+      "units_sha256": "58255d2d519ce17709495c1fcd1b28b28adb76a109dfc140ba3aa4f643759776"
+    },
+    {
+      "fdcId": 173932,
+      "id": "adef1050-e866-5b3e-9209-fc96628e34b5",
+      "name": "Apples, frozen, unsweetened, heated (Includes foods for USDA's Food Distribution Program)",
+      "nutrients_sha256": "c4ab9ab2edecbf4374b1afa6192266ee245f208d8b99aadff0814be4362ad2b0",
+      "units_sha256": "681359af7306a8abb3dc6e1963564f326b9fa1ead3dd757aa713ad263bca04c7"
+    },
+    {
+      "fdcId": 173933,
+      "id": "6a37cb6b-dc3e-5c06-a1d5-86072c7e9cc6",
+      "name": "Apple juice, canned or bottled, unsweetened, without added ascorbic acid",
+      "nutrients_sha256": "404b216235846bccc72645c94a12fe266147a84fe6cd6371a4f9cad5b4a083de",
+      "units_sha256": "b14b24f63133937bd926ba23385d3132a78625686602cca4e4b02d40b636afc7"
+    },
+    {
+      "fdcId": 173934,
+      "id": "e072202b-8f18-5448-89c1-3df4081a2841",
+      "name": "Apple juice, frozen concentrate, unsweetened, undiluted, without added ascorbic acid",
+      "nutrients_sha256": "cfbe36781bd627b1cf56a151c7ea5cd927b271d47816e0d878b20dac4a58a063",
+      "units_sha256": "17e66a69bfb8cb2cc067b8280d5cea6c3c103be4490483681f32b8c1e87cec1b"
+    },
+    {
+      "fdcId": 173935,
+      "id": "92b3b9b5-f5d1-5fbe-b80a-9b921363432f",
+      "name": "Apple juice, frozen concentrate, unsweetened, diluted with 3 volume water without added ascorbic acid",
+      "nutrients_sha256": "36ab2325146b6b5bda5c9a7276dc479bf70e35a66f4bc782502fd89a13ec4c7e",
+      "units_sha256": "fb150a3636f47df498d5195f3ed8cd03766d6c5c94957bfc98d3fe04c4b25322"
+    },
+    {
+      "fdcId": 173944,
+      "id": "8efea28f-a3ea-5772-95e3-2df4285856ea",
+      "name": "香蕉（生）",
+      "nutrients_sha256": "4bf7afff65c31c1f2de438af4192f0159523fcd90be95159443f83b66e26c494",
+      "units_sha256": "cc45d8d94b5942e8186c2fcf790c509a0d2136d75ed5cf9022b077b7cc295e37"
+    },
+    {
+      "fdcId": 173966,
+      "id": "b502156f-0493-522f-bb01-25b1c0c8a7e4",
+      "name": "Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean only, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "75e2f58e4f34cff4444196a820140b18c51c457df561b29cbe567d8bd0e2818a",
+      "units_sha256": "427e2e6e7b34bcd70a9ad0cdf67d093f776d6423c59f59962c3d4862851ba4db"
+    },
+    {
+      "fdcId": 173967,
+      "id": "d6ca4dfc-5301-5fbe-8b8b-0eb8134e54a2",
+      "name": "Beef, Australian, imported, Wagyu, external fat, Aust. marble score 9, raw",
+      "nutrients_sha256": "45001fbe9facf3daae78c245f73a2c8d35933a34db8213e37d0da45d9aaf4b42",
+      "units_sha256": "ecb393b6d0cf4b09d55a1449972e25cff761c188a10c57415915915120896001"
+    },
+    {
+      "fdcId": 173968,
+      "id": "685e6fc3-c979-50c4-8ca7-5f293ea77786",
+      "name": "Beef, Australian, imported, Wagyu, seam fat, Aust. marble score 9, raw",
+      "nutrients_sha256": "b1dc216c0f0de35274ebdc6c3d38ad1c30fc5be41504eb9171572d1b3f0c259c",
+      "units_sha256": "604a0e8d02c020cd8da24f5b107fe152da58ee9b28aca0649a4bde067bef8c3d"
+    },
+    {
+      "fdcId": 173969,
+      "id": "2333ac12-249a-5f17-a388-44237071bddf",
+      "name": "Beef, Australian, imported, grass-fed, loin, tenderloin steak/roast, boneless, separable lean and fat, raw",
+      "nutrients_sha256": "16eee94c6992f2128859a08a177aecaf4bde6a2edd744a294c9e58d56f02affa",
+      "units_sha256": "1679fd37b7552d1cac2368396c38a79aec5ae24c059d3d39bd67d69eb925ff4a"
+    },
+    {
+      "fdcId": 173973,
+      "id": "b60cf32c-82a3-53ac-84f7-856fabccb131",
+      "name": "Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean only, Aust. marble score 9, raw",
+      "nutrients_sha256": "fa859b867ba8b6c8f51b210fa295206e13295ad4509ff23cd86d6779d0b384f9",
+      "units_sha256": "1f107c7e52c4d21e618efd47f30b93e364db5f6d6ce697ce42c66aea8574c6e2"
+    },
+    {
+      "fdcId": 173974,
+      "id": "0905dfc8-ebdd-5496-b211-9d7cab6d76c8",
+      "name": "Beef, Australian, imported, Wagyu, loin, top loin steak/roast, boneless, separable lean only, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "0a0ac80e9935792537998ab651e25a9724f9d37e6125a412f77c622e0f0248b5",
+      "units_sha256": "9a58a7b4a3336841142ce50c89c69ce123675a130f2f1ff9ec9fa4d1ac14f497"
+    },
+    {
+      "fdcId": 173978,
+      "id": "1dd37f84-70d8-54b3-b5a8-991ad3a9934d",
+      "name": "Beef, Australian, imported, Wagyu, loin, top loin steak/roast, boneless, separable lean and fat, Aust. marble score 4/5, raw",
+      "nutrients_sha256": "d5eb5a0744eb9d3a4abbf5d699bf28a67188acd850340f6d51091671c5298b96",
+      "units_sha256": "26e80d5bd2c2e02afb274c061abdaedcfa095cd42e6d1dcdb7f40f1235e333cf"
+    },
+    {
+      "fdcId": 173979,
+      "id": "3d5bedc6-c295-5ba6-9934-c395ae4c9314",
+      "name": "Beef, Australian, imported, Wagyu, loin, top loin steak/roast, separable lean and fat, Aust. marble score 9, raw",
+      "nutrients_sha256": "c36c99b5595343758249beead6e7afe6c39d47bad24edaca6bfeaaf8a3b3ac88",
+      "units_sha256": "f071b6a8a9578f5088c93b45b7f99e417ee39dc1170229afbbbe5ea7ca818013"
+    },
+    {
+      "fdcId": 174013,
+      "id": "c1f38664-b5a2-5b66-89cf-7c7debdd6633",
+      "name": "Beef composite, separable lean only, trimmed to 1/8\" fat, choice, cooked",
+      "nutrients_sha256": "80c637100b77be6b57fe834afd6e5fa1877f819543b2cd19743e0d71c18654dd",
+      "units_sha256": "62d4a530643f842e804523c016b1d9028225ccba5c5f82e4246543e2070567b4"
+    },
+    {
+      "fdcId": 174109,
+      "id": "1a063114-4e25-5abe-aa81-7ca4556c448e",
+      "name": "Alcoholic Beverage, wine, table, red, Mouvedre",
+      "nutrients_sha256": "61509aab212ee50efb9be6809b512ac947a9e8db120633e54399ca91197683eb",
+      "units_sha256": "0651667c4bbac2aeb5575ec3656012cb31027f4459e7f7397d00522fc50e6b14"
+    },
+    {
+      "fdcId": 174145,
+      "id": "62cacc16-70a3-5d1d-b8ac-3dedc92bb12e",
+      "name": "Alcoholic beverage, beer, light, higher alcohol",
+      "nutrients_sha256": "d030e0a1f55b94226bf9d20ee83420f948155cdfe2f55cdc90bd6da8cc1666a8",
+      "units_sha256": "d20694b8c8907776b53c5e3377741c15c4f8822b124a9b4c3a6db90c0fa3d465"
+    },
+    {
+      "fdcId": 174202,
+      "id": "3807deb4-6b34-5277-9fe6-e74c722d5456",
+      "name": "Crustaceans, crab, alaska king, cooked, moist heat",
+      "nutrients_sha256": "ed88c1acf5d4b492170d2ff057ff3a65e0d7614ef86236b6d3fdadd12aebf68a",
+      "units_sha256": "9b7ea8606ac7074ee6150fdc3f7ec6fc0a51e06c1c255e882147833b74b9d738"
+    },
+    {
+      "fdcId": 174203,
+      "id": "230dae2c-c695-584b-8737-2da23c4a9f5a",
+      "name": "Crustaceans, crab, alaska king, imitation, made from surimi",
+      "nutrients_sha256": "6a323c6ccd146d8b9e2c590ad6d9f2b7b6c4044a04c25f210061609c7ce407b8",
+      "units_sha256": "c6fb2b4ca2bedb48491ec4a30417b70260531f09a506d4154639787dd078f0d3"
+    },
+    {
+      "fdcId": 174204,
+      "id": "043ad2fc-7423-50c4-9007-f916feaf9698",
+      "name": "Crustaceans, crab, blue, raw",
+      "nutrients_sha256": "3168fdc3b32d6652a4f2f68f7a8f3a33d77240e3796440e516886b9f7be821eb",
+      "units_sha256": "38a7565eaff9d9a5c8158a0984ffe67dffdaf629fdfb27ca38194a2553abdaf8"
+    },
+    {
+      "fdcId": 174205,
+      "id": "e63d5faf-02cf-5cc6-895e-fda92370d48d",
+      "name": "Crustaceans, crab, blue, cooked, moist heat",
+      "nutrients_sha256": "98f02133a5e84da66a9ee8002f663fae968f3143fbde89740fce34fbc91ede53",
+      "units_sha256": "b3485a2d644557fc2894af049ec19087fd57d64a5dccb070e563bb60a4fef0a6"
+    },
+    {
+      "fdcId": 174206,
+      "id": "b5944aa6-3a6c-55c6-8b9d-ac45d2ee7b83",
+      "name": "Crustaceans, crayfish, mixed species, wild, raw",
+      "nutrients_sha256": "e1f8d2c33a335d8902db817cc74ff6d5e0afd926a305dad8d141f6026130d173",
+      "units_sha256": "681231e5a690fd0ebcc7a09e4cc50bdaecd4ec96f92815fbd4da4cc37ab1418d"
+    },
+    {
+      "fdcId": 174207,
+      "id": "b7be4ab0-1b12-555f-9c08-81ee3a1d1f4b",
+      "name": "Crustaceans, crayfish, mixed species, wild, cooked, moist heat",
+      "nutrients_sha256": "62a08ff3fe18d4e3d1b94c8db01d93ebd78a463f78a337b1bd82917b3c608a07",
+      "units_sha256": "fc03e98b747885da7edb7ed424e2ea791f17a391178e4ca7548afdd9b5bbd5f3"
+    },
+    {
+      "fdcId": 174208,
+      "id": "45b9f4bf-3198-5086-9766-387e4ed5e777",
+      "name": "Crustaceans, lobster, northern, raw",
+      "nutrients_sha256": "eb25ea24013c607e9e03d052bf7351907b2c364bd653e0915ca89ef3a08dd89f",
+      "units_sha256": "fc5a7d87ab155ba6a4956ce381a4b83d701a777fdba77826766fd65742e41047"
+    },
+    {
+      "fdcId": 174209,
+      "id": "ea9d5cfd-c8d5-5aed-b347-9f46dd2ebb8f",
+      "name": "Crustaceans, lobster, northern, cooked, moist heat",
+      "nutrients_sha256": "391af7c69430aa2156a5d4fe70979e00d49207888929c2e2c9f4108585c41284",
+      "units_sha256": "7506e5571b3e199c87341d150e6ea8af7eb2d3475945004d7204ce628f3db78a"
+    },
+    {
+      "fdcId": 174506,
+      "id": "65f7f495-8679-5577-a087-5ff4c5437576",
+      "name": "Chicken, broiler, rotisserie, BBQ, back meat only",
+      "nutrients_sha256": "cef71cf9dcbc3faa1754e448c938194869c70f705be8be60a6756f1720a189fd",
+      "units_sha256": "7e054b396251ffdfc97d7bc21938f31254da611d78dc534fbcd014a92ffaedac"
+    },
+    {
+      "fdcId": 174683,
+      "id": "95069e05-df04-5421-a4f0-9c56840e7146",
+      "name": "葡萄（红或绿，生）",
+      "nutrients_sha256": "b1cae496a4a23c0a78082e7a19cf5f41aaa8fe7d23344c09d76921fbca26b978",
+      "units_sha256": "781e50b7b694c867449270fee7a1891ee1913fede369fb4c8ef4b26b84b86fd7"
+    },
+    {
+      "fdcId": 174833,
+      "id": "49f8a946-516d-559f-9687-a4f0d35eede9",
+      "name": "Alcoholic Beverage, wine, table, red, Cabernet Sauvignon",
+      "nutrients_sha256": "af0c0aa16993f622a6b999dd510c4d9b65066df4423975035588eb57c5427621",
+      "units_sha256": "333a6fc06730371c2a04f46ef69a163c5ae41e473aae06ba1395fa4c8b9a3514"
+    },
+    {
+      "fdcId": 174834,
+      "id": "46b901d7-3724-5238-9cdc-5fbca2df83ca",
+      "name": "Alcoholic Beverage, wine, table, red, Cabernet Franc",
+      "nutrients_sha256": "0a5defbb542e969a0ccdb6430a976f1194a86f73f433c2cb1f5367a8085e222f",
+      "units_sha256": "b8d4817a2d30e46e37327e179fc863cb265ab33b6d6b1da8a75c8b1b4b50e9e2"
+    },
+    {
+      "fdcId": 174835,
+      "id": "9e5b1718-06b3-57f2-92e4-6d322337ba5b",
+      "name": "Alcoholic Beverage, wine, table, red, Pinot Noir",
+      "nutrients_sha256": "d07d439ff459e0159c2ad937a89ef0a585f86a241df54e1f9d7d304d76a00310",
+      "units_sha256": "e776651286f7881ee61f82fdd3efc12bba6519201ce48cbb4e4a68d82f754147"
+    },
+    {
+      "fdcId": 174836,
+      "id": "b92adefe-a8e8-562e-a4df-a5cf8a3ce14d",
+      "name": "Alcoholic Beverage, wine, table, red, Syrah",
+      "nutrients_sha256": "d8a7cbf22df3c9bff31c7ec7042e05de94b583473e296aaee4526375be17dbd8",
+      "units_sha256": "b58bbbf4eb428a723c823d86fc7b7ac9b94be9e99d7618bcd0fd5465ed052868"
+    },
+    {
+      "fdcId": 174838,
+      "id": "bb983067-8388-5834-92de-362660e59f4c",
+      "name": "Alcoholic Beverage, wine, table, red, Lemberger",
+      "nutrients_sha256": "b689dd0e68035828b78423376a99b27f9b75bfb1cb811e8cfb450a56ac749f0f",
+      "units_sha256": "09a21f0344e4ead4c874fca017611465fb2f5e410335a5f5884a91c29607de81"
+    },
+    {
+      "fdcId": 174839,
+      "id": "5ae70ab6-9afb-5ce9-9b7e-3537e730aa81",
+      "name": "Alcoholic Beverage, wine, table, red, Sangiovese",
+      "nutrients_sha256": "c680a20b82d84c3fdcdc65916dac3bc2bc8bc6eb70544d3229560c98eb8848ba",
+      "units_sha256": "9dcccae11fe2e7a1d4c371a0da92473c6b7feaee11b63f03311010e10538383c"
+    },
+    {
+      "fdcId": 174840,
+      "id": "bf9c7aff-14b2-567b-bd25-a66d96b5eab4",
+      "name": "Alcoholic Beverage, wine, table, red, Carignane",
+      "nutrients_sha256": "d235cea911558ee154f94e296ce8ab4c7b2d248233179e63bc3c9d24ddaa93ef",
+      "units_sha256": "bad55280c6d6dd99ccf0f6c545d1f99fb8f207bfdd677905c25eabce9b3bf2b6"
+    },
+    {
+      "fdcId": 175070,
+      "id": "f2713027-2951-5582-be22-cbd68d7d475c",
+      "name": "Archway Home Style Cookies, Sugar Free Oatmeal",
+      "nutrients_sha256": "b1ed5476ddb723f2a760fa5e078a4ba9f29db480a64591518499ae201cd9e9dc",
+      "units_sha256": "bc0c73672fe3ec2facc7c4bfbad32b5f9d1f39a25e2ccc4d64e49a84223ce692"
+    },
+    {
+      "fdcId": 175071,
+      "id": "6992bef4-ed81-502c-bd51-fbe489d67a09",
+      "name": "Archway Home Style Cookies, Chocolate Chip Ice Box",
+      "nutrients_sha256": "5a4e92b81066951f67254d97c79a375fc9af5ac027411f6d4243dc9602dc7322",
+      "units_sha256": "d488847cff69be2cc1ffe0fc11a472d358bcaeb88d6aa9f1428cc966ac3e2059"
+    },
+    {
+      "fdcId": 175072,
+      "id": "1cd9a60f-da42-5d1d-8234-8cdb6648a46a",
+      "name": "Archway Home Style Cookies, Iced Oatmeal",
+      "nutrients_sha256": "01ff334d913a8ccec9e9a3298d3799722b0d1bf70f0d60373d7cba0a9de1944b",
+      "units_sha256": "a7b0a41eed9d06f634e3f3e63a5f57d2a0cc78f40a9cbc31f9dc820bd923f45e"
+    },
+    {
+      "fdcId": 175073,
+      "id": "6cb6bf37-ccb0-5982-ba98-5f8e5636cf7f",
+      "name": "Archway Home Style Cookies, Molasses",
+      "nutrients_sha256": "7888b30e7a979756c44daee62d5af548e87855c4071363a5fa1d6c0ed5d9f04a",
+      "units_sha256": "0ee51976f7652b3e9babeccb89d831f0810d526d2c16c52094052fae99c999b3"
+    },
+    {
+      "fdcId": 175074,
+      "id": "b65b6443-0036-533d-900c-d9d89b3fc4ed",
+      "name": "Archway Home Style Cookies, Oatmeal",
+      "nutrients_sha256": "dab3d3582493017bc2e8adf1b60b61630067585397948b19a0ac3238ff325477",
+      "units_sha256": "15e43e403ac9ac112d174129a5c19cc28152b859f021e3734b65d7aee93ea929"
+    },
+    {
+      "fdcId": 175075,
+      "id": "d5a21714-b7e0-59d7-baae-a33e96ee92d3",
+      "name": "Archway Home Style Cookies, Oatmeal Raisin",
+      "nutrients_sha256": "f2e3c5e821362d494d549ca433116666b448187627bc82225e2d97e6ae3395a1",
+      "units_sha256": "cec769c505bcdb59a136ac816aebfa389b307a61685500a626bc8a9cd9a6d0b2"
+    },
+    {
+      "fdcId": 175076,
+      "id": "3d592648-8ebb-5611-8547-4fdc8b850258",
+      "name": "Archway Home Style Cookies, Strawberry Filled",
+      "nutrients_sha256": "21bb62efd021f30b919221ec02c879e68a46a55731a966014fa9d50642ddacfc",
+      "units_sha256": "6c39e663fa41b977e87eca80be0c69c95cb52aa1ec3403d26776e6425b5cc9db"
+    },
+    {
+      "fdcId": 175077,
+      "id": "5cb62fd4-613d-51a6-b437-2bd249d77c8c",
+      "name": "Archway Home Style Cookies, Reduced Fat Ginger Snaps",
+      "nutrients_sha256": "7d043e4ab6ace0a7259d429a5bdb2c8723d051c97aa6f42b85d68e702ced5d6d",
+      "units_sha256": "6d79d868e7516d79f048d40ed62ea4e382bf42d584d85c177a3d9712fd900269"
+    },
+    {
+      "fdcId": 175078,
+      "id": "6e82b75b-ddb1-53a2-89b9-06af64c2335c",
+      "name": "Artificial Blueberry Muffin Mix, dry",
+      "nutrients_sha256": "4d2d1b3c07d8fe47e5e23b70b80d5862c6b2288a651cb3c85e0a22ef262b2b32",
+      "units_sha256": "3a7d3573220b1604b38a89d065055c0d48c2f1754c4c95a5ee998e3b5acd9afb"
+    },
+    {
+      "fdcId": 175164,
+      "id": "d2ca6a05-8eb5-5327-b98f-52d54eb2749f",
+      "name": "Crustaceans, crab, alaska king, raw",
+      "nutrients_sha256": "fa72d037c63664d5a41279ce8e59e936540b0e1b97ca60175d3077fa5d0735a5",
+      "units_sha256": "00e5a68acd1bb1f41fea3b48eea0ed3c073eae71e052d78fd9522fcf3a3285dd"
+    },
+    {
+      "fdcId": 175169,
+      "id": "989fcca2-3661-575c-b057-0e6eac4ffa6c",
+      "name": "Crustaceans, crayfish, mixed species, farmed, raw",
+      "nutrients_sha256": "ed3daa44188b6b61be780e22d0054d09c8dafe7c337e3af994b0f15199837e64",
+      "units_sha256": "d57b276620e1bdb246837a3d778662307d043c78159bf7bba3a8bc6d0cea039e"
+    },
+    {
+      "fdcId": 175170,
+      "id": "75e707c7-2407-5c4b-9348-ab78aa76328a",
+      "name": "Crustaceans, crayfish, mixed species, farmed, cooked, moist heat",
+      "nutrients_sha256": "1f094aaef0201077c85730dffe954e7cebdb6a460c14cd7f1b8bf8b447c1f92f",
+      "units_sha256": "95e8a07fb8a938abe70ec556d438b0d94ec137ff5f7ac7a9d14d0029daa0e4b0"
+    },
+    {
+      "fdcId": 175180,
+      "id": "d843b0fd-e2e3-534a-85b5-a587155fd51e",
+      "name": "虾（熟）",
+      "nutrients_sha256": "ed16e322cff80b1610e517ec01cdae0e437bbb4d53c7b0db22f88bf87b9cacd2",
+      "units_sha256": "11650fd57209b13b6e315aa5e33bfdf250c724637cf8dd98b25856fe110d7491"
+    },
+    {
+      "fdcId": 175182,
+      "id": "fb38b050-ce75-5168-81dd-eb2970f1f9e0",
+      "name": "Beans, baked, canned, plain or vegetarian",
+      "nutrients_sha256": "1c82b5006e9ec102c0fa2d1569cdf141d4f93cce083b4bbbe529cb251f00b300",
+      "units_sha256": "18db3bb858f6557a2abc5f895d9f8ec909fd952d4f9cfdb0ad6cc90658155880"
+    },
+    {
+      "fdcId": 175183,
+      "id": "51b91d36-46be-5bcc-9882-4dfbe69830e3",
+      "name": "Beans, baked, canned, with beef",
+      "nutrients_sha256": "ddfe9bb7fe7ea4825cc612c4efffe478a76b5638a7deb6b78b1d9caa859c1db1",
+      "units_sha256": "e6e24f5e8e160fab40c999ff9d6ecb00e3c96d110789be2083113ca4a4069fae"
+    },
+    {
+      "fdcId": 175184,
+      "id": "f96c120e-4258-5163-a739-bb377a16e7db",
+      "name": "Beans, baked, canned, with franks",
+      "nutrients_sha256": "a4e3a86c873b8638da776fa1ac63e565a8b008867018e114588fd74e72a5addb",
+      "units_sha256": "877914a1d1f35c52006af8d12cdc76efbc785ab5623c3294050ef632c6ea8d1e"
+    }
+  ]
+}

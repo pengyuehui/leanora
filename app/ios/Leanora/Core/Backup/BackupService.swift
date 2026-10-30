@@ -21,7 +21,7 @@ enum RecordCoding {
 
 struct BackupDocument: Codable, Equatable, Sendable {
     var format = "app.leanora.backup"
-    var version = 1
+    var version = 2
     var exportedAt = Date()
     var profileID: UUID
     var records: [BusinessRecord]
@@ -56,10 +56,11 @@ enum BackupService {
         let header: Header
         do { header = try RecordCoding.decode(Header.self, from: data) }
         catch { throw DataProblem.invalid("JSON 格式") }
-        guard header.format == "app.leanora.backup", header.version == 1 else { throw DataProblem.unsupportedVersion }
+        guard header.format == "app.leanora.backup", [1, 2].contains(header.version) else { throw DataProblem.unsupportedVersion }
         let document: BackupDocument
         do { document = try RecordCoding.decode(BackupDocument.self, from: data) }
         catch { throw DataProblem.invalid("JSON 记录或 UUID") }
+        if document.version == 1, document.records.contains(where: { $0.kind == "mealTemplate" }) { throw DataProblem.unsupportedVersion }
         try DomainValidation.validate(document.records)
         guard document.records.contains(where: { $0.kind == "profile" && $0.id == document.profileID }) else { throw DataProblem.invalid("备份身份") }
         return document

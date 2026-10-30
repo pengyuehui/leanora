@@ -5,29 +5,39 @@ struct FoodSearchView: View {
     let meal: Meal
     let date: Date
     let onAdded: () -> Void
+    let onDraft: ((DietEntry) -> Void)?
     @State private var query = ""
     @State private var custom = false
     @State private var archived = false
+    @State private var filter = FoodFilter.all
+    @State private var category: String?
+
+    init(meal: Meal, date: Date, onDraft: ((DietEntry) -> Void)? = nil, onAdded: @escaping () -> Void) {
+        self.meal = meal; self.date = date; self.onDraft = onDraft; self.onAdded = onAdded
+    }
     var body: some View {
         List {
+            JournalErrorNotice()
             Section {
                 Button("自定义食物") { custom = true }.accessibilityIdentifier("food.custom")
+                Picker("查看", selection: $filter) { ForEach(FoodFilter.allCases) { Text($0.title).tag($0) } }
+                    .accessibilityIdentifier("food.filter")
+                Picker("分类", selection: $category) {
+                    Text("全部分类").tag(String?.none)
+                    ForEach(Array(Set(journal.foods.map { $0.category ?? "未分类" })).sorted(), id: \.self) { Text($0).tag(Optional($0)) }
+                }.accessibilityIdentifier("food.category")
                 DisclosureGroup("目录与筛选") {
                     Toggle("查看已归档食物", isOn: $archived)
                     Text("离线基础目录 \(journal.catalog.count) 条 · USDA SR Legacy。烹调方式影响营养，请核对条目；未收录的食物可自行输入。").font(.caption).foregroundStyle(.secondary)
                 }
             }
-            if query.isEmpty && !archived {
-                let recent = recentFoods
-                if !recent.isEmpty {
-                    Section("最近记录") {
-                        ForEach(recent) { food in foodLink(food) }
-                    }
-                }
+            let foods = NutritionWorkflow.search(journal.foods, catalog: journal.catalog, entries: journal.entries,
+                                                 query: query, filter: filter, category: category, archived: archived)
+            if foods.isEmpty {
+                ContentUnavailableView("没有符合条件的食物", systemImage: "magnifyingglass", description: Text("试试其他名称，或返回全部分类。未收录的食品可以自定义。"))
+                Button("查看全部食物") { filter = .all; category = nil; archived = false; query = "" }.accessibilityIdentifier("food.clearFilters")
             }
-            let foods = FoodCatalog.search(journal.foods, query: query, archived: archived)
-            if foods.isEmpty { ContentUnavailableView.search(text: query) }
-            Section(query.isEmpty ? "全部食物" : "搜索结果") { ForEach(foods) { food in foodLink(food) } }
+            Section("\(filter.title) · \(foods.count) 项") { ForEach(foods) { food in foodLink(food) } }
         }
         .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索名称、中文或英文别名")
         .navigationTitle("添加\(meal.title)")
@@ -35,15 +45,18 @@ struct FoodSearchView: View {
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { onAdded() } } }
         .sheet(isPresented: $custom) { NavigationStack { CustomFoodView() } }
     }
-    private var recentFoods: [Food] {
-        var seen = Set<UUID>()
-        let ids = journal.entries.sorted { $0.occurred.instant > $1.occurred.instant }.compactMap(\.food?.foodID).filter { seen.insert($0).inserted }.prefix(6)
-        return ids.compactMap { id in journal.foods.first { $0.id == id && !$0.isArchived } }
-    }
     private func foodLink(_ food: Food) -> some View {
-        NavigationLink { FoodPortionView(food: food, meal: meal, date: date, onSaved: onAdded) } label: {
-            VStack(alignment: .leading, spacing: 6) { Text(food.name); Text("\(food.nutrientsPer100Grams.energyKcal.map { $0.formatted() } ?? "未知") kcal / 100 g").font(.caption).foregroundStyle(.secondary) }.padding(.vertical, 4)
+        NavigationLink { FoodPortionView(food: food, meal: meal, date: date, onDraft: onDraft, onSaved: onAdded) } label: {
+            VStack(alignment: .leading, spacing: 6) {
+                Label(food.name, systemImage: food.isFavorite == true ? "star.fill" : "fork.knife")
+                Text("\(food.nutrientsPer100Grams.energyKcal.map { $0.formatted() } ?? "未知") kcal / 100 g · \(food.category ?? "自定义")").font(.caption).foregroundStyle(.secondary)
+            }.padding(.vertical, 4)
         }.accessibilityIdentifier("food.select.\(food.name)")
+            .swipeActions(edge: .leading) {
+                Button(food.isFavorite == true ? "取消收藏" : "收藏", systemImage: food.isFavorite == true ? "star.slash" : "star") {
+                    Task { _ = await journal.run { [repository = journal.repository, catalog = journal.catalog] in try await repository.setFoodFavorite(food.id, favorite: food.isFavorite != true, catalog: catalog) } }
+                }.tint(.orange)
+            }
     }
 }
 

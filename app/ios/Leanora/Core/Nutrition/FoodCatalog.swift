@@ -8,6 +8,7 @@ struct FoodCatalog: Decodable {
         var nutrients: Nutrients
         var units: [FoodUnit]
         var reference: String
+        var category: String?
     }
     var version: Int
     var entries: [Entry]
@@ -24,7 +25,7 @@ struct FoodCatalog: Decodable {
         let foods = catalog.entries.map { entry in
             Food(stamp: RecordStamp(id: entry.id, createdAt: date, updatedAt: date), name: entry.name, aliases: entry.aliases,
                  nutrientsPer100Grams: entry.nutrients, units: entry.units,
-                 source: ContentSource(name: "USDA FoodData Central · SR Legacy 2018", license: "CC0-1.0", reference: entry.reference))
+                 source: ContentSource(name: "USDA FoodData Central · SR Legacy 2018", license: "CC0-1.0", reference: entry.reference), category: entry.category)
         }
         try DomainValidation.validate(foods.map(BusinessRecord.food), requireProfile: false)
         return foods

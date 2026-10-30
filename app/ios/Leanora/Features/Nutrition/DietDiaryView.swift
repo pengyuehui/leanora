@@ -23,6 +23,7 @@ struct DietDiaryView: View {
             Section("本日营养") { NutritionSummaryView(summary: NutritionSummary(entries: journal.entries, on: day), goal: NutritionCalculator.goal(on: day, goals: journal.goals)) }
             JournalErrorNotice()
             Section {
+                Button("我的组合餐", systemImage: "square.stack") { present(.templates) }.disabled(!presentationReady).accessibilityIdentifier("diet.mealTemplates")
                 Button("快速记热量") { present(.quick) }.disabled(!presentationReady).accessibilityIdentifier("diet.quick")
                 Button("复制历史餐次") { present(.copy) }.disabled(!presentationReady).accessibilityIdentifier("diet.copy")
             }
@@ -39,9 +40,26 @@ struct DietDiaryView: View {
                             .swipeActions { Button("删除", role: .destructive) { removing = entry } }
                     }
                     if entries.isEmpty { Text("还没有记录").foregroundStyle(.secondary) }
-                    else { Text("本餐已知热量：\(NutritionSummary(entries: entries).energy.text) kcal").font(.caption) }
+                    else {
+                        let summary = NutritionSummary(entries: entries)
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("\(entries.count) 项 · 本餐已知热量：\(summary.energy.text) kcal")
+                            Text("蛋白质 \(summary.protein.text) g · 碳水 \(summary.carbohydrate.text) g · 脂肪 \(summary.fat.text) g")
+                            if summary.missingFields > 0 { Text("\(summary.missingFields) 个营养字段未知").foregroundStyle(.secondary) }
+                        }.font(.caption).accessibilityElement(children: .combine).accessibilityIdentifier("diet.mealSummary.\(meal.rawValue)")
+                        Button("将\(meal.title)存为组合") {
+                            let selectedDay = day
+                            Task {
+                                if let draft = await journal.run({ [repository = journal.repository] in try await repository.mealDraft(from: selectedDay, meal: meal) }) { present(.templateDraft(draft)) }
+                            }
+                        }.disabled(!presentationReady || journal.busy).accessibilityIdentifier("diet.saveMeal.\(meal.rawValue)")
+                    }
                     Button { present(.food(meal)) } label: { Label("添加\(meal.title)", systemImage: "plus") }.disabled(!presentationReady).accessibilityIdentifier("diet.add.\(meal.rawValue)")
                 } header: { Text(meal.title) }
+            }
+            Section("食物与记录") {
+                NavigationLink { NutritionExamplesView() } label: { Label("食物搭配范例", systemImage: "fork.knife") }.accessibilityIdentifier("diet.examples")
+                NavigationLink { NutritionGuidesView() } label: { Label("饮食记录指南", systemImage: "book") }.accessibilityIdentifier("diet.guides")
             }
         }
         .navigationTitle("饮食日记")
@@ -52,6 +70,7 @@ struct DietDiaryView: View {
                     ForEach(Meal.allCases) { meal in Button("添加\(meal.title)") { present(.food(meal)) } }
                     Button("快速记热量") { present(.quick) }.accessibilityIdentifier("diet.menuQuick")
                     Button("复制历史餐次") { present(.copy) }
+                    Button("我的组合餐") { present(.templates) }
                 } label: { Label("记录", systemImage: "plus") }.accessibilityIdentifier("diet.addMenu").disabled(!presentationReady)
             }
         }
@@ -63,6 +82,8 @@ struct DietDiaryView: View {
             case .food(let meal): FoodSearchView(meal: meal, date: date) { presented = nil }
             case .quick: QuickCaloriesView(date: date)
             case .copy: MealCopyView(destination: date)
+            case .templates: MealTemplatesView(date: date).toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { presented = nil } } }
+            case .templateDraft(let draft): MealTemplateEditorView(draft: draft)
             case .edit(let entry):
                 if let snapshot = entry.food {
                     let food = Food(stamp: RecordStamp(id: snapshot.foodID, revision: snapshot.revision), name: snapshot.name, nutrientsPer100Grams: snapshot.nutrientsPer100Grams, source: snapshot.source)
@@ -87,13 +108,15 @@ struct DietDiaryView: View {
 }
 
 private enum DietPresentation: Identifiable {
-    case food(Meal), quick, copy, edit(DietEntry)
+    case food(Meal), quick, copy, edit(DietEntry), templates, templateDraft(MealTemplate)
     var id: String {
         switch self {
         case .food(let meal): "food:\(meal.rawValue)"
         case .quick: "quick"
         case .copy: "copy"
         case .edit(let entry): "edit:\(entry.id)"
+        case .templates: "templates"
+        case .templateDraft(let draft): "template:\(draft.id)"
         }
     }
 }
@@ -128,10 +151,18 @@ struct NutritionSummaryView: View {
         else if [summary.energy, summary.protein, summary.carbohydrate, summary.fat].contains(where: { $0.missing > 0 }) {
             Text("部分营养素未知，合计只包含已知值；快速热量不推算宏量营养素。").font(.caption).foregroundStyle(.secondary)
         }
+        if summary.count > 0 {
+            Text("已记录 \(summary.count) 项\(summary.missingFields > 0 ? " · \(summary.missingFields) 个营养字段未知" : " · 所列营养字段均有数据")")
+                .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("nutrition.completeness")
+        }
     }
     private func nutrient(_ name: String, _ value: NutrientTotal) -> some View {
         let amount = value.known?.formatted(.number.precision(.fractionLength(0...1)))
-        return VStack(alignment: .leading, spacing: 4) { Text(name).font(.caption).foregroundStyle(.secondary); Text(amount.map { "\($0) g" } ?? "未知").font(.subheadline.weight(.semibold)).monospacedDigit() }
+        return VStack(alignment: .leading, spacing: 4) {
+            Text(name).font(.caption).foregroundStyle(.secondary)
+            Text(amount.map { "\($0) g" } ?? "未知").font(.subheadline.weight(.semibold)).monospacedDigit()
+            if value.missing > 0 { Text("\(value.missing) 项未知").font(.caption2).foregroundStyle(.secondary) }
+        }
             .accessibilityElement(children: .ignore).accessibilityLabel("\(name)，\(value.text) g")
     }
 }

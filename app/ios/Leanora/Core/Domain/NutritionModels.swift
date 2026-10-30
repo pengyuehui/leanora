@@ -27,6 +27,8 @@ struct Food: Codable, Equatable, Sendable {
     var units: [FoodUnit] = []
     var source = ContentSource()
     var isArchived = false
+    var isFavorite: Bool?
+    var category: String?
 }
 enum Meal: String, Codable, Sendable { case breakfast, lunch, dinner, snack }
 struct FoodSnapshot: Codable, Equatable, Sendable {

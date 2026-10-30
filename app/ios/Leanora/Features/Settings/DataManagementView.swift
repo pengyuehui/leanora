@@ -64,6 +64,7 @@ struct DataManagementView: View {
                 } } label: { Label("导出 CSV 记录表", systemImage: "tablecells") }.accessibilityIdentifier("backup.csv")
             } footer: {
                 Text("备份含敏感的训练、饮食和身体资料。导出为未加密 JSON，请选择可信的位置。备份保留业务 ID，不包含健康样本、游标或同步任务。")
+                Text("新导出使用格式 2，包含收藏和组合餐，需要 Leanora 1.3 或更高兼容版本恢复。原格式 1 仍可导入；CSV 仅导出实际记录。").font(.caption).foregroundStyle(.secondary)
             }.disabled(busy || store.repository == nil)
             if let preview {
                 Section("导入预览") {

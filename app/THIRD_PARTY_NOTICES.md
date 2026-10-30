@@ -1,4 +1,4 @@
-# Third-party exercise content
+# Third-party and original content
 
 Leanora's application code remains MIT licensed. The following content has its own license; the repository's MIT license does not replace these licenses. Runtime uses only bundled files and makes no requests to these services.
 
@@ -32,3 +32,11 @@ The older `alexpcosta/opengym` research remains a separate historical reference.
 ## Leanora original training content (1.2)
 
 The 4 example programs, 9 editable templates and 8 recording guides in `Resources/Catalog/training-content.json` were independently authored for Leanora and are covered by the repository's MIT license. They reference existing exercise IDs; referenced photos and illustrations retain the separate licenses above. No 训记 program, article, screenshot, image or video is redistributed.
+
+## USDA FoodData Central
+
+U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, SR Legacy 2018. The 500 bundled foods use official nutrient and gram-portion values under [CC0 1.0](https://fdc.nal.usda.gov/api-guide/#licensing). The source ZIP hash, selection method and validation are recorded in `docs/food-catalog-manifest.json` and `docs/food-catalog-verification.json`. All 300 previous IDs, nutrient values and portions are retained. The 209 Chinese names, selected search aliases and navigation categories were independently prepared for Leanora; they do not represent a Chinese branded-food or restaurant database.
+
+## Leanora original nutrition content (1.3)
+
+The 6 food-combination examples and 8 recording guides in `Resources/Catalog/nutrition-content.json` are original Leanora text under MIT. Their nutrient previews are calculated from the separately attributed food values, with explicit food states and gram weights. They are editable recording examples, not individualized dietary prescriptions. No 薄荷 food database, proprietary recipe, article, media, private API or code is redistributed.
