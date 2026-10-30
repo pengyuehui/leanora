@@ -1,45 +1,22 @@
 {
-  "devicesAndConfigurations" : [
-    {
-      "device" : {
-        "architecture" : "arm64",
-        "deviceId" : "F4F261FE-DA63-4C5C-88B7-1B2B787C1712",
-        "deviceName" : "Leanora Store Screenshots",
-        "modelName" : "iPhone",
-        "osBuildNumber" : "24A94425",
-        "osVersion" : "27.1",
-        "platform" : "iOS Simulator"
-      },
-      "expectedFailures" : 0,
-      "failedTests" : 0,
-      "passedTests" : 1,
-      "skippedTests" : 0,
-      "testPlanConfiguration" : {
-        "configurationId" : "1",
-        "configurationName" : "Test Scheme Action"
-      }
-    }
-  ],
-  "environmentDescription" : "Leanora · Built with macOS 27.0.1",
-  "expectedFailures" : 0,
-  "failedTests" : 0,
-  "finishTime" : 1792578105.745,
-  "passedTests" : 1,
-  "result" : "Passed",
-  "runtimeWarnings" : [
-
-  ],
-  "skippedTests" : 0,
-  "startTime" : 1792578061.939,
-  "statistics" : [
-
-  ],
-  "testFailures" : [
-
-  ],
-  "title" : "Test - Leanora",
-  "topInsights" : [
-
-  ],
-  "totalTestCount" : 1
+  "checked_date": "2026-10-29",
+  "scope": "screenshot_test_case_only",
+  "result": "Passed",
+  "passedTests": 1,
+  "failedTests": 0,
+  "testIdentifier": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+  "source_result_bundle": "app/build/V12-20261029-5.xcresult",
+  "source_batch_result": "Failed in two other cases; this screenshot case passed. Later targeted retests are recorded in the functional QA report.",
+  "native_screenshots_captured": 7,
+  "selected_store_sources": 7,
+  "source_selection_note": "Screenshots 1 and 3–7 come from the passing screenshot case. Screenshot 2 is the unmodified program preview from the passing TrainingWorkflowTests/testFavoriteProgramPreviewAdoptionAndOfflineGuide case in V12-20261029-4.xcresult.",
+  "source_sha256": {
+    "zh-Hans/source/store-01-today.png": "c40265960effe03355d5672e1b1c2b5bc64238037830015750d667e476017e61",
+    "zh-Hans/source/store-02-plan.png": "b4a714bbfd7536f3be833da916d2f25e06448db90da2288e9a62fe6b03b9626c",
+    "zh-Hans/source/store-03-workout.png": "5814e79df7404bd7dfb67b106c341912861e3cca51684e377fc2009a580a037d",
+    "zh-Hans/source/store-04-nutrition.png": "4509e12a96e8eccb3f12facf9ee0ef5c42d34b77003e4b86fa5c11d94bc5627c",
+    "zh-Hans/source/store-05-portion.png": "c902711364c48b6f7ce20d058197831e7aafc164ddda31e1f95f4daf1d0b8722",
+    "zh-Hans/source/store-06-trends.png": "43c23367e8bbd9be79875f8030e143609c3f4c0ad24ad3912b5a457b40fa198a",
+    "zh-Hans/source/store-07-health.png": "a59736686691ebe357fbb7affe6a53c0337ac1e5c23cbeb914aa5d09548691d9"
+  }
 }

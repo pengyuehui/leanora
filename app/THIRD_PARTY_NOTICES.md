@@ -28,3 +28,7 @@ Leanora's application code remains MIT licensed. The following content has its o
 [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) was reviewed for exercise-library organization and guidance access. Its code and translations are not imported. Its Gym visual stills and animations are separately licensed for openGym and are **not included**. See [openGym NOTICE](https://github.com/DuarteSantos8/openGym/blob/main/NOTICE.md).
 
 The older `alexpcosta/opengym` research remains a separate historical reference. No content from 训记 or 薄荷 is included.
+
+## Leanora original training content (1.2)
+
+The 4 example programs, 9 editable templates and 8 recording guides in `Resources/Catalog/training-content.json` were independently authored for Leanora and are covered by the repository's MIT license. They reference existing exercise IDs; referenced photos and illustrations retain the separate licenses above. No 训记 program, article, screenshot, image or video is redistributed.

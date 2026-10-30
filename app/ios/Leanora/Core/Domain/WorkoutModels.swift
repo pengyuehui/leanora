@@ -56,6 +56,8 @@ struct Exercise: Codable, Equatable, Sendable {
     var muscles: [String] = []
     var source = ContentSource()
     var isArchived = false
+    // Optional so existing catalogs and backups decode without a migration.
+    var isFavorite: Bool?
 }
 
 struct ExerciseSnapshot: Codable, Equatable, Sendable {

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate deterministic exports; optionally inspect a locally built Release app."""
 import argparse
+from datetime import date
 import hashlib
 from html.parser import HTMLParser
 import json
@@ -48,9 +49,9 @@ metadata = json.loads((store / "metadata.json").read_text())
 assert len(metadata["app_name"]) <= 30
 lengths = {}
 for locale, values in metadata["locales"].items():
-    counts = {"subtitle_characters": len(values["subtitle"]), "promotional_text_characters": len(values["promotional_text"]), "description_characters": len(values["description"]), "keyword_utf8_bytes": len(values["keywords"].encode())}
+    counts = {"subtitle_characters": len(values["subtitle"]), "promotional_text_characters": len(values["promotional_text"]), "description_characters": len(values["description"]), "keyword_utf8_bytes": len(values["keywords"].encode()), "whats_new_characters": len(values["whats_new"])}
     assert counts["subtitle_characters"] <= 30 and counts["promotional_text_characters"] <= 170
-    assert counts["description_characters"] <= 4000 and counts["keyword_utf8_bytes"] <= 100
+    assert counts["description_characters"] <= 4000 and counts["whats_new_characters"] <= 4000 and counts["keyword_utf8_bytes"] <= 100
     assert all(len(keyword) > 2 for keyword in values["keywords"].split(","))
     lengths[locale] = counts
 class References(HTMLParser):
@@ -65,7 +66,7 @@ references = References(); references.feed((store / "index.html").read_text())
 assert all((store / name).resolve().is_file() for name in references.local)
 summary = json.loads((store / "screenshot-test-summary.json").read_text())
 assert summary["result"] == "Passed" and summary["passedTests"] == 1 and summary["failedTests"] == 0
-report = {"checked_date": "2026-10-21", "upload_asset_count": 15, "store_screenshots": exports, "native_sources": sources, "app_icon": icon, "metadata_lengths": lengths, "local_html_references": len(references.local), "capture_test_result": summary["result"], "capture_test_count": 1, "browser_proof": {"path": "preview-desktop.png", "sha256": digest(store / "preview-desktop.png")}, "publication": "local_only; not uploaded to App Store Connect", "release_archive": None}
+report = {"checked_date": date.today().isoformat(), "upload_asset_count": 15, "store_screenshots": exports, "native_sources": sources, "app_icon": icon, "metadata_lengths": lengths, "local_html_references": len(references.local), "capture_test_result": summary["result"], "capture_test_count": 1, "browser_proof": {"path": "preview-desktop.png", "sha256": digest(store / "preview-desktop.png")}, "publication": "local_asset_validation_only; live submission status is in " + metadata["release_record"], "release_archive": None}
 if args.release_app:
     app = args.release_app.resolve()
     info = plistlib.loads((app / "Info.plist").read_bytes())

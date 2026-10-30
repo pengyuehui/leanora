@@ -1,0 +1,14 @@
+{
+  "reviewer": "correctness",
+  "findings": [],
+  "resolved_findings": [
+    "First-presentation rename sheet observed text through a live binding but rendered stale empty-state controls; extracted WorkoutNameEditor with its own initial draft state."
+  ],
+  "residual_risks": [
+    "No new physical-device HealthKit, lock-screen notification or real VoiceOver acceptance is claimed.",
+    "New example programs and guides are in Chinese; some exercise instructions remain English."
+  ],
+  "testing_gaps": [
+    "Physical devices at minimum supported iOS 18 and real VoiceOver remain separate acceptance work."
+  ]
+}

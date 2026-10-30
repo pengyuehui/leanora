@@ -167,8 +167,8 @@ final class WorkoutSessionTests: XCTestCase, @unchecked Sendable {
         let exercise = Exercise(name: "卧推"), first = UUID(), second = UUID(), now = Date()
         let items = [SessionExercise(order: 0, snapshot: ExerciseSnapshot(exercise), sets: [WorkoutSet(order: 0, loadKg: 20, repetitions: 8, completedAt: now)], templateItemID: first),
                      SessionExercise(order: 1, snapshot: ExerciseSnapshot(exercise), sets: [WorkoutSet(order: 0, loadKg: 30, repetitions: 5, completedAt: now)], templateItemID: second)]
-        let history = WorkoutSession(endedAt: now, status: .completed, name: "历史", exercises: items)
-        var current = history; current.status = .active; current.endedAt = nil
+        let history = WorkoutSession(started: RecordMoment(now.addingTimeInterval(-60)), endedAt: now, status: .completed, name: "历史", exercises: items)
+        var current = history; current.stamp = RecordStamp(); current.started = RecordMoment(now.addingTimeInterval(10)); current.status = .active; current.endedAt = nil
         for i in current.exercises.indices { current.exercises[i].sets = [WorkoutSet(order: 0)] }
         let result = WorkoutEngine.prefilled(current, history: [history])
         XCTAssertEqual(result.exercises[0].sets[0].loadKg, 20); XCTAssertEqual(result.exercises[1].sets[0].loadKg, 30)

@@ -19,7 +19,13 @@ struct TemplateEditorView: View {
         Form {
             TrainingErrorNotice()
             Section("模板资料") {
-                TextField("模板名称", text: $draft.name).focused($focused).submitLabel(.done).onSubmit { focused = false }.accessibilityIdentifier("template.name")
+                HStack {
+                    TextField("模板名称", text: $draft.name).focused($focused).submitLabel(.done).onSubmit { focused = false }.accessibilityIdentifier("template.name")
+                    if !draft.name.isEmpty {
+                        Button { draft.name = ""; focused = true } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary).frame(width: 44, height: 44) }
+                            .buttonStyle(.borderless).accessibilityLabel("清空模板名称").accessibilityIdentifier("template.clearName")
+                    }
+                }
                 TextField("备注（可选）", text: $draft.notes, axis: .vertical).focused($focused)
             }
             Section {

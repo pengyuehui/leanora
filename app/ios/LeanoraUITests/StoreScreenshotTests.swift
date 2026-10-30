@@ -14,10 +14,10 @@ import XCTest
         XCTAssertTrue(app.staticTexts["template.title"].waitForExistence(timeout: 5))
         capture(app, "store-02-plan")
         tap(app.buttons["template.start"], in: app)
-        XCTAssertTrue(app.buttons["workout.set.0.0"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.buttons["workout.pause"].label.contains("继续"))
+        reveal(app.buttons["workout.set.0.0"], in: app)
         capture(app, "store-03-workout")
-        app.buttons["workout.close"].tap()
+        tap(app.buttons["workout.close"], in: app)
         waitGone(app.buttons["workout.close"])
         app.buttons["饮食"].tap()
         XCTAssertTrue(app.staticTexts["nutrition.goal"].waitForExistence(timeout: 5))
@@ -39,11 +39,19 @@ import XCTest
         capture(app, "store-07-health")
     }
     private func tap(_ element: XCUIElement, in app: XCUIApplication) {
+        reveal(element, in: app)
+        element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+    }
+    private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<12 {
             if element.exists && element.isHittable && element.frame.maxY < app.frame.maxY - 40 {
-                element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap(); return
+                return
             }
             app.collectionViews.firstMatch.swipeUp()
+        }
+        for _ in 0..<16 {
+            if element.exists && element.isHittable && element.frame.maxY < app.frame.maxY - 40 { return }
+            app.collectionViews.firstMatch.swipeDown()
         }
         XCTFail("Screenshot flow element unavailable: \(app.debugDescription)")
     }

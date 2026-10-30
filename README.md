@@ -2,7 +2,8 @@
 
 原生 iPhone 训练与饮食记录 App，支持 Apple Health，使用 SwiftUI、SwiftData 与 Apple 系统 SDK 独立实现。
 
-- 训练模板、周计划、逐组实际值、超级组、休息计时、暂停恢复与历史趋势。
+- 自由训练、训练模板与周计划、逐组实际值、上次表现、历史再练、超级组与计时恢复。
+- 动作收藏与最近使用、882 个动作的离线图示、4 套原创范例计划和 8 篇记录指南。
 - 离线食品搜索、份量与营养快照、快捷热量、餐次复制和身体记录。
 - HealthKit 增量读取、逐组件幂等写入、来源管理、删除抑制与备份恢复核对。
 - JSON/CSV 导出、预检导入、独立数据清理及隐私说明。
@@ -19,4 +20,4 @@ swift test --package-path app --scratch-path app/build/SwiftPM --disable-swift-t
 
 `docs/plans/` 为开发计划，`analysis/` 为功能研究，`tools/rea/` 仅保留开发工具依赖清单。第三方研究源码、安装包、本机数据库、签名私钥、IPA 与构建缓存不提交到仓库。应用与内容来源见 [来源清单](app/docs/content-provenance.md)。
 
-项目源码按 [MIT 许可证](LICENSE) 开源。第三方开发工具和食品数据遵循各自的许可证，具体来源与使用范围见上述清单。
+项目源码与原创训练内容按 [MIT 许可证](LICENSE) 开源。第三方动作图片、开发工具和食品数据遵循各自许可证，动作图示署名见 [第三方内容说明](app/THIRD_PARTY_NOTICES.md)。

@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-30",
+  "version": "1.2",
+  "build": "6",
+  "core": {
+    "tests": 123,
+    "failures": 0,
+    "skipped": 2,
+    "skip_reason": "Existing opt-in capacity tests",
+    "log": "app/build/v12-core-full-4.log"
+  },
+  "ui": {
+    "functional_cases": 10,
+    "screenshot_cases": 1,
+    "final_unique_cases_passed": 11,
+    "scope": "Consolidated passing cases from targeted batches; earlier failing batches are not represented as a single green full-suite run.",
+    "cases": {
+      "ExerciseGuidanceTests/testIllustrationGuideInDarkModeWithLargeType()": {
+        "result": "Passed",
+        "seconds": 37.484,
+        "log": "app/build/v12-ui-4.log",
+        "result_bundle": "app/build/V12-20261029-4.xcresult"
+      },
+      "ExerciseGuidanceTests/testPhotoGuidePagingLargeImageAndSource()": {
+        "result": "Passed",
+        "seconds": 22.033,
+        "log": "app/build/v12-ui-4.log",
+        "result_bundle": "app/build/V12-20261029-4.xcresult"
+      },
+      "TemplateEditorTests/testDuplicateItemsTargetsReorderCopyAndRelaunch()": {
+        "result": "Passed",
+        "seconds": 56.073,
+        "log": "app/build/v12-ui-4.log",
+        "result_bundle": "app/build/V12-20261029-4.xcresult"
+      },
+      "TrainingWorkflowTests/testFavoriteProgramPreviewAdoptionAndOfflineGuide()": {
+        "result": "Passed",
+        "seconds": 116.813,
+        "log": "app/build/v12-ui-4.log",
+        "result_bundle": "app/build/V12-20261029-4.xcresult"
+      },
+      "TrainingWorkflowTests/testFreeWorkoutFinishTemplateRepeatAndPreviousValuesSurviveRelaunch()": {
+        "result": "Passed",
+        "seconds": 136.02,
+        "log": "app/build/v12-ui-4.log",
+        "result_bundle": "app/build/V12-20261029-4.xcresult"
+      },
+      "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()": {
+        "result": "Passed",
+        "seconds": 55.294,
+        "log": "app/build/v12-ui-4.log",
+        "result_bundle": "app/build/V12-20261029-4.xcresult"
+      },
+      "StoreScreenshotTests/testCaptureChineseStoreScreenshots()": {
+        "result": "Passed",
+        "seconds": 61.207,
+        "log": "app/build/v12-ui-5.log",
+        "result_bundle": "app/build/V12-20261029-5.xcresult"
+      },
+      "TemplateEditorTests/testStartsTodayAndReturnsToSameWorkoutAfterRelaunch()": {
+        "result": "Passed",
+        "seconds": 69.313,
+        "log": "app/build/v12-ui-5.log",
+        "result_bundle": "app/build/V12-20261029-5.xcresult"
+      },
+      "WorkoutRecoveryTests/testDurationTimerSurvivesPauseAndRelaunch()": {
+        "result": "Passed",
+        "seconds": 59.303,
+        "log": "app/build/v12-ui-5.log",
+        "result_bundle": "app/build/V12-20261029-5.xcresult"
+      },
+      "TrainingWorkflowTests/testFreeWorkoutStructureAndLargeTypeDarkMode()": {
+        "result": "Passed",
+        "seconds": 338.245,
+        "log": "app/build/v12-ui-7.log",
+        "result_bundle": "app/build/V12-20261030-7.xcresult"
+      },
+      "ExerciseGuidanceTests/testPreviewWhileChoosingDoesNotAddExerciseAndWorkoutGuideKeepsSession()": {
+        "result": "Passed",
+        "seconds": 84.545,
+        "log": "app/build/v12-ui-8.log",
+        "result_bundle": "app/build/V12-20261030-8.xcresult"
+      }
+    }
+  },
+  "simulator": {
+    "name": "Leanora 1.2 QA",
+    "id": "420BC5C8-6A0C-4403-AFD4-26C33E23801C",
+    "runtime": "iOS 27.1",
+    "device": "iPhone Duo",
+    "physical_device_validation": false
+  },
+  "original_content": {
+    "programs": 4,
+    "templates": 9,
+    "guides": 8,
+    "license": "MIT",
+    "network_required": false
+  },
+  "catalog": {
+    "exercises": 882,
+    "images": 1765,
+    "validation_log": "app/build/v12-exercise-validation.log"
+  },
+  "distribution_candidate": {
+    "archive_build": "passed",
+    "app_store_export": "passed",
+    "codesign_deep_strict": "passed",
+    "healthkit": true,
+    "background_delivery": true,
+    "all_four_catalogs_match_source": true,
+    "all_image_hashes_verified": 1765,
+    "debug_fixtures_absent": true,
+    "source_commit_linkage": "Verified separately against committed release inputs after code commit"
+  },
+  "existing_localizable_preserved": true,
+  "known_limits": [
+    "No new physical-device HealthKit, lock-screen notification or real VoiceOver acceptance is claimed.",
+    "New example programs and guides are in Chinese; some exercise instructions remain English."
+  ],
+  "previous_failed_runs_retained": "app/build/v12-*.log and V12-*.xcresult; diagnosis and fixes described in README.md"
+}

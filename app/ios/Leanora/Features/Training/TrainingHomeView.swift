@@ -16,16 +16,16 @@ struct TrainingHomeView: View {
     var body: some View {
         List {
             Section {
-                Text("训练计划").font(.title2.bold()).accessibilityIdentifier("screen.training")
+                Text("今天练什么").font(.title2.bold()).accessibilityIdentifier("screen.training")
                 if let active = training.active {
                     Button { opened = active } label: { Label("返回进行中的训练：\(active.name)", systemImage: "play.circle.fill") }
                         .buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("training.active")
+                } else {
+                    Button { Task { opened = await training.startFree() } } label: {
+                        Label("开始自由训练", systemImage: "play.fill")
+                    }.buttonStyle(PrimaryButtonStyle()).disabled(training.busy).accessibilityIdentifier("training.freeStart")
+                    Text("先开始，再添加动作。随时关闭，也能回来继续。").font(.subheadline).foregroundStyle(.secondary)
                 }
-                NavigationLink { ExerciseLibraryView() } label: { Label("动作库", systemImage: "figure.strengthtraining.traditional") }
-                    .accessibilityIdentifier("training.library")
-                NavigationLink { WeeklyPlanView() } label: { Label("周计划与单次安排", systemImage: "calendar") }
-                    .accessibilityIdentifier("training.weekly")
-                NavigationLink { WorkoutHistoryView() } label: { Label("训练历史", systemImage: "clock.arrow.circlepath") }.accessibilityIdentifier("training.history")
             }
             TrainingErrorNotice()
             let today = training.occurrences(on: RecordMoment().localDate)
@@ -40,7 +40,7 @@ struct TrainingHomeView: View {
             }
             Section("我的模板") {
                 Button { creating = true } label: { Label("新建训练模板", systemImage: "plus") }.accessibilityIdentifier("training.newTemplate")
-                if training.templates.isEmpty { Text("先添加动作和计划目标，再安排每周训练。模板可随时调整。").foregroundStyle(.secondary) }
+                if training.templates.isEmpty { Text("常练的动作可以存为模板，或先采用一套范例计划。").foregroundStyle(.secondary) }
                 ForEach(training.templates) { template in
                     NavigationLink { TemplateDetailView(templateID: template.id) } label: {
                         VStack(alignment: .leading, spacing: 6) {
@@ -49,6 +49,15 @@ struct TrainingHomeView: View {
                         }.padding(.vertical, 5)
                     }.accessibilityIdentifier("training.template.\(template.name)")
                 }
+            }
+            Section("为训练做准备") {
+                NavigationLink { TrainingProgramsView() } label: { Label("范例计划", systemImage: "square.stack") }.accessibilityIdentifier("training.programs")
+                NavigationLink { ExerciseLibraryView() } label: { Label("动作库与收藏", systemImage: "figure.strengthtraining.traditional") }.accessibilityIdentifier("training.library")
+                NavigationLink { TrainingGuidesView() } label: { Label("记录指南", systemImage: "book") }.accessibilityIdentifier("training.guides")
+            }
+            Section("安排与回顾") {
+                NavigationLink { WeeklyPlanView() } label: { Label("周计划与单次安排", systemImage: "calendar") }.accessibilityIdentifier("training.weekly")
+                NavigationLink { WorkoutHistoryView() } label: { Label("训练历史", systemImage: "clock.arrow.circlepath") }.accessibilityIdentifier("training.history")
             }
         }
         .navigationTitle("训练").toolbar(.visible, for: .navigationBar)

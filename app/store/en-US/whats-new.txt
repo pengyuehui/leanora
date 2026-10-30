@@ -1,4 +1,5 @@
-The exercise library now includes 882 exercises, each with offline guidance images.
-Browse image pages and view them full screen while choosing exercises or during a workout.
-Find exercises with improved search and filters for difficulty, exercise type and specific muscles.
-Existing templates and workout history are preserved. Guidance uses static photos or illustrations; some exercise names and instructions remain in English.
+Start a free workout and add, reorder or remove exercises as you train.
+View previous performance beside your sets. Reuse values for unfinished, untimed sets or repeat a completed workout from history.
+Save a completed workout as a new template, or review a draft before updating its original template.
+Find favorite and recently used exercises. Explore 4 original example programs, 9 editable templates and 8 offline recording guides.
+Existing records, exercise images and optional Apple Health sync are preserved. New programs and guides are in Chinese.

@@ -12,8 +12,16 @@ import XCTest
         XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 8)); app.buttons["训练"].tap(); return app
     }
     private func tap(_ element: XCUIElement, _ app: XCUIApplication) {
+        reveal(element, app); element.tap()
+    }
+    private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
         for attempt in 0..<22 {
-            if element.exists && element.isHittable { element.tap(); return }
+            var bottom = app.frame.maxY - 40
+            let finish = app.buttons["workout.finish"]
+            if element.identifier.hasPrefix("workout."), !element.identifier.hasPrefix("workout.confirm"), !["workout.finish", "workout.restSkip"].contains(element.identifier), finish.exists && finish.isHittable {
+                bottom = min(bottom, finish.frame.minY - 8)
+            }
+            if element.exists && element.isHittable && element.frame.maxY < bottom && element.frame.midY > 20 { return }
             if let surface = app.collectionViews.allElementsBoundByIndex.last {
                 if (element.exists && element.frame.maxY < surface.frame.minY + 120) || (!element.exists && (3..<13).contains(attempt)) { surface.swipeDown() } else { surface.swipeUp() }
             } else { app.swipeUp() }
@@ -42,7 +50,7 @@ import XCTest
         app.buttons["set.keyboardDone"].tap(); app.buttons["set.save"].tap()
         XCTAssertTrue(app.buttons["workout.complete.0.0"].waitForExistence(timeout: 5))
         tap(app.buttons["workout.complete.0.0"], app)
-        XCTAssertTrue(app.staticTexts["workout.rest"].waitForExistence(timeout: 5))
+        reveal(app.staticTexts["workout.rest"], app)
         tap(app.buttons["workout.pause"], app); XCTAssertEqual(app.staticTexts["workout.status"].label, "训练已暂停")
         capture(app, "u4-paused-set-rest")
         app.terminate(); app = launch(reset: false, extra: ["--notifications-denied"])
@@ -73,10 +81,11 @@ import XCTest
         tap(app.buttons["training.active"], app)
         XCTAssertEqual(app.staticTexts["workout.status"].label, "训练已暂停")
         tap(app.buttons["workout.pause"], app)
+        reveal(app.buttons["workout.timer.0.0"], app)
         XCTAssertEqual(app.buttons["workout.timer.0.0"].label, "停止计时")
         tap(app.buttons["workout.timer.0.0"], app)
         tap(app.buttons["workout.complete.0.0"], app)
-        XCTAssertTrue(app.staticTexts["workout.rest"].waitForExistence(timeout: 5)); capture(app, "u4-duration-complete")
+        reveal(app.staticTexts["workout.rest"], app); capture(app, "u4-duration-complete")
     }
     // Run separately on a clean simulator: permission grants conflict with the
     // onboarding suite's explicit denial scenario on the same installation.

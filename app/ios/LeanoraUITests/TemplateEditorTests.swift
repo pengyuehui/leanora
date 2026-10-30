@@ -14,7 +14,17 @@ import XCTest
         return app
     }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
-        for _ in 0..<15 { if element.exists && element.isHittable { return }; app.swipeUp() }
+        func reachable() -> Bool {
+            guard element.exists, element.isHittable else { return false }
+            var bottom = app.frame.maxY - 40
+            let finish = app.buttons["workout.finish"]
+            if element.identifier.hasPrefix("workout."), !element.identifier.hasPrefix("workout.confirm"), !["workout.finish", "workout.restSkip"].contains(element.identifier), finish.exists && finish.isHittable {
+                bottom = min(bottom, finish.frame.minY - 8)
+            }
+            return element.frame.maxY < bottom && element.frame.midY > 20
+        }
+        for _ in 0..<15 { if reachable() { return }; app.swipeUp() }
+        for _ in 0..<18 { if reachable() { return }; app.swipeDown() }
         XCTAssertTrue(element.isHittable, app.debugDescription)
     }
     private func tap(_ element: XCUIElement, _ app: XCUIApplication) { reveal(element, app); element.tap() }
@@ -47,6 +57,7 @@ import XCTest
             let day = (Calendar.current.component(.weekday, from: Date()) + 5) % 7 + 1
             let toggle = app.switches["template.weekday.\(day)"]; reveal(toggle, app)
             toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.92, dy: 0.5)).tap()
+            XCTAssertEqual(toggle.value as? String, "1", "The chosen training day must be enabled before saving")
         }
         tap(app.buttons["template.save"], app)
         tap(app.buttons["training.template.\(name)"], app)

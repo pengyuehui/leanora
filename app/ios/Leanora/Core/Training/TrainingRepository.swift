@@ -63,6 +63,46 @@ extension AppModelActor {
         try save([.exercise(value)])
     }
 
+    func setExerciseFavorite(_ id: UUID, favorite: Bool, catalog: [Exercise]) throws {
+        guard var value = try trainingExercises(catalog: catalog).first(where: { $0.stamp.id == id }), value.stamp.deletedAt == nil else { throw TrainingProblem.missingRecord }
+        guard (value.isFavorite == true) != favorite else { return }
+        let persisted = try snapshot().contains { $0.id == id }
+        value.isFavorite = favorite ? true : nil
+        if persisted { value.stamp.revision += 1; value.stamp.updatedAt = Date() }
+        try save([.exercise(value)])
+    }
+
+    func templateFromWorkout(_ id: UUID, updateOriginal: Bool, catalog: [Exercise]) throws -> WorkoutTemplate {
+        let session = try workout(id)
+        let original: WorkoutTemplate?
+        if updateOriginal {
+            guard let templateID = session.templateID,
+                  case .template(let value) = try snapshot().first(where: { $0.id == templateID }) else { throw TrainingProblem.missingRecord }
+            original = value
+        } else { original = nil }
+        return try WorkoutReuse.template(from: session, exercises: trainingExercises(catalog: catalog), original: original)
+    }
+
+    func adoptTrainingProgram(_ id: String, catalog: [Exercise]) throws -> [WorkoutTemplate] {
+        let records = try snapshot()
+        let available = try trainingExercises(catalog: catalog)
+        var templates = try TrainingContentCatalog.load().makeTemplates(programID: id, exercises: available)
+        var names = Set(records.compactMap { record -> String? in
+            if case .template(let value) = record, value.stamp.deletedAt == nil { return value.name }; return nil
+        })
+        for i in templates.indices {
+            let base = templates[i].name
+            var number = 2
+            while names.contains(templates[i].name) { templates[i].name = "\(base) · \(number)"; number += 1 }
+            names.insert(templates[i].name)
+        }
+        let persisted = Set(records.filter { $0.kind == "exercise" }.map(\.id))
+        let needed = Set(templates.flatMap { $0.items.map(\.exerciseID) }).subtracting(persisted)
+        let dependencies = available.filter { needed.contains($0.stamp.id) }.map(BusinessRecord.exercise)
+        try save(dependencies + templates.map(BusinessRecord.template))
+        return templates
+    }
+
     func rescheduleTraining(templateID: UUID, originDate: String, destinationDate: String, timeZoneID: String) throws {
         try DomainValidation.day(originDate); try DomainValidation.day(destinationDate)
         let records = try snapshot()

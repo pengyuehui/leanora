@@ -1,5 +1,5 @@
 {
-  "checked_date": "2026-10-21",
+  "checked_date": "2026-10-29",
   "upload_asset_count": 15,
   "store_screenshots": {
     "zh-Hans/iphone-medium/01-today.png": {
@@ -7,98 +7,98 @@
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "3e37d13400f70b089ad8df08aa86f42c813fd12acf55222f6e1f9c83d7c5649a"
+      "sha256": "92356825c66905e6c004c1550311cda486bbdfc07d5ddc80b1d945240e5af540"
     },
     "zh-Hans/iphone-medium/02-plan.png": {
       "width": 1206,
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "3da89a58f644779c9f2d8ad5d4b91b37b18b7acb2f0e4a1267a5dcd7787d0a79"
+      "sha256": "68cb5bee7bd3ea4dacac081d3d3e806695ed2f811cdb48fcada0967c1ec1b96a"
     },
     "zh-Hans/iphone-medium/03-workout.png": {
       "width": 1206,
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "e915a71241c6fe5bf34d199556ded54c2c318f2b5cbb166d3356e2f4eb81fe42"
+      "sha256": "75ad0e824408af643bddb84e94576962a76a2cbada873dc32336e126683713e8"
     },
     "zh-Hans/iphone-medium/04-nutrition.png": {
       "width": 1206,
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "33cf494be6a68006ae8e5703d7396a2140139c1165d7ef886557c625f60f5042"
+      "sha256": "7b9a83d32055aea7c54a0c3dee58a081a9317bdd87b175f6f43b8c1ce2abc3f1"
     },
     "zh-Hans/iphone-medium/05-portion.png": {
       "width": 1206,
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "6efcbf68f0d40b8a8863db2b31224a21d10f09dba5cad6d73ff7466ff7b1c8ac"
+      "sha256": "e22679ea706331b2d78fe07454897e58cf8341d18131d5e1d246da46d5cfc551"
     },
     "zh-Hans/iphone-medium/06-trends.png": {
       "width": 1206,
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "31649e02dec3df302a7e6be69cfb068d3c64bba570f52083d32597e093004f43"
+      "sha256": "fda1961ce516b56380471aa40ff3ee501536ff1d1d0333b7af01ea148ef41879"
     },
     "zh-Hans/iphone-medium/07-health.png": {
       "width": 1206,
       "height": 2622,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "fb78ea1c26b078a4fc5919db9083fb496d2f1fcb9791d8ef84076388c656aa56"
+      "sha256": "412867a1ebf61049de2975ae62c570da4e3d856275a85eb17ccc423b493195dc"
     },
     "zh-Hans/iphone-large/01-today.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "928236258d336b4fad2a1622e739a9a5a2447ddabe5dd313d570ff1a122857e5"
+      "sha256": "51613729906f957bac9bdfd7b244696d1f6e6bcba97cde66bdce3813157c5c8d"
     },
     "zh-Hans/iphone-large/02-plan.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "00898ff77949419504d3dbca581d349a9a2cbc64041fbaee14510f93b7111010"
+      "sha256": "3f4095f599268c293a2413729640d0d6b118a631542a0aee3f44d53cac37a025"
     },
     "zh-Hans/iphone-large/03-workout.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "4bf8e66b397273d03e837b72ed0b671234a9da72ae7ac1e91fa125a36d3aa79b"
+      "sha256": "84902a4da976090370112c0f0baf638cd02305c83f6fd8b74de40a01dc59b930"
     },
     "zh-Hans/iphone-large/04-nutrition.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "2d51b8dec828be73764a6186688e17989cec085d20d91889facbfbb28db21956"
+      "sha256": "0932d2329bc606e9fd91aba8c6755304f0d3ce73826a5fe159da1a42fd3bf39c"
     },
     "zh-Hans/iphone-large/05-portion.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "6f4f0da066125b88e2d92b8b6eda6a403a856e1897f08ad1385442e2a3523933"
+      "sha256": "fa35a27a2567c8cca0a61916aae3f4acfdc7892ff460b0a460dc64b4101a054d"
     },
     "zh-Hans/iphone-large/06-trends.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "58ccfb9862d5808e320ad299062e2c4403319c2b151f7b2e46b9c57c2afe2886"
+      "sha256": "872acbf230c1a495d5b5476ec1717396e5316fbbe08ba6e8779a2e22038573ac"
     },
     "zh-Hans/iphone-large/07-health.png": {
       "width": 1320,
       "height": 2868,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "b19efe84f88e2333b5b66813fcf3ba261cc9932dc27ef65304c6ed223385ad3b"
+      "sha256": "3a490fa89c9bd69ec82e5dff5565dc9b088410a28fdc0e67b1e6f31f79b35b23"
     }
   },
   "native_sources": {
@@ -107,49 +107,49 @@
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "6cf09f74bfe031e0539f0e44469cb18a8b5786ddc4a5a2fb1989fad86ab10f4c"
+      "sha256": "c40265960effe03355d5672e1b1c2b5bc64238037830015750d667e476017e61"
     },
     "zh-Hans/source/store-02-plan.png": {
       "width": 1398,
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "ef4275029bef9d55ca95c259892be296206c1a6683933653b5a49d7928a0d70c"
+      "sha256": "b4a714bbfd7536f3be833da916d2f25e06448db90da2288e9a62fe6b03b9626c"
     },
     "zh-Hans/source/store-03-workout.png": {
       "width": 1398,
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "100ac154aed0ce6b49ffd762daed2b8413e3545dd819cd53ed6e5be21d0879a7"
+      "sha256": "5814e79df7404bd7dfb67b106c341912861e3cca51684e377fc2009a580a037d"
     },
     "zh-Hans/source/store-04-nutrition.png": {
       "width": 1398,
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "818c1afa1b19d2628144c7c22b56814c5e57c3afc5494f35e7417e91148c8abc"
+      "sha256": "4509e12a96e8eccb3f12facf9ee0ef5c42d34b77003e4b86fa5c11d94bc5627c"
     },
     "zh-Hans/source/store-05-portion.png": {
       "width": 1398,
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "bd79b12c0ab5def0d208a341250b0ec09b06a3868b72addad68852d156fd4b31"
+      "sha256": "c902711364c48b6f7ce20d058197831e7aafc164ddda31e1f95f4daf1d0b8722"
     },
     "zh-Hans/source/store-06-trends.png": {
       "width": 1398,
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "2731230610724fb462fc8bec445417a7e5f77794aebda52b11b43f713299c182"
+      "sha256": "43c23367e8bbd9be79875f8030e143609c3f4c0ad24ad3912b5a457b40fa198a"
     },
     "zh-Hans/source/store-07-health.png": {
       "width": 1398,
       "height": 2034,
       "bit_depth": 8,
       "color_type": 2,
-      "sha256": "08eff303bd3aae152105dd80c286caf93725e53da74ef6824a62458884dfe79b"
+      "sha256": "a59736686691ebe357fbb7affe6a53c0337ac1e5c23cbeb914aa5d09548691d9"
     }
   },
   "app_icon": {
@@ -162,39 +162,26 @@
   "metadata_lengths": {
     "zh-Hans": {
       "subtitle_characters": 12,
-      "promotional_text_characters": 82,
-      "description_characters": 718,
-      "keyword_utf8_bytes": 90
+      "promotional_text_characters": 87,
+      "description_characters": 1046,
+      "keyword_utf8_bytes": 90,
+      "whats_new_characters": 190
     },
     "en-US": {
       "subtitle_characters": 27,
-      "promotional_text_characters": 164,
-      "description_characters": 2037,
-      "keyword_utf8_bytes": 90
+      "promotional_text_characters": 169,
+      "description_characters": 3030,
+      "keyword_utf8_bytes": 90,
+      "whats_new_characters": 555
     }
   },
-  "local_html_references": 29,
+  "local_html_references": 30,
   "capture_test_result": "Passed",
   "capture_test_count": 1,
   "browser_proof": {
     "path": "preview-desktop.png",
     "sha256": "80522494828c5c0fd4ad4038cf2a7101a07b419ba8e7158514c4da865be1972e"
   },
-  "publication": "local_only; not uploaded to App Store Connect",
-  "release_archive": {
-    "app_path": "build/ReleaseCandidate/Leanora-StoreAssets-Unsigned.xcarchive/Products/Applications/Leanora.app",
-    "bundle_id": "ai.leanora.fitness",
-    "version": "0.2.0",
-    "build": "2",
-    "minimum_os": "18.0",
-    "executable_sha256": "8ee1c47d5d1b47cc26cbc78ba22f474101355de631a372a61f7ab76963810172",
-    "debug_markers_absent": [
-      "--store-screenshots",
-      "Store capture:",
-      "createStoreSamples",
-      "上肢力量 A"
-    ],
-    "signed": false,
-    "uploaded": false
-  }
+  "publication": "local_asset_validation_only; live submission status is in app-store-release-1.2-6-20261029.json",
+  "release_archive": null
 }

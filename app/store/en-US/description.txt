@@ -5,6 +5,12 @@ Leanora Fitness brings training, nutrition and body measurements into one person
 TRAIN YOUR WAY
 Choose exercises, build templates, set target sets, repetitions, load and rest periods, then schedule your training week. Record each set as you go, pause when needed and continue later. History keeps a snapshot of the plan used for each session.
 
+FROM FREE WORKOUTS TO PERSONAL TEMPLATES
+Start without preparing a routine, then add exercises as you go. View previous performance beside each set, reuse values for unfinished sets or repeat a workout from history. Turn completed working sets into an editable template draft. Updating the original template always requires an explicit save.
+
+FIND YOUR REGULAR EXERCISES
+Favorite exercises and browse recently used ones. Explore 4 original example programs with 9 editable templates and 8 offline guides about recording, timers and statistics. Example programs leave load and weekly scheduling to you. These new programs and guides are provided in Chinese.
+
 KEEP A FOOD DIARY
 Log breakfast, lunch, dinner and snacks. Calculate calories, protein, carbohydrates and fat from your portions. Create custom foods, record calories quickly or copy a previous meal. Basic foods include source information, and missing nutrients remain unknown rather than being treated as zero.
 

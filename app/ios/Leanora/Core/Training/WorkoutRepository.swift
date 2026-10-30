@@ -1,6 +1,48 @@
 import Foundation
 
 extension AppModelActor {
+    func startFreeTraining(now: Date = Date(), timeZoneID: String = TimeZone.current.identifier) throws -> WorkoutSession {
+        if let active = try activeWorkout() { return active }
+        let value = WorkoutSession(started: RecordMoment(now, timeZoneID: timeZoneID), status: .active, name: "自由训练")
+        try save([.session(value)])
+        return value
+    }
+
+    func repeatWorkout(_ id: UUID, catalog: [Exercise], now: Date = Date(), timeZoneID: String = TimeZone.current.identifier) throws -> WorkoutSession {
+        if let active = try activeWorkout() { return active }
+        let value = try WorkoutReuse.repeated(workout(id), exercises: trainingExercises(catalog: catalog), now: now, timeZoneID: timeZoneID)
+        try save([.session(value)])
+        return value
+    }
+
+    func addExerciseToWorkout(_ id: UUID, revision: Int, exerciseID: UUID, catalog: [Exercise], now: Date = Date()) throws {
+        var value = try workout(id)
+        guard value.stamp.revision == revision, [.active, .paused].contains(value.status) else { throw DataProblem.revisionConflict }
+        let records = try snapshot()
+        guard let exercise = try trainingExercises(catalog: catalog).first(where: { $0.stamp.id == exerciseID }), exercise.stamp.deletedAt == nil else { throw TrainingProblem.missingRecord }
+        guard !exercise.isArchived else { throw TrainingProblem.archivedExercise }
+        let plan = TrainingPlan.newItem(for: exercise, order: value.exercises.count)
+        value.exercises.append(SessionExercise(order: value.exercises.count, snapshot: ExerciseSnapshot(exercise),
+            sets: (0..<plan.plannedSets).map { WorkoutSet(order: $0) },
+            plannedTargets: PlannedTargets(sets: plan.plannedSets, minimumReps: plan.minimumReps, maximumReps: plan.maximumReps,
+                durationSeconds: plan.durationSeconds, distanceMeters: plan.distanceMeters, restSeconds: plan.restSeconds)))
+        let i = value.exercises.count - 1
+        let history = records.compactMap { if case .session(let v) = $0 { return v }; return nil }
+        if let reference = WorkoutReuse.reference(for: value.exercises[i], in: value, history: history) {
+            value.exercises[i] = WorkoutReuse.applying(reference, to: value.exercises[i])
+        }
+        value.stamp.revision += 1; value.stamp.updatedAt = max(now, value.stamp.updatedAt)
+        let dependencies: [BusinessRecord] = records.contains(where: { $0.id == exerciseID && $0.kind == "exercise" }) ? [] : [.exercise(exercise)]
+        try saveWithHealthIntent(dependencies + [.session(value)])
+    }
+
+    private func activeWorkout() throws -> WorkoutSession? {
+        try snapshot().compactMap { record -> WorkoutSession? in
+            if case .session(let v) = record, v.stamp.deletedAt == nil, [.active, .paused].contains(v.status) { return v }
+            return nil
+        }.first
+    }
+
     func workout(_ id: UUID) throws -> WorkoutSession {
         guard case .session(let value) = try snapshot().first(where: { $0.id == id }), value.stamp.deletedAt == nil else { throw TrainingProblem.missingRecord }
         return value

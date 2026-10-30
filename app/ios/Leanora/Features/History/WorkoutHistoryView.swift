@@ -14,6 +14,7 @@ struct WorkoutHistoryView: View {
             let sessions = training.sessions.filter { [.completed, .abandoned].contains($0.status) && (allDates || $0.started.localDate == RecordMoment(day).localDate) }.sorted { $0.started.instant > $1.started.instant }
             if sessions.isEmpty { ContentUnavailableView("还没有训练历史", systemImage: "calendar", description: Text("完成或放弃的训练会保存在这里。")) }
             ForEach(sessions) { session in
+                VStack(alignment: .leading, spacing: 10) {
                 Button { opened = session } label: {
                     VStack(alignment: .leading, spacing: 7) {
                         Text(session.name).font(.headline)
@@ -21,7 +22,16 @@ struct WorkoutHistoryView: View {
                             .font(.subheadline).foregroundStyle(.secondary)
                     }.padding(.vertical, 6)
                 }.accessibilityIdentifier("history.\(session.name)")
+                .buttonStyle(.plain)
+                if session.status == .completed {
+                    Button { Task { opened = await training.repeatWorkout(session.id) } } label: {
+                        Label("再练一次", systemImage: "arrow.clockwise")
+                    }.buttonStyle(.borderless).disabled(training.busy).accessibilityIdentifier("history.repeat.\(session.name)")
+                    Text("复用已完成组的实际值，重新记录这一轮。").font(.caption).foregroundStyle(.secondary)
+                }
+                }
             }
+            TrainingErrorNotice()
         }
         .navigationTitle("训练历史").accessibilityIdentifier("screen.history")
         .toolbar(.visible, for: .navigationBar)

@@ -9,11 +9,22 @@ struct ExerciseLibraryView: View {
     @State private var category = ""
     @State private var archived = false
     @State private var creating = false
+    @State private var collection = "全部"
     var onSelect: ((Exercise) -> Void)?
-    private var results: [Exercise] { ExerciseSearch.filter(training.exercises, query: search, muscle: muscle.isEmpty ? nil : muscle, equipment: equipment.isEmpty ? nil : equipment, archived: archived, level: level.isEmpty ? nil : level, category: category.isEmpty ? nil : category) }
+    private var results: [Exercise] {
+        let recent = training.recentExerciseIDs
+        let values = training.exercises.filter { collection == "收藏" ? $0.isFavorite == true : collection == "最近" ? recent.contains($0.id) : true }
+        let found = ExerciseSearch.filter(values, query: search, muscle: muscle.isEmpty ? nil : muscle, equipment: equipment.isEmpty ? nil : equipment, archived: archived, level: level.isEmpty ? nil : level, category: category.isEmpty ? nil : category)
+        return collection == "最近" ? found.sorted { (recent.firstIndex(of: $0.id) ?? .max) < (recent.firstIndex(of: $1.id) ?? .max) } : found
+    }
     var body: some View {
         List {
             TrainingErrorNotice()
+            Section {
+                Picker("动作分组", selection: $collection) {
+                    ForEach(["全部", "收藏", "最近"], id: \.self) { Text($0).tag($0) }
+                }.pickerStyle(.segmented).accessibilityIdentifier("exercise.collection")
+            }
             Section("筛选") {
                 Picker("肌群", selection: $muscle) {
                     Text("全部肌群").tag("")
@@ -40,7 +51,12 @@ struct ExerciseLibraryView: View {
             }
             Section {
                 Button { creating = true } label: { Label("新建自定义动作", systemImage: "plus") }.accessibilityIdentifier("exercise.new")
-                if results.isEmpty { ContentUnavailableView("没有匹配动作", systemImage: "magnifyingglass", description: Text("调整筛选条件，或创建自己的动作。")) }
+                if results.isEmpty {
+                    ContentUnavailableView(collection == "收藏" ? "还没有匹配的收藏" : collection == "最近" ? "还没有匹配的最近动作" : "没有匹配动作",
+                        systemImage: collection == "收藏" ? "star" : "magnifyingglass",
+                        description: Text(collection == "收藏" ? "在动作详情或左滑列表即可收藏；也可以调整筛选。" : collection == "最近" ? "完成训练后，这里会显示最近 20 个实际练过的动作。" : "调整筛选条件，或创建自己的动作。"))
+                    if collection != "全部" { Button("查看全部动作") { collection = "全部" }.accessibilityIdentifier("exercise.showAll") }
+                }
                 ForEach(results) { exercise in
                     if let onSelect {
                         HStack(spacing: 12) {
@@ -54,6 +70,9 @@ struct ExerciseLibraryView: View {
                         }
                     } else {
                         NavigationLink { ExerciseDetailView(exerciseID: exercise.id) } label: { row(exercise) }.accessibilityIdentifier("exercise.row.\(exercise.name)")
+                            .swipeActions(edge: .trailing) {
+                                Button(exercise.isFavorite == true ? "取消收藏" : "收藏", systemImage: "star") { Task { await training.setFavorite(exercise) } }.tint(LeanoraTheme.accent)
+                            }
                     }
                 }
             } header: { Text("\(results.count) 个动作").accessibilityIdentifier("exercise.resultCount") } footer: { Text("内置指导图可离线查看。部分名称与步骤保留英文原文；来源与许可见详情。") }
@@ -71,6 +90,7 @@ struct ExerciseLibraryView: View {
             }
             VStack(alignment: .leading, spacing: 5) {
                 Text(exercise.name).font(.headline).foregroundStyle(.primary)
+                if exercise.isFavorite == true { Label("已收藏", systemImage: "star.fill").font(.caption).foregroundStyle(LeanoraTheme.accent) }
                 Text("\(exercise.equipment) · \(exercise.measurement.title)").font(.subheadline).foregroundStyle(.secondary)
             }.frame(maxWidth: .infinity, alignment: .leading)
         }.padding(.vertical, 4)
@@ -88,6 +108,11 @@ struct ExerciseDetailView: View {
             if let exercise = training.exercise(exerciseID) {
                 Section {
                     Text(exercise.name).font(.title2.weight(.semibold))
+                    Button {
+                        Task { await training.setFavorite(exercise) }
+                    } label: {
+                        Label(exercise.isFavorite == true ? "取消收藏" : "收藏动作", systemImage: exercise.isFavorite == true ? "star.fill" : "star")
+                    }.disabled(training.busy).accessibilityIdentifier("exercise.favorite")
                 }
                 if let guide = ExerciseGuideCatalog.guide(for: exercise.id) {
                     ExerciseGuideSections(guide: guide, name: exercise.name)

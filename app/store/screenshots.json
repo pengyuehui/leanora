@@ -1,9 +1,58 @@
 [
-  {"id":"01-today","source":"store-01-today","section":"每日概览","title":"训练与饮食\n一处记录","body":"把每一组、每一餐和身体变化，\n放进同一本日记。","blue":true},
-  {"id":"02-plan","source":"store-02-plan","section":"我的计划","title":"照自己的计划\n开始训练","body":"动作、目标组数、休息时间，\n还有每周的训练安排。","blue":false},
-  {"id":"03-workout","source":"store-03-workout","section":"逐组记录","title":"练到哪一组\n就记到哪一组","body":"实际负重与次数，\n完成、暂停、继续都清楚。","blue":false},
-  {"id":"04-nutrition","source":"store-04-nutrition","section":"饮食日记","title":"吃了什么\n一眼看清","body":"按餐记录热量与三大营养素，\n保留每一次份量。","blue":true},
-  {"id":"05-portion","source":"store-05-portion","section":"食物与份量","title":"份量清楚\n记录有依据","body":"按数量计算营养，\n随时核对食物来源。","blue":false},
-  {"id":"06-trends","source":"store-06-trends","section":"身体与趋势","title":"回看记录\n看见变化","body":"训练容量与身体趋势，\n支持最近 7 天和 30 天。","blue":false},
-  {"id":"07-health","source":"store-07-health","section":"健康连接","title":"连接 Apple Health\n由你决定范围","body":"训练、饮食与身体数据，\n按授权方向同步。","blue":true}
+  {
+    "id": "01-today",
+    "source": "store-01-today",
+    "section": "每日概览",
+    "title": "训练与饮食\n一处记录",
+    "body": "把每一组、每一餐和身体变化，\n放进同一本日记。",
+    "blue": true
+  },
+  {
+    "id": "02-plan",
+    "source": "store-02-plan",
+    "section": "范例与计划",
+    "title": "从范例开始\n练自己的计划",
+    "body": "4 套原创计划，9 个可编辑模板，\n预览后再采用。",
+    "blue": false
+  },
+  {
+    "id": "03-workout",
+    "source": "store-03-workout",
+    "section": "逐组记录",
+    "title": "练到哪一组\n就记到哪一组",
+    "body": "实际负重与次数，\n完成、暂停、继续都清楚。",
+    "blue": false
+  },
+  {
+    "id": "04-nutrition",
+    "source": "store-04-nutrition",
+    "section": "饮食日记",
+    "title": "吃了什么\n一眼看清",
+    "body": "按餐记录热量与三大营养素，\n保留每一次份量。",
+    "blue": true
+  },
+  {
+    "id": "05-portion",
+    "source": "store-05-portion",
+    "section": "食物与份量",
+    "title": "份量清楚\n记录有依据",
+    "body": "按数量计算营养，\n随时核对食物来源。",
+    "blue": false
+  },
+  {
+    "id": "06-trends",
+    "source": "store-06-trends",
+    "section": "身体与趋势",
+    "title": "回看记录\n看见变化",
+    "body": "训练容量与身体趋势，\n支持最近 7 天和 30 天。",
+    "blue": false
+  },
+  {
+    "id": "07-health",
+    "source": "store-07-health",
+    "section": "健康连接",
+    "title": "连接 Apple Health\n由你决定范围",
+    "body": "训练、饮食与身体数据，\n按授权方向同步。",
+    "blue": true
+  }
 ]

@@ -75,21 +75,9 @@ enum WorkoutEngine {
 
     static func prefilled(_ session: WorkoutSession, history: [WorkoutSession]) -> WorkoutSession {
         var session = session
-        let history = history.filter { $0.status == .completed && $0.stamp.deletedAt == nil }.sorted { ($0.endedAt ?? $0.started.instant) > ($1.endedAt ?? $1.started.instant) }
         for i in session.exercises.indices {
-            let exercise = session.exercises[i]
-            let prior = history.lazy.compactMap { session -> SessionExercise? in
-                let matches = session.exercises.filter { $0.snapshot.exerciseID == exercise.snapshot.exerciseID && $0.sets.contains { $0.completedAt != nil } }
-                return matches.first { exercise.templateItemID != nil && $0.templateItemID == exercise.templateItemID } ?? matches.last
-            }.first
-            for j in session.exercises[i].sets.indices {
-                let values = prior?.sets.filter { $0.completedAt != nil } ?? []
-                if let old = values.first(where: { $0.order == j }) ?? values.last {
-                    session.exercises[i].sets[j].loadKg = old.loadKg
-                    session.exercises[i].sets[j].repetitions = old.repetitions
-                    session.exercises[i].sets[j].durationSeconds = old.durationSeconds
-                    session.exercises[i].sets[j].distanceMeters = old.distanceMeters
-                }
+            if let reference = WorkoutReuse.reference(for: session.exercises[i], in: session, history: history) {
+                session.exercises[i] = WorkoutReuse.applying(reference, to: session.exercises[i])
             }
         }
         return session

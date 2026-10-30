@@ -15,24 +15,34 @@ struct ActiveWorkoutView: View {
     @State private var notes = ""
     @State private var retiming = false
     @State private var guidance: GuideSelection?
+    @State private var choosing = false
+    @State private var renaming = false
+    @State private var removingExerciseID: UUID?
+    @State private var templateDraft: WorkoutTemplate?
+    @State private var updatingTemplate = false
     var session: WorkoutSession? { training.sessions.first { $0.id == sessionID } }
     var body: some View {
         List {
             TrainingErrorNotice()
             if let session {
                 Section {
-                    Text(session.name).font(.title2.weight(.semibold)).accessibilityIdentifier("workout.started")
-                    Text(session.status == .completed ? "训练已完成" : session.status == .paused ? "训练已暂停" : "训练进行中")
-                        .accessibilityIdentifier("workout.status")
-                    Text("归属日期：\(session.started.localDate) · 本机记录").font(.caption).foregroundStyle(.secondary)
-                    if session.status == .completed { Button("更正开始时间") { retiming = true }.accessibilityIdentifier("workout.retime") }
-                    TimelineView(.periodic(from: .now, by: 1)) { context in
-                        Text("有效时长 \(Int(TrainingSummary.activeDuration(session, at: context.date))) 秒").monospacedDigit()
-                        if let deadline = session.restDeadline {
-                            Text(deadline > context.date ? "休息剩余 \(Int(ceil(deadline.timeIntervalSince(context.date)))) 秒" : "休息已结束，可以继续下一组")
-                                .foregroundStyle(LeanoraTheme.accent).accessibilityIdentifier("workout.rest")
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(session.name).font(.title2.weight(.semibold)).accessibilityIdentifier("workout.started")
+                        Text(session.status == .completed ? "训练已完成" : session.status == .paused ? "训练已暂停" : "训练进行中")
+                            .accessibilityIdentifier("workout.status")
+                        Text("归属日期：\(session.started.localDate) · 本机记录").font(.caption).foregroundStyle(.secondary)
+                        TimelineView(.periodic(from: .now, by: 1)) { context in
+                            Text("有效时长 \(Int(TrainingSummary.activeDuration(session, at: context.date))) 秒").monospacedDigit()
+                            if let deadline = session.restDeadline {
+                                Text(deadline > context.date ? "休息剩余 \(Int(ceil(deadline.timeIntervalSince(context.date)))) 秒" : "休息已结束，可以继续下一组")
+                                    .foregroundStyle(LeanoraTheme.accent).accessibilityIdentifier("workout.rest")
+                            }
                         }
+                    }.padding(.vertical, 4)
+                    if [.active, .paused].contains(session.status) {
+                        Button("修改训练名称") { renaming = true }.accessibilityIdentifier("workout.rename")
                     }
+                    if session.status == .completed { Button("更正开始时间") { retiming = true }.accessibilityIdentifier("workout.retime") }
                     if session.status != .completed {
                         HStack {
                             Button(session.status == .paused ? "继续训练" : "暂停训练") {
@@ -51,8 +61,17 @@ struct ActiveWorkoutView: View {
                         }
                     }
                 }
+                if [.active, .paused].contains(session.status) {
+                    Section {
+                        if session.exercises.isEmpty {
+                            Text("还没有动作。添加想练的动作，再逐组记录实际表现。").foregroundStyle(.secondary).accessibilityIdentifier("workout.empty")
+                        }
+                        Button { choosing = true } label: { Label("添加动作", systemImage: "plus") }.accessibilityIdentifier("workout.addExercise")
+                    }
+                }
                 ForEach(Array(session.exercises.enumerated()), id: \.element.id) { i, exercise in
                     Section {
+                        let reference = WorkoutReuse.reference(for: exercise, in: session, history: training.sessions)
                         if ExerciseGuideCatalog.guide(for: exercise.snapshot.exerciseID) != nil {
                             Button { guidance = GuideSelection(id: exercise.snapshot.exerciseID, name: exercise.snapshot.name) } label: {
                                 Label("查看动作指导", systemImage: "photo.on.rectangle")
@@ -60,6 +79,23 @@ struct ActiveWorkoutView: View {
                         }
                         if let plan = exercise.plannedTargets {
                             Text(planText(plan)).font(.caption).foregroundStyle(.secondary)
+                        }
+                        if let reference {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Label("上次训练 · \(reference.date)", systemImage: "clock.arrow.circlepath").font(.subheadline.weight(.medium))
+                                    .accessibilityIdentifier("workout.previous.\(i)")
+                                DisclosureGroup("上次完成 \(reference.exercise.sets.filter { $0.completedAt != nil }.count) 组") {
+                                    ForEach(reference.exercise.sets.filter { $0.completedAt != nil }, id: \.id) { old in
+                                        Text("\(old.kind.title) · \(actualText(old, measurement: exercise.snapshot.measurement, prefix: "上次"))").font(.caption)
+                                    }
+                                }
+                                if [.active, .paused].contains(session.status) {
+                                    Button("沿用上次") {
+                                        Task { _ = await controller.change(session) { $0.exercises[i] = WorkoutReuse.applying(reference, to: $0.exercises[i]) } }
+                                    }.buttonStyle(.borderless).frame(minHeight: 44).accessibilityIdentifier("workout.reusePrevious.\(i)")
+                                    Text("只填入尚未完成、也未计时的组，已记录的完成值保持。").font(.caption).foregroundStyle(.secondary)
+                                }
+                            }.padding(.vertical, 4)
                         }
                         if exercise.supersetID != nil { Label("超级组 · 同轮两个动作完成后休息", systemImage: "link").font(.caption) }
                         ForEach(Array(exercise.sets.enumerated()), id: \.element.id) { j, set in
@@ -73,9 +109,13 @@ struct ActiveWorkoutView: View {
                                         }.frame(minHeight: 48).contentShape(Rectangle())
                                     }.buttonStyle(.plain).accessibilityLabel("第 \(j + 1) 组，\(set.kind.title)，\(actualText(set, measurement: exercise.snapshot.measurement))，\(set.completedAt == nil ? "未完成，编辑" : "已完成，编辑")").accessibilityIdentifier("workout.set.\(i).\(j)")
                                     if session.status == .active && set.completedAt == nil {
-                                        Button { Task { _ = await controller.change(session) { try WorkoutEngine.complete(&$0, exercise: i, set: j, at: Date()) } } } label: { Image(systemName: "checkmark.circle.fill").font(.title).frame(width: 44, height: 48) }
+                                        Button { Task { _ = await controller.change(session) { try WorkoutEngine.complete(&$0, exercise: i, set: j, at: Date()) } } } label: { Image(systemName: "checkmark.circle").font(.title).frame(width: 44, height: 48) }
                                             .accessibilityLabel("完成此组").buttonStyle(.borderless).accessibilityIdentifier("workout.complete.\(i).\(j)")
                                     } else if set.completedAt != nil { Image(systemName: "checkmark.circle.fill").font(.title).foregroundStyle(LeanoraTheme.accent).frame(width: 44).accessibilityLabel("已完成") }
+                                }
+                                if let reference, let previous = WorkoutReuse.previousSet(for: set, in: exercise, reference: reference) {
+                                    Text(actualText(previous, measurement: exercise.snapshot.measurement, prefix: "上次")).font(.caption).foregroundStyle(.secondary)
+                                        .accessibilityIdentifier("workout.previousSet.\(i).\(j)")
                                 }
                                 if [.duration, .cardio].contains(exercise.snapshot.measurement), set.completedAt == nil, session.status != .completed {
                                     HStack {
@@ -92,7 +132,20 @@ struct ActiveWorkoutView: View {
                         Button("添加一组") {
                             Task { _ = await controller.change(session) { $0.exercises[i].sets.append(WorkoutSet(order: $0.exercises[i].sets.count)) } }
                         }.accessibilityIdentifier("workout.addSet.\(i)")
-                    } header: { Text("\(i + 1). \(exercise.snapshot.name)") }
+                    } header: {
+                        HStack {
+                            Text("\(i + 1). \(exercise.snapshot.name)")
+                            Spacer()
+                            if [.active, .paused].contains(session.status) {
+                                Menu {
+                                    Button("上移动作") { moveExercise(session, index: i, step: -1) }.disabled(i == 0)
+                                    Button("下移动作") { moveExercise(session, index: i, step: 1) }.disabled(i == session.exercises.count - 1)
+                                    Button("移除动作", role: .destructive) { removingExerciseID = exercise.id }
+                                } label: { Image(systemName: "ellipsis.circle").frame(minWidth: 44, minHeight: 44) }
+                                .accessibilityLabel("动作 \(i + 1) 的操作").accessibilityIdentifier("workout.exerciseMenu.\(i)")
+                            }
+                        }
+                    }
                 }
                 Section("训练备注") {
                     if !session.notes.isEmpty { Text(session.notes) }
@@ -103,6 +156,12 @@ struct ActiveWorkoutView: View {
                         let summary = TrainingSummary(sessions: [session])
                         Text("工作组容量：\(summary.volumeKg.formatted()) kg·次")
                         Text("仅统计已完成的外部负重正式组；不含热身、自重、辅助负重与计时。 ").font(.caption).foregroundStyle(.secondary)
+                        Button("存为新模板") { prepareTemplate(session, updateOriginal: false) }.accessibilityIdentifier("workout.saveTemplate")
+                        if session.templateID != nil {
+                            Button("更新原模板") { updatingTemplate = true }.disabled(!canUpdateTemplate(session)).accessibilityIdentifier("workout.updateTemplate")
+                            if !canUpdateTemplate(session) { Text("原模板已更新或移除，请存为新模板。").font(.caption).foregroundStyle(.secondary) }
+                        }
+                        Text("模板草稿仅提取已完成正式组，组数按实际、目标取首组；其他组类型仍保留在训练历史。保存前可以继续编辑。").font(.caption).foregroundStyle(.secondary)
                         Button("删除训练记录", role: .destructive) { deleting = true }.accessibilityIdentifier("workout.delete")
                     } else {
                         Button("放弃本次训练", role: .destructive) { abandoning = true }.accessibilityIdentifier("workout.abandon")
@@ -136,6 +195,24 @@ struct ActiveWorkoutView: View {
             if let session { NavigationStack { WorkoutSetEditor(session: session, selection: selection) } }
         }
         .sheet(isPresented: $retiming) { if let session { NavigationStack { WorkoutTimeEditor(session: session) } } }
+        .sheet(item: $templateDraft) { draft in NavigationStack { TemplateEditorView(template: draft) } }
+        .sheet(isPresented: $choosing) {
+            NavigationStack {
+                ExerciseLibraryView { exercise in
+                    if let session {
+                        Task {
+                            if await training.run({ [repository = training.repository, catalog = training.catalog] in
+                                try await repository.addExerciseToWorkout(session.id, revision: session.stamp.revision, exerciseID: exercise.id, catalog: catalog)
+                            }) != nil { choosing = false }
+                        }
+                    }
+                }.disabled(training.busy)
+                .toolbar { ToolbarItem(placement: .cancellationAction) { Button("取消") { choosing = false } } }
+            }
+        }
+        .sheet(isPresented: $renaming) {
+            if let session { NavigationStack { WorkoutNameEditor(session: session) } }
+        }
         .sheet(item: $guidance) { selected in
             NavigationStack {
                 ExerciseGuidanceView(exerciseID: selected.id, name: selected.name)
@@ -160,6 +237,16 @@ struct ActiveWorkoutView: View {
         .confirmationDialog("放弃本次训练？", isPresented: $abandoning, titleVisibility: .visible) {
             Button("确认放弃", role: .destructive) { Task { if await training.run({ [repository = training.repository] in try await repository.abandonTraining(sessionID) }) != nil { dismiss() } } }
         } message: { Text("保留这次放弃记录，之后可以重新开始训练。") }
+        .confirmationDialog("移除此动作及本次的组记录？", isPresented: Binding(get: { removingExerciseID != nil }, set: { if !$0 { removingExerciseID = nil } }), titleVisibility: .visible) {
+            Button("确认移除动作", role: .destructive) {
+                if let session, let id = removingExerciseID {
+                    Task { _ = await controller.change(session) { try WorkoutReuse.removeExercise(id, from: &$0) }; removingExerciseID = nil }
+                }
+            }.accessibilityIdentifier("workout.confirmRemoveExercise")
+        } message: { Text("只改变本次训练；如属于超级组，另一个动作会解除配对。原模板与其他历史不变。") }
+        .confirmationDialog("按本次正式组准备原模板更新？", isPresented: $updatingTemplate, titleVisibility: .visible) {
+            Button("生成更新草稿") { if let session { prepareTemplate(session, updateOriginal: true) } }.accessibilityIdentifier("workout.confirmUpdateTemplate")
+        } message: { Text("保留原模板名称和周安排，先打开草稿供你检查，点击保存后才更新。已完成训练不会被修改。") }
         .confirmationDialog("删除训练及其组记录？", isPresented: $deleting, titleVisibility: .visible) {
             Button("确认删除", role: .destructive) { removeWorkout(health: false) }
             Button("同时删除健康副本", role: .destructive) { removeWorkout(health: true) }
@@ -175,6 +262,25 @@ struct ActiveWorkoutView: View {
     }
     private var controller: WorkoutSessionController { WorkoutSessionController(training: training) }
     private struct GuideSelection: Identifiable { let id: UUID; let name: String }
+    private func canUpdateTemplate(_ session: WorkoutSession) -> Bool {
+        training.templates.contains { $0.id == session.templateID && $0.stamp.revision == session.templateRevision }
+    }
+    private func prepareTemplate(_ session: WorkoutSession, updateOriginal: Bool) {
+        Task {
+            templateDraft = await training.run { [repository = training.repository, catalog = training.catalog] in
+                try await repository.templateFromWorkout(session.id, updateOriginal: updateOriginal, catalog: catalog)
+            }
+        }
+    }
+    private func moveExercise(_ session: WorkoutSession, index: Int, step: Int) {
+        Task {
+            _ = await controller.change(session) { value in
+                guard value.exercises.indices.contains(index), value.exercises.indices.contains(index + step) else { throw TrainingProblem.missingRecord }
+                value.exercises.swapAt(index, index + step)
+                for i in value.exercises.indices { value.exercises[i].order = i }
+            }
+        }
+    }
     private func removeWorkout(health: Bool) {
         guard let session else { return }
         Task { if await training.run({ [repository = training.repository] in try await repository.deleteWorkout(sessionID, revision: session.stamp.revision, deleteHealthCopies: health) }) != nil { dismiss() } }
@@ -186,13 +292,43 @@ struct ActiveWorkoutView: View {
         if let sec = p.durationSeconds { parts.append("\(sec.formatted()) 秒") }
         parts.append("休息 \(p.restSeconds.formatted()) 秒"); return parts.joined(separator: " · ")
     }
-    private func actualText(_ set: WorkoutSet, measurement: ExerciseMeasurement) -> String {
+    private func actualText(_ set: WorkoutSet, measurement: ExerciseMeasurement, prefix: String = "实际") -> String {
         switch measurement {
         case .externalLoad, .assistedLoad:
             let weight = set.loadKg.map { ($0 / (preferences.values.weightUnit == .pounds ? 0.45359237 : 1)).formatted() } ?? "—"
-            return "实际 \(weight) \(preferences.values.weightUnit.rawValue) × \(set.repetitions.map(String.init) ?? "—") 次"
-        case .bodyweight: return "实际 \(set.repetitions.map(String.init) ?? "—") 次"
-        case .duration, .cardio: return "实际 \(set.durationSeconds.map { $0.formatted() } ?? "—") 秒 · \(set.distanceMeters.map { $0.formatted() } ?? "—") m"
+            return "\(prefix) \(weight) \(preferences.values.weightUnit.rawValue) × \(set.repetitions.map(String.init) ?? "—") 次"
+        case .bodyweight: return "\(prefix) \(set.repetitions.map(String.init) ?? "—") 次"
+        case .duration, .cardio: return "\(prefix) \(set.durationSeconds.map { $0.formatted() } ?? "—") 秒 · \(set.distanceMeters.map { $0.formatted() } ?? "—") m"
+        }
+    }
+}
+
+struct WorkoutNameEditor: View {
+    let session: WorkoutSession
+    @Environment(TrainingStore.self) private var training
+    @Environment(\.dismiss) private var dismiss
+    @State private var name: String
+    init(session: WorkoutSession) { self.session = session; _name = State(initialValue: session.name) }
+    var body: some View {
+        Form {
+            TrainingErrorNotice()
+            HStack {
+                TextField("训练名称", text: $name).accessibilityIdentifier("workout.nameInput")
+                if !name.isEmpty {
+                    Button { name = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary).frame(width: 44, height: 44) }
+                        .buttonStyle(.borderless).accessibilityLabel("清空训练名称").accessibilityIdentifier("workout.clearName")
+                }
+            }
+        }.navigationTitle("训练名称").navigationBarTitleDisplayMode(.inline)
+        .disabled(training.busy)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) { Button("取消") { dismiss() } }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("保存") {
+                    let updated = name.trimmingCharacters(in: .whitespacesAndNewlines)
+                    Task { if await WorkoutSessionController(training: training).change(session, { $0.name = updated }) { dismiss() } }
+                }.disabled(training.busy || name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty).accessibilityIdentifier("workout.saveName")
+            }
         }
     }
 }

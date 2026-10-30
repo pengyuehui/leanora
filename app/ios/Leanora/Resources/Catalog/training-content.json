@@ -1,0 +1,555 @@
+{
+  "version": 1,
+  "author": "Leanora 项目原创",
+  "license": "MIT",
+  "programs": [
+    {
+      "id": "full-body",
+      "title": "全身基础",
+      "subtitle": "两个训练日，先把常用动作记熟",
+      "equipment": "杠铃、哑铃、拉力器",
+      "summary": "以深蹲、推、拉和核心动作组织两个训练日。每个动作先提供两组记录位置，不指定负重。可以替换不熟悉或器械不便的动作，再自行安排到周计划。",
+      "templates": [
+        {
+          "id": "full-a",
+          "title": "全身基础 A",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000001",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000003",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000009",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000018",
+              "sets": 2,
+              "minimumReps": null,
+              "maximumReps": null,
+              "seconds": 30,
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "full-b",
+          "title": "全身基础 B",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000070",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000011",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000008",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000088",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dumbbell",
+      "title": "哑铃全身",
+      "subtitle": "用同一类器械组织两次训练",
+      "equipment": "哑铃、训练凳、垫子",
+      "summary": "把哑铃与徒手动作放在同一份记录里，减少更换器械。采用后可调组数、次数、休息和动作；重量由你根据实际填写，不会自动生成。",
+      "templates": [
+        {
+          "id": "dumbbell-a",
+          "title": "哑铃全身 A",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000002",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000004",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000010",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000092",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "dumbbell-b",
+          "title": "哑铃全身 B",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000071",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000011",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000074",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000094",
+              "sets": 2,
+              "minimumReps": null,
+              "maximumReps": null,
+              "seconds": 30,
+              "restSeconds": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bodyweight",
+      "title": "徒手基础",
+      "subtitle": "无需外部负重，也能逐组留记录",
+      "equipment": "稳定支撑面、垫子",
+      "summary": "记录自重次数和计时时长。俯卧撑可以根据自己已经掌握的版本替换；图示入口用于查阅动作。两个训练日只是可编辑的组合，不是按个人身体情况定制的方案。",
+      "templates": [
+        {
+          "id": "bodyweight-a",
+          "title": "徒手基础 A",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000019",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000035",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000085",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000093",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "bodyweight-b",
+          "title": "徒手基础 B",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000084",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000034",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000092",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000018",
+              "sets": 2,
+              "minimumReps": null,
+              "maximumReps": null,
+              "seconds": 30,
+              "restSeconds": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "push-pull-legs",
+      "title": "推、拉、腿",
+      "subtitle": "三个训练日，按动作分工整理",
+      "equipment": "杠铃、哑铃、固定器械",
+      "summary": "把推、拉、下肢内容分成三个个人模板，方便按实际训练安排调用。每个模板独立可编辑，采用不会把三个训练日直接排入日历，也不会替换已有模板。",
+      "templates": [
+        {
+          "id": "ppl-push",
+          "title": "推 · 胸肩三头",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000003",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000011",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000012",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000014",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "ppl-pull",
+          "title": "拉 · 背部二头",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000008",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000010",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000045",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000013",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "ppl-legs",
+          "title": "腿 · 下肢核心",
+          "items": [
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000001",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000070",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000016",
+              "sets": 2,
+              "minimumReps": 8,
+              "maximumReps": 12,
+              "seconds": null,
+              "restSeconds": 90
+            },
+            {
+              "exerciseID": "10000000-0000-4000-8000-000000000018",
+              "sets": 2,
+              "minimumReps": null,
+              "maximumReps": null,
+              "seconds": 30,
+              "restSeconds": 90
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "id": "start-without-template",
+      "title": "先开始，再整理计划",
+      "summary": "没有模板也可以完成一次记录。",
+      "sections": [
+        {
+          "title": "从自由训练开始",
+          "paragraphs": [
+            "在训练页点击“开始自由训练”，添加今天想练的动作。也可以先修改训练名称，让历史更容易找到。",
+            "动作支持调整顺序或移除；移除只影响本次训练。如果动作属于超级组，另一成员会解除配对。"
+          ]
+        },
+        {
+          "title": "离开后继续",
+          "paragraphs": [
+            "关闭页面不等于放弃。返回训练页可以继续同一训练；重开 App 也会读取已保存状态。",
+            "至少完成一组才能结束训练。尚未练任何一组时，可以保留待继续，或明确选择放弃。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "targets-and-actual",
+      "title": "计划目标与实际完成",
+      "summary": "目标、预填和完成状态分别保存。",
+      "sections": [
+        {
+          "title": "计划是参考",
+          "paragraphs": [
+            "模板里的次数范围、组数和休息时间是计划值。训练开始后保留当时的计划快照，之后编辑模板不会改写这次记录。",
+            "每组填写实际负重、次数或时长；点击完成才把这一组计入已完成记录。保存数字本身不会自动完成。"
+          ]
+        },
+        {
+          "title": "预填仍需核对",
+          "paragraphs": [
+            "已有历史时会参考上次已完成的同类组。“上次训练”显示来源日期，可展开查看各组。",
+            "“沿用上次”只填入未完成、也未开始计时的组。已经完成或计时得到的值不会被覆盖；预填不是今天已经练过。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set-kinds",
+      "title": "把不同组类型分开记",
+      "summary": "热身、正式、递减和力竭记录各自保留。",
+      "sections": [
+        {
+          "title": "在编辑组中选择",
+          "paragraphs": [
+            "点击组记录，选择这组的类型，再填写实际值。类型用来描述你实际做过的内容，不会自动改变次数或负重。",
+            "正式组以外的记录仍然保留在历史里；不要为了让容量数字变大而把热身组改成正式组。"
+          ]
+        },
+        {
+          "title": "超级组是动作之间的关联",
+          "paragraphs": [
+            "模板编辑器可把相邻的两个适用动作组成超级组。同轮两个动作都完成后，才开始对应休息。",
+            "一次只练了一个配对动作也可以保存实际情况，不必补填没有做过的另一组。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rest-pause-timer",
+      "title": "分清休息、暂停和动作计时",
+      "summary": "三个时间状态各自有用途。",
+      "sections": [
+        {
+          "title": "休息计时",
+          "paragraphs": [
+            "完成一轮后会按目标休息时间显示倒计时。可以跳过休息，或延长 30 秒；这不会替你完成下一组。",
+            "系统提醒需要单独授权。未开启通知时，前台仍能查看计时；系统安排提醒不保证 App 一直在后台运行。"
+          ]
+        },
+        {
+          "title": "暂停与动作计时",
+          "paragraphs": [
+            "暂停训练会停止正在累计的动作计时，并从有效训练时长中扣除暂停区间；继续后恢复对应计时。",
+            "已经开始的休息截止时间独立计算，不因训练暂停而自动顺延。手动时长或计时结果都需要确认完成。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "effort",
+      "title": "可选的主观强度记录",
+      "summary": "用自己的感受补充数字，不自动安排加重。",
+      "sections": [
+        {
+          "title": "RPE 与 RIR",
+          "paragraphs": [
+            "编辑组时可以选择 RPE 或 RIR，并填写可选的 0–10 数值。RPE 用于记录主观用力感受，RIR 用于记录自己认为还能完成的次数。",
+            "不确定时可以留空；缺失的强度不会被当成零，也不会改变本次完成值。"
+          ]
+        },
+        {
+          "title": "和具体组一起看",
+          "paragraphs": [
+            "相同重量与次数，主观感受也可能不同。把它和那一组一起回看，比脱离动作和日期单独比较更有意义。",
+            "历史再练和自动预填不会复制主观强度，今天的感受应由你重新记录。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volume",
+      "title": "如何读训练容量与最佳负重",
+      "summary": "先看统计口径，再看数字。",
+      "sections": [
+        {
+          "title": "容量包含什么",
+          "paragraphs": [
+            "Leanora 的工作组容量按已完成的外部负重正式组累计：每组负重（kg）乘实际次数，再把各组相加，显示为 kg·次。",
+            "热身、自重、辅助负重、递减、力竭和计时组不混入这个容量数字；它们仍保留各自的次数或时长记录。"
+          ]
+        },
+        {
+          "title": "最佳负重与更正",
+          "paragraphs": [
+            "最佳负重来自该动作已完成外部负重正式组中的最大实际负重，不估算 1RM。它不是动作质量或整体训练效果的评分。",
+            "更正或删除来源组后，统计会重新计算。比较不同日期前，先确认动作版本、组类型和计量方式一致。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reuse-and-templates",
+      "title": "再练一次，或存为模板",
+      "summary": "过去的实际记录和下一次的计划分开处理。",
+      "sections": [
+        {
+          "title": "历史再练",
+          "paragraphs": [
+            "在训练历史点击“再练一次”，会以已完成组的实际值和类型开始新训练。所有组都恢复为未完成状态，日期、计时和暂停重新开始。",
+            "过去未完成的组不会被当成练过的内容复制。原历史保持不变；有进行中训练时会先返回它。"
+          ]
+        },
+        {
+          "title": "保存模板草稿",
+          "paragraphs": [
+            "在已完成训练中选择“存为新模板”，只提取已完成正式组：组数按实际正式组数，目标取首个正式组。热身等类型继续留在历史。",
+            "如果原模板自训练开始后没有变化，可明确选择“更新原模板”。名称和周安排保留，先打开草稿让你检查，点击保存后才更新未来计划。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backup-and-health",
+      "title": "本机备份与 Apple Health",
+      "summary": "记录、收藏和健康副本各有边界。",
+      "sections": [
+        {
+          "title": "保存自己的备份",
+          "paragraphs": [
+            "训练、模板和动作收藏保存在本机，可在数据管理中导出 JSON。把导出文件保存在自己能够找回的位置；CSV 用于查看表格，不能代替完整恢复备份。",
+            "导入前会先预览差异。动作图示和范例内容随 App 提供，不把整套图片写入业务备份。"
+          ]
+        },
+        {
+          "title": "按选择连接健康",
+          "paragraphs": [
+            "Apple Health 需要单独选择读取和写入类别。不授权也能手动记录；新建自由训练或复制模板本身不会写入已完成训练。",
+            "完成后按既有设置同步；历史导出和恢复后的核对仍需单独确认。本机记录、外部缓存和本 App 写入健康的副本分别管理。"
+          ]
+        }
+      ]
+    }
+  ]
+}

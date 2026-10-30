@@ -22,6 +22,7 @@ extension TemplateItem: Identifiable {}
 
     init(repository: AppModelActor, catalog: [Exercise]) { self.repository = repository; self.catalog = catalog }
     var active: WorkoutSession? { sessions.first { [.active, .paused].contains($0.status) } }
+    var recentExerciseIDs: [UUID] { WorkoutReuse.recentExerciseIDs(in: sessions) }
     func exercise(_ id: UUID) -> Exercise? { exercises.first { $0.id == id } }
     func occurrences(on date: String) -> [PlannedOccurrence] { TrainingPlan.occurrences(on: date, templates: templates, changes: changes) }
     func isStarted(_ occurrence: PlannedOccurrence) -> Bool {
@@ -51,5 +52,14 @@ extension TemplateItem: Identifiable {}
     }
     func start(_ template: WorkoutTemplate, origin: String? = nil) async -> WorkoutSession? {
         await run { [repository, catalog] in try await repository.startTraining(templateID: template.stamp.id, catalog: catalog, originDate: origin) }
+    }
+    func startFree() async -> WorkoutSession? {
+        await run { [repository] in try await repository.startFreeTraining() }
+    }
+    func repeatWorkout(_ id: UUID) async -> WorkoutSession? {
+        await run { [repository, catalog] in try await repository.repeatWorkout(id, catalog: catalog) }
+    }
+    func setFavorite(_ exercise: Exercise) async {
+        _ = await run { [repository, catalog] in try await repository.setExerciseFavorite(exercise.id, favorite: exercise.isFavorite != true, catalog: catalog) }
     }
 }
