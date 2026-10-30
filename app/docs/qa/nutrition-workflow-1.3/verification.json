@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-30",
+  "version": "1.3",
+  "build": "7",
+  "status": "completed_targeted_regression",
+  "core": {
+    "tests": 138,
+    "failures": 0,
+    "skipped": 2,
+    "skip_reason": "Existing opt-in capacity tests",
+    "log": "app/build/v13-core-3.log"
+  },
+  "ui": {
+    "scope": "Consolidated latest completed cases from targeted batches; not a single all-green full suite. Earlier failures and corrections are documented in README.",
+    "final_unique_cases_passed": 16,
+    "cases": {
+      "DataManagementTests/testDataManagementLargeTypeAndDarkAppearance()": {
+        "result": "Passed",
+        "seconds": 44.811,
+        "log": "app/build/v13-ui-2.log",
+        "result_bundle": "app/build/V13-20261030-2.xcresult"
+      },
+      "DataManagementTests/testExportOpensNativeSavePanelAndCanCancel()": {
+        "result": "Passed",
+        "seconds": 18.971,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "DataManagementTests/testExportSavesRealJSONAndCanImportItAgain()": {
+        "result": "Passed",
+        "seconds": 29.191,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "DataManagementTests/testInvalidFileShowsErrorAndDoesNotChangeRecordCount()": {
+        "result": "Passed",
+        "seconds": 49.762,
+        "log": "app/build/v13-ui-2.log",
+        "result_bundle": "app/build/V13-20261030-2.xcresult"
+      },
+      "DataManagementTests/testRealFileImportPreviewsCommitsAndSurvivesRelaunch()": {
+        "result": "Passed",
+        "seconds": 34.144,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "DataManagementTests/testStartupFailureOffersRetryWithoutResettingBusinessStore()": {
+        "result": "Passed",
+        "seconds": 7.009,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "NutritionBodyTests/testCustomFoodAndTwoBodyMeasurements()": {
+        "result": "Passed",
+        "seconds": 56.434,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "NutritionBodyTests/testFoodPortionQuickCaloriesCopyAndPersistence()": {
+        "result": "Passed",
+        "seconds": 59.779,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "NutritionBodyTests/testInvalidQuickAndZeroPortionCannotSaveInDarkLargeText()": {
+        "result": "Passed",
+        "seconds": 183.328,
+        "log": "app/build/v13-ui-2.log",
+        "result_bundle": "app/build/V13-20261030-2.xcresult"
+      },
+      "NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch()": {
+        "result": "Passed",
+        "seconds": 103.633,
+        "log": "app/build/v13-ui-2.log",
+        "result_bundle": "app/build/V13-20261030-2.xcresult"
+      },
+      "NutritionWorkflowTests/testLargeDarkCombinationEditorAndInvalidServingsProtectDiary()": {
+        "result": "Passed",
+        "seconds": 280.389,
+        "log": "app/build/v13-ui-3.log",
+        "result_bundle": "app/build/V13-20261030-3.xcresult"
+      },
+      "NutritionWorkflowTests/testOriginalExamplesCancelThenAdoptAndOfflineGuide()": {
+        "result": "Passed",
+        "seconds": 162.005,
+        "log": "app/build/v13-ui-2.log",
+        "result_bundle": "app/build/V13-20261030-2.xcresult"
+      },
+      "StoreScreenshotTests/testCaptureChineseStoreScreenshots()": {
+        "result": "Passed",
+        "seconds": 60.256,
+        "log": "app/build/v13-ui-1.log",
+        "result_bundle": "app/build/V13-20261030-1.xcresult"
+      },
+      "WorkoutRecoveryTests/testDurationTimerSurvivesPauseAndRelaunch()": {
+        "result": "Passed",
+        "seconds": 108.471,
+        "log": "app/build/v13-ui-5.log",
+        "result_bundle": "app/build/V13-20261030-5.xcresult"
+      },
+      "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()": {
+        "result": "Passed",
+        "seconds": 134.253,
+        "log": "app/build/v13-ui-3.log",
+        "result_bundle": "app/build/V13-20261030-3.xcresult"
+      },
+      "WorkoutRecoveryTests/testSystemRestReminderAuthorizationAndScheduling()": {
+        "result": "Passed",
+        "seconds": 99.213,
+        "log": "app/build/v13-ui-6.log",
+        "result_bundle": "app/build/V13-20261030-6.xcresult"
+      }
+    },
+    "source_scope": "Batch 1 precedes editor focus/error-notice/settings-copy fixes. Batch 2 includes the focus fix; batch 3 includes invalid-serving feedback repair. Only affected production paths are rerun after each fix.",
+    "functional_cases": 15,
+    "screenshot_cases": 1,
+    "production_fix_retest": "The batch-3 passing full large-dark combination flow validates the final production feedback fix. Later changes are test helpers only."
+  },
+  "food_source_validation": "../../food-catalog-verification.json",
+  "distribution_audit": "../appstore-1.3-7-distribution-audit-20261030.json",
+  "limits": [
+    "No new physical-device HealthKit, minimum iOS 18, actual VoiceOver or lock-screen acceptance is claimed."
+  ],
+  "source_commit": "2a1e4a3f460e1b575e130f6fb731b16b46f4a269",
+  "distribution": {
+    "signed_archive": "passed",
+    "distribution_export": "passed",
+    "application_inputs_matching_commit": 1859,
+    "apple_status": "VALIDATED",
+    "app_review_submitted": false
+  }
+}

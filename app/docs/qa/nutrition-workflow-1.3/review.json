@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-30",
+  "reviewer": "correctness_and_adversarial_sequential_main_thread",
+  "depth": "deep",
+  "findings": [],
+  "resolved_findings": [
+    "The combination editor shared a Boolean focus across name and notes; clearing the name did not reliably select its field. Replaced it with distinct field focus and validated rename, save and relaunch.",
+    "At accessibility XXXL, invalid servings left the keyboard open and the error below a long form. Confirmation now resigns focus and places the error beside the servings input; targeted full large-dark combination flow passed in batch 3."
+  ],
+  "scenarios_checked": [
+    "Rapid repeated meal confirmation: MainActor busy guard and cached prepared UUID batch; repository retries are idempotent and partial or revised replays reject.",
+    "Food-directory label upgrades retain persisted nutrients, units and historical snapshots; original 300 values and all 500 official values were compared.",
+    "Atomic meal dependencies, diary records and Health intents roll back together on failure; disk reopen and backup v1/v2 round trips covered by tests.",
+    "Empty, duplicated-ID, 51-item, zero-serving and scaled-overflow inputs reject before persistence; example preview and cancellation never write."
+  ],
+  "residual_risks": [
+    "New original nutrition content is in Chinese; some food names remain English.",
+    "JSON format 2 is readable by 1.3; older app versions cannot restore new-format backups."
+  ],
+  "testing_gaps": [
+    "No new physical-device HealthKit, minimum-iOS-18, real VoiceOver or lock-screen notification acceptance is claimed."
+  ]
+}

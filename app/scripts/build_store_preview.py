@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "store"
 FIELDS = {"subtitle": "subtitle.txt", "promotional_text": "promotional-text.txt", "description": "description.txt", "keywords": "keywords.txt", "whats_new": "whats-new.txt"}
 metadata = {
-    "status": "local_asset_source_not_live_submission_status", "upload_record": "../docs/qa/appstore-1.2-6-upload-20261030.json", "release_record": "app-store-release-1.2-6-20261030.json", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
+    "status": "local_asset_source_not_live_submission_status", "upload_record": "../docs/qa/appstore-1.3-7-upload-20261030.json", "release_record": "app-store-release-1.3-7-20261030.json", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
     "copyright": "2026 Manyao Li", "support_email": "pengyuehui@gmail.com", "privacy_policy_url": "https://leanora.ai/fitness/privacy/",
     "support_url": "https://leanora.ai/fitness/support/", "locales": {},
 }
@@ -37,7 +37,8 @@ page = page.replace("padding:90px 0 80px", "padding:56px 0")
 page = page.replace(".hero-art{min-width:0;", ".hero-art{height:540px;overflow:hidden;min-width:0;")
 page = page.replace("font:15px/1.9 inherit;font-family:inherit", "font-size:15px;line-height:1.9;font-family:inherit")
 page = page.replace("2026.10.29", "2026.10.30")
-page = page.replace("新版图标已接入源码，随下一次构建生效。<br>已经上传的 0.2.0（2）仍包含原图标。", "当前图标已随 1.2（6）提交审核，Apple 二进制已验证。")
-page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "1.2（6）已于 2026-10-30 提交 App 审核，当前等待审核。公开健身政策和支持页面已上线，免费及销售范围沿用现有设置，审核通过后手动发布。真机健康及锁屏通知仍需另行验收。<a href=\"app-store-release-1.2-6-20261030.json\">查看发行回执</a>。")
+page = page.replace("1.2 版中文素材", "1.3 版中文素材")
+page = page.replace("新版图标已接入源码，随下一次构建生效。<br>已经上传的 0.2.0（2）仍包含原图标。", "当前图标已接入 1.3（7）发行候选，签名与本地发行导出验证通过。")
+page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "这是 1.3（7）的本地素材源，不代表 Apple 实时审核状态。公开健身政策和支持页面已上线；免费、销售范围及审核通过后手动发布沿用现有设置。真机健康及锁屏通知仍需另行验收。<a href=\"app-store-release-1.3-7-20261030.json\">查看发行记录</a>。")
 (ROOT / "index.html").write_text(page.replace("__GALLERY__", gallery).replace("__FIELDS__", fields))
 print("Built metadata.json and index.html; all locale fields within Apple limits.")

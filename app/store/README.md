@@ -1,6 +1,8 @@
 # Leanora App Store 素材包
 
-更新：2026-10-26；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。**1.1（5）已于今天 11:15 正式提交，Apple 显示“等待审核”**。更新包含 882 个动作和 1765 张离线图片；双语介绍、更新说明及审核指引已保存，沿用既有图标、截图、隐私答案和免费销售设置。审核后手动发布，1.1 尚未批准或上架。最新 [构建 5 回执](app-store-release-1.1-5-20261026.json)、[等待审核凭据](../docs/qa/appstore-1.1-5-waiting-review-20261026.png)及[送审记录](../docs/qa/appstore-submission-1.1.md)；[构建 4 历史回执](app-store-release-1.0-4-20261022.json) 保留。
+更新：2026-10-30；名称 **Leanora Fitness**，Bundle ID `ai.leanora.fitness`，Apple App ID `6825234654`。本目录现为 **1.3（7）素材源**：7 张真实页面、两套展示尺寸，新增组合餐展示，并更新双语介绍、版本说明和审核指引。签名及本地发行导出已完成，1.3（7）上传成功且 Apple 二进制已验证；正式送审状态以 [1.3 发行记录](app-store-release-1.3-7-20261030.json) 为准。本地素材预览不代表已发布。
+
+上一版 1.2（6）于 2026-10-30 09:08 进入等待审核；Apple 当前要求移除该版本才能送审新构建。1.1 已可分发。历史回执保留，免费、既有销售范围和审核通过后手动发布的设置沿用。
 
 ## 交付内容
 
@@ -18,12 +20,12 @@
 | 截图流程结果 / 资产与 Release 检查 | [screenshot-test-summary.json](screenshot-test-summary.json)、[verification.json](verification.json) |
 | 桌面浏览器实际预览截图 | [preview-desktop.png](preview-desktop.png) |
 
-英文文案已保存到英语（美国）本地化；当前截图仅上传到简体中文，不把中文截图另行标作英文截图。其他设备/语言采用 Apple 门户的默认素材回退。
+本地包含简体中文和英语（美国）文案。1.3 的门户保存状态见发行记录；截图用于简体中文，英语采用主语言素材回退，不把中文截图另标为英语截图。
 
 ## 截图顺序与真实性
 
 1. 每日概览：训练与饮食一处记录。
-2. 我的计划：自己的动作、组数与每周安排。
+2. 常用组合餐：按本次份数预览，再记入独立饮食明细。
 3. 逐组训练：实际负重、次数、完成与暂停。
 4. 饮食日记：当日热量与三大营养素。
 5. 食物与份量：来源、数量与餐次。
@@ -34,7 +36,11 @@
 
 已对照 [Apple 截图规格](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/) 核对导出尺寸、PNG 格式及无透明要求。文案按 [Apple 平台版本信息](https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/) 检查：推广文本≤170 字符、描述≤4000 字符、关键词≤100 UTF-8 字节；副标题≤30 字符。
 
-## 验证与历史
+## 当前验证
+
+本轮源截图来自通过的截图制作用例，以及通过的组合餐半份流程；完整来源、原图哈希和原始失败批次口径见 [截图来源](screenshot-test-summary.json)。14 张展示图均为 RGB、无透明，尺寸及源图哈希已检查，双语字段符合 Apple 长度限制。网页预览图片已实际加载并查看，完整功能结果见 [1.3 QA](../docs/qa/nutrition-workflow-1.3/verification.json)。
+
+## 早期素材工具与发布历史
 
 - 截图流程 `StoreScreenshotTests/testCaptureChineseStoreScreenshots()` 1 项通过，输出 7 张原始截图。它是素材制作流程，不重复计入原 134 项功能覆盖，也未重跑全部功能测试。
 - 首轮在初始化画面超时；将截图模式完成引导的时机移到全部服务准备好之后，后续进入主页面。第二轮在 Duo 上按 NavigationBar 查找返回按钮失败；改为实际“开始训练”入口继续。最终完整流程通过，原始失败/重试日志保留在 `app/build/store-screenshots*.log`；被中断的系统诊断收集不算成功。

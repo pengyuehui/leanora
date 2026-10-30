@@ -1,5 +1,5 @@
-Start a free workout and add, reorder or remove exercises as you train.
-View previous performance beside your sets. Reuse values for unfinished, untimed sets or repeat a completed workout from history.
-Save a completed workout as a new template, or review a draft before updating its original template.
-Find favorite and recently used exercises. Explore 4 original example programs, 9 editable templates and 8 offline recording guides.
-Existing records, exercise images and optional Apple Health sync are preserved. New programs and guides are in Chinese.
+Expanded the food catalog to 500 sourced foods with 209 Chinese names. Previous food IDs, nutrients and sourced portions are preserved.
+Added favorites, recent and category filters, gram shortcuts and explicit previous-portion reuse.
+Create editable meal combinations or draft them from history. Preview fractional or multiple servings before recording independent entries.
+Explore 6 original food-combination examples and 8 offline nutrition-recording guides in Chinese. Daily summaries explain known values and missing nutrients.
+New JSON backup format 2 includes favorites and combinations and requires version 1.3 or a later compatible version to restore. Format 1 remains readable. Existing training and optional Apple Health sync are preserved. Some food names and source units remain in English.

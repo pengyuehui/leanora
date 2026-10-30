@@ -1,22 +1,27 @@
 {
-  "checked_date": "2026-10-29",
-  "scope": "screenshot_test_case_only",
+  "checked_date": "2026-10-30",
+  "scope": "screenshot_test_case_only_with_additional_passing_functional_capture",
   "result": "Passed",
   "passedTests": 1,
   "failedTests": 0,
   "testIdentifier": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
-  "source_result_bundle": "app/build/V12-20261029-5.xcresult",
-  "source_batch_result": "Failed in two other cases; this screenshot case passed. Later targeted retests are recorded in the functional QA report.",
+  "source_result_bundle": "app/build/V13-20261030-1.xcresult",
+  "source_batch_result": "Failed in eight other cases; this screenshot case passed. Targeted final results are recorded separately.",
   "native_screenshots_captured": 7,
   "selected_store_sources": 7,
-  "source_selection_note": "Screenshots 1 and 3–7 come from the passing screenshot case. Screenshot 2 is the unmodified program preview from the passing TrainingWorkflowTests/testFavoriteProgramPreviewAdoptionAndOfflineGuide case in V12-20261029-4.xcresult.",
+  "source_selection_note": "Screenshots 1 and 3–7 are unchanged captures from the passing StoreScreenshotTests case. Screenshot 2 is the unchanged half-serving preview from passing NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch in V13-20261030-2.xcresult. The later production fix changes invalid-serving feedback only, not these views.",
+  "additional_source_capture": {
+    "testIdentifier": "NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch()",
+    "result": "Passed",
+    "source_result_bundle": "app/build/V13-20261030-2.xcresult"
+  },
   "source_sha256": {
-    "zh-Hans/source/store-01-today.png": "c40265960effe03355d5672e1b1c2b5bc64238037830015750d667e476017e61",
-    "zh-Hans/source/store-02-plan.png": "b4a714bbfd7536f3be833da916d2f25e06448db90da2288e9a62fe6b03b9626c",
-    "zh-Hans/source/store-03-workout.png": "5814e79df7404bd7dfb67b106c341912861e3cca51684e377fc2009a580a037d",
-    "zh-Hans/source/store-04-nutrition.png": "4509e12a96e8eccb3f12facf9ee0ef5c42d34b77003e4b86fa5c11d94bc5627c",
-    "zh-Hans/source/store-05-portion.png": "c902711364c48b6f7ce20d058197831e7aafc164ddda31e1f95f4daf1d0b8722",
-    "zh-Hans/source/store-06-trends.png": "43c23367e8bbd9be79875f8030e143609c3f4c0ad24ad3912b5a457b40fa198a",
-    "zh-Hans/source/store-07-health.png": "a59736686691ebe357fbb7affe6a53c0337ac1e5c23cbeb914aa5d09548691d9"
+    "zh-Hans/source/store-01-today.png": "89ca4fe5b4a30c8aef08893f1d743a21a5ea105f992b2f0b82101fff8e1caa23",
+    "zh-Hans/source/v13-half-meal-preview.png": "02780f3bd919e5137055364bd1745a9e19b8e4e60b5ed466859c3a16759899b3",
+    "zh-Hans/source/store-03-workout.png": "1e72b200f8a6436fb602860f73981966bcc1ccbb8c9905b8f70f8b03a84528fa",
+    "zh-Hans/source/store-04-nutrition.png": "38fb1165a71355ae4a9895b0a5bfb2ea6c4c938e61df774a2f5b6de49272b9c7",
+    "zh-Hans/source/store-05-portion.png": "1585717a10514f4ae0016d1f92e248700e83268582b12b6afb1141d7b44c3b0b",
+    "zh-Hans/source/store-06-trends.png": "fcdcafa0bea516babef02af22386c70d7c92b6cd2f19cce6b15366e7023d5303",
+    "zh-Hans/source/store-07-health.png": "2558f4107e21975280358919db96126e056ece952fbef77e7def105c020a8d93"
   }
 }

@@ -9,10 +9,10 @@
   },
   {
     "id": "02-plan",
-    "source": "store-02-plan",
-    "section": "范例与计划",
-    "title": "从范例开始\n练自己的计划",
-    "body": "4 套原创计划，9 个可编辑模板，\n预览后再采用。",
+    "source": "v13-half-meal-preview",
+    "section": "常用组合餐",
+    "title": "常吃的一餐\n下次直接记",
+    "body": "保存自己的组合，按本次份数调整，\n确认后生成独立饮食记录。",
     "blue": false
   },
   {

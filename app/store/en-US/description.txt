@@ -12,7 +12,10 @@ FIND YOUR REGULAR EXERCISES
 Favorite exercises and browse recently used ones. Explore 4 original example programs with 9 editable templates and 8 offline guides about recording, timers and statistics. Example programs leave load and weekly scheduling to you. These new programs and guides are provided in Chinese.
 
 KEEP A FOOD DIARY
-Log breakfast, lunch, dinner and snacks. Calculate calories, protein, carbohydrates and fat from your portions. Create custom foods, record calories quickly or copy a previous meal. Basic foods include source information, and missing nutrients remain unknown rather than being treated as zero.
+Log breakfast, lunch, dinner and snacks. Calculate calories, protein, carbohydrates and fat from your portions. Search 500 sourced foods, including 209 independently prepared Chinese names, with category, favorite and recent filters. Choose sourced portions, gram shortcuts or explicitly reuse a previous gram amount. Custom foods, quick calories and meal copying remain available. Unknown nutrients stay unknown.
+
+SAVE YOUR REGULAR MEALS
+Build editable food combinations or save a previous meal as a draft. Preview half, one or multiple servings, then record independent food entries. Editing the combination preserves past records. Explore 6 original food-combination examples and 8 offline nutrition-recording guides in Chinese. These are recording examples, not personalized meal prescriptions.
 
 REVIEW YOUR RECORDS
 Explore 7-day or 30-day views of completed workouts, active time, working-set volume, food energy and body measurements. Log body weight and body fat manually. Exercise energy is not automatically added to your food target.
@@ -21,7 +24,7 @@ CONNECT APPLE HEALTH ON YOUR TERMS
 Choose access in the system permission screen. Sync workouts, nutrition and body data in the directions you authorize, and read available activity summaries. Review sources, pending items and sync status, or stop automatic sync. Exporting historical records requires a separate confirmation. Manual logging remains available without Health access.
 
 KEEP CONTROL OF YOUR DATA
-Your journal is stored on your device. Export JSON backups and CSV files, restore a backup, and manage local records, imported Health caches and Health copies written by this app separately. Keep your exported backups in a safe place.
+Your journal is stored on your device. Export JSON backups and CSV files, restore a backup, and manage local records, imported Health caches and Health copies written by this app separately. Keep your exported backups in a safe place. New JSON format 2 includes favorites and meal combinations and requires 1.3 or a later compatible version to restore. Older format 1 remains readable.
 
 The food catalog focuses on basic foods and is not a comprehensive restaurant or branded-food database. Leanora does not provide medical diagnosis, treatment or personalized nutrition prescriptions.
 
