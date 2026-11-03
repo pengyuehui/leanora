@@ -2,10 +2,11 @@ import XCTest
 @testable import Leanora
 
 final class TrainingContentTests: XCTestCase, @unchecked Sendable {
-    func testBundledOriginalContentHasFourProgramsNineTemplatesAndEightGuides() throws {
+    func testBundledOriginalContentHasFourProgramsNineTemplatesAndTwelveGuides() throws {
         let content = try TrainingContentCatalog.load(), catalog = try ExerciseCatalog.load()
         XCTAssertEqual(content.programs.count, 4); XCTAssertEqual(content.programs.flatMap(\.templates).count, 9)
-        XCTAssertEqual(content.guides.count, 8); XCTAssertEqual(content.license, "MIT")
+        XCTAssertEqual(content.guides.count, 12); XCTAssertEqual(content.license, "MIT")
+        XCTAssertTrue(["review-formal-sets", "review-context", "review-calendar", "review-source"].allSatisfy { id in content.guides.contains { $0.id == id } })
         for program in content.programs {
             let templates = try content.makeTemplates(programID: program.id, exercises: catalog)
             XCTAssertEqual(templates.count, program.templates.count)

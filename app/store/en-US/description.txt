@@ -1,35 +1,32 @@
 Every set. Every meal. A record that stays with you.
 
-Leanora Fitness brings training, nutrition and body measurements into one personal journal. Build your own routine, log what you actually lift, record meal portions and review your history. No account is required, and everyday logging works offline.
+Leanora Fitness brings workouts, food portions and body measurements into a personal journal. No account is required, and everyday logging works offline. The interface and original guides are provided in Chinese; some exercise names, food names and source instructions remain in English.
+
+DAILY CALENDAR AND WEEKLY RECAP
+Review local workouts, four meal categories and body records together. Browse weeks and open a selected day's diary. Track training days, workout counts, completed sets and food-record coverage. The known-energy average excludes dates without known energy. Having records does not mean a full day was logged. Unknown nutrients stay unknown.
+
+EXERCISE HISTORY
+View completed working sets for the same exercise and measurement type. Compare the latest two sessions and open each source workout. External load, bodyweight, assisted repetitions, time and distance use separate metrics. The app does not estimate 1RM or automatically judge training effectiveness.
 
 TRAIN YOUR WAY
-Choose exercises, build templates, set target sets, repetitions, load and rest periods, then schedule your training week. Record each set as you go, pause when needed and continue later. History keeps a snapshot of the plan used for each session.
+Build templates with target sets, repetitions, load and rest. Schedule a week or reschedule one occurrence. Start a free workout, add exercises, record each set, pause and continue. Review previous performance, reuse values for unfinished sets or repeat a completed workout. Turn working sets into an editable template draft before saving.
 
-FROM FREE WORKOUTS TO PERSONAL TEMPLATES
-Start without preparing a routine, then add exercises as you go. View previous performance beside each set, reuse values for unfinished sets or repeat a workout from history. Turn completed working sets into an editable template draft. Updating the original template always requires an explicit save.
-
-FIND YOUR REGULAR EXERCISES
-Favorite exercises and browse recently used ones. Explore 4 original example programs with 9 editable templates and 8 offline guides about recording, timers and statistics. Example programs leave load and weekly scheduling to you. These new programs and guides are provided in Chinese.
+OFFLINE EXERCISE RESOURCES
+Explore 882 exercises and 1,765 bundled guidance images with full-screen viewing. Filter by muscle, equipment, difficulty or type. Favorite regular exercises and browse recently used ones. Four original example programs provide 9 editable templates, with 12 offline recording and review guides. Examples leave personal load and weekly scheduling to you. Images are static photos or illustrations.
 
 KEEP A FOOD DIARY
-Log breakfast, lunch, dinner and snacks. Calculate calories, protein, carbohydrates and fat from your portions. Search 500 sourced foods, including 209 independently prepared Chinese names, with category, favorite and recent filters. Choose sourced portions, gram shortcuts or explicitly reuse a previous gram amount. Custom foods, quick calories and meal copying remain available. Unknown nutrients stay unknown.
+Log breakfast, lunch, dinner and snacks. Search 500 sourced foods with 209 independently prepared Chinese names. Combine name, alias, category, favorite and recent filters. Choose sourced portions, gram shortcuts or explicitly reuse a previous gram amount. Create custom foods or log quick calories. Missing macros are not inferred from calories.
 
-SAVE YOUR REGULAR MEALS
-Build editable food combinations or save a previous meal as a draft. Preview half, one or multiple servings, then record independent food entries. Editing the combination preserves past records. Explore 6 original food-combination examples and 8 offline nutrition-recording guides in Chinese. These are recording examples, not personalized meal prescriptions.
+REUSE MEALS OR A DAY
+Save editable food combinations and preview fractional or multiple servings before recording. Copy a past meal or select meal categories from a day, preview and confirm independent entries. Portions, notes, nutrient snapshots and unknown values are preserved. Existing target-day records stay in place. Explore 6 original food-combination examples and 12 offline nutrition-recording guides in Chinese.
 
-REVIEW YOUR RECORDS
-Explore 7-day or 30-day views of completed workouts, active time, working-set volume, food energy and body measurements. Log body weight and body fat manually. Exercise energy is not automatically added to your food target.
+BODY TRENDS AND APPLE HEALTH
+Log weight and body fat manually and review 7-day or 30-day trends. Exercise energy is not automatically added to food goals. Choose system Health access and sync directions for workouts, nutrition and body data. Review available activity summaries, sources, pending work and sync status, or stop automatic sync. Historical export requires separate confirmation. Manual logging works without Health access.
 
-CONNECT APPLE HEALTH ON YOUR TERMS
-Choose access in the system permission screen. Sync workouts, nutrition and body data in the directions you authorize, and read available activity summaries. Review sources, pending items and sync status, or stop automatic sync. Exporting historical records requires a separate confirmation. Manual logging remains available without Health access.
+YOUR DATA ON YOUR DEVICE
+Export JSON backups and CSV files, preview imports and restore backups. Manage local records, imported Health caches and Health copies written by this app separately. Keep your exported backups. JSON format 2 requires version 1.3 or a later compatible version to restore; format 1 remains readable.
 
-KEEP CONTROL OF YOUR DATA
-Your journal is stored on your device. Export JSON backups and CSV files, restore a backup, and manage local records, imported Health caches and Health copies written by this app separately. Keep your exported backups in a safe place. New JSON format 2 includes favorites and meal combinations and requires 1.3 or a later compatible version to restore. Older format 1 remains readable.
-
-The food catalog focuses on basic foods and is not a comprehensive restaurant or branded-food database. Leanora does not provide medical diagnosis, treatment or personalized nutrition prescriptions.
-
-OFFLINE EXERCISE GUIDANCE
-Explore 882 exercises with 1,765 bundled guidance images. Browse images full screen while choosing exercises or during a workout. Search and filter by equipment, muscle, difficulty or exercise type. Guidance uses static photos or illustrations; some names and instructions remain in English.
+The food catalog focuses on basic foods. Content supports personal recording and does not provide medical diagnosis, treatment or individualized nutrition prescriptions.
 
 Support: pengyuehui@gmail.com
-Privacy policy: https://leanora.ai/fitness/privacy/
+Privacy: https://leanora.ai/fitness/privacy/

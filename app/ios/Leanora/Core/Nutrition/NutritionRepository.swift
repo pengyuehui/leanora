@@ -42,7 +42,16 @@ extension AppModelActor {
     }
 
     func recordMeal(_ entries: [DietEntry], catalog: [Food]) throws {
-        guard (1...50).contains(entries.count), Set(entries.map { $0.stamp.id }).count == entries.count else { throw DataProblem.invalid("组合记录数量或 ID") }
+        try recordDietBatch(entries, catalog: catalog, limit: 50)
+    }
+
+    func recordDietDayCopy(_ entries: [DietEntry], catalog: [Food]) throws {
+        guard Set(entries.map { $0.occurred.localDate }).count == 1 else { throw DataProblem.invalid("整日复制的目标日期") }
+        try recordDietBatch(entries, catalog: catalog, limit: 200)
+    }
+
+    private func recordDietBatch(_ entries: [DietEntry], catalog: [Food], limit: Int) throws {
+        guard (1...limit).contains(entries.count), Set(entries.map { $0.stamp.id }).count == entries.count else { throw DataProblem.invalid("批次记录数量或 ID") }
         let records = try snapshot()
         let existing = Dictionary(uniqueKeysWithValues: records.map { ($0.id, $0) })
         // Retrying an already committed batch returns without recreating jobs.

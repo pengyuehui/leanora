@@ -100,7 +100,7 @@ struct TrainingGuidesView: View {
     @State private var error: String?
     var body: some View {
         List {
-            Section { Text("把记录方式讲清楚").font(.title2.bold()).accessibilityIdentifier("screen.trainingGuides"); Text("8 篇离线指南，随时回看。Leanora 项目原创，按 MIT 提供。").foregroundStyle(.secondary) }
+            Section { Text("把记录方式讲清楚").font(.title2.bold()).accessibilityIdentifier("screen.trainingGuides"); Text("\(guides.count) 篇离线指南，随时回看。Leanora 项目原创，按 MIT 提供。").foregroundStyle(.secondary) }
             if let error { Section { Label(error, systemImage: "exclamationmark.triangle") } }
             ForEach(guides) { guide in
                 NavigationLink {

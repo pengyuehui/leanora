@@ -15,7 +15,7 @@
 | 原有动作目录 v1 | 原始 100 条保存在 `content/exercises/leanora-v1.json`；来源引用 `leanora:catalog/exercises/v1`，项目自有内容 | 本轮开发自检；内容负责人复核待落实 | 原 100 条 ID 与全部原字段保留；独立添加中文提示，图片来源单独记录 |
 | 扩充动作目录 | Free Exercise DB commit `f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5`；Unlicense，原名称、肌群、器械、分类与英文步骤 | 本轮开发自检；内容负责人专业复核待落实 | 总量 882 条；284 个名称含中文，原 100 条有中文提示；无图的 3 个上游条目未引入 |
 | 基础食品目录 | USDA FoodData Central SR Legacy 2018 官方 ZIP；CC0-1.0；每条保留 FDC URL、原营养值和份量 | 本轮开发自检；内容负责人专业复核待落实 | 1.3 随包 500 条，其中 209 个独立中文名；原 300 条 ID、营养及来源份量保留，500 条全部值与官方源逐项核验；输入 SHA256 与重建方法已记录 |
-| 食物搭配与饮食指南 | 本项目独立创作，MIT；范例食品数值来自上述 CC0 目录 | 本轮开发自检；营养专业复核待落实 | 6 套按明确食品状态与克数计算的记录范例、8 篇离线指南；无薄荷内容、图片、私有接口或个体处方 |
+| 食物搭配与饮食指南 | 本项目独立创作，MIT；范例食品数值来自上述 CC0 目录 | 本轮开发自检；营养专业复核待落实 | 6 套按明确食品状态与克数计算的记录范例、12 篇离线指南；无薄荷内容、图片、私有接口或个体处方 |
 | 动作照片 | Free Exercise DB，同上固定版本，Unlicense | 本轮检查可解码、路径与哈希；逐动作专业复核待落实 | 1746 张原图缩放、压缩并移除元数据，随 App 内置 |
 | 补充动作插图 | Workout Guide commit `aac599224bb9780305239607ef98540b7e0ce389`；Bryl Lim / Everkinetic，CC BY-SA 4.0 | 本轮核看选用姿态；内容负责人复核待落实 | 7 个原有动作共 19 张 PNG，保留原文件、署名与完整许可；来源页可查看 |
 | Pillow 12.3.0 | Pillow 开源图像工具；仅重建动作图片的开发依赖，不链接进 App | 开发负责人 | 随包图像为静态数据；运行时仍仅使用 Apple SDK |
@@ -37,3 +37,7 @@ Xcode 工程只引用 `app/ios/Leanora`、`LeanoraTests` 与 `LeanoraUITests` �
 官方输入：[SR Legacy 2018 ZIP](https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_json_2018-04.zip)。[USDA 官方许可](https://fdc.nal.usda.gov/api-guide/#licensing) 列明 CC0。取回日期 2026-10-20；文件 SHA256、数量与规则见 [food-catalog-manifest.json](food-catalog-manifest.json)。执行 `python3 app/scripts/build_food_catalog.py /path/to/official.zip` 可重建，脚本无需 API 密钥。目录没有营养插补；份量保持 USDA 的原数量和克数，不从杯/体积猜测密度。
 
 中文名称为本项目独立制作，保留生/熟、部位等差异；其余采用原文，未包装成中国品牌食物库。开发验证包含 ID 唯一、范围、来源、份量和营养计算，尚不等于营养专业审定。没有取用薄荷或训记的食物、动作数据和媒体。
+
+## 1.4 原创复盘内容
+
+2026-11-03 新增 4 篇训练复盘、4 篇饮食回顾指南，训练和饮食分别累计 12 篇。内容独立编写，按 MIT 提供，解释本项目的统计、日期和复制口径，不取用竞品文章或数据。公开研究依据为训记与薄荷的官方 App Store 说明，不访问私有接口。

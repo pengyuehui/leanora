@@ -16,6 +16,16 @@ struct TodayView: View {
                     Spacer()
                     Text(Date.now, format: .dateTime.month().day().weekday()).font(.subheadline).foregroundStyle(.secondary)
                 }
+                NavigationLink { JournalReviewView() } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "calendar").font(.title2).foregroundStyle(LeanoraTheme.accent)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("日历与周回顾").font(.headline)
+                            Text("训练、饮食、身体，一起回看").font(.caption).foregroundStyle(.secondary)
+                        }
+                        Spacer(); Image(systemName: "chevron.right").font(.caption).foregroundStyle(.secondary)
+                    }.frame(minHeight: 52)
+                }.buttonStyle(.plain).accessibilityIdentifier("today.review")
                 VStack(alignment: .leading, spacing: 16) {
                     HStack { Label("今日训练", systemImage: "dumbbell").font(.headline); Spacer(); Button("计划") { selected = .training }.frame(minHeight: 44) }
                     if let active = training.active {

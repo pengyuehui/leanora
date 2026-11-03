@@ -39,4 +39,8 @@ U.S. Department of Agriculture, Agricultural Research Service. FoodData Central,
 
 ## Leanora original nutrition content (1.3)
 
-The 6 food-combination examples and 8 recording guides in `Resources/Catalog/nutrition-content.json` are original Leanora text under MIT. Their nutrient previews are calculated from the separately attributed food values, with explicit food states and gram weights. They are editable recording examples, not individualized dietary prescriptions. No 薄荷 food database, proprietary recipe, article, media, private API or code is redistributed.
+The 6 food-combination examples and 12 recording guides in `Resources/Catalog/nutrition-content.json` are original Leanora text under MIT. Their nutrient previews are calculated from the separately attributed food values, with explicit food states and gram weights. They are editable recording examples, not individualized dietary prescriptions. No 薄荷 food database, proprietary recipe, article, media, private API or code is redistributed.
+
+## Leanora original review guides (1.4)
+
+Four new training-review guides and four nutrition-review guides are original Leanora text under MIT. Each bundled guide collection now contains 12 articles. They explain local recording and comparison semantics and contain no proprietary competitor content.

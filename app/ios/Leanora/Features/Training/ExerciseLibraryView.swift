@@ -108,6 +108,9 @@ struct ExerciseDetailView: View {
             if let exercise = training.exercise(exerciseID) {
                 Section {
                     Text(exercise.name).font(.title2.weight(.semibold))
+                    NavigationLink { ExerciseProgressView(exerciseID: exerciseID, name: exercise.name, measurement: exercise.measurement) } label: {
+                        Label("动作历史与进步", systemImage: "chart.xyaxis.line")
+                    }.accessibilityIdentifier("exercise.progress")
                     Button {
                         Task { await training.setFavorite(exercise) }
                     } label: {

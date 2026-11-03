@@ -6,6 +6,7 @@ struct DietDiaryView: View {
     @State private var presented: DietPresentation?
     @State private var presentationReady = true
     @State private var removing: DietEntry?
+    init(date: Date = Date()) { _date = State(initialValue: date) }
     var day: String { RecordMoment(date).localDate }
     var body: some View {
         List {
@@ -26,6 +27,7 @@ struct DietDiaryView: View {
                 Button("我的组合餐", systemImage: "square.stack") { present(.templates) }.disabled(!presentationReady).accessibilityIdentifier("diet.mealTemplates")
                 Button("快速记热量") { present(.quick) }.disabled(!presentationReady).accessibilityIdentifier("diet.quick")
                 Button("复制历史餐次") { present(.copy) }.disabled(!presentationReady).accessibilityIdentifier("diet.copy")
+                Button("复制整日饮食", systemImage: "doc.on.doc") { present(.dayCopy) }.disabled(!presentationReady).accessibilityIdentifier("diet.dayCopy")
             }
             ForEach(Meal.allCases, id: \.self) { meal in
                 Section {
@@ -82,6 +84,7 @@ struct DietDiaryView: View {
             case .food(let meal): FoodSearchView(meal: meal, date: date) { presented = nil }
             case .quick: QuickCaloriesView(date: date)
             case .copy: MealCopyView(destination: date)
+            case .dayCopy: DietDayCopyView(destination: date)
             case .templates: MealTemplatesView(date: date).toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { presented = nil } } }
             case .templateDraft(let draft): MealTemplateEditorView(draft: draft)
             case .edit(let entry):
@@ -108,12 +111,13 @@ struct DietDiaryView: View {
 }
 
 private enum DietPresentation: Identifiable {
-    case food(Meal), quick, copy, edit(DietEntry), templates, templateDraft(MealTemplate)
+    case food(Meal), quick, copy, dayCopy, edit(DietEntry), templates, templateDraft(MealTemplate)
     var id: String {
         switch self {
         case .food(let meal): "food:\(meal.rawValue)"
         case .quick: "quick"
         case .copy: "copy"
+        case .dayCopy: "dayCopy"
         case .edit(let entry): "edit:\(entry.id)"
         case .templates: "templates"
         case .templateDraft(let draft): "template:\(draft.id)"

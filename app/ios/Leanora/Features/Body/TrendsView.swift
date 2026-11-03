@@ -14,6 +14,7 @@ struct TrendsView: View {
         List {
             Section {
                 Text("记录与趋势").font(.title2.bold()).accessibilityIdentifier("screen.trends")
+                NavigationLink("日历与周回顾") { JournalReviewView() }.accessibilityIdentifier("trends.review")
                 NavigationLink("身体记录与测量") { BodyMeasurementView() }.accessibilityIdentifier("trends.body")
                 NavigationLink("训练历史") { WorkoutHistoryView() }
                 NavigationLink("健康来源与关联记录") { HealthSyncStatusView() }

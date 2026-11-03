@@ -1,5 +1,5 @@
-Expanded the food catalog to 500 sourced foods with 209 Chinese names. Previous food IDs, nutrients and sourced portions are preserved.
-Added favorites, recent and category filters, gram shortcuts and explicit previous-portion reuse.
-Create editable meal combinations or draft them from history. Preview fractional or multiple servings before recording independent entries.
-Explore 6 original food-combination examples and 8 offline nutrition-recording guides in Chinese. Daily summaries explain known values and missing nutrients.
-New JSON backup format 2 includes favorites and combinations and requires version 1.3 or a later compatible version to restore. Format 1 remains readable. Existing training and optional Apple Health sync are preserved. Some food names and source units remain in English.
+Review workouts, meals and body measurements together in a daily calendar and weekly recap. Coverage indicators explain which days contain records.
+Explore per-exercise history, compare the latest two completed working-set sessions and open each source workout. Load, bodyweight, assistance and timed exercise metrics stay separate.
+Copy a day of food records by selecting meals, reviewing the preview and confirming independent entries. Portions, nutrient snapshots and unknown values are preserved.
+Added 4 original training-review guides and 4 nutrition-review guides, bringing each offline collection to 12 articles.
+Missing dates are not treated as zero intake. Exercise energy is not automatically added to food goals. Existing backups and optional Apple Health sync remain available. New features and content are provided in Chinese.

@@ -5,9 +5,13 @@ import UIKit
 struct ExerciseGuidanceView: View {
     let exerciseID: UUID
     let name: String
+    @Environment(TrainingStore.self) private var training
     var body: some View {
         List {
             Section { Text(name).font(.title2.weight(.semibold)) }
+            if let exercise = training.exercise(exerciseID) {
+                Section { NavigationLink("动作历史与进步") { ExerciseProgressView(exerciseID: exerciseID, name: name, measurement: exercise.measurement) }.accessibilityIdentifier("exercise.progress") }
+            }
             if let guide = ExerciseGuideCatalog.guide(for: exerciseID) {
                 ExerciseGuideSections(guide: guide, name: name)
             } else {

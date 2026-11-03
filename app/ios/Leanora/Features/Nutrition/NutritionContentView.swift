@@ -58,7 +58,7 @@ struct NutritionGuidesView: View {
     @State private var error: String?
     var body: some View {
         List {
-            Section { Text("把每一餐记清楚").font(.title2.bold()).accessibilityIdentifier("screen.nutritionGuides"); Text("8 篇原创离线指南，解释记录口径、未知值和复用方法。").foregroundStyle(.secondary) }
+            Section { Text("把每一餐记清楚").font(.title2.bold()).accessibilityIdentifier("screen.nutritionGuides"); Text("\(guides.count) 篇原创离线指南，解释记录口径、未知值和复用方法。").foregroundStyle(.secondary) }
             if let error { Label(error, systemImage: "exclamationmark.triangle") }
             ForEach(guides) { guide in
                 NavigationLink {

@@ -4,7 +4,8 @@ import XCTest
 final class NutritionContentTests: XCTestCase, @unchecked Sendable {
     func testBundledExamplesAndGuidesResolveAndCalculateFromFoodSnapshots() throws {
         let catalog = try NutritionContentCatalog.load(), foods = try FoodCatalog.load()
-        XCTAssertEqual(catalog.recipes.count, 6); XCTAssertEqual(catalog.guides.count, 8)
+        XCTAssertEqual(catalog.recipes.count, 6); XCTAssertEqual(catalog.guides.count, 12)
+        XCTAssertTrue(["review-record-coverage", "review-known-average", "review-copy-day", "review-local-date"].allSatisfy { id in catalog.guides.contains { $0.id == id } })
         XCTAssertEqual(catalog.license, "MIT"); XCTAssertEqual(catalog.author, "Leanora")
         for recipe in catalog.recipes {
             let draft = try catalog.draft(recipeID: recipe.id, foods: foods)

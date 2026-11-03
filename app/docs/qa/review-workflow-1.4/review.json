@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-03",
+  "review_mode": "sequential_main_thread",
+  "reviewers": ["correctness", "adversarial"],
+  "adversarial_depth": "deep",
+  "findings": [],
+  "resolved_during_review": [
+    {"scenario":"Changing dates or meal selection while an asynchronous copy commit is in flight can make the form describe a different batch than the one being saved.","resolution":"Disable form inputs and cancel while JournalStore.busy; preserve the prepared UUID batch on errors."},
+    {"scenario":"Navigation from Today can inherit a hidden navigation bar, leaving the new review page without a discoverable return control.","resolution":"Explicitly show the navigation bar on JournalReviewView."}
+  ],
+  "traced_scenarios": [
+    "Rapid confirm taps are guarded by the journal busy flag and stable-ID repository replay equality.",
+    "Commit failure rolls back copied records and component Health intents together; retry uses the same batch.",
+    "A partial committed replay or changed entry with reused IDs is rejected atomically.",
+    "Changing or archiving source food does not rewrite copied nutrient snapshots.",
+    "Stored localDate is preserved during review; source wall clock is mapped to target timezone with tested DST policy.",
+    "Archived or changed-type exercises do not mix measurement kinds; deleted or abandoned sessions do not create progress.",
+    "Unknown calories or absent dates are excluded from the mean denominator rather than imputed as zero."
+  ],
+  "testing_gaps": ["Native UI test execution blocked by Xcode 27.2/CoreSimulator version mismatch pending first-launch component update.","No new physical-device HealthKit, minimum-iOS-18 or real VoiceOver acceptance claimed."],
+  "residual_risks": ["Repeated intentionally confirmed copies after reopening are separate batches; existing-target count and additive-copy warning remain visible.","A native UI review is still required before upload or formal review submission."]
+}
