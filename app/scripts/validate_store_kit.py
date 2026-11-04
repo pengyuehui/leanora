@@ -69,6 +69,8 @@ assert summary["result"] == "Passed" and summary["passedTests"] == 1 and summary
 assert summary["source_sha256"] == {name: info["sha256"] for name, info in sources.items()}
 if summary.get("additional_source_capture"):
     assert summary["additional_source_capture"]["result"] == "Passed"
+for capture in summary.get("additional_source_captures", []):
+    assert capture["result"] == "Passed"
 report = {"checked_date": date.today().isoformat(), "upload_asset_count": 15, "store_screenshots": exports, "native_sources": sources, "app_icon": icon, "metadata_lengths": lengths, "local_html_references": len(references.local), "capture_test_result": summary["result"], "capture_test_count": 1, "browser_proof": {"path": "preview-desktop.png", "sha256": digest(store / "preview-desktop.png")}, "publication": "local_asset_validation_only; live submission status is in " + metadata["release_record"], "release_archive": None}
 if args.release_app:
     app = args.release_app.resolve()

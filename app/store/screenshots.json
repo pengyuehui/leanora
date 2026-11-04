@@ -8,11 +8,11 @@
     "blue": true
   },
   {
-    "id": "02-plan",
-    "source": "v13-half-meal-preview",
-    "section": "常用组合餐",
-    "title": "常吃的一餐\n下次直接记",
-    "body": "保存自己的组合，按本次份数调整，\n确认后生成独立饮食记录。",
+    "id": "02-calendar",
+    "source": "v14-calendar-review",
+    "section": "日历与周回顾",
+    "title": "每一天的记录\n放到一起回看",
+    "body": "按日查看训练、四餐与身体记录，\n有无记录，清楚区分。",
     "blue": false
   },
   {
@@ -32,19 +32,19 @@
     "blue": true
   },
   {
-    "id": "05-portion",
-    "source": "store-05-portion",
-    "section": "食物与份量",
-    "title": "份量清楚\n记录有依据",
-    "body": "按数量计算营养，\n随时核对食物来源。",
+    "id": "05-progress",
+    "source": "v14-exercise-progress",
+    "section": "动作历史与进步",
+    "title": "哪一组有变化\n回到来源看",
+    "body": "比较相同类型的正式组，\n查看两次差异和来源训练。",
     "blue": false
   },
   {
-    "id": "06-trends",
-    "source": "store-06-trends",
-    "section": "身体与趋势",
-    "title": "回看记录\n看见变化",
-    "body": "训练容量与身体趋势，\n支持最近 7 天和 30 天。",
+    "id": "06-copy",
+    "source": "v14-day-copy-preview",
+    "section": "整日饮食复用",
+    "title": "常吃的一天\n先检查，再复制",
+    "body": "选择餐次和目标日期，\n确认后新增独立记录。",
     "blue": false
   },
   {

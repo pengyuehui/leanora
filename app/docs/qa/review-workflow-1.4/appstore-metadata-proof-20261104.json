@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-04",
+  "version": "1.4",
+  "build": "8",
+  "scope": "Portal values read after save and reload; screenshot/build submission verified separately.",
+  "locales": {
+    "zh-Hans": {
+      "exact_match": true,
+      "lengths": {
+        "promotional_text": 77,
+        "description": 1197,
+        "whats_new": 227,
+        "keywords": 34
+      }
+    },
+    "en-US": {
+      "exact_match": true,
+      "lengths": {
+        "promotional_text": 161,
+        "description": 3613,
+        "whats_new": 840,
+        "keywords": 90
+      }
+    }
+  },
+  "review_notes_exact": true,
+  "manual_release": true,
+  "support_url": "https://leanora.ai/fitness/support/",
+  "support_url_english": "https://leanora.ai/fitness/support/"
+}

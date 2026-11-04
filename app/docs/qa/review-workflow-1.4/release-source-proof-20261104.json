@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-04",
+  "release_candidate": "RC2",
+  "version": "1.4",
+  "build": "8",
+  "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
+  "application_and_project_inputs_verified": 1866,
+  "all_sha256_match": true,
+  "source_manifest_sha256": "2fbddaa010c9cc54620db7c8157c9126c224fd7a773bd7e534206f7d1fb3de9c",
+  "scope": "Every application and Xcode project input of immutable RC2 matches the committed tree byte-for-byte; unrelated local project, Info.plist and localization edits excluded."
+}

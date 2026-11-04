@@ -1,27 +1,39 @@
 {
-  "checked_date": "2026-10-30",
-  "scope": "screenshot_test_case_only_with_additional_passing_functional_capture",
+  "checked_date": "2026-11-04",
+  "version": "1.4",
+  "scope": "One passing store capture case plus three passing functional capture cases",
   "result": "Passed",
   "passedTests": 1,
   "failedTests": 0,
   "testIdentifier": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
-  "source_result_bundle": "app/build/V13-20261030-1.xcresult",
-  "source_batch_result": "Failed in eight other cases; this screenshot case passed. Targeted final results are recorded separately.",
-  "native_screenshots_captured": 7,
+  "source_result_bundle": "app/build/V14-20261104-4.xcresult",
+  "source_batch_result": "Six cases passed and two harness cases failed; final unique passes are documented in the 1.4 verification record.",
   "selected_store_sources": 7,
-  "source_selection_note": "Screenshots 1 and 3–7 are unchanged captures from the passing StoreScreenshotTests case. Screenshot 2 is the unchanged half-serving preview from passing NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch in V13-20261030-2.xcresult. The later production fix changes invalid-serving feedback only, not these views.",
-  "additional_source_capture": {
-    "testIdentifier": "NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch()",
-    "result": "Passed",
-    "source_result_bundle": "app/build/V13-20261030-2.xcresult"
-  },
+  "source_selection_note": "Sources 1,3,4,7 are unchanged native captures from StoreScreenshotTests in batch 4; calendar and exercise progress are from passing functional cases in batch 4; day-copy preview is from the passing copy/cancel/save/relaunch case in batch 6. Later cardio-only unknown-distance correction does not alter these views.",
+  "additional_source_captures": [
+    {
+      "testIdentifier": "ReviewWorkflowTests/testCalendarWeekNavigationAndSelectedDayDiary()",
+      "result": "Passed",
+      "source_result_bundle": "app/build/V14-20261104-4.xcresult"
+    },
+    {
+      "testIdentifier": "ReviewWorkflowTests/testExerciseHistoryComparisonAndSourceWorkout()",
+      "result": "Passed",
+      "source_result_bundle": "app/build/V14-20261104-4.xcresult"
+    },
+    {
+      "testIdentifier": "ReviewWorkflowTests/testCopyDayPreviewCancelCommitAndRelaunch()",
+      "result": "Passed",
+      "source_result_bundle": "app/build/V14-20261104-6.xcresult"
+    }
+  ],
   "source_sha256": {
-    "zh-Hans/source/store-01-today.png": "89ca4fe5b4a30c8aef08893f1d743a21a5ea105f992b2f0b82101fff8e1caa23",
-    "zh-Hans/source/v13-half-meal-preview.png": "02780f3bd919e5137055364bd1745a9e19b8e4e60b5ed466859c3a16759899b3",
-    "zh-Hans/source/store-03-workout.png": "1e72b200f8a6436fb602860f73981966bcc1ccbb8c9905b8f70f8b03a84528fa",
-    "zh-Hans/source/store-04-nutrition.png": "38fb1165a71355ae4a9895b0a5bfb2ea6c4c938e61df774a2f5b6de49272b9c7",
-    "zh-Hans/source/store-05-portion.png": "1585717a10514f4ae0016d1f92e248700e83268582b12b6afb1141d7b44c3b0b",
-    "zh-Hans/source/store-06-trends.png": "fcdcafa0bea516babef02af22386c70d7c92b6cd2f19cce6b15366e7023d5303",
-    "zh-Hans/source/store-07-health.png": "2558f4107e21975280358919db96126e056ece952fbef77e7def105c020a8d93"
+    "zh-Hans/source/store-01-today.png": "a7eb0df13dd2d987dc763f2f778a182b8892be8e1921d6131a2d60e67ec92b99",
+    "zh-Hans/source/v14-calendar-review.png": "7284396b01de18a9ee6daeeb2c2b2821180897bf3ad836a15ee70071d41b1a67",
+    "zh-Hans/source/store-03-workout.png": "7a808d92ff61cc6d754dfde66b86b7c4df15a8565df2d40ddfa9ca41d6445e1d",
+    "zh-Hans/source/store-04-nutrition.png": "2bf11d1620462293e3dc9cdfbc222ae34d60302931184d3f30003212ecd53ae0",
+    "zh-Hans/source/v14-exercise-progress.png": "44c7069d355dad25069768fef500a762c09039096a3c697400ab450d92328e93",
+    "zh-Hans/source/v14-day-copy-preview.png": "f38a971976c65e8d4f41fcca2b0e83e74b1e73cb228a233ebd62616ee079a34e",
+    "zh-Hans/source/store-07-health.png": "ab5e437140b33c214f00434f3e283f5c06669dfe2670acc0aa58bcee5d67f97d"
   }
 }

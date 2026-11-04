@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-04",
+  "scope": "Signing precheck only, before final native verification; not the final upload artifact.",
+  "team": "8ZP3NMT2A8",
+  "bundle_id": "ai.leanora.fitness",
+  "version": "1.4",
+  "build": "8",
+  "export_succeeded": true,
+  "ipa_sha256": "372ba18d2ce3880f3dc2850e20792f287cd5442c82f5e7ef5eb47061fcef78ef",
+  "log": "app/build/v14-distribution-export-20261104-precheck.log",
+  "uploaded": false,
+  "previous_export_account_block_resolved": true
+}

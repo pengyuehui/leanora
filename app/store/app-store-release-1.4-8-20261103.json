@@ -16,5 +16,7 @@
   "metadata_status": "Local zh-Hans/en-US source text prepared; not saved to Apple for 1.4",
   "blockers": "CoreSimulator 1174.9.2 is older than Xcode required 1174.21.0; Mac locked, first-launch component update pending; No Accounts; No matching iOS Distribution signing certificate with private key for team 8ZP3NMT2A8; Chrome App Store Connect login expired",
   "previous_submission_record": "app-store-release-1.3-7-20261030.json",
-  "previous_submission_scope": "Historical receipt only. Live Apple state could not be checked due expired login."
+  "previous_submission_scope": "Historical receipt only. Live Apple state could not be checked due expired login.",
+  "record_scope": "Historical preparation record from 2026-11-03; later progress is recorded separately.",
+  "superseded_by": "app-store-release-1.4-8-20261104.json"
 }

@@ -1,0 +1,187 @@
+{
+  "checked_date": "2026-11-04",
+  "upload_asset_count": 15,
+  "store_screenshots": {
+    "zh-Hans/iphone-medium/01-today.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "bd6859b056be3923e375a6dfa4a3f19131b86bc959a18cfc5ad78774689a131f"
+    },
+    "zh-Hans/iphone-medium/02-calendar.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "3216cd6b130954371def5d4026463abdea82eb8a847537a5004ac6bb7455d4be"
+    },
+    "zh-Hans/iphone-medium/03-workout.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "a1f2dd2a51f2e799e17d11bd355649ee1e0a669ee8bc21c851a0322a31a375d2"
+    },
+    "zh-Hans/iphone-medium/04-nutrition.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "edae713d3befc8732253de70716a97975b2bedaccc17b0c791f96c76462caab9"
+    },
+    "zh-Hans/iphone-medium/05-progress.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "a04f1474ea2b36b23e38cc27a68e7889e237eefe30eec0aaff238f29c00ad546"
+    },
+    "zh-Hans/iphone-medium/06-copy.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "20bb44dd38477004e481fcc06c210be3e6745f7a32876e10d10646ca7603d424"
+    },
+    "zh-Hans/iphone-medium/07-health.png": {
+      "width": 1206,
+      "height": 2622,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "5bcbd083bbd8e25b274562bdab6ec038bb1920fe0bc0ca99ac05b669e57cd490"
+    },
+    "zh-Hans/iphone-large/01-today.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "a94f9d4d95e98e49b46a4c886f9fe933e7227009d36728a677c58b4d647d0039"
+    },
+    "zh-Hans/iphone-large/02-calendar.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "51b237e35f1dc597b6470cfa269f4dd8be1904436198730cb24fcb93a6493446"
+    },
+    "zh-Hans/iphone-large/03-workout.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "fbdb419d30fbb74c790e2ae7ef9dbba3799c76196781b292342a7e0fb69b3a17"
+    },
+    "zh-Hans/iphone-large/04-nutrition.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "adcbb143a087f9379549e9c4241a05c3facfe3be810a19488e52d379b2c05584"
+    },
+    "zh-Hans/iphone-large/05-progress.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "0213cdf6e4b014bc1a0b64359e8793e655b599a11bc497c2c14afd6db05a5288"
+    },
+    "zh-Hans/iphone-large/06-copy.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "7156816f8471f3dda9a8f9108e3591b2d3e91ef6be37634f65b7c4e9e6dc96ed"
+    },
+    "zh-Hans/iphone-large/07-health.png": {
+      "width": 1320,
+      "height": 2868,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "1643fac89a5c2c3f92f6fbd1a1618fcb3b59ded6ad156a1ec9d581e226856588"
+    }
+  },
+  "native_sources": {
+    "zh-Hans/source/store-01-today.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "a7eb0df13dd2d987dc763f2f778a182b8892be8e1921d6131a2d60e67ec92b99"
+    },
+    "zh-Hans/source/v14-calendar-review.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "7284396b01de18a9ee6daeeb2c2b2821180897bf3ad836a15ee70071d41b1a67"
+    },
+    "zh-Hans/source/store-03-workout.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "7a808d92ff61cc6d754dfde66b86b7c4df15a8565df2d40ddfa9ca41d6445e1d"
+    },
+    "zh-Hans/source/store-04-nutrition.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "2bf11d1620462293e3dc9cdfbc222ae34d60302931184d3f30003212ecd53ae0"
+    },
+    "zh-Hans/source/v14-exercise-progress.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "44c7069d355dad25069768fef500a762c09039096a3c697400ab450d92328e93"
+    },
+    "zh-Hans/source/v14-day-copy-preview.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "f38a971976c65e8d4f41fcca2b0e83e74b1e73cb228a233ebd62616ee079a34e"
+    },
+    "zh-Hans/source/store-07-health.png": {
+      "width": 1398,
+      "height": 2034,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "ab5e437140b33c214f00434f3e283f5c06669dfe2670acc0aa58bcee5d67f97d"
+    }
+  },
+  "app_icon": {
+    "width": 1024,
+    "height": 1024,
+    "bit_depth": 8,
+    "color_type": 2,
+    "sha256": "01002bc1635406c636473548ebfcf37aff70e61fd1b48327be9b57a1c1903f59"
+  },
+  "metadata_lengths": {
+    "zh-Hans": {
+      "subtitle_characters": 12,
+      "promotional_text_characters": 77,
+      "description_characters": 1197,
+      "keyword_utf8_bytes": 90,
+      "whats_new_characters": 227
+    },
+    "en-US": {
+      "subtitle_characters": 27,
+      "promotional_text_characters": 161,
+      "description_characters": 3613,
+      "keyword_utf8_bytes": 90,
+      "whats_new_characters": 840
+    }
+  },
+  "local_html_references": 30,
+  "capture_test_result": "Passed",
+  "capture_test_count": 1,
+  "browser_proof": {
+    "path": "preview-desktop.png",
+    "sha256": "474cc5351a81e34be52bc4e72b7e35c702b9631817c31381d14f332e49178674"
+  },
+  "publication": "local_asset_validation_only; live submission status is in app-store-release-1.4-8-20261104.json",
+  "release_archive": null
+}

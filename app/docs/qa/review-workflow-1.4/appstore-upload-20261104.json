@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-04",
+  "version": "1.4",
+  "build": "8",
+  "release_candidate": "RC2",
+  "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
+  "uploaded": false,
+  "apple_processing_state": null,
+  "app_review_submitted": false,
+  "status": "Final RC2 distribution export pending accessible Xcode account. Automatic export after reported unlock still returned No Accounts/no matching iOS Distribution private key. Manual export is incompatible with existing Xcode-managed store profile. No upload attempted.",
+  "local_logs": [
+    "app/build/v14-distribution-export-20261104-RC2-unlocked.log",
+    "app/build/v14-distribution-export-20261104-RC2-manual.log"
+  ],
+  "scope": "No credentials, private contact fields or signing artifacts included."
+}

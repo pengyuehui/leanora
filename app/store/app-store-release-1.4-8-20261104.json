@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Shanghai",
+  "version": "1.4",
+  "build": "8",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "status": "functional_qa_complete_final_rc2_export_pending",
+  "app_review_submitted": false,
+  "binary_uploaded": false,
+  "publicly_released_by_this_run": false,
+  "release_method": "manual_after_approval",
+  "previous_version": {
+    "version": "1.3",
+    "apple_state_observed": "READY_FOR_DISTRIBUTION",
+    "observed_date": "2026-11-04",
+    "release_action_performed_by_this_run": false,
+    "new_version_created_without_withdrawing_previous": true
+  },
+  "version_record_created": true,
+  "metadata_proof": "../docs/qa/review-workflow-1.4/appstore-metadata-proof-20261104.json",
+  "local_distribution_audit": "../docs/qa/review-workflow-1.4/distribution-audit-20261104.json",
+  "privacy": {
+    "new_permission_categories": false,
+    "new_data_collection": false,
+    "policy_url": "https://leanora.ai/fitness/privacy/",
+    "support_url": "https://leanora.ai/fitness/support/",
+    "public_site_check": "../docs/qa/review-workflow-1.4/public-websites-20261104.json"
+  },
+  "screenshots_status": "14 native screenshot compositions locally validated. Medium 7 uploaded and sorted with all previews loaded; large inherited associations removed, replacement upload pending Mac unlock.",
+  "final_release_candidate": "RC2",
+  "final_archive": "app/build/ReleaseCandidate/Leanora-1.4-8-RC2.xcarchive",
+  "source_inputs_matching_snapshot": 1866,
+  "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
+  "source_proof": "../docs/qa/review-workflow-1.4/release-source-proof-20261104.json"
+}
