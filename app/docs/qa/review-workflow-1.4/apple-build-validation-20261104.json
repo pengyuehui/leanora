@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-04",
+  "version": "1.4",
+  "build": "8",
+  "apple_build_id": "8c9c36c0-a4ce-4061-8ccb-ec97d833e4c9",
+  "fields": [
+    {
+      "term": "App 名称",
+      "value": "Leanora Fitness"
+    },
+    {
+      "term": "二进制文件状态",
+      "value": "已验证"
+    },
+    {
+      "term": "套装简短版本字符串",
+      "value": "1.4"
+    },
+    {
+      "term": "上传日期",
+      "value": "2026年11月4日下午3:04"
+    },
+    {
+      "term": "构建版本 SDK",
+      "value": "24B8118"
+    },
+    {
+      "term": "套装版本字符串",
+      "value": "8"
+    },
+    {
+      "term": "原文件名",
+      "value": "407cea88-894c-4fba-9ae2-3185cf45434a.ipa"
+    },
+    {
+      "term": "构建版本平台",
+      "value": "24B8118"
+    },
+    {
+      "term": "套装 ID",
+      "value": "ai.leanora.fitness"
+    },
+    {
+      "term": "压缩文件大小",
+      "value": "78.4 MB | App 文件大小"
+    },
+    {
+      "term": "按需资源",
+      "value": "否"
+    },
+    {
+      "term": "包含符号",
+      "value": "是"
+    },
+    {
+      "term": "App 使用非豁免类加密",
+      "value": "否"
+    },
+    {
+      "term": "SiriKit",
+      "value": "否"
+    },
+    {
+      "term": "仅适用于 Apple Watch 的 App",
+      "value": "否"
+    },
+    {
+      "term": "包含 iMessage App",
+      "value": "否"
+    },
+    {
+      "term": "包含贴纸",
+      "value": "否"
+    },
+    {
+      "term": "已隐藏 App 图标",
+      "value": "否"
+    },
+    {
+      "term": "最低 iOS 版本",
+      "value": "18.0"
+    },
+    {
+      "term": "最低 macOS 版本",
+      "value": "15.0"
+    },
+    {
+      "term": "visionOS 最低版本",
+      "value": "2.0"
+    },
+    {
+      "term": "LS 最低系统版本",
+      "value": "-"
+    },
+    {
+      "term": "支持的架构",
+      "value": "arm64"
+    },
+    {
+      "term": "设备协议",
+      "value": "-"
+    },
+    {
+      "term": "设备系列",
+      "value": "iPhone"
+    },
+    {
+      "term": "所需性能",
+      "value": "arm64"
+    },
+    {
+      "term": "本地化版本",
+      "value": "中文（简体）"
+    },
+    {
+      "term": "权限",
+      "value": "Leanora.app/Leanora\n    application-identifier: 8ZP3NMT2A8.ai.leanora.fitness\n    com.apple.developer.healthkit.background-delivery: true\n    beta-reports-active: true\n    get-task-allow: false\n    com.apple.developer.healthkit: true\n    com.apple.developer.team-identifier: 8ZP3NMT2A8"
+    },
+    {
+      "term": "报刊杂志 App",
+      "value": "否"
+    },
+    {
+      "term": "预呈现图标旗标",
+      "value": "是"
+    }
+  ],
+  "state_text": "已验证",
+  "state": "VALIDATED"
+}

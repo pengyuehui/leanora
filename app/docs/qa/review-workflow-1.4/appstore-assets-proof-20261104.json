@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-04",
+  "version": "1.4",
+  "locale": "zh-Hans",
+  "checked_after_reload": true,
+  "medium": [
+    {
+      "complete": true,
+      "name": "截屏 01-today.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 02-calendar.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 03-workout.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 04-nutrition.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 05-progress.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 06-copy.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 07-health.png",
+      "width": 331
+    }
+  ],
+  "large": [
+    {
+      "complete": true,
+      "name": "截屏 01-today.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 02-calendar.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 03-workout.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 04-nutrition.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 05-progress.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 06-copy.png",
+      "width": 331
+    },
+    {
+      "complete": true,
+      "name": "截屏 07-health.png",
+      "width": 331
+    }
+  ],
+  "complete": true
+}

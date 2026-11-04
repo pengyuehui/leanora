@@ -1,9 +1,11 @@
 {
   "date": "2026-11-04",
+  "release_candidate": "RC2",
+  "usable_for_upload": true,
   "version": "1.4",
   "build": "8",
-  "scope": "Historical RC1 local distribution audit only; superseded by RC2 after unknown-cardio-distance correction. RC2 export and audit pending.",
-  "ipa_sha256": "ec129169a33935c25f689537111c4c01879ade8c0f09cc5e0bc1a3532f1cc522",
+  "scope": "Final RC2 IPA exported from the successful Xcode Organizer upload. Strict signature/resource audit passed; Apple submission is recorded separately.",
+  "ipa_sha256": "416708836f8c7dc52f5de26a8b43d12e4c9200f32d3094e5f03a91c095774672",
   "bundle_id": "ai.leanora.fitness",
   "team_id": "8ZP3NMT2A8",
   "signing_identity": "Apple Distribution: Manyao Li (8ZP3NMT2A8)",
@@ -32,13 +34,24 @@
     "Store capture:",
     "createStoreSamples",
     "injectCommitFailure",
-    "UITestBackupFixtures"
+    "UITestBackupFixtures",
+    "--review-cardio-samples",
+    "有氧记录验证"
   ],
   "privacy_url_present": true,
-  "immutable_source_manifest": "app/build/v14-release-source-manifest-RC1.json",
-  "final_source_commit_comparison": "pending QA completion and feature fix commit",
-  "uploaded": false,
-  "release_candidate": "RC1",
-  "superseded_by": "RC2",
-  "usable_for_upload": false
+  "immutable_source_manifest": "app/build/v14-release-source-manifest-RC2.json",
+  "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
+  "final_source_commit_comparison": "1866 application/project inputs match commit; see release-source-proof-20261104.json",
+  "uploaded": true,
+  "upload_method": "Xcode Organizer standard App Store Connect, followed by Export of the same completed distribution",
+  "export_options": {
+    "method": "app-store-connect",
+    "destination": "upload",
+    "teamID": "8ZP3NMT2A8",
+    "signingStyle": "automatic",
+    "testFlightInternalTestingOnly": false,
+    "uploadSymbols": true,
+    "manageAppVersionAndBuildNumber": true
+  },
+  "uploaded_version_verified": "Exported IPA Info.plist retains version 1.4 and build 8 after automatic upload."
 }

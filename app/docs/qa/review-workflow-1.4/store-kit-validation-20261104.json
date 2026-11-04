@@ -183,5 +183,20 @@
     "sha256": "474cc5351a81e34be52bc4e72b7e35c702b9631817c31381d14f332e49178674"
   },
   "publication": "local_asset_validation_only; live submission status is in app-store-release-1.4-8-20261104.json",
-  "release_archive": null
+  "release_archive": {
+    "app_path": "build/Audit/Leanora-1.4-8-RC2/Payload/Leanora.app",
+    "bundle_id": "ai.leanora.fitness",
+    "version": "1.4",
+    "build": "8",
+    "minimum_os": "18.0",
+    "executable_sha256": "f5313311d2f0adb5c1640a35b8692b0d3c925365cd2edd2542b1caee79a1ef83",
+    "debug_markers_absent": [
+      "--store-screenshots",
+      "Store capture:",
+      "createStoreSamples",
+      "上肢力量 A"
+    ],
+    "signed": false,
+    "uploaded": false
+  }
 }

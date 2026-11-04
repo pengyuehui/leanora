@@ -42,5 +42,7 @@
   ],
   "large_count": 0,
   "complete": false,
-  "scope": "Medium uploaded and sorted; inherited large screenshot associations removed, replacement native picker pending Mac unlock."
+  "scope": "Medium uploaded and sorted; inherited large screenshot associations removed, replacement native picker pending Mac unlock.",
+  "historical_progress_only": true,
+  "superseded_by": "appstore-assets-proof-20261104.json"
 }

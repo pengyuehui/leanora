@@ -7,9 +7,9 @@
   "apple_app_id": "6825234654",
   "bundle_id": "ai.leanora.fitness",
   "team_id": "8ZP3NMT2A8",
-  "status": "functional_qa_complete_final_rc2_export_pending",
-  "app_review_submitted": false,
-  "binary_uploaded": false,
+  "status": "WAITING_FOR_REVIEW",
+  "app_review_submitted": true,
+  "binary_uploaded": true,
   "publicly_released_by_this_run": false,
   "release_method": "manual_after_approval",
   "previous_version": {
@@ -29,10 +29,29 @@
     "support_url": "https://leanora.ai/fitness/support/",
     "public_site_check": "../docs/qa/review-workflow-1.4/public-websites-20261104.json"
   },
-  "screenshots_status": "14 native screenshot compositions locally validated. Medium 7 uploaded and sorted with all previews loaded; large inherited associations removed, replacement upload pending Mac unlock.",
+  "screenshots_status": "Both 7-image sets reloaded; all 14 complete with nonzero natural width in expected 01–07 order.",
   "final_release_candidate": "RC2",
   "final_archive": "app/build/ReleaseCandidate/Leanora-1.4-8-RC2.xcarchive",
   "source_inputs_matching_snapshot": 1866,
   "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
-  "source_proof": "../docs/qa/review-workflow-1.4/release-source-proof-20261104.json"
+  "source_proof": "../docs/qa/review-workflow-1.4/release-source-proof-20261104.json",
+  "apple_build_id": "8c9c36c0-a4ce-4061-8ccb-ec97d833e4c9",
+  "screenshot_proof": "../docs/qa/review-workflow-1.4/appstore-assets-proof-20261104.json",
+  "upload_record": "../docs/qa/review-workflow-1.4/appstore-upload-20261104.json",
+  "ipa_sha256": "416708836f8c7dc52f5de26a8b43d12e4c9200f32d3094e5f03a91c095774672",
+  "export_path": "app/build/Exports/Leanora-1.4-8-20261104-RC2-GUI/Leanora.ipa",
+  "submitted_at": "2026-11-04T15:16:00+08:00",
+  "submission_id": "00e0e729-e71e-4363-9591-5cd05454ee98",
+  "review_url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/reviewsubmissions/details/00e0e729-e71e-4363-9591-5cd05454ee98",
+  "apple_binary_state": "VALIDATED",
+  "apple_uploaded_at": "2026-11-04T15:04:00+08:00",
+  "app_review_receipt": "../docs/qa/review-workflow-1.4/appstore-submission-20261104.json",
+  "waiting_review_screenshot": "../docs/qa/review-workflow-1.4/appstore-waiting-review-20261104.png",
+  "plan_units_completed": [
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5"
+  ]
 }

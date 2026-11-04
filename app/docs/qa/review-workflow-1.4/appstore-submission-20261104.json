@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Shanghai",
+  "version": "1.4",
+  "build": "8",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "state": "WAITING_FOR_REVIEW",
+  "state_text": "等待审核",
+  "app_review_submitted": true,
+  "submitted_at": "2026-11-04T15:16:00+08:00",
+  "timestamp_precision": "minute, as displayed by Apple",
+  "submission_id": "00e0e729-e71e-4363-9591-5cd05454ee98",
+  "apple_build_id": "8c9c36c0-a4ce-4061-8ccb-ec97d833e4c9",
+  "review_url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/reviewsubmissions/details/00e0e729-e71e-4363-9591-5cd05454ee98",
+  "release_method": "manual_after_approval",
+  "publicly_released_by_this_run": false,
+  "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
+  "screenshots": "appstore-assets-proof-20261104.json",
+  "binary_validation": "apple-build-validation-20261104.json",
+  "receipt_screenshot": "appstore-waiting-review-20261104.png"
+}

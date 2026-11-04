@@ -2,7 +2,7 @@
   "date": "2026-11-04",
   "version": "1.4",
   "build": "8",
-  "status": "core_and_native_verified_distribution_candidate",
+  "status": "submitted_waiting_for_review",
   "foundation": {
     "executed": 150,
     "passed": 148,
@@ -142,5 +142,29 @@
     "Real VoiceOver acceptance",
     "Professional coaching/nutrition review",
     "App Review approval for 1.4"
-  ]
+  ],
+  "distribution": {
+    "release_candidate": "RC2",
+    "archive_succeeded": true,
+    "ipa_strict_audit": "distribution-audit-20261104.json",
+    "release_source_inputs_verified": 1866,
+    "source_commit": "886b5a1eab3546063fd9c6d8365db681d3bb5a5c",
+    "source_proof": "release-source-proof-20261104.json",
+    "uploaded": true,
+    "apple_binary_state": "VALIDATED",
+    "server_proof": "apple-build-validation-20261104.json",
+    "app_review_state": "WAITING_FOR_REVIEW",
+    "submitted_at": "2026-11-04T15:16:00+08:00",
+    "receipt": "appstore-submission-20261104.json",
+    "release_method": "manual_after_approval",
+    "publicly_released_by_this_run": false
+  },
+  "store": {
+    "new_native_sources": 7,
+    "exported_screenshots": 14,
+    "server_previews_loaded_after_reload": 14,
+    "expected_order_verified": true,
+    "proof": "appstore-assets-proof-20261104.json",
+    "metadata_proof": "appstore-metadata-proof-20261104.json"
+  }
 }
