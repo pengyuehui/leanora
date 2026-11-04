@@ -13,7 +13,12 @@ struct ExerciseProgressEntry: Identifiable, Sendable {
     var bestLoadKg: Double? { measurement == .externalLoad ? sets.compactMap(\.loadKg).max() : nil }
     var repetitions: Int { sets.reduce(0) { $0 + ($1.repetitions ?? 0) } }
     var duration: Double { sets.reduce(0) { $0 + ($1.durationSeconds ?? 0) } }
-    var distance: Double { sets.reduce(0) { $0 + ($1.distanceMeters ?? 0) } }
+    var missingDistance: Int { measurement == .cardio ? sets.filter { $0.distanceMeters == nil }.count : 0 }
+    var distance: Double? {
+        guard measurement == .cardio else { return nil }
+        let known = sets.compactMap(\.distanceMeters)
+        return known.isEmpty ? nil : known.reduce(0, +)
+    }
 }
 
 enum ExerciseProgress {

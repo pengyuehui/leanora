@@ -1,30 +1,120 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "version": "1.4",
   "build": "8",
-  "status": "core_verified_native_ui_and_distribution_blocked",
+  "status": "core_and_native_verified_distribution_candidate",
   "foundation": {
-    "executed": 149,
-    "passed": 147,
+    "executed": 150,
+    "passed": 148,
     "skipped": 2,
     "failures": 0,
-    "new_tests": 11,
-    "log": "app/build/v14-core-5.log",
-    "sha256": "5fa1011af0d0da0de04708808fa0ba130950ffe39d05198768863bd966380c0b",
-    "skip_scope": "Two existing opt-in capacity tests"
-  },
-  "build_for_testing": {
-    "status": "succeeded",
-    "log": "app/build/v14-build-3.log",
-    "scope": "Application, foundation and native UI test targets compile for generic iOS Simulator. This does not execute UI tests.",
-    "xcode": "27.2 (27B52)"
+    "new_tests": 12,
+    "log": "app/build/v14-core-20261104-final.log",
+    "sha256": "1ed98b8979afa05e61f08be8aa4adcde2b4122267a9cfdfd18252d5f6f387e28",
+    "skip_scope": "Two pre-existing opt-in capacity tests"
   },
   "native_ui": {
-    "status": "not_executed_environment_blocked",
-    "attempt_log": "app/build/v14-ui-1.log",
-    "required_tests": "LeanoraUITests/ReviewWorkflowTests (4 cases) and StoreScreenshotTests; previous workflow regression pending",
-    "reason": "CoreSimulator 1174.9.2 is older than Xcode required 1174.21.0; Mac locked, first-launch component update pending",
-    "screenshots_generated_this_version": false
+    "final_unique_passing_cases": 10,
+    "functional_cases": 8,
+    "capture_cases": 2,
+    "scope": "Final passing cases across batches 4, 6 and 7, not a single all-green full suite. The later cardio-only unknown-distance correction is covered by batch 7 and the final core suite; other captured screens and behaviors are unchanged.",
+    "cases": {
+      "DataManagementTests/testRealFileImportPreviewsCommitsAndSurvivesRelaunch()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-4.xcresult",
+        "duration_seconds": 47.83214497566223
+      },
+      "NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-4.xcresult",
+        "duration_seconds": 107.89997291564941
+      },
+      "ReviewWorkflowTests/testCalendarWeekNavigationAndSelectedDayDiary()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-4.xcresult",
+        "duration_seconds": 193.48777198791504
+      },
+      "ReviewWorkflowTests/testExerciseHistoryComparisonAndSourceWorkout()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-4.xcresult",
+        "duration_seconds": 37.405802965164185
+      },
+      "StoreScreenshotTests/testCaptureChineseStoreScreenshots()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-4.xcresult",
+        "duration_seconds": 61.01334500312805
+      },
+      "TrainingWorkflowTests/testFreeWorkoutFinishTemplateRepeatAndPreviousValuesSurviveRelaunch()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-4.xcresult",
+        "duration_seconds": 174.95732498168945
+      },
+      "ReviewWorkflowTests/testCaptureCopyDayPreviewForStore()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-6.xcresult",
+        "duration_seconds": 132.9150470495224
+      },
+      "ReviewWorkflowTests/testCopyDayPreviewCancelCommitAndRelaunch()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-6.xcresult",
+        "duration_seconds": 137.46046102046967
+      },
+      "ReviewWorkflowTests/testLargeDarkReviewAndCopyFlow()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-6.xcresult",
+        "duration_seconds": 104.00158298015594
+      },
+      "ReviewWorkflowTests/testCardioHistoryKeepsMissingDistanceUnknown()": {
+        "result": "Passed",
+        "result_bundle": "app/build/V14-20261104-7.xcresult",
+        "duration_seconds": 20.587126970291138
+      }
+    },
+    "environment": {
+      "xcode": "27.2 (27B52)",
+      "core_simulator": "1174.21",
+      "runtime": "iOS 27.1 (24A94425)",
+      "device": "iPhone Duo, isolated Leanora 1.2 QA",
+      "device_id": "420BC5C8-6A0C-4403-AFD4-26C33E23801C"
+    },
+    "earlier_batches": [
+      {
+        "batch": 1,
+        "passed": 2,
+        "failed": 3,
+        "reason": "Footer and toolbar visibility assumptions, short drag/large font navigation under diagnosis."
+      },
+      {
+        "batch": 2,
+        "reason": "CoreSimulator stale host-support/runtime mount, no final pass evidence."
+      },
+      {
+        "batch": "regression-1",
+        "reason": "Stale runtime mount/channel disconnected, no final pass evidence."
+      },
+      {
+        "batch": 3,
+        "reason": "Interrupted diagnostic batch after scroll behavior was identified; not used as pass evidence."
+      },
+      {
+        "batch": 4,
+        "passed": 6,
+        "failed": 2,
+        "reason": "Whole-row switch tap did not toggle the native thumb; large rows required visible-intersection hit testing."
+      },
+      {
+        "batch": 5,
+        "passed": 0,
+        "failed": 2,
+        "reason": "Harness read an identifier of a virtualized, absent element; fixed with existence guard."
+      }
+    ],
+    "harness_fixes": [
+      "Native switch child activated, then value asserted before preview.",
+      "Sticky footer and toolbar geometry handled separately.",
+      "44pt hittable intersection accepted for accessibility rows taller than viewport.",
+      "No identifier access before virtualized element exists."
+    ]
   },
   "catalogs": {
     "exercise_validation": {
@@ -42,35 +132,15 @@
       "legacy_values_preserved": 300,
       "official_source_all_values_checked": true
     },
-    "food_validation_scope": "Official source ZIP and all 500 bundled nutrient/portion values checked; date field in legacy validation output is the catalog date."
-  },
-  "archive": {
-    "status": "local_archive_succeeded_not_distribution_export",
-    "bundle_id": "ai.leanora.fitness",
-    "version": "1.4",
-    "build": "8",
-    "log": "app/build/v14-signed-archive-1.log",
-    "scope": "Development-signed candidate of current workspace. Final immutable release archive must be rebuilt after native verification; unrelated localization baseline not submitted."
-  },
-  "export": {
-    "status": "failed",
-    "log": "app/build/v14-distribution-export-1.log",
-    "reasons": [
-      "No Accounts",
-      "No matching iOS Distribution signing certificate with private key for team 8ZP3NMT2A8"
-    ],
-    "uploaded": false
+    "scope": "All 500 foods compared to official ZIP, legacy values preserved, 1765 media hashes/credits checked."
   },
   "review": "review.json",
-  "unrelated_baseline_preserved": [
-    "app/ios/Leanora/Resources/Info.plist",
-    "app/ios/Leanora/Resources/Localizable.xcstrings",
-    "Existing project file adjustments preserved in working tree; isolated feature project changes staged separately."
-  ],
+  "distribution_audit": "distribution-audit-20261104.json",
+  "native_screenshot_source_version": "1.4",
   "not_claimed": [
-    "Native UI pass",
-    "New store screenshots",
-    "Physical-device HealthKit acceptance",
-    "App Store build validation or review submission for 1.4"
+    "Physical-device HealthKit or minimum-iOS-18 acceptance",
+    "Real VoiceOver acceptance",
+    "Professional coaching/nutrition review",
+    "App Review approval for 1.4"
   ]
 }

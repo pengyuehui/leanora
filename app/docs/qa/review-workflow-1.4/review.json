@@ -1,12 +1,33 @@
 {
   "date": "2026-11-03",
   "review_mode": "sequential_main_thread",
-  "reviewers": ["correctness", "adversarial"],
+  "reviewers": [
+    "correctness",
+    "adversarial"
+  ],
   "adversarial_depth": "deep",
   "findings": [],
   "resolved_during_review": [
-    {"scenario":"Changing dates or meal selection while an asynchronous copy commit is in flight can make the form describe a different batch than the one being saved.","resolution":"Disable form inputs and cancel while JournalStore.busy; preserve the prepared UUID batch on errors."},
-    {"scenario":"Navigation from Today can inherit a hidden navigation bar, leaving the new review page without a discoverable return control.","resolution":"Explicitly show the navigation bar on JournalReviewView."}
+    {
+      "scenario": "Changing dates or meal selection while an asynchronous copy commit is in flight can make the form describe a different batch than the one being saved.",
+      "resolution": "Disable form inputs and cancel while JournalStore.busy; preserve the prepared UUID batch on errors."
+    },
+    {
+      "scenario": "Navigation from Today can inherit a hidden navigation bar, leaving the new review page without a discoverable return control.",
+      "resolution": "Explicitly show the navigation bar on JournalReviewView."
+    },
+    {
+      "scenario": "At accessibility text sizes, week navigation labels wrap into multiple lines and a nested horizontal date strip intercepts vertical page gestures.",
+      "resolution": "Use icon-only previous/next labels at accessibility sizes and an adaptive date grid with 44pt minimum targets."
+    },
+    {
+      "scenario": "A chart category based on UUID exposes internal record identifiers in accessibility.",
+      "resolution": "Use chronological numeric positions and explicit date, workout name and volume accessibility labels."
+    },
+    {
+      "scenario": "A completed cardio working set may have no distance. Summing nil as zero displayed a false 0m total and difference.",
+      "resolution": "Distance totals are optional and carry a missing count; UI says unrecorded/partial and withholds comparison unless both sessions are complete. Verified in foundation and native batch 7."
+    }
   ],
   "traced_scenarios": [
     "Rapid confirm taps are guarded by the journal busy flag and stable-ID repository replay equality.",
@@ -17,6 +38,11 @@
     "Archived or changed-type exercises do not mix measurement kinds; deleted or abandoned sessions do not create progress.",
     "Unknown calories or absent dates are excluded from the mean denominator rather than imputed as zero."
   ],
-  "testing_gaps": ["Native UI test execution blocked by Xcode 27.2/CoreSimulator version mismatch pending first-launch component update.","No new physical-device HealthKit, minimum-iOS-18 or real VoiceOver acceptance claimed."],
-  "residual_risks": ["Repeated intentionally confirmed copies after reopening are separate batches; existing-target count and additive-copy warning remain visible.","A native UI review is still required before upload or formal review submission."]
+  "testing_gaps": [
+    "Physical-device HealthKit, minimum-iOS-18 and real VoiceOver acceptance are not newly claimed."
+  ],
+  "residual_risks": [
+    "Repeated intentionally confirmed copies after reopening are separate batches; existing-target count and additive-copy warning remain visible."
+  ],
+  "updated_date": "2026-11-04"
 }

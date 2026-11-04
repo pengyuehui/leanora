@@ -10,10 +10,27 @@ import XCTest
         return app
     }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
-        func visible() -> Bool { element.exists && element.isHittable && element.frame.maxY < app.frame.maxY - 80 && element.frame.minY > 70 }
+        func visible() -> Bool {
+            guard element.exists, element.isHittable else { return false }
+            if ["workout.close", "dayCopy.cancel"].contains(element.identifier) { return true }
+            var bottom = app.frame.maxY - 40
+            let confirm = app.buttons["dayCopy.confirm"]
+            if element.identifier == "dayCopy.confirm" { bottom = app.frame.maxY - 5 }
+            else if confirm.exists && confirm.isHittable { bottom = min(bottom, confirm.frame.minY - 5) }
+            // Accessibility-sized rows may be taller than the viewport. A
+            // hittable 44pt intersection is sufficient to activate a link.
+            return min(element.frame.maxY, bottom) - max(element.frame.minY, 70) >= min(44, element.frame.height)
+        }
+        func scroll(up: Bool) {
+            let confirm = app.buttons["dayCopy.confirm"]
+            let bottom = confirm.exists && confirm.isHittable ? min(0.76, (confirm.frame.minY - 20) / app.frame.height) : 0.76
+            app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: up ? bottom : 0.22))
+                .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: up ? 0.22 : bottom)), withVelocity: .fast, thenHoldForDuration: 0.1)
+        }
         if element.waitForExistence(timeout: 4), visible() { return }
-        for _ in 0..<16 { if visible() { return }; app.swipeUp() }
-        for _ in 0..<20 { if visible() { return }; app.swipeDown() }
+        let header = element.exists && ["review.previous", "review.next", "review.today"].contains(element.identifier)
+        for _ in 0..<50 { if visible() { return }; scroll(up: !header) }
+        for _ in 0..<35 { if visible() { return }; scroll(up: header) }
         XCTFail("Cannot reveal \(element)\n\(app.debugDescription)")
     }
     private func tap(_ element: XCUIElement, _ app: XCUIApplication) { reveal(element, app); element.tap() }
@@ -27,12 +44,38 @@ import XCTest
     private func today() -> String {
         let f = DateFormatter(); f.dateFormat = "yyyy-MM-dd"; return f.string(from: Date())
     }
+    func testCardioHistoryKeepsMissingDistanceUnknown() {
+        let app = launch(extra: ["--review-cardio-samples"])
+        app.buttons["训练"].tap(); tap(app.buttons["training.library"], app)
+        let search = app.searchFields.firstMatch; XCTAssertTrue(search.waitForExistence(timeout: 8))
+        search.tap(); search.typeText("有氧记录验证")
+        let done = app.keyboards.buttons.matching(NSPredicate(format: "label IN %@", ["Search", "搜索"])).firstMatch
+        if done.exists { done.tap() }
+        tap(app.buttons["exercise.row.有氧记录验证"], app); tap(app.buttons["exercise.progress"], app)
+        let distance = app.descendants(matching: .any).matching(identifier: "progress.distance").firstMatch
+        reveal(distance, app)
+        XCTAssertTrue(distance.label.contains("未记录"), app.debugDescription)
+        reveal(app.staticTexts["距离记录不完整，暂不比较差值"], app)
+        capture(app, "v14-cardio-unknown-distance")
+    }
+    func testCaptureCopyDayPreviewForStore() {
+        let app = launch(); tap(app.buttons["today.review"], app); tap(app.buttons["review.copy"], app)
+        tap(app.buttons["dayCopy.confirm"], app)
+        XCTAssertTrue(app.buttons["dayCopy.confirm"].label.contains("6"))
+        reveal(app.staticTexts["复制预览 · 6 项"], app)
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: 0.60))
+            .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.42, dy: 0.25)), withVelocity: .slow, thenHoldForDuration: 0.1)
+        capture(app, "v14-day-copy-details")
+        tap(app.buttons["dayCopy.cancel"], app)
+        XCTAssertTrue(app.buttons["dayCopy.cancel"].waitForNonExistence(timeout: 8))
+    }
     func testCalendarWeekNavigationAndSelectedDayDiary() {
         let app = launch(); tap(app.buttons["today.review"], app)
         XCTAssertTrue(app.staticTexts["review.title"].waitForExistence(timeout: 8))
         XCTAssertTrue(app.buttons["review.day.\(today())"].exists)
         capture(app, "v14-calendar-review")
         tap(app.buttons["review.previous"], app)
+        reveal(app.staticTexts["这一天没有已结束训练"], app)
         tap(app.buttons["review.next"], app)
         tap(app.buttons["review.today"], app)
         tap(app.buttons["review.diary"], app)
@@ -50,7 +93,10 @@ import XCTest
         tap(app.buttons["dayCopy.cancel"], app)
         XCTAssertTrue(app.buttons["dayCopy.cancel"].waitForNonExistence(timeout: 8))
         tap(app.buttons["review.copy"], app)
-        tap(app.switches["dayCopy.meal.snack"], app)
+        let snack = app.switches["dayCopy.meal.snack"]
+        reveal(snack, app)
+        snack.switches.firstMatch.tap()
+        XCTAssertEqual(snack.value as? String, "0")
         tap(app.buttons["dayCopy.confirm"], app)
         XCTAssertTrue(app.buttons["dayCopy.confirm"].label.contains("5"), app.debugDescription)
         tap(app.buttons["dayCopy.confirm"], app)

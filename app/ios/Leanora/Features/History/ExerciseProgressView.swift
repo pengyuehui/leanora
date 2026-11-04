@@ -35,15 +35,20 @@ struct ExerciseProgressView: View {
                         case .duration: delta("实际时长变化", latest.duration - prior.duration, "秒")
                         case .cardio:
                             delta("实际时长变化", latest.duration - prior.duration, "秒")
-                            delta("实际距离变化", latest.distance - prior.distance, "m")
+                            if let a = latest.distance, let b = prior.distance, latest.missingDistance == 0, prior.missingDistance == 0 {
+                                delta("实际距离变化", a - b, "m")
+                            } else { Text("距离记录不完整，暂不比较差值").font(.caption).foregroundStyle(.secondary) }
                         }
                         Text("差值描述记录变化，不自动判断训练效果；动作幅度、器械和组数也会影响比较。").font(.caption).foregroundStyle(.secondary)
                     }.accessibilityIdentifier("progress.comparison")
                 } else { Section { Text("再完成一次同类型动作后，可查看两次记录的差异。").foregroundStyle(.secondary) } }
                 if measurement == .externalLoad, rows.count > 1 {
                     Section("最近 20 次正式组容量") {
-                        Chart(Array(rows.prefix(20).reversed())) { row in
-                            BarMark(x: .value("训练", row.id.uuidString), y: .value("容量", (row.volumeKg ?? 0) / divisor)).foregroundStyle(LeanoraTheme.accent)
+                        Chart(Array(rows.prefix(20).reversed().enumerated()), id: \.element.id) { index, row in
+                            BarMark(x: .value("训练顺序", index), y: .value("容量", (row.volumeKg ?? 0) / divisor))
+                                .foregroundStyle(LeanoraTheme.accent)
+                                .accessibilityLabel("\(row.session.started.localDate)，\(row.session.name)")
+                                .accessibilityValue("正式组容量 \(((row.volumeKg ?? 0) / divisor).formatted()) \(unit)·次")
                         }.chartXAxis(.hidden).frame(height: 140).accessibilityLabel("按先后排列的最近正式组容量，单位 \(unit)·次。下方逐次记录提供日期和数值。")
                     }
                 }
@@ -81,7 +86,9 @@ struct ExerciseProgressView: View {
         case .duration: LabeledContent("实际时长", value: "\(row.duration.formatted()) 秒")
         case .cardio:
             LabeledContent("实际时长", value: "\(row.duration.formatted()) 秒")
-            LabeledContent("实际距离", value: "\(row.distance.formatted()) m")
+            LabeledContent("已记录距离", value: row.distance.map { "\($0.formatted()) m\(row.missingDistance > 0 ? "（部分）" : "")" } ?? "未记录")
+                .accessibilityElement(children: .combine).accessibilityIdentifier("progress.distance")
+            if row.missingDistance > 0 { Text("\(row.missingDistance) 个正式组未记录距离").font(.caption).foregroundStyle(.secondary) }
         }
     }
     private func delta(_ title: String, _ value: Double, _ suffix: String) -> some View {

@@ -6,6 +6,7 @@ enum UITestBackupFixtures {
         let arguments = ProcessInfo.processInfo.arguments
         if arguments.contains("--uitesting"), arguments.contains("--store-screenshots") {
             try await createStoreSamples(for: repository)
+            if arguments.contains("--review-cardio-samples") { try await createCardioReviewSamples(for: repository) }
             return
         }
         guard arguments.contains("--uitesting"), arguments.contains("--backup-fixtures") else { return }
@@ -22,6 +23,20 @@ enum UITestBackupFixtures {
     }
 
     // Synthetic records in the isolated UI-test database. No Health data or grants.
+    private static func createCardioReviewSamples(for repository: AppModelActor) async throws {
+        guard !(try await repository.snapshot()).contains(where: { if case .exercise(let v) = $0 { return v.name == "有氧记录验证" }; return false }) else { return }
+        let exercise = Exercise(name: "有氧记录验证", measurement: .cardio)
+        var records: [BusinessRecord] = [.exercise(exercise)]
+        for offset in [2, 1] {
+            let date = Calendar.current.date(byAdding: .day, value: -offset, to: Date())!
+            records.append(.session(WorkoutSession(started: RecordMoment(date), endedAt: date.addingTimeInterval(120), status: .completed,
+                name: "有氧示例", exercises: [SessionExercise(order: 0, snapshot: ExerciseSnapshot(exercise), sets: [
+                    WorkoutSet(order: 0, durationSeconds: 60, completedAt: date.addingTimeInterval(60))
+                ])])))
+        }
+        try await repository.save(records)
+    }
+
     private static func createStoreSamples(for repository: AppModelActor) async throws {
         guard try await repository.snapshot().allSatisfy({ ["profile", "goal"].contains($0.kind) }) else { return }
         let now = Date(), calendar = Calendar.current

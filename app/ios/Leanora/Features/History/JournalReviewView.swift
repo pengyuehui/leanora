@@ -4,6 +4,7 @@ struct JournalReviewView: View {
     @Environment(TrainingStore.self) private var training
     @Environment(JournalStore.self) private var journal
     @Environment(AppPreferences.self) private var preferences
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var date = Date()
     @State private var opened: WorkoutSession?
     @State private var copying = false
@@ -19,39 +20,39 @@ struct JournalReviewView: View {
                 Text("每一天，都有迹可循").font(.title2.bold()).accessibilityIdentifier("review.title")
                 RecordDatePicker(title: "查看日期", selection: $date, components: .date).accessibilityIdentifier("review.date")
                 HStack {
-                    Button { shift(-7) } label: { Label("前一周", systemImage: "chevron.left") }.accessibilityIdentifier("review.previous")
+                    Button { shift(-7) } label: {
+                        if dynamicTypeSize.isAccessibilitySize { Image(systemName: "chevron.left").frame(minWidth: 44, minHeight: 44) }
+                        else { Label("前一周", systemImage: "chevron.left") }
+                    }.accessibilityLabel("前一周").accessibilityIdentifier("review.previous")
                     Spacer()
                     Button("今天") { date = Date() }.accessibilityIdentifier("review.today")
                     Spacer()
-                    Button { shift(7) } label: { Label("后一周", systemImage: "chevron.right") }.accessibilityIdentifier("review.next")
+                    Button { shift(7) } label: {
+                        if dynamicTypeSize.isAccessibilitySize { Image(systemName: "chevron.right").frame(minWidth: 44, minHeight: 44) }
+                        else { Label("后一周", systemImage: "chevron.right") }
+                    }.accessibilityLabel("后一周").accessibilityIdentifier("review.next")
                 }.frame(minHeight: 44).buttonStyle(.borderless)
-                ScrollViewReader { proxy in
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 8) {
-                            ForEach(Array(week.days.enumerated()), id: \.element.id) { index, value in
-                                Button { select(value.day) } label: {
-                                    VStack(spacing: 6) {
-                                        Text(["一", "二", "三", "四", "五", "六", "日"][index]).font(.caption)
-                                        Text(String(value.day.suffix(2))).font(.headline.monospacedDigit())
-                                        HStack(spacing: 3) {
-                                            if value.training.workouts > 0 { Image(systemName: "dumbbell.fill") }
-                                            if !value.entries.isEmpty { Image(systemName: "fork.knife") }
-                                            if !value.measurements.isEmpty { Image(systemName: "scalemass") }
-                                            if !value.hasRecords { Text("—") }
-                                        }.font(.caption2).frame(minHeight: 16)
-                                    }.frame(minWidth: 48, minHeight: 82).padding(.horizontal, 4)
-                                        .foregroundStyle(value.day == day ? LeanoraTheme.actionInk : .primary)
-                                        .background(value.day == day ? LeanoraTheme.accent : LeanoraTheme.canvas, in: RoundedRectangle(cornerRadius: 12))
-                                }.buttonStyle(.plain).id(value.day)
-                                    .accessibilityLabel("\(value.day)，\(value.training.workouts) 次完成训练，\(value.entries.count) 项饮食，\(value.measurements.count) 类身体记录")
-                                    .accessibilityAddTraits(value.day == day ? .isSelected : [])
-                                    .accessibilityIdentifier("review.day.\(value.day)")
-                            }
-                        }.padding(.vertical, 4)
-                    }.scrollIndicators(.hidden)
-                        .onAppear { proxy.scrollTo(day, anchor: .center) }
-                        .onChange(of: day) { proxy.scrollTo(day, anchor: .center) }
-                }
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: dynamicTypeSize.isAccessibilitySize ? 100 : 44), spacing: 4)], spacing: 8) {
+                    ForEach(Array(week.days.enumerated()), id: \.element.id) { index, value in
+                        Button { select(value.day) } label: {
+                            VStack(spacing: 6) {
+                                Text(["一", "二", "三", "四", "五", "六", "日"][index]).font(.caption)
+                                Text(String(value.day.suffix(2))).font(.headline.monospacedDigit())
+                                HStack(spacing: 3) {
+                                    if value.training.workouts > 0 { Image(systemName: "dumbbell.fill") }
+                                    if !value.entries.isEmpty { Image(systemName: "fork.knife") }
+                                    if !value.measurements.isEmpty { Image(systemName: "scalemass") }
+                                    if !value.hasRecords { Text("—") }
+                                }.font(.caption2).frame(minHeight: 16)
+                            }.frame(maxWidth: .infinity, minHeight: 82)
+                                .foregroundStyle(value.day == day ? LeanoraTheme.actionInk : .primary)
+                                .background(value.day == day ? LeanoraTheme.accent : LeanoraTheme.canvas, in: RoundedRectangle(cornerRadius: 12))
+                        }.buttonStyle(.plain).id(value.day)
+                            .accessibilityLabel("\(value.day)，\(value.training.workouts) 次完成训练，\(value.entries.count) 项饮食，\(value.measurements.count) 类身体记录")
+                            .accessibilityAddTraits(value.day == day ? .isSelected : [])
+                            .accessibilityIdentifier("review.day.\(value.day)")
+                    }
+                }.padding(.vertical, 4)
             }
             Section("这一周 · \(week.days.first?.day ?? "") 至 \(week.days.last?.day ?? "")") {
                 LabeledContent("训练天数 / 次数", value: "\(week.trainingDays) 天 / \(week.workouts) 次").accessibilityIdentifier("review.trainingCount")

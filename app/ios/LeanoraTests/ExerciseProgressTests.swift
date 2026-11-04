@@ -29,8 +29,21 @@ final class ExerciseProgressTests: XCTestCase {
             let value = session(exercise, at: date, sets: [WorkoutSet(order: 0, loadKg: 20, repetitions: 8, durationSeconds: 60, distanceMeters: 100, completedAt: date)])
             let row = try XCTUnwrap(ExerciseProgress.history(exerciseID: exercise.stamp.id, measurement: measurement, sessions: [value]).first)
             XCTAssertNil(row.volumeKg); XCTAssertNil(row.bestLoadKg)
-            XCTAssertEqual(row.repetitions, 8); XCTAssertEqual(row.duration, 60); XCTAssertEqual(row.distance, 100)
+            XCTAssertEqual(row.repetitions, 8); XCTAssertEqual(row.duration, 60)
+            XCTAssertEqual(row.distance, measurement == .cardio ? 100 : nil)
         }
+    }
+    func testMissingCardioDistanceIsUnknownAndPartialValuesStayPartial() throws {
+        let date = DataFixtures.date, exercise = Exercise(name: "有氧", measurement: .cardio)
+        var value = session(exercise, at: date, sets: [WorkoutSet(order: 0, durationSeconds: 60, completedAt: date)])
+        var row = try XCTUnwrap(ExerciseProgress.history(exerciseID: exercise.stamp.id, measurement: .cardio, sessions: [value]).first)
+        XCTAssertNil(row.distance); XCTAssertEqual(row.missingDistance, 1)
+        value.exercises[0].sets.append(WorkoutSet(order: 1, durationSeconds: 60, distanceMeters: 100, completedAt: date))
+        row = try XCTUnwrap(ExerciseProgress.history(exerciseID: exercise.stamp.id, measurement: .cardio, sessions: [value]).first)
+        XCTAssertEqual(row.distance, 100); XCTAssertEqual(row.missingDistance, 1)
+        value.exercises[0].sets[0].distanceMeters = 0
+        row = try XCTUnwrap(ExerciseProgress.history(exerciseID: exercise.stamp.id, measurement: .cardio, sessions: [value]).first)
+        XCTAssertEqual(row.distance, 100); XCTAssertEqual(row.missingDistance, 0)
     }
     func testHistoryIsNewestFirstAndRecomputesAfterSourceEditOrDelete() {
         let exercise = Exercise(name: "动作"), date = DataFixtures.date

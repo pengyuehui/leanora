@@ -59,7 +59,7 @@ date: 2026-11-03
   - 测试 `app/ios/LeanoraTests/DietDayCopyTests.swift`。
   - 场景：选择两餐、食品/快捷热量混合、原快照与未知宏量保留、新 UUID 与时刻归属；源数据后续变化不影响冻结预览；同日/空餐次/超过 200 项拒绝；保存失败无数据和 Health 孤儿任务；相同批次重试无重复，部分或变更重试拒绝；原数据不改且备份恢复一致。
 
-- [ ] **U4：日历页面、主入口与原创内容**（R1、R4）
+- [x] **U4：日历页面、主入口与原创内容**（R1、R4）
   - 新建 `app/ios/Leanora/Features/History/JournalReviewView.swift`。
   - 修改 Today/Trends 页面、训练与饮食内容 JSON、对应内容测试；补充 `app/docs/review-workflow-1.4.md` 和来源说明。
   - 测试 `app/ios/LeanoraUITests/ReviewWorkflowTests.swift`，更新 `StoreScreenshotTests.swift`。
@@ -88,3 +88,7 @@ date: 2026-11-03
 ## 2026-11-03 实施进度
 
 U1–U3 核心功能已实现并通过真实仓储/事务测试。U4 页面、入口、8 篇内容和 4 个原生 UI 流程测试已实现，全部测试目标可编译；UI 执行被 Xcode 27.2 与 CoreSimulator 版本不匹配阻断，尚无 1.4 截图。U5 开发签名归档成功，发行导出返回 No Accounts/缺少匹配私钥，尚未上传或送审。Mac 锁定且 Chrome Apple 会话过期，已向用户请求解锁/登录；计划保持 active，不把上述外部步骤标为完成。完整证据见 `app/docs/qa/review-workflow-1.4/verification.json`。
+
+## 2026-11-04 验证进度
+
+U4 已完成：日历改为自适应日期网格，图表提供日期与数值标签，未知有氧距离不再补零或生成差值。核心 150 项执行、148 通过、2 项既有容量测试跳过；10 个原生用例在第 4、6、7 批最终通过。训练、饮食、备份导入、大字体深色及持久化均有实际证据；早期脚本和环境失败未隐藏，未声称一次全套全绿。14 张本版本截图生成并校验，双语文案已保存到 1.4 草稿。最终 RC2 归档成功，尚待发行导出、上传和正式送审；U5 保持未完成。当前回执改用 `app/store/app-store-release-1.4-8-20261104.json`。
