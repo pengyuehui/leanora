@@ -10,7 +10,7 @@ import XCTest
         if app.buttons["onboarding.start"].exists {
             tap(app.buttons["onboarding.start"], app); tap(app.buttons["onboarding.next"], app); tap(app.buttons["onboarding.finish"], app)
         }
-        XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 8)); app.buttons["训练"].tap(); return app
+        XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 8)); app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap(); return app
     }
     private func tap(_ element: XCUIElement, _ app: XCUIApplication) {
         reveal(element, app); element.tap()
@@ -70,7 +70,7 @@ import XCTest
         capture(app, "u4-recovered-session")
         tap(app.buttons["workout.finish"], app); app.buttons["workout.confirmFinish"].firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         waitGone(app.buttons["workout.close"])
-        app.buttons["训练"].tap()
+        app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap()
         if !app.buttons["training.history"].exists {
             if app.buttons["BackButton"].exists { app.buttons["BackButton"].tap() }
             else if app.navigationBars.buttons.firstMatch.exists { app.navigationBars.buttons.firstMatch.tap() }
@@ -116,8 +116,8 @@ import XCTest
         reveal(app.staticTexts["workout.rest"], app)
         if app.buttons["workout.close"].exists { tap(app.buttons["workout.close"], app) }
         else { tap(app.buttons["BackButton"], app) }
-        XCTAssertTrue(app.buttons["我的"].waitForExistence(timeout: 5))
-        app.buttons["我的"].tap(); tap(app.buttons["settings.notifications"], app)
+        XCTAssertTrue(app.tabBars.buttons["我的"].waitForExistence(timeout: 5))
+        app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.notifications"], app)
         XCTAssertTrue(app.staticTexts["已允许通知"].waitForExistence(timeout: 5))
         for _ in 0..<10 { if app.staticTexts["notifications.pending"].exists { break }; app.collectionViews.allElementsBoundByIndex.last?.swipeUp() }
         XCTAssertTrue(app.staticTexts["notifications.pending"].label.contains("1"), app.debugDescription)

@@ -1,12 +1,16 @@
 # Apple Health 同步合同与实现
 
-更新：2026-10-21，Leanora 0.2。运行时只使用 Apple SDK，无服务端。
+更新：2026-11-07。运行时只使用 Apple SDK，无服务端。
 
 ## 入口与方向
 
 「我的 → Apple Health」选择身体、训练、营养的读取/写入和只读日常活动，然后完成系统请求。自动同步可随时关闭。首次连接从最近 90 天开始；若系统另行限制历史访问（本机 SDK 显示 30 天/完整历史选择），实际结果遵守该系统范围；扩大授权时使用新的导入代次重扫。连接不会自动导出旧记录。「同步状态与健康摘要」显示最近检查、逐组件待处理/失败、读取范围、来源与外部只读数据。
 
 授权请求完成不是读取或全部写入获准的证明。空结果显示“暂未读到数据，可检查健康访问或手动记录”。HealthKit 不能可靠区分拒绝读取与空库；每个写入组件单独检查 sharingAuthorized。
+
+首次点「连接 Apple Health」或开启「自动同步」走同一个 `HealthSyncCoordinator.connect`：先请求所选范围的系统授权，再确认设置已经持久化，最后启动同步。取消、请求失败或保存失败不会将原先关闭的同步显示为开启。暂停后保留范围，重新连接不移动已有查询起点、不自动补写历史。
+
+系统已经处理过的范围不一定再弹窗，完成请求也不代表全部允许。在「健康」App 的个人资料 → App → Leanora Fitness 调整权限后，可回到本页「检查访问与同步」。失败时保留 NSError domain/code 供定位，不记录健康样本或账号凭证。2026-11-07 的[专项验证](qa/history-actions-health-20261107/README.md)覆盖首次自动同步、取消、保存失败、暂停恢复及模拟器原生授权/体重写回；不替代用户真机验收。
 
 ## 读取
 
@@ -45,6 +49,7 @@
 ## 官方依据
 
 - [授权与读取隐私](https://developer.apple.com/documentation/healthkit/authorizing-access-to-health-data)
+- [请求授权及重复弹窗规则](https://developer.apple.com/documentation/healthkit/hkhealthstore/requestauthorization(toshare:read:))
 - [Anchored queries](https://developer.apple.com/documentation/healthkit/executing-anchored-object-queries)
 - [Sync identifier 与替换规则](https://developer.apple.com/documentation/healthkit/hkmetadatakeysyncidentifier)
 - [统计集合查询](https://developer.apple.com/documentation/healthkit/executing-statistics-collection-queries)

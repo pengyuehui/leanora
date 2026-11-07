@@ -2,6 +2,24 @@ import XCTest
 @testable import Leanora
 
 final class JournalReviewTests: XCTestCase {
+    func testMonthCalendarKeepsMondayColumnsAndLeapDaysAcrossDST() throws {
+        for zone in ["Asia/Shanghai", "America/Los_Angeles", "America/Sao_Paulo"] {
+            var calendar = Calendar(identifier: .gregorian); calendar.timeZone = try XCTUnwrap(TimeZone(identifier: zone))
+            for year in [2024, 2026, 2028] {
+                for month in 1...12 {
+                    let date = try XCTUnwrap(calendar.date(from: DateComponents(year: year, month: month, day: 15, hour: 12)))
+                    let days = JournalMonth.days(containing: date, timeZone: calendar.timeZone)
+                    XCTAssertEqual(days.count % 7, 0); XCTAssertLessThanOrEqual(days.count, 42)
+                    XCTAssertEqual(Set(days.map(\.day)).count, days.count)
+                    XCTAssertEqual(calendar.component(.weekday, from: try XCTUnwrap(days.first?.date)), 2)
+                    XCTAssertEqual(days.filter(\.isInMonth).count, calendar.range(of: .day, in: .month, for: date)?.count)
+                    for index in 1..<days.count {
+                        XCTAssertEqual(calendar.dateComponents([.day], from: days[index - 1].date, to: days[index].date).day, 1)
+                    }
+                }
+            }
+        }
+    }
     func testWeeksCrossYearAndDSTWithoutMissingDates() throws {
         let formatter = ISO8601DateFormatter()
         let ny = try XCTUnwrap(TimeZone(identifier: "America/New_York"))

@@ -7,24 +7,31 @@ struct HealthConnectionView: View {
     @Environment(\.openURL) private var openURL
     @Environment(\.scenePhase) private var scenePhase
     @State private var selection = HealthAccessSelection()
+    @State private var connecting = false
 
     var body: some View {
         Form {
             Section {
-                Label("你的健康数据，由你决定。", systemImage: "heart")
-                    .font(.headline).padding(.vertical, 6)
-                Text("选择访问范围后，再在系统页面确认。你可以随时在「健康」App 中调整权限。")
-                    .foregroundStyle(.secondary)
-                Text("首次读取最近 90 天。新记录按你选择的方向同步；历史记录需单独确认导出。")
-                    .font(.footnote).foregroundStyle(.secondary)
+                if health.isAvailable {
+                    Button { Task { await connect() } } label: {
+                        HStack {
+                            Label(connecting ? "正在连接…" : preferences.lastHealthRequest == nil ? "连接 Apple Health" : "检查访问与同步", systemImage: "heart.fill")
+                            Spacer()
+                            if connecting { ProgressView() }
+                        }.frame(minHeight: 44)
+                    }.disabled(selection.isEmpty || connecting).accessibilityIdentifier("health.request")
+                    status
+                    if let error = store.healthSync?.error { Label(error, systemImage: "exclamationmark.triangle").foregroundStyle(.red) }
+                }
             }
             if let sync = store.healthSync {
                 Section {
                     Toggle("自动同步", isOn: Binding(get: { sync.configuration.enabled }, set: { enabled in
-                        Task { var config = sync.configuration; config.enabled = enabled; await sync.configure(config); if enabled { await sync.sync() } }
-                    })).accessibilityIdentifier("health.auto")
+                        Task { if enabled { await connect() } else { _ = await sync.stop() } }
+                    })).disabled(connecting || !health.isAvailable).accessibilityIdentifier("health.auto")
                     NavigationLink("同步状态与健康摘要") { HealthSyncStatusView() }.accessibilityIdentifier("health.status")
-                } footer: { Text("停止自动同步会取消尚未开始的自动任务，保留历史副本。单独请求的副本删除仍可执行；已开始的写入可能完成。") }
+                    if sync.busy { ProgressView("正在同步…") }
+                }
             }
             if health.isAvailable {
                 ForEach(HealthCategory.allCases) { category in
@@ -37,33 +44,12 @@ struct HealthConnectionView: View {
                                 .accessibilityLabel("写入\(category.title)")
                                 .accessibilityIdentifier("health.write.\(category.rawValue)")
                         }
-                    } header: { Text(category.title) } footer: { Text(category.detail) }
-                    .disabled(health.isRequesting)
+                    } header: { Text("\(category.title) · \(category.detail)") }
+                    .disabled(connecting)
                 }
                 Section {
-                    Button {
-                        Task {
-                            if await health.request(selection) {
-                                preferences.markHealthRequestProcessed()
-                                if let sync = store.healthSync {
-                                    var config = sync.configuration
-                                    config.enabled = true; config.generation = UUID(); config.queryStart = Date().addingTimeInterval(-90 * 86_400)
-                                    config.reading = Set(selection.reading.flatMap(\.components)); config.writing = Set(selection.writing.flatMap(\.components))
-                                    config.readActivity = selection.reading.contains(.activity)
-                                    await sync.configure(config); await sync.sync()
-                                }
-                            }
-                        }
-                    } label: {
-                        HStack {
-                            Text(health.isRequesting ? "正在等待系统回应…" : "在系统中设置访问")
-                            Spacer()
-                            if health.isRequesting { ProgressView() }
-                        }
-                    }.disabled(selection.isEmpty || health.isRequesting)
-                        .accessibilityIdentifier("health.request")
                     if selection.isEmpty { Text("请先选择至少一种访问范围。").font(.footnote).foregroundStyle(.secondary) }
-                    status
+                    Text("历史记录需在同步状态页单独确认导出。").font(.footnote).foregroundStyle(.secondary)
                 }
             } else {
                 Section {
@@ -73,9 +59,13 @@ struct HealthConnectionView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            Section("关于读取权限") {
-                Text("系统不会告知 App 是否获得了某项读取权限。没有读到数据，也可能是暂时没有可访问的记录。")
-                    .font(.footnote).foregroundStyle(.secondary)
+            Section {
+                DisclosureGroup("权限与同步帮助") {
+                    Text("读取和写入分别授权。写入开关只对新记录生效，历史数据不会自动补写。")
+                    Text("已设置过的权限不会重复弹窗。请在「健康」App 的个人资料中打开「App」，选择 Leanora Fitness 调整。")
+                    Text("系统不提供读取授权状态；没有数据可能是未允许、没有记录或超出允许的历史范围。默认查询最近 90 天，实际以系统允许为准。")
+                    Text("暂停同步保留已有副本；已开始的写入可能完成。")
+                }.font(.footnote)
                 Button("打开系统设置") {
                     if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
                 }.frame(minHeight: 44)
@@ -89,9 +79,8 @@ struct HealthConnectionView: View {
         .task {
             if let sync = store.healthSync {
                 await sync.refresh()
-                if sync.configuration.enabled {
-                    selection.reading = Set(HealthCategory.allCases.filter { !$0.components.isDisjoint(with: sync.configuration.reading) || ($0 == .activity && sync.configuration.readActivity) })
-                    selection.writing = Set(HealthCategory.allCases.filter { !$0.components.isDisjoint(with: sync.configuration.writing) })
+                if sync.configuration.enabled || preferences.lastHealthRequest != nil || !sync.configuration.writing.isEmpty {
+                    selection = HealthAccessSelection(configuration: sync.configuration)
                 }
             }
         }
@@ -104,21 +93,29 @@ struct HealthConnectionView: View {
         switch health.state {
         case .idle:
             if preferences.lastHealthRequest != nil {
-                Text("曾完成系统访问设置。你可以重新检查访问范围。")
+                Text(store.healthSync?.configuration.enabled == true ? "自动同步已开启" : "同步已暂停")
                     .font(.footnote).foregroundStyle(.secondary)
             }
         case .requesting: EmptyView()
         case let .processed(writable, requested):
             VStack(alignment: .leading, spacing: 8) {
                 Label("已完成系统访问设置", systemImage: "checkmark.circle")
-                Text("读取范围以系统允许为准。这不表示所有数据类型都已授权，也不表示记录已同步。")
+                if requested > 0 { Text("允许写入 \(writable)/\(requested) 类。读取以系统允许为准。").font(.footnote) }
+                Text("已设置过的权限不会重复弹窗；请到「健康」App 的个人资料 → App → Leanora Fitness 调整。")
                     .font(.footnote).foregroundStyle(.secondary)
-                if requested > 0 { Text("上次请求范围内可写：\(writable) / \(requested) 种数据类型").font(.footnote) }
             }.accessibilityIdentifier("health.processed")
         case .failed:
-            Text("未能完成系统请求。你可以重试，或稍后在健康访问中设置。")
+            Text(health.failureMessage ?? "系统授权未完成，请重试。")
                 .foregroundStyle(.red).accessibilityIdentifier("health.failed")
+            if let code = health.failureCode { Text(code).font(.caption).foregroundStyle(.secondary).textSelection(.enabled).accessibilityIdentifier("health.failureCode") }
         }
+    }
+
+    private func connect() async {
+        guard !connecting, !selection.isEmpty, let sync = store.healthSync else { return }
+        connecting = true; defer { connecting = false }
+        let requested = selection
+        if await sync.connect(requested, authorization: health) { preferences.markHealthRequestProcessed() }
     }
 
     private func binding(_ category: HealthCategory, writing: Bool) -> Binding<Bool> {

@@ -1,6 +1,233 @@
 import SwiftUI
 import Charts
 
+enum HistoryCategory: String, CaseIterable, Identifiable {
+    case training = "训练", body = "体重体脂", nutrition = "饮食"
+    var id: Self { self }
+}
+
+struct HistoryHomeView: View {
+    @Environment(JournalStore.self) private var journal
+    @Environment(TrainingStore.self) private var training
+    @Environment(DataStoreController.self) private var store
+    @Environment(AppPreferences.self) private var preferences
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Binding var selected: AppTab
+    @State private var date = Date()
+    @State private var mode = "历史"
+    @State private var category = HistoryCategory.training
+    @State private var choosingDate = false
+    @State private var opened: WorkoutSession?
+    @State private var copying = false
+    private var dates: [JournalCalendarDay] { JournalMonth.days(containing: date) }
+    private var day: String { RecordMoment(date).localDate }
+    private var review: JournalReview {
+        JournalReview(dates: dates.map(\.day), sessions: training.sessions, entries: journal.entries, measurements: journal.measurements)
+    }
+    var body: some View {
+        let records = review
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                TodayView(selected: $selected)
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 12) { monthHeader; modePicker }
+                } else { ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 16) { monthHeader; Spacer(minLength: 4); modePicker.frame(width: 160) }
+                    VStack(alignment: .leading, spacing: 12) { monthHeader; modePicker }
+                } }
+                if typeSize.isAccessibilitySize { categoryPicker.pickerStyle(.menu).frame(minHeight: 44) }
+                else { categoryPicker.pickerStyle(.segmented) }
+                if mode == "历史" {
+                    calendar(records)
+                    if let value = records.days.first(where: { $0.day == day }) { dayDetails(value) }
+                } else {
+                    HistoryStatisticsView(date: date, category: category)
+                }
+                TrainingErrorNotice(); JournalErrorNotice()
+            }.padding(16)
+        }
+        .background(LeanoraTheme.canvas).navigationTitle("历史").navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    NavigationLink { JournalReviewView() } label: { Label("周回顾", systemImage: "calendar") }
+                    NavigationLink { WorkoutHistoryView() } label: { Label("训练历史", systemImage: "dumbbell") }
+                    NavigationLink { TrendsView() } label: { Label("完整统计", systemImage: "chart.bar") }
+                    NavigationLink { HealthConnectionView() } label: { Label("Apple Health", systemImage: "heart") }
+                } label: { Image(systemName: "ellipsis.circle").font(.system(size: 22)) }.accessibilityLabel("历史选项").accessibilityIdentifier("history.options")
+            }
+        }
+        .task { await training.refresh(); await journal.refresh() }
+        .refreshable { await training.refresh(); await journal.refresh(); await store.healthSync?.sync() }
+        .sheet(isPresented: $choosingDate) {
+            NavigationStack {
+                DatePicker("查看日期", selection: $date, displayedComponents: .date).datePickerStyle(.graphical).padding()
+                    .navigationTitle("选择日期").navigationBarTitleDisplayMode(.inline)
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("完成") { choosingDate = false } } }
+            }.presentationDetents([.medium, .large])
+        }
+        .sheet(isPresented: $copying) { NavigationStack { DietDayCopyView(destination: Calendar.current.date(byAdding: .day, value: 1, to: date) ?? date, source: date) } }
+        .sheet(item: $opened, onDismiss: { Task { await training.refresh() } }) { session in
+            NavigationStack {
+                if session.status == .abandoned {
+                    List { Text(session.name); Text("已放弃 · 不计入训练统计") }
+                        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { opened = nil } } }
+                } else { ActiveWorkoutView(sessionID: session.id) }
+            }
+        }
+    }
+    private var modePicker: some View {
+        Picker("历史与统计", selection: $mode) { Text("历史").tag("历史"); Text("统计").tag("统计") }
+            .pickerStyle(.segmented).accessibilityIdentifier("history.mode")
+    }
+    private var categoryPicker: some View {
+        Picker("记录类型", selection: $category) {
+            ForEach(HistoryCategory.allCases) { Text($0.rawValue).tag($0) }
+        }.accessibilityIdentifier("history.category")
+    }
+    private var monthHeader: some View {
+        HStack(spacing: 4) {
+            Button { shift(-1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44).contentShape(Rectangle()) }
+                .accessibilityLabel("上个月").accessibilityIdentifier("history.previousMonth")
+            Button { choosingDate = true } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(date, format: .dateTime.year()).font(.caption).foregroundStyle(.secondary)
+                    Text(date, format: .dateTime.month(.defaultDigits)).font(.title2.bold()).foregroundStyle(.primary)
+                }
+            }.accessibilityLabel("选择月份").accessibilityValue(Text(date, format: .dateTime.year().month())).accessibilityIdentifier("history.month")
+            Button { shift(1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44).contentShape(Rectangle()) }
+                .accessibilityLabel("下个月").accessibilityIdentifier("history.nextMonth")
+        }.buttonStyle(.plain)
+    }
+    private func shift(_ months: Int) {
+        var calendar = Calendar(identifier: .gregorian); calendar.timeZone = .current
+        date = calendar.date(byAdding: .month, value: months, to: date) ?? date
+    }
+    private func hasRecord(_ value: JournalReviewDay?) -> Bool {
+        guard let value else { return false }
+        switch category {
+        case .training: return !value.sessions.isEmpty
+        case .body: return !value.measurements.isEmpty
+        case .nutrition: return !value.entries.isEmpty
+        }
+    }
+    private func calendar(_ review: JournalReview) -> some View {
+        let byDay = Dictionary(uniqueKeysWithValues: review.days.map { ($0.day, $0) })
+        return VStack(spacing: 8) {
+            HStack {
+                ForEach(["一", "二", "三", "四", "五", "六", "日"], id: \.self) { Text($0).font(.system(size: typeSize.isAccessibilitySize ? 18 : 13, weight: .semibold)).frame(maxWidth: .infinity).foregroundStyle(.secondary) }
+            }.accessibilityHidden(true)
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(minimum: 0), spacing: 0), count: 7), spacing: 6) {
+                ForEach(dates) { value in
+                    Button { date = value.date } label: {
+                        VStack(spacing: 5) {
+                            Text(String(Int(value.day.suffix(2)) ?? 1)).font(.system(size: typeSize.isAccessibilitySize ? 21 : 17))
+                                .frame(width: 36, height: 36)
+                                .foregroundStyle(value.day == day ? LeanoraTheme.actionInk : value.isInMonth ? Color.primary : Color.secondary)
+                                .background(value.day == day ? LeanoraTheme.accent : .clear, in: Circle())
+                                .overlay { if value.day == RecordMoment().localDate && value.day != day { Circle().stroke(LeanoraTheme.accent, lineWidth: 1) } }
+                            Circle().fill(hasRecord(byDay[value.day]) ? LeanoraTheme.accent : .clear).frame(width: 5, height: 5)
+                        }.frame(maxWidth: .infinity, minHeight: 52).contentShape(Rectangle())
+                    }.buttonStyle(.plain).accessibilityLabel("\(value.day)，\(hasRecord(byDay[value.day]) ? "有" : "无")\(category.rawValue)记录")
+                        .accessibilityAddTraits(value.day == day ? .isSelected : [])
+                        .accessibilityIdentifier("history.day.\(value.day)")
+                }
+            }
+        }.padding(.vertical, 12).padding(.horizontal, 4).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+    }
+    private func dayDetails(_ value: JournalReviewDay) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text(date, format: .dateTime.month().day()).font(.headline)
+                Spacer()
+                if day != RecordMoment().localDate { Button("回到今天") { date = Date() }.accessibilityIdentifier("history.today") }
+            }
+            switch category {
+            case .training:
+                if value.sessions.isEmpty { Text("没有训练记录").foregroundStyle(.secondary).accessibilityIdentifier("history.empty") }
+                ForEach(value.sessions) { session in
+                    Button { opened = session } label: {
+                        HStack {
+                            Image(systemName: "dumbbell").foregroundStyle(LeanoraTheme.accent)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(session.name).font(.subheadline.weight(.semibold)).foregroundStyle(.primary)
+                                Text(session.status == .completed ? "\(TrainingSummary(sessions: [session]).completedSets) 组 · 已完成" : "已放弃").font(.caption).foregroundStyle(.secondary)
+                            }
+                            Spacer(); Image(systemName: "chevron.right").font(.caption)
+                        }.frame(minHeight: 48)
+                    }.buttonStyle(.plain).accessibilityIdentifier("history.workout.\(session.id)")
+                }
+                NavigationLink { TrainingHomeView() } label: { Label("计划与模板", systemImage: "list.clipboard") }.frame(minHeight: 44)
+            case .body:
+                if value.measurements.isEmpty { Text("没有身体记录").foregroundStyle(.secondary).accessibilityIdentifier("history.empty") }
+                ForEach(value.measurements) { item in LabeledContent(item.metric.title, value: bodyValue(item, pounds: preferences.values.weightUnit == .pounds)) }
+                NavigationLink { BodyMeasurementView() } label: { Label("记录体重与体脂", systemImage: "plus") }.frame(minHeight: 44)
+            case .nutrition:
+                if value.entries.isEmpty { Text("没有饮食记录").foregroundStyle(.secondary).accessibilityIdentifier("history.empty") }
+                else { NutritionSummaryView(summary: value.nutrition, goal: NutritionCalculator.goal(on: day, goals: journal.goals)) }
+                NavigationLink { DietDiaryView(date: date) } label: { Label("饮食日记", systemImage: "fork.knife") }.frame(minHeight: 44).accessibilityIdentifier("history.diary")
+                if !value.entries.isEmpty {
+                    Button("复制到其他日期", systemImage: "doc.on.doc") { copying = true }.frame(minHeight: 44).accessibilityIdentifier("history.copy")
+                }
+            }
+        }.padding(16).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+    }
+}
+
+private struct HistoryStatisticsView: View {
+    @Environment(JournalStore.self) private var journal
+    @Environment(TrainingStore.self) private var training
+    @Environment(AppPreferences.self) private var preferences
+    let date: Date
+    let category: HistoryCategory
+    @State private var metric = BodyMetric.weightKg
+    private var monthDays: [JournalCalendarDay] { JournalMonth.days(containing: date).filter(\.isInMonth) }
+    var body: some View {
+        let first = monthDays.first?.day ?? RecordMoment(date).localDate
+        let last = monthDays.last?.day ?? first
+        VStack(alignment: .leading, spacing: 16) {
+            switch category {
+            case .training:
+                let summary = TrainingSummary(sessions: training.sessions, from: first, through: last)
+                LabeledContent("完成训练", value: "\(summary.workouts) 次")
+                LabeledContent("完成组数", value: "\(summary.completedSets) 组")
+                LabeledContent("有效时长", value: "\(Int(summary.activeSeconds / 60)) 分钟")
+                let divisor = preferences.values.weightUnit == .pounds ? 0.45359237 : 1
+                LabeledContent("正式组容量", value: "\((summary.volumeKg / divisor).formatted(.number.precision(.fractionLength(0...1)))) \(preferences.values.weightUnit.rawValue)·次")
+                if summary.workouts > 0 {
+                    Chart(monthDays) { item in
+                        BarMark(x: .value("日期", item.date, unit: .day), y: .value("容量", TrainingSummary(sessions: training.sessions, from: item.day, through: item.day).volumeKg / divisor)).foregroundStyle(LeanoraTheme.accent)
+                    }.frame(height: 170).chartXAxis { AxisMarks(values: .stride(by: .day, count: 7)) { AxisValueLabel(format: .dateTime.day()) } }
+                        .accessibilityLabel("本月正式负重组容量")
+                }
+            case .body:
+                Picker("身体指标", selection: $metric) { ForEach(BodyMetric.allCases, id: \.self) { Text($0.title).tag($0) } }.pickerStyle(.segmented)
+                let values = BodySummary.dailyLatest(journal.measurements, metric: metric).filter { $0.occurred.localDate >= first && $0.occurred.localDate <= last }
+                if let latest = values.last {
+                    LabeledContent("最近记录", value: bodyValue(latest, pounds: preferences.values.weightUnit == .pounds))
+                    let lookup = Dictionary(uniqueKeysWithValues: monthDays.map { ($0.day, $0.date) })
+                    Chart(values) { item in
+                        LineMark(x: .value("日期", lookup[item.occurred.localDate] ?? date), y: .value(metric.title, item.value / (metric == .weightKg && preferences.values.weightUnit == .pounds ? 0.45359237 : 1))).foregroundStyle(LeanoraTheme.accent)
+                        PointMark(x: .value("日期", lookup[item.occurred.localDate] ?? date), y: .value(metric.title, item.value / (metric == .weightKg && preferences.values.weightUnit == .pounds ? 0.45359237 : 1))).foregroundStyle(LeanoraTheme.accent)
+                    }.frame(height: 170).chartXAxis { AxisMarks(values: .automatic(desiredCount: 5)) { AxisValueLabel(format: .dateTime.month().day()) } }
+                } else { Text("本月没有测量记录").foregroundStyle(.secondary) }
+            case .nutrition:
+                let review = JournalReview(dates: monthDays.map(\.day), sessions: [], entries: journal.entries, measurements: [])
+                LabeledContent("记录天数", value: "\(review.dietDays) 天")
+                if let average = review.knownEnergyAverage {
+                    LabeledContent("已知热量日均", value: "\(average.formatted(.number.precision(.fractionLength(0)))) kcal")
+                    let lookup = Dictionary(uniqueKeysWithValues: monthDays.map { ($0.day, $0.date) })
+                    Chart(review.days.filter { $0.nutrition.energy.known != nil }) { item in
+                        BarMark(x: .value("日期", lookup[item.day] ?? date, unit: .day), y: .value("已知热量", item.nutrition.energy.known ?? 0)).foregroundStyle(LeanoraTheme.accent)
+                    }.frame(height: 170).chartXAxis { AxisMarks(values: .stride(by: .day, count: 7)) { AxisValueLabel(format: .dateTime.day()) } }
+                    Text("均值只含有已知热量的记录日").font(.caption).foregroundStyle(.secondary)
+                } else { Text("本月没有已知热量记录").foregroundStyle(.secondary) }
+            }
+            Text("本机记录 · 缺失值不计为零").font(.caption).foregroundStyle(.secondary)
+        }.padding(16).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 18)).accessibilityIdentifier("history.statistics")
+    }
+}
+
 struct TrendsView: View {
     @Environment(JournalStore.self) private var journal
     @Environment(TrainingStore.self) private var training

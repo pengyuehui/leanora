@@ -49,6 +49,14 @@ struct HealthAccessSelection {
     var isEmpty: Bool { readTypes.isEmpty && writeTypes.isEmpty }
 }
 
+extension HealthAccessSelection {
+    init(configuration: HealthSyncConfiguration) {
+        self.init(reading: Set(HealthCategory.allCases.filter {
+            !$0.components.isDisjoint(with: configuration.reading) || ($0 == .activity && configuration.readActivity)
+        }), writing: Set(HealthCategory.allCases.filter { !$0.components.isDisjoint(with: configuration.writing) }))
+    }
+}
+
 @MainActor
 protocol HealthAuthorizing {
     var isAvailable: Bool { get }
@@ -77,6 +85,8 @@ final class HealthAuthorizationService {
     private let authorizer: any HealthAuthorizing
     private var processedSelection: HealthAccessSelection?
     private(set) var state: HealthAccessState = .idle
+    private(set) var failureMessage: String?
+    private(set) var failureCode: String?
     var isAvailable: Bool { authorizer.isAvailable }
     var isRequesting: Bool { state == .requesting }
 
@@ -85,6 +95,7 @@ final class HealthAuthorizationService {
     @discardableResult
     func request(_ selection: HealthAccessSelection) async -> Bool {
         guard isAvailable, !selection.isEmpty, !isRequesting else { return false }
+        failureMessage = nil; failureCode = nil
         state = .requesting
         do {
             try await authorizer.request(selection)
@@ -92,6 +103,17 @@ final class HealthAuthorizationService {
             state = .processed(writable: authorizer.writableCount(selection), requested: selection.writeTypes.count)
             return true
         } catch {
+            let problem = error as NSError
+            failureCode = "\(problem.domain) (\(problem.code))"
+            if problem.domain == NSCocoaErrorDomain && problem.code == CocoaError.userCancelled.rawValue {
+                failureMessage = "已取消系统授权，可以重试。"
+            } else if problem.domain == HKErrorDomain && problem.code == HKError.Code.errorAuthorizationDenied.rawValue {
+                failureMessage = "健康访问被限制，请在「健康」App 中检查 Leanora Fitness 的权限。"
+            } else if problem.domain == HKErrorDomain && problem.code == HKError.Code.errorHealthDataUnavailable.rawValue {
+                failureMessage = "此设备的健康数据暂不可用。"
+            } else {
+                failureMessage = "系统授权未完成，请解锁设备后重试。"
+            }
             state = .failed
             return false
         }

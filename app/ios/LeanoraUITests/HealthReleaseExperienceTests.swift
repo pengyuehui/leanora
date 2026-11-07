@@ -36,7 +36,7 @@ import XCTest
     }
 
     func testHealthStatusAndCacheCleanupKeepLocalRecordingAvailable() {
-        let app = launch(); app.buttons["我的"].tap(); tap(app.buttons["settings.health"], app)
+        let app = launch(); app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.health"], app)
         tap(app.buttons["health.status"], app)
         XCTAssertTrue(app.staticTexts["读取：按系统允许的可读范围"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["暂未读到数据，可检查健康访问或手动记录。"].exists)
@@ -45,14 +45,14 @@ import XCTest
         back(app); back(app); tap(app.buttons["settings.data"], app)
         tap(app.buttons["data.clearCache"], app); app.buttons["确认清理"].firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         XCTAssertTrue(app.staticTexts["backup.notice"].waitForExistence(timeout: 5)); capture(app, "u678-separated-data-controls")
-        app.buttons["饮食"].tap(); addQuick("123", app)
+        app.tabBars.buttons["饮食"].tap(); addQuick("123", app)
         XCTAssertTrue(app.staticTexts["nutrition.energy"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["nutrition.energy"].label.contains("123"))
     }
 
     func testCSVSavePanelAndTypedLocalReset() {
-        let app = launch(); app.buttons["饮食"].tap(); addQuick("100", app)
-        app.buttons["我的"].tap(); tap(app.buttons["settings.data"], app)
+        let app = launch(); app.tabBars.buttons["饮食"].tap(); addQuick("100", app)
+        app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.data"], app)
         tap(app.buttons["backup.csv"], app)
         let cancel = app.buttons.matching(NSPredicate(format: "label IN %@", ["Cancel", "取消"])).firstMatch
         XCTAssertTrue(cancel.waitForExistence(timeout: 5)); capture(app, "u678-csv-native-export"); cancel.tap()
@@ -65,7 +65,7 @@ import XCTest
         capture(app, "u678-reset-explicit-confirmation")
         tap(app.buttons["data.confirmReset"], app)
         XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.textFields["data.resetText"])], timeout: 8), .completed)
-        app.buttons["饮食"].tap()
+        app.tabBars.buttons["饮食"].tap()
         XCTAssertTrue(app.staticTexts["尚无记录，不代表零摄入。"].waitForExistence(timeout: 5))
         capture(app, "u678-after-local-reset")
     }
@@ -73,14 +73,14 @@ import XCTest
     func testTodayAndHealthLargeTypeDarkLayout() throws {
         let app = launch(extra: ["--dark-mode", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"])
         XCTAssertTrue(app.buttons["today.training"].exists); capture(app, "u678-today-large-dark")
-        app.buttons["我的"].tap(); tap(app.buttons["settings.health"], app); tap(app.buttons["health.status"], app)
+        app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.health"], app); tap(app.buttons["health.status"], app)
         capture(app, "u678-health-large-dark")
         try app.performAccessibilityAudit(for: [.contrast, .textClipped])
     }
 
     func testSystemHealthAllowedWriteAndEcho() {
         let app = launch(extra: ["--system-permissions"])
-        app.buttons["我的"].tap(); tap(app.buttons["settings.health"], app)
+        app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.health"], app)
         let writing = app.switches["health.write.body"]
         writing.coordinate(withNormalizedOffset: CGVector(dx: 0.92, dy: 0.5)).tap()
         tap(app.buttons["health.request"], app)
@@ -115,11 +115,11 @@ import XCTest
         let acknowledgement = app.alerts.buttons.matching(NSPredicate(format: "label IN %@", ["OK", "好", "确定"])).firstMatch
         if acknowledgement.waitForExistence(timeout: 2) { acknowledgement.tap() }
         guard app.staticTexts["已完成系统访问设置"].waitForExistence(timeout: 10) else { XCTFail(app.debugDescription); return }
-        back(app); app.buttons["今天"].tap(); tap(app.buttons["today.body"], app); tap(app.buttons["body.add"], app)
+        back(app); app.tabBars.buttons["历史"].tap(); tap(app.buttons["today.body"], app); tap(app.buttons["body.add"], app)
         app.textFields["body.value"].tap(); app.textFields["body.value"].typeText("65.4")
         app.buttons["body.keyboardDone"].tap(); app.buttons["body.save"].tap()
         XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.buttons["body.save"])], timeout: 8), .completed)
-        app.buttons["我的"].tap(); tap(app.buttons["settings.health"], app); tap(app.buttons["health.status"], app)
+        app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.health"], app); tap(app.buttons["health.status"], app)
         let link = app.descendants(matching: .any).matching(identifier: "health.linked").firstMatch
         let confirmed = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in link.exists && link.label.contains("1") }, object: app)
         XCTAssertEqual(XCTWaiter.wait(for: [confirmed], timeout: 20), .completed, app.debugDescription)

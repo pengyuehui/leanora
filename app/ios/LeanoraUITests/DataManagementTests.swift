@@ -16,7 +16,7 @@ import XCTest
             tap(app.buttons["onboarding.finish"], app)
         }
         XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 10))
-        app.buttons["我的"].tap(); tap(app.buttons["settings.data"], app)
+        app.tabBars.buttons["我的"].tap(); tap(app.buttons["settings.data"], app)
         reveal(app.buttons["backup.export"], app)
         return app
     }

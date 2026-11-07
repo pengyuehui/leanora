@@ -36,6 +36,19 @@ import Observation
         do { try await repository.configureHealth(value); configuration = value; observe(); await refresh(); return true }
         catch { self.error = "同步设置未保存，请重试。"; return false }
     }
+    @discardableResult func connect(_ selection: HealthAccessSelection, authorization: HealthAuthorizationService) async -> Bool {
+        // Starting sync is not itself an authorization request. Always take the
+        // explicit user action through HealthKit before enabling or changing it.
+        guard await authorization.request(selection) else { return false }
+        var config = configuration
+        config.enabled = true; config.generation = UUID()
+        config.reading = Set(selection.reading.flatMap(\.components))
+        config.writing = Set(selection.writing.filter { $0 != .activity }.flatMap(\.components))
+        config.readActivity = selection.reading.contains(.activity)
+        guard await configure(config) else { return false }
+        await sync()
+        return true
+    }
     func sync() async {
         guard !busy else { await engine.run(); return }; busy = true; defer { busy = false; operation = nil }
         observe()

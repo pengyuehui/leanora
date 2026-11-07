@@ -16,7 +16,7 @@ struct TrainingHomeView: View {
     var body: some View {
         List {
             Section {
-                Text("今天练什么").font(.title2.bold()).accessibilityIdentifier("screen.training")
+                Text("开始训练").font(.headline).accessibilityIdentifier("screen.training")
                 if let active = training.active {
                     Button { opened = active } label: { Label("返回进行中的训练：\(active.name)", systemImage: "play.circle.fill") }
                         .buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("training.active")
@@ -24,7 +24,6 @@ struct TrainingHomeView: View {
                     Button { Task { opened = await training.startFree() } } label: {
                         Label("开始自由训练", systemImage: "play.fill")
                     }.buttonStyle(PrimaryButtonStyle()).disabled(training.busy).accessibilityIdentifier("training.freeStart")
-                    Text("先开始，再添加动作。随时关闭，也能回来继续。").font(.subheadline).foregroundStyle(.secondary)
                 }
             }
             TrainingErrorNotice()
@@ -40,7 +39,7 @@ struct TrainingHomeView: View {
             }
             Section("我的模板") {
                 Button { creating = true } label: { Label("新建训练模板", systemImage: "plus") }.accessibilityIdentifier("training.newTemplate")
-                if training.templates.isEmpty { Text("常练的动作可以存为模板，或先采用一套范例计划。").foregroundStyle(.secondary) }
+                if training.templates.isEmpty { Text("暂无模板").foregroundStyle(.secondary) }
                 ForEach(training.templates) { template in
                     NavigationLink { TemplateDetailView(templateID: template.id) } label: {
                         VStack(alignment: .leading, spacing: 6) {

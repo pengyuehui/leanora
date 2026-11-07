@@ -3,6 +3,35 @@ import XCTest
 @testable import Leanora
 
 @MainActor final class HealthCoordinatorTests: XCTestCase {
+    func testConnectingMustAuthorizeBeforeEnablingAndCancelledRequestLeavesConfigurationOff() async throws {
+        let repository = try await HealthFixtures.repository()
+        try await repository.configureHealth(HealthSyncConfiguration(enabled: false))
+        let transport = HealthTestTransport(), fake = FakeHealthAuthorizer()
+        let coordinator = HealthSyncCoordinator(repository: repository, transport: transport)
+        await coordinator.refresh(); fake.fails = true
+        let failed = await coordinator.connect(.init(reading: [.body], writing: [.body]), authorization: HealthAuthorizationService(authorizer: fake))
+        XCTAssertFalse(failed); XCTAssertEqual(fake.calls, 1)
+        let configuration = try await repository.healthConfiguration(), count = await transport.counts()
+        XCTAssertFalse(configuration.enabled); XCTAssertEqual(count.pages, 0); XCTAssertEqual(count.writes, 0)
+    }
+    func testAuthorizedConnectionRequiresSavedConfigurationAndWritesNewRecord() async throws {
+        let repository = try await HealthFixtures.repository()
+        try await repository.configureHealth(HealthSyncConfiguration(enabled: false))
+        let transport = HealthTestTransport(), fake = FakeHealthAuthorizer()
+        let coordinator = HealthSyncCoordinator(repository: repository, transport: transport)
+        let service = HealthAuthorizationService(authorizer: fake)
+        await coordinator.refresh(); await repository.injectCommitFailure()
+        let failed = await coordinator.connect(.init(reading: [.body], writing: [.body]), authorization: service)
+        XCTAssertFalse(failed); XCTAssertFalse(coordinator.configuration.enabled); XCTAssertNotNil(coordinator.error)
+        let connected = await coordinator.connect(.init(reading: [.body], writing: [.body]), authorization: service)
+        XCTAssertTrue(connected); XCTAssertEqual(fake.calls, 2)
+        let measurement = BodyMeasurement(metric: .weightKg, value: 65.4)
+        try await repository.saveMeasurement(measurement); await coordinator.sync()
+        let counts = await transport.counts(); XCTAssertEqual(counts.writes, 1)
+        XCTAssertTrue(coordinator.metadata.contains { if case .currentLink(let link) = $0 { return link.businessID == measurement.id && link.state == .written }; return false })
+        let stopped = await coordinator.stop(); XCTAssertTrue(stopped)
+        XCTAssertEqual(HealthAccessSelection(configuration: coordinator.configuration).writing, [.body])
+    }
     func testCleanupStopsIfSyncSettingCannotCommit() async throws {
         let repository = try await HealthFixtures.repository(), transport = HealthTestTransport()
         let sample = HealthFixtures.sample()

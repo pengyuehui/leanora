@@ -1,5 +1,29 @@
 import Foundation
 
+struct JournalCalendarDay: Identifiable, Sendable {
+    var date: Date
+    var day: String
+    var isInMonth: Bool
+    var id: String { day }
+}
+
+enum JournalMonth {
+    // Calendar-day arithmetic at noon avoids DST's missing/repeated midnight.
+    static func days(containing date: Date, timeZone: TimeZone = .current) -> [JournalCalendarDay] {
+        var calendar = Calendar(identifier: .gregorian); calendar.timeZone = timeZone
+        let parts = calendar.dateComponents([.year, .month], from: date)
+        guard let first = calendar.date(from: DateComponents(year: parts.year, month: parts.month, day: 1, hour: 12)),
+              let range = calendar.range(of: .day, in: .month, for: first) else { return [] }
+        let leading = (calendar.component(.weekday, from: first) + 5) % 7
+        let count = ((leading + range.count + 6) / 7) * 7
+        return (0..<count).compactMap { index in
+            guard let value = calendar.date(byAdding: .day, value: index - leading, to: first) else { return nil }
+            return JournalCalendarDay(date: value, day: RecordMoment.day(value, timeZoneID: timeZone.identifier),
+                                      isInMonth: calendar.isDate(value, equalTo: first, toGranularity: .month))
+        }
+    }
+}
+
 struct JournalReviewDay: Identifiable, Sendable {
     var day: String
     var sessions: [WorkoutSession]

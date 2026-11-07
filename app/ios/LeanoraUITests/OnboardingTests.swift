@@ -95,7 +95,7 @@ import XCTest
     func testProcessedHealthRequestDoesNotClaimSynchronization() {
         let app = launch()
         finishOnboarding(app)
-        app.buttons["我的"].tap()
+        app.tabBars.buttons["我的"].tap()
         app.buttons["settings.health"].tap()
         let writing = app.switches["health.write.body"]
         writing.coordinate(withNormalizedOffset: CGVector(dx: 0.92, dy: 0.5)).tap()
@@ -104,27 +104,27 @@ import XCTest
         XCTAssertTrue(app.otherElements["health.processed"].waitForExistence(timeout: 5)
                       || app.staticTexts["已完成系统访问设置"].exists)
         XCTAssertFalse(app.staticTexts["已同步"].exists)
-        XCTAssertTrue(app.staticTexts["上次请求范围内可写：0 / 2 种数据类型"].exists)
+        XCTAssertTrue(app.staticTexts["允许写入 0/2 类。读取以系统允许为准。"].exists)
         capture(app, name: "health-processed")
     }
 
     func testNotificationDenialDoesNotBlockNavigation() {
         let app = launch(["--notifications-denied"])
         finishOnboarding(app)
-        app.buttons["我的"].tap()
+        app.tabBars.buttons["我的"].tap()
         app.buttons["settings.notifications"].tap()
         app.buttons["notifications.request"].tap()
         XCTAssertTrue(app.staticTexts["notifications.denied"].waitForExistence(timeout: 5))
         capture(app, name: "notification-denied")
         back(app)
-        app.buttons["训练"].tap()
+        app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap()
         XCTAssertTrue(app.staticTexts["screen.training"].exists)
     }
 
     func testHealthFailureHasRetryAndBackNavigation() {
         let app = launch(["--health-failed"])
         finishOnboarding(app)
-        app.buttons["我的"].tap()
+        app.tabBars.buttons["我的"].tap()
         tap(app.buttons["settings.health"], in: app)
         tap(app.buttons["health.request"], in: app)
         XCTAssertTrue(app.staticTexts["health.failed"].waitForExistence(timeout: 5))
@@ -150,7 +150,7 @@ import XCTest
         reveal(app.buttons["onboarding.start"], in: app)
         capture(app, name: "welcome-accessibility-dark")
         finishOnboarding(app)
-        app.buttons["我的"].tap()
+        app.tabBars.buttons["我的"].tap()
         reveal(app.buttons["settings.privacy"], in: app)
         capture(app, name: "settings-accessibility-dark")
     }
@@ -158,7 +158,7 @@ import XCTest
     func testSystemHealthSheetCanBeDismissedAndAppRemainsUsable() {
         let app = launch(["--system-permissions"])
         finishOnboarding(app)
-        app.buttons["我的"].tap()
+        app.tabBars.buttons["我的"].tap()
         app.buttons["settings.health"].tap()
         tap(app.buttons["health.request"], in: app)
         let deny = app.staticTexts.matching(NSPredicate(format: "label IN %@", ["Don’t Allow", "不允许"])).firstMatch
@@ -175,14 +175,14 @@ import XCTest
         if acknowledgement.waitForExistence(timeout: 3) { acknowledgement.tap() }
         XCTAssertTrue(app.staticTexts["已完成系统访问设置"].waitForExistence(timeout: 5))
         back(app)
-        app.buttons["训练"].tap()
+        app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap()
         XCTAssertTrue(app.staticTexts["screen.training"].exists)
     }
 
     func testSystemNotificationDenialKeepsAppUsable() {
         let app = launch(["--system-permissions"])
         finishOnboarding(app)
-        app.buttons["我的"].tap()
+        app.tabBars.buttons["我的"].tap()
         app.buttons["settings.notifications"].tap()
         tap(app.buttons["notifications.request"], in: app)
         let system = XCUIApplication(bundleIdentifier: "com.apple.springboard")
@@ -195,7 +195,7 @@ import XCTest
         deny.tap()
         XCTAssertTrue(app.staticTexts["notifications.denied"].waitForExistence(timeout: 5))
         back(app)
-        app.buttons["训练"].tap()
+        app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap()
         XCTAssertTrue(app.staticTexts["screen.training"].exists)
     }
 }

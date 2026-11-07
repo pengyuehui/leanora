@@ -4,6 +4,17 @@ import SwiftData
 @testable import Leanora
 
 final class ExerciseGuideTests: XCTestCase {
+    func testBrowserRegionsUseCatalogMusclesWithoutLosingUnknownCustomExercises() throws {
+        let values = try ExerciseCatalog.load()
+        let bench = try XCTUnwrap(values.first { $0.name == "杠铃卧推" })
+        XCTAssertTrue(ExerciseRegion.chest.contains(bench)); XCTAssertFalse(ExerciseRegion.neck.contains(bench))
+        XCTAssertTrue(values.contains { ExerciseRegion.cardio.contains($0) })
+        XCTAssertTrue(values.contains { ExerciseRegion.stretch.contains($0) })
+        let custom = Exercise(name: "自定义测试", muscles: ["自定义肌群"])
+        XCTAssertTrue(ExerciseRegion.other.contains(custom)); XCTAssertTrue(ExerciseRegion.all.contains(custom))
+        XCTAssertFalse(ExerciseRegion.chest.contains(custom))
+        XCTAssertTrue(values.allSatisfy { value in ExerciseRegion.allCases.filter { $0 != .all }.contains { $0.contains(value) } })
+    }
     func testEveryBuiltInExerciseHasDecodableOfflineImagesAndCredits() throws {
         let exercises = try ExerciseCatalog.load(), guides = try ExerciseGuideCatalog.load()
         XCTAssertEqual(Set(exercises.map { $0.stamp.id }), Set(guides.keys))

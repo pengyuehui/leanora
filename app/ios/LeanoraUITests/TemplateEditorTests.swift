@@ -10,7 +10,7 @@ import XCTest
             tap(app.buttons["onboarding.start"], app); tap(app.buttons["onboarding.next"], app); tap(app.buttons["onboarding.finish"], app)
         }
         XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 8))
-        app.buttons["训练"].tap()
+        app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap()
         return app
     }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {

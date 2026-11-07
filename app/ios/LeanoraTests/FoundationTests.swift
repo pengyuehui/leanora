@@ -77,6 +77,24 @@ import XCTest
 }
 
 @MainActor final class PermissionTests: XCTestCase {
+    func testPausedHealthConfigurationRestoresReadingAndWritingSelection() {
+        let configuration = HealthSyncConfiguration(enabled: false, reading: [.weight], writing: [.workout, .energy], readActivity: true)
+        let selection = HealthAccessSelection(configuration: configuration)
+        XCTAssertEqual(selection.reading, [.body, .activity])
+        XCTAssertEqual(selection.writing, [.workouts, .nutrition])
+        XCTAssertFalse(selection.writing.contains(.activity))
+    }
+    func testHealthFailureHasActionableDiagnosticAndSuccessfulRetryClearsIt() async {
+        let fake = FakeHealthAuthorizer()
+        let failing = HealthAuthorizationService(authorizer: fake)
+        fake.fails = true
+        let result = await failing.request(.init())
+        XCTAssertFalse(result); XCTAssertTrue(failing.failureMessage?.contains("取消") == true)
+        XCTAssertTrue(failing.failureCode?.contains(NSCocoaErrorDomain) == true)
+        fake.fails = false
+        let retry = await failing.request(.init())
+        XCTAssertTrue(retry); XCTAssertNil(failing.failureCode); XCTAssertNil(failing.failureMessage)
+    }
     func testProcessedRequestDoesNotMeanReadPermissionOrAllWritesGranted() async {
         let fake = FakeHealthAuthorizer()
         let service = HealthAuthorizationService(authorizer: fake)

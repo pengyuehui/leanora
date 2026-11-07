@@ -13,7 +13,7 @@ import XCTest
             tap(app.buttons["onboarding.start"], app); tap(app.buttons["onboarding.next"], app); tap(app.buttons["onboarding.finish"], app)
         }
         XCTAssertTrue(app.staticTexts["screen.today"].waitForExistence(timeout: 12))
-        app.buttons["饮食"].tap(); return app
+        app.tabBars.buttons["饮食"].tap(); return app
     }
     private func reveal(_ element: XCUIElement, _ app: XCUIApplication) {
         func visible() -> Bool {
@@ -81,7 +81,7 @@ import XCTest
         capture(app, "v13-diary-after-combination")
         app.terminate(); app = launch(reset: false)
         XCTAssertTrue(app.staticTexts["nutrition.energy"].label.contains("585"), app.debugDescription)
-        app.buttons["今天"].tap(); reveal(app.staticTexts["nutrition.energy"], app)
+        app.tabBars.buttons["历史"].tap(); reveal(app.staticTexts["nutrition.energy"], app)
         XCTAssertTrue(app.staticTexts["nutrition.energy"].label.contains("585"), app.debugDescription)
     }
 

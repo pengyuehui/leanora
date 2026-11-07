@@ -4,71 +4,108 @@ struct TodayView: View {
     @Environment(AppPreferences.self) private var preferences
     @Environment(TrainingStore.self) private var training
     @Environment(JournalStore.self) private var journal
-    @Environment(DataStoreController.self) private var store
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var opened: WorkoutSession?
     @Binding var selected: AppTab
     private var day: String { RecordMoment().localDate }
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("今天").font(.largeTitle.bold()).accessibilityIdentifier("screen.today")
-                    Spacer()
-                    Text(Date.now, format: .dateTime.month().day().weekday()).font(.subheadline).foregroundStyle(.secondary)
+        VStack(alignment: .leading, spacing: 12) {
+            if typeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: 8) { todayHeading; dateLabel }
+                trainingInfo
+                HStack { startButton; Spacer(); planLink }
+            } else {
+                HStack { todayHeading; Spacer(); dateLabel }
+                HStack(spacing: 12) { trainingInfo; Spacer(minLength: 4); startButton; planLink }
+            }
+            Divider()
+            if typeSize.isAccessibilitySize {
+                nutritionNumbers
+                mealButton
+                Divider()
+                bodyLink
+            } else {
+                HStack(spacing: 12) { nutritionNumbers; Spacer(); mealButton; bodyLink }
+            }
+            nutrientDetails
+        }.padding(16).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+            .sheet(item: $opened, onDismiss: { Task { await training.refresh() } }) { session in NavigationStack { WorkoutReadyView(sessionID: session.id) } }
+    }
+    private var todayHeading: some View {
+        Label("今天", systemImage: "calendar").font(.headline).accessibilityIdentifier("screen.today")
+    }
+    private var dateLabel: some View {
+        Text(Date.now, format: .dateTime.month().day().weekday()).font(.caption).foregroundStyle(.secondary)
+    }
+    private var trainingInfo: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(training.active?.name ?? training.occurrences(on: day).first?.template.name ?? "自由训练").font(.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
+            if let active = training.active {
+                let sets = active.exercises.flatMap(\.sets)
+                Text("\(sets.filter { $0.completedAt != nil }.count)/\(sets.count) 组 · \(active.status == .paused ? "已暂停" : "进行中")").font(.caption).foregroundStyle(.secondary)
+            } else {
+                let summary = TrainingSummary(sessions: training.sessions, from: day, through: day)
+                Text(summary.workouts > 0 ? "已完成 \(summary.workouts) 次" : "尚未训练").font(.caption).foregroundStyle(.secondary)
+            }
+        }
+    }
+    private var startButton: some View {
+        Button {
+            Task {
+                if let active = training.active { opened = active }
+                else if let occurrence = training.occurrences(on: day).first { opened = await training.start(occurrence.template) }
+                else { opened = await training.startFree() }
+            }
+        } label: {
+            Label { Text(training.active == nil ? "开始" : "继续") } icon: { Image(systemName: "play.fill").font(.system(size: 20)) }
+                .font(.subheadline.weight(.semibold)).padding(.horizontal, 14).frame(minHeight: 44).fixedSize(horizontal: true, vertical: true)
+        }.buttonStyle(.borderedProminent).disabled(training.busy).accessibilityIdentifier("today.start")
+    }
+    private var planLink: some View {
+        NavigationLink { TrainingHomeView() } label: { Image(systemName: "list.clipboard").font(.system(size: 22)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
+            .accessibilityLabel("训练计划与模板").accessibilityIdentifier("today.training")
+    }
+    private var nutritionNumbers: some View {
+        let nutrition = NutritionSummary(entries: journal.entries, on: day)
+        return VStack(alignment: .leading, spacing: 3) {
+            Text("饮食").font(.caption).foregroundStyle(.secondary)
+            Text(nutrition.count == 0 ? "尚未记录" : "\(nutrition.energy.text) kcal").font(.headline).monospacedDigit().accessibilityIdentifier("nutrition.energy")
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+    private var mealButton: some View {
+        Button("记一餐", systemImage: "plus") { selected = .nutrition }.frame(minHeight: 44).accessibilityIdentifier("today.nutrition")
+    }
+    private var nutrientDetails: some View {
+        let summary = NutritionSummary(entries: journal.entries, on: day)
+        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 16))
+        return VStack(alignment: .leading, spacing: 8) {
+            if let goal = NutritionCalculator.goal(on: day, goals: journal.goals)?.nutrients.energyKcal {
+                LabeledContent("热量目标", value: "\(goal.formatted()) kcal").font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("nutrition.goal")
+            }
+            if summary.count > 0 {
+                layout {
+                    nutrient("蛋白质", summary.protein)
+                    nutrient("碳水", summary.carbohydrate)
+                    nutrient("脂肪", summary.fat)
                 }
-                NavigationLink { JournalReviewView() } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: "calendar").font(.title2).foregroundStyle(LeanoraTheme.accent)
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("日历与周回顾").font(.headline)
-                            Text("训练、饮食、身体，一起回看").font(.caption).foregroundStyle(.secondary)
-                        }
-                        Spacer(); Image(systemName: "chevron.right").font(.caption).foregroundStyle(.secondary)
-                    }.frame(minHeight: 52)
-                }.buttonStyle(.plain).accessibilityIdentifier("today.review")
-                VStack(alignment: .leading, spacing: 16) {
-                    HStack { Label("今日训练", systemImage: "dumbbell").font(.headline); Spacer(); Button("计划") { selected = .training }.frame(minHeight: 44) }
-                    if let active = training.active {
-                        Text(active.name).font(.title2.bold())
-                        let sets = active.exercises.flatMap(\.sets)
-                        Text("\(sets.filter { $0.completedAt != nil }.count) / \(sets.count) 组已完成 · \(active.status == .paused ? "已暂停" : "进行中")").font(.subheadline).foregroundStyle(.secondary)
-                        Button { opened = active } label: { Label("返回进行中的训练", systemImage: "play.fill") }
-                            .buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("today.active")
-                    } else if let occurrence = training.occurrences(on: day).first {
-                        Text(occurrence.template.name).font(.title2.bold())
-                        Text("\(occurrence.template.items.count) 个动作 · 按计划逐组记录").font(.subheadline).foregroundStyle(.secondary)
-                        Button { Task { opened = await training.start(occurrence.template) } } label: { Label("开始今日训练", systemImage: "play.fill") }
-                            .buttonStyle(PrimaryButtonStyle()).disabled(training.busy).accessibilityIdentifier("today.start")
-                    } else {
-                        Text("今天没有安排").font(.title2.bold())
-                        Text("从自己的模板开始，或调整本周安排。").font(.subheadline).foregroundStyle(.secondary)
-                        Button { selected = .training } label: { Label("选择训练模板", systemImage: "plus") }
-                            .buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("today.training")
-                    }
-                    let summary = TrainingSummary(sessions: training.sessions, from: day, through: day)
-                    if summary.workouts > 0 { Label("今天已完成 \(summary.workouts) 次训练", systemImage: "checkmark.circle.fill").font(.footnote).foregroundStyle(.secondary) }
-                }.padding(20).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 16))
-                VStack(alignment: .leading, spacing: 12) {
-                    HStack { Label("饮食记录", systemImage: "fork.knife").font(.headline); Spacer(); Button("记一餐") { selected = .nutrition }.frame(minHeight: 44).accessibilityIdentifier("today.nutrition") }
-                    NutritionSummaryView(summary: NutritionSummary(entries: journal.entries, on: day), goal: NutritionCalculator.goal(on: day, goals: journal.goals))
-                }.padding(20).background(LeanoraTheme.surface, in: RoundedRectangle(cornerRadius: 16))
-                HStack {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("最近体重").font(.subheadline).foregroundStyle(.secondary)
-                        Text(journal.measurements.filter { $0.metric == .weightKg }.max(by: { $0.occurred.instant < $1.occurred.instant }).map { bodyValue($0, pounds: preferences.values.weightUnit == .pounds) } ?? "还没有记录").font(.title3.bold()).monospacedDigit()
-                    }
-                    Spacer()
-                    NavigationLink { BodyMeasurementView() } label: { Label("记录", systemImage: "plus") }.frame(minHeight: 44).accessibilityIdentifier("today.body")
-                }
-                Button { selected = .trends } label: { HStack { Label("查看训练与身体趋势", systemImage: "chart.xyaxis.line"); Spacer(); Image(systemName: "chevron.right") }.frame(minHeight: 44) }.accessibilityIdentifier("today.trends")
-                if let activity = store.healthSync?.activity, store.healthSync?.configuration.readActivity == true {
-                    HStack { Label(activity.steps.map { "\(Int($0)) 步" } ?? "暂无可读步数", systemImage: "figure.walk"); Spacer(); Text("Apple Health").foregroundStyle(.secondary) }.font(.footnote)
-                }
-            }.padding(20)
-        }.background(LeanoraTheme.canvas)
-            .toolbar(.hidden, for: .navigationBar)
-            .task { await training.refresh(); await journal.refresh() }
-            .refreshable { await training.refresh(); await journal.refresh(); await store.healthSync?.sync() }
-            .sheet(item: $opened) { session in NavigationStack { WorkoutReadyView(sessionID: session.id) } }
+                if summary.missingFields > 0 { Text("\(summary.missingFields) 个营养字段未知").font(.caption2).foregroundStyle(.secondary) }
+            }
+        }
+    }
+    private func nutrient(_ title: String, _ value: NutrientTotal) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(title).foregroundStyle(.secondary)
+            Text(value.known.map { "\($0.formatted(.number.precision(.fractionLength(0...1)))) g" } ?? "未知").fontWeight(.semibold).monospacedDigit()
+        }.font(.caption).frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityElement(children: .ignore).accessibilityLabel("\(title)，\(value.text) g")
+    }
+    private var bodyLink: some View {
+        NavigationLink { BodyMeasurementView() } label: {
+            VStack(alignment: typeSize.isAccessibilitySize ? .leading : .trailing, spacing: 3) {
+                Text("体重").font(.caption).foregroundStyle(.secondary)
+                Text(journal.measurements.filter { $0.metric == .weightKg }.max(by: { $0.occurred.instant < $1.occurred.instant }).map { bodyValue($0, pounds: preferences.values.weightUnit == .pounds) } ?? "添加").font(.subheadline.weight(.semibold))
+            }.frame(minHeight: 44)
+        }.accessibilityIdentifier("today.body")
     }
 }

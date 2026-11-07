@@ -17,7 +17,7 @@ struct JournalReviewView: View {
         let week = review
         List {
             Section {
-                Text("每一天，都有迹可循").font(.title2.bold()).accessibilityIdentifier("review.title")
+                Text("周回顾").font(.title2.bold()).accessibilityIdentifier("review.title")
                 RecordDatePicker(title: "查看日期", selection: $date, components: .date).accessibilityIdentifier("review.date")
                 HStack {
                     Button { shift(-7) } label: {

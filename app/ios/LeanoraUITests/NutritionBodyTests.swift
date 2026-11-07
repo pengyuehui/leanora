@@ -39,7 +39,7 @@ import XCTest
     }
     private func waitGone(_ element: XCUIElement) { XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: element)], timeout: 5), .completed) }
     func testFoodPortionQuickCaloriesCopyAndPersistence() {
-        var app = launch(); app.buttons["饮食"].tap(); tap(app.buttons["diet.add.breakfast"], app)
+        var app = launch(); app.tabBars.buttons["饮食"].tap(); tap(app.buttons["diet.add.breakfast"], app)
         search("米饭", app); tap(app.buttons["food.select.米饭（熟，长粒白米）"], app)
         XCTAssertTrue(app.staticTexts["food.source"].label.contains("USDA"))
         tap(app.buttons["portion.clear"], app); app.textFields["portion.quantity"].tap(); app.textFields["portion.quantity"].typeText("150")
@@ -54,15 +54,15 @@ import XCTest
         app.collectionViews.firstMatch.swipeDown()
         tap(app.buttons["diet.copy"], app); tap(app.buttons["diet.copyToday"], app); app.buttons["diet.confirmCopy"].tap(); waitGone(app.buttons["diet.confirmCopy"])
         capture(app, "u5-diary-copied-meal")
-        app.terminate(); app = launch(reset: false); app.buttons["饮食"].tap()
+        app.terminate(); app = launch(reset: false); app.tabBars.buttons["饮食"].tap()
         XCTAssertTrue(app.staticTexts["nutrition.energy"].label.contains("490"), app.debugDescription)
         capture(app, "u5-diary-recovered")
-        app.buttons["今天"].tap(); tap(app.staticTexts["nutrition.energy"], app)
+        app.tabBars.buttons["历史"].tap(); tap(app.staticTexts["nutrition.energy"], app)
         XCTAssertTrue(app.staticTexts["nutrition.energy"].label.contains("490"), app.debugDescription)
         capture(app, "u5-today-summary")
     }
     func testCustomFoodAndTwoBodyMeasurements() {
-        let app = launch(); app.buttons["饮食"].tap(); tap(app.buttons["diet.add.breakfast"], app); tap(app.buttons["food.custom"], app)
+        let app = launch(); app.tabBars.buttons["饮食"].tap(); tap(app.buttons["diet.add.breakfast"], app); tap(app.buttons["food.custom"], app)
         app.textFields["food.name"].tap(); app.textFields["food.name"].typeText("我的酸奶")
         app.buttons["food.keyboardDone"].tap()
         tap(app.textFields["food.energy"], app); app.textFields["food.energy"].typeText("80")
@@ -70,7 +70,7 @@ import XCTest
         tap(app.buttons["food.save"], app); waitGone(app.buttons["food.save"])
         search("我的酸奶", app); tap(app.buttons["food.select.我的酸奶"], app)
         tap(app.buttons["portion.save"], app); waitGone(app.buttons["portion.save"])
-        app.buttons["趋势"].tap(); tap(app.buttons["trends.body"], app)
+        app.tabBars.buttons["历史"].tap(); tap(app.buttons["today.body"], app)
         for value in ["65", "65.2"] {
             tap(app.buttons["body.add"], app); app.textFields["body.value"].tap(); app.textFields["body.value"].typeText(value)
             app.buttons["body.keyboardDone"].tap(); app.buttons["body.save"].tap(); waitGone(app.buttons["body.save"])
@@ -81,7 +81,7 @@ import XCTest
     }
     func testInvalidQuickAndZeroPortionCannotSaveInDarkLargeText() {
         let app = launch(extra: ["--dark-mode", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"])
-        app.buttons["饮食"].tap(); tap(app.buttons["diet.quick"], app); app.buttons["quick.save"].tap()
+        app.tabBars.buttons["饮食"].tap(); tap(app.buttons["diet.quick"], app); app.buttons["quick.save"].tap()
         reveal(app.staticTexts["quick.error"], app); capture(app, "u5-quick-validation-large-dark")
         tap(app.buttons["取消"], app); tap(app.buttons["diet.add.breakfast"], app)
         search("米饭", app); tap(app.buttons["food.select.米饭（熟，长粒白米）"], app)

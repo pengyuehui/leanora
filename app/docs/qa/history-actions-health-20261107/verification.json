@@ -1,0 +1,206 @@
+{
+  "verified_at": "2026-11-07T23:46:34+08:00",
+  "status": "source_verified_not_uploaded",
+  "branch": "codex/history-actions-health-1.5",
+  "base_commit": "d454392",
+  "next_iteration_label": "1.5",
+  "tested_marketing_version": "1.4",
+  "tested_build": "8",
+  "environment": {
+    "xcode": "27.2 (27B52)",
+    "simulator": "Leanora 1.5 QA / iPhone 17 Pro",
+    "device_id": "8BF77AA8-EFF5-4F00-BA17-55E7E842C5FC",
+    "runtime": "iOS 27.2 (24B8117)",
+    "scope": "Isolated simulator, no physical device or user data"
+  },
+  "foundation": {
+    "executed": 154,
+    "passed": 152,
+    "skipped": 2,
+    "failures": 0,
+    "skip_reason": "Pre-existing opt-in LEANORA_SCALE_TESTS=1 capacity cases",
+    "log": "app/build/v15-core-20261107-2.log"
+  },
+  "native_build": {
+    "result": "TEST BUILD SUCCEEDED",
+    "log": "app/build/v15-build-20261107-9.log",
+    "localization_extraction_disabled": true
+  },
+  "native_units": {
+    "unique_passed": 4,
+    "cases": {
+      "HealthCoordinatorTests/testAuthorizedConnectionRequiresSavedConfigurationAndWritesNewRecord()": {
+        "result": "Passed",
+        "duration_seconds": 0.041543006896972656,
+        "result_bundle": "app/build/V15-20261107-1.xcresult"
+      },
+      "HealthCoordinatorTests/testCleanupStopsIfSyncSettingCannotCommit()": {
+        "result": "Passed",
+        "duration_seconds": 0.00864708423614502,
+        "result_bundle": "app/build/V15-20261107-1.xcresult"
+      },
+      "HealthCoordinatorTests/testCleanupSuppressesMappedComponentsBeforeHealthAndRetainsOtherSources()": {
+        "result": "Passed",
+        "duration_seconds": 0.022555947303771973,
+        "result_bundle": "app/build/V15-20261107-1.xcresult"
+      },
+      "HealthCoordinatorTests/testConnectingMustAuthorizeBeforeEnablingAndCancelledRequestLeavesConfigurationOff()": {
+        "result": "Passed",
+        "duration_seconds": 0.008834004402160645,
+        "result_bundle": "app/build/V15-20261107-1.xcresult"
+      }
+    }
+  },
+  "native_ui": {
+    "unique_final_passed": 10,
+    "cases": {
+      "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()": {
+        "result": "Passed",
+        "duration_seconds": 46.70526397228241,
+        "result_bundle": "app/build/V15-20261107-1.xcresult"
+      },
+      "NutritionWorkflowTests/testFoodFavoritesPreviousPortionsAndHistoryCombinationSurviveRelaunch()": {
+        "result": "Passed",
+        "duration_seconds": 100.06282711029053,
+        "result_bundle": "app/build/V15-20261107-2.xcresult"
+      },
+      "TrainingWorkflowTests/testFreeWorkoutFinishTemplateRepeatAndPreviousValuesSurviveRelaunch()": {
+        "result": "Passed",
+        "duration_seconds": 125.49448502063751,
+        "result_bundle": "app/build/V15-20261107-2.xcresult"
+      },
+      "HistoryActionsTests/testExerciseGridMuscleEquipmentFavoriteAndTrainingRemainReachable()": {
+        "result": "Passed",
+        "duration_seconds": 25.147832989692688,
+        "result_bundle": "app/build/V15-20261107-4.xcresult"
+      },
+      "HistoryActionsTests/testFailedAutomaticSyncRequestsAuthorizationAndStaysOff()": {
+        "result": "Passed",
+        "duration_seconds": 11.602702975273132,
+        "result_bundle": "app/build/V15-20261107-4.xcresult"
+      },
+      "HistoryActionsTests/testHistoryAndActionLargeTypeDarkLayout()": {
+        "result": "Passed",
+        "duration_seconds": 21.84304404258728,
+        "result_bundle": "app/build/V15-20261107-5.xcresult"
+      },
+      "HistoryActionsTests/testMergedHistoryMonthCategoryAndStatistics()": {
+        "result": "Passed",
+        "duration_seconds": 23.401917934417725,
+        "result_bundle": "app/build/V15-20261107-4.xcresult"
+      },
+      "HistoryActionsTests/testPausedHealthScopesSurviveReentryAndRelaunch()": {
+        "result": "Passed",
+        "duration_seconds": 23.699992060661316,
+        "result_bundle": "app/build/V15-20261107-4.xcresult"
+      },
+      "ReviewWorkflowTests/testCopyDayPreviewCancelCommitAndRelaunch()": {
+        "result": "Passed",
+        "duration_seconds": 48.8135689496994,
+        "result_bundle": "app/build/V15-20261107-4.xcresult"
+      },
+      "OnboardingTests/testProcessedHealthRequestDoesNotClaimSynchronization()": {
+        "result": "Passed",
+        "duration_seconds": 18.150561928749084,
+        "result_bundle": "app/build/V15-20261107-6.xcresult"
+      }
+    },
+    "scope": "Final passing cases across batches 1, 2, 4, 5 and 6; not a single full all-green suite. Health production authorization/coordinator behavior unchanged after batch 1. Full workflows in batch 2, navigation in batch 4, final compact weekday header in batch 5, permission wording semantics in batch 6.",
+    "primary_final_batch": {
+      "batch": 4,
+      "executed": 6,
+      "failures": 0,
+      "result": "TEST EXECUTE SUCCEEDED"
+    },
+    "supplemental_batches": [
+      {
+        "batch": 5,
+        "executed": 1,
+        "failures": 0,
+        "reason": "Final compact weekday header; AX XXXL Today/calendar/exercise visual regression"
+      },
+      {
+        "batch": 6,
+        "executed": 1,
+        "failures": 0,
+        "reason": "Existing onboarding test updated for concise permission text; zero writable scopes and no false synchronized claim"
+      }
+    ]
+  },
+  "earlier_batches": [
+    {
+      "batch": 1,
+      "status": "interrupted",
+      "reason": "Known tab/segmented-control identifier collision and obsolete toolbar scroll helper. 4 native units and real system Health consent/write case completed and passed before interruption; no whole-batch pass claimed."
+    },
+    {
+      "batch": 2,
+      "passed": 5,
+      "failed": 1,
+      "reason": "Copy workflow relaunch used an unscoped Diet button; fixed and passed in batch 4."
+    },
+    {
+      "batch": 3,
+      "passed": 4,
+      "failed": 2,
+      "reason": "One remaining relaunch Diet locator plus exact-match LabeledContent label assumption. Both fixed in batch 4."
+    }
+  ],
+  "visual_review": {
+    "reviewed": true,
+    "scopes": [
+      "normal History, exercise image gallery, body/nutrition statistics",
+      "AX XXXL dark Today, complete seven-column calendar, exercise search/gallery",
+      "Health failure and paused scopes",
+      "real system authorization sheet and confirmed write status"
+    ],
+    "rejected_earlier_visuals": "Batches 1/2 large-font Today horizontal layout and fixed-sidebar gallery were cramped. Replaced with vertical Today and region menu; final batch 4 inspected.",
+    "final_accessibility_batch": 5,
+    "primary_batch": 4
+  },
+  "health_result": {
+    "fixed_entry_bugs": [
+      "First auto-sync enable bypassed system authorization",
+      "Paused persisted scopes were not restored"
+    ],
+    "save_failure_guarded": true,
+    "real_simulator_consent": true,
+    "real_simulator_weight_write_and_echo": true,
+    "written_synthetic_kg": 65.4,
+    "not_claimed": "No reproduction on the user physical iPhone. Original device error domain/code not supplied. Existing scopes do not necessarily prompt again, and request completion does not imply all read/write access granted."
+  },
+  "protected_preexisting_changes": {
+    "excluded_from_commit": true,
+    "unchanged_sha256": {
+      "app/ios/Leanora.xcodeproj/project.pbxproj": "b473b33da7db6adef9d3f2c675141ee7f3da3ca8a86147df9cc0e571451c2816",
+      "app/ios/Leanora/Resources/Info.plist": "d2fde493a8de3b254b655add02beaba7cb86fd26b84ed7b871e00fd8c669a2bf",
+      "app/ios/Leanora/Resources/Localizable.xcstrings": "3f581cbb6b0130d5aadda5f4bfb1437c492985b4ad36b3404910232c66a7fae8"
+    }
+  },
+  "evidence_sha256": {
+    "app/build/v15-core-20261107-2.log": "e1b81cfac88d91d821442f58976915b90a563bd17d4e80c256a9a2a39a2622c3",
+    "app/build/v15-build-20261107-7.log": "087416e5f705fcea1720b2a54ea3d023018b9dcb9556cab1fbc550fbf94c9c8b",
+    "app/build/v15-ui-20261107-1.log": "720f8bea8ae8ccb9983614cdb92a202be7d45b90961f66d7349ca85854495e06",
+    "app/build/v15-ui-20261107-2.log": "c3e3429ca772b8085da0a376b45b610377436f3864ca9ddcf207de8fa212ba31",
+    "app/build/v15-ui-20261107-3.log": "45bfeefec71c92b1acd1771dce08c3f5d18d1a7071e26ed30f67208efc4e52e0",
+    "app/build/v15-ui-20261107-4.log": "805d1ff93a724d8112ef82d0303d575abf794f49cb2284626cfc9c1e3db88359",
+    "app/build/v15-ui-1-tests.json": "623e059bc63840fd96d60bbe6fca3ed4ad6238066aba1e0393b596776fd8659e",
+    "app/build/v15-ui-2-tests.json": "2d86aa37de0a2897ac0c7d76df819b5a13f2e063b8562457698ae11c3dd2778f",
+    "app/build/v15-ui-4-tests.json": "65a9dc9bbd795642c29e9b840b3b2b3edc7f4878ba672441e6769a8f85e0efc1",
+    "app/build/v15-build-20261107-8.log": "a61bde0bb6b2efd00ebd7cd52da7d5737fb34fc0e152bdefd7b8d3f43d1be982",
+    "app/build/v15-build-20261107-9.log": "76778a789b4d95a257ba2e9035b5c37765a9636514ea7bbfa1c4b216478edfde",
+    "app/build/v15-ui-20261107-5.log": "f6b406ae51174efa4e2fce3d029834bd36b8089effe5a104dca659b45f6b316b",
+    "app/build/v15-ui-20261107-6.log": "3fd6a23bc7ef198e7b37e5b1c8360d22417c7c9fcb43e28b15174fa1547d14fc",
+    "app/build/v15-ui-5-tests.json": "7eeac0b8bb451cb3572cc3c40b6f0ebbdef619a6224c94b79fd295ea2d1ceff5",
+    "app/build/v15-ui-6-tests.json": "0d4b0a24e257156f9112bcc8b8cc7fee1b594060c9e397504da532c5391586a1"
+  },
+  "screenshots": "screenshots.json",
+  "review": "review.json",
+  "not_claimed": [
+    "Physical-device HealthKit/locked-device background behavior",
+    "Minimum iOS 18 device execution",
+    "Real VoiceOver session",
+    "New App Store/TestFlight upload or submission",
+    "Full regression suite in one run"
+  ]
+}

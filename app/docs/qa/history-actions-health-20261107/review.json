@@ -1,0 +1,46 @@
+{
+  "execution": "Sequential main-thread review; no delegated agents",
+  "depth": "deep: 748 production changed lines and HealthKit authorization/state transitions",
+  "reviews": [
+    {
+      "reviewer": "correctness",
+      "findings": [],
+      "residual_risks": [
+        "User-device authorization failure remains unobserved; diagnostics now preserve domain/code."
+      ],
+      "testing_gaps": [
+        "Physical iPhone at minimum supported iOS 18; actual VoiceOver."
+      ]
+    },
+    {
+      "reviewer": "adversarial",
+      "findings": [],
+      "residual_risks": [
+        "HealthKit read status remains intentionally unknown; empty reads cannot prove denial or absence.",
+        "Already-started Health writes may finish after pause, as in the existing contract."
+      ],
+      "testing_gaps": [
+        "Physical-device lock/background delivery is not established by simulator tests."
+      ]
+    }
+  ],
+  "resolved_findings": [
+    "Core exercise filter referenced a UI-only id extension; corrected to persisted stamp.id and verified via SPM.",
+    "Authorization is requested before enabling auto-sync; failure/cancellation and configuration commit failure leave an initially disabled configuration off.",
+    "Paused scope restoration uses persisted categories independently of enabled state.",
+    "Body chart places values using saved localDate instead of reinterpreting the measurement instant in the current timezone.",
+    "Removed ancestor accessibility IDs that shadowed the exercise collection picker; scoped tab locators and matched combined LabeledContent semantics.",
+    "Large-font Today layout is vertical; muscle selection becomes a menu and cards one column; compact training action avoids covering most of the card.",
+    "Accessibility-hidden weekday headings use compact fixed type to preserve seven-column alignment; final screenshots inspected after batch 5."
+  ],
+  "scenarios_traced": [
+    "Request cancel -> configuration disabled -> no import/export calls",
+    "Permission succeeds -> persistence fails -> no false enabled state",
+    "Connect -> fresh local record -> one write -> pause/relaunch preserves scopes",
+    "Repeated authorization -> new read generation and stable query start; no automatic history export",
+    "Midnight/DST/leap months -> noon Gregorian day arithmetic; seven Monday-first columns",
+    "Unknown custom muscles -> all/other; selection-mode exercise flow retained",
+    "Navigation rename -> preserved training/template/history/diet-copy destinations"
+  ],
+  "blocking_findings": 0
+}

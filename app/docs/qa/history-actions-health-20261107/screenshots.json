@@ -1,0 +1,142 @@
+[
+  {
+    "file": "v15-exercise-filter-favorite.png",
+    "sha256": "341e469c68687abae928e18bc026dc5436b0537cbc5abb090f7b63156955ed04",
+    "source_sha256": "341e469c68687abae928e18bc026dc5436b0537cbc5abb090f7b63156955ed04",
+    "source_attachment": "app/build/v15-20261107-4-attachments/B3CFE83A-0E7E-414C-BCD3-F4E85CACB150.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testExerciseGridMuscleEquipmentFavoriteAndTrainingRemainReachable()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-exercise-library.png",
+    "sha256": "e89e118e1b00652b5960e3c481f11dce25cf6a0589e9bd80b26145959f3ffbad",
+    "source_sha256": "e89e118e1b00652b5960e3c481f11dce25cf6a0589e9bd80b26145959f3ffbad",
+    "source_attachment": "app/build/v15-20261107-4-attachments/04AF48C6-B35D-4D9B-896A-8E76D182C699.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testExerciseGridMuscleEquipmentFavoriteAndTrainingRemainReachable()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-health-authorization-error.png",
+    "sha256": "cd7e21ae6187c232ec09a75e78068a72ab66b61dacaa5a3039ef6984874b7915",
+    "source_sha256": "cd7e21ae6187c232ec09a75e78068a72ab66b61dacaa5a3039ef6984874b7915",
+    "source_attachment": "app/build/v15-20261107-4-attachments/3900A2B6-8167-4FF2-ABC0-518152CD63BA.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testFailedAutomaticSyncRequestsAuthorizationAndStaysOff()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-exercises-large-dark.png",
+    "sha256": "bfe036c87b947d06e2eab18bb4f909944998df24d78bb2e961f7ab3cadf56f54",
+    "source_sha256": "bfe036c87b947d06e2eab18bb4f909944998df24d78bb2e961f7ab3cadf56f54",
+    "source_attachment": "app/build/v15-20261107-5-attachments/6D63E44F-328C-4CAC-B232-972E9A5F25B4.png",
+    "result_bundle": "app/build/V15-20261107-5.xcresult",
+    "test": "HistoryActionsTests/testHistoryAndActionLargeTypeDarkLayout()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-calendar-large-dark.png",
+    "sha256": "48f3b34c8b924569947e9c28a34c52ccf9cdc52024207239872529321c3ee603",
+    "source_sha256": "48f3b34c8b924569947e9c28a34c52ccf9cdc52024207239872529321c3ee603",
+    "source_attachment": "app/build/v15-20261107-5-attachments/ACE160CF-591D-4FE3-8FD4-1FBD18A9D806.png",
+    "result_bundle": "app/build/V15-20261107-5.xcresult",
+    "test": "HistoryActionsTests/testHistoryAndActionLargeTypeDarkLayout()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-history-large-dark.png",
+    "sha256": "215163fa95132c87ac343c1c90135fd53035b48aa10a6ed5b3c6e410f0e14865",
+    "source_sha256": "215163fa95132c87ac343c1c90135fd53035b48aa10a6ed5b3c6e410f0e14865",
+    "source_attachment": "app/build/v15-20261107-5-attachments/DA45C729-2030-4FAA-A4C3-70C3CF94D20D.png",
+    "result_bundle": "app/build/V15-20261107-5.xcresult",
+    "test": "HistoryActionsTests/testHistoryAndActionLargeTypeDarkLayout()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-body-statistics.png",
+    "sha256": "79b1e44e136303d319bd6ee5399f2a2eb2e4036cd74ae2464e5c69f20206b7c0",
+    "source_sha256": "79b1e44e136303d319bd6ee5399f2a2eb2e4036cd74ae2464e5c69f20206b7c0",
+    "source_attachment": "app/build/v15-20261107-4-attachments/5A13F3EB-3998-4A72-B4BB-26864490624F.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testMergedHistoryMonthCategoryAndStatistics()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-history-statistics.png",
+    "sha256": "8e97b9c3373b191b4e5593fab7efcaf9b88971145c589e5dd63c85152a6e4175",
+    "source_sha256": "8e97b9c3373b191b4e5593fab7efcaf9b88971145c589e5dd63c85152a6e4175",
+    "source_attachment": "app/build/v15-20261107-4-attachments/C40403BA-5185-47EC-BC8B-563ACBCDA4AA.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testMergedHistoryMonthCategoryAndStatistics()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-history-today-calendar.png",
+    "sha256": "260f95939fee63463079c789a2ebf5f0d97d6a7949876610d33751e1d8c48a83",
+    "source_sha256": "260f95939fee63463079c789a2ebf5f0d97d6a7949876610d33751e1d8c48a83",
+    "source_attachment": "app/build/v15-20261107-4-attachments/37477FA8-C40B-42FB-A924-C3893632AA77.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testMergedHistoryMonthCategoryAndStatistics()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v15-health-paused-scopes.png",
+    "sha256": "a6f2a3cbc141dbf0cda7b4cb9212abeadc25fee8da25395ab288da06b43fb633",
+    "source_sha256": "a6f2a3cbc141dbf0cda7b4cb9212abeadc25fee8da25395ab288da06b43fb633",
+    "source_attachment": "app/build/v15-20261107-4-attachments/07E6B316-D2E9-4D25-8CE4-2B9517A52D0B.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "HistoryActionsTests/testPausedHealthScopesSurviveReentryAndRelaunch()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "v14-copied-day-persisted.png",
+    "sha256": "1a4ff9a981d0a87ad1f0e9c0af9e1a55ca3318aafe851ad1eefb95d2b4b0e7cc",
+    "source_sha256": "1a4ff9a981d0a87ad1f0e9c0af9e1a55ca3318aafe851ad1eefb95d2b4b0e7cc",
+    "source_attachment": "app/build/v15-20261107-4-attachments/0E793406-BA4F-4F42-BD81-97BE45C2B391.png",
+    "result_bundle": "app/build/V15-20261107-4.xcresult",
+    "test": "ReviewWorkflowTests/testCopyDayPreviewCancelCommitAndRelaunch()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "u678-system-health-write-echo.png",
+    "sha256": "67fa3a8ee002ae00d2050fe8fd7c146f6d475b506406bc9ce5f95e40cb950ff8",
+    "source_sha256": "67fa3a8ee002ae00d2050fe8fd7c146f6d475b506406bc9ce5f95e40cb950ff8",
+    "source_attachment": "app/build/v15-20261107-1-attachments/F1D5AE40-C5AD-48A1-A597-C6FC4A264BC8.png",
+    "result_bundle": "app/build/V15-20261107-1.xcresult",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "u678-system-health-limited-history.png",
+    "sha256": "fb22b1d691082853d8f1970c9afebe274fd83096996f8a94509e88a30573ad0c",
+    "source_sha256": "fb22b1d691082853d8f1970c9afebe274fd83096996f8a94509e88a30573ad0c",
+    "source_attachment": "app/build/v15-20261107-1-attachments/2FDB5FAE-C1CF-4173-867C-0305864B078D.png",
+    "result_bundle": "app/build/V15-20261107-1.xcresult",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  },
+  {
+    "file": "u678-system-health-before-allow.png",
+    "sha256": "a6c6814b7e9184d58b68a897bf3421c8ad8b90c78f8e43e6a34861e4570c2b7e",
+    "source_sha256": "a6c6814b7e9184d58b68a897bf3421c8ad8b90c78f8e43e6a34861e4570c2b7e",
+    "source_attachment": "app/build/v15-20261107-1-attachments/F7F31FAD-AE49-4744-9E98-F546034CE911.png",
+    "result_bundle": "app/build/V15-20261107-1.xcresult",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "test_result": "Passed",
+    "fixture": "isolated simulator / synthetic records"
+  }
+]
