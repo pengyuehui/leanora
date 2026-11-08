@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-08",
+  "version": "1.5",
+  "build": "9",
+  "state": "WAITING_FOR_REVIEW",
+  "state_text": "等待审核",
+  "links": [
+    {
+      "href": "https://appstoreconnect.apple.com/apps/6825234654/distribution/reviewsubmissions/details/d7a78997-931a-4496-a378-e660acf1195c",
+      "text": "前往 App 审核"
+    }
+  ],
+  "url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/ios/version/inflight",
+  "apple_build_id": "47198a61-b947-498f-8bfd-26b51562bec4",
+  "source_commit": "fe88be66afcceb1f7b266b3e9688a441e5fc863e",
+  "release_method": "manual_after_approval",
+  "publicly_released_by_this_run": false,
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "submission_id": "d7a78997-931a-4496-a378-e660acf1195c",
+  "review_url": "https://appstoreconnect.apple.com/apps/6825234654/distribution/reviewsubmissions/details/d7a78997-931a-4496-a378-e660acf1195c",
+  "app_review_submitted": true,
+  "observed_at": "2026-11-08T20:34:13+08:00",
+  "timestamp_scope": "Local observation of Apple confirmation; exact Apple submission timestamp was not separately exposed.",
+  "receipt_screenshot": "appstore-waiting-review-20261108.png",
+  "screenshots": "appstore-assets-proof-20261108.json",
+  "distribution_audit": "distribution-audit-20261108.json"
+}

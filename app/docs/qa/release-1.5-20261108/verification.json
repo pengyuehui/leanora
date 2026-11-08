@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-08",
+  "version": "1.5",
+  "build": "9",
+  "status": "submitted_waiting_for_review",
+  "source_commit": "fe88be66afcceb1f7b266b3e9688a441e5fc863e",
+  "feature_verification": "../history-actions-health-20261107/verification.json",
+  "foundation": {
+    "passed": 152,
+    "skipped": 2,
+    "failures": 0,
+    "scope": "Unchanged feature core from 2026-11-07; no new full core rerun claimed"
+  },
+  "functional_native_units": 4,
+  "functional_ui_unique_passes": 10,
+  "store_capture": {
+    "executed": 1,
+    "passed": 1,
+    "failed": 0,
+    "duration_seconds": 38.183,
+    "bundle": "app/build/V15-Store-20261108-1.xcresult",
+    "native_sources": 7,
+    "local_compositions": 14,
+    "portal_uploaded_screenshots": 7,
+    "portal_override_sizes": [
+      "1206x2622"
+    ],
+    "optional_large_override_uploaded": false
+  },
+  "archive_succeeded": true,
+  "strict_distribution_audit": "distribution-audit-20261108.json",
+  "source_inputs_verified": 1905,
+  "formal_submission_id": "d7a78997-931a-4496-a378-e660acf1195c",
+  "publicly_released_by_this_run": false,
+  "release_method": "manual_after_approval",
+  "evidence_sha256": {
+    "README.md": "9a1917feeb0ad10fbdc8fe218352f17970128da90c9669601ebd337373848881",
+    "appstore-assets-20261108.png": "43f7d34aacf030b47b31bc2a193beb00ee81608ef3e4402822bb029618f8ac6e",
+    "appstore-assets-proof-20261108.json": "9bb3c4eaff87d723bb14a0a0af34693339068bf8b3cc0c1f7b82de3f18b89b1d",
+    "appstore-draft-20261108.png": "bc2b6621c9eaafb99e864a0153fd4d708e9ad897c1d087acd93eb1de894f134f",
+    "appstore-metadata-proof-20261108.json": "93b5d63423a53bf17636d1590508ef923e5a88a0956e53a415133b008b8b2452",
+    "appstore-submission-20261108.json": "cdedd0e8f325e23b1f7836aeb0699f7f2b7df642eaa7fcd25b537f5fb494f302",
+    "appstore-submission-observed-20261108.json": "fdcea770c4d38d8134c35d7ab2066033fe93ad582bfad2d2ae1495a909c7b889",
+    "appstore-upload-20261108.json": "4d5ae60677d82202758a15d9e33f263907c8ebfca01470dff123fc6c183efbe8",
+    "appstore-waiting-review-20261108.png": "43fb5ed13beacfeb158f302d6c79652b12acdb3b3142760c805102f6ba2f19f3",
+    "distribution-audit-20261108.json": "8e2883ecbeb0ba00c272aa15d19218d0118fffc9b5a4d04a837041c092e0c84c",
+    "public-websites-20261108.json": "543023e00a735fb252a318c3f5f74893c49a6ee09551c1baa91ab15f8a2228e8",
+    "release-source-proof-20261108.json": "67b262930559ad11d86d9f0b317e99e749bba1d1427b896f97e017272830f6ef",
+    "store-kit-validation-20261108.json": "a37b454ced61c0ff3eeff1684de0f06d062475095a98848bd764f28af8e79da2",
+    "store-screenshot-sources.json": "d3ced0b293d42bbafb4ca48ad4fbac122724b9a7d3cc6a08c222ec6dbfb0d915",
+    "xcode-upload-complete-20261108.png": "177bb4f5ab9a33406c87ee24c76b4ad206ec601655da58a02d3feb46f1496223"
+  },
+  "scope": "Upload, export audit, selected build and formal Apple Waiting for Review confirmation recorded separately. UI interruptions and Mac locking were recovered without changing security settings or extracting credentials. Optional large screenshots were omitted after the required seven were complete; Apple accepted the submission.",
+  "not_claimed": [
+    "App Review approval",
+    "Public release performed by this run",
+    "Physical-device HealthKit or background delivery acceptance",
+    "Separate TestFlight VALIDATED field inspection",
+    "Fourteen screenshots uploaded"
+  ]
+}

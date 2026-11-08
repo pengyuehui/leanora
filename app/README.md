@@ -1,6 +1,6 @@
 # Leanora
 
-2026-11-08 发行准备：1.5（9）独立草稿已创建，中英文资料已保存，新版 7 张原生源图与 14 张展示图校验通过，签名 Release Archive 成功。CLI 发行导出返回 No Accounts，Organizer 分发及系统截图选择器等待 Mac 解锁。尚未上传或正式提交，实时状态见[1.5 发行记录](store/app-store-release-1.5-9-20261108.json)。
+2026-11-08：**1.5（9）已正式提交 App Store，Apple 显示「正在等待审核」**。包含历史/动作重构与 Health 授权修复；中英文资料及 7 张必填新版截图已保存并重载核对，同次分发导出 IPA 的发行签名、HealthKit 和 1765 张图片审计通过。保留审核后手动发布，未执行公开上架。见[1.5 发行记录](store/app-store-release-1.5-9-20261108.json)和[发行凭据](docs/qa/release-1.5-20261108/README.md)。
 
 2026-11-07 源码更新：今天/趋势合并为「历史」，增加月历和分类统计；训练入口调整为「动作」图片库，保留计划与模板；修复首次开启 Health 自动同步未请求系统授权及暂停后范围丢失。具体交互见[历史与动作](docs/history-actions-1.5.md)，验证与真机范围见[专项 QA](docs/qa/history-actions-health-20261107/README.md)。尚未提升正式版本号、上传或重新送审。
 

@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "version": "1.5",
+  "build": "9",
+  "release_candidate": "RC1",
+  "source_commit": "fe88be66afcceb1f7b266b3e9688a441e5fc863e",
+  "uploaded": true,
+  "upload_method": "Xcode Organizer standard App Store Connect, then Export of the same completed distribution",
+  "upload_success_evidence": "xcode-upload-complete-20261108.png",
+  "ipa_sha256": "16f8a8ca44c2b91b1d2ae6efc8b6b37c418bd9417589f8518bdc7df523f3f313",
+  "distribution_audit": "distribution-audit-20261108.json",
+  "apple_processing_state": "SELECTABLE_FOR_APP_REVIEW",
+  "app_review_submitted": true,
+  "command_line_export_note": "CLI No Accounts resolved using Xcode Organizer with existing account; no credential extraction or permission expansion.",
+  "scope": "No private review contact details, credentials or signing artifacts included.",
+  "apple_build_id": "47198a61-b947-498f-8bfd-26b51562bec4",
+  "processing_scope": "Apple build chooser listed only 1.5 (9); version validation succeeded and formal submission reached Waiting for Review. No separate TestFlight VALIDATED field was read.",
+  "submission_id": "d7a78997-931a-4496-a378-e660acf1195c",
+  "submission_receipt": "appstore-submission-20261108.json"
+}

@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-08",
+  "version": "1.5",
+  "locale": "zh-Hans",
+  "required_size": "1206x2622",
+  "count": 7,
+  "expected_order": [
+    "01-today.png",
+    "02-exercises.png",
+    "03-workout.png",
+    "04-nutrition.png",
+    "05-portion.png",
+    "06-trends.png",
+    "07-health.png"
+  ],
+  "order_checked_in_visible_accessibility_tree": true,
+  "all_previews_loaded": true,
+  "assets": [
+    {
+      "id": "asset-5c000019-6d0d-80de-8f3a-3a71267183bd",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/ClqX6OhNQcj3yMB7CeI1yQ/331x720bb.png"
+        }
+      ]
+    },
+    {
+      "id": "asset-e2000019-6d0d-80de-8f0e-fc8eca4b39b6",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/5QZK3JnxEk9ujs3wc06SZQ/331x720bb.png"
+        }
+      ]
+    },
+    {
+      "id": "asset-18000019-6d0d-80de-8f3e-3948c1e2eb5f",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/TvEu7SkHwoXoHgsijwifzg/331x720bb.png"
+        }
+      ]
+    },
+    {
+      "id": "asset-cec00019-6d0d-80de-8f23-c36f44a36fc2",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/Pmrqa5cScn0w6UYXRLvmyg/331x720bb.png"
+        }
+      ]
+    },
+    {
+      "id": "asset-93400019-6d0d-80de-8f1b-15c19de1df32",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/WkRZGPMF48EBZI0raOsVeg/331x720bb.png"
+        }
+      ]
+    },
+    {
+      "id": "asset-32800019-6d0d-80de-8f3e-23d0cfa80eee",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/eczKwuwCmmG-eFZ9A11_9w/331x720bb.png"
+        }
+      ]
+    },
+    {
+      "id": "asset-da000019-6d0d-80de-8f27-c1ff4752ed73",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 331,
+          "src": "https://is1-ssl.mzstatic.com/image/thumb/V50WXIphfOFn0MWskLtFnw/331x720bb.png"
+        }
+      ]
+    }
+  ],
+  "scope": "Seven required medium-display screenshots reloaded in a fresh page. Optional large-display overrides removed; no large set upload is claimed. Fourteen compositions remain available locally."
+}
