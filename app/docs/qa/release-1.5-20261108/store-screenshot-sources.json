@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-08",
+  "version": "1.5",
+  "build": "9",
+  "result": "Passed",
+  "passedTests": 1,
+  "failedTests": 0,
+  "native_device": "iPhone 17 Pro, iOS 27.2",
+  "result_bundle": "app/build/V15-Store-20261108-1.xcresult",
+  "source_sha256": {
+    "zh-Hans/source/store-07-health.png": "1b88fe347273bef5fc6ccc2fc88d12532e9e50b2a0380a26db73dc3ec5d571ba",
+    "zh-Hans/source/store-06-trends.png": "a2e4b61977ec83f7612cad45193a25b35c80a899bb04a263ce46909ccc0e71f6",
+    "zh-Hans/source/store-05-portion.png": "42ca55dc2ea4c07169d9eea86e2c2240eb1109f84f9386420cfa219df62b2b92",
+    "zh-Hans/source/store-04-nutrition.png": "f23ea24746c069e6c62b006ad17ac78b52603a1b9ca53e605537c94bfb5cbb0a",
+    "zh-Hans/source/store-03-workout.png": "4af0b708d7f9fa77ec7f5669dda6951803c1d7ba2f46e05e6a50b1072b1d11e2",
+    "zh-Hans/source/store-02-exercises.png": "28eef8a81abd57b69dbe74b7d8b5f3737d23f89b58fa03d196095957056f3e1e",
+    "zh-Hans/source/store-01-today.png": "d36bad71e0637e7af51b8aad2b419c45c32cfae06384c3dc51ee2a6702ffc0a7"
+  },
+  "records": [
+    {
+      "source": "zh-Hans/source/store-07-health.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/C3A05DAE-DFCE-42FE-BFE4-09597777ED8B.png",
+      "sha256": "1b88fe347273bef5fc6ccc2fc88d12532e9e50b2a0380a26db73dc3ec5d571ba",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    },
+    {
+      "source": "zh-Hans/source/store-06-trends.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/D47B6513-ABDE-44C7-A502-B2B0366D6701.png",
+      "sha256": "a2e4b61977ec83f7612cad45193a25b35c80a899bb04a263ce46909ccc0e71f6",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    },
+    {
+      "source": "zh-Hans/source/store-05-portion.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/9D353054-3FD8-482B-80CB-F1AC0A3C49FE.png",
+      "sha256": "42ca55dc2ea4c07169d9eea86e2c2240eb1109f84f9386420cfa219df62b2b92",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    },
+    {
+      "source": "zh-Hans/source/store-04-nutrition.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/77C05A18-CE1E-489E-9083-F293F4A9C88A.png",
+      "sha256": "f23ea24746c069e6c62b006ad17ac78b52603a1b9ca53e605537c94bfb5cbb0a",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    },
+    {
+      "source": "zh-Hans/source/store-03-workout.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/2A4759F1-5C0B-4324-AB7C-50E91448D6B2.png",
+      "sha256": "4af0b708d7f9fa77ec7f5669dda6951803c1d7ba2f46e05e6a50b1072b1d11e2",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    },
+    {
+      "source": "zh-Hans/source/store-02-exercises.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/D09DADE4-C846-4AD3-BD95-BE8C626BFDDC.png",
+      "sha256": "28eef8a81abd57b69dbe74b7d8b5f3737d23f89b58fa03d196095957056f3e1e",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    },
+    {
+      "source": "zh-Hans/source/store-01-today.png",
+      "source_attachment": "app/build/v15-store-attachments-20261108/8173CCEB-6D00-4E1A-A6CB-97266EE91D76.png",
+      "sha256": "d36bad71e0637e7af51b8aad2b419c45c32cfae06384c3dc51ee2a6702ffc0a7",
+      "test": "StoreScreenshotTests/testCaptureChineseStoreScreenshots()",
+      "fixture": "isolated simulator with synthetic records; no fabricated Health authorization"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "store"
 FIELDS = {"subtitle": "subtitle.txt", "promotional_text": "promotional-text.txt", "description": "description.txt", "keywords": "keywords.txt", "whats_new": "whats-new.txt"}
 metadata = {
-    "status": "local_asset_source_not_live_submission_status", "version": "1.4", "build": "8", "upload_record": "../docs/qa/review-workflow-1.4/appstore-upload-20261104.json", "release_record": "app-store-release-1.4-8-20261104.json", "screenshot_source_version": "1.4", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
+    "status": "local_asset_source_not_live_submission_status", "version": "1.5", "build": "9", "upload_record": "../docs/qa/release-1.5-20261108/appstore-upload-20261108.json", "release_record": "app-store-release-1.5-9-20261108.json", "screenshot_source_version": "1.5", "app_name": "Leanora Fitness", "bundle_id": "ai.leanora.fitness", "apple_app_id": "6825234654",
     "copyright": "2026 Manyao Li", "support_email": "pengyuehui@gmail.com", "privacy_policy_url": "https://leanora.ai/fitness/privacy/",
     "support_url": "https://leanora.ai/fitness/support/", "locales": {},
 }
@@ -36,9 +36,10 @@ page = """<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="vi
 page = page.replace("padding:90px 0 80px", "padding:56px 0")
 page = page.replace(".hero-art{min-width:0;", ".hero-art{height:540px;overflow:hidden;min-width:0;")
 page = page.replace("font:15px/1.9 inherit;font-family:inherit", "font-size:15px;line-height:1.9;font-family:inherit")
-page = page.replace("2026.10.29", "2026.11.04")
-page = page.replace("1.2 版中文素材", "1.4 中文素材")
-page = page.replace("新版图标已接入源码，随下一次构建生效。<br>已经上传的 0.2.0（2）仍包含原图标。", "图标沿用当前品牌。1.4（8）核心测试、原生回归与最终归档已完成，上传和送审进度见发行记录。")
-page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "这是 1.4 素材源，图片来自通过原生用例采集的真实界面与隔离示例记录。公开健身政策和支持页面已核验。Apple 实时审核状态以后台为准，<a href=\"app-store-release-1.4-8-20261104.json\">查看本次发行记录</a>。")
+page = page.replace("2026.10.29", "2026.11.08")
+page = page.replace("1.2 版中文素材", "1.5 中文素材")
+page = page.replace("新版图标已接入源码，随下一次构建生效。<br>已经上传的 0.2.0（2）仍包含原图标。", "图标沿用当前品牌。1.5（9）包含历史与动作页面更新及 Health 授权修复，上传和送审进度见发行记录。")
+page = page.replace("截图源自 iPhone Duo 外屏", "截图源自 iPhone 17 Pro 模拟器")
+page = page.replace("这是本地素材预览，文案与图片尚未发布到 App Store。公开隐私政策可访问性、支持页面部署和真机验收仍待完成。", "这是 1.5 素材源，图片来自通过原生用例采集的真实界面与隔离示例记录。Apple 实时审核状态以后台为准，<a href=\"app-store-release-1.5-9-20261108.json\">查看本次发行记录</a>。")
 (ROOT / "index.html").write_text(page.replace("__GALLERY__", gallery).replace("__FIELDS__", fields))
 print("Built metadata.json and index.html; all locale fields within Apple limits.")

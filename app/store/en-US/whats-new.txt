@@ -1,5 +1,4 @@
-Review workouts, meals and body measurements together in a daily calendar and weekly recap. Coverage indicators explain which days contain records.
-Explore per-exercise history, compare the latest two completed working-set sessions and open each source workout. Load, bodyweight, assistance and timed exercise metrics stay separate.
-Copy a day of food records by selecting meals, reviewing the preview and confirming independent entries. Portions, nutrient snapshots and unknown values are preserved.
-Added 4 original training-review guides and 4 nutrition-review guides, bringing each offline collection to 12 articles.
-Missing dates are not treated as zero intake. Exercise energy is not automatically added to food goals. Existing backups and optional Apple Health sync remain available. New features and content are provided in Chinese.
+Today and Trends are now combined in History, with today's overview above a monthly calendar and training, body and food statistics.
+The Training tab is now an exercise gallery with muscle categories, equipment filters, search, favorites and offline guidance images. Workouts, templates and schedules remain available from its training entry.
+Fixed the first automatic Health sync path skipping the system access request and paused access selections not being restored. Failed requests now show diagnostic error information. Previously handled permissions can be adjusted in Apple Health.
+Simplified main-page text and improved dark mode and large-text layouts. Existing records, backups and explicit historical export confirmation are preserved. The interface is provided in Chinese.

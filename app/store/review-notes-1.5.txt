@@ -1,0 +1,12 @@
+Leanora Fitness 1.5 (9). No login, account, purchase or subscription is required. The interface and original guides are in Chinese. All exercise images and recording guides are bundled for offline use. No new Health permission categories, network content downloads or data collection are introduced.
+
+Review flows:
+1. History (历史, clock icon) is the default tab. Today’s workout, food summary and weight are at the top. Below, change months, select a date and switch training/body/food or History/Statistics. Empty dates are distinguishable from zero intake. The top-right menu retains weekly recap, workout history, detailed statistics and Health settings.
+2. Exercises (动作) replaces the former Training tab. Browse muscle categories and equipment filters, search, favorite an exercise and open its offline static guidance images. The bottom training entry opens free workouts, templates and schedules. Existing workout exercise selection retains its compact list and guidance entry. The catalog retains 882 exercises and 1,765 offline images with attribution.
+3. My (我的) > Apple Health: select reading/writing scopes, then Connect Apple Health, or enable automatic sync. Both explicit actions request system authorization before enabling the configuration. A canceled/failed request does not enable a previously disabled connection. Pausing preserves selected scopes. The system may not repeat a prompt for previously handled permissions; adjust them in Health > profile > Apps > Leanora Fitness, then check access and sync. Request completion does not imply all access was allowed. Read access is not exposed by HealthKit; write access is checked per type. Failure shows error domain/code. Historical export still requires separate confirmation. Manual recording remains available without Health access.
+4. Diary retains four meal categories, sourced food portions, custom foods, quick calories, editable combinations and previewed day copy. Body records remain manual local entries; external Health sources appear separately. JSON/CSV export, previewed restore and separate Health cleanup remain available.
+
+This version also simplifies text and adapts the main screens for large type and dark mode. It does not infer unknown nutrients, estimate 1RM or add exercise energy to food goals automatically. No Health data is sent to the developer. Previewing, filtering and favoriting do not create Health samples. Source attribution and licenses remain visible.
+
+Public privacy: https://leanora.ai/fitness/privacy/
+Support: https://leanora.ai/fitness/support/

@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "version": "1.5",
+  "build": "9",
+  "app_name": "Leanora Fitness",
+  "apple_app_id": "6825234654",
+  "bundle_id": "ai.leanora.fitness",
+  "team_id": "8ZP3NMT2A8",
+  "status": "PREPARE_FOR_SUBMISSION",
+  "version_record_created": true,
+  "metadata_saved": true,
+  "app_review_submitted": false,
+  "binary_uploaded": false,
+  "publicly_released_by_this_run": false,
+  "release_method": "manual_after_approval",
+  "source_commit": "fe88be66afcceb1f7b266b3e9688a441e5fc863e",
+  "source_proof": "../docs/qa/release-1.5-20261108/release-source-proof-20261108.json",
+  "archive_succeeded": true,
+  "archive": "app/build/ReleaseCandidate/Leanora-1.5-9-RC1.xcarchive",
+  "export_status": "CLI No Accounts / missing local Distribution certificate; GUI Organizer pending Mac unlock",
+  "screenshots_status": "7 native 1.5 sources and 14 compositions generated; portal replacement in progress",
+  "previous_version": {
+    "version": "1.4",
+    "apple_state_observed": "READY_FOR_DISTRIBUTION",
+    "observed_date": "2026-11-08",
+    "release_action_performed_by_this_run": false
+  },
+  "metadata_proof": "../docs/qa/release-1.5-20261108/appstore-metadata-proof-20261108.json",
+  "public_websites": "../docs/qa/release-1.5-20261108/public-websites-20261108.json"
+}

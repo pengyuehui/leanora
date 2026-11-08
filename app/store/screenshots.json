@@ -2,17 +2,17 @@
   {
     "id": "01-today",
     "source": "store-01-today",
-    "section": "每日概览",
-    "title": "训练与饮食\n一处记录",
-    "body": "把每一组、每一餐和身体变化，\n放进同一本日记。",
+    "section": "今天与历史",
+    "title": "今天的记录\n历史里回看",
+    "body": "训练、饮食与体重置顶，\n按月浏览每一天。",
     "blue": true
   },
   {
-    "id": "02-calendar",
-    "source": "v14-calendar-review",
-    "section": "日历与周回顾",
-    "title": "每一天的记录\n放到一起回看",
-    "body": "按日查看训练、四餐与身体记录，\n有无记录，清楚区分。",
+    "id": "02-exercises",
+    "source": "store-02-exercises",
+    "section": "动作图片库",
+    "title": "找到动作\n开始训练",
+    "body": "肌群、器械、搜索与收藏，\n配有离线指导图片。",
     "blue": false
   },
   {
@@ -20,7 +20,7 @@
     "source": "store-03-workout",
     "section": "逐组记录",
     "title": "练到哪一组\n就记到哪一组",
-    "body": "实际负重与次数，\n完成、暂停、继续都清楚。",
+    "body": "记录实际负重与次数，\n暂停后继续训练。",
     "blue": false
   },
   {
@@ -28,23 +28,23 @@
     "source": "store-04-nutrition",
     "section": "饮食日记",
     "title": "吃了什么\n一眼看清",
-    "body": "按餐记录热量与三大营养素，\n保留每一次份量。",
+    "body": "按餐记录热量和营养素，\n保留每次食物份量。",
     "blue": true
   },
   {
-    "id": "05-progress",
-    "source": "v14-exercise-progress",
-    "section": "动作历史与进步",
-    "title": "哪一组有变化\n回到来源看",
-    "body": "比较相同类型的正式组，\n查看两次差异和来源训练。",
+    "id": "05-portion",
+    "source": "store-05-portion",
+    "section": "来源与份量",
+    "title": "每一份食物\n有据可查",
+    "body": "查看来源与营养资料，\n按本次份量记录。",
     "blue": false
   },
   {
-    "id": "06-copy",
-    "source": "v14-day-copy-preview",
-    "section": "整日饮食复用",
-    "title": "常吃的一天\n先检查，再复制",
-    "body": "选择餐次和目标日期，\n确认后新增独立记录。",
+    "id": "06-trends",
+    "source": "store-06-trends",
+    "section": "分类统计",
+    "title": "身体的变化\n按月回看",
+    "body": "分别查看训练、身体与饮食，\n缺失记录不当作零。",
     "blue": false
   },
   {
@@ -52,7 +52,7 @@
     "source": "store-07-health",
     "section": "健康连接",
     "title": "连接 Apple Health\n由你决定范围",
-    "body": "训练、饮食与身体数据，\n按授权方向同步。",
+    "body": "训练、饮食和身体数据，\n按你选择的权限同步。",
     "blue": true
   }
 ]

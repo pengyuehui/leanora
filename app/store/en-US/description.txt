@@ -2,8 +2,8 @@ Every set. Every meal. A record that stays with you.
 
 Leanora Fitness brings workouts, food portions and body measurements into a personal journal. No account is required, and everyday logging works offline. The interface and original guides are provided in Chinese; some exercise names, food names and source instructions remain in English.
 
-DAILY CALENDAR AND WEEKLY RECAP
-Review local workouts, four meal categories and body records together. Browse weeks and open a selected day's diary. Track training days, workout counts, completed sets and food-record coverage. The known-energy average excludes dates without known energy. Having records does not mean a full day was logged. Unknown nutrients stay unknown.
+TODAY, MONTHLY HISTORY AND WEEKLY RECAP
+Open History for today's workout, nutrition and weight, followed by a monthly calendar. Switch between training, body and food records or view monthly statistics. Open a selected day's diary. Weekly recap and detailed trends remain in the menu. Track training days, workout counts, completed sets and food-record coverage. The known-energy average excludes dates without known energy. Having records does not mean a full day was logged. Unknown nutrients stay unknown.
 
 EXERCISE HISTORY
 View completed working sets for the same exercise and measurement type. Compare the latest two sessions and open each source workout. External load, bodyweight, assisted repetitions, time and distance use separate metrics. The app does not estimate 1RM or automatically judge training effectiveness.
@@ -11,8 +11,8 @@ View completed working sets for the same exercise and measurement type. Compare 
 TRAIN YOUR WAY
 Build templates with target sets, repetitions, load and rest. Schedule a week or reschedule one occurrence. Start a free workout, add exercises, record each set, pause and continue. Review previous performance, reuse values for unfinished sets or repeat a completed workout. Turn working sets into an editable template draft before saving.
 
-OFFLINE EXERCISE RESOURCES
-Explore 882 exercises and 1,765 bundled guidance images with full-screen viewing. Filter by muscle, equipment, difficulty or type. Favorite regular exercises and browse recently used ones. Four original example programs provide 9 editable templates, with 12 offline recording and review guides. Examples leave personal load and weekly scheduling to you. Images are static photos or illustrations.
+OFFLINE EXERCISE GALLERY
+Browse image cards with muscle and equipment filters, name search, favorites and recent exercises. The training entry keeps free workouts, templates and schedules available. Explore 882 exercises and 1,765 bundled guidance images with full-screen viewing. Filter by muscle, equipment, difficulty or type. Favorite regular exercises and browse recently used ones. Four original example programs provide 9 editable templates, with 12 offline recording and review guides. Examples leave personal load and weekly scheduling to you. Images are static photos or illustrations.
 
 KEEP A FOOD DIARY
 Log breakfast, lunch, dinner and snacks. Search 500 sourced foods with 209 independently prepared Chinese names. Combine name, alias, category, favorite and recent filters. Choose sourced portions, gram shortcuts or explicitly reuse a previous gram amount. Create custom foods or log quick calories. Missing macros are not inferred from calories.

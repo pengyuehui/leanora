@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-08",
+  "release_candidate": "RC1",
+  "version": "1.5",
+  "build": "9",
+  "source_commit": "fe88be66afcceb1f7b266b3e9688a441e5fc863e",
+  "application_and_project_inputs_verified": 1905,
+  "all_sha256_match": true,
+  "source_manifest_sha256": "38f90345290788c9fb3ecd3e8e522af70b1ce5e56dc436c65fcd365b60c98ba0",
+  "archive_succeeded": true,
+  "archive_strict_signature_valid": true,
+  "archive_signing_scope": "Development signature, not yet an exported App Store distribution IPA",
+  "healthkit": true,
+  "healthkit_background_delivery": true,
+  "release_debug_markers_absent": [
+    "--store-screenshots",
+    "--uitesting",
+    "Store capture:",
+    "createStoreSamples",
+    "injectCommitFailure",
+    "UITestBackupFixtures",
+    "--review-cardio-samples",
+    "有氧记录验证"
+  ],
+  "archive": "app/build/ReleaseCandidate/Leanora-1.5-9-RC1.xcarchive",
+  "privacy_manifest_sha256": "83d1e840fee8d299d3bd93b2d0d7ea172c33cfe36542810e04723043148f3069",
+  "original_uncommitted_files_excluded": true
+}

@@ -40,7 +40,7 @@ sources = {}
 for shot in shots:
     path = store / "zh-Hans/source" / f'{shot["source"]}.png'
     info = png(path)
-    assert (info["width"], info["height"]) == (1398, 2034)
+    assert (info["width"], info["height"]) in [(1398, 2034), (1206, 2622)]
     sources[str(path.relative_to(store))] = info
 icon = png(store / "brand/app-icon-1024.png")
 assert (icon["width"], icon["height"], icon["color_type"]) == (1024, 1024, 2)
