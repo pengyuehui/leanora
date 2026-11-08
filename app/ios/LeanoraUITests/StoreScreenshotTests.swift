@@ -9,11 +9,11 @@ import XCTest
         XCTAssertTrue(app.buttons["today.start"].waitForExistence(timeout: 40), app.debugDescription)
         XCTAssertTrue(app.staticTexts["nutrition.energy"].exists)
         capture(app, "store-01-today")
-        app.tabBars.buttons["动作"].tap(); app.buttons["exercise.training"].tap()
-        tap(app.buttons["training.template.上肢力量 A"], in: app)
-        XCTAssertTrue(app.staticTexts["template.title"].waitForExistence(timeout: 5))
-        capture(app, "store-02-plan")
-        tap(app.buttons["template.start"], in: app)
+        app.tabBars.buttons["动作"].tap()
+        tap(app.buttons["exercise.region.胸"], in: app)
+        capture(app, "store-02-exercises")
+        app.buttons["exercise.training"].tap()
+        tap(app.buttons["training.active"], in: app)
         XCTAssertTrue(app.buttons["workout.pause"].label.contains("继续"))
         reveal(app.buttons["workout.set.0.0"], in: app)
         capture(app, "store-03-workout")
@@ -47,11 +47,11 @@ import XCTest
             if element.exists && element.isHittable && element.frame.maxY < app.frame.maxY - 40 {
                 return
             }
-            app.collectionViews.firstMatch.swipeUp()
+            app.swipeUp()
         }
         for _ in 0..<16 {
             if element.exists && element.isHittable && element.frame.maxY < app.frame.maxY - 40 { return }
-            app.collectionViews.firstMatch.swipeDown()
+            app.swipeDown()
         }
         XCTFail("Screenshot flow element unavailable: \(app.debugDescription)")
     }
