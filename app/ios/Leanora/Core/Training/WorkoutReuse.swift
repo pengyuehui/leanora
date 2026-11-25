@@ -43,7 +43,7 @@ enum WorkoutReuse {
         var result = exercise
         for i in result.sets.indices {
             let current = result.sets[i]
-            guard current.completedAt == nil, current.timerStartedAt == nil, current.accumulatedSeconds == 0,
+            guard isBlank(current),
                   let previous = previousSet(for: current, in: exercise, reference: reference) else { continue }
             result.sets[i].loadKg = previous.loadKg
             result.sets[i].repetitions = previous.repetitions
@@ -51,6 +51,12 @@ enum WorkoutReuse {
             result.sets[i].distanceMeters = previous.distanceMeters
         }
         return result
+    }
+
+    static func isBlank(_ set: WorkoutSet) -> Bool {
+        set.completedAt == nil && set.timerStartedAt == nil && set.accumulatedSeconds == 0 &&
+        set.loadKg == nil && set.repetitions == nil && set.durationSeconds == nil &&
+        set.distanceMeters == nil && set.effort == nil
     }
 
     static func repeated(_ source: WorkoutSession, exercises: [Exercise], now: Date, timeZoneID: String) throws -> WorkoutSession {
@@ -131,7 +137,7 @@ enum WorkoutReuse {
         }
         let live = Set(session.exercises.flatMap(\.sets).map(\.id))
         session.pausedTimerSetIDs = session.pausedTimerSetIDs?.filter { live.contains($0) }
-        session.restDeadline = nil
+        WorkoutEngine.clearRest(&session)
     }
 
     private static func usable(_ snapshot: ExerciseSnapshot, in exercises: [UUID: Exercise]) throws -> Exercise {

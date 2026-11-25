@@ -54,7 +54,7 @@ import Observation
                 try await restorePreferences(from: opened, into: preferences)
             }
             #endif
-            let training = TrainingStore(repository: opened, catalog: try ExerciseCatalog.load())
+            let training = TrainingStore(repository: opened, catalog: try ExerciseCatalog.load(), preferences: preferences)
             await training.refresh()
             self.training = training
             let journal = JournalStore(repository: opened, catalog: try FoodCatalog.load())

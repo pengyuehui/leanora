@@ -1,5 +1,8 @@
 import HealthKit
 import Observation
+#if os(iOS)
+import UIKit
+#endif
 
 enum HealthCategory: String, CaseIterable, Identifiable {
     case body, workouts, nutrition, activity
@@ -60,14 +63,41 @@ extension HealthAccessSelection {
 @MainActor
 protocol HealthAuthorizing {
     var isAvailable: Bool { get }
+    var applicationState: String { get }
+    func promptStatus(_ selection: HealthAccessSelection) async -> HealthPromptStatus
     func request(_ selection: HealthAccessSelection) async throws
     func writableCount(_ selection: HealthAccessSelection) -> Int
+}
+
+extension HealthAuthorizing {
+    var applicationState: String { "active" }
+    func promptStatus(_ selection: HealthAccessSelection) async -> HealthPromptStatus { .unknown }
 }
 
 @MainActor
 final class SystemHealthAuthorizer: HealthAuthorizing {
     private let store = HKHealthStore()
     var isAvailable: Bool { HKHealthStore.isHealthDataAvailable() }
+    var applicationState: String {
+        #if os(iOS)
+        switch UIApplication.shared.applicationState {
+        case .active: "active"
+        case .inactive: "inactive"
+        case .background: "background"
+        @unknown default: "unknown"
+        }
+        #else
+        "active"
+        #endif
+    }
+    func promptStatus(_ selection: HealthAccessSelection) async -> HealthPromptStatus {
+        guard let status = try? await store.statusForAuthorizationRequest(toShare: selection.writeTypes, read: selection.readTypes) else { return .unknown }
+        switch status {
+        case .shouldRequest: return .shouldRequest
+        case .unnecessary: return .unnecessary
+        default: return .unknown
+        }
+    }
     func request(_ selection: HealthAccessSelection) async throws {
         try await store.requestAuthorization(toShare: selection.writeTypes, read: selection.readTypes)
     }
@@ -87,6 +117,7 @@ final class HealthAuthorizationService {
     private(set) var state: HealthAccessState = .idle
     private(set) var failureMessage: String?
     private(set) var failureCode: String?
+    private(set) var diagnostic: HealthAuthorizationDiagnostic?
     var isAvailable: Bool { authorizer.isAvailable }
     var isRequesting: Bool { state == .requesting }
 
@@ -94,17 +125,32 @@ final class HealthAuthorizationService {
 
     @discardableResult
     func request(_ selection: HealthAccessSelection) async -> Bool {
-        guard isAvailable, !selection.isEmpty, !isRequesting else { return false }
+        guard !isRequesting else { return false }
         failureMessage = nil; failureCode = nil
+        diagnostic = HealthAuthorizationDiagnostic(
+            appVersion: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "unknown",
+            build: Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "unknown",
+            systemVersion: ProcessInfo.processInfo.operatingSystemVersionString,
+            applicationState: authorizer.applicationState,
+            reading: selection.readTypes.map(\.identifier).sorted(), writing: selection.writeTypes.map(\.identifier).sorted())
+        guard isAvailable else { return reject("此设备的健康数据暂不可用。", code: "HealthUnavailable") }
+        guard !selection.isEmpty else { return reject("请先选择至少一种访问范围。", code: "EmptySelection") }
+        guard authorizer.applicationState == "active" else { return reject("请回到 App 前台并解锁设备后重试。", code: "ApplicationNotActive") }
         state = .requesting
+        diagnostic?.promptStatus = await authorizer.promptStatus(selection)
+        diagnostic?.applicationState = authorizer.applicationState
+        guard authorizer.applicationState == "active" else { return reject("请回到 App 前台并解锁设备后重试。", code: "ApplicationNotActive") }
         do {
             try await authorizer.request(selection)
             processedSelection = selection
             state = .processed(writable: authorizer.writableCount(selection), requested: selection.writeTypes.count)
+            diagnostic?.outcome = "processed"
+            diagnostic?.writableCount = authorizer.writableCount(selection)
             return true
         } catch {
             let problem = error as NSError
             failureCode = "\(problem.domain) (\(problem.code))"
+            diagnostic?.outcome = "failed"; diagnostic?.errorCode = failureCode
             if problem.domain == NSCocoaErrorDomain && problem.code == CocoaError.userCancelled.rawValue {
                 failureMessage = "已取消系统授权，可以重试。"
             } else if problem.domain == HKErrorDomain && problem.code == HKError.Code.errorAuthorizationDenied.rawValue {
@@ -119,8 +165,15 @@ final class HealthAuthorizationService {
         }
     }
 
+    private func reject(_ message: String, code: String) -> Bool {
+        failureMessage = message; failureCode = code; state = .failed
+        diagnostic?.outcome = "notRequested"; diagnostic?.errorCode = code
+        return false
+    }
+
     func refreshWriteAccess() {
         guard case .processed = state, let selection = processedSelection else { return }
         state = .processed(writable: authorizer.writableCount(selection), requested: selection.writeTypes.count)
+        diagnostic?.writableCount = authorizer.writableCount(selection)
     }
 }

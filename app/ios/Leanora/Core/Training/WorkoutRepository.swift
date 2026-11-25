@@ -15,7 +15,7 @@ extension AppModelActor {
         return value
     }
 
-    func addExerciseToWorkout(_ id: UUID, revision: Int, exerciseID: UUID, catalog: [Exercise], now: Date = Date()) throws {
+    func addExerciseToWorkout(_ id: UUID, revision: Int, exerciseID: UUID, catalog: [Exercise], reusePrevious: Bool = false, now: Date = Date()) throws {
         var value = try workout(id)
         guard value.stamp.revision == revision, [.active, .paused].contains(value.status) else { throw DataProblem.revisionConflict }
         let records = try snapshot()
@@ -28,7 +28,7 @@ extension AppModelActor {
                 durationSeconds: plan.durationSeconds, distanceMeters: plan.distanceMeters, restSeconds: plan.restSeconds)))
         let i = value.exercises.count - 1
         let history = records.compactMap { if case .session(let v) = $0 { return v }; return nil }
-        if let reference = WorkoutReuse.reference(for: value.exercises[i], in: value, history: history) {
+        if reusePrevious, let reference = WorkoutReuse.reference(for: value.exercises[i], in: value, history: history) {
             value.exercises[i] = WorkoutReuse.applying(reference, to: value.exercises[i])
         }
         value.stamp.revision += 1; value.stamp.updatedAt = max(now, value.stamp.updatedAt)
@@ -55,9 +55,38 @@ extension AppModelActor {
               old.started.localDate == draft.started.localDate, old.started.timeZoneID == draft.started.timeZoneID,
               abs(old.started.instant.timeIntervalSince(draft.started.instant)) < 0.001 else { throw DataProblem.revisionConflict }
         var value = draft
+        if let trigger = value.restTriggerSetID,
+           !value.exercises.flatMap(\.sets).contains(where: { $0.id == trigger && $0.completedAt != nil }) {
+            WorkoutEngine.clearRest(&value)
+        }
         for item in value.exercises { for set in item.sets where set.completedAt != nil { try WorkoutEngine.validateActual(set, measurement: item.snapshot.measurement) } }
         value.stamp.revision += 1; value.stamp.updatedAt = max(now, old.stamp.updatedAt)
         try saveWithHealthIntent([.session(value)])
+    }
+
+    func completeWorkoutSet(_ id: UUID, revision: Int, exerciseID: UUID, setID: UUID,
+                            input: WorkoutSetInput, pounds: Bool, miles: Bool, now: Date = Date()) throws {
+        var value = try workout(id)
+        guard value.status == .active,
+              let i = value.exercises.firstIndex(where: { $0.id == exerciseID }),
+              let j = value.exercises[i].sets.firstIndex(where: { $0.id == setID }) else { throw TrainingProblem.missingRecord }
+        // A replay after a successful commit is a no-op, even with its old revision.
+        guard value.exercises[i].sets[j].completedAt == nil else { return }
+        guard value.stamp.revision == revision else { throw DataProblem.revisionConflict }
+        value.exercises[i].sets[j] = try input.applying(to: value.exercises[i].sets[j], measurement: value.exercises[i].snapshot.measurement, pounds: pounds, miles: miles)
+        try WorkoutEngine.complete(&value, exercise: i, set: j, at: now)
+        try saveWorkout(value, now: now)
+    }
+
+    func replaceWorkoutExercise(_ id: UUID, revision: Int, exerciseID: UUID, replacementID: UUID, catalog: [Exercise]) throws {
+        var value = try workout(id)
+        guard value.stamp.revision == revision else { throw DataProblem.revisionConflict }
+        guard let replacement = try trainingExercises(catalog: catalog).first(where: { $0.stamp.id == replacementID }) else { throw TrainingProblem.missingRecord }
+        try ExerciseReplacement.apply(to: &value, exerciseID: exerciseID, replacement: replacement)
+        value.stamp.revision += 1; value.stamp.updatedAt = max(Date(), value.stamp.updatedAt)
+        let records = try snapshot()
+        let dependencies: [BusinessRecord] = records.contains { $0.id == replacementID && $0.kind == "exercise" } ? [] : [.exercise(replacement)]
+        try saveWithHealthIntent(dependencies + [.session(value)])
     }
 
     func finishWorkout(_ id: UUID, now: Date = Date()) throws -> WorkoutSession {
@@ -72,6 +101,7 @@ extension AppModelActor {
         }
         value.status = .completed; value.endedAt = end; value.restDeadline = nil
         value.pausedTimerSetIDs = nil
+        WorkoutEngine.clearRest(&value)
         value.stamp.revision += 1; value.stamp.updatedAt = end
         try saveWithHealthIntent([.session(value)])
         return try workout(id)

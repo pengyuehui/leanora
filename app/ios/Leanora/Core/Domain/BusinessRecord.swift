@@ -155,6 +155,9 @@ enum DomainValidation {
                     }
                 }
                 if let day = v.scheduleOriginDate { try self.day(day) }
+                try number(v.pausedRestRemainingSeconds, max: 86400)
+                if v.pausedRestRemainingSeconds != nil, v.status != .paused { throw DataProblem.invalid("休息暂停状态") }
+                if let deadline = v.restDeadline, !deadline.timeIntervalSince1970.isFinite { throw DataProblem.invalid("休息结束时间") }
                 let groups = Dictionary(grouping: v.exercises.filter { $0.supersetID != nil }, by: { $0.supersetID! })
                 guard groups.values.allSatisfy({ $0.count == 2 && $0.allSatisfy { [.externalLoad, .bodyweight, .assistedLoad].contains($0.snapshot.measurement) } }) else { throw DataProblem.invalid("超级组") }
             case .food(let v):

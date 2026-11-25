@@ -1,0 +1,51 @@
+{
+  "version": "1.6",
+  "build": "10",
+  "baseline": "e9203f67dfab8f7f1ea31af339f4c09644b5792d",
+  "core": {
+    "executed": 176,
+    "passed": 174,
+    "skipped": 2,
+    "failed": 0,
+    "log": "app/build/v16-core-verified.log"
+  },
+  "native_health_unit_tests": {
+    "passed": 9,
+    "bundle": "app/build/V16-UI-final.xcresult"
+  },
+  "distinct_ui_cases_passed": 10,
+  "ui_result_bundles": [
+    "app/build/V16-UI-final.xcresult",
+    "app/build/V16-UI-signed.xcresult",
+    "app/build/V16-Store-Regression.xcresult",
+    "app/build/V16-Rest-Verified.xcresult"
+  ],
+  "archive": {
+    "path": "app/build/ReleaseCandidate/Leanora-1.6-10-RC2-Signed.xcarchive",
+    "signing": "development",
+    "get_task_allow": true,
+    "healthkit": true,
+    "background_delivery": true,
+    "binary_sha256": "beae5ac9212a221550538d20a4bbfb4df4b502198ea129f5292d5a2ab974f197"
+  },
+  "app_store_export": {
+    "status": "failed",
+    "errors": [
+      "No Accounts",
+      "No iOS Distribution certificate with private key"
+    ],
+    "uploaded": false,
+    "submitted": false
+  },
+  "physical_iphone_verification": "pending",
+  "store_source_screenshots": 7,
+  "store_compositions": 14,
+  "user_files_preserved": [
+    "Info.plist",
+    "Localizable.xcstrings"
+  ],
+  "project_preservation": "Existing settings retained; only source registration and version increment added.",
+  "source_manifest": "source-manifest.json",
+  "source_manifest_sha256": "721a8f4dc811afc57de732299dead020edfd7aff2815b077c376b6a4c13df816",
+  "source_scope": "Working-tree build including pre-existing uncommitted configuration; see README preservation notes."
+}

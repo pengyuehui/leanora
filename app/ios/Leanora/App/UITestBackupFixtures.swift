@@ -4,6 +4,10 @@ import Foundation
 enum UITestBackupFixtures {
     static func create(for repository: AppModelActor) async throws {
         let arguments = ProcessInfo.processInfo.arguments
+        if arguments.contains("--uitesting"), arguments.contains("--workout-recording-fixture") {
+            try await createWorkoutRecordingSample(for: repository)
+            return
+        }
         if arguments.contains("--uitesting"), arguments.contains("--store-screenshots") {
             try await createStoreSamples(for: repository)
             if arguments.contains("--review-cardio-samples") { try await createCardioReviewSamples(for: repository) }
@@ -20,6 +24,21 @@ enum UITestBackupFixtures {
             .write(to: directory.appendingPathComponent("Leanora-valid.json"), options: .atomic)
         try Data("{invalid-json".utf8).write(to: directory.appendingPathComponent("Leanora-invalid.json"), options: .atomic)
         try StoreFactory.protect(directory)
+    }
+
+    private static func createWorkoutRecordingSample(for repository: AppModelActor) async throws {
+        guard try await repository.snapshot().allSatisfy({ ["profile", "goal"].contains($0.kind) }) else { return }
+        guard let exercise = try ExerciseCatalog.load().first(where: { $0.name == "杠铃卧推" }) else { throw TrainingProblem.missingRecord }
+        let now = Date(), past = now.addingTimeInterval(-86400)
+        let template = WorkoutTemplate(name: "行内记录验证", items: [TemplateItem(exerciseID: exercise.stamp.id, order: 0, minimumReps: 8, maximumReps: 12, loadKg: 20)])
+        var prior = try TrainingPlan.session(from: template, exercises: [exercise], now: past, timeZoneID: TimeZone.current.identifier, originDate: nil)
+        prior.status = .completed; prior.endedAt = past.addingTimeInterval(600)
+        for j in prior.exercises[0].sets.indices {
+            prior.exercises[0].sets[j].loadKg = 20; prior.exercises[0].sets[j].repetitions = 8
+            prior.exercises[0].sets[j].completedAt = past.addingTimeInterval(Double(60 + j * 120))
+        }
+        let current = try TrainingPlan.session(from: template, exercises: [exercise], now: now, timeZoneID: TimeZone.current.identifier, originDate: nil)
+        try await repository.save([.exercise(exercise), .template(template), .session(prior), .session(current)])
     }
 
     // Synthetic records in the isolated UI-test database. No Health data or grants.

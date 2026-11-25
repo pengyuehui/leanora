@@ -1,0 +1,72 @@
+[
+  {
+    "path": "app/build/v16-core-first.log",
+    "sha256": "85d1bf80fa69006ce4751caaa5ebeeb128317e7570e7f49bc439a413a3237302",
+    "bytes": 14586
+  },
+  {
+    "path": "app/build/v16-core-verified.log",
+    "sha256": "f624a9464fae64b4468a76443b798c270dbc806b374bc406f4f2a87ae6ea57d7",
+    "bytes": 55494
+  },
+  {
+    "path": "app/build/v16-ui-first.log",
+    "sha256": "26fc9633cedfac28022e9ee67d5cd5ff96e83415dcf370dc99b11fa946e5388a",
+    "bytes": 172907
+  },
+  {
+    "path": "app/build/v16-ui-second.log",
+    "sha256": "1d0a940ed4b37f18f40702d44415469902be6661581294b29125481478710fe7",
+    "bytes": 144548
+  },
+  {
+    "path": "app/build/v16-ui-third.log",
+    "sha256": "57dc2ecc87e729a6f6ce4799a51d4297a88d89a0d51764a274b0a765215c5a48",
+    "bytes": 175304
+  },
+  {
+    "path": "app/build/v16-ui-fourth.log",
+    "sha256": "e338dc6dcc5e0208ba3117cdfabf9361abb2ef95246a3b00e323015324d16aba",
+    "bytes": 286940
+  },
+  {
+    "path": "app/build/v16-ui-signed.log",
+    "sha256": "8d2df4bc33c48403481bf8b81304b24641c750f9e43a423a4a19a54855dba094",
+    "bytes": 402162
+  },
+  {
+    "path": "app/build/v16-ui-final.log",
+    "sha256": "1c7428d19ee6b37d71da9ef91c0cfb9101372e9d1de760641da332d134151655",
+    "bytes": 264929
+  },
+  {
+    "path": "app/build/v16-rest-verified.log",
+    "sha256": "947d404cc05fd8b1937a18bdd0d71a1b36286c4314b2af4434443b242daf19cc",
+    "bytes": 98156
+  },
+  {
+    "path": "app/build/v16-store-regression.log",
+    "sha256": "4dc18d654275e4d4f96d9221245b0da913b2d1d21b3cb26a64ea449347b29e40",
+    "bytes": 112055
+  },
+  {
+    "path": "app/build/v16-release-archive.log",
+    "sha256": "d140810ab4ed80e8babb6219418553a4d780884cca1c0f257ec50b9f43b4bca3",
+    "bytes": 115657
+  },
+  {
+    "path": "app/build/v16-release-signed-archive.log",
+    "sha256": "79552cb344186d91a5e60f7f03fc2280770b51b2a85423f934599efe9d614ec1",
+    "bytes": 108687
+  },
+  {
+    "path": "app/build/v16-release-rc2.log",
+    "sha256": "0f8bdce03b99d3d3c7bc7a24f7edc8c3688ea9a712b08a0d5761742de473976f",
+    "bytes": 108499
+  },
+  {
+    "path": "app/build/v16-release-export.log",
+    "sha256": "01f1e9fb758ff2a8b2d64f9ceec6b13e0405198078215b021d6a602c7e3e1f5a",
+    "bytes": 524
+  }
+]

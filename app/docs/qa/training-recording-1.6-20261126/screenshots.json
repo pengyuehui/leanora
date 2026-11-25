@@ -1,0 +1,114 @@
+[
+  {
+    "name": "v16-health-diagnostic.png",
+    "sha256": "6e4e7984e6a66c6c2eb0f29587bf3f77de45a9da6dae559a959957e266891205",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testHealthDiagnosticIsVisibleAfterRequest()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-inline-validation-retry.png",
+    "sha256": "35b8e1de8947278ef6e3c0ef8e3f3fc84936bddb2011cf5915890545b355f854",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testInvalidInlineInputStaysInRowAndCanRetry()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-inline-large-dark.png",
+    "sha256": "a5c0dc55ec20f091dcfd4380f39473a5d8cfb245e0f2eb9ae4bd9665c8e351c0",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testLargeTypeDarkInlineLayoutAndAdvancedEditor()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-replacement-completed.png",
+    "sha256": "be62361fee9b49f1153e50f43e138e5555f4ebbb3b5720a4874ba21e9d2482a8",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testReplacementPreviewCancelThenConfirmPreservesCompletedSet()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-replacement-preview.png",
+    "sha256": "386f330af97d575d45f4999eb1f947a0b606d85f642827823522ea405a1c4ef1",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testReplacementPreviewCancelThenConfirmPreservesCompletedSet()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-rest-resumed.png",
+    "sha256": "d36d729ae5da58f149f03a45bd509b88ee1d3165375bf2d46c2488d61c1ebe54",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testRestPausePersistsAcrossTerminationAndResume()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-rest-paused.png",
+    "sha256": "9aeb6ed7ff61bdec9d68ae5a72828a64c0188157e41add078aad629d924c7b62",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testRestPausePersistsAcrossTerminationAndResume()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-inline-undo.png",
+    "sha256": "4bd391e204f5a4ad3f1ee57a2dd7cd80d61d49af9635f5e006792a6716295cd7",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testThreeInlineSetsWithoutEditorThenUndoAndRelaunch()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "v16-inline-three-completed.png",
+    "sha256": "dd3280499c271898391bc98130a1430cfba520fcc1425eacd05cf6d8aabff352",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecordingTests/testThreeInlineSetsWithoutEditorThenUndoAndRelaunch()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u4-history-edited-volume.png",
+    "sha256": "81a761a95cd5b460a9688299083c60b9ee0950d85d752c4f0645d749b48c4dcd",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u4-recovered-session.png",
+    "sha256": "cc72ec5e1adb6b21ac2d34dcb3c20998606f5e483c116fa166130c41543b207a",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u4-paused-set-rest.png",
+    "sha256": "de659c5c5b0613218c6112c364a2c89cc5bd062d70c35168ee4a0e8ef943a577",
+    "source_bundle": "v16-attachments-final",
+    "test": "WorkoutRecoveryTests/testRecordPauseKillRecoverFinishAndEditHistory()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u678-system-health-write-echo.png",
+    "sha256": "b1541c7925f168a149018254a3f780534b4d57733a2831dea17997d7c5528559",
+    "source_bundle": "v16-attachments-signed",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u678-system-health-limited-history.png",
+    "sha256": "688d50d722d68b22d77b3ca6ff6b7aa766b04338181fa8994d246aced7636bbf",
+    "source_bundle": "v16-attachments-signed",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u678-system-health-before-allow.png",
+    "sha256": "005dab2300daa83ac25495bc92527a5421bc8a177d798cd87ab4bec263c3b771",
+    "source_bundle": "v16-attachments-signed",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "fixture": "synthetic isolated UI test records"
+  },
+  {
+    "name": "u678-system-health-selection.png",
+    "sha256": "b8441397ef6a6113cf17462958d0aaa1a2861cac55ca044eb9ebc28540b44e63",
+    "source_bundle": "v16-attachments-signed",
+    "test": "HealthReleaseExperienceTests/testSystemHealthAllowedWriteAndEcho()",
+    "fixture": "synthetic isolated UI test records"
+  }
+]

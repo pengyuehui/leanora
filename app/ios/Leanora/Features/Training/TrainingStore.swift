@@ -9,6 +9,8 @@ extension TemplateItem: Identifiable {}
 @MainActor @Observable final class TrainingStore {
     let repository: AppModelActor
     let catalog: [Exercise]
+    private let preferences: AppPreferences?
+    var automaticallyReuseWorkoutValues: Bool { preferences?.automaticallyReuseWorkoutValues == true }
     private(set) var exercises: [Exercise] = []
     private(set) var templates: [WorkoutTemplate] = []
     private(set) var sessions: [WorkoutSession] = []
@@ -20,7 +22,9 @@ extension TemplateItem: Identifiable {}
     private let workoutNotifications = WorkoutNotificationService()
     private(set) var notificationError: String?
 
-    init(repository: AppModelActor, catalog: [Exercise]) { self.repository = repository; self.catalog = catalog }
+    init(repository: AppModelActor, catalog: [Exercise], preferences: AppPreferences? = nil) {
+        self.repository = repository; self.catalog = catalog; self.preferences = preferences
+    }
     var active: WorkoutSession? { sessions.first { [.active, .paused].contains($0.status) } }
     var recentExerciseIDs: [UUID] { WorkoutReuse.recentExerciseIDs(in: sessions) }
     func exercise(_ id: UUID) -> Exercise? { exercises.first { $0.id == id } }
@@ -51,7 +55,9 @@ extension TemplateItem: Identifiable {}
         catch { self.error = error.localizedDescription; return nil }
     }
     func start(_ template: WorkoutTemplate, origin: String? = nil) async -> WorkoutSession? {
-        await run { [repository, catalog] in try await repository.startTraining(templateID: template.stamp.id, catalog: catalog, originDate: origin) }
+        await run { [repository, catalog, reuse = automaticallyReuseWorkoutValues] in
+            try await repository.startTraining(templateID: template.stamp.id, catalog: catalog, originDate: origin, reusePrevious: reuse)
+        }
     }
     func startFree() async -> WorkoutSession? {
         await run { [repository] in try await repository.startFreeTraining() }

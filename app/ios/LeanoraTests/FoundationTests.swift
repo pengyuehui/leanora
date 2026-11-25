@@ -49,6 +49,14 @@ import XCTest
 
 @MainActor final class FakeHealthAuthorizer: HealthAuthorizing {
     var isAvailable = true
+    var applicationState = "active"
+    var prompt = HealthPromptStatus.unknown
+    var holdPrompt = false
+    var promptContinuation: CheckedContinuation<HealthPromptStatus, Never>?
+    func promptStatus(_ selection: HealthAccessSelection) async -> HealthPromptStatus {
+        if holdPrompt { return await withCheckedContinuation { promptContinuation = $0 } }
+        return prompt
+    }
     var calls = 0
     var fails = false
     var writable = 0
@@ -57,6 +65,60 @@ import XCTest
         if fails { throw CocoaError(.userCancelled) }
     }
     func writableCount(_ selection: HealthAccessSelection) -> Int { writable }
+}
+
+@MainActor final class HealthDiagnosticTests: XCTestCase {
+    func testBackgroundRequestIsRejectedWithoutCallingSystem() async {
+        let fake = FakeHealthAuthorizer(); fake.applicationState = "background"
+        let service = HealthAuthorizationService(authorizer: fake)
+        let result = await service.request(.init(reading: [.body], writing: [.body]))
+        XCTAssertFalse(result); XCTAssertEqual(fake.calls, 0)
+        XCTAssertEqual(service.failureCode, "ApplicationNotActive")
+        XCTAssertEqual(service.diagnostic?.outcome, "notRequested")
+        XCTAssertTrue(service.diagnostic?.text.contains("Application: background") == true)
+    }
+    func testAlreadyRequestedStatusDoesNotClaimReadOrWritePermission() async {
+        let fake = FakeHealthAuthorizer(); fake.prompt = .unnecessary; fake.writable = 0
+        let service = HealthAuthorizationService(authorizer: fake)
+        let result = await service.request(.init(reading: [.body], writing: [.body]))
+        XCTAssertTrue(result); XCTAssertEqual(fake.calls, 1)
+        XCTAssertEqual(service.state, .processed(writable: 0, requested: 2))
+        XCTAssertEqual(service.diagnostic?.promptStatus, .unnecessary)
+        XCTAssertEqual(service.diagnostic?.outcome, "processed")
+        let text = service.diagnostic?.text ?? ""
+        XCTAssertTrue(text.contains("Read authorization is not observable"))
+        XCTAssertTrue(text.contains("HKQuantityTypeIdentifierBodyMass"))
+        XCTAssertFalse(text.contains("sampleValue")); XCTAssertFalse(text.contains("deviceIdentifier"))
+    }
+    func testConcurrentRequestWhileCheckingPromptIsNotDuplicated() async {
+        let fake = FakeHealthAuthorizer(); fake.holdPrompt = true
+        let service = HealthAuthorizationService(authorizer: fake)
+        let first = Task { await service.request(.init()) }
+        for _ in 0..<100 where fake.promptContinuation == nil { await Task.yield() }
+        XCTAssertNotNil(fake.promptContinuation)
+        let second = await service.request(.init())
+        XCTAssertFalse(second); XCTAssertEqual(service.state, .requesting)
+        fake.promptContinuation?.resume(returning: .shouldRequest)
+        let result = await first.value
+        XCTAssertTrue(result); XCTAssertEqual(fake.calls, 1)
+    }
+    func testDiagnosticOnlyReportsErrorCodeAndRetryRefreshesIt() async {
+        let fake = FakeHealthAuthorizer(); fake.fails = true
+        let service = HealthAuthorizationService(authorizer: fake)
+        _ = await service.request(.init())
+        XCTAssertEqual(service.diagnostic?.outcome, "failed"); XCTAssertNotNil(service.diagnostic?.errorCode)
+        fake.fails = false
+        _ = await service.request(.init())
+        XCTAssertEqual(service.diagnostic?.outcome, "processed"); XCTAssertNil(service.diagnostic?.errorCode)
+    }
+    func testAutomaticReuseDefaultsOffAndIsRestored() {
+        let name = "Leanora.V16.Tests.\(UUID())", defaults = UserDefaults(suiteName: name)!
+        defer { defaults.removePersistentDomain(forName: name) }
+        let preferences = AppPreferences(defaults: defaults)
+        XCTAssertFalse(preferences.automaticallyReuseWorkoutValues)
+        preferences.automaticallyReuseWorkoutValues = true
+        XCTAssertTrue(AppPreferences(defaults: defaults).automaticallyReuseWorkoutValues)
+    }
 }
 
 @MainActor final class FakeNotificationAuthorizer: NotificationAuthorizing {

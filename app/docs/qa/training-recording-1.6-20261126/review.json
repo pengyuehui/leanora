@@ -1,0 +1,21 @@
+{
+  "mode": "sequential review in the main thread; no subagents",
+  "scope": "1.6 changes only; pre-existing project, Info.plist and string catalog changes preserved",
+  "checks": ["correctness", "testing", "maintainability", "project standards", "adversarial state sequences", "permission and data boundaries"],
+  "resolved": [
+    {"id": "R1", "issue": "Advanced editing could uncomplete the set that owned an outstanding rest reminder.", "change": "Repository clears rest when its trigger is no longer completed.", "verification": "testAdvancedUncompletionOrDeletionCancelsItsPendingRest"},
+    {"id": "R2", "issue": "Equal encoded timestamps did not uniquely identify the last completed set.", "change": "Persist optional lastCompletedSetID, retain timestamp fallback for old payloads.", "verification": "testUndoUsesCompletionOrderWhenTimestampsAreIdentical"},
+    {"id": "R3", "issue": "Pause after extending a maximum-duration rest could exceed validation limits.", "change": "Clamp rest extension and paused remaining time to the existing 86400-second bound.", "verification": "testRestExtensionAtMaximumCanStillPauseAndValidate"},
+    {"id": "R4", "issue": "Old paused payloads could display a live countdown until resumed.", "change": "Use one compatibility projection for paused display and resume; live countdown only for active sessions.", "verification": "testOldPausedPayloadRecoversDeadlineAtPauseInstant; V16-Rest-Verified.xcresult"},
+    {"id": "R5", "issue": "Inline text changes would repeat history lookup for each exercise.", "change": "Cache references by saved TrainingStore dataVersion rather than on each keystroke.", "verification": "Final inline, reuse, replacement and large-type UI tests passed"},
+    {"id": "R6", "issue": "Generic rest and undo controls were inconvenient after scrolling through sets.", "change": "Keep undo and rest controls in the fixed footer, adapt countdown controls for accessibility sizes.", "verification": "Final three-set/undo and large-type UI cases passed"}
+  ],
+  "unresolved_code_findings": [],
+  "external_gates": [
+    "Original physical iPhone authorization reproduction, lock/background and permission-revocation verification are pending device connection.",
+    "App Store export failed with No Accounts and missing iOS Distribution private key. Development-signed Archive is not an App Store IPA.",
+    "Actual TestFlight build verification has not run; no upload or review submission occurred."
+  ],
+  "coverage_limits": ["No iOS 18 runtime available on this Mac", "Real VoiceOver verification remains a separate device task", "UI results are from multiple batches, not one full-suite run"],
+  "post_deploy": "No automatic health telemetry added. Developer checks user-provided error codes and explicitly reported save, duplicate-write, reminder and restore failures during the first TestFlight validation window."
+}

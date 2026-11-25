@@ -1,0 +1,14 @@
+Leanora Fitness 1.6 (10). Draft review notes for the local release candidate; this file does not indicate submission or approval.
+
+No login, payment or subscription is required. Core recording works offline. The interface and original guides are in Chinese. Exercise media remains bundled with source attribution and licenses.
+
+1. History retains today's overview at the top. Open Actions, then Training to start a free workout or use a template. During an active workout, enter actual load/repetitions or duration/distance directly in each row and confirm completion. Previous values remain explicit references; optional automatic reuse is off by default and only fills empty sets. Advanced editing retains set kinds and RPE/RIR.
+2. The fixed workout footer provides undo for the latest completed set. Pausing freezes remaining rest time and cancels its pending reminder; continuing restores it. Backgrounding alone does not pause a workout. Reminders are optional.
+3. The exercise menu offers replacement with search, muscle, equipment and measurement filters. Preview explains preserved completed sets, new pending sets, targets and superset changes. Cancel writes nothing. Existing completed sets remain attributed to their original exercise.
+4. Under Me > Apple Health, choose reading/writing categories and check access. The app checks whether the request is in the foreground and distinguishes processed requests from allowed writes. The system does not expose read authorization. Request diagnostics can be exported by explicit user action and contain only app/system versions, requested type identifiers, foreground status and error codes. No health sample values, account or device identifiers are included; no diagnostic is sent automatically.
+5. Manual nutrition/body recording, original content, previewed JSON/CSV backup workflows and separate Health source management remain available. Historical Health export still needs its own confirmation.
+
+Release gates: original physical iPhone reproduction and TestFlight verification must be recorded before submission. Simulator and automated results do not substitute for those gates.
+
+Privacy: https://leanora.ai/fitness/privacy/
+Support: https://leanora.ai/fitness/support/

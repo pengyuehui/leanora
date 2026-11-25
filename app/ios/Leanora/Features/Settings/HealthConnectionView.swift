@@ -19,9 +19,10 @@ struct HealthConnectionView: View {
                             Spacer()
                             if connecting { ProgressView() }
                         }.frame(minHeight: 44)
-                    }.disabled(selection.isEmpty || connecting).accessibilityIdentifier("health.request")
+                    }.disabled(selection.isEmpty || connecting || health.isRequesting || store.healthSync?.connecting == true).accessibilityIdentifier("health.request")
                     status
                     if let error = store.healthSync?.error { Label(error, systemImage: "exclamationmark.triangle").foregroundStyle(.red) }
+                    if let code = store.healthSync?.failureCode { Text(code).font(.caption).textSelection(.enabled).accessibilityIdentifier("health.syncFailureCode") }
                 }
             }
             if let sync = store.healthSync {
@@ -69,6 +70,20 @@ struct HealthConnectionView: View {
                 Button("打开系统设置") {
                     if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
                 }.frame(minHeight: 44)
+            }
+            if let diagnostic = health.diagnostic {
+                Section {
+                    DisclosureGroup("授权诊断") {
+                        LabeledContent("版本", value: "\(diagnostic.appVersion)（\(diagnostic.build)）")
+                        LabeledContent("设备系统", value: diagnostic.systemVersion)
+                        LabeledContent("请求时状态", value: diagnostic.applicationState)
+                        LabeledContent("系统授权页", value: diagnostic.promptStatus == .unnecessary ? "这些范围已请求过" : diagnostic.promptStatus == .shouldRequest ? "存在未请求范围" : "未知")
+                        Text(diagnostic.text).font(.caption.monospaced()).textSelection(.enabled).accessibilityIdentifier("health.diagnostic")
+                        ShareLink("导出诊断信息", item: diagnostic.text).accessibilityIdentifier("health.shareDiagnostic")
+                        Text("仅包含版本、访问范围和错误码，不包含健康记录、账号或设备标识。")
+                            .font(.footnote).foregroundStyle(.secondary)
+                    }
+                }
             }
         }
         .scrollContentBackground(.hidden).background(LeanoraTheme.canvas)

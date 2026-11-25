@@ -14,6 +14,8 @@ import Observation
     private(set) var activity: HealthDailyActivity?
     private(set) var busy = false
     var error: String?
+    private(set) var failureCode: String?
+    private(set) var connecting = false
     private var operation: Task<Void, Never>?
     private var refreshGeneration = 0
     var jobs: [HealthWriteJob] { metadata.compactMap { if case .job(let v) = $0 { return v }; return nil } }
@@ -32,11 +34,14 @@ import Observation
         } catch { self.error = "健康缓存暂不可用，请解锁后重试。" }
     }
     @discardableResult func configure(_ value: HealthSyncConfiguration) async -> Bool {
-        error = nil
+        error = nil; failureCode = nil
         do { try await repository.configureHealth(value); configuration = value; observe(); await refresh(); return true }
-        catch { self.error = "同步设置未保存，请重试。"; return false }
+        catch { self.error = "同步设置未保存，请重试。"; failureCode = "\((error as NSError).domain) (\((error as NSError).code))"; return false }
     }
     @discardableResult func connect(_ selection: HealthAccessSelection, authorization: HealthAuthorizationService) async -> Bool {
+        guard !connecting else { return false }
+        guard !busy else { error = "同步进行中，请稍后重试连接。"; return false }
+        connecting = true; defer { connecting = false }
         // Starting sync is not itself an authorization request. Always take the
         // explicit user action through HealthKit before enabling or changing it.
         guard await authorization.request(selection) else { return false }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D51B91FA055BBDCDC7CC36E6 /* WorkoutRecordingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994328F36EA18E9622A08D45 /* WorkoutRecordingTests.swift */; };
+		6B7C62A816B2F2844191E227 /* WorkoutRecordingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DADD7E4F3D9D873F5DBC0DA /* WorkoutRecordingTests.swift */; };
+		608C4690DCE627F59F24A6A8 /* HealthAuthorizationDiagnostic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35AB4A9310E6DB377C7CE5C /* HealthAuthorizationDiagnostic.swift */; };
+		DD545957135BB267EBB43039 /* ExerciseReplacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51AE85A7657E321F8666C8 /* ExerciseReplacementView.swift */; };
+		0359F26E2F888B016550066F /* WorkoutSetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F322286E63917EF5F6DF5 /* WorkoutSetRow.swift */; };
+		BF6577F0391542EE844C6268 /* ExerciseReplacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9851E1761772A860264C462 /* ExerciseReplacement.swift */; };
+		CBFFBEFE31B926874B6D56E9 /* WorkoutSetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8814B2ECD825CE87ADB308 /* WorkoutSetInput.swift */; };
 		01CA710D3F97B27E3992E1A3 /* LeanoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF271C7D5818A5B7A611629F /* LeanoraApp.swift */; };
 		034DF104337709A9A595C65D /* TrainingWorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73630AEBA09399C232EA08DD /* TrainingWorkflowTests.swift */; };
 		04B06E13A45D3D896C81FF20 /* exercise-guides.json in Resources */ = {isa = PBXBuildFile; fileRef = 60B8209234E58FAA85EBAD1A /* exercise-guides.json */; };
@@ -160,6 +167,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		994328F36EA18E9622A08D45 /* WorkoutRecordingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRecordingTests.swift; sourceTree = "<group>"; };
+		9DADD7E4F3D9D873F5DBC0DA /* WorkoutRecordingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutRecordingTests.swift; path = WorkoutRecordingTests.swift; sourceTree = "<group>"; };
+		A35AB4A9310E6DB377C7CE5C /* HealthAuthorizationDiagnostic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthAuthorizationDiagnostic.swift; path = Integrations/HealthKit/HealthAuthorizationDiagnostic.swift; sourceTree = "<group>"; };
+		FE51AE85A7657E321F8666C8 /* ExerciseReplacementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseReplacementView.swift; path = Features/Workout/ExerciseReplacementView.swift; sourceTree = "<group>"; };
+		810F322286E63917EF5F6DF5 /* WorkoutSetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutSetRow.swift; path = Features/Workout/WorkoutSetRow.swift; sourceTree = "<group>"; };
+		F9851E1761772A860264C462 /* ExerciseReplacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseReplacement.swift; path = Core/Training/ExerciseReplacement.swift; sourceTree = "<group>"; };
+		9F8814B2ECD825CE87ADB308 /* WorkoutSetInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutSetInput.swift; path = Core/Training/WorkoutSetInput.swift; sourceTree = "<group>"; };
 		032DF6B6E11ACDC5CC786BC3 /* TrainingContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrainingContentView.swift; path = Features/Training/TrainingContentView.swift; sourceTree = "<group>"; };
 		065DE487A22C7D1D37C0EBF1 /* ExerciseMedia */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ExerciseMedia; path = Resources/ExerciseMedia; sourceTree = "<group>"; };
 		0A31EE774D915CAF2886519F /* HealthSyncModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HealthSyncModels.swift; path = Core/Domain/HealthSyncModels.swift; sourceTree = "<group>"; };
@@ -329,6 +343,11 @@
 		0016831E3A1AE598D3B8CA61 /* Leanora */ = {
 			isa = PBXGroup;
 			children = (
+				A35AB4A9310E6DB377C7CE5C /* HealthAuthorizationDiagnostic.swift */,
+				FE51AE85A7657E321F8666C8 /* ExerciseReplacementView.swift */,
+				810F322286E63917EF5F6DF5 /* WorkoutSetRow.swift */,
+				F9851E1761772A860264C462 /* ExerciseReplacement.swift */,
+				9F8814B2ECD825CE87ADB308 /* WorkoutSetInput.swift */,
 				6E7603A002058723B7269E11 /* DataStoreController.swift */,
 				EF271C7D5818A5B7A611629F /* LeanoraApp.swift */,
 				4BCF634D5931D5F85CA98B25 /* MainTabView.swift */,
@@ -451,6 +470,7 @@
 		6F97D022C8234DD88F881C4B /* LeanoraTests */ = {
 			isa = PBXGroup;
 			children = (
+				9DADD7E4F3D9D873F5DBC0DA /* WorkoutRecordingTests.swift */,
 				1CA59E819BC2AFDE26D62DF1 /* BackupTests.swift */,
 				FB6DECAF2A752FE5BC5B2D10 /* BodyMeasurementTests.swift */,
 				87F074EB38DBCBC07E262AEA /* CapacityTests.swift */,
@@ -503,6 +523,7 @@
 		BA1D1449C735174DE9EF226B /* LeanoraUITests */ = {
 			isa = PBXGroup;
 			children = (
+				994328F36EA18E9622A08D45 /* WorkoutRecordingTests.swift */,
 				117FF10FA946B13DB526067B /* DataManagementTests.swift */,
 				7FCB0E19303340BFD55B1DF3 /* HealthReleaseExperienceTests.swift */,
 				9403ED3AEAFC60C0B6CE9B10 /* NutritionBodyTests.swift */,
@@ -654,6 +675,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				608C4690DCE627F59F24A6A8 /* HealthAuthorizationDiagnostic.swift in Sources */,
+				DD545957135BB267EBB43039 /* ExerciseReplacementView.swift in Sources */,
+				0359F26E2F888B016550066F /* WorkoutSetRow.swift in Sources */,
+				BF6577F0391542EE844C6268 /* ExerciseReplacement.swift in Sources */,
+				CBFFBEFE31B926874B6D56E9 /* WorkoutSetInput.swift in Sources */,
 				A82F0716049DB39B4DAE34F2 /* DataStoreController.swift in Sources */,
 				01CA710D3F97B27E3992E1A3 /* LeanoraApp.swift in Sources */,
 				E12663A6B0CB53E9723DF60E /* MainTabView.swift in Sources */,
@@ -743,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B7C62A816B2F2844191E227 /* WorkoutRecordingTests.swift in Sources */,
 				14DCCD19724C6DFEF56C07AF /* BackupTests.swift in Sources */,
 				4C8C46810B6B548D2732F3F4 /* BodyMeasurementTests.swift in Sources */,
 				A567523666D1A2CF3809FC85 /* CapacityTests.swift in Sources */,
@@ -778,6 +805,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D51B91FA055BBDCDC7CC36E6 /* WorkoutRecordingTests.swift in Sources */,
 				A590A5FCA47CF9F3E796B9CF /* DataManagementTests.swift in Sources */,
 				E04C2C708CB044FED88AF11E /* HealthReleaseExperienceTests.swift in Sources */,
 				57172F1B9880DA430FCDBEFA /* NutritionBodyTests.swift in Sources */,
@@ -930,12 +958,12 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8ZP3NMT2A8;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.leanora.fitness.LeanoraUITests;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -951,12 +979,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8ZP3NMT2A8;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.leanora.fitness.LeanoraTests;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -972,12 +1000,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8ZP3NMT2A8;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.leanora.fitness.LeanoraTests;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -993,12 +1021,12 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8ZP3NMT2A8;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.leanora.fitness.LeanoraUITests;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1017,14 +1045,14 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8ZP3NMT2A8;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Leanora/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.leanora.fitness;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1042,14 +1070,14 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = Leanora/Leanora.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8ZP3NMT2A8;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Leanora/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.leanora.fitness;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;

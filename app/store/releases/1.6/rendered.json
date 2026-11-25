@@ -1,0 +1,86 @@
+[
+  {
+    "path": "zh-Hans/iphone-medium/01-today.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "675a51e86bacfceaf7d5f942ffcba1cb4f3e4f54e549be41d435dd8059742d6d"
+  },
+  {
+    "path": "zh-Hans/iphone-medium/02-exercises.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "09a55eb14a6c3a7915a4768e87d6b58dfd4ac3cdca7fd2baaefc76b7078deba7"
+  },
+  {
+    "path": "zh-Hans/iphone-medium/03-workout.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "ca590f0cb3add472f7aa0a7b54be4c2a133af4ea80994ebfed37129dc0f7dad8"
+  },
+  {
+    "path": "zh-Hans/iphone-medium/04-nutrition.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "0c15a8dbdf63c8a4c40deb1f1958342364d41d705c6a4901605ac72c9cf232fa"
+  },
+  {
+    "path": "zh-Hans/iphone-medium/05-portion.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "40bb2184b7a76253b32814f2ca3b9f592d6d5c1687565633d0dfc72d0280af86"
+  },
+  {
+    "path": "zh-Hans/iphone-medium/06-trends.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "e2a9e11ca0f9a0595acbf0405b4d542dbd0876e4524f532d524d342e7ca0c0e3"
+  },
+  {
+    "path": "zh-Hans/iphone-medium/07-health.png",
+    "width": 1206,
+    "height": 2622,
+    "sha256": "8b28ce8d057fb2b0c7f373ffd2a524e477df6142ba3775d4e47cc72e55f31a35"
+  },
+  {
+    "path": "zh-Hans/iphone-large/01-today.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "9b440a1ef30f90b5014d78790617882defdc73e070cf74671a1aee0159e2df50"
+  },
+  {
+    "path": "zh-Hans/iphone-large/02-exercises.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "c1b1053d701e6f897340bea6e358bd6976dfd08591fec010a9c4490dae6c3c27"
+  },
+  {
+    "path": "zh-Hans/iphone-large/03-workout.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "0cde6e73921c81bf650eb57d7354cd1eaf91729df2a41f04079afbfb6f6c6993"
+  },
+  {
+    "path": "zh-Hans/iphone-large/04-nutrition.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "9fce19ad83e37befe76cb38f026b3df2b0a2e42b5474ff072655886018d1f962"
+  },
+  {
+    "path": "zh-Hans/iphone-large/05-portion.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "2980de66f5e1fbcadb146117945b8207863bf3a188405249b1affbe33883b79f"
+  },
+  {
+    "path": "zh-Hans/iphone-large/06-trends.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "8882ac09549cc4235e0934a352c24caf644aed8fb2f0d4315883623a6015b087"
+  },
+  {
+    "path": "zh-Hans/iphone-large/07-health.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "ad3744f9e0d94e5aad07485a964a11743a50e432ef4a27f5b479bfb21aa345e9"
+  }
+]

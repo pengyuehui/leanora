@@ -61,8 +61,10 @@ import XCTest
         app.buttons["set.keyboardDone"].tap(); app.buttons["set.save"].tap()
         XCTAssertTrue(app.buttons["workout.complete.0.0"].waitForExistence(timeout: 5))
         tap(app.buttons["workout.complete.0.0"], app)
+        if app.buttons["workout.keyboardDone"].exists { app.buttons["workout.keyboardDone"].tap() }
         reveal(app.staticTexts["workout.rest"], app)
-        tap(app.buttons["workout.pause"], app); XCTAssertEqual(app.staticTexts["workout.status"].label, "训练已暂停")
+        tap(app.buttons["workout.pause"], app); reveal(app.staticTexts["workout.status"], app)
+        XCTAssertEqual(app.staticTexts["workout.status"].label, "训练已暂停")
         capture(app, "u4-paused-set-rest")
         app.terminate(); app = launch(reset: false, extra: ["--notifications-denied"])
         tap(app.buttons["training.active"], app); XCTAssertEqual(app.staticTexts["workout.status"].label, "训练已暂停")

@@ -28,7 +28,7 @@ final class WorkoutWorkflowTests: XCTestCase, @unchecked Sendable {
         let prior = history(exercise)
         try await store.save([.exercise(exercise), .session(prior)])
         let session = try await store.startFreeTraining()
-        try await store.addExerciseToWorkout(session.stamp.id, revision: session.stamp.revision, exerciseID: exercise.stamp.id, catalog: [exercise])
+        try await store.addExerciseToWorkout(session.stamp.id, revision: session.stamp.revision, exerciseID: exercise.stamp.id, catalog: [exercise], reusePrevious: true)
         var saved = try await store.workout(session.stamp.id)
         XCTAssertEqual(saved.exercises[0].sets[0].loadKg, 20)
         XCTAssertTrue(saved.exercises[0].sets.allSatisfy { $0.completedAt == nil && $0.effort == nil })

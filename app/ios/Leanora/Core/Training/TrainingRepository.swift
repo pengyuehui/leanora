@@ -120,7 +120,7 @@ extension AppModelActor {
         try save([.schedule(change)])
     }
 
-    func startTraining(templateID: UUID, catalog: [Exercise], originDate: String? = nil, now: Date = Date(), timeZoneID: String = TimeZone.current.identifier) throws -> WorkoutSession {
+    func startTraining(templateID: UUID, catalog: [Exercise], originDate: String? = nil, reusePrevious: Bool = false, now: Date = Date(), timeZoneID: String = TimeZone.current.identifier) throws -> WorkoutSession {
         let records = try snapshot()
         let sessions = records.compactMap { record -> WorkoutSession? in if case .session(let v) = record, v.stamp.deletedAt == nil { return v }; return nil }
         if let active = sessions.first(where: { [.active, .paused].contains($0.status) }) { return active }
@@ -132,7 +132,8 @@ extension AppModelActor {
         }
         let required = try TrainingPlan.requiredSessionRecords(template)
         guard records.reduce(0, { $0 + 1 + $1.nestedIDs.count }) + required <= DomainValidation.maximumRecords else { throw DataProblem.tooManyRecords }
-        let session = WorkoutEngine.prefilled(try TrainingPlan.session(from: template, exercises: trainingExercises(catalog: catalog), now: now, timeZoneID: timeZoneID, originDate: originDate), history: sessions)
+        let draft = try TrainingPlan.session(from: template, exercises: trainingExercises(catalog: catalog), now: now, timeZoneID: timeZoneID, originDate: originDate)
+        let session = reusePrevious ? WorkoutEngine.prefilled(draft, history: sessions) : draft
         try save([.session(session)])
         return session
     }
@@ -141,6 +142,7 @@ extension AppModelActor {
         guard case .session(var value) = try snapshot().first(where: { $0.id == id }), [.active, .paused].contains(value.status) else { throw TrainingProblem.missingRecord }
         let now = max(Date(), max(value.started.instant, value.stamp.updatedAt))
         WorkoutEngine.stopTimers(&value, at: now); value.restDeadline = nil
+        WorkoutEngine.clearRest(&value)
         value.pausedTimerSetIDs = nil
         if value.pauses.last?.endedAt == nil && !value.pauses.isEmpty { value.pauses[value.pauses.count - 1].endedAt = now }
         value.status = .abandoned; value.endedAt = now; value.stamp.revision += 1; value.stamp.updatedAt = now

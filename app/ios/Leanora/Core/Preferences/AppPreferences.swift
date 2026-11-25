@@ -39,6 +39,9 @@ final class AppPreferences {
     private(set) var hasCompletedOnboarding: Bool
     private(set) var lastHealthRequest: Date?
     private(set) var storageNotice: String?
+    var automaticallyReuseWorkoutValues: Bool {
+        didSet { defaults.set(automaticallyReuseWorkoutValues, forKey: "workout.reuseEmptySets") }
+    }
     var trainingRemindersEnabled: Bool {
         didSet { defaults.set(trainingRemindersEnabled, forKey: "reminders.training.enabled") }
     }
@@ -51,6 +54,7 @@ final class AppPreferences {
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
+        automaticallyReuseWorkoutValues = defaults.bool(forKey: "workout.reuseEmptySets")
         trainingRemindersEnabled = defaults.bool(forKey: "reminders.training.enabled")
         trainingReminderHour = defaults.object(forKey: "reminders.training.hour") as? Int ?? 18
         trainingReminderMinute = defaults.object(forKey: "reminders.training.minute") as? Int ?? 0

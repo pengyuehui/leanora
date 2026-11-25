@@ -30,7 +30,7 @@ final class WorkoutSessionTests: XCTestCase, @unchecked Sendable {
         value.exercises[0].sets[0].loadKg = 25; value.exercises[0].sets[0].repetitions = 9
         try WorkoutEngine.complete(&value, exercise: 0, set: 0, at: Date()); try await actor.saveWorkout(value)
         _ = try await actor.finishWorkout(value.stamp.id)
-        let next = try await actor.startTraining(templateID: value.templateID!, catalog: [])
+        let next = try await actor.startTraining(templateID: value.templateID!, catalog: [], reusePrevious: true)
         XCTAssertEqual(next.exercises[0].sets[0].loadKg, 25)
         XCTAssertEqual(next.exercises[0].sets[0].repetitions, 9)
         XCTAssertTrue(next.exercises[0].sets.allSatisfy { $0.completedAt == nil && $0.timerStartedAt == nil })
@@ -43,7 +43,8 @@ final class WorkoutSessionTests: XCTestCase, @unchecked Sendable {
         try WorkoutEngine.pause(&value, at: start.addingTimeInterval(20))
         XCTAssertNil(value.exercises[0].sets[0].timerStartedAt)
         XCTAssertEqual(WorkoutEngine.elapsed(value.exercises[0].sets[0], at: start.addingTimeInterval(100)), 20)
-        XCTAssertEqual(value.restDeadline, start.addingTimeInterval(45))
+        XCTAssertNil(value.restDeadline)
+        XCTAssertEqual(value.pausedRestRemainingSeconds, 25)
         try await actor.saveWorkout(value)
         var recovered = try await actor.workout(value.stamp.id)
         XCTAssertEqual(recovered.status, .paused); XCTAssertEqual(recovered.stamp.id, initial.stamp.id)

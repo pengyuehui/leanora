@@ -1,0 +1,4 @@
+Enter load, repetitions, duration and distance directly in your workout, complete sets continuously and undo the latest completion.
+Rest timers now pause and resume with your workout. Recording remains available without notification access.
+Preview exercise replacements while keeping completed sets with their original exercise.
+Added foreground authorization checks and optional Apple Health request diagnostics to help investigate access issues. Existing records, backup workflows and explicit historical export controls remain available.

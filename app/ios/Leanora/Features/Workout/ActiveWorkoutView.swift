@@ -5,6 +5,7 @@ struct ActiveWorkoutView: View {
     @Environment(TrainingStore.self) private var training
     @Environment(NotificationPermissionService.self) private var notifications
     @Environment(AppPreferences.self) private var preferences
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.dismiss) private var dismiss
     @State private var editing: SetSelection?
     @State private var finishing = false
@@ -20,8 +21,22 @@ struct ActiveWorkoutView: View {
     @State private var removingExerciseID: UUID?
     @State private var templateDraft: WorkoutTemplate?
     @State private var updatingTemplate = false
+    @State private var drafts: [UUID: WorkoutSetInput] = [:]
+    @State private var rowErrors: [UUID: String] = [:]
+    @State private var submittingSetID: UUID?
+    @State private var replacingExerciseID: UUID?
+    @State private var closingWithDrafts = false
+    @State private var references: [UUID: WorkoutReference] = [:]
+    @FocusState private var focusedInput: WorkoutInputFocus?
     var session: WorkoutSession? { training.sessions.first { $0.id == sessionID } }
     var body: some View {
+        ScrollViewReader { proxy in
+            content.onChange(of: focusedInput) { _, field in
+                if let field { withAnimation { proxy.scrollTo(field.setID, anchor: .center) } }
+            }
+        }
+    }
+    private var content: some View {
         List {
             TrainingErrorNotice()
             if let session {
@@ -33,10 +48,6 @@ struct ActiveWorkoutView: View {
                         Text("归属日期：\(session.started.localDate) · 本机记录").font(.caption).foregroundStyle(.secondary)
                         TimelineView(.periodic(from: .now, by: 1)) { context in
                             Text("有效时长 \(Int(TrainingSummary.activeDuration(session, at: context.date))) 秒").monospacedDigit()
-                            if let deadline = session.restDeadline {
-                                Text(deadline > context.date ? "休息剩余 \(Int(ceil(deadline.timeIntervalSince(context.date)))) 秒" : "休息已结束，可以继续下一组")
-                                    .foregroundStyle(LeanoraTheme.accent).accessibilityIdentifier("workout.rest")
-                            }
                         }
                     }.padding(.vertical, 4)
                     if [.active, .paused].contains(session.status) {
@@ -51,14 +62,11 @@ struct ActiveWorkoutView: View {
                                     else { try WorkoutEngine.pause(&value, at: Date()) }
                                 } }
                             }.accessibilityIdentifier("workout.pause")
-                            if session.restDeadline != nil {
-                                Button("结束休息") { Task { _ = await controller.change(session) { $0.restDeadline = nil } } }.accessibilityIdentifier("workout.skipRest")
-                                Button("延长 30 秒") { Task { _ = await controller.change(session) { $0.restDeadline = max($0.restDeadline ?? Date(), Date()).addingTimeInterval(30) } } }
-                            }
                         }.buttonStyle(.borderless)
                         if notifications.access != .allowed {
                             Button("开启系统休息提醒") { Task { await notifications.request(); await training.refresh() } }.accessibilityIdentifier("workout.notifications")
                         }
+                        if let error = training.notificationError { Text(error).font(.footnote).foregroundStyle(.secondary) }
                     }
                 }
                 if [.active, .paused].contains(session.status) {
@@ -71,7 +79,7 @@ struct ActiveWorkoutView: View {
                 }
                 ForEach(Array(session.exercises.enumerated()), id: \.element.id) { i, exercise in
                     Section {
-                        let reference = WorkoutReuse.reference(for: exercise, in: session, history: training.sessions)
+                        let reference = references[exercise.id]
                         if ExerciseGuideCatalog.guide(for: exercise.snapshot.exerciseID) != nil {
                             Button { guidance = GuideSelection(id: exercise.snapshot.exerciseID, name: exercise.snapshot.name) } label: {
                                 Label("查看动作指导", systemImage: "photo.on.rectangle")
@@ -91,32 +99,22 @@ struct ActiveWorkoutView: View {
                                 }
                                 if [.active, .paused].contains(session.status) {
                                     Button("沿用上次") {
-                                        Task { _ = await controller.change(session) { $0.exercises[i] = WorkoutReuse.applying(reference, to: $0.exercises[i]) } }
+                                        reusePrevious(session, index: i, reference: reference)
                                     }.buttonStyle(.borderless).frame(minHeight: 44).accessibilityIdentifier("workout.reusePrevious.\(i)")
-                                    Text("只填入尚未完成、也未计时的组，已记录的完成值保持。").font(.caption).foregroundStyle(.secondary)
                                 }
                             }.padding(.vertical, 4)
                         }
                         if exercise.supersetID != nil { Label("超级组 · 同轮两个动作完成后休息", systemImage: "link").font(.caption) }
                         ForEach(Array(exercise.sets.enumerated()), id: \.element.id) { j, set in
                             VStack(alignment: .leading, spacing: 10) {
-                                HStack {
-                                    Button { editing = SetSelection(exercise: i, set: j) } label: {
-                                        HStack(spacing: 12) {
-                                            VStack(spacing: 3) { Text("\(j + 1)").font(.headline.monospacedDigit()); Text(set.kind.title).font(.caption2).foregroundStyle(.secondary) }.frame(minWidth: 30)
-                                            Text(actualText(set, measurement: exercise.snapshot.measurement)).font(.body.monospacedDigit()).frame(maxWidth: .infinity, alignment: .leading)
-                                            Image(systemName: "pencil").font(.caption).foregroundStyle(.secondary)
-                                        }.frame(minHeight: 48).contentShape(Rectangle())
-                                    }.buttonStyle(.plain).accessibilityLabel("第 \(j + 1) 组，\(set.kind.title)，\(actualText(set, measurement: exercise.snapshot.measurement))，\(set.completedAt == nil ? "未完成，编辑" : "已完成，编辑")").accessibilityIdentifier("workout.set.\(i).\(j)")
-                                    if session.status == .active && set.completedAt == nil {
-                                        Button { Task { _ = await controller.change(session) { try WorkoutEngine.complete(&$0, exercise: i, set: j, at: Date()) } } } label: { Image(systemName: "checkmark.circle").font(.title).frame(width: 44, height: 48) }
-                                            .accessibilityLabel("完成此组").buttonStyle(.borderless).accessibilityIdentifier("workout.complete.\(i).\(j)")
-                                    } else if set.completedAt != nil { Image(systemName: "checkmark.circle.fill").font(.title).foregroundStyle(LeanoraTheme.accent).frame(width: 44).accessibilityLabel("已完成") }
-                                }
-                                if let reference, let previous = WorkoutReuse.previousSet(for: set, in: exercise, reference: reference) {
-                                    Text(actualText(previous, measurement: exercise.snapshot.measurement, prefix: "上次")).font(.caption).foregroundStyle(.secondary)
-                                        .accessibilityIdentifier("workout.previousSet.\(i).\(j)")
-                                }
+                                WorkoutSetRow(exercise: exercise, set: set, index: j, exerciseIndex: i,
+                                    input: inputBinding(for: set), focused: $focusedInput,
+                                    enabled: session.status == .active && submittingSetID == nil,
+                                    dirty: isDirty(set), error: rowErrors[set.id],
+                                    previous: reference.flatMap { WorkoutReuse.previousSet(for: set, in: exercise, reference: $0) }.map {
+                                        actualText($0, measurement: exercise.snapshot.measurement, prefix: "上次")
+                                    }, onComplete: { completeRow(session, exercise: exercise, set: set) },
+                                    onAdvanced: { openAdvanced(session, exercise: i, set: j) })
                                 if [.duration, .cardio].contains(exercise.snapshot.measurement), set.completedAt == nil, session.status != .completed {
                                     HStack {
                                         TimelineView(.periodic(from: .now, by: 1)) { context in Text("动作计时 \(Int(WorkoutEngine.elapsed(set, at: context.date))) 秒").monospacedDigit() }
@@ -126,6 +124,7 @@ struct ActiveWorkoutView: View {
                                     }.buttonStyle(.borderless)
                                 }
                             }.padding(.vertical, 6)
+                            .id(set.id)
                             .listRowBackground(set.completedAt == nil ? LeanoraTheme.surface : LeanoraTheme.accent.opacity(0.08))
                             .swipeActions { Button("删除组", role: .destructive) { removed = SetSelection(exercise: i, set: j) } }
                         }
@@ -138,6 +137,9 @@ struct ActiveWorkoutView: View {
                             Spacer()
                             if [.active, .paused].contains(session.status) {
                                 Menu {
+                                    Button("替换动作") { replacingExerciseID = exercise.id }
+                                        .disabled(!exercise.sets.contains { $0.completedAt == nil })
+                                        .accessibilityIdentifier("workout.replace.\(i)")
                                     Button("上移动作") { moveExercise(session, index: i, step: -1) }.disabled(i == 0)
                                     Button("下移动作") { moveExercise(session, index: i, step: 1) }.disabled(i == session.exercises.count - 1)
                                     Button("移除动作", role: .destructive) { removingExerciseID = exercise.id }
@@ -175,22 +177,56 @@ struct ActiveWorkoutView: View {
         .safeAreaInset(edge: .bottom) {
             if let session, session.status != .completed {
                 VStack(spacing: 8) {
-                    if let deadline = session.restDeadline {
-                        HStack {
-                            TimelineView(.periodic(from: .now, by: 1)) { context in
-                                Label(deadline > context.date ? "休息 \(Int(ceil(deadline.timeIntervalSince(context.date)))) 秒" : "休息结束", systemImage: "timer").font(.headline.monospacedDigit())
-                            }
-                            Spacer()
-                            Button("跳过") { Task { _ = await controller.change(session) { $0.restDeadline = nil } } }.frame(minWidth: 44, minHeight: 44).accessibilityIdentifier("workout.restSkip")
+                    if session.status == .active, let deadline = session.restDeadline {
+                        if typeSize.isAccessibilitySize {
+                            restCountdown(deadline)
+                            restActions(session)
+                        } else {
+                            HStack { restCountdown(deadline); Spacer(); restActions(session) }
                         }
                     }
-                    Button("完成训练") { finishing = true }.buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("workout.finish")
+                    if let remaining = WorkoutEngine.pausedRestRemaining(in: session) {
+                        Text("休息已暂停 · 剩余 \(Int(ceil(remaining))) 秒").font(.subheadline.monospacedDigit()).accessibilityIdentifier("workout.restPaused")
+                    }
+                    if let next = nextPendingExercise(in: session) {
+                        Text("下一动作：\(next.snapshot.name)").font(.caption).foregroundStyle(.secondary)
+                    }
+                    HStack(spacing: 12) {
+                        Button {
+                            Task { _ = await controller.change(session) { try WorkoutEngine.undoLastCompletion(&$0) } }
+                        } label: { Image(systemName: "arrow.uturn.backward").font(.title3).frame(minWidth: 44, minHeight: 48) }
+                            .accessibilityLabel("撤销上一组").accessibilityIdentifier("workout.undo")
+                            .disabled(WorkoutEngine.latestCompletedSet(in: session) == nil)
+                        Button("完成训练") { finishing = true }.buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("workout.finish")
+                    }
                 }.padding(.horizontal, 16).padding(.vertical, 10).background(.bar)
             }
         }
         .disabled(training.busy)
-        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() }.accessibilityIdentifier("workout.close") } }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) { Button("关闭") { if hasUnsavedInput { closingWithDrafts = true } else { dismiss() } }.accessibilityIdentifier("workout.close") }
+            ToolbarItemGroup(placement: .keyboard) {
+                Button { moveInputFocus(-1) } label: { Image(systemName: "chevron.up") }.accessibilityLabel("上一项").accessibilityIdentifier("workout.inputPrevious")
+                Button { moveInputFocus(1) } label: { Image(systemName: "chevron.down") }.accessibilityLabel("下一项").accessibilityIdentifier("workout.inputNext")
+                Spacer()
+                Button("收起") { focusedInput = nil }.accessibilityIdentifier("workout.keyboardDone")
+            }
+        }
+        .scrollDismissesKeyboard(.interactively)
+        .interactiveDismissDisabled(hasUnsavedInput)
         .task { await notifications.refresh() }
+        .task(id: training.dataVersion) {
+            // History lookup stays off the keystroke path. Refresh only when
+            // saved data changes, and retain drafts for surviving pending sets.
+            if let session {
+                references = Dictionary(uniqueKeysWithValues: session.exercises.compactMap { exercise in
+                    WorkoutReuse.reference(for: exercise, in: session, history: training.sessions).map { (exercise.id, $0) }
+                })
+                let pendingIDs = Set(session.exercises.flatMap(\.sets).filter { $0.completedAt == nil }.map(\.id))
+                drafts = drafts.filter { pendingIDs.contains($0.key) }
+                rowErrors = rowErrors.filter { pendingIDs.contains($0.key) }
+            }
+        }
         .sheet(item: $editing) { selection in
             if let session { NavigationStack { WorkoutSetEditor(session: session, selection: selection) } }
         }
@@ -201,13 +237,24 @@ struct ActiveWorkoutView: View {
                 ExerciseLibraryView { exercise in
                     if let session {
                         Task {
-                            if await training.run({ [repository = training.repository, catalog = training.catalog] in
-                                try await repository.addExerciseToWorkout(session.id, revision: session.stamp.revision, exerciseID: exercise.id, catalog: catalog)
+                            if await training.run({ [repository = training.repository, catalog = training.catalog, reuse = training.automaticallyReuseWorkoutValues] in
+                                try await repository.addExerciseToWorkout(session.id, revision: session.stamp.revision, exerciseID: exercise.id, catalog: catalog, reusePrevious: reuse)
                             }) != nil { choosing = false }
                         }
                     }
                 }.disabled(training.busy)
                 .toolbar { ToolbarItem(placement: .cancellationAction) { Button("取消") { choosing = false } } }
+            }
+        }
+        .sheet(isPresented: Binding(get: { replacingExerciseID != nil }, set: { if !$0 { replacingExerciseID = nil } })) {
+            if let session, let id = replacingExerciseID, let source = session.exercises.first(where: { $0.id == id }) {
+                NavigationStack {
+                    ExerciseReplacementView(session: session, source: source) {
+                        let removedIDs = Set(source.sets.filter { $0.completedAt == nil }.map(\.id))
+                        for id in removedIDs { drafts[id] = nil; rowErrors[id] = nil }
+                        focusedInput = nil; replacingExerciseID = nil
+                    }
+                }
             }
         }
         .sheet(isPresented: $renaming) {
@@ -231,8 +278,14 @@ struct ActiveWorkoutView: View {
         }
         .confirmationDialog("结束并保存训练？未完成组不计入统计。", isPresented: $finishing, titleVisibility: .visible) {
             Button("确认完成") { Task {
+                guard await saveInputDrafts() else { return }
                 if await training.run({ [repository = training.repository] in try await repository.finishWorkout(sessionID) }) != nil { dismiss() }
             } }.accessibilityIdentifier("workout.confirmFinish")
+        }
+        .confirmationDialog("有尚未保存的输入", isPresented: $closingWithDrafts, titleVisibility: .visible) {
+            Button("保存输入并关闭") { Task { if await saveInputDrafts() { dismiss() } } }
+            Button("放弃未保存输入并关闭", role: .destructive) { dismiss() }
+            Button("继续记录", role: .cancel) {}
         }
         .confirmationDialog("放弃本次训练？", isPresented: $abandoning, titleVisibility: .visible) {
             Button("确认放弃", role: .destructive) { Task { if await training.run({ [repository = training.repository] in try await repository.abandonTraining(sessionID) }) != nil { dismiss() } } }
@@ -260,7 +313,126 @@ struct ActiveWorkoutView: View {
             } } }
         }
     }
+    private func restCountdown(_ deadline: Date) -> some View {
+        TimelineView(.periodic(from: .now, by: 1)) { context in
+            Text(deadline > context.date ? "休息 \(Int(ceil(deadline.timeIntervalSince(context.date)))) 秒" : "休息结束")
+                .font(.headline.monospacedDigit()).accessibilityIdentifier("workout.rest")
+        }
+    }
+    private func restActions(_ session: WorkoutSession) -> some View {
+        HStack {
+            Button("+30 秒") { Task { _ = await controller.change(session) { WorkoutEngine.extendRest(&$0, at: Date()) } } }
+                .frame(minWidth: 44, minHeight: 44).accessibilityIdentifier("workout.restExtend")
+            Button("跳过") { Task { _ = await controller.change(session) { WorkoutEngine.clearRest(&$0) } } }
+                .frame(minWidth: 44, minHeight: 44).accessibilityIdentifier("workout.restSkip")
+        }
+    }
+    private var pounds: Bool { preferences.values.weightUnit == .pounds }
+    private var miles: Bool { preferences.values.distanceUnit == .miles }
     private var controller: WorkoutSessionController { WorkoutSessionController(training: training) }
+    private func input(for set: WorkoutSet) -> WorkoutSetInput { drafts[set.id] ?? WorkoutSetInput(set, pounds: pounds, miles: miles) }
+    private func isDirty(_ set: WorkoutSet) -> Bool {
+        drafts[set.id].map { $0 != WorkoutSetInput(set, pounds: pounds, miles: miles) } ?? false
+    }
+    private var hasUnsavedInput: Bool { session?.exercises.flatMap(\.sets).contains(where: isDirty) == true }
+    private func inputBinding(for set: WorkoutSet) -> Binding<WorkoutSetInput> {
+        Binding(get: { input(for: set) }, set: { drafts[set.id] = $0; rowErrors[set.id] = nil })
+    }
+    private func columns(for exercise: SessionExercise, set: WorkoutSet) -> [WorkoutInputColumn] {
+        switch exercise.snapshot.measurement {
+        case .externalLoad, .assistedLoad: [.load, .repetitions]
+        case .bodyweight: [.repetitions]
+        case .duration: set.timerStartedAt == nil ? [.duration] : []
+        case .cardio: set.timerStartedAt == nil ? [.duration, .distance] : [.distance]
+        }
+    }
+    private var inputFields: [WorkoutInputFocus] {
+        guard let session, session.status == .active else { return [] }
+        return session.exercises.flatMap { exercise in
+            exercise.sets.filter { $0.completedAt == nil }.flatMap { set in
+                columns(for: exercise, set: set).map { WorkoutInputFocus(setID: set.id, column: $0) }
+            }
+        }
+    }
+    private func moveInputFocus(_ delta: Int) {
+        let fields = inputFields
+        guard !fields.isEmpty else { return }
+        guard let focusedInput, let index = fields.firstIndex(of: focusedInput) else { self.focusedInput = fields.first; return }
+        self.focusedInput = fields[min(max(0, index + delta), fields.count - 1)]
+    }
+    private func nextPendingExercise(in session: WorkoutSession) -> SessionExercise? {
+        session.exercises.first { $0.sets.contains { $0.completedAt == nil } }
+    }
+    private func focusAfterCompletion(_ latest: WorkoutSession, exerciseID: UUID, setID: UUID) {
+        if let source = latest.exercises.first(where: { $0.id == exerciseID }),
+           let group = source.supersetID, let index = source.sets.firstIndex(where: { $0.id == setID }),
+           let partner = latest.exercises.first(where: { $0.id != exerciseID && $0.supersetID == group && $0.sets.indices.contains(index) && $0.sets[index].completedAt == nil }),
+           let column = columns(for: partner, set: partner.sets[index]).first {
+            focusedInput = WorkoutInputFocus(setID: partner.sets[index].id, column: column); return
+        }
+        focusedInput = inputFields.first
+    }
+    private func completeRow(_ session: WorkoutSession, exercise: SessionExercise, set: WorkoutSet) {
+        guard submittingSetID == nil, !training.busy else { return }
+        submittingSetID = set.id; rowErrors[set.id] = nil
+        let input = input(for: set), pounds = pounds, miles = miles
+        Task {
+            defer { submittingSetID = nil }
+            if await training.run({ [repository = training.repository] in
+                try await repository.completeWorkoutSet(session.id, revision: session.stamp.revision, exerciseID: exercise.id, setID: set.id, input: input, pounds: pounds, miles: miles)
+            }) != nil {
+                drafts[set.id] = nil
+                if let latest = self.session { focusAfterCompletion(latest, exerciseID: exercise.id, setID: set.id) }
+            } else { rowErrors[set.id] = training.error ?? "此组尚未保存，请重试。" }
+        }
+    }
+    private func saveInputDrafts() async -> Bool {
+        guard let session else { return false }
+        var prepared = session; var savedIDs: [UUID] = []
+        for i in prepared.exercises.indices {
+            for j in prepared.exercises[i].sets.indices {
+                let set = prepared.exercises[i].sets[j]
+                guard set.completedAt == nil, isDirty(set), let input = drafts[set.id] else { continue }
+                do {
+                    prepared.exercises[i].sets[j] = try input.applying(to: set, measurement: prepared.exercises[i].snapshot.measurement, pounds: pounds, miles: miles)
+                    savedIDs.append(set.id)
+                } catch { rowErrors[set.id] = error.localizedDescription; return false }
+            }
+        }
+        guard !savedIDs.isEmpty else { return true }
+        let value = prepared
+        guard await controller.change(session, { $0 = value }) else {
+            for id in savedIDs { rowErrors[id] = training.error ?? "输入尚未保存，请重试。" }; return false
+        }
+        for id in savedIDs { drafts[id] = nil; rowErrors[id] = nil }
+        return true
+    }
+    private func openAdvanced(_ session: WorkoutSession, exercise i: Int, set j: Int) {
+        let set = session.exercises[i].sets[j]
+        Task {
+            if isDirty(set) {
+                do {
+                    let value = try input(for: set).applying(to: set, measurement: session.exercises[i].snapshot.measurement, pounds: pounds, miles: miles)
+                    guard await controller.change(session, { $0.exercises[i].sets[j] = value }) else {
+                        rowErrors[set.id] = training.error; return
+                    }
+                    drafts[set.id] = nil
+                } catch { rowErrors[set.id] = error.localizedDescription; return }
+            }
+            focusedInput = nil; editing = SetSelection(exercise: i, set: j)
+        }
+    }
+    private func reusePrevious(_ session: WorkoutSession, index: Int, reference: WorkoutReference) {
+        let protected = Set(session.exercises[index].sets.filter(isDirty).map(\.id))
+        Task {
+            _ = await controller.change(session) { value in
+                let original = value.exercises[index]
+                var filled = WorkoutReuse.applying(reference, to: original)
+                for j in filled.sets.indices where protected.contains(filled.sets[j].id) { filled.sets[j] = original.sets[j] }
+                value.exercises[index] = filled
+            }
+        }
+    }
     private struct GuideSelection: Identifiable { let id: UUID; let name: String }
     private func canUpdateTemplate(_ session: WorkoutSession) -> Bool {
         training.templates.contains { $0.id == session.templateID && $0.stamp.revision == session.templateRevision }

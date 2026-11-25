@@ -11,7 +11,7 @@ struct WorkoutReminder: Equatable, Sendable {
     private var pending: [WorkoutReminder]?
     private var updating = false
     static func reminders(for session: WorkoutSession?, at now: Date) -> [WorkoutReminder] {
-        guard let session, [.active, .paused].contains(session.status) else { return [] }
+        guard let session, session.status == .active else { return [] }
         var values: [WorkoutReminder] = []
         if let deadline = session.restDeadline, deadline > now { values.append(WorkoutReminder(id: "leanora.workout.rest", deadline: deadline, title: "休息结束，可以继续下一组")) }
         if session.status == .active {

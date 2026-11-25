@@ -1,0 +1,58 @@
+[
+  {
+    "id": "01-today",
+    "source": "store-01-today",
+    "section": "今天与历史",
+    "title": "今天的记录\n历史里回看",
+    "body": "训练、饮食与体重置顶，\n按月浏览每一天。",
+    "blue": true
+  },
+  {
+    "id": "02-exercises",
+    "source": "store-02-exercises",
+    "section": "动作图片库",
+    "title": "找到动作\n开始训练",
+    "body": "肌群、器械、搜索与收藏，\n配有离线指导图片。",
+    "blue": false
+  },
+  {
+    "id": "03-workout",
+    "source": "store-03-workout",
+    "section": "逐组记录",
+    "title": "重量与次数\n直接填写",
+    "body": "逐组完成与撤销，\n休息暂停后继续。",
+    "blue": false
+  },
+  {
+    "id": "04-nutrition",
+    "source": "store-04-nutrition",
+    "section": "饮食日记",
+    "title": "吃了什么\n一眼看清",
+    "body": "按餐记录热量和营养素，\n保留每次食物份量。",
+    "blue": true
+  },
+  {
+    "id": "05-portion",
+    "source": "store-05-portion",
+    "section": "来源与份量",
+    "title": "每一份食物\n有据可查",
+    "body": "查看来源与营养资料，\n按本次份量记录。",
+    "blue": false
+  },
+  {
+    "id": "06-trends",
+    "source": "store-06-trends",
+    "section": "分类统计",
+    "title": "身体的变化\n按月回看",
+    "body": "分别查看训练、身体与饮食，\n缺失记录不当作零。",
+    "blue": false
+  },
+  {
+    "id": "07-health",
+    "source": "store-07-health",
+    "section": "健康连接",
+    "title": "连接 Apple Health\n由你决定范围",
+    "body": "训练、饮食和身体数据，\n按你选择的权限同步。",
+    "blue": true
+  }
+]

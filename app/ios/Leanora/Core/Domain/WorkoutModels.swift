@@ -145,6 +145,9 @@ struct WorkoutSession: Codable, Equatable, Sendable {
     var notes = ""
     var scheduleOriginDate: String?
     var pausedTimerSetIDs: [UUID]?
+    var pausedRestRemainingSeconds: Double?
+    var restTriggerSetID: UUID?
+    var lastCompletedSetID: UUID?
 }
 
 // Optional additive fields retain compatibility with U2 JSON payloads.

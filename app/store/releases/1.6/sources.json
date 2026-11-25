@@ -1,0 +1,37 @@
+[
+  {
+    "source": "store-07-health.png",
+    "sha256": "a2ad6e0b75f9b18466cc2d80eb18e52145a8989a16905b4a0987676c834c05f5",
+    "fixture": "synthetic isolated store records"
+  },
+  {
+    "source": "store-06-trends.png",
+    "sha256": "df58a4df98274f259699ff5861ea72489675e8fecaaf863948a57251ec0a06f8",
+    "fixture": "synthetic isolated store records"
+  },
+  {
+    "source": "store-05-portion.png",
+    "sha256": "27a3850d14b1f572b07ef92be36dd69bb38b883b9e4b705f4f711269543703f4",
+    "fixture": "synthetic isolated store records"
+  },
+  {
+    "source": "store-04-nutrition.png",
+    "sha256": "661da38c49dfb010b94769887d37085e45bca31fc96a53f69d0e13b96129bed2",
+    "fixture": "synthetic isolated store records"
+  },
+  {
+    "source": "store-03-workout.png",
+    "sha256": "008f31268e335eae040892f690e42dfbfcec9d75d9b074c7e41b04d875b0cc49",
+    "fixture": "synthetic isolated store records"
+  },
+  {
+    "source": "store-02-exercises.png",
+    "sha256": "5e656860a2db09ef8892ce8eb8076a33da6840e0c997611ba4b5c29408a810cf",
+    "fixture": "synthetic isolated store records"
+  },
+  {
+    "source": "store-01-today.png",
+    "sha256": "2485f42027c7bc6b7dd5d4df09752455e48da77556931f1d07fbb8bcdd857b56",
+    "fixture": "synthetic isolated store records"
+  }
+]

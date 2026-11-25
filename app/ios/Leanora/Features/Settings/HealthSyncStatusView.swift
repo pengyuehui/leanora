@@ -21,6 +21,7 @@ struct HealthSyncStatusView: View {
                         Text("暂未读到数据，可检查健康访问或手动记录。").font(.footnote).foregroundStyle(.secondary)
                     } else { Text("本机副本按关联识别，不重复显示在健康来源摘要中。").font(.footnote).foregroundStyle(.secondary) }
                     if let message = sync.error ?? sync.check?.message { Label(message, systemImage: "exclamationmark.triangle") }
+                    if let code = sync.failureCode { Text(code).font(.caption).textSelection(.enabled) }
                     Button(sync.busy ? "正在检查…" : "检查并重试") { Task { await sync.sync() } }
                         .disabled(sync.busy || (!sync.configuration.enabled && !sync.jobs.contains { $0.userInitiated == true })).accessibilityIdentifier("health.retry")
                 }

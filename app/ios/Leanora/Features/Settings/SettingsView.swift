@@ -36,6 +36,12 @@ struct SettingsView: View {
                     settingsRow("隐私与数据", symbol: "hand.raised")
                 }.accessibilityIdentifier("settings.privacy")
             }
+            Section("训练记录") {
+                Toggle("自动沿用上次", isOn: Binding(get: { preferences.automaticallyReuseWorkoutValues }, set: { preferences.automaticallyReuseWorkoutValues = $0 }))
+                    .accessibilityIdentifier("settings.reuseWorkout")
+                Text("仅填入空白组；已有输入与计时保持。沿用后仍需逐组确认完成。")
+                    .font(.footnote).foregroundStyle(.secondary)
+            }
         }
         .scrollContentBackground(.hidden).background(LeanoraTheme.canvas)
         .navigationTitle("我的")
